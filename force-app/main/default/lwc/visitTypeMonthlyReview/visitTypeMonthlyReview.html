@@ -1,0 +1,74 @@
+<template>
+    <lightning-card title="Monthly Visit Type Review" icon-name="standard:visit_templates">
+        <div class="slds-var-p-horizontal_medium slds-var-p-bottom_small">
+            <lightning-combobox
+                label="Upload Month"
+                placeholder="Select a month"
+                options={monthOptions}
+                value={selectedMonth}
+                onchange={handleMonthChange}>
+            </lightning-combobox>
+        </div>
+
+        <template lwc:if={hasMonth}>
+            <div class="slds-var-p-horizontal_medium">
+                <!-- Action bar -->
+                <div class="slds-grid slds-grid_vertical-align-center slds-wrap slds-var-m-bottom_x-small">
+                    <lightning-button
+                        label="Mark selected as Y"
+                        variant="brand"
+                        disabled={isActionDisabled}
+                        onclick={handleMarkY}
+                        class="slds-var-m-right_x-small">
+                    </lightning-button>
+                    <lightning-button
+                        label="Mark selected as N"
+                        variant="neutral"
+                        disabled={isActionDisabled}
+                        onclick={handleMarkN}
+                        class="slds-var-m-right_small">
+                    </lightning-button>
+                    <span class="slds-text-body_small slds-text-color_weak">{selectedCountLabel}</span>
+                </div>
+
+                <!-- Record count -->
+                <div class="slds-text-body_small slds-text-color_weak slds-var-m-bottom_x-small">
+                    {recordCountLabel}
+                </div>
+
+                <!-- Truncation warning -->
+                <template lwc:if={isTruncated}>
+                    <div class="slds-box slds-theme_warning slds-var-m-bottom_small slds-text-body_small">
+                        {truncationMessage}
+                    </div>
+                </template>
+
+                <!-- Table + spinner -->
+                <div class="slds-is-relative">
+                    <template lwc:if={isLoading}>
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                    </template>
+
+                    <template lwc:if={hasRecords}>
+                        <lightning-datatable
+                            key-field="Id"
+                            data={records}
+                            columns={columns}
+                            show-row-number-column
+                            selected-rows={selectedIds}
+                            onrowselection={handleRowSelection}>
+                        </lightning-datatable>
+                    </template>
+
+                    <template lwc:if={showEmptyState}>
+                        <div class="slds-illustration slds-illustration_small slds-var-p-around_large slds-text-align_center">
+                            <p class="slds-text-body_regular slds-text-color_weak">
+                                No New Patient Visit Type records found for {selectedMonth}.
+                            </p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>
