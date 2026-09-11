@@ -10,7 +10,6 @@
     </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
-        <logo>Cloudy</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
@@ -35,6 +34,7 @@
     <tabs>standard-EnhancedLetterhead</tabs>
     <tabs>Territory_Zips__c</tabs>
     <tabs>Component__c</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Awesome_Admin_UtilityBar</utilityBar>
 </CustomApplication>

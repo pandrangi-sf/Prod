@@ -46,7 +46,6 @@
     </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
-        <logo>OH_Network_2022_hor_RGB_v2</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
@@ -67,6 +66,7 @@
     <tabs>standard-Task</tabs>
     <tabs>standard-Event</tabs>
     <tabs>standard-WaveHomeLightning</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>OHN_UtilityBar</utilityBar>
 </CustomApplication>

@@ -5,8 +5,6 @@
     <columns>CORE.USERS.ALIAS</columns>
     <columns>CORE.USERS.USERNAME</columns>
     <columns>CORE.USERS.LAST_LOGIN</columns>
-    <columns>UPDATEDBY_USER.NAME</columns>
-    <columns>LAST_UPDATE</columns>
     <columns>CORE.USER_ROLE.NAME</columns>
     <columns>CORE.USERS.ACTIVE</columns>
     <columns>CORE.PROFILE.NAME</columns>

@@ -29,6 +29,7 @@
     <tabs>OHIC_Addresses__c</tabs>
     <tabs>Territory_Zips__c</tabs>
     <tabs>Component__c</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -49,6 +50,9 @@
         </mappings>
         <mappings>
             <tab>Territory_Zips__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Visit_Type_Review__c</tab>
         </mappings>
         <mappings>
             <tab>ZonedLocation__c</tab>

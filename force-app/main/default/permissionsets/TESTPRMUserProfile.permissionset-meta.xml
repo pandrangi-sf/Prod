@@ -5711,10 +5711,6 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>standard-ActiveScratchOrg</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>standard-AppLauncher</tab>
         <visibility>Visible</visibility>
     </tabSettings>
@@ -5879,15 +5875,7 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>standard-LearningItem</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
         <tab>standard-LightningBoltHome</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>standard-LightningInstrumentation</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
@@ -5909,10 +5897,6 @@
     <tabSettings>
         <tab>standard-Monitor</tab>
         <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>standard-NamespaceRegistry</tab>
-        <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
         <tab>standard-OnlineSalesHome</tab>
@@ -5965,10 +5949,6 @@
     <tabSettings>
         <tab>standard-SalesforceProductCatalog</tab>
         <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>standard-ScratchOrgInfo</tab>
-        <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
         <tab>standard-Solution</tab>

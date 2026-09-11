@@ -6,13 +6,13 @@
     <label>UAT Sandbox</label>
     <logoUrl>https://login.salesforce.com/logos/Custom/Lego_Yellow/logo.png</logoUrl>
     <samlConfig>
-        <acsUrl>https://orlandohealth--uat.sandbox.my.salesforce.com?so=00Ddy000005kWV3</acsUrl>
+        <acsUrl>https://orlandohealth--uat.sandbox.my.salesforce.com?so=00D7z00000cNM8P</acsUrl>
         <encryptionType>AES_128</encryptionType>
         <entityUrl>https://orlandohealth--uat.sandbox.my.salesforce.com</entityUrl>
         <issuer>https://orlandohealth.my.salesforce.com</issuer>
         <samlNameIdFormat>Unspecified</samlNameIdFormat>
         <samlSigningAlgoType>SHA256</samlSigningAlgoType>
-        <samlSubjectType>FederationId</samlSubjectType>
+        <samlSubjectType>UserId</samlSubjectType>
     </samlConfig>
-    <startUrl>https://orlandohealth--uat.sandbox.my.salesforce.com?so=00Ddy000005kWV3</startUrl>
+    <startUrl>https://orlandohealth--uat.sandbox.my.salesforce.com?so=00D7z00000cNM8P</startUrl>
 </ConnectedApp>

@@ -17,4 +17,5 @@
     <tabs>ZonedLocation__c</tabs>
     <tabs>OHIC_Addresses__c</tabs>
     <tabs>Territory_Zips__c</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
 </CustomApplication>

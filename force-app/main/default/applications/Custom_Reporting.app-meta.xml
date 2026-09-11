@@ -2,7 +2,6 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
         <headerColor>#E46B0E</headerColor>
-        <logo>Vital_Reports2</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
@@ -37,6 +36,7 @@
     <tabs>Report_Export__c</tabs>
     <tabs>CR_Subscription__c</tabs>
     <tabs>Migration_Log__c</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Custom_Reporting_UtilityBar</utilityBar>
 </CustomApplication>

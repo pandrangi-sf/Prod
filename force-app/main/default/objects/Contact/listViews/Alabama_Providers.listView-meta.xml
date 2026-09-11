@@ -3,8 +3,6 @@
     <fullName>Alabama_Providers</fullName>
     <columns>FULL_NAME</columns>
     <columns>NPI__c</columns>
-    <columns>BH_Curaechoice_Network__c</columns>
-    <columns>Affiliation__c</columns>
     <columns>CONTACT.RECORDTYPE</columns>
     <columns>Provider_Type__c</columns>
     <columns>PrimarySpecialty__c</columns>

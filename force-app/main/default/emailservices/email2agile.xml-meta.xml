@@ -4,13 +4,6 @@
     <attachmentOption>None</attachmentOption>
     <authenticationFailureAction>Discard</authenticationFailureAction>
     <authorizationFailureAction>Discard</authorizationFailureAction>
-    <emailServicesAddresses>
-        <authorizedSenders>orlandohealth.com</authorizedSenders>
-        <developerName>Email2agile</developerName>
-        <isActive>true</isActive>
-        <localPart>email2agile</localPart>
-        <runAsUser>email2agile@orlandohealth.com</runAsUser>
-    </emailServicesAddresses>
     <functionInactiveAction>Discard</functionInactiveAction>
     <functionName>email2agile</functionName>
     <isActive>true</isActive>

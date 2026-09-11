@@ -33,5 +33,6 @@
     <tabs>OHIC_Addresses__c</tabs>
     <tabs>Territory_Zips__c</tabs>
     <tabs>Component__c</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

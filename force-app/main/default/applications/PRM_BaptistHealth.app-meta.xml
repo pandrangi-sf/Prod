@@ -65,8 +65,8 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>BHPRMProviderLayout</content>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>BHPRMProviderLayoutMobile</content>
         <formFactor>Small</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
@@ -74,7 +74,6 @@
     </actionOverrides>
     <brand>
         <headerColor>#CF4B08</headerColor>
-        <logo>Baptist_Health_2025_ver_RGB</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
@@ -206,6 +205,7 @@
     <tabs>Collateral__c</tabs>
     <tabs>ZipCode__c</tabs>
     <tabs>standard-WaveHomeLightning</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>PRM_UtilityBar1</utilityBar>
 </CustomApplication>

@@ -4,7 +4,7 @@
     <label>Tooling API Connection</label>
     <oauthConfig>
         <callbackUrl>https://orlandohealth.my.salesforce.com/services/authcallback/Tooling_API_Auth</callbackUrl>
-        <consumerKey>3MVG9A2kN3Bn17hvoC6rJJjayg0dKv32wHYJRD0admOw9jCw0bnNVy0Vx49OOMI9EzUN9Fe5ncsoTBiUekKh3</consumerKey>
+        <consumerKey>3MVG9nDqxWgBl2AdyE6BT5mfG7mQo5pEP8Xz3BDeVM1qqzNh6_lzgbeukN1Xi1VvOyfwHHakKZGSOg3qeo8Qv</consumerKey>
         <isAdminApproved>false</isAdminApproved>
         <isClientCredentialEnabled>false</isClientCredentialEnabled>
         <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
@@ -14,7 +14,7 @@
         <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
         <isPkceRequired>false</isPkceRequired>
         <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
-        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
         <isSecretRequiredForTokenExchange>false</isSecretRequiredForTokenExchange>
         <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
         <scopes>Full</scopes>

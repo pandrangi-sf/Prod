@@ -231,6 +231,7 @@
     <tabs>agf__ADM_Product_Tag__c</tabs>
     <tabs>Component__c</tabs>
     <tabs>standard-WaveHomeLightning</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>PRM_Upgrade_Project_UtilityBar1</utilityBar>
 </CustomApplication>

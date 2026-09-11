@@ -249,6 +249,7 @@
     <tabs>ZipCode__c</tabs>
     <tabs>Specialty__c</tabs>
     <tabs>standard-WaveHomeLightning</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>System_Administrator_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -264,6 +265,9 @@
         </mappings>
         <mappings>
             <tab>Territory__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Visit_Type_Review__c</tab>
         </mappings>
         <mappings>
             <tab>ZipCode__c</tab>

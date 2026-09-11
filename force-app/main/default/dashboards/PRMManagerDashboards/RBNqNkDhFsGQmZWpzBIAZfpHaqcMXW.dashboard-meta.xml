@@ -10,6 +10,93 @@
     <dashboardFilters>
         <dashboardFilterOptions>
             <operator>equals</operator>
+            <values>East CCAD</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>East Region OHMH &amp; OHSRH</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>North CCAD</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>North Region OHLMH &amp; OHSLH</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHAPH</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHHVIN</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHHVIS</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHICLM</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHICOC</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHICSL</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHICSO</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHICWP</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHJOI</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>OHWPH</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>Orlando Region OHORMC</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>South CCAD</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>South Region OHDPH &amp; OHSCH</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>South Region OHHCH &amp; OHHWH</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>West Region FMCOHWRH</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>West Region IS</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>West Region OHBH</values>
+        </dashboardFilterOptions>
+        <name>Territory</name>
+    </dashboardFilters>
+    <dashboardFilters>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
             <values>alara</values>
         </dashboardFilterOptions>
         <dashboardFilterOptions>
@@ -31,6 +118,10 @@
         <dashboardFilterOptions>
             <operator>equals</operator>
             <values>cgayl</values>
+        </dashboardFilterOptions>
+        <dashboardFilterOptions>
+            <operator>equals</operator>
+            <values>cbrow</values>
         </dashboardFilterOptions>
         <dashboardFilterOptions>
             <operator>equals</operator>
@@ -94,10 +185,6 @@
         </dashboardFilterOptions>
         <dashboardFilterOptions>
             <operator>equals</operator>
-            <values>tschn</values>
-        </dashboardFilterOptions>
-        <dashboardFilterOptions>
-            <operator>equals</operator>
             <values>vmcki</values>
         </dashboardFilterOptions>
         <dashboardFilterOptions>
@@ -116,6 +203,9 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>Metric</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
@@ -146,6 +236,9 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>Column</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
@@ -185,6 +278,9 @@
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
@@ -214,6 +310,9 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>Funnel</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
@@ -255,6 +354,9 @@
                 </chartSummary>
                 <componentType>ColumnStacked</componentType>
                 <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
@@ -295,6 +397,9 @@
                 <chartAxisRange>Auto</chartAxisRange>
                 <componentType>Bar</componentType>
                 <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
                 <displayUnits>Auto</displayUnits>
@@ -322,6 +427,9 @@
                 <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
                 <chartAxisRange>Auto</chartAxisRange>
                 <componentType>Bar</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
@@ -354,6 +462,9 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>Column</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
@@ -394,6 +505,9 @@
                 </chartSummary>
                 <componentType>Bar</componentType>
                 <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
@@ -433,6 +547,9 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>ColumnStacked</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
@@ -478,6 +595,9 @@
                 </chartSummary>
                 <componentType>ColumnStacked</componentType>
                 <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
@@ -521,6 +641,9 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>BarStacked</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
@@ -578,6 +701,9 @@
                 </chartSummary>
                 <componentType>Metric</componentType>
                 <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
+                <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>
                 <decimalPrecision>-1</decimalPrecision>
@@ -607,6 +733,9 @@
                     <column>RowCount</column>
                 </chartSummary>
                 <componentType>ColumnStacked</componentType>
+                <dashboardFilterColumns>
+                    <column>CUST_NAME</column>
+                </dashboardFilterColumns>
                 <dashboardFilterColumns>
                     <column>CUST_OWNER_ALIAS</column>
                 </dashboardFilterColumns>

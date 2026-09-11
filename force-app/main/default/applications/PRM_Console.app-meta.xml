@@ -19,7 +19,6 @@
     </actionOverrides>
     <brand>
         <headerColor>#F26521</headerColor>
-        <logo>Orlando_Health_2022_ver_RGB1</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
@@ -232,6 +231,7 @@
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>ZipCode__c</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>PRM_Console_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -247,6 +247,9 @@
         </mappings>
         <mappings>
             <tab>Territory_Zips__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Visit_Type_Review__c</tab>
         </mappings>
         <mappings>
             <tab>ZipCode__c</tab>

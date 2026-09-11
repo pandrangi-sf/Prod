@@ -1259,12 +1259,25 @@
             <label>Phone Call</label>
         </rules>
     </decisions>
-    <description>V6:: Reverts my V2 change to Get Objections. V2 swapped the filter from BH_PRM_Objection__c to PRM_Objection__c to stop OH users seeing a BH-only list. That was wrong on both counts. (a) PRM_Objection__c exists but NO PRM permission set has Read on it (only Fivetran Integration does), and Salesforce reports an unreadable field as &quot;No such column&quot;, so every PRM user hit a runtime error at this element - Virginia Sherrell 8/26 2:02 PM is the reported case. (b) The problem it was meant to fix does not exist in the data: the PRM Objections list view returns the same 7 records that carry both BH_PRM and OH_PRM (Communication, Insurance, Locations, Network Access, Patient Access, Patient Experience, Records; Payor and Referrals carry none). All three flags are interchangeable today, so BH_PRM_Objection__c is correct for OH users too. This filter now matches UAT V20 exactly. If the tenant lists ever need to diverge, branch on vT_IsBHFacility the way Which Services Catalog does - do not reach for PRM_Objection__c without granting FLS first. Note V2 was never run in UAT; UAT stayed on the old filter, which is why UAT looked clean.
-V5:: Two fixes to the error screen. (1) S12_DTXT01_ErrorMessage reflowed into three paragraphs with blank lines - it was rendering as a wall of text - and the copy now says &quot;Click Next&quot; instead of &quot;close this screen&quot;. (2) Salesforce suppresses the native &quot;An error occurred with your flow&quot; email once an element has a fault connector, so V4 silently traded admin notification for a user-facing screen. Added core action Send Email (Email_Admin_Data_Load_Error) between S12 and End, to r-salesforcecrmadministrator@orlandohealth.com, subject matching the native email, body carrying {!$Flow.FaultMessage} plus recordId and running user. It sits after S12 so one element covers all 14 Get Records fault paths. CAVEAT: it fires only when the user clicks Next on S12 - a user who closes the browser instead sends no email. The Send Email action deliberately has no fault path of its own, so if the send itself fails you still get the native flow error email.
-V4:: Error handling for reads. All 14 Get Records elements had no fault path, so any query failure (FLS, sharing, governor limits) surfaced as an unhandled-fault screen plus an admin email. Added screen S12 Error Loading Data (S12_DTXT01_ErrorMessage, shows {!$Flow.FaultMessage}) on the fault path of Get Provider Record, and routed the fault paths of the other 13 Get Records to it: Active Provider Locations, Additional Providers For Selected Location, Allowed Practice Groups, BH Services, Collateral, Locations, Objections, Physician-to-Physician Providers, Physician-to-Physician Record Type, Provider Practice Group, Services, Visit Report Record Type, Visit Task Record Type Id. Create Records elements keep their existing fault paths to S11 Error Saving Visit. NOTE: empty-result handling (a query that returns nothing) is still not covered - that is a separate change.
-V3:: Physician-to-Physician list leaked across tenants (OH users saw BH providers and vice versa). &quot;Get Florida Providers&quot; filtered Region = the SUBJECT provider&apos;s Region, and Region__c is stamped by the creating user&apos;s profile (field default IF($Profile.Name=&quot;BH PRM User&quot;,&quot;Alabama&quot;,&quot;Florida&quot;)), so it drifts from the practice hierarchy. Renamed the element to &quot;Get Physician-to-Physician Providers&quot; (API name unchanged) and repointed condition 4 to new formula fT_UserRegion = IF(fB_IsBHFacilityByProfile,&quot;Alabama&quot;,&quot;Florida&quot;) - the RUNNING user&apos;s region. Added fT_TenantName = IF(fB_IsBHFacilityByProfile,&quot;Baptist Health&quot;,&quot;Orlando Health&quot;); S06 instruction text and the data table label now use it instead of hardcoded &quot;Orlando Health&quot; / &quot;OH Providers&quot;. NOTE: Region__c is still unvalidated data - mis-tagged providers remain mis-tagged.
-V19:: BH users were shown the Orlando Health service catalog. &quot;Get Services&quot; filters OH PRM Service = TRUE and sat on the merged path with no BH/OH branch. Added &quot;Which Services Catalog?&quot; (vT_IsBHFacility = TRUE, mirrors &quot;Show Collateral Section?&quot;), &quot;Get BH Services&quot; (Active = TRUE AND BH PRM Service = TRUE), and assignments &quot;Set Services Collection - BH/OH&quot; feeding new record collection vC_Services. S07_DT01_ServicesPromoted source collection repointed from Get_Services to vC_Services. Get Services itself is unchanged, now on the Default Outcome branch. V18:: Restricted the S03 Select Location list to the provider&apos;s Practice &amp; Group and its immediate children only. Added &quot;Get Allowed Practice Groups&quot; (Account where Id = fT_ProviderAccountId OR ParentId = fT_ProviderAccountId) and &quot;Get Allowed Practice IDs&quot; transform, and added Practice = In Get Allowed Practice IDs to Get Locations. Locations with no Practice &amp; Group are excluded.
-V16: Fixed bug where selecting Audience = Office Staff incorrectly routed to &quot;Get Florida Providers for Office Staff&quot; / S06 Office Staff Provider Selection screen instead of going straight to Select Services Promoted. Removed the &quot;Office Staff Visit&quot; outcome from the &quot;Is this a Physician-to-Physician Visit?&quot; decision (its now-orphaned downstream elements were auto-removed) so Office Staff now falls through Default Outcome directly to Get Services &gt; S07 Services Promoted, matching spec: OH/BH + Physician or Office Staff = next screen is Select Services Promoted.</description>
+    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers.</description>
+    <dynamicChoiceSets>
+        <description>Mobile choices for S03. Same Location records as the S03 Data Table, shown as a picklist when vB_IsMobile is true.</description>
+        <name>ccs_S03_Locations</name>
+        <collectionReference>Get_Locations</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Location_Name_and_Address__c</displayField>
+        <object>Location__c</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Mobile choices for the S04 Additional Providers checkbox group, shown when vB_IsMobile is true.</description>
+        <name>ccs_S04_AdditionalProviders</name>
+        <collectionReference>Get_Additional_Providers_For_Selected_Location</collectionReference>
+        <dataType>String</dataType>
+        <displayField>Provider_Name__c</displayField>
+        <object>ProviderLocation__c</object>
+        <valueField>Id</valueField>
+    </dynamicChoiceSets>
     <dynamicChoiceSets>
         <description>Visit report visit type picklist</description>
         <name>pcs_Choice_VisitType</name>
@@ -3712,7 +3725,7 @@ V16: Fixed bug where selecting Audience = Office Staff incorrectly routed to &qu
             <targetReference>Determine_BH_or_OH_Route</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>tt_AdditionalProviders</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
@@ -3958,6 +3971,17 @@ N: {!S10_LT04_Next_Steps}</text>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>TRUE when launched from the mobile quick action (via the mobile wrapper flow). Drives component visibility: Data Tables show on desktop, picklist/checkbox groups show on mobile, because the Data Table component is not supported in the Salesforce mobile app.</description>
+        <name>vB_IsMobile</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <description>Holds the service catalog shown on S07 Services Promoted: BH services for the BH route, OH services otherwise.</description>

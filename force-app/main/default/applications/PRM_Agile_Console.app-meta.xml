@@ -230,11 +230,15 @@
     <tabs>agf__ADM_Product_Tag__c</tabs>
     <tabs>Component__c</tabs>
     <tabs>standard-WaveHomeLightning</tabs>
+    <tabs>Visit_Type_Review__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>PRM_Upgrade_Project_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>Component__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Visit_Type_Review__c</tab>
         </mappings>
         <mappings>
             <tab>agf__ADM_Acceptance_Criterion__c</tab>
