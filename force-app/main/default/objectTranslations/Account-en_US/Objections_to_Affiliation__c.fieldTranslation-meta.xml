@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Objections to Affiliation --></label>
+    <name>Objections_to_Affiliation__c</name>
+    <picklistValues>
+        <masterLabel>Dues</masterLabel>
+        <translation><!-- Dues --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Legal Agreement (PPA)</masterLabel>
+        <translation><!-- Legal Agreement (PPA) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shared Savings Plans</masterLabel>
+        <translation><!-- Shared Savings Plans --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Term of Agreement</masterLabel>
+        <translation><!-- Term of Agreement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Time Commitment</masterLabel>
+        <translation><!-- Time Commitment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Value</masterLabel>
+        <translation><!-- Value --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

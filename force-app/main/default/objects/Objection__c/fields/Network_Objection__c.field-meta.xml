@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Network_Objection__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates if this is an objection used by the network team.</description>
+    <inlineHelpText>Check if this is an objection used by the network team.</inlineHelpText>
+    <label>Network Objection</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

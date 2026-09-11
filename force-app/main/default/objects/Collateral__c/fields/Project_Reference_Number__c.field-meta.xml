@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Reference_Number__c</fullName>
+    <description>7 didgit project reference number assigned by creative teams when creating materials.</description>
+    <externalId>false</externalId>
+    <label>Project Reference Number</label>
+    <length>7</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Report Folders — Finding Reports</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">User</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ol&gt;&lt;li&gt;Click a &lt;strong&gt;folder&lt;/strong&gt; in the left-hand list. The number under each folder tells you how many reports and dashboards it holds.&lt;/li&gt;&lt;li&gt;The panel on the right lists every &lt;strong&gt;report&lt;/strong&gt; and &lt;strong&gt;dashboard&lt;/strong&gt; in that folder.&lt;/li&gt;&lt;li&gt;Open one from the Report Viewer or Dashboard Viewer tab to run it.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;You only see folders and items you have access to. If something you expect is missing, ask an admin to add you to that folder.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Finding a report or dashboard</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:search</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crFolderManager</value>
+    </values>
+</CustomMetadata>

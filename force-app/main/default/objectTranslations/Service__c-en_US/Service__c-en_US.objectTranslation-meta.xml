@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Services</value>
+    </caseValues>
+    <layouts>
+        <layout>Service Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This value already exists. --></errorMessage>
+        <name>Enforce_Unique_Values</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- At least one team must be selected for active values. --></errorMessage>
+        <name>Require_Team_Selection</name>
+    </validationRules>
+</CustomObjectTranslation>

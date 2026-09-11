@@ -1,0 +1,135 @@
+.help-drawer {
+    background: #ffffff;
+    border-left: 1px solid #d8e2ed;
+    bottom: 0;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 24rem;
+    z-index: 9100;
+    animation: slide-in 0.18s ease-out;
+}
+@keyframes slide-in {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+}
+.help-drawer__header {
+    align-items: center;
+    background: linear-gradient(180deg, #f8fafd 0%, #eff4fa 100%);
+    border-bottom: 1px solid #d8e2ed;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 0.7rem 0.85rem;
+}
+/* QA-D3 (round 2): close button is now a plain <button> with guaranteed
+   32×32 hit area. The earlier lightning-button-icon approach didn't
+   reliably size the hit area because the SLDS sizing tokens / ::part
+   selector behavior varies across Lightning theme versions — the inner
+   glyph stayed 14×17 even when the wrapper was 32px. A plain button
+   gives us deterministic dimensions and meets WCAG 2.5.8 (24×24 min). */
+.help-drawer__close {
+    background: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    color: #5c7591;
+}
+.help-drawer__close:hover {
+    background: rgba(28, 110, 164, 0.08);
+}
+.help-drawer__close:focus-visible {
+    outline: 2px solid #1c6ea4;
+    outline-offset: 1px;
+}
+.help-drawer__close lightning-icon {
+    --sds-c-icon-color-foreground-default: currentColor;
+}
+.help-drawer__title-block {
+    align-items: center;
+    display: flex;
+    gap: 0.4rem;
+}
+.help-drawer__title-icon {
+    --sds-c-icon-color-foreground-default: #1589ee;
+}
+.help-drawer__title {
+    color: #181818;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.help-drawer__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.75rem 0.85rem 1rem;
+}
+
+.help-drawer__error {
+    color: #ba0517;
+    font-size: 0.85rem;
+}
+.help-drawer__empty {
+    color: #5c5c5c;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+.help-drawer__empty code {
+    background: #f1f3f6;
+    border-radius: 0.2rem;
+    font-family: monospace;
+    font-size: 0.78rem;
+    padding: 0.05rem 0.3rem;
+}
+
+.help-section {
+    border-bottom: 1px solid #f1f3f6;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+.help-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.help-section__heading-row {
+    align-items: center;
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+}
+.help-section__icon {
+    --sds-c-icon-color-foreground-default: #5c7591;
+}
+.help-section__heading {
+    color: #181818;
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.help-section__body {
+    color: #2a2a2a;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+.help-section__body p { margin: 0 0 0.4rem; }
+.help-section__body p:last-child { margin-bottom: 0; }
+.help-section__body ul {
+    margin: 0.2rem 0 0.4rem 1rem;
+    padding: 0;
+}
+.help-section__body li { margin-bottom: 0.2rem; }
+.help-section__body strong { color: #161616; }

@@ -1,0 +1,36 @@
+<template>
+    <div class="cr-chart">
+        <template if:true={loading}>
+            <div class="cr-chart__state">
+                <lightning-spinner alternative-text="Loading chart" size="small"></lightning-spinner>
+            </div>
+        </template>
+        <template if:true={errorMessage}>
+            <div class="cr-chart__state cr-chart__state_error">
+                <lightning-icon icon-name="utility:warning" size="x-small" variant="warning"></lightning-icon>
+                <span class="slds-m-left_x-small">{errorMessage}</span>
+            </div>
+        </template>
+        <template if:true={showEmpty}>
+            <div class="cr-chart__state cr-chart__state_empty">
+                <p class="slds-text-color_weak">No chartable rows yet — run the report to populate.</p>
+            </div>
+        </template>
+        <template if:true={showChart}>
+            <template if:true={useECharts}>
+                <c-cr-e-chart
+                    chart-type={chartType}
+                    result={result}
+                    height={height}
+                    viz-options={options}
+                    y-axis-fields={yAxisFields}
+                    x-axis-field={xAxisField}></c-cr-e-chart>
+            </template>
+            <template if:false={useECharts}>
+                <div class="cr-chart__canvas" style={chartContainerStyle}>
+                    <canvas></canvas>
+                </div>
+            </template>
+        </template>
+    </div>
+</template>

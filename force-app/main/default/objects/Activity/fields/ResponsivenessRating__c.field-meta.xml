@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ResponsivenessRating__c</fullName>
+    <inlineHelpText>Likelihood of increasing referrals</inlineHelpText>
+    <label>Responsiveness Rating</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+                <label>Very Likely</label>
+            </value>
+            <value>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+                <label>Somewhat Likely</label>
+            </value>
+            <value>
+                <fullName>Not at all Likely</fullName>
+                <default>false</default>
+                <label>Not at all Likely</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

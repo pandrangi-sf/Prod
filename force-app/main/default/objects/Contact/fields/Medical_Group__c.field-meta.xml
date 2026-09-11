@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medical_Group__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used by BH to indicate if the provider is part of their medical group.</description>
+    <inlineHelpText>Indicates if the provider employed with the Baptist Health Medical Group.</inlineHelpText>
+    <label>Medical Group</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

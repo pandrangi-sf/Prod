@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_to_Practice_Group__c</fullName>
+    <formula>BEGINS(WhatId,&quot;001&quot;)</formula>
+    <inlineHelpText>Indicates if the activity is directly related to a Practice &amp; Group.</inlineHelpText>
+    <label>Related to Practice &amp; Group</label>
+    <type>Checkbox</type>
+</CustomField>

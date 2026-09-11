@@ -1,0 +1,27 @@
+.cr-skel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+}
+.cr-skel__bar {
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    background: linear-gradient(90deg, #ececec 25%, #f6f6f6 50%, #ececec 75%);
+    background-size: 200% 100%;
+    animation: cr-skel-pulse 1.4s ease-in-out infinite;
+}
+.cr-skel__bar_line {
+    height: 0.85rem;
+    width: 70%;
+}
+.cr-skel__bar_line:nth-child(2) { width: 90%; }
+.cr-skel__bar_line:nth-child(3) { width: 60%; }
+
+@keyframes cr-skel-pulse {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .cr-skel__bar { animation: none; }
+}

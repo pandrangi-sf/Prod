@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Vital Reports Home — Using Dashboards</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;Dashboards combine multiple reports into a single view — charts, KPI tiles, tables — so you can scan the metrics that matter most without clicking through every report.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Click &lt;strong&gt;Browse Dashboards&lt;/strong&gt; to open the Dashboard Viewer.&lt;/li&gt;&lt;li&gt;Hover a chart to see exact values; click a segment to drill into the underlying records.&lt;/li&gt;&lt;li&gt;Use the dashboard-level filter bar to slice every component at once (e.g., filter by region, time period, owner).&lt;/li&gt;&lt;li&gt;Refresh manually with the &lt;strong&gt;Refresh&lt;/strong&gt; button; dashboards do not auto-poll.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Using dashboards</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:dashboard</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crVitalReportsHome</value>
+    </values>
+</CustomMetadata>

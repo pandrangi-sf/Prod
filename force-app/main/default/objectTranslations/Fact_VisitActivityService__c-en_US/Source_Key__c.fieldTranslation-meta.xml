@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Composite TaskId:VisitServiceId:ContactId. External-id key the batch upserts on for idempotent refresh. --></help>
+    <label><!-- Source Key --></label>
+    <name>Source_Key__c</name>
+</CustomFieldTranslation>

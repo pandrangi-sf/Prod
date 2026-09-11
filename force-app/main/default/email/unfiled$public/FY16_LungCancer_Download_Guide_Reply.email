@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a487b485d3","applicationID":"6396948","transactionName":"Y1VRMkMFXkEHUhdcXVofZhRYS1xTCFUKW1UbXEYIVklTUwhSBkcdUV1SD11LVV8HWA8bWkBdXw==","queueTime":0,"applicationTime":25,"ttGuid":"FA2A50997CAC0588","agent":"js-agent.newrelic.com/nr-768.min.js"}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({QJf3ax:[function(e,n){function t(e){function n(n,t,a){e&&e(n,t,a),a||(a={});for(var u=c(n),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function a(e,n){f[e]=c(e).concat(n)}function c(e){return f[e]||[]}function u(){return t(n)}var f={};return{on:a,emit:n,create:u,listeners:c,_events:f}}function r(){return{}}var o="nr@context",i=e("gos");n.exports=t()},{gos:"7eSDFh"}],ee:[function(e,n){n.exports=e("QJf3ax")},{}],3:[function(e,n){function t(e){return function(){r(e,[(new Date).getTime()].concat(i(arguments)))}}var r=e("handle"),o=e(1),i=e(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(e,n){window.NREUM[n]=t("api-"+n)}),n.exports=window.NREUM},{1:12,2:13,handle:"D5DuLP"}],gos:[function(e,n){n.exports=e("7eSDFh")},{}],"7eSDFh":[function(e,n){function t(e,n,t){if(r.call(e,n))return e[n];var o=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return e[n]=o,o}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],D5DuLP:[function(e,n){function t(e,n,t){return r.listeners(e).length?r.emit(e,n,t):void(r.q&&(r.q[e]||(r.q[e]=[]),r.q[e].push(n)))}var r=e("ee").create();n.exports=t,t.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(e,n){n.exports=e("D5DuLP")},{}],XL7HBI:[function(e,n){function t(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:i(e,o,function(){return r++})}var r=1,o="nr@id",i=e("gos");n.exports=t},{gos:"7eSDFh"}],id:[function(e,n){n.exports=e("XL7HBI")},{}],G9z0Bl:[function(e,n){function t(){var e=d.info=NREUM.info,n=f.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&n){c(p,function(n,t){n in e||(e[n]=t)});var t="https"===s.split(":")[0]||e.sslForHttp;d.proto=t?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=d.proto+e.agent,n.parentNode.insertBefore(r,n)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=e("handle"),c=e(1),u=window,f=u.document;e(2);var s=(""+location).split("?")[0],p={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},d=n.exports={offset:i(),origin:s,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),u.addEventListener("load",t,!1)):(f.attachEvent("onreadystatechange",r),u.attachEvent("onload",t)),a("mark",["firstbyte",i()])},{1:12,2:3,handle:"D5DuLP"}],loader:[function(e,n){n.exports=e("G9z0Bl")},{}],12:[function(e,n){function t(e,n){var t=[],o="",i=0;for(o in e)r.call(e,o)&&(t[i]=n(o,e[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;n.exports=t},{}],13:[function(e,n){function t(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(0>o?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=t},{}]},{},["G9z0Bl"]);</script>
+<title>Download Your Free Guide</title>
+</head>
+
+<body style="background-color:#8e8e8e; margin:0 auto;">
+
+
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td><a href="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/ufhccoh-lung-cancer-downloadable-guide.pdf"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-header-1.jpg" width="602" height="366" /></a>
+</td>
+  </tr>
+  <tr>
+    <td style="padding:0 20px 40px 20px;">
+    
+    <div style="float:left;padding-top:10px;padding-bottom:0px;,margin-bottom:0px;">
+	   
+    
+    <p style="color:#b20838;font-size:19px; font-family: 'Trebuchet','Arial';margin-bottom:0px;text-transform:capitalize; padding-bottom:0px;">Understanding Lung Cancer</p></div>
+    
+    <div style="clear:both;padding-top:5px;">
+   <p style="color:#626161;font-size:16px; font-family: 'Minion'; line-height: 22px; "> Thank you for requesting your <span style="font-style: oblique;">Guide to Understanding Lung Cancer</span>. The guide will provide you with information on the symptoms and types of lung cancer. Plus, you’ll learn more about the unique, multidisciplinary approach we take at the Rod Taylor Thoracic Care Center. </p>
+   <br>
+   
+    <a href="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/ufhccoh-lung-cancer-downloadable-guide.pdf"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-downloadBtn-1.png"  /></a>
+    
+    <br>
+    <br>
+
+
+
+<p style="color:#b20838;font-size:18px; font-family: 'Trebuchet','Arial';text-transform:capitalize; ">Request a lung cancer screening</p>
+  <p style="color:#626161;font-size:16px; font-family: 'Minion'; line-height: 22px;">At the Rod Taylor Thoracic Care Center, we offer an efficient screening process for lung cancer. If you feel you qualify† for the screening, contact us. The screening includes a low-dose CT scan (without contrast) and same-day follow up (if there is an abnormal result). If you do have an abnormal result, a thoracic oncologist will review your results with you and make recommendations on next steps.</p>  
+    
+    <br>
+    <a href="http://www.ufhealthcancerorlando.com/landing/lung-cancer/info.html"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-requestBtn-1.png" /></a>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    </td>
+  </tr>
+  <tr>
+    <td height="260" align="center" valign="top" background="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-footerBg.png">   
+    
+    <p style="font-size: 10px;color: #fff;text-align: center; padding-top:30px;">†To qualify for the lung cancer screening, you must be 55 - 77 years old, have no signs or symptoms of lung cancer and have smoked more than a pack a day for 30 years or more.</p>
+    <p style="color:#fff;font-size:14px; font-family: Arial;padding-top:20px;line-height:18px; ">Copyright &copy;2016 UF Health Cancer Center &ndash; Orlando Health<br />
+1400 S. Orange Ave., Orlando, FL 32806<br /><br />
+
+<a href="http://cl.s6.exct.net/?qs=97a51e14f89fc250776879143e0adebc63e70da2aa33fcf87267eb226581ba1d
+" style="color:#fff;">Unsubscribe</a> | <a href="http://www.ufhealthcancerorlando.com/about-us/privacy-practices" style="color:#fff;">Privacy Policy</a></p>
+    
+    
+    <table width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="246" align="center"><p style="color:#fff;font-size:14px; font-family: 'Trebuchet','Arial'; text-transform:uppercase;padding:0;margin:0;"><strong>Connect  with Us</strong>
+    </p></td>
+    <td width="254" align="center"><p style="color:#fff;font-size:14px; font-family: 'Trebuchet','Arial'; text-transform:uppercase;padding:0;margin:0;"><strong>Call for more information</strong>
+    </p></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.facebook.com/UFHealthCancerOrlando"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-icon-facebook.png" border="0" style="padding-right:10px;"/></a><a href="https://twitter.com/UFHealthOH"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-icon-twitter.png" border="0" style="padding-right:10px;"/></a><a href="https://plus.google.com/+orlandohealth/posts"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-icon-google.png" border="0"/></a>
+    </td>
+    <td align="center"><p style="color:#fff;font-size:24px; font-family: Arial; text-transform:uppercase;padding:0;margin:0;">321.843.7780</p></td>
+  </tr>
+</table>
+    
+    
+    
+    
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

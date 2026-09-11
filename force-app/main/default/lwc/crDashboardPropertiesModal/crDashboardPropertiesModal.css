@@ -1,0 +1,75 @@
+.props-content {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.props-section-heading {
+    color: #5c7591;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.4rem;
+    text-transform: uppercase;
+}
+
+.palette-grid {
+    display: grid;
+    gap: 0.55rem;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+}
+
+.palette-card {
+    align-items: stretch;
+    background: #ffffff;
+    border: 1.5px solid #d8e2ed;
+    border-radius: 0.4rem;
+    color: #161616;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    gap: 0.3rem;
+    padding: 0.5rem 0.55rem 0.45rem;
+    text-align: left;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+.palette-card:hover {
+    border-color: #1589ee;
+    box-shadow: 0 1px 4px rgba(21, 137, 238, 0.18);
+}
+.palette-card:focus-visible {
+    outline: 2px solid #1589ee;
+    outline-offset: 1px;
+}
+.palette-card_selected {
+    border-color: #1589ee;
+    box-shadow: 0 0 0 1px #1589ee inset;
+}
+.palette-card_selected::after {
+    content: '✓';
+    color: #1589ee;
+    font-size: 0.85rem;
+    font-weight: 700;
+    position: absolute;
+}
+
+.palette-card__name {
+    color: #181818;
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.palette-card__swatches {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(6, 1fr);
+    height: 0.85rem;
+}
+
+.palette-card__chip {
+    border-radius: 2px;
+    display: block;
+    height: 100%;
+    width: 100%;
+}

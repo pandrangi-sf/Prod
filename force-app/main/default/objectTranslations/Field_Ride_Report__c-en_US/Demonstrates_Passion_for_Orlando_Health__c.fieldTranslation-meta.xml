@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Demonstrates a strong passion for Orlando Health and responsible facility. --></help>
+    <label><!-- 12) Passion for Orlando Health --></label>
+    <name>Demonstrates_Passion_for_Orlando_Health__c</name>
+</CustomFieldTranslation>

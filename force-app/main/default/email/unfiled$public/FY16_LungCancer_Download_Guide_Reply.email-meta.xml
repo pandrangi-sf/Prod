@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Lead to Download Lung Cancer Guide</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Taylor (Journey) - FY16 - Oncology - Lung Cancer Download Guide Reply</name>
+    <style>none</style>
+    <subject>Thank You - Download Your Free Lung Cancer Guide</subject>
+    <textOnly>Understanding Lung Cancer
+
+Thank you for requesting your Guide to Understanding Lung Cancer. The guide will provide you with information on the symptoms and types of lung cancer. Plus, you’ll learn more about the unique, multidisciplinary approach we take at the Rod Taylor Thoracic Care Center.
+
+Request a lung cancer screening
+
+At the Rod Taylor Thoracic Care Center, we offer an efficient screening process for lung cancer. If you feel you qualify† for the screening, contact us. The screening includes a low-dose CT scan (without contrast) and same-day follow up (if there is an abnormal result). If you do have an abnormal result, a thoracic oncologist will review your results with you and make recommendations on next steps.
+
+To qualify for the lung cancer screening, you must be 55 - 77 years old, have no signs or symptoms of lung cancer and have smoked more than a pack a day for 30 years or more.
+
+Copyright ©2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806
+
+Connect  with Us
+
+Call for more information
+
+321.843.7780</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

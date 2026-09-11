@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Don&apos;t Import</masterLabel>
+        <translation><!-- Don&apos;t Import --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Needs Review</masterLabel>
+        <translation><!-- Needs Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Provider Created</masterLabel>
+        <translation><!-- Provider Created --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Provider Exists</masterLabel>
+        <translation><!-- Provider Exists --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ready for Import</masterLabel>
+        <translation><!-- Ready for Import --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

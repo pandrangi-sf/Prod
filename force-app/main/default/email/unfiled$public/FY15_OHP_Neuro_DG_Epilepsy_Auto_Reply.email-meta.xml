@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - OHP - Neuro - DG - Epilepsy - Auto Reply</name>
+    <style>none</style>
+    <subject>Epilepsy 101: An introduction to epilepsy</subject>
+    <textOnly>NEUROLOGY AND NEUROSURGERY
+http://www.orlandohealthphysicians.com/neuro/
+
+312.215.4251 | Se habla español
+
+------------------------------------------------------------------
+
+Request a Consultation
+http://www.orlandohealthphysicians.com/neuro/Request-a-Consultation
+
+Find a Physician
+http://www.orlandohealthphysicians.com/neuro/find-a-specialist
+
+------------------------------------------------------------------
+
+An introduction to epilepsy
+
+As someone who was recently diagnosed with epilepsy, there is a lot of information you&apos;ve been asked to quickly absorb. We know that it can be a lot to take in and it&apos;s important to be sure you fully understand your diagnosis to help you stay safe and better manage your condition.
+
+Here is our Epilepsy 101, to be sure you&apos;re up-to-speed on the basics of epilepsy:
+
+What is epilepsy?
+
+Epilepsy is a neurological condition, meaning it affects the brain. It may also be known as a &quot;seizure disorder&quot;. Most people diagnosed with epilepsy have typically experienced two or more seizures.
+
+What is a seizure?
+
+You&apos;ve likely experienced at least one seizure prior to your diagnosis. A seizure is a temporary change in behavior caused by a burst of abnormal electrical activity in the brain. The exact appearance of a seizure may vary depending on the area of the brain affected. Seizures typically last between a few seconds and a few minutes.
+
+What are the common treatments for epilepsy?
+
+- Medication. Medications are effective at limiting the spread of seizures in the brain for about two-thirds of people with epilepsy.
+- Surgery. If seizures are centered in a single area of the brain, surgery may be an option.
+- Other treatments. If medication and surgery are not effective, there are other treatments that your physician can prescribe to help. This could include prescribing a specific diet or using other medical treatments such as using a device to send electrical signals to a nerve.
+
+How can I help manage my epilepsy?
+
+- Ask your doctor any questions you may have.
+- Be sure to get enough sleep.
+- Keep a journal of your seizures.
+- Take steps to reduce stress in your life.
+- Take your medication as prescribed.
+
+------------------------------------------------------------------
+
+Here for you
+
+These basics can be helpful in talking about your condition with others as well. Some people may have an unclear idea of epilepsy. If you have your own questions about epilepsy, your physician at Orlando Health is happy to help answer them!
+
+Explore Our Physicians
+http://www.orlandohealthphysicians.com/neuro/find-a-specialist
+
+------------------------------------------------------------------
+
+Connect With Us
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)iStock, (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

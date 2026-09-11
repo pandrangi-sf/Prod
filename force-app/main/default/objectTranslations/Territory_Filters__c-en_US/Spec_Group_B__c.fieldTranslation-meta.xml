@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Small Specialties --></label>
+    <name>Spec_Group_B__c</name>
+    <picklistValues>
+        <masterLabel>Art Therapist - Art Therapist(3)</masterLabel>
+        <translation><!-- Art Therapist - Art Therapist(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assisted Living Facility - Assisted Living  Behavioral Disturbances(2)</masterLabel>
+        <translation><!-- Assisted Living Facility - Assisted Living  Behavioral Disturbances(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assisted Living Facility - Assisted Living  Mental Illness(2)</masterLabel>
+        <translation><!-- Assisted Living Facility - Assisted Living  Mental Illness(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chiropractor - Independent Medical Examiner(6)</masterLabel>
+        <translation><!-- Chiropractor - Independent Medical Examiner(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chiropractor - Internist(7)</masterLabel>
+        <translation><!-- Chiropractor - Internist(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chiropractor - Occupational Health(2)</masterLabel>
+        <translation><!-- Chiropractor - Occupational Health(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chiropractor - Pediatric Chiropractor(4)</masterLabel>
+        <translation><!-- Chiropractor - Pediatric Chiropractor(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chiropractor - Radiology(1)</masterLabel>
+        <translation><!-- Chiropractor - Radiology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chiropractor - Thermography(1)</masterLabel>
+        <translation><!-- Chiropractor - Thermography(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chronic Disease Hospital - Chronic Disease Hospital(2)</masterLabel>
+        <translation><!-- Chronic Disease Hospital - Chronic Disease Hospital(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Adult Day Care(3)</masterLabel>
+        <translation><!-- Clinic/Center - Adult Day Care(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Adult Mental Health(1)</masterLabel>
+        <translation><!-- Clinic/Center - Adult Mental Health(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Ambulatory Surgical(4)</masterLabel>
+        <translation><!-- Clinic/Center - Ambulatory Surgical(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Clinic/Center(5)</masterLabel>
+        <translation><!-- Clinic/Center - Clinic/Center(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Community Health(1)</masterLabel>
+        <translation><!-- Clinic/Center - Community Health(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Emergency Care(1)</masterLabel>
+        <translation><!-- Clinic/Center - Emergency Care(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Federally Qualified Health Center (FQHC)(1)</masterLabel>
+        <translation><!-- Clinic/Center - Federally Qualified Health Center (FQHC)(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Hearing and Speech(1)</masterLabel>
+        <translation><!-- Clinic/Center - Hearing and Speech(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Medical Specialty(2)</masterLabel>
+        <translation><!-- Clinic/Center - Medical Specialty(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Mental Health (Including Community Mental Health Center)(9)</masterLabel>
+        <translation><!-- Clinic/Center - Mental Health (Including Community Mental Health Center)(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Occupational Medicine(1)</masterLabel>
+        <translation><!-- Clinic/Center - Occupational Medicine(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Primary Care(7)</masterLabel>
+        <translation><!-- Clinic/Center - Primary Care(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Prison Health(1)</masterLabel>
+        <translation><!-- Clinic/Center - Prison Health(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Rehabilitation(4)</masterLabel>
+        <translation><!-- Clinic/Center - Rehabilitation(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Student Health(4)</masterLabel>
+        <translation><!-- Clinic/Center - Student Health(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - Urgent Care(2)</masterLabel>
+        <translation><!-- Clinic/Center - Urgent Care(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center - VA(2)</masterLabel>
+        <translation><!-- Clinic/Center - VA(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinic/Center(1)</masterLabel>
+        <translation><!-- Clinic/Center(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Ethicist - Clinical Ethicist(1)</masterLabel>
+        <translation><!-- Clinical Ethicist - Clinical Ethicist(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Exercise Physiologist - Clinical Exercise Physiologist(3)</masterLabel>
+        <translation><!-- Clinical Exercise Physiologist - Clinical Exercise Physiologist(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Medical Laboratory - Clinical Medical Laboratory(3)</masterLabel>
+        <translation><!-- Clinical Medical Laboratory - Clinical Medical Laboratory(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Acute Care(5)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Acute Care(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Clinical Nurse Specialist(3)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Clinical Nurse Specialist(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Critical Care Medicine(1)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Critical Care Medicine(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Emergency(1)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Emergency(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Medical-Surgical(1)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Medical-Surgical(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Neuroscience(1)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Neuroscience(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Occupational Health(1)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Occupational Health(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Oncology(3)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Oncology(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Pediatrics(5)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Pediatrics(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Perioperative(6)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Perioperative(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Psych/Mental Health  Adult(2)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Psych/Mental Health  Adult(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Psych/Mental Health(9)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Psych/Mental Health(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clinical Nurse Specialist - Women&apos;s Health(2)</masterLabel>
+        <translation><!-- Clinical Nurse Specialist - Women&apos;s Health(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Community Based Residential Treatment Facility  Mental Illness(3)</masterLabel>
+        <translation><!-- Community Based Residential Treatment Facility  Mental Illness(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Community Based Residential Treatment Facility  Mental Retardation and/or Develo(6)</masterLabel>
+        <translation><!-- Community Based Residential Treatment Facility  Mental Retardation and/or Develo(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contractor - Vehicle Modifications(1)</masterLabel>
+        <translation><!-- Contractor - Vehicle Modifications(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custodial Care Facility - Custodial Care Facility(4)</masterLabel>
+        <translation><!-- Custodial Care Facility - Custodial Care Facility(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Day Training/Habilitation Specialist - Day Training/Habilitation Specialist(9)</masterLabel>
+        <translation><!-- Day Training/Habilitation Specialist - Day Training/Habilitation Specialist(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dental Assistant - Dental Assistant(3)</masterLabel>
+        <translation><!-- Dental Assistant - Dental Assistant(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dental Laboratory Technician - Dental Laboratory Technician(4)</masterLabel>
+        <translation><!-- Dental Laboratory Technician - Dental Laboratory Technician(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dentist - Dentist Anesthesiologist(2)</masterLabel>
+        <translation><!-- Dentist - Dentist Anesthesiologist(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Denturist - Denturist(1)</masterLabel>
+        <translation><!-- Denturist - Denturist(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dermatology - Clinical &amp; Laboratory Dermatological Immunology(4)</masterLabel>
+        <translation><!-- Dermatology - Clinical &amp; Laboratory Dermatological Immunology(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dermatology - Pediatric Dermatology(2)</masterLabel>
+        <translation><!-- Dermatology - Pediatric Dermatology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dietary Manager - Dietary Manager(1)</masterLabel>
+        <translation><!-- Dietary Manager - Dietary Manager(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dietetic Technician  Registered - Dietetic Technician  Registered(2)</masterLabel>
+        <translation><!-- Dietetic Technician  Registered - Dietetic Technician  Registered(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dietitian  Registered - Nutrition  Metabolic(3)</masterLabel>
+        <translation><!-- Dietitian  Registered - Nutrition  Metabolic(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dietitian  Registered - Nutrition  Renal(7)</masterLabel>
+        <translation><!-- Dietitian  Registered - Nutrition  Renal(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Durable Medical Equipment &amp; Medical Supplies - Customized Equipment(3)</masterLabel>
+        <translation><!-- Durable Medical Equipment &amp; Medical Supplies - Customized Equipment(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Durable Medical Equipment &amp; Medical Supplies - Oxygen Equipment &amp; Supplies(2)</masterLabel>
+        <translation><!-- Durable Medical Equipment &amp; Medical Supplies - Oxygen Equipment &amp; Supplies(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electrodiagnostic Medicine - Electrodiagnostic Medicine(5)</masterLabel>
+        <translation><!-- Electrodiagnostic Medicine - Electrodiagnostic Medicine(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Medical Technician  Basic - Emergency Medical Technician  Basic(7)</masterLabel>
+        <translation><!-- Emergency Medical Technician  Basic - Emergency Medical Technician  Basic(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Medical Technician  Paramedic- EMT  Paramedic(4)</masterLabel>
+        <translation><!-- Emergency Medical Technician  Paramedic- EMT  Paramedic(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Medicine - Hospice and Palliative Medicine(2)</masterLabel>
+        <translation><!-- Emergency Medicine - Hospice and Palliative Medicine(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Medicine - Medical Toxicology(1)</masterLabel>
+        <translation><!-- Emergency Medicine - Medical Toxicology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Medicine - Sports Medicine(3)</masterLabel>
+        <translation><!-- Emergency Medicine - Sports Medicine(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Medicine - Undersea and Hyperbaric Medicine(4)</masterLabel>
+        <translation><!-- Emergency Medicine - Undersea and Hyperbaric Medicine(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Exclusive Provider Organization - Exclusive Provider Organization(6)</masterLabel>
+        <translation><!-- Exclusive Provider Organization - Exclusive Provider Organization(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Family Medicine - Addiction Medicine(5)</masterLabel>
+        <translation><!-- Family Medicine - Addiction Medicine(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Family Medicine - Adolescent Medicine(3)</masterLabel>
+        <translation><!-- Family Medicine - Adolescent Medicine(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Family Medicine - Sleep Medicine(3)</masterLabel>
+        <translation><!-- Family Medicine - Sleep Medicine(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Family Practice(4)</masterLabel>
+        <translation><!-- Family Practice(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General Acute Care Hospital - Children(1)</masterLabel>
+        <translation><!-- General Acute Care Hospital - Children(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General Acute Care Hospital - Critical Access(1)</masterLabel>
+        <translation><!-- General Acute Care Hospital - Critical Access(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General Acute Care Hospital - Women(1)</masterLabel>
+        <translation><!-- General Acute Care Hospital - Women(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General Surgery(2)</masterLabel>
+        <translation><!-- General Surgery(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Health Maintenance Organization - Health Maintenance Organization(6)</masterLabel>
+        <translation><!-- Health Maintenance Organization - Health Maintenance Organization(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hearing  Aid Equipment - Hearing  Aid Equipment(2)</masterLabel>
+        <translation><!-- Hearing  Aid Equipment - Hearing  Aid Equipment(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Home Infusion - Home Infusion(1)</masterLabel>
+        <translation><!-- Home Infusion - Home Infusion(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hospice Care  Community Based - Hospice Care  Community Based(2)</masterLabel>
+        <translation><!-- Hospice Care  Community Based - Hospice Care  Community Based(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Independent Medical Examiner - Independent Medical Examiner(4)</masterLabel>
+        <translation><!-- Independent Medical Examiner - Independent Medical Examiner(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Intermediate Care Facility  Mentally Retarded(1)</masterLabel>
+        <translation><!-- Intermediate Care Facility  Mentally Retarded(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Medicine - Allergy &amp; Immunology(6)</masterLabel>
+        <translation><!-- Internal Medicine - Allergy &amp; Immunology(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Medicine - Bariatric Medicine(5)</masterLabel>
+        <translation><!-- Internal Medicine - Bariatric Medicine(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Medicine - Hepatology(6)</masterLabel>
+        <translation><!-- Internal Medicine - Hepatology(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Medicine - Magnetic Resonance Imaging (MRI)(2)</masterLabel>
+        <translation><!-- Internal Medicine - Magnetic Resonance Imaging (MRI)(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Medicine - Transplant Hepatology(2)</masterLabel>
+        <translation><!-- Internal Medicine - Transplant Hepatology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Licensed Vocational Nurse - Licensed Vocational Nurse(4)</masterLabel>
+        <translation><!-- Licensed Vocational Nurse - Licensed Vocational Nurse(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lodging - Lodging(6)</masterLabel>
+        <translation><!-- Lodging - Lodging(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Long Term Care Hospital - Long Term Care Hospital(2)</masterLabel>
+        <translation><!-- Long Term Care Hospital - Long Term Care Hospital(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mastectomy Fitter - Mastectomy Fitter(3)</masterLabel>
+        <translation><!-- Mastectomy Fitter - Mastectomy Fitter(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Genetics  Ph.D. Medical Genetics - Medical Genetics  Ph.D.(4)</masterLabel>
+        <translation><!-- Medical Genetics  Ph.D. Medical Genetics - Medical Genetics  Ph.D.(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Genetics - Clinical Cytogenetic(2)</masterLabel>
+        <translation><!-- Medical Genetics - Clinical Cytogenetic(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Midwife  Lay - Midwife  Lay(2)</masterLabel>
+        <translation><!-- Midwife  Lay - Midwife  Lay(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Military Health Care Provider - Military Health Care Provider(2)</masterLabel>
+        <translation><!-- Military Health Care Provider - Military Health Care Provider(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Military Hospital - Military General Acute Care Hospital(1)</masterLabel>
+        <translation><!-- Military Hospital - Military General Acute Care Hospital(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Military Hospital - Military Hospital(2)</masterLabel>
+        <translation><!-- Military Hospital - Military Hospital(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multi-Specialty - Multi-Specialty(1)</masterLabel>
+        <translation><!-- Multi-Specialty - Multi-Specialty(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nuclear Medicine - Nuclear Cardiology(9)</masterLabel>
+        <translation><!-- Nuclear Medicine - Nuclear Cardiology(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nuclear Medicine - Nuclear Imaging &amp; Therapy(9)</masterLabel>
+        <translation><!-- Nuclear Medicine - Nuclear Imaging &amp; Therapy(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nurse Practitioner - Occupational Health(8)</masterLabel>
+        <translation><!-- Nurse Practitioner - Occupational Health(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nurse Practitioner - Perinatal(1)</masterLabel>
+        <translation><!-- Nurse Practitioner - Perinatal(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nursing Care - Nursing Care(5)</masterLabel>
+        <translation><!-- Nursing Care - Nursing Care(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nursing Facility/Intermediate Care Facility(5)</masterLabel>
+        <translation><!-- Nursing Facility/Intermediate Care Facility(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nursing Home Administrator - Nursing Home Administrator(7)</masterLabel>
+        <translation><!-- Nursing Home Administrator - Nursing Home Administrator(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OB/GYN(7)</masterLabel>
+        <translation><!-- OB/GYN(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Obstetrics &amp; Gynecology - Critical Care Medicine(3)</masterLabel>
+        <translation><!-- Obstetrics &amp; Gynecology - Critical Care Medicine(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Obstetrics &amp; Gynecology - Hospice and Palliative Medicine(1)</masterLabel>
+        <translation><!-- Obstetrics &amp; Gynecology - Hospice and Palliative Medicine(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occupational Therapist - Ergonomics(1)</masterLabel>
+        <translation><!-- Occupational Therapist - Ergonomics(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occupational Therapist - Low Vision(1)</masterLabel>
+        <translation><!-- Occupational Therapist - Low Vision(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occupational Therapist - Mental Health(3)</masterLabel>
+        <translation><!-- Occupational Therapist - Mental Health(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occupational Therapy Assistant - Driving and Community Mobility(2)</masterLabel>
+        <translation><!-- Occupational Therapy Assistant - Driving and Community Mobility(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occupational Therapy Assistant - Environmental Modification(2)</masterLabel>
+        <translation><!-- Occupational Therapy Assistant - Environmental Modification(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occupational Therapy Assistant - Feeding  Eating &amp; Swallowing(3)</masterLabel>
+        <translation><!-- Occupational Therapy Assistant - Feeding  Eating &amp; Swallowing(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ophthalmology - Ophthalmic Plastic and Reconstructive Surgery(2)</masterLabel>
+        <translation><!-- Ophthalmology - Ophthalmic Plastic and Reconstructive Surgery(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ophthalmology - Retina Specialist(1)</masterLabel>
+        <translation><!-- Ophthalmology - Retina Specialist(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Optometrist - Low Vision Rehabilitation(5)</masterLabel>
+        <translation><!-- Optometrist - Low Vision Rehabilitation(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Optometrist - Occupational Vision(2)</masterLabel>
+        <translation><!-- Optometrist - Occupational Vision(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Optometrist - Pediatrics(7)</masterLabel>
+        <translation><!-- Optometrist - Pediatrics(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Optometrist - Sports Vision(1)</masterLabel>
+        <translation><!-- Optometrist - Sports Vision(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Optometrist - Vision Therapy(7)</masterLabel>
+        <translation><!-- Optometrist - Vision Therapy(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orthopaedic Surgery - Adult Reconstructive Orthopaedic Surgery(9)</masterLabel>
+        <translation><!-- Orthopaedic Surgery - Adult Reconstructive Orthopaedic Surgery(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orthotic Fitter - Orthotic Fitter(7)</masterLabel>
+        <translation><!-- Orthotic Fitter - Orthotic Fitter(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Otolaryngology - Otolaryngic Allergy(6)</masterLabel>
+        <translation><!-- Otolaryngology - Otolaryngic Allergy(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Otolaryngology - Otology &amp; Neurotology(9)</masterLabel>
+        <translation><!-- Otolaryngology - Otology &amp; Neurotology(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Blood Banking &amp; Transfusion Medicine(6)</masterLabel>
+        <translation><!-- Pathology - Blood Banking &amp; Transfusion Medicine(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Clinical Informatics(1)</masterLabel>
+        <translation><!-- Pathology - Clinical Informatics(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Clinical Laboratory Director  Non-physician(2)</masterLabel>
+        <translation><!-- Pathology - Clinical Laboratory Director  Non-physician(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Clinical Pathology(4)</masterLabel>
+        <translation><!-- Pathology - Clinical Pathology(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Hematology(9)</masterLabel>
+        <translation><!-- Pathology - Hematology(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Immunopathology(1)</masterLabel>
+        <translation><!-- Pathology - Immunopathology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Molecular Genetic Pathology(3)</masterLabel>
+        <translation><!-- Pathology - Molecular Genetic Pathology(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Neuropathology(1)</masterLabel>
+        <translation><!-- Pathology - Neuropathology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pathology - Pediatric Pathology(6)</masterLabel>
+        <translation><!-- Pathology - Pediatric Pathology(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Cardiology(2)</masterLabel>
+        <translation><!-- Pediatric Cardiology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatrics - Hospice and Palliative Medicine(7)</masterLabel>
+        <translation><!-- Pediatrics - Hospice and Palliative Medicine(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatrics - Neurodevelopmental Disabilities(9)</masterLabel>
+        <translation><!-- Pediatrics - Neurodevelopmental Disabilities(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatrics - Pediatric Transplant Hepatology(2)</masterLabel>
+        <translation><!-- Pediatrics - Pediatric Transplant Hepatology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatrics - Sports Medicine(3)</masterLabel>
+        <translation><!-- Pediatrics - Sports Medicine(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pedorthist - Pedorthist(2)</masterLabel>
+        <translation><!-- Pedorthist - Pedorthist(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Peer Specialist - Peer Specialist(4)</masterLabel>
+        <translation><!-- Peer Specialist - Peer Specialist(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pharmacist - Ambulatory Care(4)</masterLabel>
+        <translation><!-- Pharmacist - Ambulatory Care(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pharmacist - Critical Care(3)</masterLabel>
+        <translation><!-- Pharmacist - Critical Care(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pharmacist - Nuclear(5)</masterLabel>
+        <translation><!-- Pharmacist - Nuclear(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pharmacist - Nutrition Support(6)</masterLabel>
+        <translation><!-- Pharmacist - Nutrition Support(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pharmacy - Community/Retail Pharmacy(1)</masterLabel>
+        <translation><!-- Pharmacy - Community/Retail Pharmacy(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pharmacy - Long Term Care Pharmacy(1)</masterLabel>
+        <translation><!-- Pharmacy - Long Term Care Pharmacy(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pharmacy - Pharmacy(4)</masterLabel>
+        <translation><!-- Pharmacy - Pharmacy(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Phlebology - Phlebology(2)</masterLabel>
+        <translation><!-- Phlebology - Phlebology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Medicine &amp; Rehabilitation - Neuromuscular Medicine(3)</masterLabel>
+        <translation><!-- Physical Medicine &amp; Rehabilitation - Neuromuscular Medicine(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Medicine &amp; Rehabilitation - Pediatric Rehabilitation Medicine(8)</masterLabel>
+        <translation><!-- Physical Medicine &amp; Rehabilitation - Pediatric Rehabilitation Medicine(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Medicine &amp; Rehabilitation - Spinal Cord Injury Medicine(9)</masterLabel>
+        <translation><!-- Physical Medicine &amp; Rehabilitation - Spinal Cord Injury Medicine(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Therapist - Electrophysiology  Clinical(2)</masterLabel>
+        <translation><!-- Physical Therapist - Electrophysiology  Clinical(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Therapist - Ergonomics(2)</masterLabel>
+        <translation><!-- Physical Therapist - Ergonomics(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Therapist - Hand(1)</masterLabel>
+        <translation><!-- Physical Therapist - Hand(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plastic Surgery - Plastic Surgery Within the Head and Neck(7)</masterLabel>
+        <translation><!-- Plastic Surgery - Plastic Surgery Within the Head and Neck(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Podiatrist - Public Medicine(1)</masterLabel>
+        <translation><!-- Podiatrist - Public Medicine(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Podiatrist - Sports Medicine(4)</masterLabel>
+        <translation><!-- Podiatrist - Sports Medicine(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poetry Therapist - Poetry Therapist(1)</masterLabel>
+        <translation><!-- Poetry Therapist - Poetry Therapist(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Point of Service - Point of Service(7)</masterLabel>
+        <translation><!-- Point of Service - Point of Service(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Preferred Provider Organization - Preferred Provider Organization(2)</masterLabel>
+        <translation><!-- Preferred Provider Organization - Preferred Provider Organization(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prevention Professional - Prevention Professional(6)</masterLabel>
+        <translation><!-- Prevention Professional - Prevention Professional(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Preventive Medicine - Medical Toxicology(1)</masterLabel>
+        <translation><!-- Preventive Medicine - Medical Toxicology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Preventive Medicine - Sports Medicine(1)</masterLabel>
+        <translation><!-- Preventive Medicine - Sports Medicine(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Preventive Medicine - Undersea and Hyperbaric Medicine(7)</masterLabel>
+        <translation><!-- Preventive Medicine - Undersea and Hyperbaric Medicine(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prosthetic/Orthotic Supplier - Prosthetic/Orthotic Supplier(5)</masterLabel>
+        <translation><!-- Prosthetic/Orthotic Supplier - Prosthetic/Orthotic Supplier(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatric Unit - Psychiatric Unit(1)</masterLabel>
+        <translation><!-- Psychiatric Unit - Psychiatric Unit(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Addiction Medicine(6)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Addiction Medicine(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Behavioral Neurology &amp; Neuropsychiatry(2)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Behavioral Neurology &amp; Neuropsychiatry(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Diagnostic Neuroimaging(5)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Diagnostic Neuroimaging(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Forensic Psychiatry(8)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Forensic Psychiatry(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Hospice and Palliative Medicine(2)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Hospice and Palliative Medicine(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Pain Medicine(1)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Pain Medicine(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Psychosomatic Medicine(2)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Psychosomatic Medicine(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychiatry &amp; Neurology - Sleep Medicine(2)</masterLabel>
+        <translation><!-- Psychiatry &amp; Neurology - Sleep Medicine(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychoanalyst - Psychoanalyst(4)</masterLabel>
+        <translation><!-- Psychoanalyst - Psychoanalyst(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Addiction (Substance Use Disorder)(8)</masterLabel>
+        <translation><!-- Psychologist - Addiction (Substance Use Disorder)(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Adult Development &amp; Aging(2)</masterLabel>
+        <translation><!-- Psychologist - Adult Development &amp; Aging(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Exercise &amp; Sports(2)</masterLabel>
+        <translation><!-- Psychologist - Exercise &amp; Sports(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Family(3)</masterLabel>
+        <translation><!-- Psychologist - Family(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Group Psychotherapy(5)</masterLabel>
+        <translation><!-- Psychologist - Group Psychotherapy(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Health(7)</masterLabel>
+        <translation><!-- Psychologist - Health(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Prescribing (Medical)(1)</masterLabel>
+        <translation><!-- Psychologist - Prescribing (Medical)(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychologist - Psychoanalysis(2)</masterLabel>
+        <translation><!-- Psychologist - Psychoanalysis(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Public Health or Welfare - Public Health or Welfare(1)</masterLabel>
+        <translation><!-- Public Health or Welfare - Public Health or Welfare(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulmonary(1)</masterLabel>
+        <translation><!-- Pulmonary(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Cardiac-Interventional Technology(1)</masterLabel>
+        <translation><!-- Radiologic Technologist - Cardiac-Interventional Technology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Cardiovascular-Interventional Technology(1)</masterLabel>
+        <translation><!-- Radiologic Technologist - Cardiovascular-Interventional Technology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Computed Tomography(3)</masterLabel>
+        <translation><!-- Radiologic Technologist - Computed Tomography(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Mammography(1)</masterLabel>
+        <translation><!-- Radiologic Technologist - Mammography(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Nuclear Medicine Technology(4)</masterLabel>
+        <translation><!-- Radiologic Technologist - Nuclear Medicine Technology(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Radiation Therapy(2)</masterLabel>
+        <translation><!-- Radiologic Technologist - Radiation Therapy(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Radiography(9)</masterLabel>
+        <translation><!-- Radiologic Technologist - Radiography(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Radiologic Technologist(9)</masterLabel>
+        <translation><!-- Radiologic Technologist - Radiologic Technologist(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiologic Technologist - Vascular Sonography(6)</masterLabel>
+        <translation><!-- Radiologic Technologist - Vascular Sonography(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiology - Diagnostic Neuroimaging(1)</masterLabel>
+        <translation><!-- Radiology - Diagnostic Neuroimaging(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiology - Diagnostic Ultrasound(7)</masterLabel>
+        <translation><!-- Radiology - Diagnostic Ultrasound(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiology Practitioner Assistant - Radiology Practitioner Assistant(3)</masterLabel>
+        <translation><!-- Radiology Practitioner Assistant - Radiology Practitioner Assistant(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Addiction (Substance Use Disorder)(5)</masterLabel>
+        <translation><!-- Registered Nurse - Addiction (Substance Use Disorder)(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Cardiac Rehabilitation(4)</masterLabel>
+        <translation><!-- Registered Nurse - Cardiac Rehabilitation(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - College Health(1)</masterLabel>
+        <translation><!-- Registered Nurse - College Health(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Continuing Education/Staff Development(3)</masterLabel>
+        <translation><!-- Registered Nurse - Continuing Education/Staff Development(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Enterostomal Therapy(1)</masterLabel>
+        <translation><!-- Registered Nurse - Enterostomal Therapy(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Gastroenterology(2)</masterLabel>
+        <translation><!-- Registered Nurse - Gastroenterology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Gerontology(4)</masterLabel>
+        <translation><!-- Registered Nurse - Gerontology(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Hemodialysis(2)</masterLabel>
+        <translation><!-- Registered Nurse - Hemodialysis(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Infection Control(2)</masterLabel>
+        <translation><!-- Registered Nurse - Infection Control(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Infusion Therapy(1)</masterLabel>
+        <translation><!-- Registered Nurse - Infusion Therapy(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Maternal Newborn(6)</masterLabel>
+        <translation><!-- Registered Nurse - Maternal Newborn(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Neonatal  Low-Risk(2)</masterLabel>
+        <translation><!-- Registered Nurse - Neonatal  Low-Risk(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Neonatal Intensive Care(4)</masterLabel>
+        <translation><!-- Registered Nurse - Neonatal Intensive Care(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Nephrology(1)</masterLabel>
+        <translation><!-- Registered Nurse - Nephrology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Neuroscience(1)</masterLabel>
+        <translation><!-- Registered Nurse - Neuroscience(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Nutrition Support(1)</masterLabel>
+        <translation><!-- Registered Nurse - Nutrition Support(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Obstetric  Inpatient(3)</masterLabel>
+        <translation><!-- Registered Nurse - Obstetric  Inpatient(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Oncology(6)</masterLabel>
+        <translation><!-- Registered Nurse - Oncology(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Orthopedic(3)</masterLabel>
+        <translation><!-- Registered Nurse - Orthopedic(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Pain Management(1)</masterLabel>
+        <translation><!-- Registered Nurse - Pain Management(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Plastic Surgery(2)</masterLabel>
+        <translation><!-- Registered Nurse - Plastic Surgery(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Psych/Mental Health  Child &amp; Adolescent(4)</masterLabel>
+        <translation><!-- Registered Nurse - Psych/Mental Health  Child &amp; Adolescent(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Rehabilitation(7)</masterLabel>
+        <translation><!-- Registered Nurse - Rehabilitation(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Reproductive Endocrinology/Infertility(1)</masterLabel>
+        <translation><!-- Registered Nurse - Reproductive Endocrinology/Infertility(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Women&apos;s Health Care  Ambulatory(9)</masterLabel>
+        <translation><!-- Registered Nurse - Women&apos;s Health Care  Ambulatory(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registered Nurse - Wound Care(2)</masterLabel>
+        <translation><!-- Registered Nurse - Wound Care(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rehabilitation Counselor - Assistive Technology Practitioner(1)</masterLabel>
+        <translation><!-- Rehabilitation Counselor - Assistive Technology Practitioner(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rehabilitation Counselor - Assistive Technology Supplier(1)</masterLabel>
+        <translation><!-- Rehabilitation Counselor - Assistive Technology Supplier(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rehabilitation Counselor - Orientation and Mobility Training Provider(1)</masterLabel>
+        <translation><!-- Rehabilitation Counselor - Orientation and Mobility Training Provider(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rehabilitation Counselor - Rehabilitation Counselor(3)</masterLabel>
+        <translation><!-- Rehabilitation Counselor - Rehabilitation Counselor(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rehabilitation Hospital - Children(1)</masterLabel>
+        <translation><!-- Rehabilitation Hospital - Children(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rehabilitation Unit - Rehabilitation Unit(1)</masterLabel>
+        <translation><!-- Rehabilitation Unit - Rehabilitation Unit(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Religious Nonmedical Nursing Personnel - Religious Nonmedical Nursing Personnel(2)</masterLabel>
+        <translation><!-- Religious Nonmedical Nursing Personnel - Religious Nonmedical Nursing Personnel(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Religious Nonmedical Practitioner - Religious Nonmedical Practitioner(1)</masterLabel>
+        <translation><!-- Religious Nonmedical Practitioner - Religious Nonmedical Practitioner(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential Treatment Facility  Emotionally Disturbed Children(2)</masterLabel>
+        <translation><!-- Residential Treatment Facility  Emotionally Disturbed Children(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential Treatment Facility  Mental Retardation and/or Developmental Disabili(9)</masterLabel>
+        <translation><!-- Residential Treatment Facility  Mental Retardation and/or Developmental Disabili(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential Treatment Facility  Physical Disabilities(7)</masterLabel>
+        <translation><!-- Residential Treatment Facility  Physical Disabilities(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Certified - Critical Care(1)</masterLabel>
+        <translation><!-- Respiratory Therapist  Certified - Critical Care(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Certified - Geriatric Care(3)</masterLabel>
+        <translation><!-- Respiratory Therapist  Certified - Geriatric Care(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Certified - Home Health(1)</masterLabel>
+        <translation><!-- Respiratory Therapist  Certified - Home Health(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Certified - Neonatal/Pediatrics(1)</masterLabel>
+        <translation><!-- Respiratory Therapist  Certified - Neonatal/Pediatrics(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Certified - Pulmonary Diagnostics(2)</masterLabel>
+        <translation><!-- Respiratory Therapist  Certified - Pulmonary Diagnostics(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Certified - Pulmonary Rehabilitation(1)</masterLabel>
+        <translation><!-- Respiratory Therapist  Certified - Pulmonary Rehabilitation(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Certified - SNF/Subacute Care(2)</masterLabel>
+        <translation><!-- Respiratory Therapist  Certified - SNF/Subacute Care(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Registered - Critical Care(6)</masterLabel>
+        <translation><!-- Respiratory Therapist  Registered - Critical Care(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Registered - General Care(5)</masterLabel>
+        <translation><!-- Respiratory Therapist  Registered - General Care(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Registered - Home Health(5)</masterLabel>
+        <translation><!-- Respiratory Therapist  Registered - Home Health(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Registered - Neonatal/Pediatrics(6)</masterLabel>
+        <translation><!-- Respiratory Therapist  Registered - Neonatal/Pediatrics(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Registered - Pulmonary Diagnostics(3)</masterLabel>
+        <translation><!-- Respiratory Therapist  Registered - Pulmonary Diagnostics(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respiratory Therapist  Registered - Pulmonary Rehabilitation(4)</masterLabel>
+        <translation><!-- Respiratory Therapist  Registered - Pulmonary Rehabilitation(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respite Care - Respite Care  Mental Illness  Child(1)</masterLabel>
+        <translation><!-- Respite Care - Respite Care  Mental Illness  Child(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respite Care - Respite Care  Physical Disabilities  Child(2)</masterLabel>
+        <translation><!-- Respite Care - Respite Care  Physical Disabilities  Child(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Respite Care - Respite Care(6)</masterLabel>
+        <translation><!-- Respite Care - Respite Care(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Single Specialty - Single Specialty(1)</masterLabel>
+        <translation><!-- Single Specialty - Single Specialty(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Skilled Nursing Facility - Nursing Care  Pediatric(5)</masterLabel>
+        <translation><!-- Skilled Nursing Facility - Nursing Care  Pediatric(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Cardiovascular - Cardiovascular Invasive Specialist(1)</masterLabel>
+        <translation><!-- Spec/Tech  Cardiovascular - Cardiovascular Invasive Specialist(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Cardiovascular - Sonography(8)</masterLabel>
+        <translation><!-- Spec/Tech  Cardiovascular - Sonography(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Health Info - Spec/Tech  Health Info(1)</masterLabel>
+        <translation><!-- Spec/Tech  Health Info - Spec/Tech  Health Info(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Pathology - Chemistry(1)</masterLabel>
+        <translation><!-- Spec/Tech  Pathology - Chemistry(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Pathology - Cytotechnology(2)</masterLabel>
+        <translation><!-- Spec/Tech  Pathology - Cytotechnology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Pathology - Histology(1)</masterLabel>
+        <translation><!-- Spec/Tech  Pathology - Histology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Pathology - Medical Technologist(6)</masterLabel>
+        <translation><!-- Spec/Tech  Pathology - Medical Technologist(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spec/Tech  Pathology - Spec/Tech  Pathology(1)</masterLabel>
+        <translation><!-- Spec/Tech  Pathology - Spec/Tech  Pathology(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist - Research Study(2)</masterLabel>
+        <translation><!-- Specialist - Research Study(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist/Technologist  Other - Art  Medical(5)</masterLabel>
+        <translation><!-- Specialist/Technologist  Other - Art  Medical(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist/Technologist  Other - Biochemist(1)</masterLabel>
+        <translation><!-- Specialist/Technologist  Other - Biochemist(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist/Technologist  Other - EEG(1)</masterLabel>
+        <translation><!-- Specialist/Technologist  Other - EEG(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist/Technologist  Other - Geneticist  Medical (PhD)(1)</masterLabel>
+        <translation><!-- Specialist/Technologist  Other - Geneticist  Medical (PhD)(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist/Technologist  Other - Orthopedic Assistant(1)</masterLabel>
+        <translation><!-- Specialist/Technologist  Other - Orthopedic Assistant(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist/Technologist - Audiology Assistant(4)</masterLabel>
+        <translation><!-- Specialist/Technologist - Audiology Assistant(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Substance Abuse Rehabilitation Facility - Substance Abuse Treatment  Children(1)</masterLabel>
+        <translation><!-- Substance Abuse Rehabilitation Facility - Substance Abuse Treatment  Children(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Substance Abuse Rehabilitation Facility(4)</masterLabel>
+        <translation><!-- Substance Abuse Rehabilitation Facility(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supports Brokerage - Supports Brokerage(1)</masterLabel>
+        <translation><!-- Supports Brokerage - Supports Brokerage(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Surgery - Hospice and Palliative Medicine(2)</masterLabel>
+        <translation><!-- Surgery - Hospice and Palliative Medicine(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Surgery - Surgery of the Hand(8)</masterLabel>
+        <translation><!-- Surgery - Surgery of the Hand(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Surgical - Other(2)</masterLabel>
+        <translation><!-- Surgical - Other(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taxi - Taxi(4)</masterLabel>
+        <translation><!-- Taxi - Taxi(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Cardiology - Technician  Cardiology(2)</masterLabel>
+        <translation><!-- Technician  Cardiology - Technician  Cardiology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Health Information - Assistant Record Technician(1)</masterLabel>
+        <translation><!-- Technician  Health Information - Assistant Record Technician(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Health Information - Technician  Health Information(5)</masterLabel>
+        <translation><!-- Technician  Health Information - Technician  Health Information(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Other - EEG(1)</masterLabel>
+        <translation><!-- Technician  Other - EEG(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Other - Renal Dialysis(2)</masterLabel>
+        <translation><!-- Technician  Other - Renal Dialysis(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Other - Veterinary(1)</masterLabel>
+        <translation><!-- Technician  Other - Veterinary(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Pathology - Medical Laboratory(5)</masterLabel>
+        <translation><!-- Technician  Pathology - Medical Laboratory(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician  Pathology - Technician  Pathology(2)</masterLabel>
+        <translation><!-- Technician  Pathology - Technician  Pathology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician - Attendant Care Provider(7)</masterLabel>
+        <translation><!-- Technician - Attendant Care Provider(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician/Technologist - Contact Lens Fitter(2)</masterLabel>
+        <translation><!-- Technician/Technologist - Contact Lens Fitter(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician/Technologist - Ocularist(3)</masterLabel>
+        <translation><!-- Technician/Technologist - Ocularist(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician/Technologist - Orthoptist(1)</masterLabel>
+        <translation><!-- Technician/Technologist - Orthoptist(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician/Technologist - Technician/Technologist(8)</masterLabel>
+        <translation><!-- Technician/Technologist - Technician/Technologist(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transportation Broker - Transportation Broker(2)</masterLabel>
+        <translation><!-- Transportation Broker - Transportation Broker(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urogynecology(3)</masterLabel>
+        <translation><!-- Urogynecology(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urology - Female Pelvic Medicine and Reconstructive Surgery(4)</masterLabel>
+        <translation><!-- Urology - Female Pelvic Medicine and Reconstructive Surgery(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urology(2)</masterLabel>
+        <translation><!-- Urology(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Veterinarian - Medical Research(1)</masterLabel>
+        <translation><!-- Veterinarian - Medical Research(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Voluntary or Charitable - Voluntary or Charitable(5)</masterLabel>
+        <translation><!-- Voluntary or Charitable - Voluntary or Charitable(5) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,103 @@
+<template>
+    <div class="slds-p-around_medium">
+        <c-cr-page-header
+            icon-name="standard:work_order_item"
+            tone="blue"
+            eyebrow="Vital Reports"
+            title="Report Requests"
+            subtitle="Triage user report requests, build them, and notify requesters.">
+            <div slot="actions">
+                <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" title="Refresh"
+                    variant="border-filled" onclick={load} disabled={busy}></lightning-button-icon>
+            </div>
+        </c-cr-page-header>
+
+        <template if:true={busy}>
+            <lightning-spinner alternative-text="Working" size="small"></lightning-spinner>
+        </template>
+
+        <div class="slds-grid slds-gutters slds-wrap">
+            <!-- Worklist -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12">
+                <template if:true={hasRequests}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col"><div class="slds-truncate">Request</div></th>
+                                <th scope="col"><div class="slds-truncate">Requester</div></th>
+                                <th scope="col"><div class="slds-truncate">Object</div></th>
+                                <th scope="col"><div class="slds-truncate">Priority</div></th>
+                                <th scope="col"><div class="slds-truncate">Status</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={requests} for:item="r">
+                                <tr key={r.id} class={r.rowClass} data-id={r.id} onclick={handleSelect}>
+                                    <td><div class="slds-truncate" title={r.reportTitle}>{r.name}</div></td>
+                                    <td><div class="slds-truncate" title={r.requesterName}>{r.requesterName}</div></td>
+                                    <td><div class="slds-truncate" title={r.requestedObject}>{r.requestedObject}</div></td>
+                                    <td>{r.priority}</td>
+                                    <td><c-cr-status-badge label={r.status} tone={r.tone} dot></c-cr-status-badge></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+                <template if:false={hasRequests}>
+                    <template if:false={busy}>
+                        <c-cr-empty-state headline="No requests" body="Report requests submitted by users will appear here."></c-cr-empty-state>
+                    </template>
+                </template>
+            </div>
+
+            <!-- Detail / actions -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+                <template if:true={hasSelection}>
+                    <lightning-card title="Request detail" icon-name="utility:info">
+                        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                            <dl class="slds-dl_horizontal">
+                                <dt class="slds-dl_horizontal__label">Request</dt>
+                                <dd class="slds-dl_horizontal__detail">{selected.name}</dd>
+                                <dt class="slds-dl_horizontal__label">Requester</dt>
+                                <dd class="slds-dl_horizontal__detail">{selected.requesterName}</dd>
+                                <dt class="slds-dl_horizontal__label">Title</dt>
+                                <dd class="slds-dl_horizontal__detail">{selected.reportTitle}</dd>
+                                <dt class="slds-dl_horizontal__label">Object</dt>
+                                <dd class="slds-dl_horizontal__detail">{selected.requestedObject}</dd>
+                                <dt class="slds-dl_horizontal__label">Fields</dt>
+                                <dd class="slds-dl_horizontal__detail">{selected.fieldsSummary}</dd>
+                                <dt class="slds-dl_horizontal__label">Description</dt>
+                                <dd class="slds-dl_horizontal__detail rr-pre">{selected.description}</dd>
+                                <dt class="slds-dl_horizontal__label">Status</dt>
+                                <dd class="slds-dl_horizontal__detail">
+                                    <c-cr-status-badge label={selected.status} tone={selected.tone} dot></c-cr-status-badge>
+                                </dd>
+                            </dl>
+
+                            <lightning-textarea
+                                label="Admin notes (shown to the requester on completion/rejection)"
+                                value={adminNotes}
+                                onchange={handleNotes}
+                                class="slds-m-top_small">
+                            </lightning-textarea>
+
+                            <div class="slds-m-top_medium rr-actions">
+                                <lightning-button label={buildLabel} variant="brand" icon-name="utility:builder"
+                                    onclick={handleBuild} disabled={busy}></lightning-button>
+                                <lightning-button label="In Progress" onclick={handleInProgress} disabled={busy}></lightning-button>
+                                <lightning-button label="Mark Completed" variant="success" onclick={handleComplete} disabled={busy}></lightning-button>
+                                <lightning-button label="Reject" variant="destructive-text" onclick={handleReject} disabled={busy}></lightning-button>
+                                <template if:true={hasResultingReport}>
+                                    <lightning-button label="Open report" icon-name="utility:preview" onclick={openReport} disabled={busy}></lightning-button>
+                                </template>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </template>
+                <template if:false={hasSelection}>
+                    <c-cr-empty-state headline="Select a request" body="Pick a request from the list to view details and take action."></c-cr-empty-state>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

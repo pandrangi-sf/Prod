@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- AI provider for Vital Reports features. Disabled hides every AI affordance in the UI. Anthropic is the only real provider implemented (Phase J2); Phase J1 stubs return a sample response so the rendering path can be validated before live integration. --></help>
+    <label><!-- Provider --></label>
+    <name>Provider__c</name>
+    <picklistValues>
+        <masterLabel>Anthropic</masterLabel>
+        <translation><!-- Anthropic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Disabled</masterLabel>
+        <translation><!-- Disabled --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

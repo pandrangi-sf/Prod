@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PNDC_Assigned_to_P_G__c</fullName>
+    <description>Old PNDC Assigned Field.</description>
+    <label>Operations Manager</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aldrich</fullName>
+                <default>false</default>
+                <label>Aldrich</label>
+            </value>
+            <value>
+                <fullName>Alexis Grzymkowski</fullName>
+                <default>false</default>
+                <label>Alexis Grzymkowski</label>
+            </value>
+            <value>
+                <fullName>Ashlyn Powell</fullName>
+                <default>false</default>
+                <label>Ashlyn Powell</label>
+            </value>
+            <value>
+                <fullName>Bhaavana Venkatesh</fullName>
+                <default>false</default>
+                <label>Bhaavana Venkatesh</label>
+            </value>
+            <value>
+                <fullName>Brianna Pickens</fullName>
+                <default>false</default>
+                <label>Brianna Pickens</label>
+            </value>
+            <value>
+                <fullName>Camejo</fullName>
+                <default>false</default>
+                <label>Camejo</label>
+            </value>
+            <value>
+                <fullName>Claire Goodwin</fullName>
+                <default>false</default>
+                <label>Claire Goodwin</label>
+            </value>
+            <value>
+                <fullName>Deak</fullName>
+                <default>false</default>
+                <label>Deak</label>
+            </value>
+            <value>
+                <fullName>Eda Khokhar</fullName>
+                <default>false</default>
+                <label>Eda Khokhar</label>
+            </value>
+            <value>
+                <fullName>Katherine Dixon</fullName>
+                <default>false</default>
+                <label>Katherine Dixon</label>
+            </value>
+            <value>
+                <fullName>Macgregor</fullName>
+                <default>false</default>
+                <label>Macgregor</label>
+            </value>
+            <value>
+                <fullName>Pippin</fullName>
+                <default>false</default>
+                <label>Pippin</label>
+            </value>
+            <value>
+                <fullName>Stein</fullName>
+                <default>false</default>
+                <label>Stein</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

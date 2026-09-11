@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Zone_Updated2</fullName>
+        <ccEmails>david.dorway@orlandohealth.com</ccEmails>
+        <description>Zone Updated</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>amy.hodge@orlandohealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mark.shear@orlandohealth.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>noreplies@orlandohealth.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Target_Zone_Update</template>
+    </alerts>
+</Workflow>

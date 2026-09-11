@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cache_Enabled__c</fullName>
+    <defaultValue>true</defaultValue>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Master switch for Platform Cache on this dataset. False disables caching (e.g., for highly realtime live datasets where 5-minute staleness is unacceptable). Default true.</inlineHelpText>
+    <label>Cache Enabled</label>
+    <type>Checkbox</type>
+</CustomField>

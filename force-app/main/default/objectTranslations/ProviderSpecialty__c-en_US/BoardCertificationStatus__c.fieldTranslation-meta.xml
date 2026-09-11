@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Board Certification Status --></label>
+    <name>BoardCertificationStatus__c</name>
+    <picklistValues>
+        <masterLabel>Certified</masterLabel>
+        <translation><!-- Certified --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eligible</masterLabel>
+        <translation><!-- Eligible --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

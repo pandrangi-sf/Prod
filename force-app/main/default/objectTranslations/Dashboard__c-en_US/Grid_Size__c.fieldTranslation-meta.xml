@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Number of columns the dashboard canvas snaps to. Defaults to 12 when unset. --></help>
+    <label><!-- Grid Size --></label>
+    <name>Grid_Size__c</name>
+    <picklistValues>
+        <masterLabel>12 columns (recommended)</masterLabel>
+        <translation><!-- 12 columns (recommended) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>9 columns</masterLabel>
+        <translation><!-- 9 columns --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

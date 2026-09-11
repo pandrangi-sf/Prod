@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The numeric month the collateral was published.  Will be in the alpha-numeric code in the bottom right of the document. --></help>
+    <label><!-- Published Month --></label>
+    <name>Published_Month__c</name>
+</CustomFieldTranslation>

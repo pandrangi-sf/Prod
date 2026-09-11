@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Practice_Managment_System__c</fullName>
+    <label>PMS System</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>athenaCollector</fullName>
+                <default>false</default>
+                <label>athenaCollector</label>
+            </value>
+            <value>
+                <fullName>ChartLogic EHR</fullName>
+                <default>false</default>
+                <label>ChartLogic EHR</label>
+            </value>
+            <value>
+                <fullName>CureMD</fullName>
+                <default>false</default>
+                <label>CureMD</label>
+            </value>
+            <value>
+                <fullName>DuxWare</fullName>
+                <default>false</default>
+                <label>DuxWare</label>
+            </value>
+            <value>
+                <fullName>expEDIum Medical Billing</fullName>
+                <default>false</default>
+                <label>expEDIum Medical Billing</label>
+            </value>
+            <value>
+                <fullName>Insta HMS</fullName>
+                <default>false</default>
+                <label>Insta HMS</label>
+            </value>
+            <value>
+                <fullName>intake.io Insurance Verification</fullName>
+                <default>false</default>
+                <label>intake.io Insurance Verification</label>
+            </value>
+            <value>
+                <fullName>Kareo</fullName>
+                <default>false</default>
+                <label>Kareo</label>
+            </value>
+            <value>
+                <fullName>LeonardoMD Renaissance</fullName>
+                <default>false</default>
+                <label>LeonardoMD Renaissance</label>
+            </value>
+            <value>
+                <fullName>MastermindPM</fullName>
+                <default>false</default>
+                <label>MastermindPM</label>
+            </value>
+            <value>
+                <fullName>MedicsPremier</fullName>
+                <default>false</default>
+                <label>MedicsPremier</label>
+            </value>
+            <value>
+                <fullName>Medios EHR</fullName>
+                <default>false</default>
+                <label>Medios EHR</label>
+            </value>
+            <value>
+                <fullName>NueMD</fullName>
+                <default>false</default>
+                <label>NueMD</label>
+            </value>
+            <value>
+                <fullName>Practice Fusion</fullName>
+                <default>false</default>
+                <label>Practice Fusion</label>
+            </value>
+            <value>
+                <fullName>PracticeAdmin Practice Manager</fullName>
+                <default>false</default>
+                <label>PracticeAdmin Practice Manager</label>
+            </value>
+            <value>
+                <fullName>PracticeStudio</fullName>
+                <default>false</default>
+                <label>PracticeStudio</label>
+            </value>
+            <value>
+                <fullName>simplifyMD</fullName>
+                <default>false</default>
+                <label>simplifyMD</label>
+            </value>
+            <value>
+                <fullName>Waiting Room Solutions</fullName>
+                <default>false</default>
+                <label>Waiting Room Solutions</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Apex Cursors</label>
+    <protected>false</protected>
+    <values>
+        <field>Feature_Key__c</field>
+        <value xsi:type="xsd:string">Apex_Cursors</value>
+    </values>
+    <values>
+        <field>Is_Enabled__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Settings_JSON__c</field>
+        <value xsi:type="xsd:string">{&quot;fallback&quot;:&quot;keyset&quot;,&quot;reason&quot;:&quot;Enable only after target org validates Apex cursor support.&quot;}</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Salud es Vida Appt Request Thank You Email - English</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Salud es Vida - Ent Appt Request TY English</name>
+    <style>none</style>
+    <subject>We&apos;ll be in Touch Shortly</subject>
+    <textOnly>Orlando Health
+
+321.841.9171
+Contact Us
+
+————————————————————————————————————————
+
+We&apos;ll be in Touch Shortly
+
+Thank you for your appointment request with an Orlando Health physician. 
+
+We believe in finding you the right fit for your health and wellness needs. That’s why we&apos;re reviewing the appointment books and checking the schedules. Once we&apos;re done, we&apos;ll give you a call to confirm an appointment. 
+
+We hope you continue to join us on Univision each week throughout 2017 for the “Salud es Vida” series of interviews featuring Orlando Health physicians that serve Central Florida’s Hispanic community. 
+
+Return to Salud es Vida
+http://orlandohealth.com/campaigns/salud-es-vida
+
+————————————————————————————————————————
+
+Privacy Policy
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806
+
+Copyright (C) 2017 Orlando Health</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

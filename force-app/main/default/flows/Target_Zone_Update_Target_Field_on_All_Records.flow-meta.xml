@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Goes through every Target Zone and updates the Target Zone</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>TargetKeyLookupValue</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.OwnerId} + &quot;-&quot; + {!$Record.Provider__c}</expression>
+    </formulas>
+    <interviewLabel>Target Zone: Update Target Field on All Records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Target Zone: Update Target Field on All Records</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Find_Related_Target</name>
+        <label>Find Related Target</label>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Target_Field</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Target_Key__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TargetKeyLookupValue</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Target__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Target_Field</name>
+        <label>Update Target Field</label>
+        <locationX>176</locationX>
+        <locationY>396</locationY>
+        <inputAssignments>
+            <field>Target__c</field>
+            <value>
+                <elementReference>Find_Related_Target.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Find_Related_Target</targetReference>
+        </connector>
+        <object>ZonedLocation__c</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2022-12-12</startDate>
+            <startTime>12:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

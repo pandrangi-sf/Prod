@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dashboard Viewer — Troubleshooting</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Tile shows &quot;No report assigned&quot;:&lt;/strong&gt; The component is text/image/LWC, or the linked report was deleted. Edit the dashboard and reassign or remove the tile.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Component error:&lt;/strong&gt; Click the per-tile Refresh icon to retry. If it persists, the report definition itself is failing — open it in Report Viewer.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Run is still processing:&lt;/strong&gt; Long reports may exceed the polling window (~5 min). Check Dashboard Runs to see the latest status; the result shows up next time you refresh.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Troubleshooting</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:warning</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">40.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crDashboardViewer</value>
+    </values>
+</CustomMetadata>

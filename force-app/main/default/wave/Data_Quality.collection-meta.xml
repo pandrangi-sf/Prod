@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveAnalyticAssetCollection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <collectionType>static</collectionType>
+    <color>#001639</color>
+    <folder>Data_Quality1</folder>
+    <items>
+        <asset>llvksekamuIDENiILhkeAXjKGGloCF</asset>
+        <assetType>LightningDashboard</assetType>
+        <sortOrder>499</sortOrder>
+    </items>
+    <items>
+        <asset>Targeted_Providers_Missing_Required_Data_OVX</asset>
+        <assetType>Report</assetType>
+        <sortOrder>498</sortOrder>
+    </items>
+    <items>
+        <asset>Provider_Targets_Missing_Data_2K0</asset>
+        <assetType>Report</assetType>
+        <sortOrder>497</sortOrder>
+    </items>
+    <items>
+        <asset>Providers_Missing_Required_Data_QDN</asset>
+        <assetType>Report</assetType>
+        <sortOrder>496</sortOrder>
+    </items>
+    <label>Data Quality</label>
+    <masterLabel>Data Quality</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>prm.brendan.murphy@orlandohealth.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>Sys_Admin</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </shares>
+</WaveAnalyticAssetCollection>

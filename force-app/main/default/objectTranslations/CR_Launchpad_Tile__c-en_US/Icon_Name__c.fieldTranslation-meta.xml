@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- SLDS icon for the tile, e.g. standard:report, standard:email, standard:folder. --></help>
+    <label><!-- Icon Name --></label>
+    <name>Icon_Name__c</name>
+</CustomFieldTranslation>

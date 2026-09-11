@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Updates the Zoned Location Owner field on the related Location record for a Zoned Location that is deleted.</description>
+    <environments>Default</environments>
+    <interviewLabel>Zoned_Location {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Zoned Location_BeforeDelete_Update Location Zoned Location Owner Field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Zoned_Location_Owner_Field2</targetReference>
+        </connector>
+        <object>ZonedLocation__c</object>
+        <recordTriggerType>Delete</recordTriggerType>
+        <triggerType>RecordBeforeDelete</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Updates the Zoned Location Owner field on the related location record.</description>
+        <name>Update_Zoned_Location_Owner_Field2</name>
+        <label>Update Zoned Location Owner Field</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>ZonedLocation_SUB_UpdateZonedLocationOwnerField</flowName>
+        <inputAssignments>
+            <name>viB_ZonedLocationDeleted</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>viT_DeletedZonedLocationId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>viT_LocationID</name>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

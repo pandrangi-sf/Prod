@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>WPH.com Appt Request TY</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>WPH.com Appt Request TY</name>
+    <style>none</style>
+    <subject>Thank you for your request. We will be in touch with you shortly.</subject>
+    <textOnly>Winnie Palmer Hospital
+For Women &amp; Babies
+Supported by Arnold Palmer Medical Center Foundation
+
+321.843.7626
+Se habla espanol
+
+————————————————————————————————————————
+
+Winnie knows moms, women and babies!
+
+We believe caring for our patients is a privilege. That&apos;s why the team at Winnie Palmer Hospital is here to deliver the most advanced range of care to anticipate, and go beyond, your needs. In the next day, we&apos;ll give you a call to confirm a day and time that works for your calendar.
+
+While you wait, hear from people like you.
+
+Join the Conversation
+http://community.winniepalmerhospital.com/
+
+————————————————————————————————————————
+
+Orlando Health Blog 
+
+Learn more about women&apos;s health 
+http://www.orlandohealth.com/blog?Health+Topics=Womens+Health
+
+————————————————————————————————————————
+
+Volunteer
+
+Learn how you can contribute 
+http://www.orlandohealth.com/volunteer-services/winnie-palmer-hospital-volunteer-services
+
+————————————————————————————————————————
+
+In the News
+
+See how we&apos;re making an impact 
+http://www.winniepalmerhospital.com/news-and-events/news
+
+————————————————————————————————————————
+
+Privacy Policy
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806
+
+Copyright (C) 2016 Orlando Health</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,77 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="cr-rep-h" class="slds-modal slds-fade-in-open slds-modal_large">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleCancel} title="Close">
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Close" variant="inverse"></lightning-icon>
+                </button>
+                <h2 id="cr-rep-h" class="slds-text-heading_medium">Select Report</h2>
+            </header>
+            <div class="slds-modal__content rep-modal-body">
+                <aside class="rep-sidebar">
+                    <p class="rep-section-heading">Reports</p>
+                    <ul class="scope-list">
+                        <template for:each={scopeOptions} for:item="s">
+                            <li
+                                key={s.value}
+                                class={s.class}
+                                data-value={s.value}
+                                onclick={handleScopeClick}>
+                                {s.label}
+                            </li>
+                        </template>
+                    </ul>
+                </aside>
+                <div class="rep-main">
+                    <div class="rep-toolbar">
+                        <lightning-input
+                            type="search"
+                            label="Search Reports and Folders"
+                            variant="label-hidden"
+                            placeholder="Search Reports and Folders..."
+                            value={searchTerm}
+                            onchange={handleSearch}>
+                        </lightning-input>
+                    </div>
+                    <template if:true={loading}>
+                        <div class="rep-loading">
+                            <lightning-spinner alternative-text="Loading reports" size="small"></lightning-spinner>
+                        </div>
+                    </template>
+                    <template if:false={loading}>
+                        <template if:true={hasNoResults}>
+                            <div class="rep-empty">
+                                <p class="slds-text-color_weak">No reports match this scope or search.</p>
+                            </div>
+                        </template>
+                        <ul class="rep-list">
+                            <template for:each={visibleReports} for:item="r">
+                                <li
+                                    key={r.id}
+                                    class={r.rowClass}
+                                    data-id={r.id}
+                                    onclick={handleRowClick}>
+                                    <div class="report-row__main">
+                                        <div class="report-row__name">{r.name}</div>
+                                        <div class="report-row__meta">
+                                            <span class="report-row__author">{r.createdLabel}</span>
+                                            <span class="report-row__sep">·</span>
+                                            <span class="report-row__date">{r.createdDateLabel}</span>
+                                            <span class="report-row__sep">·</span>
+                                            <span class="report-row__folder">{r.folderLabel}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </div>
+            </div>
+            <footer class="slds-modal__footer">
+                <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+                <lightning-button class="slds-m-left_x-small" label="Select" variant="brand" disabled={nextDisabled} onclick={handleNext}></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

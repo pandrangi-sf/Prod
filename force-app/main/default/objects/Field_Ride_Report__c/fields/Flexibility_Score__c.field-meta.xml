@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flexibility_Score__c</fullName>
+    <description>Calculates the total score for the Flexibility section by adding the score of each question and dividing by the total number of questions.</description>
+    <externalId>false</externalId>
+    <formula>(VALUE(TEXT( Prioritizes_Adapts_to_Change__c )) + VALUE(TEXT( Tailors_Sales_Message__c ))) / 2</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Average score for the questions in this section.</inlineHelpText>
+    <label>Flexibility Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

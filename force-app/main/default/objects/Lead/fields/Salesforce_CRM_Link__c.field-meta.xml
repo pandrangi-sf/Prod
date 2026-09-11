@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_CRM_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://orlandohealthcrm.lightning.force.com/&quot; + Salesforce_CRM_Id__c , &quot;Open New Record&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Salesforce CRM Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

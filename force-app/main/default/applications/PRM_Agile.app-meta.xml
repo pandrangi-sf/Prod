@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>PRMProviderLayout</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>PRMProviderLayout</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Contact</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>PRM_Project_Home_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>PRM Agile Project App for managing Salesforce changes.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>PRM Agile</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
+        <type>Flexipage</type>
+        <profile>PRM Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
+        <type>Flexipage</type>
+        <profile>PRM Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
+        <type>Flexipage</type>
+        <profile>PRM User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Bug_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__Bug</recordType>
+        <type>Flexipage</type>
+        <profile>PRM User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Ambulatory Surery Centers Support Team - Read Only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Ambulatory Surery Centers Support Team - Read Only</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Ambulatory Surgical Center Team</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Ambulatory Surgical Center Team</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Network Team</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Network Team</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>PRM Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>PRM Manager</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>PRM User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>PRM User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>BH PRM User</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>User_Story_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>agf__ADM_Work__c</pageOrSobjectType>
+        <recordType>agf__ADM_Work__c.agf__User_Story</recordType>
+        <type>Flexipage</type>
+        <profile>BH PRM User</profile>
+    </profileActionOverrides>
+    <setupExperience>all</setupExperience>
+    <tabs>standard-home</tabs>
+    <tabs>agf__admBoardKanban</tabs>
+    <tabs>agf__Work_Manager</tabs>
+    <tabs>agf__ADM_Work__c</tabs>
+    <tabs>agf__ADM_Acceptance_Criterion__c</tabs>
+    <tabs>agf__ADM_Epic__c</tabs>
+    <tabs>agf__PPM_Project__c</tabs>
+    <tabs>agf__PPM_Portfolio__c</tabs>
+    <tabs>agf__ADM_Product_Tag__c</tabs>
+    <tabs>Component__c</tabs>
+    <tabs>standard-WaveHomeLightning</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>PRM_Upgrade_Project_UtilityBar1</utilityBar>
+</CustomApplication>

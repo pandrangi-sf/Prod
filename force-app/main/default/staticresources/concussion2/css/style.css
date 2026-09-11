@@ -1,0 +1,601 @@
+/* Space out content a bit */
+body {
+  padding: 0px;
+  margin: 0px;
+  color: #231f20;
+  font-size: 13.5pt;
+  font-family: "minion-pro";
+  background-color: #dedede;
+	background-image: url(../resource/1420039254000/concussionfy15/images/bg-grey.jpg);
+	background-attachment: fixed;
+}
+
+.container {
+	max-width: 1020px;
+	background-color: #fff;
+	box-shadow: 0px 0px 3px #000
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+.intro {
+	z-index: 9999;
+	margin-bottom: 40px
+}
+
+.intro h2 {
+	text-align: left
+}
+
+
+/* Customize container */
+@media (max-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* CUSTOM STYLES */
+
+h1, h2, h3, h4, h5, blockquote {
+	color: #b70404;
+	font-family: "futura-pt"
+}
+
+blockquote {
+	font-family: "minion-pro";
+}
+
+.sidebar {
+	padding-left: 20px;
+	border-left: 1px solid #9e0b0f
+}
+
+.sidebar blockquote {
+	margin-top: 20px;
+	padding-left: 10px;
+}
+
+h2 {
+	font-size: 24pt
+}
+
+h3 {
+	font-size: 20pt
+}
+
+ul {
+	margin: 0px;
+	padding: 0px
+}
+
+li {
+	list-style: none;
+	background-image: url(../resource/1420039254000/concussionfy15/images/bullet.gif);
+	background-repeat: no-repeat;
+	padding: 0px 0px 0px 20px
+}
+
+.alt-modal li {
+	list-style: none;
+	background-image: url(../resource/1420039254000/concussionfy15/images/bullet-orange.gif);
+	background-repeat: no-repeat;
+	padding: 0px 0px 0px 20px
+}
+
+blockquote {
+	border: none !important;
+	margin: 0px;
+	padding: 10px;
+	font-size: 22pt;
+	line-height: 28pt
+}
+
+blockquote strong {
+	font-size: 28pt;
+	font-weight: normal
+}
+
+blockquote p {
+	font-style: italic;
+	font-size: 14pt;
+	padding-top: 30px;
+	line-height: 18pt
+}
+
+.logo {
+	margin-right: 20px
+}
+
+.texture-block {
+	background-color: #dedede;
+	background-image: url(../resource/1420039254000/concussionfy15/images/bg-grey.jpg);
+}
+
+.texture-block h2 {
+	text-align: center
+}
+
+.texture-block h3 {
+	color: #000;
+	font-size: 22pt;
+	margin-bottom: 30px;
+	text-align: center
+}
+
+
+.icon-circle {
+	margin: 0px 20px 0px 0px
+}
+
+.grad-block {
+	background: #eaeaea; /* Old browsers */
+background: -moz-linear-gradient(top,  #eaeaea 0%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeaea), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #eaeaea 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #eaeaea 0%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #eaeaea 0%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #eaeaea 0%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.footer {
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0px;
+	margin-top: 0px;
+	font-family: "futura-pt";	
+}
+
+.btn {
+	font-family: "futura-pt";	
+}
+
+.btn-lg {
+	width: 100%;
+	font-size: 21pt;
+	line-height: 24pt;
+	text-align: left !important
+}
+
+.btn-lg, .btn-sm {
+color: #fff;
+background: #62061f; /* Old browsers */
+background: -moz-linear-gradient(top,  #62061f 0%, #9e0831 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#62061f), color-stop(100%,#9e0831)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #62061f 0%,#9e0831 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #62061f 0%,#9e0831 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #62061f 0%,#9e0831 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #62061f 0%,#9e0831 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#62061f', endColorstr='#9e0831',GradientType=0 ); /* IE6-9 */
+}
+
+.btn-sm  { font-size: 14px }
+
+.btn-half {
+	display: inline;
+	width: auto;
+	margin: 10px 5px;
+	font-size: 18px
+}
+
+.btn-lg:hover, .btn-sm:hover, .btn-half:hover {
+color: #f5ff81;
+background: #9e0831; /* Old browsers */
+background: -moz-linear-gradient(top,  #9e0831 0%, #a54c52 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9e0831), color-stop(100%,#a54c52)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #9e0831 0%,#a54c52 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #9e0831 0%,#a54c52 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #9e0831 0%,#a54c52 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #9e0831 0%,#a54c52 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9e0831', endColorstr='#a54c52',GradientType=0 ); /* IE6-9 */
+cursor: pointer
+}
+
+.btn-alt {
+background: #c35516; /* Old browsers */
+background: -moz-linear-gradient(top,  #c35516 0%, #cb723e 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c35516), color-stop(100%,#cb723e)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #c35516 0%,#cb723e 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #c35516 0%,#cb723e 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #c35516 0%,#cb723e 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #c35516 0%,#cb723e 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c35516', endColorstr='#9e0831',GradientType=0 ); /* IE6-9 */	
+}
+
+.btn-alt:hover {
+background: #cb723e; /* Old browsers */
+background: -moz-linear-gradient(top,  #cb723e 0%, #e4b571 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cb723e), color-stop(100%,#e4b571)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #cb723e 0%,#e4b571 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #cb723e 0%,#e4b571 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #cb723e 0%,#e4b571 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #cb723e 0%,#e4b571 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9e0831', endColorstr='#cb723e',GradientType=0 ); /* IE6-9 */	
+}
+
+form .btn-lg {
+	font-family: "futura-pt";	
+}
+
+.responsive-image {
+	width: 100%;
+	height: auto
+}
+
+#banner {
+	z-index: 3;
+	position: relative
+}
+
+#myCarousel {
+	margin-top: 60px
+}
+
+#biosCarousel .item{
+	padding: 20px 40px 40px 40px;
+}
+
+#biosCarousel .item .responsive-image {
+	width: 80%;
+	margin: 0px auto
+}
+
+#biosCarousel  h4 {
+	font-size: 15pt
+}
+
+.carousel-control {
+	height: 80% !important
+}
+
+.carousel-control.right, .carousel-control.left  {
+background-image: none !important;
+background-repeat: repeat-x;
+filter:  none !important;
+}
+
+.left.carousel-control {
+	left: -60px;
+}
+
+.right.carousel-control {
+	right: -60px;
+}
+
+.carousel-control {
+	background-image: none !important
+}
+
+/* Fade transition for carousel items */
+.fade-slides .item {
+    left: 0 !important;
+      -webkit-transition: opacity .4s; /*adjust timing here */
+         -moz-transition: opacity .4s;
+           -o-transition: opacity .4s;
+              transition: opacity .4s;
+}
+.fade-slides .carousel-control {
+    background-image: none !important; /* remove background gradients on controls */
+}
+/* Fade controls with items */
+.fade-slides .next.left,
+.fade-slides .prev.right {
+    opacity: 1;
+    z-index: 1;
+}
+.fade-slides .active.left,
+.fade-slides .active.right {
+    opacity: 0;
+    z-index: 2;
+}
+
+#banner {
+	position: relative
+}
+
+.phone-head {
+	z-index: 4;
+	color: #fff;
+	font-family: "futura-pt";	
+	position: relative;
+	font-size: 14pt;
+	text-align: right;
+	margin: -150px 20px 0px 0px
+}
+
+.symptoms {
+	margin-bottom: 40px;
+	float: left
+}
+
+.symptoms li {
+	float: left;
+	margin-right: 5%;
+	display: block
+}
+
+.modal-content {
+	border-top: 12px solid #a10832
+}
+
+.alt-modal .modal-content {
+	border-top: 12px solid #eb6e23
+}
+
+.modal-header {
+	border-bottom: none
+}
+
+.modal-body img {
+	float: left;
+	margin: 0px 20px 20px 0px
+}
+
+.modal-body h3 {
+	color: #000;
+	margin-bottom: 0px
+}
+
+.modal-body h4 {
+	margin-bottom: 0px
+}
+
+.item p {
+	font-size: 15px
+}
+
+.alt-modal .modal-body h4 {
+		color: #eb6e23
+}
+
+.close {
+	color: #fff;
+	padding: 2px 8px 4px 8px !important; 
+	background-color: #000 !important;
+	border-radius: 50%;	
+}
+
+.pad-bottom {
+	padding-bottom: 40px
+}
+
+.form-signup h1 {
+	font-size: 44px
+}
+
+.form-signup .pad-bottom {
+	margin-top: -90px
+}
+
+.form-signup .btn-lg {
+	text-align: center !important
+}
+
+.form-signup input, .form-signup textarea {
+	width: 100% !important
+}
+
+.form-signup label {
+	margin-top: 15px
+}
+
+.side-borders {
+	border-right: 1px solid #a10832;
+	border-left: 1px solid #a10832
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 991px) {
+  .phone-head {
+    margin: 0px;
+    background-color: #a10832;
+    color: #fff;
+    z-index: 5;
+    margin: 0px auto;
+    text-align: center
+  }
+  
+  .texture-block h3 {
+  	text-align: left
+  }  
+
+	#biosCarousel h4 {
+	font-size: 12pt;
+	height: 40px
+	}
+	
+	#biosCarousel .item p {
+		font-size: 10pt !important;
+		line-height: 12pt
+	}
+  
+  #myCarousel {
+		margin-top: -40px;
+	}
+
+	.intro {
+		margin-top: 0px
+	}
+	
+	.pad-bottom.intro {
+		margin-top: -60px !important
+	}
+	
+.side-borders {
+	border-right: none;
+	border-left: none
+	}
+	
+	blockquote {
+		margin-top: 40px
+	}
+
+}
+
+@media (max-width: 767px) {
+	#biosCarousel h4 {
+	font-size: 18pt;
+	height: auto
+	}
+	
+	#biosCarousel .item p {
+		font-size: 14pt !important;
+		line-height: 16pt
+	}	
+	
+	#biosCarousel .item .col-xs-6 {
+		margin-bottom: 40px
+	}
+	
+	.sidebar {
+		padding-left: 0px;
+		border-left: none
+	}
+
+	
+}
+
+@media (max-width: 630px) {
+ 
+  #myCarousel {
+		margin-top: -33px;
+	}
+	
+	.phone-head {
+		font-size: 11pt
+	}
+	
+	.intro {
+		margin-top: -20px
+	}
+}
+
+@media (max-width: 556px) {
+	
+	#biosCarousel h4 {
+	font-size: 12pt;
+	height: 40px
+	}
+	
+	#biosCarousel .item p {
+		font-size: 10pt !important;
+		line-height: 12pt
+	}
+
+	.pad-bottom.intro {
+		margin-top: -50px !important
+	}
+
+}
+
+@media (max-width: 414px) {
+ 
+  #myCarousel {
+		margin-top: -20px;
+	}
+	
+	.story { display: none }
+	
+		.pad-bottom.intro {
+		margin-top: -30px !important
+	}
+	
+}
+
+iframe {
+  width: 100%    !important;
+  height: auto   !important;
+}
+
+/* Validation stuff */
+
+input.error {
+	background-color: #f9dbdb
+}
+
+label.error {
+	border-bottom: 4px solid #d65a5a;
+	margin: 0px;
+	color: #b70404;
+	font-size: 15px;
+	font-family: "futura-pt";
+	font-weight: normal;
+	clear:both;
+	width: 100%
+}
+
+label.required:after {
+	content: " *"
+}
+
+.alt-color {
+	color: #eb6e23
+}
+
+a.link-modal {
+	color: #a00731;
+	background-image: url(../resource/1420039254000/concussionfy15/images/arrow-link.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	padding-right: 20px;
+	cursor: pointer
+}
+
+.shift {
+	margin-top: 80px
+}
+
+
+

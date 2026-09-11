@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Fields_to_be_Completed__c</fullName>
+    <description>Displays the names of the fields that need to be completed on the record.</description>
+    <externalId>false</externalId>
+    <formula>&quot;There are &quot; &amp;
+IF(TEXT(Region__c)=&quot;Florida&quot;, 
+			TEXT(0+
+					IF(ISBLANK(FirstName) ,1,0)+
+					IF(ISBLANK(TEXT(Gender__c)) ,1,0)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,1,0)+    
+					IF(ISBLANK(TEXT(Credentials__c)) ,1,0)+ 
+					IF(ISBLANK(TEXT(Affiliation__c)) ,1,0)+
+					IF(ISBLANK(TEXT(Affiliation_Group__c)) ,1,0)
+					) &amp;
+&quot; fields that need to be completed;&quot; &amp;BR() &amp;
+     IF(ISBLANK(FirstName) ,&quot;First Name &quot; &amp; BR(), &quot;&quot;) &amp;
+					IF(ISBLANK(TEXT(Gender__c)) ,&quot;Gender &quot; &amp; BR() , &quot;&quot;) &amp;
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,&quot;Provider Type &quot; &amp; BR() , &quot;&quot;) &amp;    
+					IF(ISBLANK(TEXT(Credentials__c)) ,&quot;Credentials &quot; &amp; BR() , &quot;&quot;) &amp; 
+					IF(ISBLANK(TEXT(Affiliation__c)) ,&quot;Affiliation &quot; &amp; BR() , &quot;&quot;) &amp;
+					IF(ISBLANK(TEXT(Affiliation_Group__c)) ,&quot;Affiliation Group &quot; &amp; BR() , &quot;&quot;),
+			TEXT(0+
+					IF(ISBLANK(FirstName) ,1,0)+
+					IF(ISBLANK(TEXT(Gender__c)) ,1,0)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,1,0)+    
+					IF(ISBLANK(TEXT(Credentials__c)) ,1,0) 
+					) &amp;
+&quot; fields that need to be completed;&quot; &amp;BR() &amp;
+     IF(ISBLANK(FirstName) ,&quot;First Name &quot; &amp; BR(), &quot;&quot;) &amp;
+					IF(ISBLANK(TEXT(Gender__c)) ,&quot;Gender &quot; &amp; BR() , &quot;&quot;) &amp;
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,&quot;Provider Type &quot; &amp; BR() , &quot;&quot;) &amp;    
+					IF(ISBLANK(TEXT(Credentials__c)) ,&quot;Credentials &quot; &amp; BR() , &quot;&quot;))</formula>
+    <label>Provider Fields to be Completed</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

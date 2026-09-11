@@ -1,0 +1,15 @@
+.aip-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.aip-form {
+    background: #fbfcfe;
+    border-radius: 0.5rem;
+}
+.aip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem 1rem;
+    align-items: end;
+}

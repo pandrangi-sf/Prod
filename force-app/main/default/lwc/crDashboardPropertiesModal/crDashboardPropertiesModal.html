@@ -1,0 +1,110 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="cr-props-h" class="slds-modal slds-fade-in-open slds-modal_medium">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleCancel} title="Close">
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Close" variant="inverse"></lightning-icon>
+                </button>
+                <h2 id="cr-props-h" class="slds-text-heading_medium">Properties</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium props-content">
+                <!-- Name + description -->
+                <lightning-input
+                    label="Name"
+                    required
+                    value={name}
+                    onchange={handleNameChange}>
+                </lightning-input>
+                <div class="slds-m-top_small"></div>
+                <lightning-combobox
+                    label="Folder"
+                    value={folder}
+                    options={folderOptions}
+                    placeholder="Select a folder..."
+                    onchange={handleFolderChange}>
+                </lightning-combobox>
+                <div class="slds-m-top_small"></div>
+                <lightning-input
+                    label="Category"
+                    value={category}
+                    onchange={handleCategoryChange}>
+                </lightning-input>
+                <div class="slds-m-top_small"></div>
+                <lightning-input
+                    type="checkbox"
+                    label="Public — visible to all users in the framework"
+                    checked={isPublic}
+                    onchange={handlePublicChange}>
+                </lightning-input>
+
+                <!-- Run as -->
+                <h3 class="props-section-heading slds-m-top_medium">View Dashboard As</h3>
+                <lightning-radio-group
+                    label="View Dashboard As"
+                    variant="label-hidden"
+                    name="runAsMode"
+                    options={runAsOptions}
+                    value={runAsMode}
+                    onchange={handleRunAsModeChange}>
+                </lightning-radio-group>
+                <div class="slds-m-top_x-small">
+                    <lightning-input
+                        type="checkbox"
+                        label="Let dashboard viewers choose whom they view the dashboard as"
+                        checked={allowViewerChoice}
+                        onchange={handleAllowViewerChange}>
+                    </lightning-input>
+                </div>
+
+                <!-- Grid size -->
+                <h3 class="props-section-heading slds-m-top_medium">Dashboard Grid Size</h3>
+                <lightning-radio-group
+                    label="Dashboard Grid Size"
+                    variant="label-hidden"
+                    name="gridSize"
+                    options={gridOptions}
+                    value={gridSize}
+                    onchange={handleGridChange}>
+                </lightning-radio-group>
+
+                <!-- Theme -->
+                <h3 class="props-section-heading slds-m-top_medium">Dashboard Theme</h3>
+                <lightning-radio-group
+                    label="Dashboard Theme"
+                    variant="label-hidden"
+                    name="theme"
+                    options={themeOptions}
+                    value={theme}
+                    onchange={handleThemeChange}>
+                </lightning-radio-group>
+
+                <!-- Palette swatch grid -->
+                <h3 class="props-section-heading slds-m-top_medium">Dashboard Palette</h3>
+                <div class="palette-grid">
+                    <template for:each={paletteSwatches} for:item="p">
+                        <button
+                            key={p.value}
+                            type="button"
+                            class={p.cardClass}
+                            data-value={p.value}
+                            onclick={handlePaletteSelect}
+                            aria-pressed={p.isSelected}
+                            title={p.label}>
+                            <span class="palette-card__name">{p.label}</span>
+                            <span class="palette-card__swatches">
+                                <template for:each={p.colors} for:item="c">
+                                    <span key={c.key} class="palette-card__chip" style={c.style}></span>
+                                </template>
+                            </span>
+                        </button>
+                    </template>
+                </div>
+            </div>
+            <footer class="slds-modal__footer">
+                <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+                <lightning-button class="slds-m-left_x-small" label="Save" variant="brand" onclick={handleSave}></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

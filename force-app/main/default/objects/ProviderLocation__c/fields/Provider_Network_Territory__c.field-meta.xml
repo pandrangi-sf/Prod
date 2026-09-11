@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Network_Territory__c</fullName>
+    <description>The provider&apos;s network territory value.  Used in the Log a Visit Flow to filter the Provider Locations to only those that have a value in this field.</description>
+    <externalId>false</externalId>
+    <formula>Provider__r.Network_Territory__r.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Provider Network Territory</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

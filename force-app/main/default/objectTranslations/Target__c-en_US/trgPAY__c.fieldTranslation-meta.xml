@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Target Payor Mix --></label>
+    <name>trgPAY__c</name>
+    <picklistValues>
+        <masterLabel>Favorable</masterLabel>
+        <translation><!-- Favorable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unfavorable</masterLabel>
+        <translation><!-- Unfavorable --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

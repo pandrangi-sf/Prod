@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Run_As_User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>The user to impersonate when Run As Mode is &quot;Another person&quot;. Required only when Run As Mode = OtherUser.</inlineHelpText>
+    <label>Run As User</label>
+    <referenceTo>User</referenceTo>
+    <relationshipLabel>Dashboards (Run As)</relationshipLabel>
+    <relationshipName>Dashboards_RunAs</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Facility_test</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Facility_test</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>http://127.0.0.1:5567/treeapp_v7.Rmd</url>
+</WebLink>

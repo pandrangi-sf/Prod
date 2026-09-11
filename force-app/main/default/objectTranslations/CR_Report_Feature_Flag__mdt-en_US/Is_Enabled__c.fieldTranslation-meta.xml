@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Controls whether this framework feature or ETL configuration is active. --></help>
+    <label><!-- Is Enabled --></label>
+    <name>Is_Enabled__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - WPH - Brand - DG - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank you for requesting information from Winnie Palmer Hospital!</subject>
+    <textOnly>Winnie Palmer Hospital For Women and Babies
+http://www.winniepalmerhospital.com/microsites/winnieknows/Home
+
+321.843.7626 | Se habla español
+
+------------------------------------------------------------------
+
+Request a Consultation
+http://www.winniepalmerhospital.com/microsites/winnieknows/request-consultation
+
+Find a Specialist
+http://www.winniepalmerhospital.com/microsites/winnieknows/find-women-health-specialist
+
+------------------------------------------------------------------
+
+Thank you for requesting information from Winnie Palmer Hospital!
+
+If you&apos;d like to schedule an appointment, we&apos;ve made it easy through our Request a Consultation tool (http://www.winniepalmerhospital.com/microsites/winnieknows/request-consultation). All you need to do is provide some basic information, including your name, birthdate, phone number and address. Within 48 hours, a representative will contact you to confirm a date and time. It&apos;s that easy! 
+
+
+Once your appointment is confirmed, you&apos;ll want to have a few things ready for your visit:
+
+- You may want a family member or friend to accompany you in order to help you remember the information you discuss with your physician
+- Your insurance information
+- A list of questions you want to ask the physician
+- Request any relevant medical records from your health care provider
+
+If you have questions about finding a physician, you can reach us at 321.843.7626.
+
+------------------------------------------------------------------
+
+Connect With Us
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)iStock, (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

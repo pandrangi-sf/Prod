@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Zone_Layout</fullName>
+    <fields>Zone_Name__c</fields>
+    <fields>Facility__c</fields>
+    <fields>Provider__c</fields>
+    <fields>Zoned_Location_Name__c</fields>
+    <label>Target Zone Layout</label>
+</CompactLayout>

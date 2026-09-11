@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OHIC_OHPA</fullName>
+    <columns>NAME</columns>
+    <columns>OHIC_NPI__c</columns>
+    <columns>OHIC_Provider__c</columns>
+    <columns>Practice__c</columns>
+    <columns>A1__c</columns>
+    <columns>Addr1__c</columns>
+    <columns>A2__c</columns>
+    <columns>Addr2__c</columns>
+    <columns>A3__c</columns>
+    <columns>Addr3__c</columns>
+    <columns>A4__c</columns>
+    <columns>Addr4__c</columns>
+    <columns>A5__c</columns>
+    <columns>Addr5__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Practice__c</field>
+        <operation>startsWith</operation>
+        <value>Physician Associates</value>
+    </filters>
+    <label>OHIC OHPA</label>
+</ListView>

@@ -1,0 +1,140 @@
+<template>
+    <lightning-card title="Object & Field Selector" icon-name="standard:dataset">
+        <div class="slds-p-around_medium selector-grid">
+            <c-cr-searchable-object-picker
+                label="Primary Object"
+                field-level-help="Choose the root Salesforce object for this dataset. Type to search; matching objects are highlighted."
+                placeholder="Search objects (e.g. acc, opp, case)..."
+                items={objectOptions}
+                value={primaryObject}
+                loading={objectLoading}
+                recents-key="primary-object"
+                onsearch={handleObjectSearch}
+                onchange={handlePrimaryChange}>
+            </c-cr-searchable-object-picker>
+
+            <template if:true={hasPrimaryObject}>
+                <lightning-input
+                    type="search"
+                    label="Find Related Objects"
+                    placeholder="Filter related objects..."
+                    value={relatedFilterTerm}
+                    onchange={handleRelatedFilterChange}
+                    class="filter-input">
+                </lightning-input>
+                <p class="selector-hint slds-text-body_small slds-text-color_weak">
+                    Type to narrow long lists. Selected items stay visible.
+                </p>
+
+                <lightning-dual-listbox
+                    name="relatedObjects"
+                    label="Related Objects"
+                    field-level-help="Choose lookup parent objects or child collections that should be available for field selection. Child collections are flattened into preview rows."
+                    source-label="Available"
+                    selected-label="Selected"
+                    options={filteredRelatedOptions}
+                    value={selectedRelatedObjects}
+                    onchange={handleRelatedChange}>
+                </lightning-dual-listbox>
+
+                <lightning-input
+                    type="search"
+                    label="Find Fields"
+                    placeholder="Filter fields..."
+                    value={fieldFilterTerm}
+                    onchange={handleFieldFilterChange}
+                    class="filter-input">
+                </lightning-input>
+                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center select-all-row">
+                    <p class="selector-hint slds-text-body_small slds-text-color_weak slds-m-bottom_none">
+                        Large objects show a performance-friendly subset until you search.
+                    </p>
+                    <lightning-button
+                        label={selectAllLabel}
+                        icon-name="utility:check"
+                        variant="base"
+                        onclick={handleSelectAllFields}
+                        disabled={selectAllDisabled}>
+                    </lightning-button>
+                </div>
+
+                <lightning-dual-listbox
+                    name="fields"
+                    label="Fields"
+                    field-level-help="Select the fields to include in the dataset. Field paths are emitted for the report query engine."
+                    source-label="Available"
+                    selected-label="Selected"
+                    options={filteredFieldOptions}
+                    value={selectedFields}
+                    onchange={handleFieldChange}>
+                </lightning-dual-listbox>
+
+                <template if:true={hasSelectedFields}>
+                    <section class="selected-fields-panel" aria-label="Selected field order">
+                        <div class="selected-fields-header">
+                            <div>
+                                <p class="slds-text-title_caps slds-text-color_weak">Selected Field Order</p>
+                                <p class="slds-text-body_small slds-text-color_weak">Drag fields to reorder report columns.</p>
+                            </div>
+                        </div>
+                        <div class="selected-fields-list">
+                            <template for:each={selectedFieldRows} for:item="field">
+                                <div
+                                    key={field.value}
+                                    class={field.cssClass}
+                                    draggable="true"
+                                    data-value={field.value}
+                                    ondragstart={handleFieldDragStart}
+                                    ondragover={handleFieldDragOver}
+                                    ondrop={handleFieldDrop}
+                                    ondragend={handleFieldDragEnd}>
+                                    <span class="field-position">{field.position}</span>
+                                    <lightning-icon icon-name="utility:drag_and_drop" size="xx-small"></lightning-icon>
+                                    <span class="field-label" title={field.value}>{field.label}</span>
+                                    <span class="field-actions">
+                                        <lightning-button-icon
+                                            icon-name="utility:up"
+                                            alternative-text="Move field up"
+                                            title="Move field up"
+                                            variant="bare"
+                                            data-value={field.value}
+                                            disabled={field.isFirst}
+                                            onclick={moveSelectedFieldUp}>
+                                        </lightning-button-icon>
+                                        <lightning-button-icon
+                                            icon-name="utility:down"
+                                            alternative-text="Move field down"
+                                            title="Move field down"
+                                            variant="bare"
+                                            data-value={field.value}
+                                            disabled={field.isLast}
+                                            onclick={moveSelectedFieldDown}>
+                                        </lightning-button-icon>
+                                    </span>
+                                </div>
+                            </template>
+                        </div>
+                    </section>
+                </template>
+            </template>
+
+            <template if:false={hasPrimaryObject}>
+                <p class="slds-text-color_weak slds-text-body_small slds-p-vertical_x-small">
+                    Pick a primary object above to see related objects and fields.
+                </p>
+            </template>
+
+            <details class="slds-m-top_small advanced-json">
+                <summary class="slds-text-title_caps slds-text-color_weak">Advanced (JSON)</summary>
+                <lightning-textarea
+                    label="Dataset Definition JSON"
+                    variant="label-hidden"
+                    field-level-help="Generated dataset blueprint passed to the report builder and Apex query engine."
+                    value={datasetJson}
+                    readonly
+                    class="slds-m-top_x-small">
+                </lightning-textarea>
+            </details>
+        </div>
+    </lightning-card>
+</template>

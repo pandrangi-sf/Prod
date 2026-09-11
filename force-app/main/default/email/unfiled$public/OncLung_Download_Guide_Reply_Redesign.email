@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Download Your Free Guide</title>
+<style>
+
+.mobileImage{
+     max-height: 0; 
+  width: 0;     
+    }
+    
+    table[class="tableResponsivePhone"] {
+        width:48% !important;
+    }
+    table[class="tableResponsiveSocial"] {
+        width:48% !important;
+    }
+    .responsiveTablePhone{width:48% !important;}
+    .responsiveTableSocial{width:48% !important;}
+	    .appleLinksWhite a {
+    color: #ffffff !important;
+    text-decoration: none;
+       
+}
+@media screen and (max-width:480px) {
+    
+    table[class="tableResponsivePhone"] {
+        width:100% !important;
+        text-align:center !important;
+    }
+    table[class="tableResponsiveSocial"] {
+        width:100% !important;
+        text-align:center !important;
+    }
+    .responsiveTablePhone{width:100% !important;}
+    .responsiveTableSocial{width:100% !important;}
+    /*added this style below*/
+    .mobileShow{
+         display : block !important;
+        width : 100% !important;
+        max-height: inherit !important;
+        overflow : visible !important;
+        float : none !important; 
+ 
+    }
+    .desktopImage{
+     max-height: 0; 
+  width: 0;     
+    }
+    .container{ width:auto !important;}
+	    .appleLinksWhite a {
+    color: #ffffff !important;
+    text-decoration: none;
+        
+}
+}
+</style>
+
+</head>
+
+<body style="background-color:#8e8e8e; margin:0 auto;">
+
+
+<!-- ########added width to table##########-->
+<table  border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" width="600" class="container">
+
+  <tr>
+    <td style="height:23px;background:url('http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lymph-dg-headerBg.png') repeat-x;background-size:cover;text-align:center; max-width: 600px;">
+    <span style="font-family:arial; font-size:12px; color:#024e67;line-height:20px;">To Make An Appointment Call us at</span><span style="font-family:arial; font-size:12px; color:#b20838;line-height:20px;"> 321.843.7780 <span style="font-family:arial; font-size:12px; color:#024e67;line-height:20px;">Se Habla Español</span>
+    
+    </td>
+  </tr>
+
+  <tr>
+    <td><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lymph-dg-header.png" class="desktopImage"/>
+   <!-- ########added mso and style tags to the two mobile images. The css above for mobileShow will need to be added##########-->
+   <!--[if !mso]><!-->
+    <img src="http://smartpandalabs.net/ufc/requestAppt/images/headerMobile.png" class="mobileShow" 
+    style="width: 0;max-height: 0;overflow: hidden;float: left;display: none;"/>
+    <!--<![endif]-->
+    </td>
+  </tr>
+  <tr>
+    <td> <a href="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/ufhccoh-lung-cancer-downloadable-guide.pdf"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lung-mediawindow-downloadguide.jpg" class="desktopImage"/>
+    <!--[if !mso]><!--><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/Lung-mobilemediawindow.jpg" class="mobileShow" 
+    style="width: 0;max-height: 0;overflow: hidden;float: left;display: none;"/>
+     <!--<![endif]-->
+    </a></td>
+  </tr>
+  
+  <tr>
+    <td style="padding:20px;"  >
+    <p style="font-family:arial; font-size:18px; color:#b20838;">Download Your Guide to Understanding Lung Cancer
+</p>
+    <p style="font-family:times; font-size:14px; color:#626161;line-height:20px;">Thank you for requesting your Guide to Understanding Lung Cancer. The guide will provide you with information on the symptoms and types of lung cancer. Plus, you'll learn more about the unique, multidisciplinary approach we take at the Rod Taylor Thoracic Care Center.</p>
+      <a href="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/ufhccoh-lung-cancer-downloadable-guide.pdf"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/lymph-dg-dlGuideBtn.png"/>
+       </a>
+    <p style="font-family:arial; font-size:16px; color:#b20838;padding-top:40px;">Schedule An Appointment With A Physician
+</p>
+   <p style="font-family:times; font-size:14px; color:#626161;line-height:20px;">Reading the guide to breast cancer is the first step to treating this disease. If you think you or a loved one may be experiencing the symptoms of lung cancer, it is important to meet with a medical professional to learn about treatment options.</p>
+      
+   
+    <p style="font-family:arial; font-size:14px; color:#b20838; padding-top: 15px;"><a href="http://www.ufhealthcancerorlando.com/landing/lung-cancer/index.html?hcmacid=a0b3100000Qqt0fAAB&form=ar" style="font-family:arial; font-size:14px; color:#b20838;"><strong>Request An Appointment</strong></a></p>
+    
+    
+    </td>
+  </tr>
+  
+  
+  <tr>
+    <td height="260" align="center" valign="top" background="http://smartpandalabs.net/ufc/requestAppt/images/footerBg.png">
+    
+    
+    <!-- ########added background for footer in outlook##########-->   
+    <!--[if gte mso 9]>
+  <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;">
+    <v:fill type="tile" src="http://smartpandalabs.net/ufc/requestAppt/images/footerBg.png" />
+    <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+  <![endif]-->
+  <div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td align="center">
+      <p class="appleLinksWhite" style="color:#ffffff;font-size:15px; font-family: Times ;padding-top:10px;line-height:18px; "><sup>*</sup> During normal business hours, <br />Mon. - Fri. 8:00 a.m.- 4:30 p.m. EST</p>
+      
+      <!-- table for phone-->
+      <!-- ########added width to this tag##########-->
+      <table  border="0" cellspacing="0" cellpadding="0" style="width:48%" align="left" class="responsiveTablePhone">
+  <tbody>
+    <tr>
+      <td align="center">
+      <p style="font-family:arial;font-size:15px; color:#fff;text-transform:uppercase;">Call for more information</p>
+       <p class="appleLinksWhite" style="font-family:times;font-size:24px; color:#fff;"><a class="appleLinksWhite" href="tel:3218437780" style="text-decoration:none; color:#fff;">321.843.7780</p>
+      
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+      <!-- end phone-->
+      
+      
+      <!-- table for social-->
+      <!-- ########added width to this tag##########-->
+      <table  border="0" cellspacing="0" cellpadding="0"  style="width:48%" align="right" class="responsiveTableSocial">
+  <tbody>
+    <tr>
+      <td align="center">
+       <p style="font-family:arial;font-size:15px; color:#fff;text-transform:uppercase;">Connect with us</p>
+      <p><a href="https://www.facebook.com/UFHealthCancerOrlando"><img border="0" style="padding-right:10px;" src="http://smartpandalabs.net/ufc/requestAppt/images/facebookBtn.png"></a><a href="https://twitter.com/UFHealthOH"><img border="0" style="padding-right:10px;" src="http://smartpandalabs.net/ufc/requestAppt/images/twitterBtn.png"></a><a href="https://plus.google.com/s/*UF%20Health%20Cancer"><img border="0" src="http://smartpandalabs.net/ufc/requestAppt/images/googleBtn.png"></a></p>
+      
+      </td>
+    </tr>
+  </tbody>
+</table>
+ 
+      
+      <!-- end social-->
+      
+      
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
+   
+  <p style="color:#ffffff;font-size:15px; font-family: Times;padding-top:0px;line-height:18px; "> <a href="" style="color:#ffffff;">Unsubscribe</a> | <a href="http://www.orlandohealth.com/orlandohealth/aboutus/oh_privacy_practices.aspx?pid=6254" style="color:#ffffff;">Privacy Policy</a></p>
+   
+    <p class="appleLinksWhite" style="color:#ffffff;font-size:15px; font-family: Times ;padding-top:0px;line-height:18px; ">Copyright &copy;2016 UF Health Cancer Center &ndash; Orlando Health<br />
+1400 S. Orange Ave., Orlando, FL 32806</p>
+
+
+
+
+
+</td>
+
+ </div>
+ <!-- ########close outlook bg tag##########-->
+  <!--[if gte mso 9]>   </v:textbox>
+  </v:rect>
+  <![endif]-->
+  </tr>
+</table>
+
+</body>
+</html>

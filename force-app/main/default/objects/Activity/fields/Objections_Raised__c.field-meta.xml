@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Objections_Raised__c</fullName>
+    <label>Objections Raised</label>
+    <required>false</required>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Communication</fullName>
+                <default>false</default>
+                <label>Communication</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Locations</fullName>
+                <default>false</default>
+                <label>Locations</label>
+            </value>
+            <value>
+                <fullName>Network Access</fullName>
+                <default>false</default>
+                <label>Network Access</label>
+            </value>
+            <value>
+                <fullName>Patient Access</fullName>
+                <default>false</default>
+                <label>Patient Access</label>
+            </value>
+            <value>
+                <fullName>Patient Experience</fullName>
+                <default>false</default>
+                <label>Patient Experience</label>
+            </value>
+            <value>
+                <fullName>Records</fullName>
+                <default>false</default>
+                <label>Records</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

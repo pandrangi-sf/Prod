@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Model id sent to the provider, e.g. claude-sonnet-4-6 or claude-opus-4-7. --></help>
+    <label><!-- Model --></label>
+    <name>Model__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_ID_Old__c</fullName>
+    <description>This was renamed _Old on 2/2/17 due to the field being in the EVMCE Unmanaged package. The package would not install with with the Contact_Id__c field already existing in the org.</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID(Id)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contact ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

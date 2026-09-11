@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>User receives this communication when a opt in is submitted via web form on brand INDEX.html page.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - Oncology - Brand Campaign - Sign Up (External) redesign</name>
+    <style>none</style>
+    <subject>Thank You for Signing Up</subject>
+    <textOnly>Learn More | UF Health Cancer Center - Orlando Health
+
+321.843.7770
+Se Habla Español
+
+Thank You for Signing Up
+Thank you for signing up for updates from UF Health Cancer Center – Orlando Health. We’ll keep you informed about news such as new research and technology, and events in your area.
+Do you have additional questions?
+We invite you to learn more about UF Health Cancer Center – Orlando Health and discover how our specialty centers and individualized approach can help you overcome cancer.
+
+Copyright © 2016 Orlando Health
+1400 S. Orange Ave. Orlando, FL 32806
+Privacy Policy
+
+321.843.7770</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

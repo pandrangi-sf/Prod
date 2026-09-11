@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missing_Address_Information__c</fullName>
+    <description>Used to check if any of the address fields are empty.  Used to display the rich text alert on the page.</description>
+    <formula>ISBLANK(Address__Street__s) ||
+ISBLANK(Address__City__s) ||
+ISBLANK(TEXT(Address__StateCode__s)) ||
+ISBLANK(Address__PostalCode__s) ||
+ISBLANK(TEXT(Address__CountryCode__s))</formula>
+    <label>Missing Address Information</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

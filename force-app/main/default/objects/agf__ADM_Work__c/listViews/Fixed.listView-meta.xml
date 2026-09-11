@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixed</fullName>
+    <columns>NAME</columns>
+    <columns>agf__Subject__c</columns>
+    <columns>agf__Status__c</columns>
+    <columns>agf__Type__c</columns>
+    <columns>agf__Story_Points__c</columns>
+    <columns>agf__Color__c</columns>
+    <columns>agf__Assignee__c</columns>
+    <columns>agf__Release__c</columns>
+    <columns>agf__Scrum_Team__c</columns>
+    <columns>agf__Epic__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>agf__Status__c</field>
+        <operation>equals</operation>
+        <value>Fixed</value>
+    </filters>
+    <label>Fixed</label>
+</ListView>

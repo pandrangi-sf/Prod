@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Report Builder — Troubleshooting</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&quot;Save validation failed&quot;:&lt;/strong&gt; The query engine rejected the definition. Common causes: aggregation referencing a field that&apos;s not in groupings, a filter operator the field doesn&apos;t support, or a field path that no longer exists.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Live preview empty:&lt;/strong&gt; Try removing the filters one at a time to find which one excludes everything. Also check the dataset&apos;s Mode (live vs hybrid vs fact) — fact-only mode requires the fact rows to exist.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Field missing from picker:&lt;/strong&gt; The dataset&apos;s field path list doesn&apos;t include it. Edit the CR_Dataset record (Setup → Custom Metadata) to add the path.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Save creates duplicate:&lt;/strong&gt; Names must be unique. Pick a different report name or delete the previous one.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Troubleshooting</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:warning</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">40.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crReportBuilder</value>
+    </values>
+</CustomMetadata>

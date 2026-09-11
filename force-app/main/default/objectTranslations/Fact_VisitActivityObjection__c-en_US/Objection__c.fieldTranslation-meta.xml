@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Visit_Objection__c.Objection__r.Name - -  the objection type. --></help>
+    <label><!-- Objection --></label>
+    <name>Objection__c</name>
+</CustomFieldTranslation>

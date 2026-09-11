@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- OH Affiliation Agreement --></label>
+    <name>OHAffiliationAgreement__c</name>
+    <picklistValues>
+        <masterLabel>Level 2</masterLabel>
+        <translation><!-- Level 2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Level 3</masterLabel>
+        <translation><!-- Level 3 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Level1</masterLabel>
+        <translation><!-- Level1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not a Target</masterLabel>
+        <translation><!-- Not a Target --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Target, Discussion Stage</masterLabel>
+        <translation><!-- Target, Discussion Stage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Target, Negotiation Stage</masterLabel>
+        <translation><!-- Target, Negotiation Stage --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

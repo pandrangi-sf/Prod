@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Orlando Health</title>
+
+<style>
+
+/* Based on The MailChimp Reset INLINE: Yes. */  
+		/* Client-specific Styles */
+		#outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+		body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; background-color:#EFEFEF;} 
+		/* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/ 
+		.ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */  
+		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+		/* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */ 
+		#backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important; background-color:#EFEFEF;}
+		/* End reset */
+
+		/* Some sensible defaults for images
+		Bring inline: Yes. */
+		img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;} 
+		a img {border:none;} 
+		.image_fix {display:block;}
+
+		/* Yahoo paragraph fix
+		Bring inline: Yes. */
+		p {margin: 1em 0;}
+
+		/* Outlook 07, 10 Padding issue fix
+		Bring inline: No.*/
+		table td {border-collapse: collapse;}
+
+h1 {
+	font-family:Helvetica, Arial, sans-serif;
+	color:#333333;
+	font-size:40px;
+}
+
+p {
+	font-family:Times New Roman, Times, serif;
+	font-size:16px;
+	line-height:22px;
+	color:#333333;
+}
+
+a {
+	color:#B20838;
+}
+
+.footer {
+	font-family:Times New Roman, Times, serif;
+	font-size:11px;
+	line-height:13px;
+	color:#333333;
+	text-align:center;
+}
+
+</style>
+
+</head>
+
+<body style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #EFEFEF;width: 100% !important;">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="backgroundTable" style="margin: 0;padding: 0;background-color: #EFEFEF;width: 100% !important;line-height: 100% !important;">
+  <tr>
+    <td style="border-collapse: collapse;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="border-collapse: collapse;">
+    
+    	<table width="600" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#FFFFFF">
+          <tr bgcolor="#B20838">
+            <td style="border-collapse: collapse;">
+            
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td width="25" style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;"><img src="http://www.evariant.com/clients/orlando/primary-care/orlando-logo-r.jpg" alt="Orlando Health Logo" border="0" title="Orlando Health Logo" class="img_fix" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></td>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                </table>
+            
+            </td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">
+            
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;"><img src="http://www.evariant.com/clients/orlando/primary-care/primary-care-guides_s1.jpg" alt="Guide to Bariatric Surgery" border="0" title="Guide to Bariatric Surgery" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></td>
+                    <td width="20" style="border-collapse: collapse;">&nbsp;</td>
+                    <td valign="top" style="border-collapse: collapse;">
+                    
+                    	<h1 style="font-family: Helvetica, Arial, sans-serif;color: #333333;font-size: 40px;">Thank You</h1>
+                      <p style="margin: 1em 0;font-family: Times New Roman, Times, serif;font-size: 16px;line-height: 22px;color: #333333;">We hope you enjoy your guides.<br>Click the buttons below to download your guides.</p>
+                      
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="37" style="border-collapse: collapse;"><a href="http://clres.s3.amazonaws.com/orlandohealth/primarycare/pdf/OHChronicDiseaseGuide.pdf"><img src="http://www.evariant.com/clients/orlando/primary-care/download-square_s1.jpg" width="37" height="36" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a></td>
+                            <td width="10" style="border-collapse: collapse;">&nbsp;</td>
+                            <td style="border-collapse: collapse;"><p style="margin: 1em 0;font-family: Times New Roman, Times, serif;font-size: 16px;color: #333333; margin:0;"><a href="http://clres.s3.amazonaws.com/orlandohealth/primarycare/pdf/OHChronicDiseaseGuide.pdf" style="color: #B20838;">Chronic Disease Management</a></p></td>
+                        </tr>
+                          <tr>
+                            <td width="37" style="border-collapse: collapse;">&nbsp;</td>
+                            <td width="10" style="border-collapse: collapse;">&nbsp;</td>
+                            <td style="border-collapse: collapse;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td width="37" style="border-collapse: collapse;"><a href="http://clres.s3.amazonaws.com/orlandohealth/primarycare/pdf/OHPreventativeCareGuide.pdf"><img src="http://www.evariant.com/clients/orlando/primary-care/download-square_s1.jpg" width="37" height="36" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></a></td>
+                            <td width="10" style="border-collapse: collapse;">&nbsp;</td>
+                            <td style="border-collapse: collapse;"><p style="margin: 1em 0;font-family: Times New Roman, Times, serif;font-size: 16px;color: #333333; margin:0;"><a href="http://clres.s3.amazonaws.com/orlandohealth/primarycare/pdf/OHPreventativeCareGuide.pdf" style="color: #B20838;">Preventative Screenings</a></p></td>
+                          </tr>
+                      </table>
+                    
+                    </td>
+                    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                </table>
+            
+            </td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#EFEFEF">
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#EFEFEF">
+            <td style="border-collapse: collapse;">
+            
+            	<p class="footer" style="margin: 1em 0;font-family: Times New Roman, Times, serif;font-size: 11px;line-height: 13px;color: #333333;text-align: center;">Copyright © 2014 Orlando Health</p><p class="footer" style="margin: 1em 0;font-family: Times New Roman, Times, serif;font-size: 11px;line-height: 13px;color: #333333;text-align: center;">1414 Kuhl AvenueOrlando, FL 32806</p>
+            	
+            </td>
+          </tr>
+          <tr bgcolor="#EFEFEF">
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+        </table>
+    
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

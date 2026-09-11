@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Affiliation_Group__c</fullName>
+    <label>Affiliation Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OH Employed</fullName>
+                <default>false</default>
+                <label>OH Employed</label>
+            </value>
+            <value>
+                <fullName>Advent Health</fullName>
+                <default>false</default>
+                <label>Advent Health</label>
+            </value>
+            <value>
+                <fullName>HCA Hospitals</fullName>
+                <default>false</default>
+                <label>HCA Hospitals</label>
+            </value>
+            <value>
+                <fullName>Health First</fullName>
+                <default>false</default>
+                <label>Health First</label>
+            </value>
+            <value>
+                <fullName>Independent</fullName>
+                <default>false</default>
+                <label>Independent</label>
+            </value>
+            <value>
+                <fullName>Lakeland Regional Health</fullName>
+                <default>false</default>
+                <label>Lakeland Regional Health</label>
+            </value>
+            <value>
+                <fullName>LH Employed</fullName>
+                <default>false</default>
+                <label>LH Employed</label>
+            </value>
+            <value>
+                <fullName>Nemours Hospital</fullName>
+                <default>false</default>
+                <label>Nemours Hospital</label>
+            </value>
+            <value>
+                <fullName>OH Contracted</fullName>
+                <default>false</default>
+                <label>OH Contracted</label>
+            </value>
+            <value>
+                <fullName>OHN Affiliate - PPA</fullName>
+                <default>false</default>
+                <label>OHN Affiliate - PPA</label>
+            </value>
+            <value>
+                <fullName>OHN Affiliate - PPA (PP)</fullName>
+                <default>false</default>
+                <label>OHN Affiliate - PPA (PP)</label>
+            </value>
+            <value>
+                <fullName>OHN Affiliate - SPA</fullName>
+                <default>false</default>
+                <label>OHN Affiliate - SPA</label>
+            </value>
+            <value>
+                <fullName>OH Owned Facility</fullName>
+                <default>false</default>
+                <label>OH Owned Facility</label>
+            </value>
+            <value>
+                <fullName>OH Partnered Facility</fullName>
+                <default>false</default>
+                <label>OH Partnered Facility</label>
+            </value>
+            <value>
+                <fullName>Steward Health Care</fullName>
+                <default>false</default>
+                <label>Steward Health Care</label>
+            </value>
+            <value>
+                <fullName>The Villages Regional</fullName>
+                <default>false</default>
+                <label>The Villages Regional</label>
+            </value>
+            <value>
+                <fullName>VA Hospital</fullName>
+                <default>false</default>
+                <label>VA Hospital</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

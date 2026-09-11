@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- JSON config for joined reports: blocks (each a full report definition), joinKey, joinType, and crossBlockFormulas. Used only when Report_Type__c = Joined. --></help>
+    <label><!-- Joined Config JSON --></label>
+    <name>Joined_Config_JSON__c</name>
+</CustomFieldTranslation>

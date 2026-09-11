@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Echo Practice Status --></label>
+    <name>EchoPracticeStatus__c</name>
+    <picklistValues>
+        <masterLabel>Contracted</masterLabel>
+        <translation><!-- Contracted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Employed</masterLabel>
+        <translation><!-- Employed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hospitalist</masterLabel>
+        <translation><!-- Hospitalist --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Intensivist</masterLabel>
+        <translation><!-- Intensivist --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Private</masterLabel>
+        <translation><!-- Private --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

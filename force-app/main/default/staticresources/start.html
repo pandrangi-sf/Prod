@@ -1,0 +1,55 @@
+<div class="left">
+	<input type="hidden" class="reference" id="HC4__Inquiry__c.RecordTypeId" name="HC4__Inquiry__c.RecordTypeId" value="012i0000000QDV3AAO" />
+	<input type="hidden" class="picklist" id="HC4__Inquiry__c.HC4__Status__c" name="HC4__Inquiry__c.HC4__Status__c" value="Open" />
+	<input type="hidden" class="string" id="HC4__Inquiry__c.HC4__Subject__c" name="HC4__Inquiry__c.HC4__Subject__c" value="Breast Cancer - Guide - Assess" />
+	<input type="hidden" class="picklist" id="Patient.LeadSource" name="Patient.LeadSource" value="Breast Cancer 2014" />
+	<input type="hidden" class="picklist" id="Patient.HC4__MostRecentLeadSource__c" name="Patient.HC4__MostRecentLeadSource__c" value="Breast Cancer 2014" />
+	<input type="hidden" class="string" id="DemandConnectForm" name="DemandConnect.Form" value="BreastCancerGuideAssess" />
+
+	<div class="form-body">
+
+		<div class="form-row">
+			<label>First Name</label>
+
+			<div class="form-controls">
+				<input ng-model="FirstName" type="text" class="field required" name="FirstName" id="FirstName" />
+				<span class="errorMessage">Field Required</span>
+			</div><!-- /.form-controls -->
+		</div><!-- /.form-row -->
+<div class="clearAll"></div>
+		<div class="form-row">
+			<label>Last Name</label>
+
+			<div class="form-controls">
+				<input ng-model="LastName" type="text" class="field required" name="LastName" id="LastName" />
+				<span class="errorMessage">Field Required</span>
+			</div><!-- /.form-controls -->
+			<div class="clearAll"></div>
+		</div><!-- /.form-row -->
+
+		<div class="form-row">
+			<label>Email</label>
+
+			<div class="form-controls">
+				<input ng-model="Email" type="text" class="field email required" name="Email" id="Email" />
+				<span class="errorMessage">Field Required</span>
+			</div><!-- /.form-controls -->
+		</div><!-- /.form-row -->
+		<div class="clearAll"></div>
+	</div>
+	<!-- / .form-body -->
+
+	<div class="form-actions-btn">
+		<label>Continue to assessment and to Download Your Guide</label>
+		<input type="submit" ng-click="next()" value=" " class="next-btn disableOnClick" onclick="ga('send', 'event', 'Breast-Cancer-FY14', 'form', 'submit-asst');" />
+	</div><!-- /.form-actions -->
+</div>
+
+<div class="right">
+	<div class="title-r">
+		Your Privacy is Important to Us
+	</div>
+	<p>
+		Your information will be safe with us and not shared with or sold to another third party.
+	</p>
+</div>

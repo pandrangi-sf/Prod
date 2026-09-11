@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- BF General Interest --></label>
+    <name>MC_Pref_BF_GeneralInterest__c</name>
+</CustomFieldTranslation>

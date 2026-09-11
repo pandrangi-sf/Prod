@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visits_Last_90_Days__c</fullName>
+    <description>Stores the number of visits to the Target by the Target Owner in the last 90 days.  Populated by Flows.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of times the Target Owner has visited the provider in the last 90 days.</inlineHelpText>
+    <label>Visits Last 90 Days</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

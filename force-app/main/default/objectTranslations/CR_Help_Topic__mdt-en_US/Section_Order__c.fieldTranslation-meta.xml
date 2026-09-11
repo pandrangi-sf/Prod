@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sort order of this section within its tool. Lower numbers appear first. Use multiples of 10 (10, 20, 30) so admins can insert new sections without renumbering. --></help>
+    <label><!-- Section Order --></label>
+    <name>Section_Order__c</name>
+</CustomFieldTranslation>

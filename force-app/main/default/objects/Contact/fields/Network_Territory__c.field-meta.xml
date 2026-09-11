@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Network_Territory__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The territory assigned to the Provider by the Network team</description>
+    <inlineHelpText>Network team territory assignment.</inlineHelpText>
+    <label>Network Territory</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Territory__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Network Territory</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Territory__c</referenceTo>
+    <relationshipLabel>Providers</relationshipLabel>
+    <relationshipName>Providers</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

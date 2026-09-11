@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Email__c</fullName>
+    <formula>IF(AND(NOT( ISBLANK(Email)),NOT(ISBLANK( Bad_Email_Address__c ))), Email = Bad_Email_Address__c, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Invalid Email?</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicates</fullName>
+    <columns>NAME</columns>
+    <columns>Address__Street__s</columns>
+    <columns>Address__City__s</columns>
+    <columns>Address__StateCode__s</columns>
+    <columns>Address__PostalCode__s</columns>
+    <columns>Practice__c</columns>
+    <columns>Merge_Location__c</columns>
+    <columns>Merge_Location_Different_P_G__c</columns>
+    <columns>Merge_Location_Address__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Duplicate__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Duplicates</label>
+</ListView>

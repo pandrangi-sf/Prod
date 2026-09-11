@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- ACO Membership --></label>
+    <name>ACOMembership__c</name>
+    <picklistValues>
+        <masterLabel>AC Options, LLC</masterLabel>
+        <translation><!-- AC Options, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AC Partners, LLC</masterLabel>
+        <translation><!-- AC Partners, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ACC of North Central Florida, LLC</masterLabel>
+        <translation><!-- ACC of North Central Florida, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ACC of Northwest Florida, LLC</masterLabel>
+        <translation><!-- ACC of Northwest Florida, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ACMG</masterLabel>
+        <translation><!-- ACMG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Allcare Options, LLC</masterLabel>
+        <translation><!-- Allcare Options, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>American Health Alliance, LLC</masterLabel>
+        <translation><!-- American Health Alliance, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Baroma Health Partners</masterLabel>
+        <translation><!-- Baroma Health Partners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Broward Guardian, LLC</masterLabel>
+        <translation><!-- Broward Guardian, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central Florida Physicians Trust</masterLabel>
+        <translation><!-- Central Florida Physicians Trust --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Collaborative Care of Florida LLC</masterLabel>
+        <translation><!-- Collaborative Care of Florida LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Diag Clinic Walgreens Well Network</masterLabel>
+        <translation><!-- Diag Clinic Walgreens Well Network --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emerald Physicians</masterLabel>
+        <translation><!-- Emerald Physicians --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FPG Healthcare, LLC</masterLabel>
+        <translation><!-- FPG Healthcare, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>First Coast Health Alliance, LLC</masterLabel>
+        <translation><!-- First Coast Health Alliance, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Florida Medical Clinic ACO, LLC</masterLabel>
+        <translation><!-- Florida Medical Clinic ACO, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Florida Physicians Trust, LLC</masterLabel>
+        <translation><!-- Florida Physicians Trust, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HCP ACO CA LLC</masterLabel>
+        <translation><!-- HCP ACO CA LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Health Choice Care, LLC</masterLabel>
+        <translation><!-- Health Choice Care, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Health Point ACO, LLC</masterLabel>
+        <translation><!-- Health Point ACO, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Integral Healthcare, LLC</masterLabel>
+        <translation><!-- Integral Healthcare, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Integrated Care Alliance, LLC</masterLabel>
+        <translation><!-- Integrated Care Alliance, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MCM ACO, LLC</masterLabel>
+        <translation><!-- MCM ACO, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Practitioners For AC</masterLabel>
+        <translation><!-- Medical Practitioners For AC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Meridian Health Systems ACO Corporation</masterLabel>
+        <translation><!-- Meridian Health Systems ACO Corporation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Millennium ACO</masterLabel>
+        <translation><!-- Millennium ACO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nature Coast ACO LLC</masterLabel>
+        <translation><!-- Nature Coast ACO LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northwest Florida Health Partners LLC</masterLabel>
+        <translation><!-- Northwest Florida Health Partners LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orange AC of South Florida, LLC</masterLabel>
+        <translation><!-- Orange AC of South Florida, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orange Accountable Care</masterLabel>
+        <translation><!-- Orange Accountable Care --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Beach ACO, LLC</masterLabel>
+        <translation><!-- Palm Beach ACO, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paradigm ACO, LLC</masterLabel>
+        <translation><!-- Paradigm ACO, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physician First ACO</masterLabel>
+        <translation><!-- Physician First ACO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physicians Collaborative Trust ACO LLC</masterLabel>
+        <translation><!-- Physicians Collaborative Trust ACO LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PremierMD ACO, LLC</masterLabel>
+        <translation><!-- PremierMD ACO, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Primary Care Alliance LLC</masterLabel>
+        <translation><!-- Primary Care Alliance LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Primary Partners, LLC</masterLabel>
+        <translation><!-- Primary Partners, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reliance Health Network</masterLabel>
+        <translation><!-- Reliance Health Network --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Florida ACO, LLC</masterLabel>
+        <translation><!-- South Florida ACO, LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>St Vincents ACO LLC</masterLabel>
+        <translation><!-- St Vincents ACO LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TP-ACO LLC</masterLabel>
+        <translation><!-- TP-ACO LLC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West Florida ACO, LLC</masterLabel>
+        <translation><!-- West Florida ACO, LLC --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Zone Name --></label>
+    <name>Zone_Name__c</name>
+    <picklistValues>
+        <masterLabel>ZONE1</masterLabel>
+        <translation><!-- ZONE1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZONE2</masterLabel>
+        <translation><!-- ZONE2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZONE3</masterLabel>
+        <translation><!-- ZONE3 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZONE4</masterLabel>
+        <translation><!-- ZONE4 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZONE5</masterLabel>
+        <translation><!-- ZONE5 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZONE6</masterLabel>
+        <translation><!-- ZONE6 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Admin certification that this dashboard&apos;s data is safe to deliver identically to all subscription recipients. Required before the dashboard can be subscribed. --></help>
+    <label><!-- Broadcast Safe --></label>
+    <name>Broadcast_Safe__c</name>
+</CustomFieldTranslation>

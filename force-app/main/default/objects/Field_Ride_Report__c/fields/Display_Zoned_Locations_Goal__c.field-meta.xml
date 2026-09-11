@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Zoned_Locations_Goal__c</fullName>
+    <description>Field used to conditionally display the &quot;% of zoned locations seen within 30 days&quot; field.  Will show this measurement for records created after 3/29/2026 when the field was added.  Prior to this it will display the &quot;Performance Growth % to goal (QTR)&quot; field.</description>
+    <formula>OR(
+  ISBLANK(CreatedDate),
+  DATEVALUE(CreatedDate) &gt; DATE(2026, 3, 29)
+)</formula>
+    <label>Display % Zoned Locations Goal</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

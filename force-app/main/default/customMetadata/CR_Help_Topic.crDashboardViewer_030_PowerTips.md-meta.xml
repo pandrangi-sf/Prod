@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dashboard Viewer — Power Tips</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Snapshot:&lt;/strong&gt; The Snapshot button captures the current state into a Dashboard Run record so you can compare to today&apos;s data later.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Export:&lt;/strong&gt; Queues a per-component export job. Each tile&apos;s data is written out individually so large datasets don&apos;t time out.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Edit:&lt;/strong&gt; Jumps straight to Dashboard Builder for the current dashboard.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Polling cadence:&lt;/strong&gt; Run status updates arrive in real time via empApi events; a 10-second polling fallback covers the case where event delivery is delayed.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Power tips</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:advanced_function</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crDashboardViewer</value>
+    </values>
+</CustomMetadata>

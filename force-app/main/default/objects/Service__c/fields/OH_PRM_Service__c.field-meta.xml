@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OH_PRM_Service__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Tracks if the service is used by the OH PRM team.</description>
+    <inlineHelpText>Indicates the service is used by the OH PRM team.</inlineHelpText>
+    <label>OH PRM Service</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

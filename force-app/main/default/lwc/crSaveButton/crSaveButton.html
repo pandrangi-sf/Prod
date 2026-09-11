@@ -1,0 +1,19 @@
+<template>
+    <button
+        type="button"
+        class={buttonClass}
+        onclick={handleClick}
+        disabled={disabled}
+        title={tooltip}>
+        <span class="cr-save-btn__stack">
+            <span class="cr-save-btn__layer cr-save-btn__layer--default">
+                <lightning-icon icon-name={iconName} size="x-small" variant="inverse"></lightning-icon>
+                <span class="cr-save-btn__label">{label}</span>
+            </span>
+            <span class="cr-save-btn__layer cr-save-btn__layer--success">
+                <lightning-icon icon-name="utility:check" size="x-small" variant="inverse"></lightning-icon>
+                <span class="cr-save-btn__label">{successLabel}</span>
+            </span>
+        </span>
+    </button>
+</template>

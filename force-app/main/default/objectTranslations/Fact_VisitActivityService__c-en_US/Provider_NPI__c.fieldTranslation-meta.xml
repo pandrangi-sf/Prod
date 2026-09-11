@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Contact.npi__c for the provider (TaskWhoRelation.RelationId). Resolved during ETL; the Provider Id is plain text and cannot be joined at report time. --></help>
+    <label><!-- Provider NPI --></label>
+    <name>Provider_NPI__c</name>
+</CustomFieldTranslation>

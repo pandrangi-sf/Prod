@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Check this to block eVariant from updating this record. --></help>
+    <label><!-- Do Not Update From External Source --></label>
+    <name>DoNotUpdateFromExternalSource__c</name>
+</CustomFieldTranslation>

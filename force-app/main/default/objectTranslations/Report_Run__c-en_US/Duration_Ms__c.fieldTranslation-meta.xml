@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Apex-measured wall-clock duration of the query execution, in milliseconds. --></help>
+    <label><!-- Duration (ms) --></label>
+    <name>Duration_Ms__c</name>
+</CustomFieldTranslation>

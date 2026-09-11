@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Template = derived from the framework&apos;s report templates / datasets (auto-included; do not edit). Manual = org-specific admin addition or suppression. Template rows are shadows of the Apex-computed default; deleting them does not remove the underlying default — add a Manual row with Action=Exclude instead. --></help>
+    <label><!-- Source --></label>
+    <name>Source__c</name>
+    <picklistValues>
+        <masterLabel>Manual</masterLabel>
+        <translation><!-- Manual --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Template</masterLabel>
+        <translation><!-- Template --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

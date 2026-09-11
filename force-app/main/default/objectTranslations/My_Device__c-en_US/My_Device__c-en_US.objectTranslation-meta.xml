@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>My Device</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>My Devices</value>
+    </caseValues>
+    <layouts>
+        <layout>My Device Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Information - Do Not Edit --></label>
+            <section>System Information - Do Not Edit</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

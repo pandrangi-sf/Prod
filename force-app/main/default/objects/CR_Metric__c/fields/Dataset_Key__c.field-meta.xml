@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dataset_Key__c</fullName>
+    <description>The dataset / fact this metric belongs to (matches a report&apos;s Dataset_Key__c). Reports on this dataset can offer this metric.</description>
+    <externalId>false</externalId>
+    <label>Dataset Key</label>
+    <length>100</length>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Report Viewer — Getting Started</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Pick a report:&lt;/strong&gt; Use the dropdown or arrive via a deep link from a dashboard tile.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Run:&lt;/strong&gt; The report runs against the current data. Progress and row count appear in the header.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sort &amp; paginate:&lt;/strong&gt; Click any column header to sort. Page through large result sets with the pager at the bottom.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Visualization:&lt;/strong&gt; Toggle between Table and Chart views. The chart auto-detects axes; the report&apos;s saved preferences win.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Filters:&lt;/strong&gt; Add runtime filters that don&apos;t modify the saved definition. Useful for one-off slicing.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Running a report</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:play</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crReportViewer</value>
+    </values>
+</CustomMetadata>

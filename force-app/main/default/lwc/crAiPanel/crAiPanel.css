@@ -1,0 +1,103 @@
+.ai-drawer {
+    background: #ffffff;
+    border-left: 1px solid #d8e2ed;
+    bottom: 0;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 28rem;
+    z-index: 9100;
+    animation: slide-in 0.18s ease-out;
+}
+@keyframes slide-in {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+}
+
+.ai-drawer__header {
+    align-items: center;
+    background: linear-gradient(180deg, #f0e7fb 0%, #faf6ff 100%);
+    border-bottom: 1px solid #d8c6f0;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 0.7rem 0.85rem;
+}
+.ai-drawer__title-block {
+    align-items: center;
+    display: flex;
+    gap: 0.4rem;
+}
+.ai-drawer__title-icon {
+    --sds-c-icon-color-foreground-default: #7c3aed;
+}
+.ai-drawer__title {
+    color: #181818;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+}
+.ai-drawer__badge {
+    background: #fff8e8;
+    border: 1px solid #fdb515;
+    border-radius: 999px;
+    color: #5c4900;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.05rem 0.45rem;
+    text-transform: uppercase;
+}
+
+.ai-drawer__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.85rem 1rem 1.1rem;
+}
+
+.ai-drawer__loading {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    min-height: 8rem;
+    text-align: center;
+}
+.ai-drawer__loading-text {
+    color: #5c5c5c;
+    font-size: 0.82rem;
+    margin: 0;
+}
+
+.ai-drawer__error {
+    color: #ba0517;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.ai-drawer__heading {
+    color: #181818;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+}
+.ai-drawer__rich {
+    color: #2a2a2a;
+    font-size: 0.85rem;
+    line-height: 1.55;
+}
+.ai-drawer__rich p { margin: 0 0 0.55rem; }
+.ai-drawer__rich p:last-child { margin-bottom: 0; }
+.ai-drawer__rich em {
+    background: #fff8e8;
+    border-radius: 0.2rem;
+    color: #5c4900;
+    font-style: normal;
+    padding: 0.05rem 0.3rem;
+}
+.ai-drawer__rich strong { color: #161616; }

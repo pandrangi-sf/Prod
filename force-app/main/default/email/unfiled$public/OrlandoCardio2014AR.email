@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Orlando Health</title>
+
+<style>
+
+/* Based on The MailChimp Reset INLINE: Yes. */  
+		/* Client-specific Styles */
+		#outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+		body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; background-color:#EFEFEF;} 
+		/* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/ 
+		.ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */  
+		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+		/* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */ 
+		#backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important; background-color:#EFEFEF;}
+		/* End reset */
+
+		/* Some sensible defaults for images
+		Bring inline: Yes. */
+		img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;} 
+		a img {border:none;} 
+		.image_fix {display:block;}
+
+		/* Yahoo paragraph fix
+		Bring inline: Yes. */
+		p {margin: 1em 0;}
+
+		/* Outlook 07, 10 Padding issue fix
+		Bring inline: No.*/
+		table td {border-collapse: collapse;}
+		
+		/* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+		.ExternalClass {width:100%;}
+
+h1 {
+	font-family:Helvetica, Arial, sans-serif;
+	color:#333333;
+	font-size:40px;
+}
+
+p {
+	font-family:Georgia, Times New Roman, Times, serif;
+	font-size:14px;
+	line-height:22px;
+	color:#333333;
+}
+
+.footer {
+	font-family:Georgia, Times New Roman, Times, serif;
+	font-size:11px;
+	line-height:13px;
+	color:#333333;
+	text-align:center;
+	font-style:italic;
+}
+
+.white {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:29px;
+	line-height:32px;
+	color:#FFFFFF;
+	margin:0;
+}
+
+.white-sub {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:16px;
+	line-height:22px;
+	color:#FFFFFF;
+}
+
+.blog {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:29px;
+	line-height:32px;
+	color:#333333;
+	margin:0;
+	font-weight:bold;
+}
+
+a {
+	color:#9E1933;
+}
+
+@media only screen and (max-device-width: 480px) {
+        table[class="wrapper"]{
+          width:100% !important;
+        }
+        td[class="logo"]{
+          text-align: center !important;
+        }
+		img[class="logo"]{
+		  max-width: 100% !important;
+		  height: auto !important;
+		}
+		td[class="sub-head"]{
+          text-align: center !important;
+		  font-size:20px !important;
+        }
+		p[class="copy"]{
+          
+        }
+        td[class="mobile-hide"]{
+          display:none;
+        }
+        img[class="mobile-hide"]{
+          display: none !important;
+        }
+}
+</style>
+
+</head>
+
+<body style="-webkit-text-size-adjust: none;-ms-text-size-adjust: 100%;margin: 0;padding: 0;background-color: #EFEFEF;width: 100%;">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="backgroundTable" style="margin: 0;padding: 0;background-color: #EFEFEF;width: 100%;line-height: 100%;">
+  <tr>
+    <td style="border-collapse: collapse;">&nbsp;</td>
+  </tr>
+  <tr>
+    <td style="border-collapse: collapse;">
+    
+    	<table class="wrapper" width="600" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#FFFFFF">
+          <tr bgcolor="#9E1B34">
+            <td style="border-collapse: collapse;">
+            
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td width="25" style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td width="25" style="border-collapse: collapse;">&nbsp;</td>
+                    <td class="logo" style="border-collapse: collapse;"><img src="http://www.evariant.com/clients/orlando/cardiology/images/heart-logo.jpg" alt="Orlando Health Logo" width="294" height="59" border="0" class="logo" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" title="Orlando Health Logo"></td>
+                    <td width="25" style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;">&nbsp;</td>
+                    <td width="25" style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                </table>
+            
+            </td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">
+            
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+                    <td class="mobile-hide" style="border-collapse: collapse;"><img class="mobile-hide" src="http://www.evariant.com/clients/orlando/cardiology/images/guide1.jpg" alt="Guide to Bariatric Surgery" border="0" title="Guide to Bariatric Surgery" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></td>
+                    <td class="mobile-hide" width="20" style="border-collapse: collapse;">&nbsp;</td>
+                    <td valign="top" style="border-collapse: collapse;">
+                    
+                    	<h1 class="header" style="font-family: Helvetica, Arial, sans-serif;color: #333333;font-size: 40px;">Thank You</h1>
+                      <p class="copy" style="margin: 1em 0;font-family: Georgia, Times New Roman, Times, serif;font-size: 14px;line-height: 22px;color: #333333;">Thank you for your interest in learning more about heart disease prevention and treatment options at the Orlando Health Heart Institute.<br>
+                      <a href="http://clres.s3.amazonaws.com/orlandohealth/cardio/pdf/OHHI_Cardiac_Disease_Brochure.pdf" style="color: #9E1933;">Download your guide now »</a></p>
+                      
+                    </td>
+                    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                </table>
+            
+            </td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          
+          <tr bgcolor="#333333">
+            <td style="border-collapse: collapse;">
+           	  <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#333333">
+            	  <tr align="center">
+            	    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+            	    <td align="center" style="border-collapse: collapse;">&nbsp;</td>
+            	    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+          	    </tr>
+            	  <tr align="center">
+            	    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+            	    <td align="center" style="border-collapse: collapse;">
+                    
+                    <table class="wrapper" width="430" border="0" cellspacing="0" cellpadding="0" align="center">
+                      <tr>
+                        <td class="mobile-hide" width="64" style="border-collapse: collapse;"><img class="mobile-hide" src="http://www.evariant.com/clients/orlando/cardiology/images/clipboard.jpg" width="64" height="63" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"></td>
+                        <td class="mobile-hide" width="10" style="border-collapse: collapse;">&nbsp;</td>
+                        <td class="sub-head" style="border-collapse: collapse;"><p class="white" style="margin: 0;font-family: Helvetica, Arial, sans-serif;font-size: 29px;line-height: 32px;color: #FFFFFF;">Our cardiovascular<br>experts are here for you.</p></td>
+                      </tr>
+                      
+                    </table>
+                    
+                    <p class="white-sub copy" style="margin: 1em 0;font-family: Georgia, Times New Roman, Times, serif;font-size: 16px;line-height: 22px;color: #FFFFFF;">Make an appointment with an Orlando Health Heart Institute<br>
+                      specialist today.</p>
+                      
+                      <table cellspacing="0" cellpadding="0" border="0" width="240">
+                      	<tr>
+                          <td bgcolor="#9E1B34" style="padding-top:10px;padding-bottom:10px;padding-right:15px;padding-left:15px;font-size:18px;font-family:Helvetica, Arial, sans-serif;color:#ffffff; text-align:center"><a href="http://ww2.orlandohealth.com/request_heart_appt?hcmacid=a0bi000000BcIE7&utm_campaign=Orlando+Health+Cardiology&utm_source=eVariant+Email&utm_medium=Referral&utm_content=ReqAppt_AutoResponder" style="color: #FFFFFF; text-decoration:none">Request an Appointment</a></td>
+                        </tr>
+                      </table>
+                    
+                    </td>
+            	    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+          	    </tr>
+                <tr align="center">
+            	    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+            	    <td align="center" style="border-collapse: collapse;">&nbsp;</td>
+            	    <td width="40" style="border-collapse: collapse;">&nbsp;</td>
+          	    </tr>
+       	    </table>
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">
+            
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="45" style="border-collapse: collapse;">&nbsp;</td>
+                    <td style="border-collapse: collapse;">
+                    
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td style="border-collapse: collapse;">
+                        
+                        <p class="copy" style="margin:0;font-family: Georgia, Times New Roman, Times, serif;font-size: 14px;line-height: 22px;color: #333333; text-align:center">Connect with us for the latest hospital news, prevention and wellness tips, and community event announcements.</p>
+                        
+                        <table width="260" border="0" cellspacing="0" cellpadding="0" align="center">
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td><a href="https://www.facebook.com/orlandohealth"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/facebook-social.jpg" alt="Facebook" title="Facebook" border="0" /></a></td>
+                            <td width="10">&nbsp;</td>
+                            <td><a href="http://twitter.com/orlandohealth"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/twitter-social.jpg" alt="Twitter" title="Twitter" border="0" /></a></td>
+                            <td width="10">&nbsp;</td>
+                            <td><a href="https://www.youtube.com/user/orlandohealth"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/youtube-social.jpg" alt="YouTube" title="YouTube" /></a></td>
+                            <td width="10">&nbsp;</td>
+                            <td><a href="https://plus.google.com/114240543480548385122/"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/google-social.jpg" alt="Google" title="Google" border="0" /></a></td>
+                            <td width="10">&nbsp;</td>
+                            <td><a href="http://pinterest.com/orlandohealth/"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/pintrest-social.jpg" alt="Pintrest" title="Pintrest" border="0" /></a></td>
+                            <td width="10">&nbsp;</td>
+                            <td><a href="http://www.linkedin.com/company/orlando-health"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/linkedin-social.jpg" alt="Linkedin" title="Linkedin" border="0" /></a></td>
+                          </tr>
+                        </table>
+                        
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    </td>
+                    <td width="45" style="border-collapse: collapse;">&nbsp;</td>
+                  </tr>
+                </table>
+            
+            </td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#EFEFEF">
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#EFEFEF">
+            <td style="border-collapse: collapse;">
+            
+            	<p class="footer" style="margin: 1em 0;font-family: Georgia, Times New Roman, Times, serif;font-size: 11px;line-height: 13px;color: #333333;text-align: center; font-style:italic;">Copyright © 2014 Orlando Health</p>
+            	
+            </td>
+          </tr>
+          <tr bgcolor="#EFEFEF">
+            <td style="border-collapse: collapse;">&nbsp;</td>
+          </tr>
+        </table>
+    
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

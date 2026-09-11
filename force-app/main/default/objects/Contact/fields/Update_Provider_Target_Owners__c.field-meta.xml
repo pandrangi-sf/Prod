@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Provider_Target_Owners__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to trigger a flow to update the Provider Target Owners field on the provider record.</description>
+    <label>Update Provider Target Owners</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

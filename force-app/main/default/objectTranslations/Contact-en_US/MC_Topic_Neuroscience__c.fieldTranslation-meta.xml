@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Neuroscience Care --></label>
+    <name>MC_Topic_Neuroscience__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Updated PRM Home Page Activity Report</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;The 30 Day Activity Report has been updated to group your visits based on the &lt;strong&gt;Visit Category&lt;/strong&gt; so now you can quickly see how many visits you&apos;ve had with Physicians vs Office Staff.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click on the &lt;strong&gt;View Report&lt;/strong&gt; link to view the full report.&lt;/p&gt;</body>
+        <customApplication>PRM</customApplication>
+        <delayDays>1</delayDays>
+        <description>Prompt for the updated Activity Report on the Home Page that groups the visits by the Visit Category now.</description>
+        <dismissButtonLabel>Got It!</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <endDate>2022-12-09</endDate>
+        <isPublished>true</isPublished>
+        <masterLabel>Updated PRM Home Page Activity Report</masterLabel>
+        <publishedDate>2022-12-02</publishedDate>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;flexipage_reportChart&quot;}},&quot;version&quot;:2}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-12-02</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <themeColor>Theme1</themeColor>
+        <themeSaturation>Dark</themeSaturation>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Updated Activity Report</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

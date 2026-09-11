@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(&quot;32712:32814:32746:32750:32751:32714:32763:32701:32703:32779:32789:32792:32804:32810:32808&quot;, PostalCode), &quot;North&quot;,
+IF(CONTAINS(&quot;34747:32837:34741:32803:32819:34743:34744:34746:34758:34759:32821:32824:32801:32806:32809:32812:32839&quot;, PostalCode), &quot;South&quot;,
+IF(CONTAINS(&quot;34711:32835:34787:34786:34714:34715:34748:34788:32811:32805:32818:32836&quot;, PostalCode), &quot;West&quot;,
+IF(CONTAINS(&quot;32828:32827:32765:32817:32766:32822:32825:32826:32832:32807:32829:32831:32833:32820&quot;, PostalCode), &quot;East&quot;,&quot; &quot;))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

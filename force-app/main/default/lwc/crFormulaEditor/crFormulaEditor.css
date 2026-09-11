@@ -1,0 +1,24 @@
+.formula-editor {
+    padding: 0.5rem 0;
+}
+
+.formula-card {
+    background: #fafafa;
+}
+
+.field-list {
+    max-height: 12rem;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+}
+
+.field-button {
+    width: 100%;
+    text-align: left;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+}
+
+.advanced-json summary {
+    cursor: pointer;
+}

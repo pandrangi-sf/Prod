@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tableau_User__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked this will fire off a workflow to Evariant Support team to add this user to Tableau for access</description>
+    <inlineHelpText>Check this if user should be set up for use in Market Intelligence with access to Tableau Workbooks</inlineHelpText>
+    <label>Tableau User</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

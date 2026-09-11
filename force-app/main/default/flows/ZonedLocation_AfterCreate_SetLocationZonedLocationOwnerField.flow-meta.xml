@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Sets the Zoned Location Owner field on the Location record related to the new Zoned Location Record.</description>
+    <environments>Default</environments>
+    <interviewLabel>ZonedLocation_AfterCreate_SetLocationZonedLocationOwnerField {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ZonedLocation_AfterCreate_SetZonedLocationOwnerField</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Location_Zoned_Location_Owner_Field</targetReference>
+        </connector>
+        <object>ZonedLocation__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Updates the Zoned Location Owner field on the related location record.</description>
+        <name>Update_Location_Zoned_Location_Owner_Field</name>
+        <label>Update Location Zoned Location Owner Field</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>ZonedLocation_SUB_UpdateZonedLocationOwnerField</flowName>
+        <inputAssignments>
+            <name>viT_LocationID</name>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <triggerOrder>500</triggerOrder>
+</Flow>

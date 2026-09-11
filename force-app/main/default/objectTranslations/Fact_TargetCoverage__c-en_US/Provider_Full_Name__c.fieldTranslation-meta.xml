@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- TRIM(Provider.FirstName + &apos; &apos; + Provider.LastName) computed at materialization. --></help>
+    <label><!-- Provider Full Name --></label>
+    <name>Provider_Full_Name__c</name>
+</CustomFieldTranslation>

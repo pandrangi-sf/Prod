@@ -1,0 +1,350 @@
+var app = angular.module('core', []);
+
+app.run(function($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function() {
+    });
+});
+
+app.value('$anchorScroll', angular.noop);
+
+app.config(function($routeProvider){
+    var dt = ( new Date().getTime() ) + 604800 + "000";         
+    $routeProvider.
+      when('/', 
+      {            
+        controller: startController,
+        templateUrl: '/resource/' + dt +'/start'
+      }).
+      when('/about', 
+      {            
+        controller: aboutController,
+        templateUrl: '/resource/' + dt +'/about'
+      }).
+      when('/medical', 
+      {            
+        controller: medicalController,
+        templateUrl: '/resource/' + dt +'/medical'
+      }).
+      otherwise({redirectTo: '/'});
+}); 
+
+/*
+app.config(function($routeProvider) {
+    $routeProvider.when('/', {
+        controller : startController,
+        templateUrl : 'start.html'
+    }).when('/about', {
+        controller : aboutController,
+        templateUrl : 'about.html'
+    }).when('/medical', {
+        controller : medicalController,
+        templateUrl : 'medical.html'
+    }).otherwise({
+        redirectTo : '/'
+    });
+});
+*/
+function sendData(FirstName, LastName, Email, guid) {
+    $.ajax({
+        jsonp : "callback",
+        dataType : "jsonp",
+         headers: {
+       	 "Referer" : "http://orlandohealthgyn.force.com/breastcancer"
+    	},
+        url : "https://orlandohealthgyn.secure.force.com/HC4__WebFormProcessor",
+        data : {
+            "HC4__Inquiry__c.RecordTypeId" : "012i0000000QDV3AAO",
+            "HC4__Inquiry__c.HC4__Status__c" : "Open",
+            "HC4__Inquiry__c.HC4__Subject__c" : "Breast Cancer - Guide - Assess",
+            "Patient.LeadSource" : "Breast Cancer 2014",
+            "Patient.HC4__MostRecentLeadSource__c" : "Breast Cancer 2014",
+            "DemandConnect.Form" : "BreastCancerGuideAssess",
+            "HC4__Inquiry__c.submitguid__c" : guid,
+            "Patient.FirstName" : FirstName,
+            "Patient.LastName" : LastName,
+            "Patient.Email" : Email,
+            "hcmacid" : $("#demandconnect0_value").val(),
+            "demandconnect0_value" :  $("#demandconnect0_value").val(),
+			"demandconnect0_field" : $("#demandconnect0_field").val(),
+			"demandconnect0_time" : $("#demandconnect0_time").val(),
+			"demandconnect0_keyword" : $("#demandconnect0_keyword").val(),
+			"demandconnect0_referrer" : $("#demandconnect0_referrer").val(),
+			"demandconnect0_referrerdomain" : $("#demandconnect0_referrerdomain").val(),
+			"demandconnect_masterid" : $("#demandconnect_masterid").val(),
+			"demandconnect_sessionid" : $("#demandconnect_sessionid").val()
+        },
+        success : function(data) {
+            //window.location.href = 'thank-you2.html';
+        },
+        error : function() {
+            //window.location.href = 'thank-you2.html';
+        }
+    });
+}
+
+function updateInquiry(guid, q1, q2, q3, q4, q5, q6, q7, q8, q9,q10, score, as, score90, as90) {
+	if(score != "N/A"){
+		score = score + '%';
+		as =   as       + '%';
+		score90 =  score90   + '%';
+		as90 =     as90   + '%'  ;
+	}
+    $.ajax({
+        jsonp : "callback",
+        dataType : "jsonp",
+        url : "http://orlandohealthgyn.force.com/inquiryUpdater",
+        data : {
+            "guid" : guid,
+            "q1" : q1,
+            "q2" : q2,
+            "q3" : q3,
+            "q4" : q4,
+            "q5" : q5,
+            "q6" : q6,
+            "q7" : q7,
+            "q8" : q8,
+            "q9" : q9,
+            "q10": q10,
+            "score" : score,
+            "as" : as,
+            "score90": score90,
+            "as90" : as90
+            
+        },
+        success : function(data) {
+            window.location.href = 'breastcancer_thankyou';
+        },
+        error : function() {
+            window.location.href = 'breastcancer_thankyou';
+        }
+    });
+}
+
+var guid = (function() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    }
+
+    return function() {
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+    };
+})();
+
+function addFieldErrors($scope,$validate_email) {
+    sw = true;
+    if(typeof $validate_email == 'undefined' )
+        $validate_email = false;
+    $(".form-controls").removeClass('error');
+    $(".form-controls").each(function() {
+        if ($(this).find('.required').val() == "") {
+            $(this).addClass('error');
+            sw = false;
+        }else{
+            if($validate_email)
+                if(!validateEmail($scope.Email)){
+                    $(".email").parent().addClass('error');
+                    sw = false;
+                }
+        }
+      
+    });
+    
+    return sw;
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+function rootController($scope, $filter, $routeParams, $location) {
+    $location.path('/');
+    $scope.age = '';
+    $scope.mage = '';
+    $scope.fbage = '';
+    $scope.race = '';
+    $scope.mhistory = '';
+    $scope.genetic = '';
+    $scope.fdrel = '';
+    $scope.hadb = '';
+    $scope.guid = guid();
+    $scope.age2 = '';
+    $scope.mage2 = '';
+    $scope.fbage2 = '';
+    $scope.race2 = '';
+    $scope.mhistory2 = '';
+    $scope.genetic2 = '';
+    $scope.fdrel2 = '';
+    $scope.hadb2 = '';
+    $scope.subRace = '';
+    $scope.img1 = '';
+    $scope.img2 = 'hide';
+    $scope.img3 = 'hide';
+    $scope.visible1 = 1; 
+    $scope.active1 = 1; 
+    $scope.visible2 = 1; 
+    $scope.active2 = 1; 
+    $scope.visible2 = 0; 
+    $scope.active2 = 0; 
+    $scope.downloadguideText = "forceHide";
+}
+
+function startController($scope, $filter, $routeParams, $location) {
+    $scope.$parent.downloadguideText="forceHide";
+    $scope.$parent.visible1 = 1; 
+    $scope.$parent.active1 = 1; 
+    $scope.$parent.visible2 = 0; 
+    $scope.$parent.active2 = 0; 
+    $scope.$parent.visible3 = 0; 
+    $scope.$parent.active3 = 0; 
+    $scope.$parent.img1 = '';
+    $scope.$parent.img2 = 'hide';
+    $scope.$parent.img3 = 'hide';
+    $scope.next = function() {
+        if (addFieldErrors($scope,true)) {
+            sendData($scope.FirstName,$scope.LastName, $scope.Email, $scope.$parent.guid);
+            $.cookie('firstName', $scope.FirstName);
+            $.cookie('lastName', $scope.LastName);
+            $.cookie('email', $scope.Email);
+            $.cookie('guid', $scope.$parent.guid);
+            $location.path('about');
+        }
+        return false;
+    };
+}
+
+function aboutController($scope, $filter, $routeParams, $location) {
+    $scope.$parent.downloadguideText="forceDisplay";
+    $scope.$parent.visible1 = 1; 
+    $scope.$parent.active1 = 1; 
+    $scope.$parent.visible2 = 1; 
+    $scope.$parent.active2 = 1; 
+    $scope.$parent.visible3 = 0; 
+    $scope.$parent.active3 = 0; 
+    $scope.$parent.img1 = 'hide';
+    $scope.$parent.img2 = '';
+    $scope.$parent.img3 = 'hide';
+    $scope.subRaceClass = "forceHide";
+
+    $scope.next = function() {
+        if (addFieldErrors($scope)) {
+            $scope.$parent.age = $scope.age;
+            $scope.$parent.mage = $scope.mage;
+            $scope.$parent.fbage = $scope.fbage;
+            $scope.$parent.race = $scope.race;
+            $scope.$parent.age2 = $('.age   option:selected').text();
+            $scope.$parent.mage2 = $('#mage  option:selected').text();
+            $scope.$parent.fbage2 = $('#fbage option:selected').text();
+            $scope.$parent.race2 = $('#race  option:selected').text();
+            $location.path('medical');
+        }
+
+        return false;
+    };
+    $scope.raceChange = function() {
+        if ($scope.race == "4") {
+            $scope.subRaceClass = "forceDisplay required";
+        } else {
+            $scope.subRaceClass = "forceHide";
+        }
+        if ($scope.race == "3") {
+        } else if ($scope.race == "5") {
+        } else if ($scope.race == "6") {
+        }
+    };
+}
+
+function medicalController($scope, $filter, $routeParams, $location) {
+    $scope.$parent.downloadguideText="forceDisplay";
+    $scope.$parent.visible1 = 1; 
+    $scope.$parent.active1 = 1; 
+    $scope.$parent.visible2 = 1; 
+    $scope.$parent.active2 = 1; 
+    $scope.$parent.visible3 = 1; 
+    $scope.$parent.active3 = 1; 
+    $scope.$parent.img1 = 'hide';
+    $scope.$parent.img2 = 'hide';
+    $scope.$parent.img3 = '';
+    $scope.biopsyClass = "forceHide";
+    
+    $scope.biopsyChange = function(){
+        if ($scope.hadb == "1") {
+            $scope.biopsyClass = "forceDisplay required";
+        }
+        else{
+            $scope.biopsyClass = "forceHide";
+        }
+    };
+    
+    $scope.mhistoryChange = function(){
+        if ($scope.mhistory == "1") {
+        } 
+    };
+    $scope.geneticChange = function(){
+        if ($scope.genetic == "1") {
+        } 
+    };
+    $scope.next = function() {
+        if (addFieldErrors($scope)) {
+            $scope.$parent.mhistory = $scope.mhistory;
+            $scope.$parent.genetic = $scope.genetic;
+            $scope.$parent.fdrel = $scope.fdrel;
+            $scope.$parent.hadb = $scope.hadb;
+            $scope.$parent.mhistory2 = $('.mhistory option:selected').text();
+            $scope.$parent.genetic2 = $('#genetic option:selected').text();
+            $scope.$parent.fdrel2 = $('#fdrel option:selected').text();
+            $scope.$parent.hadb2 = $('#hadb option:selected').text();
+            $scope.$parent.biopsies=$('#previous_biopsies option:selected').text();;
+            $scope.$parent.hyperplasia=$('#hyperplasia option:selected').text();;
+            
+            CurrentAge = parseInt($scope.$parent.age);
+            ProjectionAge = parseInt($scope.$parent.age) + 5;
+            AgeIndicator = CurrentAgeIndicator(parseInt($scope.$parent.age));
+            MenarcheAge = parseInt($scope.$parent.mage);
+            FirstLiveBirthAge = parseInt($scope.$parent.fbage);
+            EverHadBiopsy = parseInt($scope.$parent.hadb);
+            FirstDegRelatives = parseInt($scope.$parent.fdrel);
+            ihyp = parseInt($scope.hyperplasia);
+            rhyp = getRisk(ihyp, 0);
+            irace = parseInt($scope.$parent.race);
+            if (EverHadBiopsy > 0) {
+                if ($scope.biopsies == "1") {
+                    NumberOfBiopsy = 1;
+                }
+                else if($scope.biopsies == "99"){
+                    NumberOfBiopsy = 99;
+                }
+                else{
+                   NumberOfBiopsy = 2; 
+                }
+            } else {
+                NumberOfBiopsy = 0;
+            }
+            arraya = checkRisk(CurrentAge, ProjectionAge, AgeIndicator, NumberOfBiopsy, MenarcheAge, FirstLiveBirthAge, EverHadBiopsy, FirstDegRelatives, ihyp, rhyp, irace);
+            arrayb = checkRisk2(CurrentAge, ProjectionAge, AgeIndicator, NumberOfBiopsy, MenarcheAge, FirstLiveBirthAge, EverHadBiopsy, FirstDegRelatives, ihyp, rhyp, irace);
+            $.cookie('q1', $scope.$parent.age2);
+            $.cookie('q2', $scope.$parent.mage2);
+            $.cookie('q3', $scope.$parent.fbage2);
+            $.cookie('q4', $scope.$parent.race2);
+            $.cookie('q5', $scope.$parent.mhistory2);
+            $.cookie('q6', $scope.$parent.genetic2);
+            $.cookie('q7', $scope.$parent.fdrel2);
+            $.cookie('q8', $scope.$parent.hadb2);
+            $.cookie('q9', $scope.$parent.biopsies);
+            $.cookie('q10', $scope.$parent.hyperplasia);
+            $.cookie('DCIS', $scope.$parent.mhistory);
+            $.cookie('BRCA', $scope.$parent.genetic);
+            
+            if($scope.$parent.genetic==1 || $scope.$parent.mhistory==1 || isNaN(arraya[0]) ||  isNaN(arraya[1])){
+            	arraya[0] = "N/A";
+            	arraya[1] = "N/A";
+            	arrayb[0] = "N/A";
+            	arrayb[1] = "N/A";
+            }
+            updateInquiry($scope.$parent.guid, $scope.$parent.age2, $scope.$parent.mage2,
+            			  $scope.$parent.fbage2, $scope.$parent.race2, $scope.$parent.mhistory2, $scope.$parent.genetic2, 
+            			  $scope.$parent.fdrel2, $scope.$parent.hadb2, $scope.$parent.biopsies, $scope.$parent.hyperplasia, 
+            			  arraya[0], arraya[1],  arrayb[0], arrayb[1]);
+        }
+        return false;
+    };
+}

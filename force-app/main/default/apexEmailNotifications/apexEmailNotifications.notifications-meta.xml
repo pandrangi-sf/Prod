@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexEmailNotifications xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apexEmailNotification>
+        <user>brendan.murphy@orlandohealth.com</user>
+    </apexEmailNotification>
+    <apexEmailNotification>
+        <email>r-salesforcecrmadministrator@orlandohealth.com</email>
+    </apexEmailNotification>
+    <apexEmailNotification>
+        <user>mh.salesforce.admin@mercuryhealthcare.com</user>
+    </apexEmailNotification>
+</ApexEmailNotifications>

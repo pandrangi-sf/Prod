@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PRCAssigned__c</fullName>
+    <description>Changes can only be made by sales manager role. (Khalilah Filmore)</description>
+    <label>PRM Assigned</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arrow</fullName>
+                <default>false</default>
+                <label>Arrow</label>
+            </value>
+            <value>
+                <fullName>Hodge</fullName>
+                <default>false</default>
+                <label>Hodge</label>
+            </value>
+            <value>
+                <fullName>Hooker</fullName>
+                <default>false</default>
+                <label>Hooker</label>
+            </value>
+            <value>
+                <fullName>Howard</fullName>
+                <default>false</default>
+                <label>Howard</label>
+            </value>
+            <value>
+                <fullName>Kim-Breit</fullName>
+                <default>false</default>
+                <label>Kim-Breit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

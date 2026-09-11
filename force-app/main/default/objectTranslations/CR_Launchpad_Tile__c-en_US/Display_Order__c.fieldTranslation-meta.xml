@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sort order on the Home page. Lower numbers appear first. Use multiples of 10 so new tiles can be inserted between existing ones. --></help>
+    <label><!-- Display Order --></label>
+    <name>Display_Order__c</name>
+</CustomFieldTranslation>

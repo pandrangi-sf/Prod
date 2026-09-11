@@ -1,0 +1,24 @@
+.match-highlight {
+    font-weight: 700;
+    background-color: #fff7d1;
+    color: inherit;
+    padding: 0;
+}
+
+.slds-listbox__option_entity .slds-listbox__option-text_entity {
+    font-size: 0.875rem;
+}
+
+.slds-listbox__option_entity .slds-listbox__option-meta_entity {
+    color: #706e6b;
+    font-size: 0.75rem;
+}
+
+.slds-listbox__option.slds-has-focus {
+    background-color: #f3f3f3;
+}
+
+.slds-dropdown_length-with-icon-7 {
+    max-height: 22rem;
+    overflow-y: auto;
+}

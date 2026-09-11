@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Line_Override__c</fullName>
+    <description>Field for tracking the Provider Service Line Override for PRM Institute Specialists</description>
+    <label>Service Line Override</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACHD</fullName>
+                <default>false</default>
+                <label>ACHD</label>
+            </value>
+            <value>
+                <fullName>Bariatrics</fullName>
+                <default>false</default>
+                <label>Bariatrics</label>
+            </value>
+            <value>
+                <fullName>Blood and Marrow Transplant</fullName>
+                <default>false</default>
+                <label>Blood and Marrow Transplant</label>
+            </value>
+            <value>
+                <fullName>Bone Marrow Transplant and Cellular Therapy</fullName>
+                <default>false</default>
+                <label>Bone Marrow Transplant and Cellular Therapy</label>
+            </value>
+            <value>
+                <fullName>Burn Surgery</fullName>
+                <default>false</default>
+                <label>Burn Surgery</label>
+            </value>
+            <value>
+                <fullName>Cardiology</fullName>
+                <default>false</default>
+                <label>Cardiology</label>
+            </value>
+            <value>
+                <fullName>Cardiothoracic Surgery</fullName>
+                <default>false</default>
+                <label>Cardiothoracic Surgery</label>
+            </value>
+            <value>
+                <fullName>Colon and Rectal Surgery</fullName>
+                <default>false</default>
+                <label>Colon and Rectal Surgery</label>
+            </value>
+            <value>
+                <fullName>Developmental and Behavioral Pediatrics</fullName>
+                <default>false</default>
+                <label>Developmental and Behavioral Pediatrics</label>
+            </value>
+            <value>
+                <fullName>Emergency Medicine</fullName>
+                <default>false</default>
+                <label>Emergency Medicine</label>
+            </value>
+            <value>
+                <fullName>Endocrinology</fullName>
+                <default>false</default>
+                <label>Endocrinology</label>
+            </value>
+            <value>
+                <fullName>Endoscopy</fullName>
+                <default>false</default>
+                <label>Endoscopy</label>
+            </value>
+            <value>
+                <fullName>Family Medicine</fullName>
+                <default>false</default>
+                <label>Family Medicine</label>
+            </value>
+            <value>
+                <fullName>Gastroenterology</fullName>
+                <default>false</default>
+                <label>Gastroenterology</label>
+            </value>
+            <value>
+                <fullName>General Surgery</fullName>
+                <default>false</default>
+                <label>General Surgery</label>
+            </value>
+            <value>
+                <fullName>Gynecology</fullName>
+                <default>false</default>
+                <label>Gynecology</label>
+            </value>
+            <value>
+                <fullName>Infectious Diseases</fullName>
+                <default>false</default>
+                <label>Infectious Diseases</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine</fullName>
+                <default>false</default>
+                <label>Internal Medicine</label>
+            </value>
+            <value>
+                <fullName>Maternal and Fetal Medicine</fullName>
+                <default>false</default>
+                <label>Maternal and Fetal Medicine</label>
+            </value>
+            <value>
+                <fullName>Multidisciplinary</fullName>
+                <default>false</default>
+                <label>Multidisciplinary</label>
+            </value>
+            <value>
+                <fullName>Neurology</fullName>
+                <default>false</default>
+                <label>Neurology</label>
+            </value>
+            <value>
+                <fullName>Neurosurgery</fullName>
+                <default>false</default>
+                <label>Neurosurgery</label>
+            </value>
+            <value>
+                <fullName>Nutrition</fullName>
+                <default>false</default>
+                <label>Nutrition</label>
+            </value>
+            <value>
+                <fullName>Obstetrics and Gynecology</fullName>
+                <default>false</default>
+                <label>Obstetrics and Gynecology</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapy</fullName>
+                <default>false</default>
+                <label>Occupational Therapy</label>
+            </value>
+            <value>
+                <fullName>Oncology</fullName>
+                <default>false</default>
+                <label>Oncology</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery</label>
+            </value>
+            <value>
+                <fullName>Otolaryngology</fullName>
+                <default>false</default>
+                <label>Otolaryngology</label>
+            </value>
+            <value>
+                <fullName>Pain Medicine</fullName>
+                <default>false</default>
+                <label>Pain Medicine</label>
+            </value>
+            <value>
+                <fullName>Palliative Medicine</fullName>
+                <default>false</default>
+                <label>Palliative Medicine</label>
+            </value>
+            <value>
+                <fullName>Pediatric Allergy and Immunology</fullName>
+                <default>false</default>
+                <label>Pediatric Allergy and Immunology</label>
+            </value>
+            <value>
+                <fullName>Pediatric and Adolescent Gynecology</fullName>
+                <default>false</default>
+                <label>Pediatric and Adolescent Gynecology</label>
+            </value>
+            <value>
+                <fullName>Pediatric and Adolescent Medicine</fullName>
+                <default>false</default>
+                <label>Pediatric and Adolescent Medicine</label>
+            </value>
+            <value>
+                <fullName>Pediatric Anesthesia</fullName>
+                <default>false</default>
+                <label>Pediatric Anesthesia</label>
+            </value>
+            <value>
+                <fullName>Pediatric Behavioral Health and Developmental</fullName>
+                <default>false</default>
+                <label>Pediatric Behavioral Health and Developmental</label>
+            </value>
+            <value>
+                <fullName>Pediatric Bone Marrow Transplant and Cellular Therapy</fullName>
+                <default>false</default>
+                <label>Pediatric Bone Marrow Transplant and Cellular Therapy</label>
+            </value>
+            <value>
+                <fullName>Pediatric Cardiac and Thoracic Surgery</fullName>
+                <default>false</default>
+                <label>Pediatric Cardiac and Thoracic Surgery</label>
+            </value>
+            <value>
+                <fullName>Pediatric Cardiology</fullName>
+                <default>false</default>
+                <label>Pediatric Cardiology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Cardiology Interventional</fullName>
+                <default>false</default>
+                <label>Pediatric Cardiology Interventional</label>
+            </value>
+            <value>
+                <fullName>Pediatric Child Protection Team</fullName>
+                <default>false</default>
+                <label>Pediatric Child Protection Team</label>
+            </value>
+            <value>
+                <fullName>Pediatric Complex Care</fullName>
+                <default>false</default>
+                <label>Pediatric Complex Care</label>
+            </value>
+            <value>
+                <fullName>Pediatric Craniomaxillofacial Surgery</fullName>
+                <default>false</default>
+                <label>Pediatric Craniomaxillofacial Surgery</label>
+            </value>
+            <value>
+                <fullName>Pediatric Critical Care</fullName>
+                <default>false</default>
+                <label>Pediatric Critical Care</label>
+            </value>
+            <value>
+                <fullName>Pediatric Dermatology</fullName>
+                <default>false</default>
+                <label>Pediatric Dermatology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Endocrinology</fullName>
+                <default>false</default>
+                <label>Pediatric Endocrinology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Gastroenterology</fullName>
+                <default>false</default>
+                <label>Pediatric Gastroenterology</label>
+            </value>
+            <value>
+                <fullName>Pediatric General Surgery</fullName>
+                <default>false</default>
+                <label>Pediatric General Surgery</label>
+            </value>
+            <value>
+                <fullName>Pediatric Genetics</fullName>
+                <default>false</default>
+                <label>Pediatric Genetics</label>
+            </value>
+            <value>
+                <fullName>Pediatric Hematology-Oncology</fullName>
+                <default>false</default>
+                <label>Pediatric Hematology-Oncology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Hematology-Oncology (BMT)</fullName>
+                <default>false</default>
+                <label>Pediatric Hematology-Oncology (BMT)</label>
+            </value>
+            <value>
+                <fullName>Pediatric Hospitalists</fullName>
+                <default>false</default>
+                <label>Pediatric Hospitalists</label>
+            </value>
+            <value>
+                <fullName>Pediatric Infectious Disease</fullName>
+                <default>false</default>
+                <label>Pediatric Infectious Disease</label>
+            </value>
+            <value>
+                <fullName>Pediatric Nephrology</fullName>
+                <default>false</default>
+                <label>Pediatric Nephrology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Neurology</fullName>
+                <default>false</default>
+                <label>Pediatric Neurology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Neuropsychology</fullName>
+                <default>false</default>
+                <label>Pediatric Neuropsychology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Neurosurgery</fullName>
+                <default>false</default>
+                <label>Pediatric Neurosurgery</label>
+            </value>
+            <value>
+                <fullName>Pediatric Occupational Health</fullName>
+                <default>false</default>
+                <label>Pediatric Occupational Health</label>
+            </value>
+            <value>
+                <fullName>Pediatric Oncology</fullName>
+                <default>false</default>
+                <label>Pediatric Oncology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Ophthalmology</fullName>
+                <default>false</default>
+                <label>Pediatric Ophthalmology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Orthopaedic Surgery</fullName>
+                <default>false</default>
+                <label>Pediatric Orthopaedic Surgery</label>
+            </value>
+            <value>
+                <fullName>Pediatric Otolaryngology</fullName>
+                <default>false</default>
+                <label>Pediatric Otolaryngology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Palliative Medicine</fullName>
+                <default>false</default>
+                <label>Pediatric Palliative Medicine</label>
+            </value>
+            <value>
+                <fullName>Pediatric Physiatry</fullName>
+                <default>false</default>
+                <label>Pediatric Physiatry</label>
+            </value>
+            <value>
+                <fullName>Pediatric Physical Medicine and Rehabilitation</fullName>
+                <default>false</default>
+                <label>Pediatric Physical Medicine and Rehabilitation</label>
+            </value>
+            <value>
+                <fullName>Pediatric Psychiatry</fullName>
+                <default>false</default>
+                <label>Pediatric Psychiatry</label>
+            </value>
+            <value>
+                <fullName>Pediatric Psychology</fullName>
+                <default>false</default>
+                <label>Pediatric Psychology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Pulmonology</fullName>
+                <default>false</default>
+                <label>Pediatric Pulmonology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Radiology</fullName>
+                <default>false</default>
+                <label>Pediatric Radiology</label>
+            </value>
+            <value>
+                <fullName>Pediatric Residency</fullName>
+                <default>false</default>
+                <label>Pediatric Residency</label>
+            </value>
+            <value>
+                <fullName>Pediatric Rheumatology</fullName>
+                <default>false</default>
+                <label>Pediatric Rheumatology</label>
+            </value>
+            <value>
+                <fullName>Pediatrics</fullName>
+                <default>false</default>
+                <label>Pediatrics</label>
+            </value>
+            <value>
+                <fullName>Pediatric Sports Medicine</fullName>
+                <default>false</default>
+                <label>Pediatric Sports Medicine</label>
+            </value>
+            <value>
+                <fullName>Pediatric Urology</fullName>
+                <default>false</default>
+                <label>Pediatric Urology</label>
+            </value>
+            <value>
+                <fullName>Physical Medicine and Rehabilitation</fullName>
+                <default>false</default>
+                <label>Physical Medicine and Rehabilitation</label>
+            </value>
+            <value>
+                <fullName>Physical Therapy</fullName>
+                <default>false</default>
+                <label>Physical Therapy</label>
+            </value>
+            <value>
+                <fullName>Plastic Surgery</fullName>
+                <default>false</default>
+                <label>Plastic Surgery</label>
+            </value>
+            <value>
+                <fullName>Podiatry</fullName>
+                <default>false</default>
+                <label>Podiatry</label>
+            </value>
+            <value>
+                <fullName>Post-Trauma Therapy and Support</fullName>
+                <default>false</default>
+                <label>Post-Trauma Therapy and Support</label>
+            </value>
+            <value>
+                <fullName>Psychology</fullName>
+                <default>false</default>
+                <label>Psychology</label>
+            </value>
+            <value>
+                <fullName>Pulmonology</fullName>
+                <default>false</default>
+                <label>Pulmonology</label>
+            </value>
+            <value>
+                <fullName>Radiation Oncology</fullName>
+                <default>false</default>
+                <label>Radiation Oncology</label>
+            </value>
+            <value>
+                <fullName>Speech Therapy</fullName>
+                <default>false</default>
+                <label>Speech Therapy</label>
+            </value>
+            <value>
+                <fullName>Sports Medicine</fullName>
+                <default>false</default>
+                <label>Sports Medicine</label>
+            </value>
+            <value>
+                <fullName>Surgical Oncology</fullName>
+                <default>false</default>
+                <label>Surgical Oncology</label>
+            </value>
+            <value>
+                <fullName>Urogynecology</fullName>
+                <default>false</default>
+                <label>Urogynecology</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Vascular Surgery</fullName>
+                <default>false</default>
+                <label>Vascular Surgery</label>
+            </value>
+            <value>
+                <fullName>Wound Care</fullName>
+                <default>false</default>
+                <label>Wound Care</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Add a URL to a photo of the provider from a website. --></help>
+    <label><!-- Photo URL --></label>
+    <name>Photo_URL__c</name>
+</CustomFieldTranslation>

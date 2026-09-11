@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Audience --></label>
+    <name>Audience__c</name>
+    <picklistValues>
+        <masterLabel>Office Staff</masterLabel>
+        <translation><!-- Office Staff --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physician</masterLabel>
+        <translation><!-- Physician --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physician to Physician</masterLabel>
+        <translation><!-- Physician to Physician --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Practice Administrator</masterLabel>
+        <translation><!-- Practice Administrator --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

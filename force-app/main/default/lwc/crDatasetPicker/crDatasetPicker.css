@@ -1,0 +1,72 @@
+.peek-panel {
+    background: var(--background-color, #f4f6f9);
+    border: 1px solid var(--border-color, #dddbda);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+}
+
+.peek-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.peek-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.peek-pill {
+    font-size: 0.72rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid;
+    white-space: nowrap;
+}
+
+.peek-pill_ok {
+    background: #e3fcef;
+    color: #0e7c4a;
+    border-color: #94e6c1;
+}
+
+.peek-pill_warn {
+    background: #fff7e0;
+    color: #8a5a00;
+    border-color: #f5d97c;
+}
+
+.peek-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 1rem;
+    margin: 0;
+}
+
+.peek-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin: 0;
+}
+
+.peek-cell dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--text-color-weak, #706e6b);
+}
+
+.peek-cell dd {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.peek-cell code {
+    font-size: 0.8rem;
+    background: var(--background-color, #fff);
+    padding: 0 0.25rem;
+    border-radius: 0.15rem;
+}

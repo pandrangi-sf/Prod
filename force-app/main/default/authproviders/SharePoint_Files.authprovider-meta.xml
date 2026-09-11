@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <authorizeUrl>https://www.google.com</authorizeUrl>
+    <consumerKey>89df9fa5-b1ab-4f0a-924d-fc31fecc82e5</consumerKey>
+    <consumerSecret>Placeholder_Value</consumerSecret>
+    <friendlyName>SharePoint Files</friendlyName>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <isPkceEnabled>false</isPkceEnabled>
+    <providerType>MicrosoftACS</providerType>
+    <requireMfa>false</requireMfa>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>true</sendSecretInApis>
+    <tokenUrl>https://www.google.com</tokenUrl>
+</AuthProvider>

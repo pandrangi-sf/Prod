@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Sign Up Email for Lecture Series</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - Cardiac - Lecture Series Sign Up</name>
+    <style>none</style>
+    <subject>Thank you for registering for a heart health lecture</subject>
+    <textOnly>Orlando Health Cardiovascular Events
+
+Thank you.
+
+Thank you for registering to participate in Orlando Health Heart Institute’s Heart Health Lecture Series. By joining us, you’re taking a step towards keeping your heart healthy.
+
+Please note, all lectures will begin promptly at 6:00 pm (unless otherwise noted) and lite refreshments will be served. Please be sure to bring a light-weight jacket as the rooms may be cold. Lastly, valet or self-parking is available.
+
+At the Orlando Health Heart Institute we’re your partners in heart health. We offer an innovative approach to patient care that brings together physicians, surgeons and clinical staff to provide advanced diagnostic services, the latest surgical and nonsurgical treatment options, comprehensive education and innovative research. We strive for a positive patient experience including greater accessibility to clinical experts, more coordinated and collaborated care, and more timely results.
+
+© 2015 Orlando Health, Inc.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Parent dashboard that owns this dashboard component. --></help>
+    <label><!-- Dashboard --></label>
+    <name>Dashboard__c</name>
+    <relationshipLabel><!-- Dashboard Components --></relationshipLabel>
+</CustomFieldTranslation>

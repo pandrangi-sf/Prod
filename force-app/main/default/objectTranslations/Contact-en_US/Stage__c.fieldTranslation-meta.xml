@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Stage --></label>
+    <name>Stage__c</name>
+    <picklistValues>
+        <masterLabel>In Progress</masterLabel>
+        <translation><!-- In Progress --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Initial Presentation</masterLabel>
+        <translation><!-- Initial Presentation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Interested</masterLabel>
+        <translation><!-- Not Interested --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Interested Now, Follow up in Future</masterLabel>
+        <translation><!-- Not Interested Now, Follow up in Future --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Yet Contacted</masterLabel>
+        <translation><!-- Not Yet Contacted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PPA Signed</masterLabel>
+        <translation><!-- PPA Signed --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

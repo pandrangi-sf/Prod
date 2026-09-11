@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Component run summary, warning, or error details. --></help>
+    <label><!-- Message --></label>
+    <name>Message__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purpose__c</fullName>
+    <description>Indicates the purpose of the visit.</description>
+    <label>Purpose</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Referral Development</fullName>
+                <default>false</default>
+                <label>Referral Development</label>
+            </value>
+            <value>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+                <label>Customer Service</label>
+            </value>
+            <value>
+                <fullName>Event Promotion</fullName>
+                <default>false</default>
+                <label>Event Promotion</label>
+            </value>
+            <value>
+                <fullName>Issue Resolution</fullName>
+                <default>false</default>
+                <label>Issue Resolution</label>
+            </value>
+            <value>
+                <fullName>Scheduling</fullName>
+                <default>false</default>
+                <label>Scheduling</label>
+            </value>
+            <value>
+                <fullName>Provider Intervention Meeting</fullName>
+                <default>false</default>
+                <label>Provider Intervention Meeting</label>
+            </value>
+            <value>
+                <fullName>OHPA Annual Wellness Visit</fullName>
+                <default>false</default>
+                <label>OHPA Annual Wellness Visit</label>
+            </value>
+            <value>
+                <fullName>Provider Support Meeting</fullName>
+                <default>false</default>
+                <label>Provider Support Meeting</label>
+            </value>
+            <value>
+                <fullName>Quarterly Meeting</fullName>
+                <default>false</default>
+                <label>Quarterly Meeting</label>
+            </value>
+            <value>
+                <fullName>OHN Resource Meeting</fullName>
+                <default>false</default>
+                <label>OHN Resource Meeting</label>
+            </value>
+            <value>
+                <fullName>Contract Overview/ Renewal / Membership Solicitation</fullName>
+                <default>false</default>
+                <label>Contract Overview/ Renewal / Membership Solicitation</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>IT Support</fullName>
+                <default>false</default>
+                <label>IT Support</label>
+            </value>
+            <value>
+                <fullName>Site Visit</fullName>
+                <default>false</default>
+                <label>Site Visit</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

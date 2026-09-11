@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Deep-link to the Provider record in Salesforce Lightning. --></help>
+    <label><!-- Provider Link --></label>
+    <name>Provider_Link__c</name>
+</CustomFieldTranslation>

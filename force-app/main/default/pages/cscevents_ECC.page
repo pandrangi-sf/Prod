@@ -1,0 +1,288 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" contentType="text/html" cache="false" applyHtmlTag="false">
+<apex:outputText escape="false" value="{!"<!DOCTYPE html>"}"/>
+  
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW" />
+        <title>UFHCOOH CSC Event Sign Up - ECC</title>
+
+        <style>
+            .form-style form {
+                border-top: 1px solid #82a6bb;
+                border-bottom: 1px solid #82a6bb;
+                margin: 27px 0 15px;
+                padding: 0 0 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 185.7%;
+                color: #FFF;
+            }
+
+            .form-style input[type="text"], .form-style input[type="email"], .form-style input[type="tel"] {
+                width: 250px;
+                height: 30px;
+                border: 1px solid #666;
+                border-radius: 3px;
+                outline: 0;
+                margin-bottom: 10px;
+                padding: 2px 5px;
+            }
+
+            .form-style .comment {
+                width: 100px;
+            }
+
+            .form-style radio {
+                margin-bottom: 10px;
+            }
+
+            .form-style textarea {
+                width: 500px !important;
+                height: 75px;
+                border: 1px solid #333;
+                outline: 0;
+            }
+
+            .form-style select {
+                width: 260px;
+                min-height: 30px;
+                border: 1px solid #666;
+                border-radius: 3px;
+                outline: 0;
+                margin-bottom: 10px;
+                padding: 5px 5px;
+            }
+
+            .form-style input[type="submit"] {
+                background: -webkit-gradient(linear, 0 0, 0 100%, from(#b8b8b8), to(#cccccc));
+                background: -webkit-linear-gradient(#b8b8b8, #cccccc);
+                background: -moz-linear-gradient(#b8b8b8, #cccccc);
+                background: -ms-linear-gradient(#b8b8b8, #cccccc);
+                background: -o-linear-gradient(#b8b8b8, #cccccc);
+                background: linear-gradient(#b8b8b8, #cccccc);
+                -pie-background: linear-gradient(#b8b8b8, #cccccc);
+                color: #203306;
+                font-weight: bold;
+                padding: 13px 89px;
+                border-radius: 5px;
+                -webkit-box-shadow: 0 2px 1px #333;
+                box-shadow: 0 2px 1px #333;
+                text-transform: uppercase;
+                border: none;
+                margin: 4px 0 0 3px;
+                text-shadow: 0px 1px 0px #FFF;
+            }
+
+            .form-style input[type="submit"]:hover {
+                background: -webkit-gradient(linear, 0 0, 0 100%, from(#cccccc), to(#b8b8b8));
+                background: -webkit-linear-gradient(#cccccc, #b8b8b8);
+                background: -moz-linear-gradient(#cccccc, #b8b8b8);
+                background: -ms-linear-gradient(#cccccc, #b8b8b8);
+                background: -o-linear-gradient(#cccccc, #b8b8b8);
+                background: linear-gradient(#cccccc, #b8b8b8);
+                -pie-background: linear-gradient(#cccccc, #b8b8b8);
+            }
+
+            .form-style label {
+                display: block;
+                margin-bottom: 1px;
+            }
+
+            .form-style input.error {
+                background-color: #d42a2d;
+                color: #FFF;
+                font-size: 12px;
+            }
+
+            .form-style select.error {
+                background-color: #d42a2d;
+                color: #FFF;
+                font-size: 12px;
+            }
+
+            .form-style textarea.error {
+                background-color: #d42a2d;
+                color: #FFF;
+                font-size: 12px;
+            }
+
+            .form-style label.error {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #F00;
+                font-size: 11px;
+                padding-left: 3px;
+            }
+            span {
+                font-style: italic;
+                font-size: 11px;
+            }
+            .col6 {
+                width: 50%;
+                float: left;
+            }
+        </style>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--Dependecies -->
+        <script src="../resource/1434826993000/Events1/event_core.js"></script>
+
+        <!--Config Variables-->
+        <script>
+            days = 500;
+            limit = 20;
+            category = "CSC Art Therapy-CSC Caretakers-CSC Health and Wellness-CSC Special Events-CSC Support Group";
+
+            //OPTIONAL (format config)
+            //this will default to formating with event location (location is required for each event)
+            //this function allows you to modify the formatting behaviour of the script
+            //$scope - required attribute
+            //event - each event
+            //d - Json Object with EventInfo, EventLocations, EventCategoriess
+            //event.newString - This string will show in the select box
+
+            //examples:
+
+            //default behaviour - Location + Date Information
+            //format = false;
+
+            //---------Example1---------------------------------
+            //Event date
+            /*format = function($scope, event, d) {
+            if (event.maxed)
+            event.newString = "* " + event.newDate;
+            else
+            event.newString = event.newDate;
+            };*/
+            //---------------------------------------------------
+
+            //---------Example2----------------------------------
+            //Event Name + event date
+            /*format = function($scope, event, d) {
+            if (event.maxed)
+            event.newString = "* " + event.event.Name + " " + event.newDate;
+            else
+            event.newString = event.event.Name + " " + event.newDate;
+            };*/
+            //---------------------------------------------------
+
+            //---------Example3----------------------------------
+            //Example using the location of the events
+            //this example is less intuitive than the others but this is how the locations are integrated on the script
+            /*
+            format = function($scope, event, d) {
+                angular.forEach(d.EventLocations, function(location) {
+                    if (event.event.HC4__EventLocations__r) {
+                        if (location.Id == event.event.HC4__EventLocations__r.records[0].HC4__Location__c) {
+                            event.locationName = location.Name;
+                            if (event.maxed)
+                                event.newString = "* " + event.locationName + " - " + event.newDate;
+                            else
+                                event.newString = event.locationName + " - " + event.newDate;
+                        }
+                    }
+                });
+            };
+            */
+            //---------------------------------------------------
+
+            //we can show all the event information we like.
+            //---------Example4------------------------------------------
+            //Event Name + event date + patients registered to the event
+            format = function($scope, event, d) {
+                if (event.maxed)
+                    event.newString = "* " + event.event.Name + " " + event.newDate + " - People Registered: " + event.NumRegistered;
+                else
+                    event.newString = event.event.Name + " " + event.newDate + " - People Registered: " + event.NumRegistered;
+            };
+            //-----------------------------------------------------------
+
+            //-----------------------------------------------------------------------------------------------
+            //List of all parameters available: http://evariant.com/test/gio/orlando/json/GetEventsPage.html
+            //-----------------------------------------------------------------------------------------------
+        </script>
+
+        <!--Event Js-->
+        <script type="text/javascript" src="../resource/1434826993000/Events1/agsEvent.js"></script>
+
+        <script type="text/javascript">
+    DemandConnectFormSettings = {
+        debug: false, /* If true, does NOT send data to the server */
+        logErrors: true, /* If true, errors will be logged on the server */
+        defaultParameterName: 'hcmacid', /* Default URL parameter name for this Web Form */
+        defaultParameterValue: 'a0bi000000Pv62eAAB' /* Default (catch-all) Campaign Tactic for this Web Form */
+    };
+</script>
+       <script type="text/javascript">
+DemandConnectSettings = {
+        orgId: '00Di0000000JoEFEA0',
+        specialCampaigns: {
+
+        },
+        campaigns: {
+                hcmacid: 'HC4__ExternalId__c'
+        }
+};
+</script>
+        <script type="text/javascript" src="https://demandconnect.s3.amazonaws.com/DemandConnect3.min.js"></script>
+        <script type="text/javascript" src="https://demandconnect.s3.amazonaws.com/formProcessor.js"></script>
+    </head>
+
+    <body>
+        <div id="ng-app" ng-app="event" ng-controller="rootController">
+            <div class="col6">
+                <form id="FY15OncologyLectureECC_2" class="form-style" name="FY15OncologyLectureECC_2" action="https://orlandohealthgyn.secure.force.com/HC4__WebFormProcessor" method="post">
+
+                    <input type="hidden" class="reference" id="HC4__Inquiry__c.RecordTypeId" name="HC4__Inquiry__c.RecordTypeId" value="012i0000000QDV3AAO" />
+                    <input type="hidden" class="picklist" id="HC4__Inquiry__c.HC4__Status__c" name="HC4__Inquiry__c.HC4__Status__c" value="Open" />
+                    <input type="hidden" class="string" id="HC4__Inquiry__c.HC4__Subject__c" name="HC4__Inquiry__c.HC4__Subject__c" value="FY15OncologyLectureECC form submission" />
+                    <input type="hidden" class="picklist" id="Patient.LeadSource" name="Patient.LeadSource" value="Web Form: FY15OncologyLectureECC" />
+                    <input type="hidden" class="picklist" id="Patient.HC4__MostRecentLeadSource__c" name="Patient.HC4__MostRecentLeadSource__c" value="Web Form: FY15OncologyLectureECC" />
+                    <input type="hidden" class="string" id="DemandConnectForm" name="DemandConnect.Form" value="FY15OncologyLectureECC_2" />
+
+                       <h2>UFHCCOH - Cancer Support Community - Event Sign Up - ECC</h2>
+   <p>Please fill out all of the fields below to register a person for one of our CSC Events.</p>
+   <p>To view the landing page for the consumer, please visit <a href="http://ufhealthcancerorlando.com/landing/cscevents/">http://ufhealthcancerorlando.com/landing/cscevents/</a>.</p>
+    
+
+                    <label>First Name</label>
+                    <input type="text" class="required" id="FirstName" name="FirstName" value="" />
+                    <br/>
+
+                    <label>Last Name</label>
+                    <input type="text" class="required" id="LastName" name="LastName" value="" />
+                    <br/>
+
+                    <label>Email</label>
+                    <input type="text" class="email required" id="email" name="email" value="" />
+                    <br/>
+
+                    <label>Zip</label>
+                    <input type="text" class="zipcode" id="PostalCode" name="PostalCode" value="" />
+                    <br/>
+                    
+                     <label>Birthdate</label>
+                     <input type="text" class="date" id="Patient.HC4__Birthdate__c" name="Patient.HC4__Birthdate__c" value="" /><br /><br />
+
+                    <label>Phone Number</label>
+                    <input type="text" class="phone" id="Phone" name="Phone" value="" />
+                    <br/>
+
+                    <label class="session" id="session" for="session">Select the session you would like to attend
+                        <br />
+                        events with an * are full </label>
+                    <select ng-options="item as item.newString for item in allEvents track by item.event.Id" options-disabled="item.maxed for item in allEvents" ng-model="date" class="required"   id="TheEvent" name="HC4__EventRegistrant__c.HC4__Event__c">
+                        <option value="">Please Select</option>
+                    </select>
+                    <br />
+
+                    <input type="submit" value="Submit" class="disableOnClick" />
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
+
+
+  
+</apex:page>

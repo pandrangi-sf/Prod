@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Target.Owner_Name__c - -  the PRM who owns this target. --></help>
+    <label><!-- PRM --></label>
+    <name>PRM__c</name>
+</CustomFieldTranslation>

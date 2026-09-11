@@ -1,0 +1,6 @@
+A Target Zone was updated by {!ZonedLocation__c.LastModifiedBy} on {!ZonedLocation__c.LastModifiedDate}.
+
+<br><p>
+Provider: {!ZonedLocation__c.00N5A00000GqnrR} {!ZonedLocation__c.00N5A00000Gqnr2}<br>
+Address: {!ZonedLocation__c.Zoned_Location_Address__c}<br>
+Name    : {!ZonedLocation__c.Zone_Name__c}<br>

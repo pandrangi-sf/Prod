@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- JSON object describing what the preset applies. Recognized keys: datePreset (e.g., &quot;last30days&quot;), dateField (column key), myRecords (bool), activeOnly (bool), topN (number), columnFilters (array of {field, operator, value}). Example: {&quot;datePreset&quot;:&quot;last30days&quot;,&quot;myRecords&quot;:true} --></help>
+    <label><!-- Filter JSON --></label>
+    <name>Filter_JSON__c</name>
+</CustomFieldTranslation>

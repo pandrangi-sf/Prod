@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BH_Enforce_Network_Checkboxes</fullName>
+    <active>true</active>
+    <description>Enforces the In Network, Baptist Health Network, and Curachoice Network fields being checked when the Medical Group field is checked.</description>
+    <errorConditionFormula>AND(NOT(ISNEW()),
+    Medical_Group__c,
+    OR(
+        NOT(IsInNetwork__c),
+        NOT(Baptist_Health_Network__c),
+        NOT(BH_Curaechoice_Network__c)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Medical_Group__c</errorDisplayField>
+    <errorMessage>You must uncheck the Medical Group option before you can uncheck any of the Network fields.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_Employer__c</fullName>
+    <label>Competitor Employer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EmployedbyCompetitor__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Florida Hospital</fullName>
+                <default>false</default>
+                <label>Florida Hospital</label>
+            </value>
+            <value>
+                <fullName>Halifax Health Medical Center</fullName>
+                <default>false</default>
+                <label>Halifax Health Medical Center</label>
+            </value>
+            <value>
+                <fullName>Health First</fullName>
+                <default>false</default>
+                <label>Health First</label>
+            </value>
+            <value>
+                <fullName>Heart of Florida Regional Medical Center</fullName>
+                <default>false</default>
+                <label>Heart of Florida Regional Medical Center</label>
+            </value>
+            <value>
+                <fullName>Kindred Hospital Melbourne</fullName>
+                <default>false</default>
+                <label>Kindred Hospital Melbourne</label>
+            </value>
+            <value>
+                <fullName>Lakeland Regional Medical Center</fullName>
+                <default>false</default>
+                <label>Lakeland Regional Medical Center</label>
+            </value>
+            <value>
+                <fullName>Leesburg Regional Medical Center</fullName>
+                <default>false</default>
+                <label>Leesburg Regional Medical Center</label>
+            </value>
+            <value>
+                <fullName>Moffit Cancer Center</fullName>
+                <default>false</default>
+                <label>Moffit Cancer Center</label>
+            </value>
+            <value>
+                <fullName>Nemours Children&apos;s Hospital</fullName>
+                <default>false</default>
+                <label>Nemours Children&apos;s Hospital</label>
+            </value>
+            <value>
+                <fullName>Orlando VA Medical Center</fullName>
+                <default>false</default>
+                <label>Orlando VA Medical Center</label>
+            </value>
+            <value>
+                <fullName>Osceola Regional Medical Center</fullName>
+                <default>false</default>
+                <label>Osceola Regional Medical Center</label>
+            </value>
+            <value>
+                <fullName>Parrish Medical Center</fullName>
+                <default>false</default>
+                <label>Parrish Medical Center</label>
+            </value>
+            <value>
+                <fullName>Poinciana Medical Center</fullName>
+                <default>false</default>
+                <label>Poinciana Medical Center</label>
+            </value>
+            <value>
+                <fullName>Select Specialty Hospital-Orlando</fullName>
+                <default>false</default>
+                <label>Select Specialty Hospital-Orlando</label>
+            </value>
+            <value>
+                <fullName>St. Cloud Regional Medical Center</fullName>
+                <default>false</default>
+                <label>St. Cloud Regional Medical Center</label>
+            </value>
+            <value>
+                <fullName>Winter Haven Hospital, Inc.</fullName>
+                <default>false</default>
+                <label>Winter Haven Hospital, Inc.</label>
+            </value>
+            <value>
+                <fullName>Wuesthoff Medical Center</fullName>
+                <default>false</default>
+                <label>Wuesthoff Medical Center</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Florida Hospital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Halifax Health Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Health First</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Heart of Florida Regional Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Kindred Hospital Melbourne</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Lakeland Regional Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Leesburg Regional Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Moffit Cancer Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Nemours Children&apos;s Hospital</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Orlando VA Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Osceola Regional Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Parrish Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Poinciana Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Select Specialty Hospital-Orlando</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>St. Cloud Regional Medical Center</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Winter Haven Hospital, Inc.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Wuesthoff Medical Center</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

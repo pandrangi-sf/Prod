@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alabama_PRM_Active_Users</fullName>
+    <booleanFilter>1 AND 2 AND (3 OR 4 OR 5)</booleanFilter>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CORE.USERS.USERNAME</columns>
+    <columns>CORE.USERS.SAML_SUBJECT</columns>
+    <columns>TIMEZONE</columns>
+    <columns>CORE.USERS.LAST_LOGIN</columns>
+    <columns>CORE.USER_ROLE.NAME</columns>
+    <columns>CORE.USERS.ACTIVE</columns>
+    <columns>CORE.PROFILE.NAME</columns>
+    <columns>MANAGER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CORE.PROFILE.NAME</field>
+        <operation>contains</operation>
+        <value>PRM</value>
+    </filters>
+    <filters>
+        <field>CORE.USER_ROLE.NAME</field>
+        <operation>equals</operation>
+        <value>Alabama PRM Team</value>
+    </filters>
+    <filters>
+        <field>CORE.USER_ROLE.NAME</field>
+        <operation>equals</operation>
+        <value>Alabama PRM Manager</value>
+    </filters>
+    <filters>
+        <field>CORE.USER_ROLE.NAME</field>
+        <operation>equals</operation>
+        <value>Alabama PRM Director</value>
+    </filters>
+    <label>Alabama PRM Active Users</label>
+</ListView>

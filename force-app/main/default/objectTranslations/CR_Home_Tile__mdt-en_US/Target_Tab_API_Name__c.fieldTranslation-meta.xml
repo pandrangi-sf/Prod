@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- API name of the tab the tile should open (e.g., Custom_Report_Viewer, Custom_Dashboard_Viewer, Custom_Reporting_Health). Find it in Setup → Tabs → [Tab] → Tab Name. Tiles whose target tab does not exist are silently skipped. --></help>
+    <label><!-- Target Tab API Name --></label>
+    <name>Target_Tab_API_Name__c</name>
+</CustomFieldTranslation>

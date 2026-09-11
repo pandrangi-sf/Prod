@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Zip__c</fullName>
+    <externalId>false</externalId>
+    <formula>LEFT(Target_Provider__r.MailingPostalCode,5)</formula>
+    <inlineHelpText>Displays the 5-digit zip code of the target provider&apos;s primary location.</inlineHelpText>
+    <label>Target Zip</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

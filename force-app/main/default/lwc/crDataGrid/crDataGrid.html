@@ -1,0 +1,14 @@
+<template>
+    <div class="cr-grid-wrap" style={wrapperStyle}>
+        <lightning-datatable
+            key-field="__id"
+            columns={columns}
+            data={data}
+            sorted-by={sortedBy}
+            sorted-direction={sortedDirection}
+            onsort={handleSort}
+            hide-checkbox-column
+            column-widths-mode="auto">
+        </lightning-datatable>
+    </div>
+</template>

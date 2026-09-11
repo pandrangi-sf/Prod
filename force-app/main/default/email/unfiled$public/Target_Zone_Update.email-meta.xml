@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Target Zone Update</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Target Zone Update</name>
+    <style>none</style>
+    <subject>Target Zone Updated by {!ZonedLocation__c.LastModifiedBy}</subject>
+    <textOnly>A Target Zone was updated by {!ZonedLocation__c.LastModifiedBy} on {!ZonedLocation__c.LastModifiedDate}.
+
+Provider: {!ZonedLocation__c.00N5A00000GqnrR} {!ZonedLocation__c.00N5A00000Gqnr2}
+Address: {!ZonedLocation__c.Zoned_Location_Address__c}
+Name    : {!ZonedLocation__c.Zone_Name__c}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

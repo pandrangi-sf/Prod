@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Report Viewer</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__Tab</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+            <property name="defaultReportId" type="String" label="Default Custom Report Id" description="Optional Report_Definition__c record Id to select when the component loads."/>
+            <property name="defaultReportName" type="String" label="Default Custom Report Name" description="Optional saved custom report name to select when no Id is provided."/>
+            <property name="autoRunOnLoad" type="Boolean" label="Run Automatically" description="Run the configured custom report as soon as the Home Page loads." default="false"/>
+            <property name="hideReportSelector" type="Boolean" label="Hide Report Selector" description="Hide the report picker when this component is configured for one report." default="false"/>
+            <property name="hideExportButton" type="Boolean" label="Hide Export Button" description="Hide export actions from the Home Page component." default="false"/>
+            <property name="reportPageSize" type="Integer" label="Preview Row Limit" description="Rows fetched for the Home Page preview. Values are capped at 500." default="100"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - OHP - Ortho - DG - Joint Replacement - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank You for Your Interest in Joint Replacement</subject>
+    <textOnly>ORLANDO HEALTH ORTHOPEDIC INSTITUTE
+http://www.orlandohealthphysicians.com/orthopedics/
+
+312.841.3721 | Se habla español
+
+------------------------------------------------------------------
+
+Request a Consultation
+http://www.orlandohealthphysicians.com/orthopedics/RequestAConsultation
+
+Find a Physician
+http://www.orlandohealthphysicians.com/orthopedics/FindAPhysician
+
+------------------------------------------------------------------
+
+Welcome to the Orlando Health Joint Replacement Program
+
+
+Hello! Thank you for choosing to receive more information about the Orlando Health Orthopedic Institute Joint Replacement Surgery!
+
+For those suffering from major problems of joint pain and lack of mobility, joint replacement can offer relief. As you begin your journey on the road to recovery, our team of experienced physicians will be with you every step of the way. If you haven&apos;t scheduled a consultation, you can Request a Consultation online or call 321.841.3724.
+
+------------------------------------------------------------------
+
+Connect With Us
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)iStock, (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

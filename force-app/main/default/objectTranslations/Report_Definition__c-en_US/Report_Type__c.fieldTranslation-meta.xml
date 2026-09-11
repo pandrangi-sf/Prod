@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Tabular, Summary, Matrix, or Joined. Joined reports use Joined_Config_JSON__c instead of Definition_JSON__c. --></help>
+    <label><!-- Report Type --></label>
+    <name>Report_Type__c</name>
+    <picklistValues>
+        <masterLabel>Joined</masterLabel>
+        <translation><!-- Joined --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Matrix</masterLabel>
+        <translation><!-- Matrix --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Summary</masterLabel>
+        <translation><!-- Summary --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tabular</masterLabel>
+        <translation><!-- Tabular --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

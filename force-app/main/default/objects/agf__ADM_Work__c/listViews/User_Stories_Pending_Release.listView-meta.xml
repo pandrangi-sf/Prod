@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Stories_Pending_Release</fullName>
+    <columns>NAME</columns>
+    <columns>agf__Epic__c</columns>
+    <columns>agf__Subject__c</columns>
+    <columns>agf__Status__c</columns>
+    <columns>agf__Color__c</columns>
+    <columns>agf__Story_Points__c</columns>
+    <columns>agf__Sprint__c</columns>
+    <columns>agf__Release__c</columns>
+    <columns>agf__Scrum_Team__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>agf__ADM_Work__c.agf__User_Story</value>
+    </filters>
+    <filters>
+        <field>agf__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending Release</value>
+    </filters>
+    <label>User Stories: Pending Release</label>
+</ListView>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Affiliation Group --></label>
+    <name>Affiliation_Group__c</name>
+    <picklistValues>
+        <masterLabel>Advent Health</masterLabel>
+        <translation><!-- Advent Health --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HCA Hospitals</masterLabel>
+        <translation><!-- HCA Hospitals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Health First</masterLabel>
+        <translation><!-- Health First --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Independent</masterLabel>
+        <translation><!-- Independent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LH Employed</masterLabel>
+        <translation><!-- LH Employed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lakeland Regional Health</masterLabel>
+        <translation><!-- Lakeland Regional Health --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nemours Hospital</masterLabel>
+        <translation><!-- Nemours Hospital --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OH Contracted</masterLabel>
+        <translation><!-- OH Contracted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OH Employed</masterLabel>
+        <translation><!-- OH Employed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OH Owned Facility</masterLabel>
+        <translation><!-- OH Owned Facility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OH Partnered Facility</masterLabel>
+        <translation><!-- OH Partnered Facility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHN Affiliate - PPA</masterLabel>
+        <translation><!-- OHN Affiliate - PPA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHN Affiliate - PPA (PP)</masterLabel>
+        <translation><!-- OHN Affiliate - PPA (PP) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHN Affiliate - SPA</masterLabel>
+        <translation><!-- OHN Affiliate - SPA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Steward Health Care</masterLabel>
+        <translation><!-- Steward Health Care --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>The Villages Regional</masterLabel>
+        <translation><!-- The Villages Regional --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VA Hospital</masterLabel>
+        <translation><!-- VA Hospital --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

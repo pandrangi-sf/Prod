@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The location marked as &quot;Primary&quot; in the Locations related list.  To change the Primary Location, set the location you want to be primary in the Locations related list.  The system will then update this field with that location. --></help>
+    <label><!-- Primary Location --></label>
+    <name>PrimaryLocation__c</name>
+    <relationshipLabel><!-- Primary Practices &amp; Groups --></relationshipLabel>
+</CustomFieldTranslation>

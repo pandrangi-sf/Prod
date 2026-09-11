@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orthopedics_Service_Promoted__c</fullName>
+    <description>Calculates if one of the Orthopedics services was promoted.</description>
+    <formula>OR(INCLUDES(Services_Promoted__c,&quot;Ortho - General - Adult&quot;),
+			INCLUDES(Services_Promoted__c,&quot;Ortho - General - Ped&quot;), 
+			INCLUDES(Services_Promoted__c,&quot;Ortho - Joint Replacement - Adult&quot;), 
+			INCLUDES( Services_Promoted__c ,&quot;Ortho - Joint Replacement - Peds&quot;),
+			INCLUDES(Services_Promoted__c,&quot;Orthopedics - Mako&quot;), 
+			INCLUDES( Services_Promoted__c ,&quot;Ortho - Sports Medicine - Adult&quot;),
+			INCLUDES(Services_Promoted__c,&quot;Ortho - Sports Medicine - Peds&quot;)
+)</formula>
+    <inlineHelpText>Is checked if one of the Orthopedics services was promoted.</inlineHelpText>
+    <label>Orthopedics Service Promoted</label>
+    <type>Checkbox</type>
+</CustomField>

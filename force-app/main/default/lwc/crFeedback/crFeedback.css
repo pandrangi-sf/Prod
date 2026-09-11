@@ -1,0 +1,22 @@
+.cr-thanks {
+    display: flex;
+    align-items: flex-start;
+    background: #f3f9f4;
+    border-left: 4px solid var(--cr-brand-accent, #6ba9b8);
+    border-radius: 0.25rem;
+}
+
+.cr-history-row {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.cr-history-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.cr-history-row:last-child {
+    border-bottom: none;
+}

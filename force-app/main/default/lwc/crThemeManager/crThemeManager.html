@@ -1,0 +1,93 @@
+<template>
+    <lightning-card title="Manage Branding / Theme" icon-name="utility:palette">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+
+            <template if:true={loading}>
+                <lightning-spinner alternative-text="Loading theme"></lightning-spinner>
+            </template>
+
+            <template if:false={loading}>
+                <template if:true={readOnly}>
+                    <div class="slds-text-color_weak slds-p-bottom_small">
+                        You have read-only access. The Manage Branding permission is required to change colors.
+                    </div>
+                </template>
+
+                <p class="slds-text-body_small slds-text-color_weak slds-p-bottom_medium">
+                    Set the Orlando Health brand colors. Charts use the palette (first colors are used first);
+                    the app uses Primary / Accent / Header. Changes apply org-wide with no deploy.
+                </p>
+
+                <!-- Brand colors -->
+                <div class="cr-row">
+                    <div class="cr-field">
+                        <label class="slds-form-element__label">Theme name</label>
+                        <input type="text" class="slds-input" value={name} disabled={readOnly} onchange={handleName} />
+                    </div>
+                </div>
+                <div class="cr-row">
+                    <div class="cr-field cr-color">
+                        <label class="slds-form-element__label">Primary (buttons/accents)</label>
+                        <div class="cr-color-input">
+                            <input type="color" value={primaryColor} disabled={readOnly} onchange={handlePrimary} />
+                            <span class="slds-text-body_small">{primaryColor}</span>
+                        </div>
+                    </div>
+                    <div class="cr-field cr-color">
+                        <label class="slds-form-element__label">Accent (secondary)</label>
+                        <div class="cr-color-input">
+                            <input type="color" value={accentColor} disabled={readOnly} onchange={handleAccent} />
+                            <span class="slds-text-body_small">{accentColor}</span>
+                        </div>
+                    </div>
+                    <div class="cr-field cr-color">
+                        <label class="slds-form-element__label">Header background</label>
+                        <div class="cr-color-input">
+                            <input type="color" value={headerColor} disabled={readOnly} onchange={handleHeader} />
+                            <span class="slds-text-body_small">{headerColor}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart palette editor -->
+                <div class="slds-text-title_caps slds-p-top_medium slds-p-bottom_xx-small">Chart palette (in order)</div>
+                <div class="cr-palette">
+                    <template for:each={paletteRows} for:item="row">
+                        <div key={row.key} class="cr-swatch-edit">
+                            <input type="color" value={row.color} data-index={row.index}
+                                   disabled={readOnly} onchange={handlePaletteColor} />
+                            <template if:false={readOnly}>
+                                <button class="cr-x" data-index={row.index} title="Remove" onclick={removeColor}>&times;</button>
+                            </template>
+                        </div>
+                    </template>
+                    <template if:false={readOnly}>
+                        <button class="cr-add" title="Add color" onclick={addColor}>+</button>
+                    </template>
+                </div>
+
+                <!-- Live preview -->
+                <div class="slds-text-title_caps slds-p-top_medium slds-p-bottom_xx-small">Preview</div>
+                <div class="cr-preview-header" style={headerPreviewStyle}>Vital Reports — sample header</div>
+                <div class="cr-preview-chart">
+                    <template for:each={previewBars} for:item="bar">
+                        <div key={bar.key} class="cr-preview-bar" style={bar.style}></div>
+                    </template>
+                </div>
+
+                <!-- Actions -->
+                <template if:false={readOnly}>
+                    <div class="slds-p-top_medium">
+                        <lightning-button label="Save theme" variant="brand" onclick={save} disabled={saving}
+                                          class="slds-m-right_x-small"></lightning-button>
+                        <lightning-button label="Reset to Orlando Health default" onclick={resetDefault}
+                                          disabled={saving}></lightning-button>
+                        <template if:true={saving}>
+                            <lightning-spinner size="small" alternative-text="Saving"></lightning-spinner>
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

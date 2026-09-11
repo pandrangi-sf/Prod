@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Day_Of_Month__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>1-28. Used when Frequency is Monthly (capped at 28 to avoid short months).</inlineHelpText>
+    <label>Day Of Month</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

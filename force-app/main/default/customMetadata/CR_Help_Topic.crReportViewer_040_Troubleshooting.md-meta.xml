@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Report Viewer — Troubleshooting</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;0 rows returned:&lt;/strong&gt; The report ran cleanly but no data matched. Likely a filter issue or sharing — open the report in Builder and inspect the Filters step.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Query timeout:&lt;/strong&gt; Large reports can hit the 60s synchronous limit. Use Dashboard Builder + Snapshot to run async, or trim the result with tighter filters.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Chart looks empty but table has rows:&lt;/strong&gt; The chart needs a numeric column. Add an aggregation or use a count-by-category view.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Troubleshooting</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:warning</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">40.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crReportViewer</value>
+    </values>
+</CustomMetadata>

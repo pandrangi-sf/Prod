@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Platform Cache TTL for query results from this dataset. Null = use CR_QueryCacheService default (300s). hybrid/Fact datasets typically benefit from 3600 (1h); live datasets stay at 300. --></help>
+    <label><!-- Cache TTL (seconds) --></label>
+    <name>Cache_TTL_Seconds__c</name>
+</CustomFieldTranslation>

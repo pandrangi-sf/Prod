@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Develops plans that are focused on achieving facility priority growth goals. --></help>
+    <label><!-- 4) Focused on Facility Goals --></label>
+    <name>Focused_on_Facility_Goals__c</name>
+</CustomFieldTranslation>

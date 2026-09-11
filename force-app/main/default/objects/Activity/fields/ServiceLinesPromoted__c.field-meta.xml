@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ServiceLinesPromoted__c</fullName>
+    <label>Service Lines Promoted</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bariatrics</fullName>
+                <default>false</default>
+                <label>Bariatrics</label>
+            </value>
+            <value>
+                <fullName>Cardiology</fullName>
+                <default>false</default>
+                <label>Cardiology</label>
+            </value>
+            <value>
+                <fullName>Endocrinology</fullName>
+                <default>false</default>
+                <label>Endocrinology</label>
+            </value>
+            <value>
+                <fullName>General Surgery</fullName>
+                <default>false</default>
+                <label>General Surgery</label>
+            </value>
+            <value>
+                <fullName>GYN MIS</fullName>
+                <default>false</default>
+                <label>GYN MIS</label>
+            </value>
+            <value>
+                <fullName>Neurosciences</fullName>
+                <default>false</default>
+                <label>Neurosciences</label>
+            </value>
+            <value>
+                <fullName>Oncology</fullName>
+                <default>false</default>
+                <label>Oncology</label>
+            </value>
+            <value>
+                <fullName>Orthopedics</fullName>
+                <default>false</default>
+                <label>Orthopedics</label>
+            </value>
+            <value>
+                <fullName>Pulmonology</fullName>
+                <default>false</default>
+                <label>Pulmonology</label>
+            </value>
+            <value>
+                <fullName>Sports Medicine</fullName>
+                <default>false</default>
+                <label>Sports Medicine</label>
+            </value>
+            <value>
+                <fullName>Urology</fullName>
+                <default>false</default>
+                <label>Urology</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Labor and Delivery</fullName>
+                <default>false</default>
+                <label>Labor and Delivery</label>
+            </value>
+            <value>
+                <fullName>Rehab Services</fullName>
+                <default>false</default>
+                <label>Rehab Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <interviewLabel>ZonedLocation_AfterCreated_SetLastVisitDate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ZonedLocation_AfterCreated_SetLastVisitDate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Update the Target field and Last Visit Date field.</description>
+        <name>Update_Target_Zone_Fields</name>
+        <label>Update Target Zone Fields</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>LastVisitDate__c</field>
+            <value>
+                <elementReference>Get_Zoned_Location_Last_Visit_Date.voD_LastVisitDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Visits_Last_90_Days__c</field>
+            <value>
+                <elementReference>Get_Zoned_Location_Last_Visit_Date.voN_CountOfVisitsLast90Days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Zoned_Location_Last_Visit_Date</targetReference>
+        </connector>
+        <object>ZonedLocation__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Get_Zoned_Location_Last_Visit_Date</name>
+        <label>Get Zoned Location Last Visit Date</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Update_Target_Zone_Fields</targetReference>
+        </connector>
+        <flowName>Get_Target_or_Zone_Last_Visit_Date_Apex</flowName>
+        <inputAssignments>
+            <name>viT_RequestType</name>
+            <value>
+                <stringValue>Zoned Location</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>viT_TargetLocation</name>
+            <value>
+                <elementReference>$Record.LocationID__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>viT_TargetOwner</name>
+            <value>
+                <elementReference>$Record.Territory_Owner_Id__c</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+</Flow>

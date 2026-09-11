@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Preferred Meeting Method --></label>
+    <name>PreferredMeetingMethod__c</name>
+    <picklistValues>
+        <masterLabel>Breakfast</masterLabel>
+        <translation><!-- Breakfast --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dinner</masterLabel>
+        <translation><!-- Dinner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Educational Event</masterLabel>
+        <translation><!-- Educational Event --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lunch</masterLabel>
+        <translation><!-- Lunch --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

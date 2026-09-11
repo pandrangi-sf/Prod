@@ -1,0 +1,37 @@
+<template>
+    <div class="standard-report-picker">
+        <c-cr-searchable-object-picker
+            label="Import from Standard Report"
+            field-level-help="Type at least 2 characters to search Tabular, Summary, and Matrix reports. Selecting one imports supported metadata once, including supported bucket fields, without adding work to preview or viewer runtime."
+            placeholder="Search reports by name..."
+            items={items}
+            value={selectedReportId}
+            loading={searchLoading}
+            recents-key="standard-reports"
+            onsearch={handleReportSearch}
+            onchange={handleSelectionChange}>
+        </c-cr-searchable-object-picker>
+
+        <template if:true={importLoading}>
+            <div class="slds-m-top_x-small slds-text-color_weak slds-text-body_small">
+                <lightning-spinner alternative-text="Importing" size="small" variant="brand"></lightning-spinner>
+                Importing report...
+            </div>
+        </template>
+
+        <template if:true={errorMessage}>
+            <div class="slds-text-color_error slds-m-top_x-small slds-text-body_small">{errorMessage}</div>
+        </template>
+
+        <template if:true={hasWarnings}>
+            <div class="slds-box slds-theme_warning slds-m-top_x-small">
+                <p class="slds-text-title_caps slds-m-bottom_x-small">Import notes</p>
+                <ul class="slds-list_dotted">
+                    <template for:each={warningRows} for:item="w">
+                        <li key={w.id}>{w.text}</li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+    </div>
+</template>

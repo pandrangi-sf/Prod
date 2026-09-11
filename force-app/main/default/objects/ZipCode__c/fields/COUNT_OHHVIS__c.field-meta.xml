@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COUNT_OHHVIS__c</fullName>
+    <label>OHHVIS</label>
+    <summaryFilterItems>
+        <field>TerritoryZip__c.TerritoryName__c</field>
+        <operation>equals</operation>
+        <value>OHHVIS</value>
+    </summaryFilterItems>
+    <summaryForeignKey>TerritoryZip__c.ZipCode__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

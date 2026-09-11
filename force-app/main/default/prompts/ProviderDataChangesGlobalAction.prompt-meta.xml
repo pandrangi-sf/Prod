@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Provider Data Changes Global Action</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;To submit Provider Data Changes, click the Global Action Menu and then select &lt;strong&gt;Provider Data Change&lt;/strong&gt;.&lt;/p&gt;</body>
+        <customApplication>PRM</customApplication>
+        <delayDays>1</delayDays>
+        <description>Prompts user on submitting provider data changes from the global action menu.</description>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <endDate>2022-12-09</endDate>
+        <isPublished>false</isPublished>
+        <masterLabel>Provider Data Changes Global Action</masterLabel>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;afcc385bfe434ec8872f4a3aade6eb1e&quot;}},&quot;version&quot;:2}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-12-01</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Provider Data Changes</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visit_Date__c</fullName>
+    <description>The Visit Date field from the related Visit Report.  Added for reporting purposes.</description>
+    <formula>Visit_Report__r.Visit_Date__c</formula>
+    <label>Visit Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

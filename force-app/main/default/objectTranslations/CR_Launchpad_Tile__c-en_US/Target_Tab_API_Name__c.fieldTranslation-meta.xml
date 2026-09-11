@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- API name of the tab the tile opens, e.g. Custom_Report_Viewer, Report_Folders, Manage_Subscriptions. The tile is hidden from users who cannot see this tab. --></help>
+    <label><!-- Target Tab API Name --></label>
+    <name>Target_Tab_API_Name__c</name>
+</CustomFieldTranslation>

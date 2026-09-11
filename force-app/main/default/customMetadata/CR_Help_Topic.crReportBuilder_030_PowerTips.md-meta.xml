@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Report Builder — Power Tips</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Formulas:&lt;/strong&gt; Add calculated columns with the formula editor. Formulas can reference other fields, do arithmetic, format dates, and produce conditional buckets.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Buckets:&lt;/strong&gt; Define rule-based bucketing on any column (e.g., bucket Amount into Small/Medium/Large). Buckets show up as a virtual column in groupings and filters.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Advanced (JSON):&lt;/strong&gt; The escape hatch. The full report definition is editable as JSON; use this for things the visual builder doesn&apos;t expose yet.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Folder &amp; Category:&lt;/strong&gt; Both are free-text labels for organizing reports — pick conventions that match your team&apos;s reporting structure.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Power tips</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:advanced_function</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crReportBuilder</value>
+    </values>
+</CustomMetadata>

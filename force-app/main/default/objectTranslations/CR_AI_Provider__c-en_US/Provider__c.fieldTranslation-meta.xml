@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- LLM provider this record configures. Only Anthropic is wired up today; additional values (OpenAI, Gemini, Azure OpenAI, etc.) will be added when those adapters land. --></help>
+    <label><!-- Provider --></label>
+    <name>Provider__c</name>
+    <picklistValues>
+        <masterLabel>Anthropic</masterLabel>
+        <translation><!-- Anthropic --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Disabled</masterLabel>
+        <translation><!-- Disabled --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

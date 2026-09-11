@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Manage Subscriptions — Broadcast Safe</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;Scheduled emails run in the background and can&apos;t personalize per recipient, so the same rows go to everyone on the subscription. To prevent leaking row-level data, delivery is refused unless an admin has checked &lt;strong&gt;Broadcast Safe&lt;/strong&gt; on the report or dashboard.&lt;/p&gt;&lt;p&gt;If a subscription&apos;s Last Status reads &lt;em&gt;Failed — not Broadcast Safe&lt;/em&gt;, open the report/dashboard record and tick &lt;strong&gt;Broadcast Safe&lt;/strong&gt; once you&apos;ve confirmed its contents are appropriate for every recipient.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Why a report must be &quot;Broadcast Safe&quot;</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:shield</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crSubscriptionManager</value>
+    </values>
+</CustomMetadata>

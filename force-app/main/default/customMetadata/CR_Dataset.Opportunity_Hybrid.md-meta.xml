@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Opportunity Hybrid</label>
+    <protected>false</protected>
+    <values>
+        <field>Cache_Enabled__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Cache_TTL_Seconds__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Dataset_JSON__c</field>
+        <value xsi:type="xsd:string">{&quot;datasetKey&quot;:&quot;Opportunity_Hybrid&quot;,&quot;mode&quot;:&quot;hybrid&quot;,&quot;primaryObject&quot;:&quot;Opportunity&quot;,&quot;factObject&quot;:&quot;Fact_Opportunity__c&quot;,&quot;fieldPaths&quot;:[&quot;Opportunity.Name&quot;,&quot;Opportunity.Amount&quot;,&quot;Opportunity.StageName&quot;,&quot;Opportunity.CloseDate&quot;,&quot;Opportunity.Account.Name&quot;,&quot;Opportunity.Owner.Email&quot;]}</value>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">Opportunity analytics with live ad hoc and fact-backed dashboard paths.</value>
+    </values>
+    <values>
+        <field>Mode__c</field>
+        <value xsi:type="xsd:string">hybrid</value>
+    </values>
+    <values>
+        <field>SObject_API_Name__c</field>
+        <value xsi:type="xsd:string">Fact_Opportunity__c</value>
+    </values>
+</CustomMetadata>

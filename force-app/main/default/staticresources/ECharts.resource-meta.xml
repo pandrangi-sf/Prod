@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>Apache ECharts v5.5.1 UMD bundle. Loaded by c-cr-e-chart via lightning/platformResourceLoader for BI-style visualizations (heatmap, treemap, sankey, gauge, sunburst, etc.). Source: cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js</description>
+</StaticResource>

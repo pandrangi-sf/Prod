@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Zone --></label>
+    <name>BH_Zone__c</name>
+    <picklistValues>
+        <masterLabel>Zone 1</masterLabel>
+        <translation><!-- Zone 1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 10</masterLabel>
+        <translation><!-- Zone 10 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 11</masterLabel>
+        <translation><!-- Zone 11 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 12</masterLabel>
+        <translation><!-- Zone 12 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 2</masterLabel>
+        <translation><!-- Zone 2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 3</masterLabel>
+        <translation><!-- Zone 3 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 4</masterLabel>
+        <translation><!-- Zone 4 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 5</masterLabel>
+        <translation><!-- Zone 5 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 6</masterLabel>
+        <translation><!-- Zone 6 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 6 South</masterLabel>
+        <translation><!-- Zone 6 South --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 7</masterLabel>
+        <translation><!-- Zone 7 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zone 8</masterLabel>
+        <translation><!-- Zone 8 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

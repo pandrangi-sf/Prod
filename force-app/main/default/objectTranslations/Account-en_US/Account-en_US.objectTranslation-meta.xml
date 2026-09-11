@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Practice &amp; Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Practices &amp; Groups</value>
+    </caseValues>
+    <layouts>
+        <layout>Admin Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Related Record Counts --></label>
+            <section>Related Record Counts</section>
+        </sections>
+        <sections>
+            <label><!-- Retired eVariant Fields --></label>
+            <section>Retired eVariant Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BH PRM Account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Retired eVariant Fields --></label>
+            <section>Retired eVariant Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PNC Practice &amp; Group Layout</layout>
+        <sections>
+            <label><!-- CIN Onboarding Fields --></label>
+            <section>CIN Onboarding Fields</section>
+        </sections>
+        <sections>
+            <label><!-- CIN Recruitment Fields --></label>
+            <section>CIN Recruitment Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- EMR/PMS Information --></label>
+            <section>EMR/PMS Information</section>
+        </sections>
+        <sections>
+            <label><!-- Practice Location Map --></label>
+            <section>Practice Location Map</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Location Activities --></label>
+            <section>Provider Location Activities</section>
+        </sections>
+        <sections>
+            <label><!-- Read Only Fields --></label>
+            <section>Read Only Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PRC Practice &amp; Group Layout</layout>
+        <sections>
+            <label><!-- CIN Target Fields --></label>
+            <section>CIN Target Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- EMR/PMS Information --></label>
+            <section>EMR/PMS Information</section>
+        </sections>
+        <sections>
+            <label><!-- Practice Location Map --></label>
+            <section>Practice Location Map</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Location Activities --></label>
+            <section>Provider Location Activities</section>
+        </sections>
+        <sections>
+            <label><!-- READ ONLY FIELD - UPDATE WTH OH DATA FEEDS --></label>
+            <section>READ ONLY FIELD - UPDATE WTH OH DATA FEEDS</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PRM Account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Retired eVariant Fields --></label>
+            <section>Retired eVariant Fields</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Log a Visit --></label>
+        <name>Log_a_Visit</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- AltavistaNews --></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HooversProfile --></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Solver --></label>
+        <name>Solver</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+</CustomObjectTranslation>

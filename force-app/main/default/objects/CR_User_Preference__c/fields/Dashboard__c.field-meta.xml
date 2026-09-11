@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dashboard__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Dashboard this preference belongs to. If the dashboard is deleted, this row is preserved as a tombstone (set-null) — a future cleanup job can sweep orphans. SetNull is used because Cascade is blocked by Salesforce when Dashboard__c already has many cascade-delete children.</inlineHelpText>
+    <label>Dashboard</label>
+    <referenceTo>Dashboard__c</referenceTo>
+    <relationshipLabel>User Preferences</relationshipLabel>
+    <relationshipName>User_Preferences</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

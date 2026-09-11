@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PrimarySpecialty__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>To change this value, please see Sys Admin and/or PRM Super User.</description>
+    <label>Primary Specialty</label>
+    <referenceTo>Specialty__c</referenceTo>
+    <relationshipLabel>Providers</relationshipLabel>
+    <relationshipName>Providers</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

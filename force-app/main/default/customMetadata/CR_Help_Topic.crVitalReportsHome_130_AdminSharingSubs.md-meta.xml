@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Home — Folder access and subs</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Report Folders&lt;/strong&gt; tab — organize content into folders and, with the &lt;strong&gt;Manage Report Folders&lt;/strong&gt; permission, grant users or public groups Read/Edit access to a whole folder at once. Folder membership drives record sharing automatically.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Manage Subscriptions&lt;/strong&gt; tab — schedule email delivery of a report or dashboard (requires the &lt;strong&gt;Manage Report Subscriptions&lt;/strong&gt; permission and that the asset is marked Broadcast Safe).&lt;/li&gt;&lt;li&gt;Grant the &lt;strong&gt;Vital Reports Admin&lt;/strong&gt; permission set to give a user these admin tools.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Folder access and subscriptions</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:share</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">130.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crVitalReportsHome</value>
+    </values>
+</CustomMetadata>

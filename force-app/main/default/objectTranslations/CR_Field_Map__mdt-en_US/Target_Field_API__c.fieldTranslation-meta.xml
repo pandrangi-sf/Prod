@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Target metadata value used by ETL or migration mapping. --></help>
+    <label><!-- Target Field API --></label>
+    <name>Target_Field_API__c</name>
+</CustomFieldTranslation>

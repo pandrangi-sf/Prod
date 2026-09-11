@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Server timestamp at the moment runReportById was invoked. --></help>
+    <label><!-- Run At --></label>
+    <name>Run_At__c</name>
+</CustomFieldTranslation>

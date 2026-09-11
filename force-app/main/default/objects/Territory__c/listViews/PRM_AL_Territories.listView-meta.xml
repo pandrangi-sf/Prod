@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PRM_AL_Territories</fullName>
+    <columns>NAME</columns>
+    <columns>Owner_Name__c</columns>
+    <columns>Targets_Count__c</columns>
+    <columns>Zip_Codes_Count__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Territory__c.PRM_AL_Territory</value>
+    </filters>
+    <label>PRM AL Territories</label>
+    <sharedTo>
+        <group>PRM_AL_Team</group>
+    </sharedTo>
+</ListView>

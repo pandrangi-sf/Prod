@@ -1,0 +1,7 @@
+A Target Provider was updated by {!Target__c.LastModifiedBy} on {!Target__c.LastModifiedDate}.
+<br><br>
+Provider: {!Target__c.Target_Provider__c} {!Target__c.Target_NPI__c}<br>
+Practice: {!Target__c.Target_Practice__c}<br>
+Facility: {!Target__c.Facility__c}<br>
+Rank: {!Target__c.Rank__c}<br>
+Details: <a href="https://orlandohealth.my.salesforce.com/00O5A0000087MyA">https://orlandohealth.my.salesforce.com/00O5A0000087MyA</a>

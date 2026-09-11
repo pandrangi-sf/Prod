@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Published_Year</fullName>
+    <active>true</active>
+    <description>Requires a 4-digit year that is 2025 or greater.</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(Published_Year__c)),
+  OR(
+    LEN(Published_Year__c) &lt;&gt; 4,
+    NOT(ISNUMBER(Published_Year__c)),
+    VALUE(Published_Year__c) &lt; 2025,
+    VALUE(Published_Year__c) &gt; YEAR(TODAY())
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Published_Year__c</errorDisplayField>
+    <errorMessage>The Published Year must be a 4-digit year and can&apos;t be in the future.</errorMessage>
+</ValidationRule>

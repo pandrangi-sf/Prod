@@ -1,0 +1,419 @@
+/* ============================================================
+   Dashboard Builder — Phase A toolbar layout
+   - Sticky toolbar above the canvas (Title left, action group right)
+   - WYSIWYG canvas with polished tiles + soft shadows
+   - Inline slds-modal overlays for Filters / Properties / Add Component
+   ============================================================ */
+
+:host {
+    display: block;
+    background: #f3f3f3;
+    min-height: calc(100vh - 6rem);
+}
+
+.builder-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 6rem);
+}
+
+/* ----- Sticky toolbar ----- */
+/* Page-header swatch — matches the "Build a Dashboard" tile on the
+   Vital Reports Home page (teal + standard:dashboard_ea). Sits on the
+   far left of the toolbar so the user sees the tool identity even
+   while the title shows the dashboard's editable name. */
+.page-header__icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.page-header__icon-wrap--teal { background: #def4f3; }
+.builder-toolbar__tool-icon { margin-right: 0.25rem; }
+
+.builder-toolbar {
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: space-between;
+    padding: 0.55rem 1.25rem 0.6rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.builder-toolbar__title-block {
+    align-items: center;
+    display: flex;
+    flex: 1 1 18rem;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.builder-toolbar__title {
+    align-items: center;
+    color: #161616;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1.15rem;
+    font-weight: 600;
+    gap: 0.35rem;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 32rem;
+}
+.builder-toolbar__title:hover {
+    background: rgba(21, 137, 238, 0.08);
+}
+.title-pencil {
+    --sds-c-icon-color-foreground-default: #5c7591;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+.builder-toolbar__title:hover .title-pencil { opacity: 1; }
+.title-input { flex: 1; max-width: 32rem; }
+.title-input::part(input) { font-size: 1.15rem; font-weight: 600; }
+
+.builder-toolbar__actions {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.4rem;
+}
+
+.builder-status-pill {
+    background: #fff8e8;
+    border: 1px solid #fdb515;
+    border-radius: 999px;
+    color: #5c4900;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.15rem 0.55rem;
+}
+
+/* ----- Canvas container ----- */
+.builder-canvas-area {
+    flex: 1;
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+/* ----- Canvas hint ----- */
+.canvas-hint {
+    color: #5c5c5c;
+    font-size: 0.78rem;
+    margin: 0 0 0.5rem;
+}
+
+/* ----- Tile canvas ----- */
+.tile-canvas {
+    position: relative;
+    width: 100%;
+    min-height: 24rem;
+    background: #ffffff;
+    background-image:
+        linear-gradient(to right, #efefef 1px, transparent 1px),
+        linear-gradient(to bottom, #efefef 1px, transparent 1px);
+    /* background-size set inline by canvasGridStyle so the gridlines align
+       with the configured grid column count (12 or 9). */
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ----- Tile ----- */
+.tile {
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #d8e2ed;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: box-shadow 0.18s ease, transform 0.12s ease;
+}
+.tile:hover { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); }
+.tile.is-dragging {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    opacity: 0.94;
+    transform: scale(1.01);
+    z-index: 5;
+}
+
+.tile-header {
+    align-items: center;
+    background: linear-gradient(180deg, #f8fafd 0%, #eff4fa 100%);
+    border-bottom: 1px solid #e0e7ef;
+    cursor: grab;
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.5rem 0.7rem;
+    user-select: none;
+    touch-action: none;
+}
+.tile-header:active { cursor: grabbing; }
+.tile-header strong { font-size: 0.85rem; color: #181818; display: block; }
+.tile-header .component-meta { color: #707070; font-size: 0.7rem; margin-top: 0.05rem; }
+.tile-title-block { flex: 1; min-width: 0; overflow: hidden; }
+.tile-title-block strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tile-header-actions {
+    align-items: center;
+    display: flex;
+    gap: 0.1rem;
+    flex-shrink: 0;
+}
+
+/* Six-dot grip handle */
+.tile-grip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2px;
+    width: 8px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-right: 0.2rem;
+}
+.tile-grip span {
+    background: #94a4b6;
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+}
+
+.tile-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.4rem;
+    overflow: hidden;
+    padding: 0.5rem 0.7rem 0.6rem;
+}
+.tile-preview {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+    text-align: center;
+}
+.tile-preview__icon {
+    background: linear-gradient(135deg, #1589ee 0%, #0070d2 100%);
+    border-radius: 50%;
+    color: #ffffff;
+    height: 2.4rem;
+    width: 2.4rem;
+    margin-bottom: 0.35rem;
+    padding: 0.4rem;
+    box-sizing: border-box;
+}
+.tile-preview__label {
+    color: #2a3b56;
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin: 0;
+}
+.tile-preview__hint {
+    color: #94a4b6;
+    font-size: 0.65rem;
+    margin: 0.1rem 0 0;
+}
+
+/* ----- Phase D: text + image tile bodies ----- */
+.tile-text-body {
+    flex: 1;
+    overflow: auto;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    color: #181818;
+    line-height: 1.4;
+}
+.tile-image-body {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0.3rem;
+}
+.tile-image {
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+.tile-lwc-body {
+    align-items: stretch;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    padding: 0;
+}
+.tile-lwc-body > * { flex: 1; min-width: 0; }
+
+.tile-resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    cursor: nwse-resize;
+    touch-action: none;
+    background: transparent;
+}
+.tile-resize-handle::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #b6c4d1;
+    border-bottom: 2px solid #b6c4d1;
+    border-bottom-right-radius: 2px;
+    transition: border-color 0.15s ease;
+}
+.tile:hover .tile-resize-handle::after { border-color: #1b5fad; }
+
+/* ----- Empty canvas state ----- */
+.empty-canvas {
+    align-items: center;
+    background: #ffffff;
+    border: 1px dashed #cfcfcf;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.empty-canvas_compact { padding: 2rem 1.5rem; margin: 1rem 0; }
+.empty-canvas__icon {
+    background: linear-gradient(135deg, #1589ee 0%, #0070d2 100%);
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-bottom: 0.85rem;
+}
+.empty-canvas__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #181818;
+    margin: 0 0 0.4rem;
+}
+.empty-canvas__copy {
+    color: #5c5c5c;
+    font-size: 0.85rem;
+    max-width: 28rem;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* ----- Settings/Properties modal sections (rendered inside slds-modal) ----- */
+.settings-section { display: flex; flex-direction: column; gap: 0.6rem; }
+.settings-heading {
+    color: #5c7591;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0;
+    text-transform: uppercase;
+}
+.settings-row {
+    align-items: end;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: minmax(14rem, 1fr) auto;
+}
+
+@media (max-width: 48em) {
+    .settings-row {
+        grid-template-columns: 1fr;
+    }
+    .builder-toolbar { flex-direction: column; align-items: stretch; }
+    .builder-toolbar__actions { justify-content: flex-end; flex-wrap: wrap; }
+}
+
+/* ----- Phase B: dark theme overrides -----
+   Applied when Dashboard.Theme__c = 'Dark'. Toolbar stays light for action
+   contrast; the canvas + tiles + empty state get the darker palette.
+   Avoids flipping every inner SLDS component (lightning-input, modals)
+   into dark mode — those follow Lightning's own theming. */
+.builder-shell_dark {
+    background: #14171a;
+}
+.builder-shell_dark .builder-canvas-area {
+    background: #14171a;
+}
+.builder-shell_dark .canvas-hint {
+    color: #b3bcc6;
+}
+.builder-shell_dark .tile-canvas {
+    background: #1f242a;
+    background-image:
+        linear-gradient(to right, #2a3038 1px, transparent 1px),
+        linear-gradient(to bottom, #2a3038 1px, transparent 1px);
+    border-color: #2a3038;
+}
+.builder-shell_dark .tile {
+    background: #252b32;
+    border-color: #353c45;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    color: #e7ecf2;
+}
+.builder-shell_dark .tile-header {
+    background: linear-gradient(180deg, #2a3038 0%, #252b32 100%);
+    border-bottom-color: #353c45;
+}
+.builder-shell_dark .tile-header strong { color: #f5f8fb; }
+.builder-shell_dark .tile-header .component-meta { color: #98a3ad; }
+.builder-shell_dark .tile-preview__label { color: #c3ccd6; }
+.builder-shell_dark .tile-preview__hint { color: #6c7783; }
+.builder-shell_dark .empty-canvas {
+    background: #1f242a;
+    border-color: #353c45;
+}
+.builder-shell_dark .empty-canvas__title { color: #f5f8fb; }
+.builder-shell_dark .empty-canvas__copy { color: #b3bcc6; }
+
+/* ----- Phase 5: clearer drag + resize affordances ----- */
+.tile-grip span { transition: background 0.12s ease; }
+.tile-header:hover .tile-grip span { background: #5c7591; }
+/* Resize corner: faintly visible at rest, stronger on tile hover, brand on direct hover */
+.tile-resize-handle::after { border-color: #cfd9e3; }
+.tile:hover .tile-resize-handle::after {
+    border-color: #5c7591;
+    width: 10px;
+    height: 10px;
+}
+/* Must out-specify ".tile:hover .tile-resize-handle::after" (0,3,1), which always
+   matches when the corner is hovered. ".tile:hover .tile-resize-handle:hover::after"
+   is (0,4,1) and wins the cascade so direct corner-hover shows the brand-blue state. */
+.tile:hover .tile-resize-handle:hover::after,
+.tile-resize-handle:hover::after {
+    border-color: #0070d2;
+    width: 11px;
+    height: 11px;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Last_Visit_Date__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to trigger the workflow on a target zone record to find the last visit date.  Updating this field will trigger the workflow, the the workflow will uncheck the field when it&apos;s done.</description>
+    <inlineHelpText>Checking this field will trigger the workflow to update the last visit date field.</inlineHelpText>
+    <label>Update Last Visit Date</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

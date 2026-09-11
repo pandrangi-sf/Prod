@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Serviceline Override Provider</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Serviceline Override Providers</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Practice &amp; Group, Primary Location need to be populated before this is ready for import. --></errorMessage>
+        <name>Ready_to_Import_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

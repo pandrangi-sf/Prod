@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Specialty_Classification__c</fullName>
+    <description>Displays the related primary specialty classification field so it can be used in reporting.</description>
+    <externalId>false</externalId>
+    <formula>PrimarySpecialty__r.Classification__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Primary Specialty Classification</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

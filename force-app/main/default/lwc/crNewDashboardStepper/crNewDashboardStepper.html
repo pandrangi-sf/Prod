@@ -1,0 +1,141 @@
+<template>
+    <div class="stepper-shell">
+        <header class="stepper-header">
+            <div class="stepper-header__text">
+                <p class="stepper-eyebrow">Vital Reports · New Dashboard</p>
+                <h1 class="stepper-title">Set up your dashboard</h1>
+                <p class="stepper-sub">
+                    Fill in the basics, pick an appearance, then start adding widgets.
+                    You can change any of these later from the gear icon on the toolbar.
+                </p>
+            </div>
+            <lightning-button-icon
+                icon-name="utility:question"
+                alternative-text="Help"
+                title="Help and tips"
+                variant="border-filled"
+                onclick={handleHelp}>
+            </lightning-button-icon>
+        </header>
+
+        <c-cr-report-builder-stepper
+            class="stepper-progress"
+            steps={steps}
+            current-step={currentStep}
+            hide-navigation
+            onstepchange={handleStepChange}>
+        </c-cr-report-builder-stepper>
+
+        <article class="stepper-card">
+            <!-- ===== Step 1: Basics ===== -->
+            <template if:true={showBasics}>
+                <h2 class="step-heading">Basics</h2>
+                <lightning-input
+                    label="Name"
+                    required
+                    value={name}
+                    onchange={handleNameChange}
+                    message-when-bad-input="Name is required.">
+                </lightning-input>
+                <template if:true={nameError}>
+                    <p class="step-error">{nameError}</p>
+                </template>
+
+                <div class="slds-m-top_small"></div>
+                <lightning-combobox
+                    label="Folder"
+                    required
+                    placeholder="Pick a folder..."
+                    options={folderOptions}
+                    value={folderChoice}
+                    onchange={handleFolderChange}>
+                </lightning-combobox>
+                <template if:true={showNewFolderInput}>
+                    <div class="slds-m-top_small"></div>
+                    <lightning-input
+                        label="New Folder Name"
+                        required
+                        value={newFolderName}
+                        onchange={handleNewFolderChange}
+                        placeholder="e.g. Executive Reporting">
+                    </lightning-input>
+                </template>
+
+                <div class="slds-m-top_small"></div>
+                <lightning-textarea
+                    label="Description"
+                    field-level-help="Optional. Shown in the Dashboards list and tooltip."
+                    value={description}
+                    onchange={handleDescChange}>
+                </lightning-textarea>
+            </template>
+
+            <!-- ===== Step 2: Appearance ===== -->
+            <template if:true={showAppearance}>
+                <h2 class="step-heading">Appearance</h2>
+
+                <lightning-combobox
+                    label="Theme"
+                    value={theme}
+                    options={themeOptions}
+                    onchange={handleThemeChange}>
+                </lightning-combobox>
+
+                <div class="slds-m-top_small"></div>
+                <lightning-combobox
+                    label="Dashboard Grid Size"
+                    value={gridSize}
+                    options={gridOptions}
+                    onchange={handleGridChange}>
+                </lightning-combobox>
+
+                <p class="step-subheading slds-m-top_medium">Palette</p>
+                <div class="palette-grid">
+                    <template for:each={paletteCards} for:item="p">
+                        <button
+                            key={p.value}
+                            type="button"
+                            class={p.cardClass}
+                            data-value={p.value}
+                            title={p.label}
+                            onclick={handlePaletteSelect}
+                            aria-pressed={p.isSelected}>
+                            <span class="palette-card__name">{p.label}</span>
+                            <span class="palette-card__swatches">
+                                <template for:each={p.colors} for:item="c">
+                                    <span key={c.key} class="palette-card__chip" style={c.style}></span>
+                                </template>
+                            </span>
+                        </button>
+                    </template>
+                </div>
+            </template>
+        </article>
+
+        <footer class="stepper-footer">
+            <lightning-button
+                label="Cancel"
+                onclick={handleCancel}>
+            </lightning-button>
+            <div class="stepper-footer__right">
+                <template if:false={showBasics}>
+                    <lightning-button
+                        label="Back"
+                        icon-name="utility:back"
+                        icon-position="left"
+                        onclick={handleBack}>
+                    </lightning-button>
+                </template>
+                <lightning-button
+                    class="slds-m-left_x-small"
+                    label={nextLabel}
+                    icon-name="utility:forward"
+                    icon-position="right"
+                    variant="brand"
+                    disabled={nextDisabled}
+                    onclick={handleNext}>
+                </lightning-button>
+            </div>
+        </footer>
+    </div>
+</template>

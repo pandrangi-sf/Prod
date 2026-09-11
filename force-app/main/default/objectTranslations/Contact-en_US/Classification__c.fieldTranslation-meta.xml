@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Classification --></label>
+    <name>Classification__c</name>
+    <picklistValues>
+        <masterLabel>Adult</masterLabel>
+        <translation><!-- Adult --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Both</masterLabel>
+        <translation><!-- Both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric</masterLabel>
+        <translation><!-- Pediatric --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

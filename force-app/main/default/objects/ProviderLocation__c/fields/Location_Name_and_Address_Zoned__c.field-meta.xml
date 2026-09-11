@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location_Name_and_Address_Zoned__c</fullName>
+    <description>Concatenated Location Name and Address with a Star at the end if it&apos;s zoned by the current user.  Used in the Log a Visit Flow to show which locations the user has zoned.</description>
+    <externalId>false</externalId>
+    <formula>IF( My_Zoned_Location__c, 
+			Location_Name_and_Address__c &amp; IMAGE(&quot;https://orlandohealth--c.vf.force.com/resource/1718307189000/GraphicsPackNew/silk/16/silk/star.png&quot;, &quot;STAR&quot;), 
+			Location_Name_and_Address__c
+		)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Location Name and Address Zoned</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

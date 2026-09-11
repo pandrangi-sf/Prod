@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>AlaSQL v4.6.5 UMD bundle. Loaded by c-cr-report-live-preview for client-side grouping/aggregation/sort of cached rows from CR_QueryEngine.runReport. Source: cdn.jsdelivr.net/npm/alasql@4.6.6/dist/alasql.min.js</description>
+</StaticResource>

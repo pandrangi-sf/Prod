@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LocationID__c</fullName>
+    <description>The Salesforce ID for the Location record associated to the Provider Location record associated to this Target Zone.  Used for the Activity Update workflows.</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID( TargetLocation__r.Location__r.Id )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>LocationID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

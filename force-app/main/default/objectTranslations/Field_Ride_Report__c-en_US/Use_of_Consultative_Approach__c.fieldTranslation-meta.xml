@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Use of consultative approach to address customer’s needs --></help>
+    <label><!-- 5) Use of Consultative Approach --></label>
+    <name>Use_of_Consultative_Approach__c</name>
+</CustomFieldTranslation>

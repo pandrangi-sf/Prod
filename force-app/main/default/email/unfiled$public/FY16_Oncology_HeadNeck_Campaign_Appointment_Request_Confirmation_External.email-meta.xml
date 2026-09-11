@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>User receives this communication when an appointment is requested via web form on head and neck INFO.html page.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - Oncology - HeadNec Campaign - Appointment Request Confirmation (External)</name>
+    <style>none</style>
+    <subject>Thank You for Requesting an Appointment</subject>
+    <textOnly>UF Health Cancer Center
+
+321.841.3727
+Se habla español
+
+Thank You For Requesting An Appointment
+
+Thank you for requesting to schedule an appointment with one of our cancer specialists. You have taken the first step toward improving your quality of life through treatment. We will contact you within 24 hours* to schedule your appointment.
+
+
+* During Normal business hours, Mon. - Fri. 8:00 a.m. to 4:30 p.m. EST
+
+PRIVACY POLICY
+
+Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806
+
+Copyright © 2016</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

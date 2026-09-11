@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Email to Lead to Download Head and Neck Guide</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - Oncology - HeadandNeck - DG Auto Reply</name>
+    <style>none</style>
+    <subject>Thank You - Download Your Free Head and Neck Guide</subject>
+    <textOnly>Download Your Free Guide
+
+
+Find Out if You Are at Risk
+
+By requesting the Guide to Understanding Head and Neck Cancer, you have taken a very important step in protecting and managing your health. As you read, carefully consider any risk factors and/or symptoms you have. You may even want to take notes in preparation for an appointment with one of our highly-trained specialists.
+
+
+To download your Guide to Understanding Head and Neck Cancer, which will answer many of your questions about the disease, diagnosis and treatment, click on the button below.
+http://www.ufhealthcancerorlando.com/landing/head-neck/appointment.html
+
+Request a next-day appointment with one of our physicians by calling 321.841.3727 or click on the button below.
+http://www.ufhealthcancerorlando.com/landing/head-neck/info.html
+
+Copyright ©2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave. Orlando, FL 32806
+
+Connect  with Us
+
+Call for more information
+
+321.841.3727</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Field Ride Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Field Ride Reports</value>
+    </caseValues>
+    <layouts>
+        <layout>Field Ride Report Layout</layout>
+        <sections>
+            <label><!-- Achievement Drive --></label>
+            <section>Achievement Drive</section>
+        </sections>
+        <sections>
+            <label><!-- Achievement Drive Comments --></label>
+            <section>Achievement Drive Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Business Acumen --></label>
+            <section>Business Acumen</section>
+        </sections>
+        <sections>
+            <label><!-- Business Acumen Comments --></label>
+            <section>Business Acumen Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Flexibility --></label>
+            <section>Flexibility</section>
+        </sections>
+        <sections>
+            <label><!-- Flexibility Comments --></label>
+            <section>Flexibility Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Planning &amp; Organization --></label>
+            <section>Planning &amp; Organization</section>
+        </sections>
+        <sections>
+            <label><!-- Planning &amp; Organization Comments --></label>
+            <section>Planning &amp; Organization Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Selling Skills --></label>
+            <section>Selling Skills</section>
+        </sections>
+        <sections>
+            <label><!-- Selling Skills Comments --></label>
+            <section>Selling Skills Comments</section>
+        </sections>
+        <sections>
+            <label><!-- Summary --></label>
+            <section>Summary</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- PRM field is required to create a Field Ride Report. --></errorMessage>
+        <name>PRM_User_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

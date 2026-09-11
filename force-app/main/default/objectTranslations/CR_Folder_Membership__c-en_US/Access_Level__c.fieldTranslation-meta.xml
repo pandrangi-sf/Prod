@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Access Level --></label>
+    <name>Access_Level__c</name>
+    <picklistValues>
+        <masterLabel>Edit</masterLabel>
+        <translation><!-- Edit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Read</masterLabel>
+        <translation><!-- Read --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

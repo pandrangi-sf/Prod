@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ACOMembership__c</fullName>
+    <label>ACO Membership</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACC of North Central Florida, LLC</fullName>
+                <default>false</default>
+                <label>ACC of North Central Florida, LLC</label>
+            </value>
+            <value>
+                <fullName>ACC of Northwest Florida, LLC</fullName>
+                <default>false</default>
+                <label>ACC of Northwest Florida, LLC</label>
+            </value>
+            <value>
+                <fullName>AC Options, LLC</fullName>
+                <default>false</default>
+                <label>AC Options, LLC</label>
+            </value>
+            <value>
+                <fullName>AC Partners, LLC</fullName>
+                <default>false</default>
+                <label>AC Partners, LLC</label>
+            </value>
+            <value>
+                <fullName>ACMG</fullName>
+                <default>false</default>
+                <label>ACMG</label>
+            </value>
+            <value>
+                <fullName>Allcare Options, LLC</fullName>
+                <default>false</default>
+                <label>Allcare Options, LLC</label>
+            </value>
+            <value>
+                <fullName>American Health Alliance, LLC</fullName>
+                <default>false</default>
+                <label>American Health Alliance, LLC</label>
+            </value>
+            <value>
+                <fullName>Baroma Health Partners</fullName>
+                <default>false</default>
+                <label>Baroma Health Partners</label>
+            </value>
+            <value>
+                <fullName>Broward Guardian, LLC</fullName>
+                <default>false</default>
+                <label>Broward Guardian, LLC</label>
+            </value>
+            <value>
+                <fullName>Central Florida Physicians Trust</fullName>
+                <default>false</default>
+                <label>Central Florida Physicians Trust</label>
+            </value>
+            <value>
+                <fullName>Collaborative Care of Florida LLC</fullName>
+                <default>false</default>
+                <label>Collaborative Care of Florida LLC</label>
+            </value>
+            <value>
+                <fullName>Diag Clinic Walgreens Well Network</fullName>
+                <default>false</default>
+                <label>Diag Clinic Walgreens Well Network</label>
+            </value>
+            <value>
+                <fullName>Emerald Physicians</fullName>
+                <default>false</default>
+                <label>Emerald Physicians</label>
+            </value>
+            <value>
+                <fullName>First Coast Health Alliance, LLC</fullName>
+                <default>false</default>
+                <label>First Coast Health Alliance, LLC</label>
+            </value>
+            <value>
+                <fullName>Florida Medical Clinic ACO, LLC</fullName>
+                <default>false</default>
+                <label>Florida Medical Clinic ACO, LLC</label>
+            </value>
+            <value>
+                <fullName>Florida Physicians Trust, LLC</fullName>
+                <default>false</default>
+                <label>Florida Physicians Trust, LLC</label>
+            </value>
+            <value>
+                <fullName>FPG Healthcare, LLC</fullName>
+                <default>false</default>
+                <label>FPG Healthcare, LLC</label>
+            </value>
+            <value>
+                <fullName>HCP ACO CA LLC</fullName>
+                <default>false</default>
+                <label>HCP ACO CA LLC</label>
+            </value>
+            <value>
+                <fullName>Health Choice Care, LLC</fullName>
+                <default>false</default>
+                <label>Health Choice Care, LLC</label>
+            </value>
+            <value>
+                <fullName>Health Point ACO, LLC</fullName>
+                <default>false</default>
+                <label>Health Point ACO, LLC</label>
+            </value>
+            <value>
+                <fullName>Integral Healthcare, LLC</fullName>
+                <default>false</default>
+                <label>Integral Healthcare, LLC</label>
+            </value>
+            <value>
+                <fullName>Integrated Care Alliance, LLC</fullName>
+                <default>false</default>
+                <label>Integrated Care Alliance, LLC</label>
+            </value>
+            <value>
+                <fullName>MCM ACO, LLC</fullName>
+                <default>false</default>
+                <label>MCM ACO, LLC</label>
+            </value>
+            <value>
+                <fullName>Medical Practitioners For AC</fullName>
+                <default>false</default>
+                <label>Medical Practitioners For AC</label>
+            </value>
+            <value>
+                <fullName>Meridian Health Systems ACO Corporation</fullName>
+                <default>false</default>
+                <label>Meridian Health Systems ACO Corporation</label>
+            </value>
+            <value>
+                <fullName>Millennium ACO</fullName>
+                <default>false</default>
+                <label>Millennium ACO</label>
+            </value>
+            <value>
+                <fullName>Nature Coast ACO LLC</fullName>
+                <default>false</default>
+                <label>Nature Coast ACO LLC</label>
+            </value>
+            <value>
+                <fullName>Northwest Florida Health Partners LLC</fullName>
+                <default>false</default>
+                <label>Northwest Florida Health Partners LLC</label>
+            </value>
+            <value>
+                <fullName>Orange Accountable Care</fullName>
+                <default>false</default>
+                <label>Orange Accountable Care</label>
+            </value>
+            <value>
+                <fullName>Orange AC of South Florida, LLC</fullName>
+                <default>false</default>
+                <label>Orange AC of South Florida, LLC</label>
+            </value>
+            <value>
+                <fullName>Palm Beach ACO, LLC</fullName>
+                <default>false</default>
+                <label>Palm Beach ACO, LLC</label>
+            </value>
+            <value>
+                <fullName>Paradigm ACO, LLC</fullName>
+                <default>false</default>
+                <label>Paradigm ACO, LLC</label>
+            </value>
+            <value>
+                <fullName>Physician First ACO</fullName>
+                <default>false</default>
+                <label>Physician First ACO</label>
+            </value>
+            <value>
+                <fullName>Physicians Collaborative Trust ACO LLC</fullName>
+                <default>false</default>
+                <label>Physicians Collaborative Trust ACO LLC</label>
+            </value>
+            <value>
+                <fullName>PremierMD ACO, LLC</fullName>
+                <default>false</default>
+                <label>PremierMD ACO, LLC</label>
+            </value>
+            <value>
+                <fullName>Primary Care Alliance LLC</fullName>
+                <default>false</default>
+                <label>Primary Care Alliance LLC</label>
+            </value>
+            <value>
+                <fullName>Primary Partners, LLC</fullName>
+                <default>false</default>
+                <label>Primary Partners, LLC</label>
+            </value>
+            <value>
+                <fullName>Reliance Health Network</fullName>
+                <default>false</default>
+                <label>Reliance Health Network</label>
+            </value>
+            <value>
+                <fullName>South Florida ACO, LLC</fullName>
+                <default>false</default>
+                <label>South Florida ACO, LLC</label>
+            </value>
+            <value>
+                <fullName>St Vincents ACO LLC</fullName>
+                <default>false</default>
+                <label>St Vincents ACO LLC</label>
+            </value>
+            <value>
+                <fullName>TP-ACO LLC</fullName>
+                <default>false</default>
+                <label>TP-ACO LLC</label>
+            </value>
+            <value>
+                <fullName>West Florida ACO, LLC</fullName>
+                <default>false</default>
+                <label>West Florida ACO, LLC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

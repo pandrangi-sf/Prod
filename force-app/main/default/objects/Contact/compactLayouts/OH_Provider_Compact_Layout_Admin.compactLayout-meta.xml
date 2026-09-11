@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OH_Provider_Compact_Layout_Admin</fullName>
+    <fields>Name</fields>
+    <fields>Photo__c</fields>
+    <fields>AccountId</fields>
+    <fields>Phone</fields>
+    <fields>Email</fields>
+    <label>OH Provider Compact Layout - Admin</label>
+</CompactLayout>

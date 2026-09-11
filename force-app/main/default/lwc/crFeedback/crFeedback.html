@@ -1,0 +1,107 @@
+<template>
+    <lightning-card title="Share Feedback" icon-name="utility:comments">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+
+            <template if:true={submitted}>
+                <div class="cr-thanks slds-p-around_medium">
+                    <lightning-icon icon-name="utility:success" variant="success" size="small"></lightning-icon>
+                    <div class="slds-p-left_small">
+                        <p class="slds-text-heading_small">Thank you — we got it.</p>
+                        <p class="slds-text-body_small slds-text-color_weak">
+                            Your feedback was sent to the Vital Reports team ({submittedName}).
+                        </p>
+                        <lightning-button
+                            class="slds-m-top_small"
+                            label="Send more feedback"
+                            onclick={handleReset}
+                        ></lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <template if:false={submitted}>
+                <p class="slds-text-body_small slds-text-color_weak slds-p-bottom_medium">
+                    Found a bug, have an idea, or something not adding up? Tell us here and it goes
+                    straight to the reporting team.
+                </p>
+
+                <lightning-combobox
+                    class="slds-p-bottom_small"
+                    label="What kind of feedback is this?"
+                    value={type}
+                    options={typeOptions}
+                    onchange={handleType}
+                ></lightning-combobox>
+
+                <lightning-input
+                    class="slds-p-bottom_small"
+                    data-id="subject"
+                    label="Subject"
+                    placeholder="One line — e.g. 'Objection report is missing my visits'"
+                    max-length="120"
+                    required
+                    value={subject}
+                    message-when-value-missing="Add a short subject so we know what this is about."
+                    onchange={handleSubject}
+                ></lightning-input>
+
+                <lightning-textarea
+                    class="slds-p-bottom_small"
+                    label="Details"
+                    placeholder="What did you expect, and what happened instead? Which report were you on?"
+                    value={details}
+                    onchange={handleDetails}
+                ></lightning-textarea>
+
+                <lightning-input
+                    class="slds-p-bottom_small"
+                    label="Report or page this is about (optional)"
+                    placeholder="e.g. Florida Activities with Services"
+                    max-length="255"
+                    value={pageContext}
+                    onchange={handlePageContext}
+                ></lightning-input>
+
+                <div class="slds-p-top_x-small">
+                    <lightning-button
+                        variant="brand"
+                        label="Send feedback"
+                        disabled={sending}
+                        onclick={handleSubmit}
+                    ></lightning-button>
+                    <template if:true={sending}>
+                        <lightning-spinner
+                            size="small"
+                            alternative-text="Sending feedback"
+                        ></lightning-spinner>
+                    </template>
+                </div>
+            </template>
+
+            <!-- What this user has already sent, and where the team has got to with it -->
+            <template if:true={hasHistory}>
+                <div class="slds-m-top_large slds-border_top slds-p-top_medium">
+                    <h3 class="slds-text-title_caps slds-p-bottom_small">Your feedback</h3>
+                    <template for:each={myFeedback} for:item="f">
+                        <div key={f.id} class="cr-history-row slds-p-vertical_small">
+                            <div class="cr-history-head">
+                                <span class="slds-text-body_regular">{f.subject}</span>
+                                <c-cr-status-badge
+                                    label={f.statusLabel}
+                                    tone={f.statusTone}
+                                    dot
+                                ></c-cr-status-badge>
+                            </div>
+                            <div class="slds-text-body_small slds-text-color_weak slds-p-top_xxx-small">
+                                {f.statusNote}
+                                <template if:true={f.isAnswered}>
+                                    <span> Updated {f.updatedOn}.</span>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

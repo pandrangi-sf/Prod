@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Location</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Locations</value>
+    </caseValues>
+    <layouts>
+        <layout>Location Layout</layout>
+        <sections>
+            <label><!-- Address --></label>
+            <section>Address</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Duplicate Info --></label>
+            <section>Duplicate Info</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Add Provider --></label>
+        <name>Add_Provider</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Merge Preparation --></label>
+        <name>Merge_Preparation</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Unzone Location --></label>
+        <name>Unzone_Location</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Zone Location --></label>
+        <name>Zone_Location</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If you mark a location as a duplicate, you must pick the location this should be merged into. --></errorMessage>
+        <name>Duplicate_Location_Record_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Locations from different Practice &amp; Groups can&apos;t be marked as a duplicate. --></errorMessage>
+        <name>Prevent_Duplicate_from_Different_PG</name>
+    </validationRules>
+</CustomObjectTranslation>

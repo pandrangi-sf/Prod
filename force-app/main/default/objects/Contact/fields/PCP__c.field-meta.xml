@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PCP__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates if the provider is a Primary Care Physician (PCP)</description>
+    <inlineHelpText>Indicates if the provider is a Primary Care Physician (PCP)</inlineHelpText>
+    <label>PCP</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

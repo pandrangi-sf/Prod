@@ -1,0 +1,6 @@
+.THIS .redirect-shell {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 8rem;
+}

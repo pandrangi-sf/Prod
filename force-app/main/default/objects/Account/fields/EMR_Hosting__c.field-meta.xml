@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMR_Hosting__c</fullName>
+    <label>EMR Host</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Internal Server</fullName>
+                <default>false</default>
+                <label>Internal Server</label>
+            </value>
+            <value>
+                <fullName>Cloud with Vendor</fullName>
+                <default>false</default>
+                <label>Cloud with Vendor</label>
+            </value>
+            <value>
+                <fullName>Cloud Other</fullName>
+                <default>false</default>
+                <label>Cloud Other</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Staff Does Not Know</fullName>
+                <default>false</default>
+                <label>Staff Does Not Know</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

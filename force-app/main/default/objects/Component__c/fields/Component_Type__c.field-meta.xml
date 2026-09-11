@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Component_Type__c</fullName>
+    <description>The component type that is being modified.</description>
+    <inlineHelpText>Pick the component type being modified.</inlineHelpText>
+    <label>Component Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Action</fullName>
+                <default>false</default>
+                <label>Action</label>
+            </value>
+            <value>
+                <fullName>App</fullName>
+                <default>false</default>
+                <label>App</label>
+            </value>
+            <value>
+                <fullName>Approval Process</fullName>
+                <default>false</default>
+                <label>Approval Process</label>
+            </value>
+            <value>
+                <fullName>Assignment Rule</fullName>
+                <default>false</default>
+                <label>Assignment Rule</label>
+            </value>
+            <value>
+                <fullName>Button or Link</fullName>
+                <default>false</default>
+                <label>Button or Link</label>
+            </value>
+            <value>
+                <fullName>Compact Layout</fullName>
+                <default>false</default>
+                <label>Compact Layout</label>
+            </value>
+            <value>
+                <fullName>Custom Field</fullName>
+                <default>false</default>
+                <label>Custom Field</label>
+            </value>
+            <value>
+                <fullName>Custom Help Menu Section</fullName>
+                <default>false</default>
+                <label>Custom Help Menu Section</label>
+            </value>
+            <value>
+                <fullName>Custom Index</fullName>
+                <default>false</default>
+                <label>Custom Index</label>
+            </value>
+            <value>
+                <fullName>Custom Label</fullName>
+                <default>false</default>
+                <label>Custom Label</label>
+            </value>
+            <value>
+                <fullName>Custom Metadata Type</fullName>
+                <default>false</default>
+                <label>Custom Metadata Type</label>
+            </value>
+            <value>
+                <fullName>Custom Notification Type</fullName>
+                <default>false</default>
+                <label>Custom Notification Type</label>
+            </value>
+            <value>
+                <fullName>Custom Object</fullName>
+                <default>false</default>
+                <label>Custom Object</label>
+            </value>
+            <value>
+                <fullName>Custom Permission</fullName>
+                <default>false</default>
+                <label>Custom Permission</label>
+            </value>
+            <value>
+                <fullName>Custom Report Type</fullName>
+                <default>false</default>
+                <label>Custom Report Type</label>
+            </value>
+            <value>
+                <fullName>Custom Setting</fullName>
+                <default>false</default>
+                <label>Custom Setting</label>
+            </value>
+            <value>
+                <fullName>Dashboard</fullName>
+                <default>false</default>
+                <label>Dashboard</label>
+            </value>
+            <value>
+                <fullName>Data Service</fullName>
+                <default>false</default>
+                <label>Data Service</label>
+            </value>
+            <value>
+                <fullName>Document</fullName>
+                <default>false</default>
+                <label>Document</label>
+            </value>
+            <value>
+                <fullName>Duplicate Rule</fullName>
+                <default>false</default>
+                <label>Duplicate Rule</label>
+            </value>
+            <value>
+                <fullName>Email Template</fullName>
+                <default>false</default>
+                <label>Email Template</label>
+            </value>
+            <value>
+                <fullName>Field Mapping</fullName>
+                <default>false</default>
+                <label>Field Mapping</label>
+            </value>
+            <value>
+                <fullName>Field Restriction Rule</fullName>
+                <default>false</default>
+                <label>Field Restriction Rule</label>
+            </value>
+            <value>
+                <fullName>Field Set</fullName>
+                <default>false</default>
+                <label>Field Set</label>
+            </value>
+            <value>
+                <fullName>Flow Definition</fullName>
+                <default>false</default>
+                <label>Flow Definition</label>
+            </value>
+            <value>
+                <fullName>Folder</fullName>
+                <default>false</default>
+                <label>Folder</label>
+            </value>
+            <value>
+                <fullName>Global Value Set</fullName>
+                <default>false</default>
+                <label>Global Value Set</label>
+            </value>
+            <value>
+                <fullName>Group</fullName>
+                <default>false</default>
+                <label>Group</label>
+            </value>
+            <value>
+                <fullName>Home Page Component</fullName>
+                <default>false</default>
+                <label>Home Page Component</label>
+            </value>
+            <value>
+                <fullName>Home Page Layout</fullName>
+                <default>false</default>
+                <label>Home Page Layout</label>
+            </value>
+            <value>
+                <fullName>Lightning Experience Theme</fullName>
+                <default>false</default>
+                <label>Lightning Experience Theme</label>
+            </value>
+            <value>
+                <fullName>Lightning Page</fullName>
+                <default>false</default>
+                <label>Lightning Page</label>
+            </value>
+            <value>
+                <fullName>Lightning Web Component Bundle</fullName>
+                <default>false</default>
+                <label>Lightning Web Component Bundle</label>
+            </value>
+            <value>
+                <fullName>List View</fullName>
+                <default>false</default>
+                <label>List View</label>
+            </value>
+            <value>
+                <fullName>Managed Content Type</fullName>
+                <default>false</default>
+                <label>Managed Content Type</label>
+            </value>
+            <value>
+                <fullName>Matching Rule</fullName>
+                <default>false</default>
+                <label>Matching Rule</label>
+            </value>
+            <value>
+                <fullName>Named Credential</fullName>
+                <default>false</default>
+                <label>Named Credential</label>
+            </value>
+            <value>
+                <fullName>Page Layout</fullName>
+                <default>false</default>
+                <label>Page Layout</label>
+            </value>
+            <value>
+                <fullName>Path Assistant</fullName>
+                <default>false</default>
+                <label>Path Assistant</label>
+            </value>
+            <value>
+                <fullName>Permission Set</fullName>
+                <default>false</default>
+                <label>Permission Set</label>
+            </value>
+            <value>
+                <fullName>Permission Set Group</fullName>
+                <default>false</default>
+                <label>Permission Set Group</label>
+            </value>
+            <value>
+                <fullName>Post Template</fullName>
+                <default>false</default>
+                <label>Post Template</label>
+            </value>
+            <value>
+                <fullName>Profile</fullName>
+                <default>false</default>
+                <label>Profile</label>
+            </value>
+            <value>
+                <fullName>Prompt</fullName>
+                <default>false</default>
+                <label>Prompt</label>
+            </value>
+            <value>
+                <fullName>Queue</fullName>
+                <default>false</default>
+                <label>Queue</label>
+            </value>
+            <value>
+                <fullName>Recommendation Strategy</fullName>
+                <default>false</default>
+                <label>Recommendation Strategy</label>
+            </value>
+            <value>
+                <fullName>RecordAction Deployment</fullName>
+                <default>false</default>
+                <label>RecordAction Deployment</label>
+            </value>
+            <value>
+                <fullName>Record Type</fullName>
+                <default>false</default>
+                <label>Record Type</label>
+            </value>
+            <value>
+                <fullName>Report</fullName>
+                <default>false</default>
+                <label>Report</label>
+            </value>
+            <value>
+                <fullName>Reporting Snapshot</fullName>
+                <default>false</default>
+                <label>Reporting Snapshot</label>
+            </value>
+            <value>
+                <fullName>Restriction Rule</fullName>
+                <default>false</default>
+                <label>Restriction Rule</label>
+            </value>
+            <value>
+                <fullName>Role</fullName>
+                <default>false</default>
+                <label>Role</label>
+            </value>
+            <value>
+                <fullName>Send Action</fullName>
+                <default>false</default>
+                <label>Send Action</label>
+            </value>
+            <value>
+                <fullName>Sharing Criteria Rule</fullName>
+                <default>false</default>
+                <label>Sharing Criteria Rule</label>
+            </value>
+            <value>
+                <fullName>Sharing Guest Rule</fullName>
+                <default>false</default>
+                <label>Sharing Guest Rule</label>
+            </value>
+            <value>
+                <fullName>Sharing Owner Rule</fullName>
+                <default>false</default>
+                <label>Sharing Owner Rule</label>
+            </value>
+            <value>
+                <fullName>Sharing Set</fullName>
+                <default>false</default>
+                <label>Sharing Set</label>
+            </value>
+            <value>
+                <fullName>Static Resource</fullName>
+                <default>false</default>
+                <label>Static Resource</label>
+            </value>
+            <value>
+                <fullName>Tab</fullName>
+                <default>false</default>
+                <label>Tab</label>
+            </value>
+            <value>
+                <fullName>Validation Rule</fullName>
+                <default>false</default>
+                <label>Validation Rule</label>
+            </value>
+            <value>
+                <fullName>Workflow Email Alert</fullName>
+                <default>false</default>
+                <label>Workflow Email Alert</label>
+            </value>
+            <value>
+                <fullName>Workflow Field Update</fullName>
+                <default>false</default>
+                <label>Workflow Field Update</label>
+            </value>
+            <value>
+                <fullName>Workflow Outbound Message</fullName>
+                <default>false</default>
+                <label>Workflow Outbound Message</label>
+            </value>
+            <value>
+                <fullName>Workflow Rule</fullName>
+                <default>false</default>
+                <label>Workflow Rule</label>
+            </value>
+            <value>
+                <fullName>Workflow Task</fullName>
+                <default>false</default>
+                <label>Workflow Task</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

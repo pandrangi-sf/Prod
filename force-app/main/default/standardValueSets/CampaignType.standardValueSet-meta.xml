@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>true</default>
+        <label>New</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Refresh</fullName>
+        <default>false</default>
+        <label>Refresh</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Carry Over</fullName>
+        <default>false</default>
+        <label>Carry Over</label>
+    </standardValue>
+</StandardValueSet>

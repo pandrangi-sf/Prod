@@ -1,0 +1,306 @@
+<template>
+    <c-cr-welcome-banner tool-name="Dashboard Builder"></c-cr-welcome-banner>
+    <c-cr-help-panel tool-key="crDashboardBuilder" tool-label="Dashboard Builder"></c-cr-help-panel>
+
+    <!-- Phase I: New Dashboard stepper. Renders ONLY for new-builder sessions
+         (no c__dashboardId in URL) and fully replaces the canvas until the
+         user completes both steps. Existing-edit sessions skip this and go
+         straight to the canvas below. -->
+    <template if:true={wizardOpen}>
+        <c-cr-new-dashboard-stepper
+            oncreate={handleWizardCreate}
+            oncancel={handleWizardCancel}
+            onhelp={openHelpPanel}>
+        </c-cr-new-dashboard-stepper>
+    </template>
+
+    <template if:false={wizardOpen}>
+
+    <div class={builderShellClass}>
+        <!-- Sticky toolbar: title (left) + action group (right). Mirrors the
+             native Lightning Dashboard Builder pattern: + Widget, + Filter,
+             undo/redo, properties, Save split, Done. -->
+        <div class="builder-toolbar">
+            <div class="page-header__icon-wrap page-header__icon-wrap--teal builder-toolbar__tool-icon" title="Dashboard Builder">
+                <lightning-icon icon-name="standard:dashboard_ea" size="small" alternative-text="Dashboard Builder"></lightning-icon>
+            </div>
+            <div class="builder-toolbar__title-block">
+                <template if:false={isEditingName}>
+                    <h1 class="builder-toolbar__title" onclick={startNameEdit} title="Click to rename">
+                        <span>{dashboardName}</span>
+                        <lightning-icon icon-name="utility:edit" size="xx-small" class="title-pencil" alternative-text="Rename"></lightning-icon>
+                    </h1>
+                </template>
+                <template if:true={isEditingName}>
+                    <lightning-input
+                        class="title-input"
+                        variant="label-hidden"
+                        label="Dashboard name"
+                        value={dashboardName}
+                        onchange={handleNameChange}
+                        onblur={endNameEdit}
+                        onkeyup={handleNameKey}>
+                    </lightning-input>
+                </template>
+                <template if:true={unsavedBannerVisible}>
+                    <span class="builder-status-pill builder-status-pill_dirty">Unsaved changes</span>
+                </template>
+            </div>
+            <div class="builder-toolbar__actions">
+                <lightning-button
+                    label="Widget"
+                    icon-name="utility:add"
+                    variant="brand-outline"
+                    onclick={openAddComponentModal}
+                    title="Add a new component">
+                </lightning-button>
+                <lightning-button
+                    label="Filter"
+                    icon-name="utility:filterList"
+                    variant="brand-outline"
+                    disabled={filterButtonDisabled}
+                    onclick={openFiltersModal}
+                    title={filterButtonTooltip}>
+                </lightning-button>
+                <lightning-button-icon
+                    icon-name="utility:undo"
+                    alternative-text="Undo"
+                    title="Undo"
+                    variant="border-filled"
+                    disabled={undoDisabled}
+                    onclick={handleUndo}>
+                </lightning-button-icon>
+                <lightning-button-icon
+                    icon-name="utility:redo"
+                    alternative-text="Redo"
+                    title="Redo"
+                    variant="border-filled"
+                    disabled={redoDisabled}
+                    onclick={handleRedo}>
+                </lightning-button-icon>
+                <lightning-button-icon
+                    icon-name="utility:settings"
+                    alternative-text="Properties"
+                    title="Dashboard properties"
+                    variant="border-filled"
+                    onclick={openSettingsModal}>
+                </lightning-button-icon>
+                <lightning-button-icon
+                    icon-name="utility:question"
+                    alternative-text="Help"
+                    title="Help and tips"
+                    variant="border-filled"
+                    onclick={openHelpPanel}>
+                </lightning-button-icon>
+                <c-cr-toolbar-save
+                    label={saveButtonLabel}
+                    variant={saveButtonVariant}
+                    disabled={saveButtonDisabled}
+                    can-save-as={saveAsEnabled}
+                    can-delete={deleteEnabled}
+                    onsave={save}
+                    onsaveas={handleSaveAs}
+                    ondelete={handleDelete}>
+                </c-cr-toolbar-save>
+                <lightning-button
+                    label="Done"
+                    variant="neutral"
+                    onclick={handleDone}>
+                </lightning-button>
+            </div>
+        </div>
+
+        <!-- Canvas (or empty state) -->
+        <div class="builder-canvas-area">
+            <template if:true={hasComponents}>
+                <p class="canvas-hint">
+                    Drag the tile header to reposition. Drag the bottom-right corner to resize. Layout snaps to a 12-column grid.
+                </p>
+                <div class="tile-canvas" style={canvasGridStyle}>
+                    <template for:each={tilesForCanvas} for:item="tile">
+                        <article key={tile.key} class={tile.tileClass} style={tile.tileStyle}>
+                            <header class="tile-header" data-key={tile.key} onpointerdown={handleTileMoveStart}>
+                                <span class="tile-grip" aria-hidden="true">
+                                    <span></span><span></span>
+                                    <span></span><span></span>
+                                    <span></span><span></span>
+                                </span>
+                                <div class="tile-title-block">
+                                    <strong>{tile.name}</strong>
+                                    <p class="component-meta">{tile.rootObject}</p>
+                                </div>
+                                <div class="tile-header-actions">
+                                    <lightning-button-icon
+                                        icon-name="utility:edit"
+                                        alternative-text="Edit widget"
+                                        title="Edit widget"
+                                        size="x-small"
+                                        variant="bare"
+                                        data-key={tile.key}
+                                        onclick={handleEditTile}>
+                                    </lightning-button-icon>
+                                    <lightning-button-icon
+                                        icon-name="utility:copy"
+                                        alternative-text="Duplicate widget"
+                                        title="Duplicate widget"
+                                        size="x-small"
+                                        variant="bare"
+                                        data-key={tile.key}
+                                        onclick={handleDuplicateComponent}>
+                                    </lightning-button-icon>
+                                    <lightning-button-icon
+                                        icon-name="utility:delete"
+                                        alternative-text="Remove component"
+                                        title="Remove component"
+                                        size="x-small"
+                                        variant="bare"
+                                        data-key={tile.key}
+                                        onclick={handleRemoveComponent}>
+                                    </lightning-button-icon>
+                                </div>
+                            </header>
+                            <div class="tile-body">
+                                <template if:true={tile.isChartTile}>
+                                    <div class="tile-preview">
+                                        <lightning-icon icon-name={tile.vizIcon} size="medium" variant="inverse" class="tile-preview__icon"></lightning-icon>
+                                        <p class="tile-preview__label">{tile.vizLabel}</p>
+                                        <p class="tile-preview__hint">Live chart loads in the Dashboard Viewer. Click ✎ to change report or chart type.</p>
+                                    </div>
+                                </template>
+                                <template if:true={tile.isTextTile}>
+                                    <div class="tile-text-body">
+                                        <lightning-formatted-rich-text value={tile.richTextHtml}></lightning-formatted-rich-text>
+                                    </div>
+                                </template>
+                                <template if:true={tile.isImageTile}>
+                                    <div class="tile-image-body">
+                                        <img src={tile.imageUrl} alt={tile.imageAlt} class="tile-image" style={tile.imageStyle}/>
+                                    </div>
+                                </template>
+                                <template if:true={tile.isLwcTile}>
+                                    <div class="tile-lwc-body">
+                                        <template if:true={tile.isLwcKpi}>
+                                            <c-cr-dashboard-kpi-tile-widget widget-props={tile.lwcWidgetProps}></c-cr-dashboard-kpi-tile-widget>
+                                        </template>
+                                        <template if:true={tile.isLwcClock}>
+                                            <c-cr-dashboard-clock-widget widget-props={tile.lwcWidgetProps}></c-cr-dashboard-clock-widget>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                            <span class="tile-resize-handle" data-key={tile.key} onpointerdown={handleTileResizeStart}></span>
+                        </article>
+                    </template>
+                </div>
+            </template>
+            <template if:false={hasComponents}>
+                <div class="empty-canvas">
+                    <div class="empty-canvas__icon">
+                        <lightning-icon icon-name="utility:dashboard_ext" size="large" variant="inverse"></lightning-icon>
+                    </div>
+                    <h2 class="empty-canvas__title">No components yet</h2>
+                    <p class="empty-canvas__copy">
+                        Click <strong>+ Widget</strong> in the toolbar to add your first tile.
+                    </p>
+                </div>
+            </template>
+        </div>
+
+        <!-- Phase C: native-style 3-step Add Widget flow (type → report → config).
+             Same crDashboardWidgetConfig modal is reused for Edit Widget; the
+             builder owns the state machine that flips between dialogs. -->
+        <template if:true={typeModalOpen}>
+            <c-cr-dashboard-widget-type-modal
+                onselect={handleTypeModalSelect}
+                oncancel={handleTypeModalCancel}>
+            </c-cr-dashboard-widget-type-modal>
+        </template>
+        <template if:true={reportPickerModalOpen}>
+            <c-cr-dashboard-report-picker
+                onselect={handleReportPickerSelect}
+                oncancel={handleReportPickerCancel}>
+            </c-cr-dashboard-report-picker>
+        </template>
+        <template if:true={configModalOpen}>
+            <c-cr-dashboard-widget-config
+                report-id={configReportId}
+                report-name={configReportName}
+                initial-viz={configInitialViz}
+                is-edit-mode={configIsEditMode}
+                widget-kind={configWidgetKind}
+                onapply={handleConfigApply}
+                oncancel={handleConfigCancel}>
+            </c-cr-dashboard-widget-config>
+        </template>
+
+        <!-- Filters modal (wraps existing crFilterBuilder; replaces former
+             Filters tab). -->
+        <template if:true={filtersModalOpen}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="cr-filters-h" class="slds-modal slds-fade-in-open slds-modal_large">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeFiltersModal} title="Close">
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="Close" variant="inverse"></lightning-icon>
+                        </button>
+                        <h2 id="cr-filters-h" class="slds-text-heading_medium">Dashboard Filters</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <template if:true={hasFilterableContext}>
+                            <lightning-combobox
+                                label="Filter Field Source"
+                                field-level-help="Choose which component report supplies the field list. Filters are validated against every component when you save."
+                                value={selectedFilterContextReportId}
+                                options={filterContextOptions}
+                                onchange={handleFilterContextChange}>
+                            </lightning-combobox>
+                            <template if:true={hasMultipleFilterContexts}>
+                                <p class="slds-text-color_weak slds-text-body_small slds-m-top_xx-small">
+                                    This dashboard uses more than one report context. Save validates filters against every component.
+                                </p>
+                            </template>
+                            <div class="slds-m-top_medium"></div>
+                            <c-cr-filter-builder
+                                primary-object={filterPrimaryObject}
+                                initial-json={filterJson}
+                                onfilterschange={handleFilterChange}>
+                            </c-cr-filter-builder>
+                        </template>
+                        <template if:false={hasFilterableContext}>
+                            <div class="empty-canvas empty-canvas_compact">
+                                <div class="empty-canvas__icon">
+                                    <lightning-icon icon-name="utility:filterList" size="medium" variant="inverse"></lightning-icon>
+                                </div>
+                                <h2 class="empty-canvas__title">No filterable components</h2>
+                                <p class="empty-canvas__copy">Add at least one component before configuring dashboard filters.</p>
+                            </div>
+                        </template>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Done" variant="brand" onclick={closeFiltersModal}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <!-- Properties modal (Phase B): native-style palette/theme/grid/run-as. -->
+        <template if:true={settingsModalOpen}>
+            <c-cr-dashboard-properties-modal
+                initial-name={dashboardName}
+                initial-folder={folder}
+                initial-category={category}
+                initial-is-public={isPublic}
+                initial-theme={theme}
+                initial-palette={palette}
+                initial-grid-size={gridSize}
+                initial-run-as-mode={runAsMode}
+                initial-run-as-user-id={runAsUserId}
+                initial-allow-viewer-choice={allowViewerRunAsChoice}
+                oncancel={closeSettingsModal}
+                onapply={handlePropertiesApply}
+                onvalidationerror={handlePropertiesValidationError}>
+            </c-cr-dashboard-properties-modal>
+        </template>
+    </div>
+    </template>
+</template>

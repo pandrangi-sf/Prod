@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Pick the component type being modified. --></help>
+    <label><!-- Component Type --></label>
+    <name>Component_Type__c</name>
+    <picklistValues>
+        <masterLabel>Action</masterLabel>
+        <translation><!-- Action --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>App</masterLabel>
+        <translation><!-- App --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Approval Process</masterLabel>
+        <translation><!-- Approval Process --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assignment Rule</masterLabel>
+        <translation><!-- Assignment Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Button or Link</masterLabel>
+        <translation><!-- Button or Link --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Compact Layout</masterLabel>
+        <translation><!-- Compact Layout --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Field</masterLabel>
+        <translation><!-- Custom Field --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Help Menu Section</masterLabel>
+        <translation><!-- Custom Help Menu Section --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Index</masterLabel>
+        <translation><!-- Custom Index --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Label</masterLabel>
+        <translation><!-- Custom Label --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Metadata Type</masterLabel>
+        <translation><!-- Custom Metadata Type --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Notification Type</masterLabel>
+        <translation><!-- Custom Notification Type --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Object</masterLabel>
+        <translation><!-- Custom Object --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Permission</masterLabel>
+        <translation><!-- Custom Permission --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Report Type</masterLabel>
+        <translation><!-- Custom Report Type --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom Setting</masterLabel>
+        <translation><!-- Custom Setting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dashboard</masterLabel>
+        <translation><!-- Dashboard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Data Service</masterLabel>
+        <translation><!-- Data Service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Document</masterLabel>
+        <translation><!-- Document --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duplicate Rule</masterLabel>
+        <translation><!-- Duplicate Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Email Template</masterLabel>
+        <translation><!-- Email Template --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Field Mapping</masterLabel>
+        <translation><!-- Field Mapping --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Field Restriction Rule</masterLabel>
+        <translation><!-- Field Restriction Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Field Set</masterLabel>
+        <translation><!-- Field Set --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flow Definition</masterLabel>
+        <translation><!-- Flow Definition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Folder</masterLabel>
+        <translation><!-- Folder --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Global Value Set</masterLabel>
+        <translation><!-- Global Value Set --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Group</masterLabel>
+        <translation><!-- Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Home Page Component</masterLabel>
+        <translation><!-- Home Page Component --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Home Page Layout</masterLabel>
+        <translation><!-- Home Page Layout --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lightning Experience Theme</masterLabel>
+        <translation><!-- Lightning Experience Theme --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lightning Page</masterLabel>
+        <translation><!-- Lightning Page --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lightning Web Component Bundle</masterLabel>
+        <translation><!-- Lightning Web Component Bundle --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>List View</masterLabel>
+        <translation><!-- List View --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Managed Content Type</masterLabel>
+        <translation><!-- Managed Content Type --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Matching Rule</masterLabel>
+        <translation><!-- Matching Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Named Credential</masterLabel>
+        <translation><!-- Named Credential --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Page Layout</masterLabel>
+        <translation><!-- Page Layout --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Path Assistant</masterLabel>
+        <translation><!-- Path Assistant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Permission Set</masterLabel>
+        <translation><!-- Permission Set --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Permission Set Group</masterLabel>
+        <translation><!-- Permission Set Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Post Template</masterLabel>
+        <translation><!-- Post Template --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Profile</masterLabel>
+        <translation><!-- Profile --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prompt</masterLabel>
+        <translation><!-- Prompt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Queue</masterLabel>
+        <translation><!-- Queue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recommendation Strategy</masterLabel>
+        <translation><!-- Recommendation Strategy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Record Type</masterLabel>
+        <translation><!-- Record Type --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RecordAction Deployment</masterLabel>
+        <translation><!-- RecordAction Deployment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Report</masterLabel>
+        <translation><!-- Report --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reporting Snapshot</masterLabel>
+        <translation><!-- Reporting Snapshot --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restriction Rule</masterLabel>
+        <translation><!-- Restriction Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Role</masterLabel>
+        <translation><!-- Role --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Send Action</masterLabel>
+        <translation><!-- Send Action --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sharing Criteria Rule</masterLabel>
+        <translation><!-- Sharing Criteria Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sharing Guest Rule</masterLabel>
+        <translation><!-- Sharing Guest Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sharing Owner Rule</masterLabel>
+        <translation><!-- Sharing Owner Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sharing Set</masterLabel>
+        <translation><!-- Sharing Set --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Static Resource</masterLabel>
+        <translation><!-- Static Resource --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tab</masterLabel>
+        <translation><!-- Tab --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Validation Rule</masterLabel>
+        <translation><!-- Validation Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workflow Email Alert</masterLabel>
+        <translation><!-- Workflow Email Alert --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workflow Field Update</masterLabel>
+        <translation><!-- Workflow Field Update --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workflow Outbound Message</masterLabel>
+        <translation><!-- Workflow Outbound Message --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workflow Rule</masterLabel>
+        <translation><!-- Workflow Rule --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Workflow Task</masterLabel>
+        <translation><!-- Workflow Task --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

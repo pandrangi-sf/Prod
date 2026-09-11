@@ -1,0 +1,99 @@
+/* Banner shell — sky-gradient pill that slides in from above */
+.welcome-banner {
+    align-items: center;
+    background: linear-gradient(135deg, #e6f3ff 0%, #f5f9fd 60%, #fef0f5 100%);
+    border: 1px solid #cfe1f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(20, 50, 100, 0.08);
+    display: flex;
+    gap: 0.9rem;
+    margin: 0 0 0.85rem 0;
+    padding: 0.7rem 1rem 0.7rem 0.6rem;
+    position: relative;
+    animation: cr-welcome-slide-in 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.welcome-banner__mascot {
+    flex: 0 0 auto;
+    height: 64px;
+    width: 80px;
+}
+.cloud {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+}
+/* Gentle bobbing on the cloud body — feels alive without being distracting */
+.cloud__body {
+    transform-origin: 70px 70px;
+    animation: cr-welcome-bob 3.2s ease-in-out infinite;
+}
+/* Wave 3 times then settle. animation-iteration-count is bounded so the user
+   gets a clear "hi!" cue but the hand doesn't flap forever. */
+.cloud__hand {
+    transform-origin: 116px 60px;
+    animation: cr-welcome-wave 1.4s ease-in-out 3;
+}
+
+.welcome-banner__text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.welcome-banner__headline {
+    color: #1d3557;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+.welcome-banner__sub {
+    color: #486484;
+    font-size: 0.85rem;
+    margin: 0.2rem 0 0;
+}
+
+.welcome-banner__dismiss {
+    align-items: center;
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: #486484;
+    cursor: pointer;
+    display: inline-flex;
+    height: 28px;
+    justify-content: center;
+    margin-top: 0.1rem;
+    padding: 0;
+    transition: background 0.15s ease;
+    width: 28px;
+}
+.welcome-banner__dismiss:hover { background: rgba(20, 50, 100, 0.08); }
+.welcome-banner__dismiss:focus-visible {
+    outline: 2px solid #1589ee;
+    outline-offset: 2px;
+}
+
+@keyframes cr-welcome-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+}
+@keyframes cr-welcome-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+@keyframes cr-welcome-wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(22deg); }
+    75% { transform: rotate(-12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .welcome-banner,
+    .cloud__body,
+    .cloud__hand {
+        animation: none;
+    }
+}

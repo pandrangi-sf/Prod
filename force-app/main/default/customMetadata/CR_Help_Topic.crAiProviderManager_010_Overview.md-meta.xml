@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Manage AI Providers — Overview</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;Vital Reports&apos; AI features (dashboard summaries, future report-builder assistance) call out to an external LLM. This tab is where you choose which one.&lt;/p&gt;&lt;ol&gt;&lt;li&gt;In &lt;strong&gt;Setup → Named Credentials&lt;/strong&gt;, create a Named Credential (e.g. named &lt;em&gt;Anthropic&lt;/em&gt;) pointing at the provider — for Anthropic, URL &lt;em&gt;https://api.anthropic.com&lt;/em&gt;, custom header &lt;em&gt;x-api-key&lt;/em&gt; carrying your API key. The key never leaves Setup.&lt;/li&gt;&lt;li&gt;Back here, click &lt;strong&gt;New Provider&lt;/strong&gt;: name it, pick the model (e.g. &lt;em&gt;claude-sonnet-4-6&lt;/em&gt;), paste the Named Credential name, mark it Active and Default.&lt;/li&gt;&lt;li&gt;Click the plug icon to &lt;strong&gt;Test Connection&lt;/strong&gt; — a tiny 1-token probe. Green = working; red = check the Named Credential or model name.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only one provider should carry the &lt;strong&gt;Default&lt;/strong&gt; flag at a time — the app uses that record. Marking a new one default automatically clears the flag on the old one.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Wiring an AI provider</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:bot</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crAiProviderManager</value>
+    </values>
+</CustomMetadata>

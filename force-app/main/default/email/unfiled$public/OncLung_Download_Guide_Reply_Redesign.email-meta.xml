@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Lead to Download Onc Lung Guide</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - Oncology - Lung Campaign - DG - redesign</name>
+    <style>none</style>
+    <subject>Thank You - Download Your Free Lung Oncology Guide</subject>
+    <textOnly>Download Your Free Guide
+
+To Make An Appointment Call us at 321.843.7780 Se Habla Español
+
+Download Your Guide to Understanding Lung Cancer
+
+Thank you for requesting your Guide to Understanding Lung Cancer. The guide will provide you with information on the symptoms and types of lung cancer. Plus, you&apos;ll learn more about the unique, multidisciplinary approach we take at the Rod Taylor Thoracic Care Center.
+
+Schedule An Appointment With A Physician
+
+Reading the guide to breast cancer is the first step to treating this disease. If you think you or a loved one may be experiencing the symptoms of lung cancer, it is important to meet with a medical professional to learn about treatment options.
+
+Request An Appointment
+
+* During normal business hours,
+Mon. - Fri. 8:00 a.m.- 4:30 p.m. EST
+
+Call for more information
+
+321.843.7780
+
+Connect with us
+
+
+Unsubscribe | Privacy Policy
+
+Copyright ©2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

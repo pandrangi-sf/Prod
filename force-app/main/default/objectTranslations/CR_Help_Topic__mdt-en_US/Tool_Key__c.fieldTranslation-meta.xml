@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Identifier of the LWC tool this help topic belongs to (e.g., crDashboardBuilder, crReportViewer). Topics are grouped by this key in the help panel. --></help>
+    <label><!-- Tool Key --></label>
+    <name>Tool_Key__c</name>
+</CustomFieldTranslation>

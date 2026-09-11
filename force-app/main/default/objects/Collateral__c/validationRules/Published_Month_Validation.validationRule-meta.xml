@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Published_Month_Validation</fullName>
+    <active>true</active>
+    <description>Enforces entering a numeric month.</description>
+    <errorConditionFormula>OR(
+  ISBLANK(Published_Month__c),
+  Published_Month__c &lt; 1,
+  Published_Month__c &gt; 12
+)</errorConditionFormula>
+    <errorDisplayField>Published_Month__c</errorDisplayField>
+    <errorMessage>Please enter a valid month number (1-12).</errorMessage>
+</ValidationRule>

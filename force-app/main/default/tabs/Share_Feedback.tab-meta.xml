@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Send the Vital Reports team a bug, an idea, a question, or a note about what is working.</description>
+    <label>Share Feedback</label>
+    <lwcComponent>crFeedback</lwcComponent>
+    <motif>Custom24: Building</motif>
+</CustomTab>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Merge Duplicate Locations</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;New Feature! When you find a duplicate location, check the &lt;strong&gt;Duplicate&lt;/strong&gt; field and pick the location it should be merged with in the &lt;strong&gt;Merge Location&lt;/strong&gt; field and save your changes.  The Salesforce Admin will then merge these locations for you. &lt;/p&gt;</body>
+        <delayDays>2</delayDays>
+        <description>Gives information on how to mark a Location as a duplicate.</description>
+        <dismissButtonLabel>Got It!</dismissButtonLabel>
+        <displayPosition>MiddleCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <endDate>2023-02-10</endDate>
+        <isPublished>true</isPublished>
+        <masterLabel>Merge Duplicate Locations</masterLabel>
+        <publishedDate>2023-01-28</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2023-01-30</startDate>
+        <targetPageKey1>Location__c</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>3</timesToDisplay>
+        <title>Merge Duplicate Locations</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

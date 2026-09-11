@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trailblazer_Id__c</fullName>
+    <description>Tracks the users Salesforce trailblazer Id</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter your Salesforce trailblazer Id from this page (https://trailblazer.me/id?lang=en_US)</inlineHelpText>
+    <label>Trailblazer Id</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

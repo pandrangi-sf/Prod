@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The Rank from the related Target record. --></help>
+    <label><!-- Target Rank --></label>
+    <name>Target_Rank__c</name>
+</CustomFieldTranslation>

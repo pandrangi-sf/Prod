@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PrimaryLocation__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Displays the location marked as primary in the Locations related list.  Updated by a Flow.</description>
+    <inlineHelpText>The location marked as &quot;Primary&quot; in the Locations related list.  To change the Primary Location, set the location you want to be primary in the Locations related list.  The system will then update this field with that location.</inlineHelpText>
+    <label>Primary Location</label>
+    <referenceTo>Location__c</referenceTo>
+    <relationshipLabel>Primary Practices &amp; Groups</relationshipLabel>
+    <relationshipName>Practices</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

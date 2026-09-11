@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Planning_Organization_Score__c</fullName>
+    <description>Calculates the total score for the Planning &amp; Organization section by adding the score of each question and dividing by the total number of questions.</description>
+    <externalId>false</externalId>
+    <formula>(VALUE(TEXT(Strategic_Routing__c)) +  VALUE(TEXT(Appointment_Scheduling__c)) +  VALUE(TEXT(Uses_Physician_Data__c)) +  VALUE(TEXT(Focused_on_Facility_Goals__c))) / 4</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Average score for the questions in this section.</inlineHelpText>
+    <label>Planning &amp; Organization Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

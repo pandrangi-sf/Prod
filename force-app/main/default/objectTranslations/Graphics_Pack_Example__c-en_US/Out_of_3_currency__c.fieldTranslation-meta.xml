@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Out of 3 Currency --></label>
+    <name>Out_of_3_currency__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Landing page for the Vital Reports app. Welcome banner, quick-launch tiles for every tab the user can access, and a Help and Tips drawer that adapts to user vs admin via the Vital_Reports_Admin_View custom permission.</description>
+    <label>Home</label>
+    <lwcComponent>crVitalReportsHome</lwcComponent>
+    <motif>Custom17: Sack</motif>
+</CustomTab>

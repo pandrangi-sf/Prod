@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Allowlist Manager — Getting Started</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;Use the search box to filter the candidate object list.&lt;/li&gt;&lt;li&gt;Toggle &lt;strong&gt;Active&lt;/strong&gt; on each row to include/exclude that object from the pickers.&lt;/li&gt;&lt;li&gt;Click &lt;strong&gt;Save&lt;/strong&gt; to persist; changes apply to all users at the next picker open.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Auto-populate defaults&lt;/strong&gt; activates a sensible starting set (Account, Contact, Opportunity, Case, Task, Event, Lead) — useful for fresh orgs.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Managing the allowlist</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:edit</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crAllowlistManager</value>
+    </values>
+</CustomMetadata>

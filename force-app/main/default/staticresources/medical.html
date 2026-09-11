@@ -1,0 +1,100 @@
+<div class="form-controls">
+	<div class="leftLabel medq">
+		 Do you have a medical history of any breast cancer or of ductal carcinoma in situ (DCIS) or lobular carcinoma in situ (LCIS) or have you received previous radiation therapy to the chest for treatment of Hodgkin Lymphoma?
+	</div>
+	<div class="rightSelect">
+		<select ng-model="mhistory" ng-change="mhistoryChange()" class="mhistory field required" name="mhistory" size="1">
+			<option value="">Please Select</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</select>
+		<span class="errorMessage">Field Required</span>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class="form-controls">
+	<div class="leftLabel medq">
+		  Do you have a mutation in either the  <i>BRCA 1</i> or <i>BRCA 2</i> gene, or a diagnosis of a genetic syndrome that may be associated with elevated risk of breast cancer?
+	</div>
+	<div class="rightSelect">
+		<select ng-model="genetic" ng-change="geneticChange()" class="genetic field required" id="genetic" name="genetic" size="1">
+			<option value="">Please Select</option>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</select>
+		<span class="errorMessage">Field Required</span>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class="form-controls">
+	<div class="leftLabel medq">
+		How many of your first-degree relatives - mother, sisters, daughters - have had breast cancer?
+	</div>
+	<div class="rightSelect">
+		<select ng-model="fdrel" class="fdrel field required" id="fdrel" name="fdrel" size="1">
+			<option value="">Please Select</option>
+			<option value="99">Unknown</option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">&gt; 1</option>
+		</select>
+		<span class="errorMessage">Field Required</span>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class="form-controls">
+	<div class="leftLabel medq">
+		Have you ever had a biopsy?
+	</div>
+	<div class="rightSelect">
+		<select ng-change="biopsyChange()"  ng-model="hadb" class="hadb field required" id="hadb" name="hadb" size="1">
+			<option value="">Please Select</option>
+			<option value="99">Unknown</option>
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</select>
+		<span class="errorMessage">Field Required</span>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class="form-controls" ng-class="biopsyClass">
+	<div class="leftLabel medq">
+		How many breast biopsies (positive or negative) have you had?
+	</div>
+	<div class="rightSelect">
+		<select id="previous_biopsies" ng-model="biopsies" class="field" name="previous_biopsies" size="1" ng-class="biopsyClass">
+			<option value="">Please Select</option>
+			<option value="1">1</option>
+			<option value="2">&gt; 1</option>
+		</select>
+		<span class="errorMessage">Field Required</span>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class="form-controls" ng-class="biopsyClass">
+	<div class="leftLabel medq">
+		Have you had at least one breast biopsy with atypical hyperplasia?
+	</div>
+	<div class="rightSelect">
+		<select id="hyperplasia" ng-model="hyperplasia" class="field" name="hyperplasia" size="1" ng-class="biopsyClass">
+			<option value="">Please Select</option>
+			<option value="99">Unknown</option>
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</select>
+		</select>
+		<span class="errorMessage">Field Required</span>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<br />
+<div class="form-actions-btn">
+	<label>Continue to assessment and to Download Your Guide</label>
+	<input type="submit" ng-click="next()" value=" " class="next-btn disableOnClick" onclick="ga('send', 'event', 'Breast-Cancer-FY14', 'form', 'submit-asst');" />
+</div><!-- /.form-actions -->

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Cron expression used to schedule the native Salesforce ETL job. --></help>
+    <label><!-- Schedule Cron --></label>
+    <name>Schedule_Cron__c</name>
+</CustomFieldTranslation>

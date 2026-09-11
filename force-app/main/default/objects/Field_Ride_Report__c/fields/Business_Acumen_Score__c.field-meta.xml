@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Acumen_Score__c</fullName>
+    <description>Calculates the total score for the Business Acumen Score section by adding the score of each question and dividing by the total number of questions.</description>
+    <externalId>false</externalId>
+    <formula>(VALUE(TEXT(Reviews_Data_and_Analyzes_Opportunities__c )) + VALUE(TEXT(Demonstrates_Business_Knowledge__c))) / 2</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Average score for the questions in this section.</inlineHelpText>
+    <label>Business Acumen Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

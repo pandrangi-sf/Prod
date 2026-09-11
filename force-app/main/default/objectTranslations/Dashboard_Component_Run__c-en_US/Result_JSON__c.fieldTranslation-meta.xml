@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Bounded preview result JSON for the component run. --></help>
+    <label><!-- Result JSON --></label>
+    <name>Result_JSON__c</name>
+</CustomFieldTranslation>

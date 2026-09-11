@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Call</fullName>
+        <default>false</default>
+        <label>Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>1. Contact practice, determine decision-making process, and schedule meeting</fullName>
+        <default>true</default>
+        <label>1. Contact practice, determine decision-making process, and schedule meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>2. Make the initial CIN presentation to decision-makers</fullName>
+        <default>false</default>
+        <label>2. Make the initial CIN presentation to decision-makers</label>
+    </standardValue>
+    <standardValue>
+        <fullName>3. Conduct follow-up with the practice</fullName>
+        <default>false</default>
+        <label>3. Conduct follow-up with the practice</label>
+    </standardValue>
+    <standardValue>
+        <fullName>4. Execute the PPA agreements</fullName>
+        <default>false</default>
+        <label>4. Execute the PPA agreements</label>
+    </standardValue>
+    <standardValue>
+        <fullName>5. Commence onboarding process (assign task to Alexis G.)</fullName>
+        <default>false</default>
+        <label>5. Commence onboarding process (assign task to Alexis G.)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>6. Obtain contact information for practice responsible party</fullName>
+        <default>false</default>
+        <label>6. Obtain contact information for practice responsible party</label>
+    </standardValue>
+    <standardValue>
+        <fullName>7. Email forms packet to practice contact</fullName>
+        <default>false</default>
+        <label>7. Email forms packet to practice contact</label>
+    </standardValue>
+    <standardValue>
+        <fullName>8. Schedule onboarding meeting</fullName>
+        <default>false</default>
+        <label>8. Schedule onboarding meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>9. Conduct onboarding meeting</fullName>
+        <default>false</default>
+        <label>9. Conduct onboarding meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>10. Notify operations of CIN Value Opportunities chosen</fullName>
+        <default>false</default>
+        <label>10. Notify operations of CIN Value Opportunities chosen</label>
+    </standardValue>
+</StandardValueSet>

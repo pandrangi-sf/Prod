@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Service_Line_Override__c</fullName>
+    <description>Displays the Service Line Override value for the related provider.  Used to validate data is correct.</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Provider__r.Service_Line_Override__c)</formula>
+    <inlineHelpText>Displays the Service Line Override value from the provider record.</inlineHelpText>
+    <label>Provider Service Line Override</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

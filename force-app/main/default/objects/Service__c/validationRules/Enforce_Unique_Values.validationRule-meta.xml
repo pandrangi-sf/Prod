@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Unique_Values</fullName>
+    <active>true</active>
+    <description>Prevents duplicate services from being created.</description>
+    <errorConditionFormula>AND(VLOOKUP($ObjectType.Service__c.Fields.Name , $ObjectType.Service__c.Fields.Name, Name) = Name, OR(ISNEW(), ISCHANGED(Name)))</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>This value already exists.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The dashboard to deliver. Set this OR Report Definition (not both). Must be marked Broadcast Safe. --></help>
+    <label><!-- Dashboard --></label>
+    <name>Dashboard__c</name>
+    <relationshipLabel><!-- Report Subscriptions --></relationshipLabel>
+</CustomFieldTranslation>

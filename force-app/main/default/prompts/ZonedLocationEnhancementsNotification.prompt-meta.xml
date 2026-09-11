@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Zoned Location Enhancements Notification</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>View Enhancements Deck</actionButtonLabel>
+        <actionButtonLink>https://orhs.sharepoint.com/:p:/s/PRMSalesforceLightningMigration/EX_cDRspx_FPmXxlDtejdrUBbSwXvoIBnHfsfFnSFaVm1A?e=kUaZJB</actionButtonLink>
+        <body>&lt;p&gt;The Zoned Location changes have been completed.  Please review your zoned locations for accuracy.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Refer to this training deck for a summary of all the changes. &lt;a href=&quot;https://orhs.sharepoint.com/:p:/s/PRMSalesforceLightningMigration/EX_cDRspx_FPmXxlDtejdrUBbSwXvoIBnHfsfFnSFaVm1A?e=FV82Kg&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Zoned Location Enhancements&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;For any questions or to report any issues, please post in the PRM Team chatter group and use the topic &lt;strong&gt;#Zoned Location Enhancements&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</body>
+        <delayDays>1</delayDays>
+        <description>Alerts the team that the zoned locations changes have been completed.</description>
+        <displayType>DockedComposer</displayType>
+        <endDate>2024-06-28</endDate>
+        <experience>Lightning</experience>
+        <header>Zoned Locations Updates</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Zoned Location Enhancements Notification</masterLabel>
+        <publishedDate>2024-06-24</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2024-06-24</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <themeColor>Theme1</themeColor>
+        <themeSaturation>Dark</themeSaturation>
+        <timesToDisplay>1</timesToDisplay>
+        <title>Zoned Location Changes Completed</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

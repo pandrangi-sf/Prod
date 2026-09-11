@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Objections_to_Affiliation__c</fullName>
+    <label>Objections to Affiliation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Time Commitment</fullName>
+                <default>false</default>
+                <label>Time Commitment</label>
+            </value>
+            <value>
+                <fullName>Shared Savings Plans</fullName>
+                <default>false</default>
+                <label>Shared Savings Plans</label>
+            </value>
+            <value>
+                <fullName>Term of Agreement</fullName>
+                <default>false</default>
+                <label>Term of Agreement</label>
+            </value>
+            <value>
+                <fullName>Legal Agreement (PPA)</fullName>
+                <default>false</default>
+                <label>Legal Agreement (PPA)</label>
+            </value>
+            <value>
+                <fullName>Value</fullName>
+                <default>false</default>
+                <label>Value</label>
+            </value>
+            <value>
+                <fullName>Dues</fullName>
+                <default>false</default>
+                <label>Dues</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

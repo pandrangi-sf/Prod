@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Territory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Territories</value>
+    </caseValues>
+    <layouts>
+        <layout>Territory Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Initial Setup --></label>
+        <name>Initial_Setup</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Network Team Territory --></description>
+        <label><!-- Network Territory --></label>
+        <name>Network_Territory</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- PRM Alabama (Baptist Health) Team Territory --></description>
+        <label><!-- PRM AL Territory --></label>
+        <name>PRM_AL_Territory</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- PRM Florida (Orlando Health) Territory --></description>
+        <label><!-- PRM FL Territory --></label>
+        <name>PRM_FL_Territory</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please contact your Salesforce Administrator about changing the name of this territory. --></errorMessage>
+        <name>Prevent_North_South_Name_Change</name>
+    </validationRules>
+</CustomObjectTranslation>

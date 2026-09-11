@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsInNetwork__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>To change this value, please see Sys Admin and/or PRM Super User.</inlineHelpText>
+    <label>In Network</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

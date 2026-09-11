@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- EMR System --></label>
+    <name>EMR_System__c</name>
+    <picklistValues>
+        <masterLabel>ADP AdvancedMD Software</masterLabel>
+        <translation><!-- ADP AdvancedMD Software --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Abraxas Medical Solutions (Merge Healthcare)</masterLabel>
+        <translation><!-- Abraxas Medical Solutions (Merge Healthcare) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Advanced Data Systems Corps</masterLabel>
+        <translation><!-- Advanced Data Systems Corps --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Allscripts</masterLabel>
+        <translation><!-- Allscripts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aprima Medical Software</masterLabel>
+        <translation><!-- Aprima Medical Software --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cerner Corporation</masterLabel>
+        <translation><!-- Cerner Corporation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CompuGroup</masterLabel>
+        <translation><!-- CompuGroup --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Computers Programs and Systems Inc. (CPSI)</masterLabel>
+        <translation><!-- Computers Programs and Systems Inc. (CPSI) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CureMD</masterLabel>
+        <translation><!-- CureMD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-MDs</masterLabel>
+        <translation><!-- E-MDs --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eclipsys (Bought by Allscripts)</masterLabel>
+        <translation><!-- Eclipsys (Bought by Allscripts) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Epic Systems Corporation</masterLabel>
+        <translation><!-- Epic Systems Corporation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GE Healthcare</masterLabel>
+        <translation><!-- GE Healthcare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greenway Medical Technologies</masterLabel>
+        <translation><!-- Greenway Medical Technologies --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Healthcare Management Systems</masterLabel>
+        <translation><!-- Healthcare Management Systems --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Healthland</masterLabel>
+        <translation><!-- Healthland --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kareo</masterLabel>
+        <translation><!-- Kareo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>McKesson</masterLabel>
+        <translation><!-- McKesson --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Meditab Software, Inc</masterLabel>
+        <translation><!-- Meditab Software, Inc --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Meditech</masterLabel>
+        <translation><!-- Meditech --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NextGen Healthcare Information Systems</masterLabel>
+        <translation><!-- NextGen Healthcare Information Systems --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nextech</masterLabel>
+        <translation><!-- Nextech --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation><!-- None --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Optum (Picis Inc)</masterLabel>
+        <translation><!-- Optum (Picis Inc) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Platinum Systems Specialists</masterLabel>
+        <translation><!-- Platinum Systems Specialists --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Practice Fusion</masterLabel>
+        <translation><!-- Practice Fusion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Praxis EMR</masterLabel>
+        <translation><!-- Praxis EMR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Siemens Healthcare</masterLabel>
+        <translation><!-- Siemens Healthcare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>T-System Inc</masterLabel>
+        <translation><!-- T-System Inc --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vitera Healthcare Solutions</masterLabel>
+        <translation><!-- Vitera Healthcare Solutions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>athenahealth</masterLabel>
+        <translation><!-- athenahealth --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eClinicalWorks</masterLabel>
+        <translation><!-- eClinicalWorks --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

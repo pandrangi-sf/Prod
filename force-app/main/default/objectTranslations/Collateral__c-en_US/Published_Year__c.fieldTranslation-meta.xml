@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The year the collateral was published.  Will be indicated in the alpa-numeric code in the bottom right corner of the document. --></help>
+    <label><!-- Published Year --></label>
+    <name>Published_Year__c</name>
+</CustomFieldTranslation>

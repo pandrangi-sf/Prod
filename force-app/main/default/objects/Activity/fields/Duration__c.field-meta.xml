@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duration__c</fullName>
+    <label>Duration</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&lt; 15</fullName>
+                <default>false</default>
+                <label>&lt; 15</label>
+            </value>
+            <value>
+                <fullName>15-30</fullName>
+                <default>false</default>
+                <label>15-30</label>
+            </value>
+            <value>
+                <fullName>30-60</fullName>
+                <default>false</default>
+                <label>30-60</label>
+            </value>
+            <value>
+                <fullName>60+</fullName>
+                <default>false</default>
+                <label>60+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

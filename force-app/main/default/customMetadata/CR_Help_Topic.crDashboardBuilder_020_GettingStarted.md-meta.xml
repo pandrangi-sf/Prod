@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dashboard Builder — Getting Started</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;Click the dashboard title in the toolbar to rename it.&lt;/li&gt;&lt;li&gt;Click &lt;strong&gt;+ Widget&lt;/strong&gt; to start the Add Widget flow: pick a type (Chart / Text / Image / LWC), then a report (for charts), then configure the tile.&lt;/li&gt;&lt;li&gt;Drag a tile&apos;s header to reposition it; drag the bottom-right corner to resize. The canvas snaps to the configured grid (12 or 9 columns).&lt;/li&gt;&lt;li&gt;Click the &lt;strong&gt;✎&lt;/strong&gt; (edit) icon on a tile to reopen its configuration; click &lt;strong&gt;🗑&lt;/strong&gt; to remove it.&lt;/li&gt;&lt;li&gt;Click &lt;strong&gt;Save&lt;/strong&gt; to persist. The split button also offers &lt;strong&gt;Save As&lt;/strong&gt; (clone) and &lt;strong&gt;Delete&lt;/strong&gt;.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Building your first dashboard</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:add</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crDashboardBuilder</value>
+    </values>
+</CustomMetadata>

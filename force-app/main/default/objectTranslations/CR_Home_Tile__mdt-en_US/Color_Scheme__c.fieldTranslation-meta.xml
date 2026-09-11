@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Background color for the tile&apos;s icon swatch. Pick one of the 7 SLDS-aligned colors. Defaults to slate when blank. --></help>
+    <label><!-- Color Scheme --></label>
+    <name>Color_Scheme__c</name>
+    <picklistValues>
+        <masterLabel>amber</masterLabel>
+        <translation><!-- amber --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>blue</masterLabel>
+        <translation><!-- blue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>green</masterLabel>
+        <translation><!-- green --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>purple</masterLabel>
+        <translation><!-- purple --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>red</masterLabel>
+        <translation><!-- red --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>slate</masterLabel>
+        <translation><!-- slate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>teal</masterLabel>
+        <translation><!-- teal --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

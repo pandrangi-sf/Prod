@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Allowlist Manager — Troubleshooting</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Object missing from picker:&lt;/strong&gt; Check the Active toggle. If the row exists but is inactive, activate it. If the row doesn&apos;t exist at all, the running user&apos;s profile may not have read access — escalate to an admin.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Picker shows old labels:&lt;/strong&gt; Picker results are cached for ~10 minutes. Refresh the page or wait the cache window.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Save fails for one row:&lt;/strong&gt; The change is rolled back so other rows stay consistent. The error toast names the row — fix and retry.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Troubleshooting</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:warning</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">40.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crAllowlistManager</value>
+    </values>
+</CustomMetadata>

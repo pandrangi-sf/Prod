@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Pre-formatted by Salesforce; may include credentials/middle name. --></help>
+    <label><!-- Provider Full Name --></label>
+    <name>Provider_Full_Name__c</name>
+</CustomFieldTranslation>

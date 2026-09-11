@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>New Dynamic Activity Composer User Training</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Salesforce has rolled out a new activity UI for creating activities. When you select a button under the activities it will open a modal docked in the bottom right of your screen to complete the activity, or send your email!&lt;/span&gt;&lt;/p&gt;</body>
+        <delayDays>1</delayDays>
+        <description>This is the change management to notify users of the new change for Spring 23&apos; Dynamic Activity Composer rollout.</description>
+        <displayType>DockedComposer</displayType>
+        <endDate>2023-02-24</endDate>
+        <header>🚨 New Feature Alert 🚨</header>
+        <image>Inapp_guidance_dynamic_activity</image>
+        <imageAltText>Gif showing the new functionality of the dynamic activity composer.</imageAltText>
+        <imageLocation>Bottom</imageLocation>
+        <isPublished>true</isPublished>
+        <masterLabel>New Dynamic Activity Composer User Training</masterLabel>
+        <publishedDate>2023-02-13</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <startDate>2023-02-14</startDate>
+        <timesToDisplay>10</timesToDisplay>
+        <title>New Dynamic Activity Composer!</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

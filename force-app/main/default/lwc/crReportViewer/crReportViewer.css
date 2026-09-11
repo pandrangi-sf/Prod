@@ -1,0 +1,653 @@
+/* QA-C2: NULL/empty cell styling. The em-dash placeholder is rendered
+   in a muted color so users perceive it as "no data" rather than as a
+   meaningful value. Matches the (empty) convention used in the column
+   filter popover. */
+.cr-cell--empty {
+    color: #9ba6b8;
+    font-style: italic;
+}
+
+/* Empty-state when filters narrow the result set to 0 rows. Distinct
+   from the "no report run yet" placeholder so the user knows the
+   filter is the cause and offers a one-click recovery. */
+.empty-rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 2.5rem 1rem;
+    color: #5a6a83;
+    text-align: center;
+}
+.empty-rows p {
+    margin: 0;
+    font-size: 0.9375rem;
+}
+.empty-rows__icon {
+    --sds-c-icon-color-foreground-default: #1B5CAB;
+}
+
+/* Chart-tab toolbar — chart type picker + caption explaining the
+   advisor's verdict for the active pick. Caption colors track the
+   verdict tier so the warning ones (suboptimal pie etc.) stand out. */
+.chart-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+.chart-type-picker { min-width: 12rem; max-width: 16rem; }
+.chart-caption {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999rem;
+    font-size: 0.8125rem;
+    line-height: 1.2;
+}
+.chart-caption--recommended {
+    background: #eaf6ee;
+    color: #2e7d32;
+}
+.chart-caption--available {
+    background: #eef4fb;
+    color: #1B5CAB;
+}
+.chart-caption--notFitting {
+    background: #fdf1d8;
+    color: #9a4d00;
+}
+.chart-caption__icon {
+    --sds-c-icon-color-foreground-default: currentColor;
+}
+
+/* Quick Filters v1 — top-level filter bar above the report table.
+   Renders only when at least one applicable control exists (date columns,
+   owner field, active field, or any loaded rows). Each control is a
+   compact, pill-style chip matching the rest of the app's pill style. */
+.quick-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    margin-bottom: 0.5rem;
+    background: #f6f9fc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+}
+.quick-filters__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4f5c70;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-right: 0.25rem;
+}
+.quick-filters__group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+.quick-filters__field   { min-width: 9rem; max-width: 12rem; }
+.quick-filters__preset  { min-width: 9rem; max-width: 11rem; }
+.quick-filters__topn    { min-width: 9rem; max-width: 11rem; }
+/* QA-B5: removed margin-left: auto so the Show N pill aligns with the
+   other Quick Filter controls when the bar wraps to multiple rows at
+   narrow widths. Previously Show N was forced to its own right-aligned
+   row, looking visually stranded. */
+.quick-filters__preset-picker { min-width: 11rem; max-width: 14rem; }
+.quick-filters__grain { min-width: 11rem; max-width: 12rem; }
+.quick-filters__date    { width: 8rem; }
+
+.quick-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3125rem 0.75rem 0.3125rem 0.5rem;
+    border-radius: 999rem;
+    border: 1px solid #c8d6e8;
+    background: #ffffff;
+    color: #4f5c70;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+    line-height: 1;
+}
+.quick-pill:hover {
+    border-color: #1B5CAB;
+    color: #1B5CAB;
+}
+.quick-pill:focus-visible {
+    outline: 2px solid #1B5CAB;
+    outline-offset: 2px;
+}
+.quick-pill__icon {
+    --sds-c-icon-color-foreground-default: #8a96a9;
+    --sds-c-icon-color-foreground: #8a96a9;
+}
+.quick-pill--active {
+    background: #1B5CAB;
+    border-color: #1B5CAB;
+    color: #ffffff;
+    box-shadow: 0 1px 4px rgba(27, 92, 171, 0.25);
+}
+.quick-pill--active:hover {
+    background: #154b8d;
+    border-color: #154b8d;
+    color: #ffffff;
+}
+.quick-pill--active .quick-pill__icon {
+    --sds-c-icon-color-foreground-default: #ffffff;
+    --sds-c-icon-color-foreground: #ffffff;
+}
+/* Read-only status pill (e.g. the "Grouped by Month, then Record Type" caption).
+   Reuses the pill shape but is not interactive — no hover/pointer affordance. */
+.quick-pill_static {
+    cursor: default;
+    background: #eef4fb;
+    border-color: #c8d6e8;
+    color: #1B5CAB;
+}
+.quick-pill_static:hover {
+    border-color: #c8d6e8;
+    color: #1B5CAB;
+}
+
+/* Page-header swatch — matches the "Browse Reports" tile on the Vital
+   Reports Home page (blue + standard:report). Same swatch pattern is
+   used across all tool pages for a continuous visual identity. */
+.page-header__title-block {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+.page-header__icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.page-header__icon-wrap--blue { background: #e8f0fc; }
+.page-header__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1d3557;
+    margin: 0;
+}
+
+/* The host element must be a block with min-width: 0 so the grid/flex layouts inside
+   are allowed to shrink below their content's natural width. Without this the table's
+   intrinsic width (sum of all column min-widths) bubbles out and pushes the whole card
+   past the viewport, hiding the right-side toolbar buttons. */
+:host {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+.viewer-grid {
+    display: grid;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.viewer-grid > * {
+    min-width: 0;
+}
+
+/* Flex + wrap so the 5–6 toolbar buttons + report combobox flow naturally and wrap
+   to a new line on narrow viewports instead of overflowing. */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+    min-width: 0;
+}
+
+.toolbar > lightning-combobox {
+    flex: 1 1 18rem;
+    min-width: 0;
+}
+
+.toolbar_compact {
+    /* Compact (no report selector) — buttons left-aligned, flex still wraps. */
+    align-items: center;
+}
+
+.dashboard-filter-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    background: #f3f8ff;
+    color: #032d60;
+    font-weight: 600;
+}
+
+.table-wrap {
+    overflow: auto;
+    max-height: 36rem;
+    /* Pin the wrapper to its parent's width so wide tables scroll inside instead of
+       pushing the page past the viewport. min-width: 0 + max-width: 100% lets the
+       flex/grid parent actually constrain us. */
+    max-width: 100%;
+    min-width: 0;
+    border: 1px solid #d8dde6;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    box-shadow: inset 0 -1px 0 rgba(24, 24, 24, 0.04);
+}
+
+.table-wrap table {
+    min-width: max-content;
+    width: max-content;
+}
+
+.chart-wrap {
+    padding: 0.75rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.table-wrap th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    min-width: 12rem;
+    max-width: 22rem;
+    background: #f8fafc;
+    box-shadow: inset 0 -1px 0 #d8dde6;
+    white-space: nowrap;
+}
+
+.table-wrap th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.table-wrap th.sortable:hover {
+    background: #eef4ff;
+}
+
+.table-wrap td {
+    min-width: 12rem;
+    max-width: 24rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ----- List mode (master view, SF-style report catalog) ----- */
+.list-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eef0f3;
+    margin-bottom: 0.75rem;
+}
+
+.list-search {
+    flex: 1 1 18rem;
+    min-width: 0;
+}
+
+.list-sort {
+    flex: 0 0 12rem;
+}
+
+.list-count {
+    color: #4f5c70;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.list-table-wrap {
+    overflow: auto;
+    max-height: 36rem;
+    max-width: 100%;
+    min-width: 0;
+    border: 1px solid #d8dde6;
+    border-radius: 0.5rem;
+    background: #ffffff;
+}
+
+.list-table {
+    min-width: max-content;
+    width: 100%;
+}
+
+.list-table th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #f8fafc;
+    box-shadow: inset 0 -1px 0 #d8dde6;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #2e3338;
+}
+
+.list-table td {
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #2e3338;
+}
+
+.list-table .muted {
+    color: #94a3b8;
+}
+
+.list-table .actions-col {
+    width: 9rem;
+    text-align: right;
+}
+
+.report-link {
+    color: #1B5CAB;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.report-link:hover {
+    text-decoration: underline;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.badge_yes {
+    background: #e3fcef;
+    color: #056764;
+}
+
+.badge_no {
+    background: #f3f3f3;
+    color: #4a4a4a;
+}
+
+.list-empty {
+    padding: 2rem 1rem;
+    text-align: center;
+    border: 1px dashed #cfcfcf;
+    border-radius: 0.5rem;
+    background: #fafbfc;
+}
+
+.queue-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    padding: 0 0.5rem;
+    border-radius: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: #f3f3f3;
+    color: #181818;
+}
+
+.status-complete {
+    background: #e3fcef;
+    color: #056764;
+}
+
+.status-failed {
+    background: #feded8;
+    color: #ba0517;
+}
+
+.status-queued,
+.status-running {
+    background: #eef4ff;
+    color: #0b5cab;
+}
+
+td {
+    vertical-align: top;
+}
+
+@media (max-width: 48em) {
+    .toolbar {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----- Export polling recovery banner ----- */
+.poll-recovery {
+    background: #fff8e1;
+    border: 1px solid #f1c40f;
+    border-radius: 0.25rem;
+    color: #5c4400;
+    padding: 0.4rem 0.75rem;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.poll-recovery__msg { font-size: 0.85rem; }
+
+/* Phase 3 v10 — column-header filters.
+   The <th> becomes a positioning context so the absolutely-positioned filter
+   menu can drop below it without affecting table layout. The label zone and
+   the filter trigger sit side by side. */
+.filterable-header {
+    position: relative;
+    white-space: nowrap;
+}
+.column-label-zone {
+    cursor: pointer;
+    user-select: none;
+}
+.column-filter-trigger {
+    margin-left: 0.25rem;
+    vertical-align: middle;
+}
+.column-filter-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    margin-top: 0.25rem;
+    min-width: 16rem;
+    max-width: 22rem;
+    background: var(--lwc-colorBackground, #fff);
+    border: 1px solid var(--lwc-colorBorder, #c9c9c9);
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 0.75rem;
+    font-weight: normal;
+    text-transform: none;
+    color: var(--lwc-colorTextDefault, #181818);
+}
+.filter-menu-header {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+.filter-mode-row {
+    margin-bottom: 0.5rem;
+}
+.filter-search-row {
+    margin-bottom: 0.5rem;
+}
+.filter-text-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+.filter-text-row lightning-input { flex: 1; }
+.filter-options-list {
+    max-height: 18rem;
+    overflow-y: auto;
+    margin-bottom: 0.75rem;
+    padding: 0.25rem 0;
+    border-top: 1px solid var(--lwc-colorBorder, #e5e5e5);
+    border-bottom: 1px solid var(--lwc-colorBorder, #e5e5e5);
+}
+.filter-menu-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.active-filters-row {
+    background: var(--lwc-colorBackgroundHighlight, #fff7e0);
+}
+.active-filters-cell {
+    padding: 0.5rem 1rem;
+    font-weight: normal;
+    color: var(--lwc-colorTextDefault, #181818);
+}
+
+/* =============================================================
+   UI refresh (additive, reversible). Design tokens + a modern
+   data-grid treatment for the results table. Cells already carry
+   title={value} tooltips, so ellipsis truncation never hides data.
+   ============================================================= */
+:host {
+    --cr-radius: 0.5rem;
+    --cr-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.10);
+    --cr-border: #e6e9ef;
+    --cr-head-bg: #f3f6f9;
+    --cr-text-weak: #5c6b82;
+    --cr-cell-max: 22rem;
+}
+
+/* Stop overly long text fields from stretching columns; they ellipsize
+   with the existing per-cell tooltip preserving the full value. */
+.cr-results-table td {
+    max-width: var(--cr-cell-max);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-variant-numeric: tabular-nums;
+    vertical-align: middle;
+}
+.cr-results-table th {
+    white-space: nowrap;
+}
+/* Sticky header so column names stay visible while scrolling rows. */
+.cr-results-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--cr-head-bg);
+    box-shadow: inset 0 -1px 0 var(--cr-border);
+}
+
+/* ---- Group By: visual grouping headers ---- */
+.cr-results-table tr.cr-group-header {
+    background: var(--cr-head-bg, #f3f3f3);
+}
+/* Nested (inner) row of a two-level Time Grain x field breakdown: lighter, indented, thinner. */
+.cr-results-table tr.cr-group-subheader {
+    background: transparent;
+}
+.cr-results-table tr.cr-group-subheader .cr-group-header__cell {
+    padding-left: 2.25rem;
+    font-weight: 500;
+    border-top: 1px solid var(--cr-border, #efefef);
+}
+.cr-group-header__cell {
+    padding: 0.4rem 0.5rem;
+    font-weight: 700;
+    border-top: 2px solid var(--cr-border, #dddbda);
+    position: sticky;
+    left: 0;
+}
+.cr-group-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 0.35rem 0 0;
+    vertical-align: middle;
+    line-height: 1;
+}
+.cr-group-header__label {
+    vertical-align: middle;
+}
+.cr-group-header__count {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0 0.4rem;
+    border-radius: 0.75rem;
+    background: var(--cr-border, #dddbda);
+    color: #514f4d;
+    font-size: 0.75rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+/* Results-tab grid/table view toggle (AG Grid opt-in) */
+.row-count-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.grid-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: transparent;
+    border: 1px solid #c9c9c9;
+    border-radius: 0.25rem;
+    padding: 0.15rem 0.5rem;
+    cursor: pointer;
+    color: #0176d3;
+    font-size: 0.78rem;
+}
+.grid-toggle:hover {
+    background: #f3f7fc;
+    border-color: #0176d3;
+}
+
+/* Pivot tab config bar */
+.pivot-config {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-end;
+    padding: 0.5rem 0 0.75rem;
+}
+.pivot-config__field {
+    min-width: 12rem;
+    flex: 0 0 auto;
+}
+
+/* Results toolbar actions (exports + grid toggle) */
+.row-count-bar__actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Catalog Folder facet (matches the Sort dropdown width) */
+.list-folder {
+    flex: 0 0 12rem;
+}

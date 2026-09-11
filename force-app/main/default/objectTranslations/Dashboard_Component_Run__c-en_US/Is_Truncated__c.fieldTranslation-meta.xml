@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- True when rows, columns, or serialized JSON were capped for safe dashboard preview. --></help>
+    <label><!-- Is Truncated --></label>
+    <name>Is_Truncated__c</name>
+</CustomFieldTranslation>

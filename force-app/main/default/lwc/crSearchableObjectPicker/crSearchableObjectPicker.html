@@ -1,0 +1,116 @@
+<template>
+    <div class="slds-form-element">
+        <template if:true={label}>
+            <label class="slds-form-element__label" for="search-input">
+                <template if:true={required}>
+                    <abbr class="slds-required" title="required">*</abbr>
+                </template>
+                {label}
+            </label>
+        </template>
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container">
+                <div class={comboboxClass} aria-expanded={isOpen} aria-haspopup="listbox" role="combobox">
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                        <input
+                            id="search-input"
+                            type="text"
+                            class="slds-input slds-combobox__input"
+                            autocomplete="off"
+                            role="textbox"
+                            placeholder={placeholder}
+                            value={displayValue}
+                            disabled={disabled}
+                            aria-controls="listbox-id"
+                            aria-activedescendant={activeDescendantId}
+                            onfocus={handleFocus}
+                            onblur={handleBlur}
+                            oninput={handleInput}
+                            onkeydown={handleKeyDown} />
+                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                            <template if:true={hasValue}>
+                                <button
+                                    class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+                                    title="Clear selection"
+                                    type="button"
+                                    onmousedown={handleClear}>
+                                    <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Clear"></lightning-icon>
+                                </button>
+                            </template>
+                            <template if:false={hasValue}>
+                                <lightning-icon icon-name="utility:search" size="x-small" alternative-text="Search"></lightning-icon>
+                            </template>
+                        </span>
+                    </div>
+
+                    <template if:true={isOpen}>
+                        <div id="listbox-id" class="slds-dropdown slds-dropdown_fluid slds-dropdown_length-with-icon-7" role="listbox">
+                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+
+                                <template if:true={hasResults}>
+                                    <template for:each={displayedItems} for:item="row">
+                                        <li key={row.value} role="presentation" class="slds-listbox__item">
+                                            <div
+                                                id={row.optionId}
+                                                class={row.cssClass}
+                                                role="option"
+                                                aria-selected={row.isActiveStr}
+                                                data-value={row.value}
+                                                onmousedown={handleSelect}
+                                                onmouseenter={handleHover}
+                                                data-index={row.index}>
+                                                <span class="slds-media__figure slds-listbox__option-icon">
+                                                    <template if:true={row.isRecent}>
+                                                        <lightning-icon icon-name="utility:clock" size="xx-small" alternative-text="Recent"></lightning-icon>
+                                                    </template>
+                                                    <template if:false={row.isRecent}>
+                                                        <lightning-icon icon-name="utility:standard_objects" size="xx-small" alternative-text="Object"></lightning-icon>
+                                                    </template>
+                                                </span>
+                                                <span class="slds-media__body">
+                                                    <span class="slds-listbox__option-text slds-listbox__option-text_entity">
+                                                        <template for:each={row.parts} for:item="part">
+                                                            <template if:true={part.highlight}>
+                                                                <mark key={part.id} class="match-highlight">{part.text}</mark>
+                                                            </template>
+                                                            <template if:false={part.highlight}>
+                                                                <span key={part.id}>{part.text}</span>
+                                                            </template>
+                                                        </template>
+                                                    </span>
+                                                    <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">
+                                                        {row.meta}
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </template>
+
+                                <template if:true={showLoading}>
+                                    <li role="presentation" class="slds-listbox__item">
+                                        <div class="slds-media slds-listbox__option_plain slds-media_small slds-p-around_small slds-text-color_weak">
+                                            Searching...
+                                        </div>
+                                    </li>
+                                </template>
+
+                                <template if:true={showNoResults}>
+                                    <li role="presentation" class="slds-listbox__item">
+                                        <div class="slds-media slds-listbox__option_plain slds-media_small slds-p-around_small slds-text-color_weak">
+                                            No results found
+                                        </div>
+                                    </li>
+                                </template>
+
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <template if:true={fieldLevelHelp}>
+            <div class="slds-form-element__help">{fieldLevelHelp}</div>
+        </template>
+    </div>
+</template>

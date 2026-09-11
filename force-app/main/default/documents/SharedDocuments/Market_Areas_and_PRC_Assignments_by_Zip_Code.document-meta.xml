@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Look up Market Area and Assigned PRC by Zip Code.</description>
+    <internalUseOnly>true</internalUseOnly>
+    <name>Market Areas and PRC Assignments by Zip Code</name>
+    <public>false</public>
+</Document>

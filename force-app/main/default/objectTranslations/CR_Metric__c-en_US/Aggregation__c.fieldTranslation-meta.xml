@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Aggregation --></label>
+    <name>Aggregation__c</name>
+    <picklistValues>
+        <masterLabel>Average</masterLabel>
+        <translation><!-- Average --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Count</masterLabel>
+        <translation><!-- Count --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maximum</masterLabel>
+        <translation><!-- Maximum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minimum</masterLabel>
+        <translation><!-- Minimum --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sum</masterLabel>
+        <translation><!-- Sum --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

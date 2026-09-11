@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Id of the corresponding eVariant Provider Location record --></help>
+    <label><!-- Old Provider Location Id --></label>
+    <name>Old_Provider_Location_Id__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Manage Subscriptions — Overview</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;&lt;strong&gt;Subscriptions&lt;/strong&gt; email a report or dashboard on a schedule (daily, weekly, or monthly) to a set of recipients, as an inline HTML table plus an optional CSV attachment.&lt;/p&gt;&lt;p&gt;An hourly background job (&lt;em&gt;Vital Reports Subscription Dispatcher&lt;/em&gt;) sends anything that&apos;s due. You provision subscriptions here on behalf of your users.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">What are subscriptions?</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:email</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crSubscriptionManager</value>
+    </values>
+</CustomMetadata>

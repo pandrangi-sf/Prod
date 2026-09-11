@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Facility_of_Objection__c</fullName>
+    <label>Facility of Objection</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FMCOH</fullName>
+                <default>false</default>
+                <label>FMCOH</label>
+            </value>
+            <value>
+                <fullName>OH</fullName>
+                <default>false</default>
+                <label>OH</label>
+            </value>
+            <value>
+                <fullName>OH - APH</fullName>
+                <default>false</default>
+                <label>OH - APH</label>
+            </value>
+            <value>
+                <fullName>OH – BFSP</fullName>
+                <default>false</default>
+                <label>OH – BFSP</label>
+            </value>
+            <value>
+                <fullName>OH - CI</fullName>
+                <default>false</default>
+                <label>OH - CI</label>
+            </value>
+            <value>
+                <fullName>OH - CRI</fullName>
+                <default>false</default>
+                <label>OH - CRI</label>
+            </value>
+            <value>
+                <fullName>OH - DHI</fullName>
+                <default>false</default>
+                <label>OH - DHI</label>
+            </value>
+            <value>
+                <fullName>OH - DPH</fullName>
+                <default>false</default>
+                <label>OH - DPH</label>
+            </value>
+            <value>
+                <fullName>OH - HCH</fullName>
+                <default>false</default>
+                <label>OH - HCH</label>
+            </value>
+            <value>
+                <fullName>OHHI</fullName>
+                <default>false</default>
+                <label>OH - HVI</label>
+            </value>
+            <value>
+                <fullName>OHIC</fullName>
+                <default>false</default>
+                <label>OHIC</label>
+            </value>
+            <value>
+                <fullName>OH - JOI</fullName>
+                <default>false</default>
+                <label>OH - JOI</label>
+            </value>
+            <value>
+                <fullName>OH - LABWORKS</fullName>
+                <default>false</default>
+                <label>OH - LABWORKS</label>
+            </value>
+            <value>
+                <fullName>OH - LMH</fullName>
+                <default>false</default>
+                <label>OH - LMH</label>
+            </value>
+            <value>
+                <fullName>OHMH</fullName>
+                <default>false</default>
+                <label>OHMH</label>
+            </value>
+            <value>
+                <fullName>OH - NRI</fullName>
+                <default>false</default>
+                <label>OH - NRI</label>
+            </value>
+            <value>
+                <fullName>OH -SCH</fullName>
+                <default>false</default>
+                <label>OH - SCH</label>
+            </value>
+            <value>
+                <fullName>OH - SLH</fullName>
+                <default>false</default>
+                <label>OH - SLH</label>
+            </value>
+            <value>
+                <fullName>OHSRH</fullName>
+                <default>false</default>
+                <label>OHSRH</label>
+            </value>
+            <value>
+                <fullName>OH - WPH</fullName>
+                <default>false</default>
+                <label>OH - WPH</label>
+            </value>
+            <value>
+                <fullName>ORMC</fullName>
+                <default>false</default>
+                <label>ORMC</label>
+            </value>
+            <value>
+                <fullName>OH - SSH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OH - SSH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Effective use of questions and fact finding --></help>
+    <label><!-- 6) Use of Questions and Fact Finding --></label>
+    <name>Use_of_Questions_and_Fact_Finding__c</name>
+</CustomFieldTranslation>

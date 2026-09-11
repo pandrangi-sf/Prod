@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- PRM Assigned --></label>
+    <name>PRCAssigned__c</name>
+    <picklistValues>
+        <masterLabel>Arrow</masterLabel>
+        <translation><!-- Arrow --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hodge</masterLabel>
+        <translation><!-- Hodge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hooker</masterLabel>
+        <translation><!-- Hooker --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Howard</masterLabel>
+        <translation><!-- Howard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kim-Breit</masterLabel>
+        <translation><!-- Kim-Breit --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

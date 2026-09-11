@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Purpose__c</fullName>
+    <label>Purpose</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Referral Development</fullName>
+                <default>true</default>
+                <label>Referral Development</label>
+            </value>
+            <value>
+                <fullName>Issue Resolution</fullName>
+                <default>false</default>
+                <label>Issue Resolution</label>
+            </value>
+            <value>
+                <fullName>Scheduling</fullName>
+                <default>false</default>
+                <label>Scheduling</label>
+            </value>
+            <value>
+                <fullName>Event Promotion</fullName>
+                <default>false</default>
+                <label>Event Promotion</label>
+            </value>
+            <value>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+                <label>Customer Service</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Affiliation</fullName>
+                <default>false</default>
+                <label>Affiliation</label>
+            </value>
+            <value>
+                <fullName>Sales Plan Development</fullName>
+                <default>false</default>
+                <label>Sales Plan Development</label>
+            </value>
+            <value>
+                <fullName>Target List Review</fullName>
+                <default>false</default>
+                <label>Target List Review</label>
+            </value>
+            <value>
+                <fullName>Pre-Call Planning</fullName>
+                <default>false</default>
+                <label>Pre-Call Planning</label>
+            </value>
+            <value>
+                <fullName>Event Planning</fullName>
+                <default>false</default>
+                <label>Event Planning</label>
+            </value>
+            <value>
+                <fullName>Stewardship Report</fullName>
+                <default>false</default>
+                <label>Stewardship Report</label>
+            </value>
+            <value>
+                <fullName>Task</fullName>
+                <default>false</default>
+                <label>Task</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

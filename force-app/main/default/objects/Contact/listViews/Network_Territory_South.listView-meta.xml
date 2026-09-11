@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Network_Territory_South</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Network_Territory__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>PrimarySpecialty__c</columns>
+    <columns>PrimaryLocation__c</columns>
+    <columns>CONTACT.LAST_ACTIVITY</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>CONTACT.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Network_Territory__c</field>
+        <operation>equals</operation>
+        <value>South</value>
+    </filters>
+    <label>Network Territory: South</label>
+    <sharedTo>
+        <group>Network_Team</group>
+        <group>Sys_Admin</group>
+    </sharedTo>
+</ListView>

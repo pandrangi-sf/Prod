@@ -1,0 +1,5 @@
+.cr-grid-wrap {
+    width: 100%;
+    /* Fixed height gives lightning-datatable its sticky-header + scroll region. */
+    overflow: hidden;
+}

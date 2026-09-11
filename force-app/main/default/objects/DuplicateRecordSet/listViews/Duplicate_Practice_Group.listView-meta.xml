@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Practice_Group</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>Name</columns>
+    <columns>DuplicateRule</columns>
+    <columns>Parent</columns>
+    <columns>RecordCount</columns>
+    <columns>LastModifiedBy</columns>
+    <columns>LastModifiedDate</columns>
+    <columns>CreatedDate</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Parent</field>
+        <operation>contains</operation>
+        <value>Practice</value>
+    </filters>
+    <filters>
+        <field>DuplicateRule</field>
+        <operation>contains</operation>
+        <value>Practice</value>
+    </filters>
+    <label>Duplicate Practice &amp; Group</label>
+</ListView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Salud es Vida Appt Request Thank You Email - Spanish</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Salud es Vida - Ent Appt Request TY Spanish</name>
+    <style>none</style>
+    <subject>Estaremos en Contacto Pronto</subject>
+    <textOnly>Orlando Health
+
+321.841.9171
+Contáctenos
+
+————————————————————————————————————————
+
+Estaremos en Contacto Pronto
+
+Gracias por solicitar una cita con un médico de Orlando Health. 
+
+Confiamos en que encontraremos lo adecuado para sus necesidades médicas y para su bienestar. Es por eso que estamos revisando los horarios en los libros de citas médicas. Una vez terminemos, le llamaremos para confirmar una cita médica.
+
+Esperamos que continúe acompañándonos en Univision cada semana durante todo el 2017, en el segmento de “Salud es Vida”, con la serie de entrevista a médicos de Orlando Health que sirven a la comunidad hispana en la florida. 
+
+Volver a Salud es Vida
+http://orlandohealth.com/campaigns/salud-es-vida
+
+————————————————————————————————————————
+
+Privacy Policy
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806
+
+Copyright (C) 2017 Orlando Health</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

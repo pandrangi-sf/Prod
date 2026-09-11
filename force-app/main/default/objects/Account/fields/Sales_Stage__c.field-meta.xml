@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Stage__c</fullName>
+    <label>Sales Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Yet Contacted</fullName>
+                <default>false</default>
+                <label>Not Yet Contacted</label>
+            </value>
+            <value>
+                <fullName>Contacted - Not Interested in Meeting</fullName>
+                <default>false</default>
+                <label>Contacted - Not Interested in Meeting</label>
+            </value>
+            <value>
+                <fullName>Contacted - Not Qualified</fullName>
+                <default>false</default>
+                <label>Contacted - Not Qualified</label>
+            </value>
+            <value>
+                <fullName>Contacted - Receptive to Meetings</fullName>
+                <default>false</default>
+                <label>Contacted - Receptive to Meetings</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

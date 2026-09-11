@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision_making_process__c</fullName>
+    <inlineHelpText>Describe the decision-making process. Answer the questions - who is involved, what are their roles, what is each individual&apos;s level of influence, what is the process?</inlineHelpText>
+    <label>Decision-making process</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

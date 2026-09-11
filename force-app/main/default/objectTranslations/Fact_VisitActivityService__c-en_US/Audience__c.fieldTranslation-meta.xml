@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Task.Audience__c — who the visit was with (e.g. Physician, Office Staff, Practice Administrator, Physician to Physician). Distinguishes PRM-to-Physician from Physician-to-Physician visits. --></help>
+    <label><!-- Audience --></label>
+    <name>Audience__c</name>
+</CustomFieldTranslation>

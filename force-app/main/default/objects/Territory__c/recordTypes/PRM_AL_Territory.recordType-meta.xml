@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PRM_AL_Territory</fullName>
+    <active>true</active>
+    <description>PRM Alabama (Baptist Health) Team Territory</description>
+    <label>PRM AL Territory</label>
+</RecordType>

@@ -1,0 +1,51 @@
+<template>
+    <div class="stepper">
+        <div class="progress-scroll">
+            <ol class="step-pills" role="list" aria-label="Report Builder steps">
+                <template for:each={decoratedSteps} for:item="step">
+                    <li key={step.value} class="step-pills__item">
+                        <button
+                            type="button"
+                            class={step.itemClass}
+                            data-value={step.value}
+                            aria-current={step.ariaCurrent}
+                            onclick={handleStepClick}>
+                            <span class="step-pill__num">{step.displayNum}</span>
+                            <span class="step-pill__label">{step.label}</span>
+                        </button>
+                        <template if:true={step.showConnector}>
+                            <span class={step.connectorClass} aria-hidden="true"></span>
+                        </template>
+                    </li>
+                </template>
+            </ol>
+        </div>
+
+        <template if:true={showNavigation}>
+            <div class="slds-m-top_medium step-nav">
+                <lightning-button
+                    class="step-back"
+                    label="Back"
+                    icon-name="utility:back"
+                    icon-position="left"
+                    onclick={handleBack}
+                    disabled={isFirstStep}>
+                </lightning-button>
+                <span class="step-status slds-text-body_small slds-text-color_weak">
+                    Step {currentIndexDisplay} of {totalSteps} - {currentLabel}
+                </span>
+                <div class="step-actions">
+                    <slot name="actions"></slot>
+                    <lightning-button
+                        label="Next"
+                        icon-name="utility:forward"
+                        icon-position="right"
+                        variant="brand"
+                        onclick={handleNext}
+                        disabled={isLastStep}>
+                    </lightning-button>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

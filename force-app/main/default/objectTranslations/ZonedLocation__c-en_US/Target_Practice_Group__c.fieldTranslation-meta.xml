@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Target Provider&apos;s primary Practice &amp; Group. --></help>
+    <label><!-- Target Practice &amp; Group --></label>
+    <name>Target_Practice_Group__c</name>
+</CustomFieldTranslation>

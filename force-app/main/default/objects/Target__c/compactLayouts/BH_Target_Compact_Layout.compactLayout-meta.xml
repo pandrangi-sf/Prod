@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BH_Target_Compact_Layout</fullName>
+    <fields>Target__c</fields>
+    <fields>Rank__c</fields>
+    <fields>Target_Last_Visit__c</fields>
+    <label>BH Target Compact Layout</label>
+</CompactLayout>

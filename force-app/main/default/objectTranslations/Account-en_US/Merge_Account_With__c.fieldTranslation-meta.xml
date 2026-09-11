@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Duplicate Account, Merge with this Account --></help>
+    <label><!-- Merge Account With --></label>
+    <name>Merge_Account_With__c</name>
+    <relationshipLabel><!-- Accounts --></relationshipLabel>
+</CustomFieldTranslation>

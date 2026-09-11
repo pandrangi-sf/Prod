@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - OHP - Cardio - Cardio Oncology - DG - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank you for your interest in cardio-oncology</subject>
+    <textOnly>Orlando Health | Heart Institute
+http://www.orlandohealth.com/
+
+321.841.3724
+Se habla español
+
+------------------------------------------------------------------
+
+There&apos;s a Lot to Gain from Cardio-Oncology
+
+At Orlando Health, we understand no two patients are exactly alike, and it&apos;s our goal to provide you with personal care that fits your unique health history. We hope you find our Cardio-Oncology Guide helpful on your journey. We&apos;re looking forward to the opportunity to meet with you to discuss how cardio-oncology can help your cancer treatment. 
+
+Learn more about Orlando Health&apos;s integrated approach to cancer treatment
+http://orlandohealthphysicians.com/cardio/Cardio-Oncology.aspx
+
+Call us today: 321.841.3724
+
+Request a Consultation Online &gt;
+http://orlandohealthphysicians.com/cardio/Request-A-Consultation.aspx
+
+------------------------------------------------------------------
+
+Orlando Health Blog
+Read the latest stories in healthcare &gt;
+http://www.orlandohealth.com/blog
+
+Top Tier Care
+Read about our latest award for quality care &gt;
+http://www.orlandohealth.com/news-and-events/news/orlando-health-receives-highest-quality-rating-for-heart-care-and-cancer-care
+
+Cancer Support Community
+A support system is here for you &gt;
+http://www.ufhealthcancerorlando.com/our-services/integrative-medicine
+
+------------------------------------------------------------------
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health Heart Institute, 1222 S Orange Avenue, Orlando, FL 32806
+
+Copyright (C) 2016 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

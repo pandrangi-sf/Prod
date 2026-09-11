@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Create Providers</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Go To Providers</actionButtonLabel>
+        <actionButtonLink>/lightning/o/Contact/list?filterName=Recent</actionButtonLink>
+        <body>&lt;p&gt;You&apos;ve been waiting for it, and it&apos;s finally here.  You now have the ability to create your own provider records.  We&apos;ve released the new an improved Create Provider flow to the whole team.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;To create a new provider, click on the &lt;strong&gt;Provider&lt;/strong&gt; tab, then click the &lt;strong&gt;New &lt;/strong&gt;button in the upper right and follow the steps. &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;em&gt;Note:  You can create a provider for existing Practice &amp;amp; Groups only.  If you need a new P&amp;amp;G created, please submit a Provider Data Change request. &lt;/em&gt;&lt;/p&gt;</body>
+        <customApplication>PRM</customApplication>
+        <delayDays>2</delayDays>
+        <description>Prompt alerting the PRM team they can now create providers.</description>
+        <displayType>DockedComposer</displayType>
+        <endDate>2023-06-30</endDate>
+        <header>Create Providers</header>
+        <image>Heman_I_have_the_power</image>
+        <imageAltText>He-man I have the power gif</imageAltText>
+        <imageLocation>Bottom</imageLocation>
+        <isPublished>true</isPublished>
+        <masterLabel>Create Providers</masterLabel>
+        <publishedDate>2023-06-15</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2023-06-15</startDate>
+        <timesToDisplay>5</timesToDisplay>
+        <title>Create Your Own Provider Records</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Id}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>00ei0000000dD73AAE</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Update_Zoned_Location_Key2</name>
+        <label>Update Zoned Location Key</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ZonedLocationKey__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fT_ZonedLocationKey</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>[Entry = None]
+Updates the Zoned Location Key field with a unique value (Location Id + Territory Id) that is used by the matching/duplicate rules to prevent duplicate records from being created.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates the Zoned Location Key (Location Id + Territory Id)</description>
+        <name>fT_ZonedLocationKey</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Location__c} + &quot;-&quot; + {!$Record.Territory__r.Id}</expression>
+    </formulas>
+    <interviewLabel>Zoned Location {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ZonedLocation_BeforeUpdate_UpdateKeyField</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Zoned_Location_Key2</targetReference>
+        </connector>
+        <object>ZonedLocation__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

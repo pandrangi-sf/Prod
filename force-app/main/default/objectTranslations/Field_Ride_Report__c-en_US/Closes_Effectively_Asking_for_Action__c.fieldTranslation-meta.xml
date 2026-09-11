@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Closes effectively asking for action on appropriate patient types --></help>
+    <label><!-- 9) Closes Effectively Asking for Action --></label>
+    <name>Closes_Effectively_Asking_for_Action__c</name>
+</CustomFieldTranslation>

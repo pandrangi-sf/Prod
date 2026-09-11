@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_North_South_Name_Change</fullName>
+    <active>false</active>
+    <description>Prevents users from changing the name of the North &amp; South territory as this will break the Sub Region Flow</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(Name),
+    Id = &quot;a086e00001vfOcx&quot;,
+				$Profile.Name &lt;&gt; &quot;System Administrator&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Please contact your Salesforce Administrator about changing the name of this territory.</errorMessage>
+</ValidationRule>

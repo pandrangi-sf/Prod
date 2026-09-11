@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Task.What.Name - -  the location/account the visit was related to. Used by AlabamaCollateralByLocation. --></help>
+    <label><!-- Related To (Location) --></label>
+    <name>Related_To__c</name>
+</CustomFieldTranslation>

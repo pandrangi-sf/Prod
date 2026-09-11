@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates the Site Visit happened because of no communication. --></help>
+    <label><!-- Site Visit For No Communication --></label>
+    <name>Site_Visit_For_No_Communication__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,5 @@
+Hello {!Field_Ride_Report__c.PRM_User_First_Name__c},
+
+You have a new Field Ride Report report from {!Field_Ride_Report__c.Created_By_Name__c} ready for your review.  Click the link below to review the report and either approve or reject it. 
+
+{!ApprovalRequest.Internal_URL}

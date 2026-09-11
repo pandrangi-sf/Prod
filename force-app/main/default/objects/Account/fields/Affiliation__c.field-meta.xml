@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Affiliation__c</fullName>
+    <label>Affiliation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Region__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Affiliated</fullName>
+                <default>false</default>
+                <label>Affiliated</label>
+            </value>
+            <value>
+                <fullName>Medical Group</fullName>
+                <default>false</default>
+                <label>Medical Group</label>
+            </value>
+            <value>
+                <fullName>Non-Affiliated</fullName>
+                <default>false</default>
+                <label>Non-Affiliated</label>
+            </value>
+            <value>
+                <fullName>OHN Affiliate Office</fullName>
+                <default>false</default>
+                <label>OHN Affiliate Office</label>
+            </value>
+            <value>
+                <fullName>OHN Employed Office</fullName>
+                <default>false</default>
+                <label>OHN Employed Office</label>
+            </value>
+            <value>
+                <fullName>Owned</fullName>
+                <default>false</default>
+                <label>Owned</label>
+            </value>
+            <value>
+                <fullName>Unaffiliated</fullName>
+                <default>false</default>
+                <label>Unaffiliated</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Alabama</controllingFieldValue>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Affiliated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alabama</controllingFieldValue>
+            <valueName>Medical Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alabama</controllingFieldValue>
+            <valueName>Non-Affiliated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>OHN Affiliate Office</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>OHN Employed Office</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Owned</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Florida</controllingFieldValue>
+            <valueName>Unaffiliated</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

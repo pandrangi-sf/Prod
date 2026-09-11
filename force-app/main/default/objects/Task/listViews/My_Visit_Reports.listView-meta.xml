@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Visit_Reports</fullName>
+    <columns>SUBJECT</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Visit_Category__c</columns>
+    <columns>WHO_NAME</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>Date_Meeting_Call__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Task.Phone_Log,Task.Virtual_Visit_Physician_Sales,Task.VisitReportPhysicianSales</value>
+    </filters>
+    <label>My Visit Reports</label>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accent_Color__c</fullName>
+    <description>Secondary accent color (hex), e.g. the brand teal #6BA9B8.</description>
+    <externalId>false</externalId>
+    <label>Accent Color</label>
+    <length>9</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

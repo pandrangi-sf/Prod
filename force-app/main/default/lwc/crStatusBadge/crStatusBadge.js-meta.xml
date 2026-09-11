@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>CR Status Badge</masterLabel>
+    <description>Shared colored status pill (success/error/warning/info/neutral) for consistent status display across the reporting admin tabs.</description>
+</LightningComponentBundle>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PY_Activity_Count__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The count of practice wide activities that can be associated with a provider for the previous year. The count if for one year from the end of the previous month.</inlineHelpText>
+    <label>Previous Year Activity Count</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

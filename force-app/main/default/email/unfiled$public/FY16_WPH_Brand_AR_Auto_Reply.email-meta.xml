@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for WPH Request Appt</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - WPH - Brand - AR - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank You for Requesting a Consultation</subject>
+    <textOnly>Winnie Palmer Hospital For Women and Babies
+http://www.winniepalmerhospital.com/microsites/winnieknows/Home
+
+321.843.7626 | Se habla español
+
+------------------------------------------------------------------
+
+Request a Consultation
+http://www.winniepalmerhospital.com/microsites/winnieknows/request-consultation
+
+Find a Specialist
+http://www.winniepalmerhospital.com/microsites/winnieknows/find-women-health-specialist
+
+------------------------------------------------------------------
+
+Thank You for Requesting a Consultation
+
+Thank you for requesting a consultation with a physician at Winnie Palmer Hospital for Women &amp;amp; Babies. You have taken an important step on the path to wellness!
+
+Within 48 hours, a member of the Winnie Palmer Hospital team will reach out to you to schedule your appointment.
+
+If you have questions, please call 321.843.7626.
+
+We look forward to meeting you!
+
+------------------------------------------------------------------
+
+Connect With Us
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)iStock, (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

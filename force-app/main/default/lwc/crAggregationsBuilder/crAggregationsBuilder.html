@@ -1,0 +1,68 @@
+<template>
+    <div class="aggregations-builder">
+        <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+            <h3 class="slds-text-heading_small">Summaries</h3>
+            <lightning-button
+                label="Add Summary"
+                icon-name="utility:add"
+                variant="neutral"
+                onclick={addAggregation}
+                disabled={addDisabled}>
+            </lightning-button>
+        </div>
+
+        <template if:true={loadError}>
+            <div class="slds-text-color_error slds-m-bottom_x-small">{loadError}</div>
+        </template>
+
+        <template if:true={hasAggregations}>
+            <template for:each={aggregations} for:item="row">
+                <div key={row.id} class="slds-grid slds-gutters_x-small slds-grid_vertical-align-center aggregation-row">
+                    <div class="slds-col slds-shrink-none row-index">
+                        <span class="slds-badge">{row.displayIndex}</span>
+                    </div>
+                    <div class="slds-col slds-grow">
+                        <lightning-combobox
+                            variant="label-hidden"
+                            placeholder="Function"
+                            options={functionOptions}
+                            value={row.function}
+                            data-id={row.id}
+                            onchange={handleFunctionChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-grow_2">
+                        <lightning-combobox
+                            variant="label-hidden"
+                            placeholder="Field"
+                            options={row.fieldOptions}
+                            value={row.field}
+                            disabled={row.fieldDisabled}
+                            data-id={row.id}
+                            onchange={handleFieldChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-shrink-none">
+                        <lightning-button-icon icon-name="utility:delete"
+                            variant="bare" alternative-text="Remove"
+                            data-id={row.id} onclick={removeAggregation}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <template if:false={hasAggregations}>
+            <p class="slds-text-color_weak slds-p-vertical_x-small">
+                No summaries yet. Click <strong>Add Summary</strong> to compute totals.
+            </p>
+        </template>
+
+        <details class="slds-m-top_small advanced-json">
+            <summary class="slds-text-title_caps slds-text-color_weak">Advanced (JSON)</summary>
+            <lightning-textarea label="Aggregations JSON" variant="label-hidden"
+                value={jsonOutput} readonly class="slds-m-top_x-small">
+            </lightning-textarea>
+        </details>
+    </div>
+</template>

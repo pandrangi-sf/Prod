@@ -1,0 +1,80 @@
+<template>
+    <c-cr-help-panel tool-key="crMigrationConsole" tool-label="Migration Console"></c-cr-help-panel>
+    <div class="slds-p-around_medium">
+        <c-cr-page-header
+            icon-name="standard:data_streams"
+            tone="amber"
+            eyebrow="Vital Reports"
+            title="Report Migration"
+            subtitle="Paste a Salesforce report's metadata XML to convert it into a Vital Reports custom report.">
+            <lightning-button-icon
+                slot="actions"
+                icon-name="utility:question"
+                alternative-text="Help"
+                title="Help and tips"
+                variant="border-filled"
+                onclick={openHelpPanel}>
+            </lightning-button-icon>
+        </c-cr-page-header>
+        <div class="migration-grid">
+            <lightning-input label="Source Report Name" field-level-help="Name to use for the migrated custom report definition." value={reportName} onchange={handleNameChange}></lightning-input>
+            <lightning-input label="Target Folder" field-level-help="Logical Vital Reports folder where the migrated report should be stored." value={folder} onchange={handleFolderChange}></lightning-input>
+            <lightning-textarea label="Report Metadata XML" field-level-help="Paste Salesforce report metadata XML retrieved from Metadata API or source control." value={reportXml} onchange={handleXmlChange}></lightning-textarea>
+            <div class="actions">
+                <lightning-button label="Preview" icon-name="utility:preview" onclick={preview}></lightning-button>
+                <c-cr-save-button
+                    label="Migrate"
+                    success-label="Migrated!"
+                    icon-name="utility:upload"
+                    variant="brand"
+                    disabled={migrating}
+                    onclick={migrate}>
+                </c-cr-save-button>
+            </div>
+
+            <template if:true={migrating}>
+                <div class="migration-progress" role="status" aria-live="polite">
+                    <svg
+                        class="migration-svg"
+                        viewBox="0 0 280 90"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true">
+                        <!-- Source: XML document icon (left) -->
+                        <g class="mig-source">
+                            <rect x="20" y="18" width="48" height="56" rx="5" fill="#ffffff" stroke="#5c7591" stroke-width="2"/>
+                            <line x1="30" y1="32" x2="58" y2="32" stroke="#5c7591" stroke-width="2"/>
+                            <text x="44" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="#5c7591" font-family="ui-monospace, Consolas, monospace">XML</text>
+                            <line x1="30" y1="60" x2="58" y2="60" stroke="#bbd0e6" stroke-width="2"/>
+                            <line x1="30" y1="66" x2="50" y2="66" stroke="#bbd0e6" stroke-width="2"/>
+                        </g>
+
+                        <!-- Path between source and target -->
+                        <line x1="78" y1="46" x2="202" y2="46" stroke="#cfd6df" stroke-width="2" stroke-dasharray="4 5"/>
+
+                        <!-- Traveling glow dot (CSS-animated transform) -->
+                        <g class="mig-traveler">
+                            <circle cx="140" cy="46" r="5" fill="#1589ee"/>
+                            <circle cx="140" cy="46" r="9" fill="#1589ee" opacity="0.25"/>
+                        </g>
+
+                        <!-- Target: Custom Report icon (right) -->
+                        <g class="mig-target">
+                            <rect x="212" y="18" width="48" height="56" rx="5" fill="#ffffff" stroke="#0070d2" stroke-width="2"/>
+                            <!-- Tiny chart bars inside -->
+                            <rect x="220" y="52" width="6" height="14" fill="#0070d2"/>
+                            <rect x="230" y="42" width="6" height="24" fill="#0070d2"/>
+                            <rect x="240" y="48" width="6" height="18" fill="#0070d2"/>
+                            <rect x="250" y="36" width="6" height="30" fill="#0070d2"/>
+                            <text x="236" y="30" text-anchor="middle" font-size="9" font-weight="700" fill="#0070d2" font-family="ui-monospace, Consolas, monospace">CR</text>
+                        </g>
+                    </svg>
+                    <p class="migration-progress__text">Converting metadata to custom report...</p>
+                </div>
+            </template>
+
+            <template if:true={previewJson}>
+                <lightning-textarea label="Migration Preview" field-level-help="Generated dataset/report JSON plus unsupported-feature notes before migration is saved." value={previewJson} readonly></lightning-textarea>
+            </template>
+        </div>
+    </div>
+</template>

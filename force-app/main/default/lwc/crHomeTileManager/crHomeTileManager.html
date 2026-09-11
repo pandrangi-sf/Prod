@@ -1,0 +1,151 @@
+<template>
+    <c-cr-help-panel tool-key="crHomeTileManager" tool-label="Manage Home Tiles"></c-cr-help-panel>
+    <div class="slds-p-around_medium">
+        <c-cr-page-header
+            icon-name="standard:layout"
+            tone="blue"
+            eyebrow="Vital Reports"
+            title="Manage Home Tiles"
+            subtitle="Control the launchpad tiles shown on the Vital Reports home page.">
+            <div slot="actions" class="htm-actions">
+                <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" title="Refresh"
+                    variant="border-filled" onclick={init} disabled={busy}></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:question" alternative-text="Help" title="Help and tips"
+                    variant="border-filled" onclick={openHelpPanel}></lightning-button-icon>
+                <lightning-button label="New Tile" variant="brand" icon-name="utility:add" onclick={handleNew}
+                    disabled={busy}></lightning-button>
+            </div>
+        </c-cr-page-header>
+
+        <div class="slds-p-bottom_medium">
+            <template if:true={loadError}>
+                <div class="slds-text-color_error slds-p-vertical_small">{loadError}</div>
+            </template>
+
+            <template if:false={canManage}>
+                <div class="slds-illustration slds-illustration_small slds-p-around_medium">
+                    <p class="slds-text-body_regular">
+                        You need the <strong>Manage Home Tiles</strong> permission to manage the Home page launchpad.
+                    </p>
+                </div>
+            </template>
+
+            <template if:true={canManage}>
+                <!-- Edit / new form -->
+                <template if:true={showForm}>
+                    <div class="htm-form slds-box slds-m-bottom_medium">
+                        <h3 class="slds-text-heading_small slds-m-bottom_small">{formTitle}</h3>
+                        <div class="htm-grid">
+                            <lightning-input label="Label" data-field="label" value={form.label}
+                                onchange={handleField} required></lightning-input>
+                            <lightning-input label="Description" data-field="description" value={form.description}
+                                onchange={handleField}></lightning-input>
+                            <lightning-combobox label="Target Tab" data-field="target" value={form.target}
+                                options={tabOptions} onchange={handleField}></lightning-combobox>
+                            <lightning-combobox label="Audience" data-field="audience" value={form.audience}
+                                options={audienceOptions} onchange={handleField}></lightning-combobox>
+                            <lightning-input type="number" label="Display Order" data-field="displayOrder"
+                                value={form.displayOrder} onchange={handleField}></lightning-input>
+                            <lightning-input type="checkbox" label="Active" data-field="isActive"
+                                checked={form.isActive} onchange={handleField}></lightning-input>
+                        </div>
+
+                        <!-- Icon picker -->
+                        <div class="htm-picker">
+                            <p class="htm-picker__label">Icon</p>
+                            <div class="htm-icon-grid" role="radiogroup" aria-label="Tile icon">
+                                <template for:each={iconChoices} for:item="ic">
+                                    <button key={ic.name} type="button" class={ic.cssClass}
+                                            data-value={ic.name} title={ic.name}
+                                            aria-label={ic.name} onclick={handleIconPick}>
+                                        <lightning-icon icon-name={ic.name} size="small"
+                                            alternative-text={ic.name}></lightning-icon>
+                                    </button>
+                                </template>
+                            </div>
+                            <lightning-input label="Icon Name (advanced)" data-field="iconName" value={form.iconName}
+                                field-level-help="Any valid SLDS icon, e.g. standard:report or utility:chart. Updates the selection above."
+                                onchange={handleField} class="htm-picker__advanced"></lightning-input>
+                        </div>
+
+                        <!-- Color picker -->
+                        <div class="htm-picker">
+                            <p class="htm-picker__label">Color</p>
+                            <div class="htm-swatch-row" role="radiogroup" aria-label="Tile color">
+                                <template for:each={colorSwatches} for:item="sw">
+                                    <button key={sw.value} type="button" class={sw.cssClass}
+                                            data-value={sw.value} title={sw.title}
+                                            aria-label={sw.title} style={sw.ringStyle}
+                                            onclick={handleColorPick}>
+                                        <span class="htm-swatch__dot" style={sw.dotStyle}></span>
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+
+                        <div class="slds-m-top_small">
+                            <lightning-button label="Save" variant="brand" onclick={handleSave} disabled={busy}
+                                class="slds-m-right_x-small"></lightning-button>
+                            <lightning-button label="Cancel" onclick={handleCancel} disabled={busy}></lightning-button>
+                        </div>
+                    </div>
+                </template>
+
+                <template if:true={busy}>
+                    <template if:false={hasTiles}>
+                        <c-cr-skeleton rows="5"></c-cr-skeleton>
+                    </template>
+                    <template if:true={hasTiles}>
+                        <lightning-spinner alternative-text="Working" size="small"></lightning-spinner>
+                    </template>
+                </template>
+
+                <template if:true={hasTiles}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col"><div class="slds-truncate">Label</div></th>
+                                <th scope="col"><div class="slds-truncate">Target Tab</div></th>
+                                <th scope="col"><div class="slds-truncate">Audience</div></th>
+                                <th scope="col"><div class="slds-truncate">Order</div></th>
+                                <th scope="col"><div class="slds-truncate">Status</div></th>
+                                <th scope="col"><div class="slds-truncate">Actions</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={tiles} for:item="t">
+                                <tr key={t.id}>
+                                    <td><div class="slds-truncate" title={t.label}>{t.label}</div></td>
+                                    <td><div class="slds-truncate" title={t.target}>{t.target}</div></td>
+                                    <td>{t.audience}</td>
+                                    <td>{t.displayOrder}</td>
+                                    <td><c-cr-status-badge label={t.activeLabel} tone={t.activeTone} dot></c-cr-status-badge></td>
+                                    <td>
+                                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit"
+                                            title="Edit" data-id={t.id} onclick={handleEdit}
+                                            class="slds-m-right_xx-small"></lightning-button-icon>
+                                        <lightning-button-icon icon-name="utility:toggle" alternative-text="Show/Hide"
+                                            title="Show / Hide" data-id={t.id} onclick={handleToggleActive}
+                                            class="slds-m-right_xx-small"></lightning-button-icon>
+                                        <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
+                                            title="Delete" variant="border-filled" data-id={t.id}
+                                            onclick={handleDelete}></lightning-button-icon>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+
+                <template if:false={hasTiles}>
+                    <template if:false={busy}>
+                        <c-cr-empty-state
+                            headline="No home tiles yet"
+                            body="Tiles control the launchpad on the Vital Reports home page. Add your first one to get started.">
+                        </c-cr-empty-state>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

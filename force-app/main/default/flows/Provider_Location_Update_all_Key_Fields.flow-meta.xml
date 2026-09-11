@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Updates the Provider Location Key field for all Provider Locations.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ProviderLocationKey</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Provider__c} + &quot;-&quot; + {!$Record.Location__c}</expression>
+    </formulas>
+    <interviewLabel>Provider Location: Update all Key Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Provider Location: Update all Key Fields</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Provider_Location_Key_Field</name>
+        <label>Update Provider Location Key Field</label>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
+        <inputAssignments>
+            <field>Provider_Location_Key__c</field>
+            <value>
+                <elementReference>ProviderLocationKey</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Provider_Location_Key_Field</targetReference>
+        </connector>
+        <object>ProviderLocation__c</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2022-11-27</startDate>
+            <startTime>21:45:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

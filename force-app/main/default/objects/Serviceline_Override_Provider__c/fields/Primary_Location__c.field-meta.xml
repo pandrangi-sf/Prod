@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Location__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Primary Location</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Location__c.Practice__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.Practice_Group__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Location__c</referenceTo>
+    <relationshipLabel>Serviceline Override Providers</relationshipLabel>
+    <relationshipName>Serviceline_Override_Providers</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

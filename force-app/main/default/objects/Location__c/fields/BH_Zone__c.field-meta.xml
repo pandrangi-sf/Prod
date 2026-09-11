@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BH_Zone__c</fullName>
+    <description>Baptist Health zones for locations</description>
+    <label>Zone</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Zone 1</fullName>
+                <default>false</default>
+                <label>Zone 1</label>
+            </value>
+            <value>
+                <fullName>Zone 2</fullName>
+                <default>false</default>
+                <label>Zone 2</label>
+            </value>
+            <value>
+                <fullName>Zone 3</fullName>
+                <default>false</default>
+                <label>Zone 3</label>
+            </value>
+            <value>
+                <fullName>Zone 4</fullName>
+                <default>false</default>
+                <label>Zone 4</label>
+            </value>
+            <value>
+                <fullName>Zone 5</fullName>
+                <default>false</default>
+                <label>Zone 5</label>
+            </value>
+            <value>
+                <fullName>Zone 6</fullName>
+                <default>false</default>
+                <label>Zone 6</label>
+            </value>
+            <value>
+                <fullName>Zone 6 South</fullName>
+                <default>false</default>
+                <label>Zone 6 South</label>
+            </value>
+            <value>
+                <fullName>Zone 7</fullName>
+                <default>false</default>
+                <label>Zone 7</label>
+            </value>
+            <value>
+                <fullName>Zone 8</fullName>
+                <default>false</default>
+                <label>Zone 8</label>
+            </value>
+            <value>
+                <fullName>Zone 10</fullName>
+                <default>false</default>
+                <label>Zone 10</label>
+            </value>
+            <value>
+                <fullName>Zone 11</fullName>
+                <default>false</default>
+                <label>Zone 11</label>
+            </value>
+            <value>
+                <fullName>Zone 12</fullName>
+                <default>false</default>
+                <label>Zone 12</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,629 @@
+<template>
+    <c-cr-welcome-banner tool-name="Custom Reports"></c-cr-welcome-banner>
+    <c-cr-help-panel tool-key="crReportViewer" tool-label="Report Viewer"></c-cr-help-panel>
+    <lightning-card>
+        <div slot="title" class="page-header__title-block">
+            <div class="page-header__icon-wrap page-header__icon-wrap--blue">
+                <lightning-icon icon-name="standard:report" size="small" alternative-text="Report Viewer"></lightning-icon>
+            </div>
+            <h1 class="page-header__title">Report Viewer</h1>
+        </div>
+        <div class="slds-p-around_medium viewer-grid">
+
+            <!-- LIST MODE: SF-style report catalog table -->
+            <template if:true={showListMode}>
+                <div class="list-toolbar">
+                    <lightning-input
+                        type="search"
+                        label="Search reports"
+                        variant="label-hidden"
+                        placeholder="Search reports..."
+                        value={listSearchTerm}
+                        oninput={handleListSearchChange}
+                        onchange={handleListSearchChange}
+                        class="list-search">
+                    </lightning-input>
+                    <template if:true={hasFolderFacet}>
+                        <lightning-combobox
+                            label="Folder"
+                            variant="label-hidden"
+                            value={listFolderFilter}
+                            options={listFolderOptions}
+                            onchange={handleListFolderChange}
+                            class="list-folder">
+                        </lightning-combobox>
+                    </template>
+                    <lightning-combobox
+                        label="Sort"
+                        variant="label-hidden"
+                        value={listSort}
+                        options={listSortOptions}
+                        onchange={handleListSortChange}
+                        class="list-sort">
+                    </lightning-combobox>
+                    <span class="list-count">{listResultCount}</span>
+                </div>
+
+                <template if:true={hasFilteredReports}>
+                    <div class="list-table-wrap">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered list-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Report Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Folder</th>
+                                    <th scope="col">Created By</th>
+                                    <th scope="col">Created On</th>
+                                    <th scope="col">Last Run</th>
+                                    <th scope="col">Public</th>
+                                    <th scope="col" class="actions-col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={filteredReportRecords} for:item="row">
+                                    <tr key={row.id}>
+                                        <td>
+                                            <a href="javascript:void(0)" data-id={row.id} onclick={handleOpenReport} class="report-link">{row.name}</a>
+                                        </td>
+                                        <td class="muted">{row.description}</td>
+                                        <td>{row.folder}</td>
+                                        <td>{row.createdByName}</td>
+                                        <td>
+                                            <lightning-formatted-date-time
+                                                value={row.createdDate}
+                                                year="numeric" month="short" day="2-digit"
+                                                hour="2-digit" minute="2-digit">
+                                            </lightning-formatted-date-time>
+                                        </td>
+                                        <td>
+                                            <template if:true={row.lastRunAt}>
+                                                <lightning-formatted-date-time
+                                                    value={row.lastRunAt}
+                                                    year="numeric" month="short" day="2-digit"
+                                                    hour="2-digit" minute="2-digit">
+                                                </lightning-formatted-date-time>
+                                            </template>
+                                            <template if:false={row.lastRunAt}>
+                                                <span class="muted">—</span>
+                                            </template>
+                                        </td>
+                                        <td><span class={row.publicClass}>{row.publicLabel}</span></td>
+                                        <td class="actions-col">
+                                            <lightning-button-icon icon-name="utility:play" alternative-text="Run" title="Run" data-id={row.id} onclick={handleOpenReport} variant="bare"></lightning-button-icon>
+                                            <template if:true={canBuild}>
+                                                <lightning-button-icon icon-name="utility:edit_form" alternative-text="Rename" title="Rename report" data-id={row.id} onclick={openRenameModal} variant="bare"></lightning-button-icon>
+                                                <lightning-button-icon icon-name="utility:edit" alternative-text="Edit" title="Edit in builder" data-id={row.id} onclick={handleEditFromList} variant="bare"></lightning-button-icon>
+                                                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete" title="Delete" data-id={row.id} onclick={handleDeleteFromList} variant="bare"></lightning-button-icon>
+                                            </template>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+                <template if:false={hasFilteredReports}>
+                    <div class="list-empty">
+                        <template if:true={hasReports}>
+                            <p class="slds-text-color_weak">No reports match your search / folder filter.</p>
+                        </template>
+                        <template if:false={hasReports}>
+                            <p class="slds-text-color_weak">No saved reports yet. Create one in the <strong>Report Builder</strong>.</p>
+                        </template>
+                    </div>
+                </template>
+            </template>
+
+            <!-- Admin: rename report (name only) -->
+            <template if:true={renameModalOpen}>
+                <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="cr-rename-heading" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={cancelRename}>
+                                <lightning-icon icon-name="utility:close" size="small" variant="inverse" alternative-text="Close"></lightning-icon>
+                            </button>
+                            <h2 id="cr-rename-heading" class="slds-modal__title slds-hyphenate">Rename report</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <lightning-input
+                                label="Report name"
+                                value={renameValue}
+                                max-length="80"
+                                required
+                                onchange={handleRenameInput}>
+                            </lightning-input>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <lightning-button label="Cancel" onclick={cancelRename}></lightning-button>
+                            <lightning-button label="Save" variant="brand" class="slds-m-left_x-small" onclick={confirmRename} disabled={renameSaveDisabled}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+            <!-- RUNNER MODE: single-report toolbar + result tabs -->
+            <template if:true={showRunnerMode}>
+            <div class={toolbarClass}>
+                <template if:true={showReportSelector}>
+                    <lightning-button label="Back to List" icon-name="utility:back" onclick={backToList} variant="neutral"></lightning-button>
+                    <lightning-combobox label="Report" field-level-help="Select a saved custom report definition to run through the Apex query engine." value={selectedReportId} options={reportOptions} onchange={handleReportChange}></lightning-combobox>
+                </template>
+                <lightning-button label="Run" variant="brand" icon-name="utility:play" onclick={run} disabled={disableRun}></lightning-button>
+                <template if:true={loading}>
+                    <lightning-spinner size="small" alternative-text="Running report"></lightning-spinner>
+                </template>
+                <lightning-button label="Next Page" icon-name="utility:forward" onclick={nextPage} disabled={disableNext}></lightning-button>
+                <template if:true={canBuild}>
+                    <lightning-button label="Edit" icon-name="utility:edit" onclick={handleEdit} disabled={disableEditDelete}></lightning-button>
+                    <lightning-button label="Delete" variant="destructive-text" icon-name="utility:delete" onclick={handleDelete} disabled={disableEditDelete}></lightning-button>
+                </template>
+                <template if:true={showExportAction}>
+                    <lightning-button label="Export" icon-name="utility:download" onclick={exportReport} disabled={disableRun}></lightning-button>
+                </template>
+                <lightning-button-icon
+                    icon-name="utility:question"
+                    alternative-text="Help"
+                    title="Help and tips"
+                    variant="border-filled"
+                    onclick={openHelpPanel}>
+                </lightning-button-icon>
+            </div>
+
+            <template if:true={hasDashboardFilters}>
+                <div class="dashboard-filter-banner" role="status">
+                    <lightning-icon icon-name="utility:filterList" size="x-small"></lightning-icon>
+                    <span>{dashboardFilterMessage}</span>
+                </div>
+            </template>
+
+            <!-- Quick Filters v1 — renders whenever a report is loaded,
+                 regardless of whether the current filter state has any rows.
+                 Previously gated on hasRows, which caused the bar to vanish
+                 when filters narrowed results to 0 — leaving users no way
+                 to clear the filter. -->
+            <template if:true={isReportLoaded}>
+                <div class="quick-filters" role="region" aria-label="Quick filters">
+                    <span class="quick-filters__label">Quick filters</span>
+
+                    <template if:true={hasPresets}>
+                        <lightning-combobox
+                            variant="label-hidden"
+                            label="Filter preset"
+                            options={presetOptions}
+                            value={_selectedPresetKey}
+                            onchange={handlePresetChange}
+                            class="quick-filters__preset-picker">
+                        </lightning-combobox>
+                    </template>
+
+                    <template if:true={hasDateColumns}>
+                        <div class="quick-filters__group">
+                            <lightning-combobox
+                                variant="label-hidden"
+                                label="Date field"
+                                placeholder="Date field"
+                                options={dateColumnOptions}
+                                value={effectiveDateField}
+                                onchange={handleQuickDateFieldChange}
+                                class="quick-filters__field">
+                            </lightning-combobox>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                label="Date range"
+                                options={datePresetOptions}
+                                value={_quickDatePreset}
+                                onchange={handleQuickDatePresetChange}
+                                class="quick-filters__preset">
+                            </lightning-combobox>
+                            <template if:true={showCustomDateRange}>
+                                <lightning-input
+                                    type="date"
+                                    variant="label-hidden"
+                                    label="Start"
+                                    data-which="start"
+                                    value={_quickDateCustomStart}
+                                    onchange={handleQuickDateCustomChange}
+                                    class="quick-filters__date">
+                                </lightning-input>
+                                <lightning-input
+                                    type="date"
+                                    variant="label-hidden"
+                                    label="End"
+                                    data-which="end"
+                                    value={_quickDateCustomEnd}
+                                    onchange={handleQuickDateCustomChange}
+                                    class="quick-filters__date">
+                                </lightning-input>
+                                <lightning-button
+                                    label="Apply"
+                                    variant="brand"
+                                    onclick={handleQuickDateCustomApply}>
+                                </lightning-button>
+                            </template>
+                        </div>
+                    </template>
+
+                    <template if:true={hasOwnerField}>
+                        <button
+                            type="button"
+                            class={myRecordsPillClass}
+                            aria-pressed={_quickMyRecords}
+                            onclick={handleQuickMyRecordsToggle}>
+                            <lightning-icon icon-name="utility:user" size="xx-small" class="quick-pill__icon"></lightning-icon>
+                            <span>My records</span>
+                        </button>
+                    </template>
+
+                    <template if:true={hasActiveField}>
+                        <button
+                            type="button"
+                            class={activeOnlyPillClass}
+                            aria-pressed={_quickActiveOnly}
+                            onclick={handleQuickActiveOnlyToggle}>
+                            <lightning-icon icon-name="utility:check" size="xx-small" class="quick-pill__icon"></lightning-icon>
+                            <span>Active only</span>
+                        </button>
+                    </template>
+
+                    <template if:true={showTimeGrain}>
+                        <lightning-combobox
+                            variant="label-hidden"
+                            label="Time grain"
+                            options={timeGrainOptions}
+                            value={_timeGrain}
+                            onchange={handleTimeGrainChange}
+                            class="quick-filters__grain">
+                        </lightning-combobox>
+                    </template>
+
+                    <template if:true={showGroupBy}>
+                        <lightning-combobox
+                            variant="label-hidden"
+                            label="Group by"
+                            placeholder="Group by…"
+                            options={groupByOptions}
+                            value={groupByValue}
+                            onchange={handleGroupByChange}
+                            class="quick-filters__grain">
+                        </lightning-combobox>
+                        <template if:true={isGrouped}>
+                            <button type="button" class="quick-pill" title="Collapse all groups" onclick={collapseAllGroups}>
+                                <lightning-icon icon-name="utility:contract_alt" size="xx-small" class="quick-pill__icon"></lightning-icon>
+                                <span>Collapse all</span>
+                            </button>
+                            <button type="button" class="quick-pill" title="Expand all groups" onclick={expandAllGroups}>
+                                <lightning-icon icon-name="utility:expand_alt" size="xx-small" class="quick-pill__icon"></lightning-icon>
+                                <span>Expand all</span>
+                            </button>
+                        </template>
+                    </template>
+
+                    <template if:true={isCombinedGrouping}>
+                        <span class="quick-pill quick-pill_static" title="Both groupings are applied together">
+                            <lightning-icon icon-name="utility:table" size="xx-small" class="quick-pill__icon"></lightning-icon>
+                            <span>{combinedGroupingLabel}</span>
+                        </span>
+                    </template>
+
+                    <lightning-combobox
+                        variant="label-hidden"
+                        label="Show"
+                        options={topNOptions}
+                        value={_quickTopN}
+                        onchange={handleQuickTopNChange}
+                        class="quick-filters__topn">
+                    </lightning-combobox>
+                </div>
+            </template>
+
+            <lightning-tabset active-tab-value={activeTab}>
+                <lightning-tab label="Results" value="results">
+                    <template if:true={loading}>
+                        <template if:false={hasRows}>
+                            <c-cr-skeleton rows="6"></c-cr-skeleton>
+                        </template>
+                    </template>
+                    <template if:true={hasRows}>
+                        <div class="row-count-bar slds-text-body_small slds-text-color_weak slds-m-bottom_x-small">
+                            <span>{rowCountLabel}</span>
+                            <div class="row-count-bar__actions">
+                                <lightning-button-group>
+                                    <lightning-button label="Excel" icon-name="utility:download"
+                                        onclick={handleExportExcel} disabled={exportBusy}
+                                        title="Download the current rows as an Excel .xlsx file"></lightning-button>
+                                    <lightning-button label="PDF" icon-name="utility:pdf_ext"
+                                        onclick={handleExportPdf} disabled={exportBusy}
+                                        title="Download the current rows as a PDF"></lightning-button>
+                                </lightning-button-group>
+                                <button type="button" class="grid-toggle" onclick={toggleGridView}
+                                        title="Switch between the classic table and the high-performance grid">
+                                    <lightning-icon icon-name={gridToggleIcon} size="xx-small"></lightning-icon>
+                                    <span>{gridToggleLabel}</span>
+                                </button>
+                            </div>
+                        </div>
+                        <template if:true={gridView}>
+                            <c-cr-data-grid result={visibleResult} height="460"></c-cr-data-grid>
+                        </template>
+                        <template if:false={gridView}>
+                        <div class="table-wrap">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered cr-results-table">
+                                <thead>
+                                    <template if:true={hasAnyActiveFilter}>
+                                        <tr class="active-filters-row">
+                                            <th scope="col" colspan="99" class="active-filters-cell">
+                                                <lightning-icon icon-name="utility:filterList" size="x-small" variant="brand"></lightning-icon>
+                                                <span class="slds-m-left_x-small">{activeFilterSummary}</span>
+                                                <lightning-button label="Clear all filters" variant="base" onclick={clearAllFilters} class="slds-m-left_small"></lightning-button>
+                                            </th>
+                                        </tr>
+                                    </template>
+                                    <tr>
+                                        <template for:each={decoratedColumns} for:item="column">
+                                            <th scope="col" key={column.key} class="filterable-header">
+                                                <span class="column-label-zone" data-key={column.key} onclick={handleColumnSort} title="Click to sort">{column.label}{column.sortIndicator}</span>
+                                                <lightning-button-icon
+                                                    icon-name={column.filterIcon}
+                                                    alternative-text="Filter"
+                                                    title={column.filterTooltip}
+                                                    variant={column.filterIconVariant}
+                                                    size="x-small"
+                                                    data-key={column.key}
+                                                    onclick={toggleFilterMenu}
+                                                    class="column-filter-trigger">
+                                                </lightning-button-icon>
+                                                <template if:true={column.isFilterMenuOpen}>
+                                                    <div class="column-filter-menu"
+                                                         role="dialog"
+                                                         aria-label={column.filterDialogLabel}
+                                                         onclick={stopPropagation}
+                                                         onkeydown={handleFilterMenuKeydown}>
+                                                        <div class="filter-menu-header">
+                                                            <strong>Filter: {column.label}</strong>
+                                                        </div>
+                                                        <div class="filter-mode-row">
+                                                            <lightning-combobox
+                                                                variant="label-hidden"
+                                                                label="Operator"
+                                                                options={filterModeOptions}
+                                                                value={column.filterMode}
+                                                                data-key={column.key}
+                                                                onchange={handleFilterModeChange}>
+                                                            </lightning-combobox>
+                                                        </div>
+                                                        <template if:true={column.isOneOfMode}>
+                                                            <div class="filter-search-row">
+                                                                <lightning-input
+                                                                    type="search"
+                                                                    variant="label-hidden"
+                                                                    label="Search filter values"
+                                                                    placeholder="Search values..."
+                                                                    value={column.searchTerm}
+                                                                    data-key={column.key}
+                                                                    onchange={handleFilterSearchInput}
+                                                                    oninput={handleFilterSearchInput}>
+                                                                </lightning-input>
+                                                            </div>
+                                                            <div class="filter-options-list">
+                                                                <lightning-checkbox-group
+                                                                    name={column.key}
+                                                                    label="Values"
+                                                                    variant="label-hidden"
+                                                                    options={column.filterOptions}
+                                                                    value={column.activeFilterValues}
+                                                                    data-key={column.key}
+                                                                    onchange={handleFilterChange}>
+                                                                </lightning-checkbox-group>
+                                                            </div>
+                                                        </template>
+                                                        <template if:false={column.isOneOfMode}>
+                                                            <div class="filter-text-row">
+                                                                <lightning-input
+                                                                    type="text"
+                                                                    variant="label-hidden"
+                                                                    label="Text to match"
+                                                                    placeholder="Type to filter (% and _ are wildcards)..."
+                                                                    field-level-help="Use % to match any sequence of characters and _ to match a single character, just like Salesforce report filters."
+                                                                    value={column.textFilterValue}
+                                                                    data-key={column.key}
+                                                                    onchange={handleTextFilterInput}>
+                                                                </lightning-input>
+                                                                <lightning-button
+                                                                    label="Apply"
+                                                                    variant="brand"
+                                                                    data-key={column.key}
+                                                                    onclick={handleTextFilterApply}>
+                                                                </lightning-button>
+                                                            </div>
+                                                        </template>
+                                                        <div class="filter-menu-footer">
+                                                            <lightning-button label="Clear" data-key={column.key} onclick={clearColumnFilter} variant="base"></lightning-button>
+                                                            <lightning-button label="Done" onclick={closeFilterMenu} variant="brand"></lightning-button>
+                                                        </div>
+                                                    </div>
+                                                </template>
+                                            </th>
+                                        </template>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={tableRows} for:item="row">
+                                        <tr key={row.key} class={row.rowClass}>
+                                            <template if:true={row.isHeader}>
+                                                <td colspan={row.colspan} class="cr-group-header__cell">
+                                                    <template if:true={row.collapsible}>
+                                                        <button type="button" class="cr-group-toggle" data-label={row.label}
+                                                                title="Collapse / expand group" onclick={toggleGroup}>
+                                                            <lightning-icon icon-name={row.toggleIcon} size="xx-small"></lightning-icon>
+                                                        </button>
+                                                    </template>
+                                                    <span class="cr-group-header__label">{row.groupColLabel}: {row.label}</span>
+                                                    <span class="cr-group-header__count">{row.count}</span>
+                                                </td>
+                                            </template>
+                                            <template if:false={row.isHeader}>
+                                                <template for:each={row.cells} for:item="cell">
+                                                    <td key={cell.key} title={cell.value} class={cell.cellClass}>
+                                                        <template if:true={cell.isLink}>
+                                                            <a href={cell.linkUrl} target="_blank" rel="noopener" class="record-link">{cell.value}</a>
+                                                        </template>
+                                                        <template if:false={cell.isLink}>
+                                                            {cell.value}
+                                                        </template>
+                                                    </td>
+                                                </template>
+                                            </template>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                        </template>
+                    </template>
+                    <template if:false={hasRows}>
+                        <template if:true={hasFilteredOutAllRows}>
+                            <div class="empty-rows" role="status">
+                                <lightning-icon icon-name="utility:filterList" size="small" class="empty-rows__icon"></lightning-icon>
+                                <p>No rows match your current filters.</p>
+                                <lightning-button label="Clear all filters" variant="brand-outline" icon-name="utility:clear" onclick={clearAllFilters}></lightning-button>
+                            </div>
+                        </template>
+                        <template if:false={hasFilteredOutAllRows}>
+                            <p class="slds-text-color_weak slds-p-around_small">Run a report to see preview rows.</p>
+                        </template>
+                    </template>
+                </lightning-tab>
+
+                <lightning-tab label="Chart" value="chart">
+                    <template if:true={hasRows}>
+                        <div class="chart-wrap">
+                            <div class="chart-toolbar">
+                                <lightning-combobox
+                                    label="Chart type"
+                                    variant="label-hidden"
+                                    options={chartTypeOptions}
+                                    value={chartType}
+                                    onchange={handleChartTypePick}
+                                    class="chart-type-picker">
+                                </lightning-combobox>
+                                <template if:true={hasChartCaption}>
+                                    <div class={chartTypeVerdictClass} role="status">
+                                        <lightning-icon icon-name={chartTypeVerdictIcon} size="xx-small" class="chart-caption__icon"></lightning-icon>
+                                        <span>{chartTypeVerdict.caption}</span>
+                                    </div>
+                                </template>
+                                <lightning-button class="chart-png-btn" label="PNG" icon-name="utility:image"
+                                    onclick={handleDownloadChartPng}
+                                    title="Download the current chart as a PNG image"></lightning-button>
+                            </div>
+                            <c-cr-chart
+                                chart-type={chartType}
+                                engine={chartEngine}
+                                result={chartResult}
+                                x-axis-field={chartGroupByField}
+                                height="380">
+                            </c-cr-chart>
+                        </div>
+                    </template>
+                    <template if:false={hasRows}>
+                        <p class="slds-text-color_weak slds-p-around_small">Run a report to render the chart.</p>
+                    </template>
+                </lightning-tab>
+
+                <lightning-tab label="Pivot" value="pivot">
+                    <template if:true={hasRows}>
+                        <div class="pivot-config">
+                            <lightning-combobox class="pivot-config__field" label="Rows"
+                                value={pivotRowField} options={pivotFieldOptions}
+                                placeholder="Pick a field" onchange={handlePivotRowChange}></lightning-combobox>
+                            <lightning-combobox class="pivot-config__field" label="Columns"
+                                value={pivotColField} options={pivotColFieldOptions}
+                                placeholder="(none)" onchange={handlePivotColChange}></lightning-combobox>
+                            <lightning-combobox class="pivot-config__field" label="Measure"
+                                value={pivotMeasureValue} options={pivotMeasureOptions}
+                                onchange={handlePivotMeasureChange}></lightning-combobox>
+                            <lightning-combobox class="pivot-config__field" label="Aggregation"
+                                value={pivotAgg} options={pivotAggOptions}
+                                onchange={handlePivotAggChange}></lightning-combobox>
+                        </div>
+                        <template if:true={pivotError}>
+                            <p class="slds-text-color_weak slds-p-around_small">{pivotError}</p>
+                        </template>
+                        <template if:true={hasPivotResult}>
+                            <c-cr-data-grid result={pivotResult} height="460"></c-cr-data-grid>
+                        </template>
+                    </template>
+                    <template if:false={hasRows}>
+                        <p class="slds-text-color_weak slds-p-around_small">Run a report to build a pivot.</p>
+                    </template>
+                </lightning-tab>
+
+                <template if:true={showExportAction}>
+                <lightning-tab label="Export Queue" value="exports" onactive={handleExportQueueActive}>
+                        <div class="queue-toolbar">
+                            <lightning-button label="Refresh" icon-name="utility:refresh" onclick={refreshExportQueue} disabled={exportLoading}></lightning-button>
+                            <template if:true={exportLoading}>
+                                <lightning-spinner size="small" alternative-text="Refreshing export queue"></lightning-spinner>
+                            </template>
+                        </div>
+                        <template if:true={exportPollLimitReached}>
+                            <div class="poll-recovery" role="status">
+                                <span class="poll-recovery__msg">Auto-refresh paused while an export is still running. Click <strong>Keep checking</strong> to resume.</span>
+                                <lightning-button label="Keep checking" icon-name="utility:refresh" variant="brand" onclick={resumeExportPolling}></lightning-button>
+                            </div>
+                        </template>
+
+                        <template if:true={hasExports}>
+                            <div class="table-wrap">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Report</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Created</th>
+                                            <th scope="col">Message</th>
+                                            <th scope="col">File</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={exportRows} for:item="row">
+                                            <tr key={row.exportId}>
+                                                <td>
+                                                    <a href={row.recordUrl} target="_blank" rel="noopener">{row.name}</a>
+                                                </td>
+                                                <td>{row.reportName}</td>
+                                                <td><span class={row.statusClass}>{row.status}</span></td>
+                                                <td>
+                                                    <lightning-formatted-date-time
+                                                        value={row.createdDate}
+                                                        year="numeric"
+                                                        month="short"
+                                                        day="2-digit"
+                                                        hour="2-digit"
+                                                        minute="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </td>
+                                                <td>{row.message}</td>
+                                                <td>
+                                                    <template if:true={row.isComplete}>
+                                                        <a class="slds-button slds-button_neutral" href={row.downloadUrl} target="_blank" rel="noopener">Download</a>
+                                                    </template>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </template>
+                        <template if:false={hasExports}>
+                            <p class="slds-text-color_weak slds-p-around_small">No exports queued yet.</p>
+                        </template>
+                </lightning-tab>
+                </template>
+            </lightning-tabset>
+            </template>
+        </div>
+    </lightning-card>
+</template>

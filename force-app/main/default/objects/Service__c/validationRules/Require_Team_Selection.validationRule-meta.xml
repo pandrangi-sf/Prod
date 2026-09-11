@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Team_Selection</fullName>
+    <active>true</active>
+    <description>If a rule is Active, it must have at least one team selected to display the value for.</description>
+    <errorConditionFormula>AND(
+				Active__c = TRUE,  
+				BH_PRM_Service__c = FALSE, 
+				OH_PRM_Service__c = FALSE,
+				Network_Service__c = FALSE
+    )</errorConditionFormula>
+    <errorMessage>At least one team must be selected for active values.</errorMessage>
+</ValidationRule>

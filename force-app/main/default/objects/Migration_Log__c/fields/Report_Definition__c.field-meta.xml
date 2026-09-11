@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Definition__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <inlineHelpText>Links this record to the saved custom report definition it uses.</inlineHelpText>
+    <label>Report Definition</label>
+    <referenceTo>Report_Definition__c</referenceTo>
+    <relationshipLabel>Report Migration Logs</relationshipLabel>
+    <relationshipName>Report_Migration_Logs</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

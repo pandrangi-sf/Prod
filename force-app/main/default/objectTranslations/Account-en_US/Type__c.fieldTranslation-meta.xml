@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>ACO</masterLabel>
+        <translation><!-- ACO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assisted Living</masterLabel>
+        <translation><!-- Assisted Living --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate</masterLabel>
+        <translation><!-- Corporate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Home</masterLabel>
+        <translation><!-- Medical Home --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Practice</masterLabel>
+        <translation><!-- Medical Practice --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Skilled Nursing Facility</masterLabel>
+        <translation><!-- Skilled Nursing Facility --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

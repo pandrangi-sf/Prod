@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chart_Palette_JSON__c</fullName>
+    <description>Ordered chart palette as a JSON array of hex colors, e.g. [&quot;#E8631C&quot;,&quot;#6BA9B8&quot;,...]. Read by the chart engines at runtime.</description>
+    <label>Chart Palette JSON</label>
+    <length>2000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

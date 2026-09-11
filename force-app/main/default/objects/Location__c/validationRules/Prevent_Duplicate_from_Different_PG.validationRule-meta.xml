@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Duplicate_from_Different_PG</fullName>
+    <active>true</active>
+    <description>Prevents marking locations as duplicate that are different P&amp;Gs.</description>
+    <errorConditionFormula>AND(ISCHANGED(Merge_Location_Different_P_G__c),Merge_Location_Different_P_G__c)</errorConditionFormula>
+    <errorMessage>Locations from different Practice &amp; Groups can&apos;t be marked as a duplicate.</errorMessage>
+</ValidationRule>

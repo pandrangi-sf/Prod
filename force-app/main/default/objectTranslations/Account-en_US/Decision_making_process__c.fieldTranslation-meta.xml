@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Describe the decision-making process. Answer the questions - who is involved, what are their roles, what is each individual&apos;s level of influence, what is the process? --></help>
+    <label><!-- Decision-making process --></label>
+    <name>Decision_making_process__c</name>
+</CustomFieldTranslation>

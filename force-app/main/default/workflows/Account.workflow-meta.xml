@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Not_Interested_Now</fullName>
+        <field>StageValue__c</field>
+        <formula>&quot;Not Interested Now, Follow up in Future&quot;</formula>
+        <name>Not Interested Now</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Not_Interested</fullName>
+        <field>StageValue__c</field>
+        <formula>&quot;Not Interested&quot;</formula>
+        <name>Stage Not Interested</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Presentation</fullName>
+        <field>StageValue__c</field>
+        <formula>&quot;Initial Presentation&quot;</formula>
+        <name>Stage Presentation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Stage Not Interested</fullName>
+        <actions>
+            <name>Stage_Not_Interested</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Affiliation_Status__c</field>
+            <operation>equals</operation>
+            <value>Not Interested</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stage Not Interested Now</fullName>
+        <actions>
+            <name>Not_Interested_Now</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Affiliation_Status__c</field>
+            <operation>equals</operation>
+            <value>&quot;Not Interested Now, Follow up in Future&quot;</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Stage Presentation</fullName>
+        <actions>
+            <name>Stage_Presentation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Affiliation_Status__c</field>
+            <operation>equals</operation>
+            <value>Initial Presentation</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

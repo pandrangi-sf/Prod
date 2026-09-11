@@ -1,0 +1,71 @@
+.empty-state {
+    align-items: center;
+    color: #2a3b56;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.4rem 1rem;
+    text-align: center;
+}
+
+.empty-state__mascot {
+    height: 90px;
+    width: 110px;
+}
+.cloud {
+    height: 100%;
+    width: 100%;
+}
+/* Subtle "breathing" loop to make the panel feel alive without distracting. */
+.cloud__body {
+    transform-origin: 70px 60px;
+    animation: cr-empty-breathe 4.5s ease-in-out infinite;
+}
+/* The data dots pulse one at a time, left-to-right, to suggest "waiting" */
+.cloud__graph circle:nth-child(2) { animation: cr-empty-dot 2.4s ease-in-out infinite 0s; }
+.cloud__graph circle:nth-child(3) { animation: cr-empty-dot 2.4s ease-in-out infinite 0.4s; }
+.cloud__graph circle:nth-child(4) { animation: cr-empty-dot 2.4s ease-in-out infinite 0.8s; }
+
+.empty-state__copy {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-width: 30rem;
+}
+.empty-state__headline {
+    color: #1d3557;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0;
+    text-transform: uppercase;
+}
+.empty-state__body {
+    color: #486484;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+.empty-state__actions {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+@keyframes cr-empty-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.025); }
+}
+@keyframes cr-empty-dot {
+    0%, 100% { opacity: 0.35; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cloud__body,
+    .cloud__graph circle {
+        animation: none;
+    }
+}

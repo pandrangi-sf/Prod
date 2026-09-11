@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_has_Number__c</fullName>
+    <formula>OR(CONTAINS(FirstName, &quot;1&quot;),CONTAINS(FirstName,&quot;2&quot;))</formula>
+    <label>Name has Number</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Echo Staff Status --></label>
+    <name>EchoStaffStatus__c</name>
+    <picklistValues>
+        <masterLabel>Community Physician</masterLabel>
+        <translation><!-- Community Physician --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Current Medical Staff</masterLabel>
+        <translation><!-- Current Medical Staff --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

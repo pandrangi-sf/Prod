@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_12520229</developerName>
+        <masterLabel>Services Bucketed</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>Visit_Service__c.Service__c</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Gynecology - Urogynecology</sourceValue>
+            </sourceValues>
+            <value>Urogyneology</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gynecology - General - Adult</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Gynecology - General - Peds</sourceValue>
+            </sourceValues>
+            <value>Gynecology</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Labor and Delivery - General - Adult</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Labor and Delivery - Lake Mary Hospital</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Labor and Delivery - South Lake Hospital</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Labor and Delivery WPH</sourceValue>
+            </sourceValues>
+            <value>Labor and Delivery</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Gynecology - MIS - Adult</sourceValue>
+            </sourceValues>
+            <value>MIGS</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Oncology - Breast - Adult</sourceValue>
+            </sourceValues>
+            <value>Breast Oncology</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Oncology - Gynecology - Adult</sourceValue>
+            </sourceValues>
+            <value>Gynecology Oncology</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Maternal Fetal Medicine</sourceValue>
+            </sourceValues>
+            <value>Maternal Fetal Medicine</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Fetal Care Center</sourceValue>
+            </sourceValues>
+            <value>Fetal Care</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Access Request - New Patient</sourceValue>
+            </sourceValues>
+            <value>Access Request</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>OHPA - OBGYN</sourceValue>
+            </sourceValues>
+            <value>OHPA - OBGYN</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>BucketField_12520229</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>false</showAxisLabels>
+        <showPercentage>true</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>Visit_Service__c.Service__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <description>Services promoted pie chart. To report out on time spent on each service line.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_12520229</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Services Promoted Pie Chart</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Visit_Service__c@Visit_Service__c.Visit_Report__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>FK_$Visit_Report__c.Visit_Date__c</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

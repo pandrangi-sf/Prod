@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Migration Console — Getting Started</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Pick reports&lt;/strong&gt; from the standard report picker. You can multi-select.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Preview&lt;/strong&gt; the converted Definition_JSON__c — most reports translate cleanly; a few constructs (cross-block joins, custom summary formulas, certain bucket types) need manual cleanup after migration.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Migrate&lt;/strong&gt; runs the conversion in Apex and creates one Report Definition per source report. The transit animation shows progress.&lt;/li&gt;&lt;li&gt;Open the new report in Report Builder to review and tweak.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Migrating a report</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:right</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crMigrationConsole</value>
+    </values>
+</CustomMetadata>

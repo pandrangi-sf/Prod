@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>PRM Pilot users we are testing additional access to make updates in Salesforce.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PRM Pilot Group</label>
+    <permissionSets>Create_PLO_Records</permissionSets>
+    <permissionSets>Create_and_Edit_Locations</permissionSets>
+    <permissionSets>Create_and_Edit_Practice_Groups</permissionSets>
+    <permissionSets>Create_and_Edit_Providers</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

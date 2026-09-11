@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Call</fullName>
+        <default>false</default>
+        <label>Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Meeting</fullName>
+        <default>false</default>
+        <label>Meeting</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New Provider</fullName>
+        <default>false</default>
+        <label>New Provider</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New Practice &amp; Group</fullName>
+        <default>false</default>
+        <label>New Practice &amp; Group</label>
+    </standardValue>
+    <standardValue>
+        <fullName>New Location</fullName>
+        <default>false</default>
+        <label>New Location</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Location Change</fullName>
+        <default>false</default>
+        <label>Provider Location Change</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Optional extra filters (same shape as dashboard filters) applied at send time. --></help>
+    <label><!-- Filter Override JSON --></label>
+    <name>Filter_Override_JSON__c</name>
+</CustomFieldTranslation>

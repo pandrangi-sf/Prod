@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disable_Task_for_Inactive_Providers</fullName>
+    <active>true</active>
+    <description>Prevents tasks from being created for inactive providers</description>
+    <errorConditionFormula>Inactive_Provider__c = TRUE</errorConditionFormula>
+    <errorMessage>You can&apos;t create tasks for inactive providers.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Territory Zips New Territory and Region Views</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;We&apos;ve created some new views that will show you all the zip codes in a specific territory or region.  Click here to change your view and see the zip codes for your territory or region. &lt;/p&gt;</body>
+        <customApplication>PRM</customApplication>
+        <delayDays>3</delayDays>
+        <description>Highlights the newly created views for Territories and Regions.</description>
+        <dismissButtonLabel>Way Cool! 😎</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <elementRelativePosition>RightCenter</elementRelativePosition>
+        <endDate>2023-02-28</endDate>
+        <isPublished>true</isPublished>
+        <masterLabel>Territory Zips New Territory and Region Views</masterLabel>
+        <publishedDate>2023-01-28</publishedDate>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;50e27b43761f49d99bf31a503ed4e21a&quot;}},&quot;version&quot;:2}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2023-01-27</startDate>
+        <targetPageKey1>Territory_Zips__c</targetPageKey1>
+        <targetPageKey2>list</targetPageKey2>
+        <targetPageType>standard__objectPage</targetPageType>
+        <timesToDisplay>3</timesToDisplay>
+        <title>New Territory and Region Views</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- If off, deliveries are skipped when the report returns no rows. --></help>
+    <label><!-- Send If Empty --></label>
+    <name>Send_If_Empty__c</name>
+</CustomFieldTranslation>

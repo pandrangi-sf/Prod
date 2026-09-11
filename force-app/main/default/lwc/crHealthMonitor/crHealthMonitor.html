@@ -1,0 +1,328 @@
+<template>
+    <c-cr-welcome-banner tool-name="Health Monitor"></c-cr-welcome-banner>
+    <c-cr-help-panel tool-key="crHealthMonitor" tool-label="Health Monitor"></c-cr-help-panel>
+
+    <div class="monitor-shell">
+        <header class="monitor-header">
+            <div class="monitor-header__lead">
+                <div class="page-header__icon-wrap page-header__icon-wrap--red">
+                    <lightning-icon icon-name="standard:metrics" size="small" alternative-text="Health Monitor"></lightning-icon>
+                </div>
+                <div class="monitor-title-block">
+                    <p class="monitor-eyebrow">Vital Reports</p>
+                    <h1 class="monitor-title">Health Monitor</h1>
+                    <p class="monitor-sub">
+                        Observability for framework Apex jobs, scheduled crons, and recent dashboard run errors.
+                        Read-only — actions stay in Setup, except for scheduling the nightly ETL when it's missing.
+                    </p>
+                </div>
+            </div>
+            <div class="monitor-actions">
+                <lightning-button-icon
+                    icon-name="utility:question"
+                    alternative-text="Help"
+                    title="Help and tips"
+                    variant="border-filled"
+                    onclick={openHelpPanel}>
+                </lightning-button-icon>
+                <lightning-button
+                    label="Refresh"
+                    icon-name="utility:refresh"
+                    variant="brand"
+                    onclick={handleRefresh}>
+                </lightning-button>
+            </div>
+        </header>
+
+        <!-- KPI strip -->
+        <section class="kpi-strip" aria-label="Health summary">
+            <article class={jobsFailedClass}>
+                <p class="kpi-tile__label">Apex Jobs Failed Today</p>
+                <p class="kpi-tile__value">{kpis.jobsFailedToday}</p>
+                <p class="kpi-tile__hint">Framework batches only</p>
+            </article>
+            <article class={cronMissingClass}>
+                <p class="kpi-tile__label">Nightly ETL Cron</p>
+                <p class="kpi-tile__value-small">{cronMissingLabel}</p>
+                <p class="kpi-tile__hint">Wiped on sandbox refresh</p>
+            </article>
+            <article class={errorsClass}>
+                <p class="kpi-tile__label">Errors Last 24h</p>
+                <p class="kpi-tile__value">{kpis.errorsLast24h}</p>
+                <p class="kpi-tile__hint">Dashboard runs marked Failed</p>
+            </article>
+            <article class={totalTodayClass}>
+                <p class="kpi-tile__label">Records From Today's ETL</p>
+                <p class="kpi-tile__value">{totalTodayDisplay}</p>
+                <p class="kpi-tile__hint">Sum across all 8 fact tables · Snapshot_Date__c = TODAY</p>
+            </article>
+            <article class={storageTileClass}>
+                <p class="kpi-tile__label">Org Data Storage</p>
+                <p class="kpi-tile__value-small">{storagePercentDisplay}</p>
+                <template if:true={hasStorage}>
+                    <div class="storage-bar" role="progressbar">
+                        <div class={storageBarClass} style={storageBarStyle}></div>
+                    </div>
+                    <p class="kpi-tile__hint">{storageLabel}</p>
+                </template>
+                <template if:false={hasStorage}>
+                    <p class="kpi-tile__hint">Loading…</p>
+                </template>
+            </article>
+        </section>
+
+        <!-- Nightly ETL — Records per fact table -->
+        <section class="panel">
+            <header class="panel-header">
+                <h2 class="panel-title">Nightly ETL · Records Created <span class="panel-subtitle">today's snapshot · per fact table</span></h2>
+            </header>
+            <template if:true={hasFactCounts}>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Fact Table</th>
+                            <th>API Name</th>
+                            <th class="num">Records Today</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={factCountRows} for:item="f">
+                            <tr key={f.objectApiName} class={f.rowClass}>
+                                <td>{f.label}</td>
+                                <td><code>{f.objectApiName}</code></td>
+                                <td class="num">{f.countDisplay}</td>
+                            </tr>
+                        </template>
+                        <tr class="fact-row fact-row_total">
+                            <td colspan="2"><strong>Total</strong></td>
+                            <td class="num"><strong>{totalTodayDisplay}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </template>
+            <template if:false={hasFactCounts}>
+                <p class="empty-msg">Loading snapshot…</p>
+            </template>
+        </section>
+
+        <!-- Apex Jobs panel -->
+        <section class="panel">
+            <header class="panel-header">
+                <h2 class="panel-title">Apex Jobs <span class="panel-subtitle">last 24 hours · CR_*</span></h2>
+                <button class="link-btn" type="button" onclick={handleOpenSetupJobs}>
+                    Open Setup → Apex Jobs
+                    <lightning-icon icon-name="utility:new_window" size="xx-small" class="link-btn__icon"></lightning-icon>
+                </button>
+            </header>
+            <template if:true={hasJobs}>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Status</th>
+                            <th>Items</th>
+                            <th>Errors</th>
+                            <th>Completed</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={jobs} for:item="j">
+                            <tr key={j.id} class={j.statusClass}>
+                                <td>{j.className}</td>
+                                <td>{j.status}</td>
+                                <td>{j.itemsLabel}</td>
+                                <td>{j.numberOfErrors}</td>
+                                <td>
+                                    <template if:true={j.completedDate}>
+                                        <lightning-formatted-date-time value={j.completedDate} year="numeric" month="2-digit" day="2-digit" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                                    </template>
+                                </td>
+                                <td class="row-action">
+                                    <template if:true={j.hasExtended}>
+                                        <lightning-button-icon
+                                            icon-name="utility:chevrondown"
+                                            alternative-text="Show error detail"
+                                            size="x-small"
+                                            variant="bare"
+                                            data-id={j.id}
+                                            onclick={handleToggleRow}>
+                                        </lightning-button-icon>
+                                    </template>
+                                </td>
+                            </tr>
+                            <template if:true={j.isExpanded}>
+                                <tr key={j.id}>
+                                    <td colspan="6" class="row-detail">
+                                        <p class="row-detail__label">ExtendedStatus</p>
+                                        <pre class="row-detail__pre">{j.extendedStatus}</pre>
+                                    </td>
+                                </tr>
+                            </template>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+            <template if:false={hasJobs}>
+                <p class="empty-msg">{jobsEmptyMessage}</p>
+            </template>
+        </section>
+
+        <!-- Scheduled Jobs panel -->
+        <section class="panel">
+            <header class="panel-header">
+                <h2 class="panel-title">Scheduled Jobs <span class="panel-subtitle">framework crons</span></h2>
+                <button class="link-btn" type="button" onclick={handleOpenSetupCron}>
+                    Open Setup → Scheduled Jobs
+                    <lightning-icon icon-name="utility:new_window" size="xx-small" class="link-btn__icon"></lightning-icon>
+                </button>
+            </header>
+
+            <template if:true={nightlyMissing}>
+                <div class="schedule-alert" role="alert">
+                    <lightning-icon icon-name="utility:warning" size="small" variant="warning" class="schedule-alert__icon"></lightning-icon>
+                    <div class="schedule-alert__body">
+                        <p class="schedule-alert__title">Nightly ETL is not scheduled</p>
+                        <p class="schedule-alert__msg">
+                            Without it, fact tables won't refresh automatically. Click below to register the cron at 2 AM daily.
+                        </p>
+                    </div>
+                    <lightning-button
+                        label={scheduleButtonLabel}
+                        icon-name="utility:event"
+                        variant="brand"
+                        disabled={scheduleButtonDisabled}
+                        onclick={handleScheduleNightly}>
+                    </lightning-button>
+                </div>
+            </template>
+
+            <template if:true={hasCrons}>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Job Name</th>
+                            <th>State</th>
+                            <th>Next Fire</th>
+                            <th>Previous Fire</th>
+                            <th>Cron</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={crons} for:item="c">
+                            <tr key={c.id} class={c.stateClass}>
+                                <td>{c.name}</td>
+                                <td>{c.state}</td>
+                                <td>
+                                    <template if:true={c.nextFireTime}>
+                                        <lightning-formatted-date-time value={c.nextFireTime} year="numeric" month="2-digit" day="2-digit" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                                    </template>
+                                </td>
+                                <td>
+                                    <template if:true={c.previousFireTime}>
+                                        <lightning-formatted-date-time value={c.previousFireTime} year="numeric" month="2-digit" day="2-digit" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                                    </template>
+                                </td>
+                                <td><code>{c.cronExpression}</code></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+            <template if:false={hasCrons}>
+                <template if:false={nightlyMissing}>
+                    <p class="empty-msg">No framework crons registered.</p>
+                </template>
+            </template>
+        </section>
+
+        <!-- Recent Errors panel -->
+        <section class="panel">
+            <header class="panel-header">
+                <h2 class="panel-title">Recent Errors <span class="panel-subtitle">dashboard runs · last 7 days</span></h2>
+            </header>
+            <template if:true={hasErrors}>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>When</th>
+                            <th>Source</th>
+                            <th>Dashboard / Component</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={errors} for:item="e">
+                            <tr key={e.id}>
+                                <td>
+                                    <template if:true={e.occurredAt}>
+                                        <lightning-formatted-date-time value={e.occurredAt} year="numeric" month="2-digit" day="2-digit" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                                    </template>
+                                </td>
+                                <td>{e.source}</td>
+                                <td>{e.displayLabel}</td>
+                                <td>{e.status}</td>
+                                <td class="row-action">
+                                    <lightning-button-icon
+                                        icon-name="utility:chevrondown"
+                                        alternative-text="Show error message"
+                                        size="x-small"
+                                        variant="bare"
+                                        data-id={e.id}
+                                        onclick={handleToggleRow}>
+                                    </lightning-button-icon>
+                                </td>
+                            </tr>
+                            <template if:true={e.isExpanded}>
+                                <tr key={e.id}>
+                                    <td colspan="5" class="row-detail">
+                                        <p class="row-detail__label">Error message</p>
+                                        <pre class="row-detail__pre">{e.message}</pre>
+                                    </td>
+                                </tr>
+                            </template>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+            <template if:false={hasErrors}>
+                <p class="empty-msg">No errors in the last 7 days.</p>
+            </template>
+        </section>
+
+        <!-- Top slow saved reports (Phase 1 v7) — capacity-planning signal -->
+        <section class="panel">
+            <header class="panel-header">
+                <h2 class="panel-title">Slowest Saved Reports <span class="panel-subtitle">last 7 days · by average duration · top 10</span></h2>
+            </header>
+            <template if:true={hasSlowReports}>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Report</th>
+                            <th class="num">Avg (ms)</th>
+                            <th class="num">Max (ms)</th>
+                            <th class="num">Runs</th>
+                            <th>Last Run</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={slowReports} for:item="r">
+                            <tr key={r.id}>
+                                <td>{r.reportName}</td>
+                                <td class="num">{r.avgMs}</td>
+                                <td class="num">{r.maxMs}</td>
+                                <td class="num">{r.runCount}</td>
+                                <td><lightning-formatted-date-time value={r.lastRunAt} year="numeric" month="short" day="2-digit" hour="2-digit" minute="2-digit"></lightning-formatted-date-time></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+            <template if:false={hasSlowReports}>
+                <p class="empty-msg">{slowReportsEmptyMessage}</p>
+            </template>
+        </section>
+    </div>
+</template>

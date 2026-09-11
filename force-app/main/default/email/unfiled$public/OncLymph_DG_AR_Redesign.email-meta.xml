@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Lead to Download Onc Lymph Guide &amp; Appt Request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - Oncology - Lymph Campaign - DG Appt Req - redesign</name>
+    <style>none</style>
+    <subject>Thank You for Requesting An Appointment. Download Your Free Lymphedema Guide</subject>
+    <textOnly>Download Your Free Guide
+
+Call us at 321.843.7771 Se Habla Español
+
+Download Your Guide to Understanding Lymphedema
+
+Thank you for requesting your Guide to Understanding Lymphedema. The guide will provide you with information on the symptoms and types of lymphedema.
+
+Thank You For Requesting An Appointment
+
+We have received your request. One of our specialists will contact you within 24 hours* to schedule your appointment.
+
+* During normal business hours,
+Mon. - Fri. 8:00 a.m.- 4:30 p.m. EST
+
+Call for more information
+
+321.843.7771
+
+Connect with us
+
+
+Unsubscribe | Privacy Policy
+
+Copyright ©2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

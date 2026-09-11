@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <label>Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Yet Contacted</fullName>
+                <default>false</default>
+                <label>Not Yet Contacted</label>
+            </value>
+            <value>
+                <fullName>Initial Presentation</fullName>
+                <default>false</default>
+                <label>Initial Presentation</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>PPA Signed</fullName>
+                <default>false</default>
+                <label>PPA Signed</label>
+            </value>
+            <value>
+                <fullName>Not Interested Now, Follow up in Future</fullName>
+                <default>false</default>
+                <label>Not Interested Now, Follow up in Future</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

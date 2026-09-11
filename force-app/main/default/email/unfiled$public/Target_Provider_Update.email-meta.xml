@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Target Provider Update</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Target Provider Update</name>
+    <style>none</style>
+    <subject>Target Provider Updated by {!Target__c.LastModifiedBy}</subject>
+    <textOnly>A Target Provider was updated by {!Target__c.LastModifiedBy} on {!Target__c.LastModifiedDate}.
+
+Provider: {!Target__c.Target_Provider__c} {!Target__c.Target_NPI__c}
+Practice: {!Target__c.Target_Practice__c}
+Facility: {!Target__c.Facility__c}
+Rank: {!Target__c.Rank__c}
+Details: https://orlandohealth.my.salesforce.com/00O5A0000087MyA</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

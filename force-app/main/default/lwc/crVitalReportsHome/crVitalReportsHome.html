@@ -1,0 +1,99 @@
+<template>
+    <c-cr-welcome-banner tool-name="Vital Reports"></c-cr-welcome-banner>
+
+    <div class="home-shell">
+        <header class="home-header">
+            <div class="home-title-block">
+                <div class="home-eyebrow-row">
+                    <p class="home-eyebrow">Vital Reports</p>
+                    <span class={audienceBadgeClass}>{audienceLabel}</span>
+                </div>
+                <h1 class="home-title">Your reporting hub</h1>
+                <p class="home-sub">
+                    Pick a tile below to jump straight into a tool. The tiles shown reflect your permissions — ask an admin if you need access to something you don't see here.
+                </p>
+            </div>
+            <div class="home-actions">
+                <lightning-button
+                    label="Help &amp; Tips"
+                    icon-name="utility:question"
+                    icon-position="left"
+                    variant="brand-outline"
+                    onclick={handleOpenHelp}>
+                </lightning-button>
+            </div>
+        </header>
+
+        <!-- Tile grid -->
+        <section class="tile-grid" aria-label="Quick launch">
+            <template for:each={tiles} for:item="t">
+                <article key={t.key} class="tile" tabindex="0" role="button"
+                         data-target={t.target}
+                         aria-label={t.label}
+                         onclick={handleTileClick}
+                         onkeydown={handleTileKey}>
+                    <div class={t.iconBg}>
+                        <lightning-icon icon-name={t.iconName} size="medium" alternative-text={t.label}></lightning-icon>
+                    </div>
+                    <div class="tile__text">
+                        <h2 class="tile__title">{t.label}</h2>
+                        <p class="tile__desc">{t.desc}</p>
+                    </div>
+                    <lightning-icon icon-name="utility:chevronright" size="small" class="tile__chevron"></lightning-icon>
+                </article>
+            </template>
+        </section>
+    </div>
+
+    <!-- Help & Tips drawer -->
+    <template if:true={helpOpen}>
+        <aside class="help-drawer" role="complementary" aria-label="Help and tips">
+            <header class="help-drawer__header">
+                <div class="help-drawer__title-block">
+                    <lightning-icon icon-name="utility:question_mark" size="x-small" class="help-drawer__title-icon"></lightning-icon>
+                    <h2 class="help-drawer__title">Help &amp; Tips</h2>
+                </div>
+                <button type="button"
+                        class="help-drawer__close"
+                        aria-label="Close help"
+                        title="Close help"
+                        onclick={handleCloseHelp}>
+                    <lightning-icon icon-name="utility:close" size="x-small" alternative-text=""></lightning-icon>
+                </button>
+            </header>
+            <div class="help-drawer__body">
+
+                <template if:true={hasUserHelp}>
+                    <p class="help-drawer__group-label">For everyone</p>
+                    <template for:each={userSections} for:item="s">
+                        <section key={s.key} class="help-section">
+                            <div class="help-section__heading-row">
+                                <lightning-icon icon-name={s.iconName} size="x-small" class="help-section__icon"></lightning-icon>
+                                <h3 class="help-section__heading">{s.heading}</h3>
+                            </div>
+                            <div class="help-section__body">
+                                <lightning-formatted-rich-text value={s.body}></lightning-formatted-rich-text>
+                            </div>
+                        </section>
+                    </template>
+                </template>
+
+                <template if:true={hasAdminHelp}>
+                    <p class="help-drawer__group-label help-drawer__group-label--admin">For admins</p>
+                    <template for:each={adminSections} for:item="s">
+                        <section key={s.key} class="help-section help-section--admin">
+                            <div class="help-section__heading-row">
+                                <lightning-icon icon-name={s.iconName} size="x-small" class="help-section__icon help-section__icon--admin"></lightning-icon>
+                                <h3 class="help-section__heading">{s.heading}</h3>
+                            </div>
+                            <div class="help-section__body">
+                                <lightning-formatted-rich-text value={s.body}></lightning-formatted-rich-text>
+                            </div>
+                        </section>
+                    </template>
+                </template>
+
+            </div>
+        </aside>
+    </template>
+</template>

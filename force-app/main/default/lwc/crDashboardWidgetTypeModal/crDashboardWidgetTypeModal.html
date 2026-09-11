@@ -1,0 +1,40 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="cr-type-h" class="slds-modal slds-fade-in-open slds-modal_small">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleCancel} title="Close">
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Close" variant="inverse"></lightning-icon>
+                </button>
+                <h2 id="cr-type-h" class="slds-text-heading_medium">Add Widget</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium">
+                <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_medium">
+                    Pick a widget type. Chart, Table, Text, Image, and LWC are all available.
+                </p>
+                <div class="type-grid">
+                    <template for:each={typeOptions} for:item="t">
+                        <button
+                            key={t.value}
+                            type="button"
+                            class={t.cardClass}
+                            data-value={t.value}
+                            onclick={handleSelect}
+                            disabled={t.disabled}
+                            title={t.description}>
+                            <lightning-icon icon-name={t.icon} size="medium" class="type-card__icon"></lightning-icon>
+                            <span class="type-card__label">{t.label}</span>
+                            <span class="type-card__desc">{t.description}</span>
+                            <template if:true={t.showStatus}>
+                                <span class="type-card__pill">{t.statusLabel}</span>
+                            </template>
+                        </button>
+                    </template>
+                </div>
+            </div>
+            <footer class="slds-modal__footer">
+                <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

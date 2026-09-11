@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Hope Hike 2016 Signup</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UFHCC - Hope Hike Email Notification</name>
+    <style>none</style>
+    <subject>Thank you for signing up for Hope Hike 2016!</subject>
+    <textOnly>UFHealth Cancer Center | Orlando Health
+
+321-841-1969
+Se habla espanol
+
+————————————————————————————————————————
+
+We look forward to seeing you at the event!
+
+————————————————————————————————————————
+
+Cancer Support Community 
+
+http://www.ufhealthcancerorlando.com/our-services/integrative-medicine
+
+————————————————————————————————————————
+
+Volunteer
+
+Learn how you can contribute 
+http://www.orlandohealth.com/volunteer-services/uf-health-cancer-center-orlando-health-volunteer-services
+
+————————————————————————————————————————
+
+In the News
+
+See how we&apos;re making an impact 
+http://www.ufhealthcancerorlando.com/news-and-events
+
+————————————————————————————————————————
+
+Privacy Policy
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806
+
+Copyright (C) 2016 Orlando Health</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

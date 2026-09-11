@@ -1,0 +1,20 @@
+.buckets-builder {
+    padding: 0.5rem 0;
+}
+
+.bucket-card {
+    background: #fafafa;
+}
+
+.rule-row {
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.rule-row:last-of-type {
+    border-bottom: none;
+}
+
+.advanced-json summary {
+    cursor: pointer;
+}

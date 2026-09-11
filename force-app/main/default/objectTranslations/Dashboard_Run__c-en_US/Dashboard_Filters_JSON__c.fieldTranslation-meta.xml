@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Dashboard filters applied to every component in this run. --></help>
+    <label><!-- Dashboard Filters JSON --></label>
+    <name>Dashboard_Filters_JSON__c</name>
+</CustomFieldTranslation>

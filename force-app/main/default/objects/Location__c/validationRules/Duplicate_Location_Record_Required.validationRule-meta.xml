@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duplicate_Location_Record_Required</fullName>
+    <active>true</active>
+    <description>If a person selects the duplicate checkbox, then they must pick the location it must be merged into.</description>
+    <errorConditionFormula>AND( Duplicate__c = TRUE, ISBLANK(Merge_Location__c))</errorConditionFormula>
+    <errorDisplayField>Merge_Location__c</errorDisplayField>
+    <errorMessage>If you mark a location as a duplicate, you must pick the location this should be merged into.</errorMessage>
+</ValidationRule>

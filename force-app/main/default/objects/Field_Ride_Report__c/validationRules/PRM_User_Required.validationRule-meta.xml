@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PRM_User_Required</fullName>
+    <active>true</active>
+    <description>Requires the PRM User field to be populated to create a Field Ride Report.</description>
+    <errorConditionFormula>ISBLANK(PRM__c)</errorConditionFormula>
+    <errorMessage>PRM field is required to create a Field Ride Report.</errorMessage>
+</ValidationRule>

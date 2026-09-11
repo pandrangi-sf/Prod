@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Data_Change_Related_Field</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  TEXT(Type)=&apos;New Provider&apos;, ISBLANK(WhatId))</errorConditionFormula>
+    <errorDisplayField>WhatId</errorDisplayField>
+    <errorMessage>You must populate the Practice &amp; Group in the Related To field for New Provider requests.</errorMessage>
+</ValidationRule>

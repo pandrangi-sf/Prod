@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Affiliation_Status__c</fullName>
+    <description>For use by PNC team</description>
+    <label>Affiliation Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Yet Contacted</fullName>
+                <default>false</default>
+                <label>Not Yet Contacted</label>
+            </value>
+            <value>
+                <fullName>Contacted - Not Yet Scheduled</fullName>
+                <default>false</default>
+                <label>Contacted - Not Yet Scheduled</label>
+            </value>
+            <value>
+                <fullName>Initial Meeting Scheduled</fullName>
+                <default>false</default>
+                <label>Initial Meeting Scheduled</label>
+            </value>
+            <value>
+                <fullName>Initial Meeting Held</fullName>
+                <default>false</default>
+                <label>Initial Meeting Held</label>
+            </value>
+            <value>
+                <fullName>Follow Up Meeting Scheduled</fullName>
+                <default>false</default>
+                <label>Follow Up Meeting Scheduled</label>
+            </value>
+            <value>
+                <fullName>Follow Up Meeting Held</fullName>
+                <default>false</default>
+                <label>Follow Up Meeting Held</label>
+            </value>
+            <value>
+                <fullName>Application Sent</fullName>
+                <default>false</default>
+                <label>Application Sent</label>
+            </value>
+            <value>
+                <fullName>Application Received</fullName>
+                <default>false</default>
+                <label>Application Received</label>
+            </value>
+            <value>
+                <fullName>Application Approved by Committee</fullName>
+                <default>false</default>
+                <label>Application Approved by Committee</label>
+            </value>
+            <value>
+                <fullName>Application Approved by Board</fullName>
+                <default>false</default>
+                <label>Application Approved by Board</label>
+            </value>
+            <value>
+                <fullName>PPA Sent</fullName>
+                <default>false</default>
+                <label>PPA Sent</label>
+            </value>
+            <value>
+                <fullName>Signed PPA Received</fullName>
+                <default>false</default>
+                <label>Signed PPA Received</label>
+            </value>
+            <value>
+                <fullName>Does Not Qualify</fullName>
+                <default>false</default>
+                <label>Does Not Qualify</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

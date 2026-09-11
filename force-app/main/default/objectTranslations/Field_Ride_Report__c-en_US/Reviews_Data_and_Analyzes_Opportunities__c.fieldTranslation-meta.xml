@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Reviews data and constantly analyzes business opportunities --></help>
+    <label><!-- 10) Reviews Data Analyzes Opportunities --></label>
+    <name>Reviews_Data_and_Analyzes_Opportunities__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Whose data context the dashboard runs under: Me (the owner), OtherUser (a specific named user, requires Run As User), or Viewer (whoever opens the dashboard). Defaults to Me when unset. --></help>
+    <label><!-- Run As Mode --></label>
+    <name>Run_As_Mode__c</name>
+    <picklistValues>
+        <masterLabel>Another person</masterLabel>
+        <translation><!-- Another person --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Me</masterLabel>
+        <translation><!-- Me --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>The dashboard viewer</masterLabel>
+        <translation><!-- The dashboard viewer --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

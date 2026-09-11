@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Use of Huron &amp; EPIC for pre-call planning and salesforce call documentation (GAIN) --></help>
+    <label><!-- 3) Uses Physician Data --></label>
+    <name>Uses_Physician_Data__c</name>
+</CustomFieldTranslation>

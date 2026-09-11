@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Baptist Health Log a Visit</description>
+    <flowDefinition>Provider_SCR_LogVisitReport_Refined</flowDefinition>
+    <label>Log a Visit</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

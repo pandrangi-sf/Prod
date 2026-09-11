@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIN_Affiliation_Action_Plan</fullName>
+    <active>true</active>
+    <description>Create the action plan and timeline for a CIN prospective affiliate.</description>
+    <label>CIN Affiliation Action Plan</label>
+    <picklistValues>
+        <picklist>CallObjectivesMet__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Type__c</picklist>
+        <values>
+            <fullName>Inbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Disposition__c</picklist>
+        <values>
+            <fullName>Appointment Not Scheduled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-reg completed in person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered for Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Second Attempt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Too soon to preregister</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Duration__c</picklist>
+        <values>
+            <fullName>%3C 15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15-30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30-60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60%2B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Facility_of_Objection__c</picklist>
+        <values>
+            <fullName>FMCOH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - APH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - CI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - CRI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - DPH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - HCH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - JOI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - NRI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - SLH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH - WPH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OHHI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ORMC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location__c</picklist>
+        <values>
+            <fullName>Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Off Site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician Office</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MealType__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Objections_Raised__c</picklist>
+        <values>
+            <fullName>Communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patient Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Records</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PRCsRole__c</picklist>
+        <values>
+            <fullName>Arranged Attended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arranged Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purpose__c</picklist>
+        <values>
+            <fullName>Task</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>QualityoftheCall__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Med</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RatingHandlingObjections__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Med</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RatingMatchingBenefitstoNeeds__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Med</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RatingOpeningStatement__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Med</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RatingUncoveringNeeds__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Med</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ResponsivenessRating__c</picklist>
+        <values>
+            <fullName>Not at all Likely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat Likely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Likely</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ServiceLinesPromoted__c</picklist>
+        <values>
+            <fullName>Bariatrics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endocrinology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GYN MIS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Labor and Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neurosciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orthopedics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pulmonology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rehab Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urology</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Services_Promoted__c</picklist>
+        <values>
+            <fullName>Adolescent Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Craniomaxiallofacial Surgery - Ped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Epic Care Link</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gastroenterology - Adult - Pancreatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gastroenterology - Motility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genetics - General - Adult</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genetics - General - Peds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gynecology - General - Ped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imaging %E2%80%93 BHIC 3T MRI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Imaging - Nuclear Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neuropsych - General - Ped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology - Neuro - Adult</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology - Proton Beam - Peds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology - interventional Radiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ophthalmology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rheumatology - General - Ped</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Waiting on someone else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>1%2E Contact practice%2C determine decision-making process%2C and schedule meeting</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>10%2E Notify operations of CIN Value Opportunities chosen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Make the initial CIN presentation to decision-makers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Conduct follow-up with the practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E Execute the PPA agreements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E Commence onboarding process %28assign task to Alexis G%2E%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%2E Obtain contact information for practice responsible party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E Email forms packet to practice contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%2E Schedule onboarding meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%2E Conduct onboarding meeting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visit_Category__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRM with Office Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRM with Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician to Physician</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visit_Type__c</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

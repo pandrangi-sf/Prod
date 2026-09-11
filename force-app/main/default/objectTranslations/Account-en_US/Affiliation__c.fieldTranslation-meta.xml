@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Affiliation --></label>
+    <name>Affiliation__c</name>
+    <picklistValues>
+        <masterLabel>Affiliated</masterLabel>
+        <translation><!-- Affiliated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Group</masterLabel>
+        <translation><!-- Medical Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non-Affiliated</masterLabel>
+        <translation><!-- Non-Affiliated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHN Affiliate Office</masterLabel>
+        <translation><!-- OHN Affiliate Office --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHN Employed Office</masterLabel>
+        <translation><!-- OHN Employed Office --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Owned</masterLabel>
+        <translation><!-- Owned --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unaffiliated</masterLabel>
+        <translation><!-- Unaffiliated --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

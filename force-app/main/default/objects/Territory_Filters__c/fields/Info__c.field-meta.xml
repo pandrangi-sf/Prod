@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Info__c</fullName>
+    <defaultValue>&quot;This is some open text&quot;</defaultValue>
+    <inlineHelpText>Use these geographic criteria to filter the list of providers. After selecting check off the filter complete button to indicate that there are no more changes needed. If you need to make any changes leave the box unchecked until completed.</inlineHelpText>
+    <label>Info</label>
+    <length>3000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

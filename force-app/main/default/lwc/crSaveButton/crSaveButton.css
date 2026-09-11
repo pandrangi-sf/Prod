@@ -1,0 +1,112 @@
+/* Match lightning-button (variant=brand) sizing so this drops in cleanly next
+   to neighboring lightning buttons. Internals are stacked via CSS grid so the
+   button width fits whichever label is longer (default vs success). */
+.cr-save-btn {
+    align-items: center;
+    background: #0070d2;
+    border: 1px solid #0070d2;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1;
+    min-height: 1.875rem;
+    padding: 0 1rem;
+    position: relative;
+    transition: background 280ms ease, border-color 280ms ease, transform 220ms ease;
+}
+.cr-save-btn:hover:not(:disabled) {
+    background: #005fb2;
+    border-color: #005fb2;
+}
+.cr-save-btn:focus-visible {
+    outline: 2px solid #1589ee;
+    outline-offset: 2px;
+}
+.cr-save-btn:disabled {
+    background: #c9c9c9;
+    border-color: #c9c9c9;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* Neutral variant: white face with brand text/border, matches SLDS neutral. */
+.cr-save-btn--neutral {
+    background: #ffffff;
+    border-color: #dddbda;
+    color: #0070d2;
+}
+.cr-save-btn--neutral:hover:not(:disabled) {
+    background: #f4f6f9;
+    border-color: #dddbda;
+}
+
+/* Success state: green pop with a slight scale bump. */
+.cr-save-btn--success,
+.cr-save-btn--success:hover {
+    background: #2e844a;
+    border-color: #2e844a;
+    color: #ffffff;
+    transform: scale(1.04);
+}
+.cr-save-btn--neutral.cr-save-btn--success {
+    color: #ffffff;
+}
+
+/* Grid stack holds both content layers in the same cell — the wider label
+   defines the button width; opacity decides which is visible. */
+.cr-save-btn__stack {
+    display: grid;
+    grid-template-areas: 'stack';
+    align-items: center;
+}
+.cr-save-btn__layer {
+    grid-area: stack;
+    align-items: center;
+    display: inline-flex;
+    gap: 0.35rem;
+    transition: opacity 220ms ease, transform 220ms ease;
+    white-space: nowrap;
+}
+.cr-save-btn__layer--default {
+    opacity: 1;
+    transform: translateY(0);
+}
+.cr-save-btn__layer--success {
+    opacity: 0;
+    transform: translateY(4px);
+}
+.cr-save-btn--success .cr-save-btn__layer--default {
+    opacity: 0;
+    transform: translateY(-4px);
+}
+.cr-save-btn--success .cr-save-btn__layer--success {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cr-save-btn__label {
+    line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cr-save-btn,
+    .cr-save-btn__layer {
+        transition: none;
+    }
+    .cr-save-btn--success {
+        transform: none;
+    }
+    .cr-save-btn__layer--success {
+        transform: none;
+    }
+    .cr-save-btn--success .cr-save-btn__layer--default,
+    .cr-save-btn--success .cr-save-btn__layer--success {
+        transform: none;
+    }
+}

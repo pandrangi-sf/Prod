@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solver</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Solver</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/HC4__TableauFrame?destination={!&quot;/t/orlando/views/PRM_PracticeAnalysisEmbed/PracticeOverview?:embed=y&amp;:display_count=no&amp;Practice=&quot; + URLENCODE(MID(CASESAFEID(Account.Id),7,9))}</url>
+</WebLink>

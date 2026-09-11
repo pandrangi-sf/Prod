@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>User receives this communication when an appointment is requested via a web form.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - Oncology - ALL - Appointment Request - Confirmation Email</name>
+    <style>none</style>
+    <subject>Thank You for Requesting an Appointment</subject>
+    <textOnly>Thank You for Requesting an Appointment
+
+Thank you for requesting to schedule an appointment with one of our cancer specialists. You have taken the first step toward improving the quality of life through treatment. We will contact you within 24 hours* to schedule your appointment.
+
+*During normal business hours, Monday - Friday 8:00 a.m to 4:30 p.m. EST
+
+Copyright © 2015 Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806
+
+Privacy Policy - http://www.ufhealthcancerorlando.com/about-us/privacy-practices</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

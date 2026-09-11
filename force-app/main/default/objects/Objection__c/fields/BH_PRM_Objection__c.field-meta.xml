@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BH_PRM_Objection__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates if the objection is used by the BH (Alabama) PRM team.</description>
+    <inlineHelpText>Indicates if the objection is used by the BH (Alabama) PRM team.</inlineHelpText>
+    <label>BH PRM Objection</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

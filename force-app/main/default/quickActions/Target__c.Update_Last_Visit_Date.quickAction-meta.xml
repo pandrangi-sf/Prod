@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Sets the Update Last Visit Date field to trigger a Flow to update the Last Visit Date field.</description>
+    <flowDefinition>Target_SCR_UpdateLastVisitDate</flowDefinition>
+    <label>Update Last Visit Date</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

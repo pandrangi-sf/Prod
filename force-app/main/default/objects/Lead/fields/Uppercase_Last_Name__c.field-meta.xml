@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uppercase_Last_Name__c</fullName>
+    <formula>IF(LastName = UPPER(LastName),true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Uppercase Last Name</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

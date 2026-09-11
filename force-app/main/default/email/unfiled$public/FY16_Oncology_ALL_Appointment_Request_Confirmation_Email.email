@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Thank You for Requesting an Appointment</title>
+</head>
+<custom name="opencounter" type="tracking">
+<body style="background-color:#ffffff; margin:8px auto;">
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" valign="top">
+ 
+  <tr>
+    <td width="300" align="center" bgcolor="#FFFFFF"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/ufh-logo.jpg" border="0" style="padding-right:0px;"/>
+    </td>
+</tr>
+</table>
+
+<p style="margin-top: 0px; margin-bottom: 0px;" align="center">
+<img id="image-placeholder" src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/confirmation-email-bar.jpg" border="0" title="confirmation-email-bar" mdid="482670f1-f53c-4167-b181-6d833beced44" />
+</p>  
+  
+ <table width="602" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF"> 
+  <tr>
+    <td style="padding:5px 20px 40px 20px;">
+    <div>
+      <p style="color:#b00f3a; font-size:21px; font-family: Arial; padding-bottom:5px;">Thank You for Requesting an Appointment</p>
+      
+<p style="color:#525252;font-size:16px; font-family: Arial; line-height:22px;">Thank you for requesting to schedule an appointment with one of our cancer specialists. You have taken the first step toward improving the quality of life through treatment. We will contact you within 24 hours* to schedule your appointment.
+ </div>
+  
+    </td>
+  </tr>
+  <tr>
+    <td height="260" width="602" align="center" valign="top" bgcolor="#1b478d" background="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/footer-background.jpg">   
+      <p style="color:#fff;font-size:12px; font-family: Arial;padding-top:10px;line-height:18px; ">*During normal business hours, Monday - Friday 8:00 a.m to 4:30 p.m. EST</p>
+    
+    <p style="color:#fff;font-size:14px; font-family: Arial;padding-top:20px;line-height:18px; ">Copyright &copy; 2015 Orlando Health<br />
+1400 S. Orange Ave., Orlando, FL 32806<br /><br />
+<a href="http://www.ufhealthcancerorlando.com/about-us/privacy-practices" style="color:#fff; text-decoration:none">Privacy Policy</a></p>
+    
+    <table width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="246" align="center"><p style="color:#fff;font-size:14px; font-family: Arial; text-transform:uppercase;padding:0;margin:0;">Connect with Us
+    </p></td>
+    <td width="254" align="center"><p style="color:#fff;font-size:14px; font-family: Arial; text-transform:uppercase;padding:0;margin:0;">Call for more information
+    </p></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.facebook.com/UFHealthCancerOrlando"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/icon-facebook.png" border="0" style="padding-right:10px;"/></a><a href="https://twitter.com/UFHealthOH"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/icon-twitter.png" border="0" style="padding-right:10px;"/></a><a href="https://plus.google.com/+orlandohealth/posts"><img src="http://image.s6.exacttarget.com/lib/fe8f12727667007573/m/1/icon-google.png" border="0"/></a>
+    </td>
+    <td align="center"><p style="color:#fff;font-size:24px; font-family: Arial; text-transform:uppercase;padding:0;margin:0;"><a href="tel:###-###-###" style="text-decoration:none; color:#fff;">###.###.####</a></p></td>
+  </tr>
+</table>
+    
+     
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

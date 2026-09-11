@@ -1,0 +1,7 @@
+<aura:component implements="lightning:actionOverride,force:hasRecordId" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:navigation aura:id="navService"/>
+    <div class="redirect-shell">
+        <lightning:spinner alternativeText="Opening dashboard" size="small"/>
+    </div>
+</aura:component>

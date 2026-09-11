@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>New Visits Last 90 Days Field</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;We&apos;ve added a new field on your &lt;em&gt;Targets&lt;/em&gt; and &lt;em&gt;Target Zones&lt;/em&gt; called&lt;strong&gt; Visits Last 90 Days &lt;/strong&gt;that calculates the number of times you&apos;ve visited that Target or Zoned Location in the last 90 days.  Check out a Target or Target Zone record to see it now! 🥳 &lt;/p&gt;</body>
+        <customApplication>PRM</customApplication>
+        <delayDays>2</delayDays>
+        <description>Alerts the team to the new Visits Last 90 Days field on Targets and Target Zones.</description>
+        <dismissButtonLabel>Got It!</dismissButtonLabel>
+        <displayPosition>TopCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <endDate>2023-02-10</endDate>
+        <image>PRM_Targets_Page_Visits_Last_90_Da3</image>
+        <imageAltText>Screenshot of Visits Last 90 Days field.</imageAltText>
+        <imageLocation>Bottom</imageLocation>
+        <isPublished>true</isPublished>
+        <masterLabel>New Visits Last 90 Days Field</masterLabel>
+        <publishedDate>2023-01-28</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2023-01-30</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>3</timesToDisplay>
+        <title>New Field: Visits Last 90 Days</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

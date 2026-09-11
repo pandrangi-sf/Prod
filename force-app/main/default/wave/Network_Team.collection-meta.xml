@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveAnalyticAssetCollection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <collectionType>static</collectionType>
+    <color>#fe9339</color>
+    <description>Collection for the Network Team</description>
+    <folder>Network_Team</folder>
+    <items>
+        <asset>CurrentLast_Month_Meeting_Productivity_eXC</asset>
+        <assetType>Report</assetType>
+        <sortOrder>497</sortOrder>
+    </items>
+    <items>
+        <asset>ywOVAQTNfSwrizyQNaTXhOCtgzrJwd</asset>
+        <assetType>LightningDashboard</assetType>
+        <sortOrder>500</sortOrder>
+    </items>
+    <items>
+        <asset>Monthly_Quarterly_Meeting_Productivity_3vd</asset>
+        <assetType>Report</assetType>
+        <sortOrder>499</sortOrder>
+    </items>
+    <items>
+        <asset>Providers_by_Territory_and_Specialty_wql</asset>
+        <assetType>Report</assetType>
+        <sortOrder>498</sortOrder>
+    </items>
+    <label>Network Team</label>
+    <masterLabel>Network Team</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>prm.brendan.murphy@orlandohealth.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>prm.tanisha.coleman@orlandohealth.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <shares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>Network_Team</sharedTo>
+        <sharedToType>Group</sharedToType>
+    </shares>
+</WaveAnalyticAssetCollection>

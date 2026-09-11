@@ -1,0 +1,10 @@
+/* Status badge variants */
+.success lightning-badge {
+    --sds-c-badge-color-background: #2e844a;
+    --sds-c-badge-text-color: #ffffff;
+}
+
+.error lightning-badge {
+    --sds-c-badge-color-background: #ba0517;
+    --sds-c-badge-text-color: #ffffff;
+}

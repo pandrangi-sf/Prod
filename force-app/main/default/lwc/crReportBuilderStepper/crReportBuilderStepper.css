@@ -1,0 +1,172 @@
+.stepper {
+    padding: 0.5rem 0.125rem 0.625rem;
+    overflow: visible;
+}
+
+.progress-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.25rem 0 0.5rem;
+}
+
+/* Numbered-pill stepper. Each step is a pill with a number circle + label.
+   States: --done (blue filled), --current (blue filled, bold), --upcoming (grey outlined).
+   Connectors between pills track completion (blue when crossed, grey when not). */
+.step-pills {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /* Allow pills to wrap to multiple rows on narrow viewports. Previously
+       flex-wrap: nowrap + min-width: max-content caused pills 4-6 to
+       overflow horizontally with no scroll affordance below ~860px. */
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    column-gap: 0.25rem;
+}
+
+.step-pills__item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.step-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem 0.375rem 0.375rem;
+    border-radius: 999rem;
+    border: 1px solid #d8dde6;
+    background: #ffffff;
+    color: #4a4a4a;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+    white-space: nowrap;
+}
+
+.step-pill:hover {
+    border-color: #0176d3;
+    color: #0176d3;
+}
+
+.step-pill:focus-visible {
+    /* Brand-blue 2px outline so keyboard users can see which pill has
+       focus. Combined with outline-offset to keep the ring outside the
+       pill's rounded edge. Previously the pill had no :focus styling
+       and was invisible to keyboard users. */
+    outline: 2px solid #0176d3;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(1, 118, 211, 0.18);
+}
+
+.step-pill__num {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 999rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #e5e9ef;
+    color: #4a4a4a;
+    flex-shrink: 0;
+}
+
+.step-pill__label {
+    line-height: 1;
+}
+
+/* Completed steps */
+.step-pill--done {
+    border-color: #c8d6e8;
+    background: #f0f6ff;
+    color: #0176d3;
+}
+.step-pill--done .step-pill__num {
+    background: #0176d3;
+    color: #ffffff;
+}
+
+/* Current step */
+.step-pill--current {
+    border-color: #0176d3;
+    background: #0176d3;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(1, 118, 211, 0.25);
+}
+.step-pill--current .step-pill__num {
+    background: #ffffff;
+    color: #0176d3;
+}
+
+/* Upcoming steps */
+.step-pill--upcoming {
+    background: #ffffff;
+    color: #6b6b6b;
+}
+
+/* Connector line between pills */
+.step-connector {
+    width: 1.25rem;
+    height: 2px;
+    background: #e5e9ef;
+    border-radius: 999rem;
+    flex-shrink: 0;
+}
+.step-connector--done {
+    background: linear-gradient(90deg, #0176d3 0%, #4ac0e0 100%);
+}
+
+.step-nav {
+    display: grid;
+    grid-template-columns: auto minmax(8rem, 1fr) auto;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.125rem;
+    overflow: visible;
+}
+
+.step-status {
+    min-width: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.step-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 30em) {
+    .step-pill__label { display: none; }
+    .step-pill { padding: 0.375rem; }
+    .step-nav {
+        grid-template-columns: 1fr auto;
+    }
+    .step-status {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        text-align: left;
+    }
+    .step-back {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: start;
+    }
+    .step-actions {
+        grid-column: 2;
+        grid-row: 2;
+        justify-content: flex-end;
+    }
+}

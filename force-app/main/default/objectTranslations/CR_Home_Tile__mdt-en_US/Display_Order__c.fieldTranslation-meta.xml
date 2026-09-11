@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Sort order of the tile in the Home grid. Lower numbers appear first. Use multiples of 10 (10, 20, 30) so admins can insert new tiles without renumbering. --></help>
+    <label><!-- Display Order --></label>
+    <name>Display_Order__c</name>
+</CustomFieldTranslation>

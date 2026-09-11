@@ -1,0 +1,47 @@
+/* LWC custom-element hosts default to display:inline. In flex containers with
+   align-items:center, that lets the chart shrink to its bar-content width,
+   leaving big empty side margins. Force the host to be a full-width block so
+   Chart.js sees the real container dimensions. */
+:host {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+.cr-chart {
+    width: 100%;
+    min-width: 0;
+}
+
+.cr-chart__canvas {
+    width: 100%;
+    min-width: 0;
+}
+
+.cr-chart__canvas canvas {
+    /* Chart.js sizes the canvas internally; ensure it can shrink within
+       responsive layouts and never overflow its parent. */
+    display: block;
+    max-width: 100%;
+}
+
+.cr-chart__state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 8rem;
+    padding: 1rem;
+    border: 1px dashed #d8dde6;
+    border-radius: 0.5rem;
+    background: #fafaf9;
+}
+
+.cr-chart__state_error {
+    border-color: #ba0517;
+    color: #ba0517;
+    background: #fff1f0;
+}
+
+.cr-chart__state_empty {
+    color: #706e6b;
+}

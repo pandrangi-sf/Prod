@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- PMS System --></label>
+    <name>Practice_Managment_System__c</name>
+    <picklistValues>
+        <masterLabel>ChartLogic EHR</masterLabel>
+        <translation><!-- ChartLogic EHR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CureMD</masterLabel>
+        <translation><!-- CureMD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DuxWare</masterLabel>
+        <translation><!-- DuxWare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insta HMS</masterLabel>
+        <translation><!-- Insta HMS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kareo</masterLabel>
+        <translation><!-- Kareo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LeonardoMD Renaissance</masterLabel>
+        <translation><!-- LeonardoMD Renaissance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MastermindPM</masterLabel>
+        <translation><!-- MastermindPM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MedicsPremier</masterLabel>
+        <translation><!-- MedicsPremier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medios EHR</masterLabel>
+        <translation><!-- Medios EHR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation><!-- None --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NueMD</masterLabel>
+        <translation><!-- NueMD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Practice Fusion</masterLabel>
+        <translation><!-- Practice Fusion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PracticeAdmin Practice Manager</masterLabel>
+        <translation><!-- PracticeAdmin Practice Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PracticeStudio</masterLabel>
+        <translation><!-- PracticeStudio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Waiting Room Solutions</masterLabel>
+        <translation><!-- Waiting Room Solutions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>athenaCollector</masterLabel>
+        <translation><!-- athenaCollector --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>expEDIum Medical Billing</masterLabel>
+        <translation><!-- expEDIum Medical Billing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>intake.io Insurance Verification</masterLabel>
+        <translation><!-- intake.io Insurance Verification --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>simplifyMD</masterLabel>
+        <translation><!-- simplifyMD --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

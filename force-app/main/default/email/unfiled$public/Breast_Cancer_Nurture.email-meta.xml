@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Breast Cancer Nurture</name>
+    <style>none</style>
+    <subject>Breast Cancer Nurture</subject>
+    <textOnly>Modular Template Patterns
+
+Call 321.843.7773
+
+to speak with a cancer care representative
+
+One in Eight
+
+Those are the adds of a woman being diagnosed with breast cancer during he lifetime.
+
+What your risk factor means
+
+If a breast cancer assessment shows that you have higher risk factors for developing cancer, don’t be alarmed. Those results only mean that you’ll need to be vigilant against the disease. Schedule an appointment with one of our doctors today, to detect any cancer early, when it’s easier to treat.
+
+Request and Appointment
+
+Treatment at UF Health Cancer
+Center ‒ Orlando Health
+
+Through our multidisciplinary approach, we bring together the best of many minds to provide you with solid advice, the most advanced therapies, and a treatment plan developed especially for you.
+
+Share With Family and Friends
+
+Copyright © 2014 Orlando Health  |  Privacy Policy  |  Unsubscribe</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

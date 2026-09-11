@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Competitor Employer --></label>
+    <name>Competitor_Employer__c</name>
+    <picklistValues>
+        <masterLabel>Florida Hospital</masterLabel>
+        <translation><!-- Florida Hospital --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Halifax Health Medical Center</masterLabel>
+        <translation><!-- Halifax Health Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Health First</masterLabel>
+        <translation><!-- Health First --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Heart of Florida Regional Medical Center</masterLabel>
+        <translation><!-- Heart of Florida Regional Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kindred Hospital Melbourne</masterLabel>
+        <translation><!-- Kindred Hospital Melbourne --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lakeland Regional Medical Center</masterLabel>
+        <translation><!-- Lakeland Regional Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leesburg Regional Medical Center</masterLabel>
+        <translation><!-- Leesburg Regional Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Moffit Cancer Center</masterLabel>
+        <translation><!-- Moffit Cancer Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nemours Children&apos;s Hospital</masterLabel>
+        <translation><!-- Nemours Children&apos;s Hospital --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orlando VA Medical Center</masterLabel>
+        <translation><!-- Orlando VA Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Osceola Regional Medical Center</masterLabel>
+        <translation><!-- Osceola Regional Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parrish Medical Center</masterLabel>
+        <translation><!-- Parrish Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poinciana Medical Center</masterLabel>
+        <translation><!-- Poinciana Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Select Specialty Hospital-Orlando</masterLabel>
+        <translation><!-- Select Specialty Hospital-Orlando --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>St. Cloud Regional Medical Center</masterLabel>
+        <translation><!-- St. Cloud Regional Medical Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Winter Haven Hospital, Inc.</masterLabel>
+        <translation><!-- Winter Haven Hospital, Inc. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wuesthoff Medical Center</masterLabel>
+        <translation><!-- Wuesthoff Medical Center --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

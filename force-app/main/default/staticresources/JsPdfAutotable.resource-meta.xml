@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>jspdf-autotable 3.8.4 (MIT). jsPDF table plugin; load AFTER JsPdf. Adds doc.autoTable used by c/crExporters for tabular PDF export.</description>
+</StaticResource>

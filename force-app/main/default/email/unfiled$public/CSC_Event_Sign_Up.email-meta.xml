@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sign Up Email for CSC Event Registration</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CSC Event Sign Up</name>
+    <style>none</style>
+    <subject>Thank you for registering for an event with our Cancer Support Community</subject>
+    <textOnly>Orlando Health Cancer Support Community Events
+
+Thank you for registering.
+
+Thank you for registering. We look forward to seeing you. If you have any questions or would like to cancel, please call 321.841.5056 or email us at CancerSupportCommunity@orlandohealth.com.
+
+Interested in other events?
+
+Click here or visit us at: UFHealthCancerOrlando.com/CSCEvents to register for another event.
+
+© 2017 Orlando Health, Inc.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

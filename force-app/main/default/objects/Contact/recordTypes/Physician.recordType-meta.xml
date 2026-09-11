@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Physician</fullName>
+    <active>true</active>
+    <description>Record type to be used for Physician contacts (MDs and DOs).</description>
+    <label>Physician</label>
+    <picklistValues>
+        <picklist>ACOMembership__c</picklist>
+        <values>
+            <fullName>AC Options%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AC Partners%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACC of North Central Florida%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACC of Northwest Florida%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ACMG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allcare Options%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Health Alliance%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baroma Health Partners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broward Guardian%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Florida Physicians Trust</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collaborative Care of Florida LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diag Clinic Walgreens Well Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emerald Physicians</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FPG Healthcare%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Coast Health Alliance%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florida Medical Clinic ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florida Physicians Trust%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HCP ACO CA LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Choice Care%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Point ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integral Healthcare%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrated Care Alliance%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCM ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Practitioners For AC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meridian Health Systems ACO Corporation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Millennium ACO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nature Coast ACO LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northwest Florida Health Partners LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orange AC of South Florida%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orange Accountable Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palm Beach ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paradigm ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician First ACO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physicians Collaborative Trust ACO LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PremierMD ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Care Alliance LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Partners%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reliance Health Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Florida ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St Vincents ACO LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TP-ACO LLC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Florida ACO%2C LLC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Affiliation_Group__c</picklist>
+        <values>
+            <fullName>Advent Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BayCare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HCA Hospitals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health First</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LH Employed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lakeland Regional Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nemours Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH Contracted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH Employed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH Owned Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OH Partnered Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OHN Affiliate - PPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OHN Affiliate - PPA %28PP%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OHN Affiliate - SPA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Steward Health Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tampa General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>The Villages Regional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VA Hospital</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Affiliation__c</picklist>
+        <values>
+            <fullName>Affiliated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unaffiliated</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Classification__c</picklist>
+        <values>
+            <fullName>Adult</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Competitor_Employer__c</picklist>
+        <values>
+            <fullName>Florida Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Halifax Health Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health First</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heart of Florida Regional Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kindred Hospital Melbourne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lakeland Regional Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leesburg Regional Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moffit Cancer Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nemours Children%27s Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orlando VA Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Osceola Regional Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parrish Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poinciana Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Select Specialty Hospital-Orlando</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St%2E Cloud Regional Medical Center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winter Haven Hospital%2C Inc%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wuesthoff Medical Center</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Credentials__c</picklist>
+        <values>
+            <fullName>APRN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ARNP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CNM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CRNP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DMD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBBS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_Not_Target_Reason__c</picklist>
+        <values>
+            <fullName>Location</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ownership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payer Mix</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EchoPracticeStatus__c</picklist>
+        <values>
+            <fullName>Contracted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitalist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intensivist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EchoRecordStatus__c</picklist>
+        <values>
+            <fullName>Allied Health Current</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allied Health Former</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current Medical Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former Healthcare Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Former Medical Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Honorary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leave of Absence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locum Tenens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Summary Suspension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temp Suspension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temporary Allied Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temporary Medical Staff</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EchoStaffStatus__c</picklist>
+        <values>
+            <fullName>Community Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current Medical Staff</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Type__c</picklist>
+        <values>
+            <fullName>Office Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inactive_Reason__c</picklist>
+        <values>
+            <fullName>Deceased</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moved Out of Market</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retired</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>InsurancesAccepted__c</picklist>
+        <values>
+            <fullName>TBD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OHAffiliationAgreement__c</picklist>
+        <values>
+            <fullName>Level 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not a Target</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Target%2C Discussion Stage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Target%2C Negotiation Stage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Office_Staff_Role__c</picklist>
+        <values>
+            <fullName>Office Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral Coordinator</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PNDC_Assigned__c</picklist>
+        <values>
+            <fullName>Aldrich</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alexis Grzymkowski</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ashlyn Powell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bhaavana Venkatesh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brianna Pickens</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Claire Goodwin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eda Khokhar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fornino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Katherine Dixon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MacGregor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peterson</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PRCAssigned__c</picklist>
+        <values>
+            <fullName>Arrow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hodge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hooker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Howard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kim-Breit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PreferredContactMethod__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PreferredMeetingMethod__c</picklist>
+        <values>
+            <fullName>Breakfast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dinner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Educational Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lunch</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ProfessionalSuffix__c</picklist>
+        <values>
+            <fullName>APRN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ARNP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BSN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DMD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DPM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FNP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LCSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LPN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MBA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MHA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MPH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PhD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RN</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Provider_Type__c</picklist>
+        <values>
+            <fullName>Ambulatory Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ancillary Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital Based</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inpatient Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SNF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>Alabama</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florida</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Line_Override__c</picklist>
+        <values>
+            <fullName>ACHD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bariatrics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blood and Marrow Transplant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bone Marrow Transplant and Cellular Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Burn Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cardiothoracic Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colon and Rectal Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Developmental and Behavioral Pediatrics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endocrinology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Endoscopy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gastroenterology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gynecology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infectious Diseases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maternal and Fetal Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multidisciplinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neurology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neurosurgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nutrition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obstetrics and Gynecology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occupational Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orthopaedic Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otolaryngology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palliative Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Allergy and Immunology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Anesthesia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Behavioral Health and Developmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Bone Marrow Transplant and Cellular Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Cardiac and Thoracic Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Cardiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Cardiology Interventional</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Child Protection Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Complex Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Craniomaxillofacial Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Critical Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Dermatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Endocrinology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Gastroenterology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric General Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Genetics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Hematology-Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Hematology-Oncology %28BMT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Hospitalists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Infectious Disease</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Nephrology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Neurology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Neuropsychology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Neurosurgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Occupational Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Ophthalmology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Orthopaedic Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Otolaryngology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Palliative Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Physiatry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Physical Medicine and Rehabilitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Psychiatry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Psychology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Pulmonology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Radiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Residency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Rheumatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Sports Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric Urology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric and Adolescent Gynecology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatric and Adolescent Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pediatrics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physical Medicine and Rehabilitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physical Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plastic Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Podiatry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post-Trauma Therapy and Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Psychology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pulmonology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radiation Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speech Therapy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgical Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urogynecology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Urology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vascular Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wound Care</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Interested Now%2C Follow up in Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Yet Contacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PPA Signed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

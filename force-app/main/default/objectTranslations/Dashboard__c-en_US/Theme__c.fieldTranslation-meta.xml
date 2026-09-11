@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Visual theme applied to the dashboard canvas and widget chrome (Light or Dark). Defaults to Light when unset. --></help>
+    <label><!-- Theme --></label>
+    <name>Theme__c</name>
+    <picklistValues>
+        <masterLabel>Dark</masterLabel>
+        <translation><!-- Dark --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Light</masterLabel>
+        <translation><!-- Light --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

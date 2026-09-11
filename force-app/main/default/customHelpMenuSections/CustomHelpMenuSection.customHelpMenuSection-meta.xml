@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomHelpMenuSection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customHelpMenuItems>
+        <linkUrl>https://npiregistry.cms.hhs.gov/search</linkUrl>
+        <masterLabel>NPI Registry</masterLabel>
+        <sortOrder>1</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://mqa-internet.doh.state.fl.us/MQASearchServices/HealthCareProviders/PractitionerProfileSearch</linkUrl>
+        <masterLabel>FL DOH Practitioner Profile Search</masterLabel>
+        <sortOrder>2</sortOrder>
+    </customHelpMenuItems>
+    <masterLabel>Orlando Health Resources</masterLabel>
+</CustomHelpMenuSection>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gender_Required</fullName>
+    <active>true</active>
+    <description>Gender is required for new records.</description>
+    <errorConditionFormula>AND(ISNEW(), ISBLANK(TEXT( Gender__c )))</errorConditionFormula>
+    <errorDisplayField>Gender__c</errorDisplayField>
+    <errorMessage>Gender is required for new records.</errorMessage>
+</ValidationRule>

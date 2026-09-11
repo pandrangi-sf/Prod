@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Lead to Download Onc Breast Guide</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - Oncology - Breast Campaign - DG - redesign</name>
+    <style>none</style>
+    <subject>Thank You - Download Your Free Breast Oncology Guide</subject>
+    <textOnly>To Make An Appointment Call us at 321.843.7773 Se Habla Español
+
+Download Your Guide to Understanding Breast Cancer
+
+Thank you for requesting your Guide to Understanding Breast Cancer. The guide will provide you with information on the symptoms and types of breast cancer.
+
+Schedule An Appointment With A Physician
+
+Reading the guide to breast cancer is the first step to treating this disease. If you think you or a loved one may be experiencing the symptoms of breast cancer, it is important to meet with a medical professional to learn about treatment options.
+
+Request An Appointment
+
+
+Call for more information
+
+321.843.7773
+
+Copyright © 2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

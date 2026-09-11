@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Auto Response Email to User for Appt Request on APH.com</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>APH.com Appt Request TY</name>
+    <style>none</style>
+    <subject>Thank you for your request. We will be in touch with you shortly.</subject>
+    <textOnly>Arnold Palmer Hospital For Children 
+Supported by Arnold Palmer Medical Center Foundation 
+
+321.843.2584 
+se habla espanol 
+--------------------------------------------------------- 
+
+We&apos;ll Call You Soon 
+
+At Arnold Palmer Hospital for Children, we pay careful attention to creating a comfortable, stress-free environment for children. That may be one of the reasons we&apos;re ranked among the best in seven different pediatric specialties. 
+http://www.arnoldpalmerhospital.com/news-and-events/news/arnold-palmer-hospital-named-one-of-the-best-childrens-hospitals
+
+In the next day, we&apos;ll give you a call to confirm a day and time that works for your family. 
+
+While you wait, hear from people like you. 
+http://community.arnoldpalmerhospital.com/ 
+
+--------------------------------------------------------- 
+
+Illuminate Blog 
+
+Read stories from Illuminate 
+http://www.arnoldpalmerhospital.com/blog 
+
+--------------------------------------------------------- 
+
+Volunteer 
+
+Learn how you can contribute 
+http://www.orlandohealth.com/volunteer-services/arnold-palmer-hospital-volunteer-services 
+
+--------------------------------------------------------- 
+
+Take a Tour 
+
+Enjoy a short video tour of the hospital 
+http://www.arnoldpalmerhospital.com/about-us 
+
+--------------------------------------------------------- 
+
+PRIVACY POLICY 
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices 
+
+--------------------------------------------------------- 
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806 
+
+Copyright (C) 2016 Arnold Palmer Hospital</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

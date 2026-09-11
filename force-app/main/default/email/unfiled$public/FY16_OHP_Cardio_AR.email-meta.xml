@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - OHP - Cardio - AR - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank You for Requesting a Consultation</subject>
+    <textOnly>Orlando Health | Heart Institute
+http://www.orlandohealth.com/
+
+321.841.3724
+Se habla español
+
+------------------------------------------------------------------
+
+Thank You for Requesting a Consultation
+
+Thank you for requesting a consultation with a physician at Orlando Health Heart Institute. You have taken an important step on the path to wellness!
+
+Within 48 hours, a member of the Orlando Health Heart Institute team will reach out to you to schedule your appointment. 
+
+If you have questions, please call 321.841.3724. We look forward to meeting you!
+
+------------------------------------------------------------------
+
+Find a Physician 
+Learn more about our cardiologists &gt;
+http://orlandohealthphysicians.com/cardio/Find-A-Physician.aspx
+
+Locations Near You
+Find a cardiologist that&apos;s convenient for you &gt;
+http://www.orlandohealth.com/facilities
+
+Map Your Trip
+Get directions to the Orlando Health Heart Institute &gt;
+http://www.orlandohealth.com/facilities/orlando-health-heart-institute/map-and-directions
+
+------------------------------------------------------------------
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health Heart Institute, 1222 S Orange Avenue, Orlando, FL 32806
+
+Copyright (C) 2016 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

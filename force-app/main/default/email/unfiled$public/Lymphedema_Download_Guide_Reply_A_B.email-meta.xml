@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Lead to Download Lymphedema Guide(A/B)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lymphedema Download Guide Reply (A/B)</name>
+    <style>none</style>
+    <subject>Thank You - Download Your Free Lymphedema Guide</subject>
+    <textOnly>Download Your Free Guide
+
+We&apos;re changing the way lymphedema is treated
+
+Lymphedema doesn’t have to be a chronic, long-term condition. Our Plastic and Reconstructive Surgery Center offers innovative treatment options that can reduce lymphedema pain or eliminate it altogether.
+
+Our skilled surgeons employ a revolutionary vascularized lymph node transfer procedure that involves relocating up to eight healthy lymph nodes from other parts of the body to the affected limbs. The procedure has been proven to ease lymphedema symptoms within one to two months of surgery and provide long-term, lasting results within two years of treatment.
+
+Schedule an appointment with a physician.
+
+Our surgeons are among a handful in the country — and the only in Florida — who use advanced microsurgical techniques to treat lymphedema. If you are experiencing ongoing pain or swelling, click the button below or call 321.843.7771 to request an appointment with a physician today.
+
+Copyright ©2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

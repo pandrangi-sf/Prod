@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visit_Reports_Only_Related_to_Locations</fullName>
+    <active>true</active>
+    <description>Restricts visit reports from being related to anything but a Location record.</description>
+    <errorConditionFormula>AND(OR(RecordType.DeveloperName = &quot;VisitReportPhysicianSales&quot;,RecordType.DeveloperName = &quot;Virtual_Visit_Physician_Sales&quot;), NOT(BEGINS(WhatId, &quot;a4R&quot;)))</errorConditionFormula>
+    <errorDisplayField>WhatId</errorDisplayField>
+    <errorMessage>Visit reports can only be related to Locations.</errorMessage>
+</ValidationRule>

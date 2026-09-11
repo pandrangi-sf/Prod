@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 0-23, in the org/admin time zone. Defaults to 6 if blank. --></help>
+    <label><!-- Hour Of Day --></label>
+    <name>Hour_Of_Day__c</name>
+</CustomFieldTranslation>

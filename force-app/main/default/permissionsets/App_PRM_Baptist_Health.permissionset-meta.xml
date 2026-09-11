@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>PRM_BaptistHealth</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Assigns the PRM Baptist Health app to a user.  Used for 1 off cases where the user wants the app, such as a manager.</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Event.Audience__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Location__c.Alabama_Sub_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ProviderPractice__c.Practice_Group_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.Audience__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>App: PRM Baptist Health</label>
+    <license>Salesforce</license>
+</PermissionSet>

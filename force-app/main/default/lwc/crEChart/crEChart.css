@@ -1,0 +1,6 @@
+.echart-container {
+    /* Scope browser layout/paint work to this subtree so ECharts'
+       resize-driven reflows don't cascade into sibling components. */
+    contain: layout style paint;
+    min-height: 200px;
+}

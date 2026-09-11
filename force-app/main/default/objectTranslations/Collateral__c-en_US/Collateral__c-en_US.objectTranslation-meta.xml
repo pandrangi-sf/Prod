@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Collateral</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Collaterals</value>
+    </caseValues>
+    <layouts>
+        <layout>Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- New Collateral Flow --></label>
+        <name>New_Collateral_Flow</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid month number (1-12). --></errorMessage>
+        <name>Published_Month_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Published Year must be a 4-digit year and can&apos;t be in the future. --></errorMessage>
+        <name>Published_Year</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>New</name>
+    </webLinks>
+</CustomObjectTranslation>

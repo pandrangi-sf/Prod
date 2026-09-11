@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Health Monitor — Troubleshooting</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Apex Jobs panel is empty:&lt;/strong&gt; no framework batches (class names starting with CR_) ran in the last 24 hours. That can be intentional (no nightly cron, no manual runs) or a sign the nightly cron isn&apos;t scheduled — check the Scheduled Jobs panel below.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Permission denied scheduling the nightly:&lt;/strong&gt; you need the &lt;code&gt;Run_Custom_Reporting_ETL&lt;/code&gt; custom permission. Ask your Salesforce admin to grant it via a permission set.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Recent Errors panel always empty:&lt;/strong&gt; either the framework hasn&apos;t logged any failures lately (good!) or the running user can&apos;t see Dashboard_Run__c / Dashboard_Component_Run__c records due to sharing rules. Check object access.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;ExtendedStatus is blank on a failed job:&lt;/strong&gt; some failure modes (governor-limit aborts mid-batch) don&apos;t populate ExtendedStatus. Open the job in Setup → Apex Jobs to see the platform-level message, or enable a debug log for the batch class.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Page won&apos;t load (blank panels):&lt;/strong&gt; the running user&apos;s profile lacks read access to AsyncApexJob or CronTrigger. Both require View Setup and Configuration, Author Apex, or Modify All Data.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Troubleshooting</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:warning</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">40.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crHealthMonitor</value>
+    </values>
+</CustomMetadata>

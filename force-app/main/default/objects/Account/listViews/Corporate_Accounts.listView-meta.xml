@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corporate_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>ACCOUNT.PHONE2</columns>
+    <columns>ACCOUNT.ADDRESS2_STREET</columns>
+    <columns>Sales_Stage__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>ACCOUNT.EMPLOYEES</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Corporate</value>
+    </filters>
+    <label>Corporate Accounts</label>
+    <sharedTo>
+        <group>Sys_Admin</group>
+    </sharedTo>
+</ListView>

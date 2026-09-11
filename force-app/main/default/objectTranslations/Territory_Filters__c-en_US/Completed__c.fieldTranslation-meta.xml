@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Use these geographic criteria to filter the list of providers. After selecting check off the filter complete button to indicate that there are no more changes. If you need to make any changes leave the box unchecked until completed. --></help>
+    <label><!-- Filter Complete --></label>
+    <name>Completed__c</name>
+</CustomFieldTranslation>

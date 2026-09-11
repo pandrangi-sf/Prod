@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Task.Visit_Report__r.Name. Auto-numbered Visit Report identifier. --></help>
+    <label><!-- Visit Report Number --></label>
+    <name>Visit_Report_Number__c</name>
+</CustomFieldTranslation>

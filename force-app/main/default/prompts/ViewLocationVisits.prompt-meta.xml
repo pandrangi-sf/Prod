@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>View Location Visits</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>View My Location Visits</actionButtonLabel>
+        <actionButtonLink>/lightning/o/Location_Visit__c/list?filterName=00B6e00000ABViqEAH</actionButtonLink>
+        <body>&lt;p&gt;We&apos;ve added a new feature called &lt;strong&gt;Location Visits&lt;/strong&gt; that tracks each time you visit a location.  You can now see the last time you visited a particular location, how many days since you last visited, and how many times you&apos;ve visited it in the last 90 days.  &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;You can see the &lt;strong&gt;Location Visits&lt;/strong&gt; on the related list on a Location record, or you can go directly to the Location Visits object to view all your visits together.  &lt;/p&gt;</body>
+        <customApplication>PRM</customApplication>
+        <delayDays>2</delayDays>
+        <description>Informing PRM team of the new Location Visits</description>
+        <displayType>DockedComposer</displayType>
+        <endDate>2023-06-30</endDate>
+        <header>Location Visits</header>
+        <image>PRM_Location_Visit_Information1</image>
+        <imageAltText>PRM - Location Visits Information</imageAltText>
+        <imageLocation>Bottom</imageLocation>
+        <isPublished>true</isPublished>
+        <masterLabel>View Location Visits</masterLabel>
+        <publishedDate>2023-06-15</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2023-06-15</startDate>
+        <timesToDisplay>5</timesToDisplay>
+        <title>View Location Visit Information</title>
+        <uiFormulaRule>
+            <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>Admin</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc manager</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Key}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>custom_hc prm prc user</rightValue>
+            </criteria>
+            <criteria>
+                <leftValue>{!$User.Profile.Id}</leftValue>
+                <operator>EQUAL</operator>
+                <rightValue>00ei0000000dD73AAE</rightValue>
+            </criteria>
+        </uiFormulaRule>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>SpecificProfiles</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

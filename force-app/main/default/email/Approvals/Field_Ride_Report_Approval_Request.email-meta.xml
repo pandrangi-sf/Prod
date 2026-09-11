@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email alert to PRM User of a new Field Ride Report needing approval</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Field Ride Report Approval Request</name>
+    <style>none</style>
+    <subject>You have a new Field Ride Report to review</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

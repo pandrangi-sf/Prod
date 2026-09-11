@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Idea or improvement</masterLabel>
+        <translation><!-- Idea or improvement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Question</masterLabel>
+        <translation><!-- Question --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Something is broken</masterLabel>
+        <translation><!-- Something is broken --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>What&apos;s working well</masterLabel>
+        <translation><!-- What&apos;s working well --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BH_Physician_Relations_Visit</fullName>
+    <active>true</active>
+    <description>Baptist Health PRM Visit</description>
+    <label>BH Physician Relations Visit</label>
+    <picklistValues>
+        <picklist>Audience__c</picklist>
+        <values>
+            <fullName>Office Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician to Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Practice Administrator</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Contract Overview%2F Renewal %2F Membership Solicitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OHN Resource Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OHPA Annual Wellness Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onboarding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider Intervention Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provider Support Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quarterly Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Visit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meal_With_Visit__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purpose__c</picklist>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issue Resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scheduling</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Visit_Type__c</picklist>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

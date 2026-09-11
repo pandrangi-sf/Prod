@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Notification for Proton Therapy Questions</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>OHWEB - Proton Therapy Question</name>
+    <style>none</style>
+    <subject>Orlando Health Proton Therapy -  Question Received</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

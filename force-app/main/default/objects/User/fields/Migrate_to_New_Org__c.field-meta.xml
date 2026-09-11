@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Migrate_to_New_Org__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Tracks which users we need to migrate to the new Salesforce CRM org</description>
+    <inlineHelpText>Check if this user needs to be migrated to the new Salesforce CRM org.</inlineHelpText>
+    <label>Migrate to New Org</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

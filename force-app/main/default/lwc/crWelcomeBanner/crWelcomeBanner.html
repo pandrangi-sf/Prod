@@ -1,0 +1,70 @@
+<template>
+    <template if:true={visible}>
+        <div class="welcome-banner" role="status" aria-live="polite">
+            <div class="welcome-banner__mascot">
+                <svg
+                    class="cloud"
+                    viewBox="0 0 140 120"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <defs>
+                        <linearGradient id="cloud-fill" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="100%" stop-color="#dbe9f7"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Soft ground shadow -->
+                    <ellipse cx="70" cy="105" rx="42" ry="4" fill="rgba(20, 40, 80, 0.12)"/>
+
+                    <!-- Cloud body: cluster of overlapping ellipses, animated as a group -->
+                    <g class="cloud__body">
+                        <ellipse cx="42" cy="68" rx="22" ry="20" fill="url(#cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                        <ellipse cx="72" cy="58" rx="28" ry="25" fill="url(#cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                        <ellipse cx="100" cy="68" rx="20" ry="18" fill="url(#cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                        <ellipse cx="70" cy="78" rx="36" ry="14" fill="url(#cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+
+                        <!-- Cheeks -->
+                        <circle cx="52" cy="68" r="4" fill="rgba(255, 144, 162, 0.55)"/>
+                        <circle cx="86" cy="68" r="4" fill="rgba(255, 144, 162, 0.55)"/>
+
+                        <!-- Eyes -->
+                        <circle cx="60" cy="60" r="3.5" fill="#1d3557"/>
+                        <circle cx="78" cy="60" r="3.5" fill="#1d3557"/>
+                        <!-- Eye shines -->
+                        <circle cx="61" cy="59" r="1" fill="#ffffff"/>
+                        <circle cx="79" cy="59" r="1" fill="#ffffff"/>
+
+                        <!-- Smile -->
+                        <path
+                            d="M 63 70 Q 69 76 75 70"
+                            stroke="#1d3557"
+                            stroke-width="2.4"
+                            stroke-linecap="round"
+                            fill="none"/>
+                    </g>
+
+                    <!-- Waving hand: small puffy arm offset to the right side, animated -->
+                    <g class="cloud__hand">
+                        <ellipse cx="116" cy="50" rx="8" ry="10" fill="url(#cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                        <circle cx="121" cy="42" r="5" fill="url(#cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="welcome-banner__text">
+                <p class="welcome-banner__headline">{headlineText}</p>
+                <p class="welcome-banner__sub">{subText}</p>
+            </div>
+
+            <button
+                type="button"
+                class="welcome-banner__dismiss"
+                onclick={handleDismiss}
+                title="Dismiss"
+                aria-label="Dismiss welcome">
+                <lightning-icon icon-name="utility:close" size="x-small" alternative-text="Dismiss"></lightning-icon>
+            </button>
+        </div>
+    </template>
+</template>

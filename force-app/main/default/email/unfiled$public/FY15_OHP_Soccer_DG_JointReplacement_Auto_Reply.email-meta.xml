@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - OHP - Ortho - DG - Soccer Partnership - Auto Reply</name>
+    <style>none</style>
+    <subject>Welcome to the team!</subject>
+    <textOnly>ORLANDO HEALTH ORTHOPEDIC INSTITUTE
+http://www.orlandohealthphysicians.com/orthopedics/
+
+312.841.3721 | Se habla español
+
+------------------------------------------------------------------
+
+Request a Consultation
+http://www.orlandohealthphysicians.com/orthopedics/RequestAConsultation
+
+Find a Physician
+http://www.orlandohealthphysicians.com/orthopedics/FindAPhysician.aspx
+
+------------------------------------------------------------------
+
+Welcome to the team!
+
+Everyone deserves to be treated like a pro. And, at Orlando Health, we give you the same quality of care and level of expertise as we use in our partnership with the Orlando City Soccer Club pros.
+
+Thank you for signing up for the Orlando Health soccer email program. You&apos;ll soon start receiving our periodic emails filled with useful information about soccer stretches, injury prevention and more.
+
+If you&apos;d like to learn more about our physicians, http://www.orlandohealthphysicians.com/orthopedics/FindAPhysician.aspx or call 321.841.3724.
+
+------------------------------------------------------------------
+
+Connect With Us
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)iStock, (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

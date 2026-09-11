@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Opportunity Live</label>
+    <protected>false</protected>
+    <values>
+        <field>Cache_Enabled__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Cache_TTL_Seconds__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Dataset_JSON__c</field>
+        <value xsi:type="xsd:string">{&quot;datasetKey&quot;:&quot;Opportunity_Live&quot;,&quot;mode&quot;:&quot;live&quot;,&quot;objectApiName&quot;:&quot;Opportunity&quot;,&quot;primaryObject&quot;:&quot;Opportunity&quot;,&quot;fieldPaths&quot;:[&quot;Opportunity.Name&quot;,&quot;Opportunity.StageName&quot;,&quot;Opportunity.Amount&quot;,&quot;Opportunity.CloseDate&quot;,&quot;Opportunity.Account.Name&quot;,&quot;Opportunity.Owner.Email&quot;]}</value>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">Opportunity live-query dataset. Reads directly from the Opportunity object — use when Fact_Opportunity__c is empty or stale.</value>
+    </values>
+    <values>
+        <field>Mode__c</field>
+        <value xsi:type="xsd:string">live</value>
+    </values>
+    <values>
+        <field>SObject_API_Name__c</field>
+        <value xsi:type="xsd:string">Opportunity</value>
+    </values>
+</CustomMetadata>

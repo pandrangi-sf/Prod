@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Presents key messages effectively with a compelling confident style. --></help>
+    <label><!-- 8) Presents Key Messages --></label>
+    <name>Presents_Key_Messages__c</name>
+</CustomFieldTranslation>

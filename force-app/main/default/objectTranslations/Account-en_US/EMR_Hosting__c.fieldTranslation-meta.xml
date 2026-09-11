@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- EMR Host --></label>
+    <name>EMR_Hosting__c</name>
+    <picklistValues>
+        <masterLabel>Cloud Other</masterLabel>
+        <translation><!-- Cloud Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cloud with Vendor</masterLabel>
+        <translation><!-- Cloud with Vendor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Server</masterLabel>
+        <translation><!-- Internal Server --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Staff Does Not Know</masterLabel>
+        <translation><!-- Staff Does Not Know --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

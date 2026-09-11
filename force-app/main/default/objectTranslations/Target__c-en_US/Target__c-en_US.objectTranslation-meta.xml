@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Target</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Targets</value>
+    </caseValues>
+    <layouts>
+        <layout>Target Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Target Metrics --></label>
+            <section>Target Metrics</section>
+        </sections>
+        <sections>
+            <label><!-- Visit Information --></label>
+            <section>Visit Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Update Last Visit Date --></label>
+        <name>Update_Last_Visit_Date</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Ranks --></label>
+        <name>Update_Ranks</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Sub Region is required for NSCENTRAL --></errorMessage>
+        <name>Sub_Region_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

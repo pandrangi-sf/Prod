@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Operations Manager --></label>
+    <name>PNDC_Assigned_to_P_G__c</name>
+    <picklistValues>
+        <masterLabel>Aldrich</masterLabel>
+        <translation><!-- Aldrich --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Alexis Grzymkowski</masterLabel>
+        <translation><!-- Alexis Grzymkowski --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ashlyn Powell</masterLabel>
+        <translation><!-- Ashlyn Powell --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bhaavana Venkatesh</masterLabel>
+        <translation><!-- Bhaavana Venkatesh --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brianna Pickens</masterLabel>
+        <translation><!-- Brianna Pickens --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Camejo</masterLabel>
+        <translation><!-- Camejo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Claire Goodwin</masterLabel>
+        <translation><!-- Claire Goodwin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deak</masterLabel>
+        <translation><!-- Deak --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eda Khokhar</masterLabel>
+        <translation><!-- Eda Khokhar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Katherine Dixon</masterLabel>
+        <translation><!-- Katherine Dixon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Macgregor</masterLabel>
+        <translation><!-- Macgregor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pippin</masterLabel>
+        <translation><!-- Pippin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stein</masterLabel>
+        <translation><!-- Stein --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,247 @@
+<template>
+    <c-cr-help-panel tool-key="crAllowlistManager" tool-label="Allowlist Manager"></c-cr-help-panel>
+    <div class="allowlist-shell">
+        <!-- Sticky header -->
+        <div class="allowlist-header">
+            <nav class="allowlist-breadcrumb" aria-label="Breadcrumb">
+                <span class="crumb">Vital Reports</span>
+                <lightning-icon icon-name="utility:chevronright" size="xx-small" class="crumb-sep"></lightning-icon>
+                <span class="crumb crumb_current">Reportable Objects</span>
+            </nav>
+            <div class="allowlist-title-row">
+                <div class="allowlist-title-lead">
+                    <div class="page-header__icon-wrap page-header__icon-wrap--slate">
+                        <lightning-icon icon-name="standard:custom" size="small" alternative-text="Manage Reportable Objects"></lightning-icon>
+                    </div>
+                    <div class="allowlist-title-block">
+                        <p class="allowlist-eyebrow">Allowlist</p>
+                        <h1 class="allowlist-title">Reportable Objects</h1>
+                        <p class="allowlist-sub">Control which Salesforce objects appear in the Report Builder. Toggle an object on to include it; toggle off to hide.</p>
+                    </div>
+                </div>
+                <div class="allowlist-actions">
+                    <template if:true={hasPending}>
+                        <span class="allowlist-status-pill allowlist-status-pill_dirty">{pendingChangesCount} unsaved</span>
+                    </template>
+                    <c-cr-save-button
+                        label="Save Changes"
+                        icon-name="utility:save"
+                        variant="brand"
+                        onclick={handleSave}
+                        disabled={saveDisabled}>
+                    </c-cr-save-button>
+                    <lightning-button-icon
+                        icon-name="utility:question"
+                        alternative-text="Help"
+                        title="Help and tips"
+                        variant="border-filled"
+                        onclick={openHelpPanel}>
+                    </lightning-button-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="allowlist-body">
+            <!-- Toolbar: search + bulk actions -->
+            <div class="allowlist-toolbar">
+                <div class="toolbar-search">
+                    <lightning-input
+                        type="search"
+                        label="Search"
+                        variant="label-hidden"
+                        placeholder="Search by label or API name…"
+                        value={searchTerm}
+                        onchange={handleSearch}>
+                    </lightning-input>
+                </div>
+                <div class="toolbar-bulk">
+                    <lightning-button
+                        label="Auto-populate"
+                        icon-name="utility:magicwand"
+                        variant="neutral"
+                        onclick={handleAutoPopulate}
+                        disabled={busy}>
+                    </lightning-button>
+                    <lightning-button
+                        label="Clear All"
+                        icon-name="utility:clear"
+                        variant="destructive-text"
+                        onclick={handleClearAll}
+                        disabled={busy}>
+                    </lightning-button>
+                </div>
+            </div>
+
+            <!-- Filter pills with counts -->
+            <div class="filter-pills" role="tablist" aria-label="Filter by status">
+                <template for:each={filterPills} for:item="pill">
+                    <button key={pill.mode}
+                        type="button"
+                        class={pill.class}
+                        data-mode={pill.mode}
+                        onclick={handleFilterPill}
+                        role="tab"
+                        aria-selected={pill.selected}>
+                        <span class="filter-pill__label">{pill.label}</span>
+                        <span class="filter-pill__count">{pill.count}</span>
+                    </button>
+                </template>
+            </div>
+
+            <template if:true={busy}>
+                <div class="busy-row">
+                    <lightning-spinner alternative-text="Loading objects" size="small" variant="brand"></lightning-spinner>
+                    <span>Loading objects…</span>
+                </div>
+            </template>
+
+            <template if:true={loadError}>
+                <div class="load-error" role="alert">
+                    <lightning-icon icon-name="utility:error" size="x-small" variant="error"></lightning-icon>
+                    <span>{loadError}</span>
+                </div>
+            </template>
+
+            <!-- Pending changes panel: visible confirmation that toggles were captured -->
+            <template if:true={hasPending}>
+                <div class="pending-panel" role="status">
+                    <div class="pending-panel__header">
+                        <span class="pending-panel__title">
+                            <lightning-icon icon-name="utility:edit" size="x-small" variant="warning"></lightning-icon>
+                            <strong>{pendingChangesCount} unsaved change(s)</strong> — click <strong>Save Changes</strong> to apply.
+                        </span>
+                        <lightning-button
+                            label="Discard"
+                            icon-name="utility:undo"
+                            variant="neutral"
+                            onclick={handleDiscardPending}>
+                        </lightning-button>
+                    </div>
+                    <ul class="pending-panel__list">
+                        <template for:each={pendingItems} for:item="item">
+                            <li key={item.apiName} class="pending-panel__item">
+                                <span class={item.actionClass}>{item.actionLabel}</span>
+                                <span class="pending-panel__obj-label">{item.label}</span>
+                                <code class="pending-panel__obj-api">{item.apiName}</code>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+
+            <!-- Card list -->
+            <template if:true={hasVisibleRows}>
+                <ul class="object-list" role="list">
+                    <template for:each={visibleRows} for:item="row">
+                        <li key={row.apiName} class={row.cardClass}>
+                            <div class="object-toggle">
+                                <lightning-input
+                                    type="toggle"
+                                    variant="label-hidden"
+                                    label={row.toggleLabel}
+                                    message-toggle-active="On"
+                                    message-toggle-inactive="Off"
+                                    checked={row.active}
+                                    name={row.apiName}
+                                    value={row.apiName}
+                                    data-api={row.apiName}
+                                    onchange={handleActiveToggle}>
+                                </lightning-input>
+                            </div>
+                            <div class="object-info">
+                                <div class="object-name-row">
+                                    <span class="object-label">{row.label}</span>
+                                    <template if:true={row.custom}>
+                                        <span class="object-badge object-badge_custom">Custom</span>
+                                    </template>
+                                </div>
+                                <code class="object-api">{row.apiName}</code>
+                            </div>
+                            <template if:true={row.active}>
+                                <div class="object-category">
+                                    <lightning-combobox
+                                        variant="label-hidden"
+                                        label="Category"
+                                        value={row.category}
+                                        options={categoryOptions}
+                                        data-api={row.apiName}
+                                        onchange={handleCategoryChange}>
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                            <div class="object-status">
+                                <c-cr-status-badge label={row.statusLabel} tone={row.statusTone} dot></c-cr-status-badge>
+                            </div>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={hasVisibleRows}>
+                <template if:false={busy}>
+                    <div class="empty-list">
+                        <div class="empty-list__icon">
+                            <lightning-icon icon-name={emptyIcon} size="medium" variant="inverse"></lightning-icon>
+                        </div>
+                        <h2 class="empty-list__title">{emptyTitle}</h2>
+                        <p class="empty-list__copy">{emptyCopy}</p>
+                        <template if:true={emptyShowAvailableButton}>
+                            <lightning-button
+                                variant="brand"
+                                icon-name="utility:add"
+                                label="Browse available objects"
+                                data-mode="out"
+                                onclick={handleFilterPill}
+                                class="slds-m-top_small">
+                            </lightning-button>
+                        </template>
+                    </div>
+                </template>
+            </template>
+
+            <!-- Pagination -->
+            <template if:true={hasVisibleRows}>
+                <div class="pagination">
+                    <span class="pagination__label">{pageLabel}</span>
+                    <div class="pagination__controls">
+                        <lightning-button-icon
+                            icon-name="utility:jump_to_left"
+                            alternative-text="First page"
+                            size="small"
+                            onclick={handleFirstPage}
+                            disabled={prevDisabled}>
+                        </lightning-button-icon>
+                        <lightning-button-icon
+                            icon-name="utility:chevronleft"
+                            alternative-text="Previous page"
+                            size="small"
+                            onclick={handlePrevPage}
+                            disabled={prevDisabled}>
+                        </lightning-button-icon>
+                        <lightning-button-icon
+                            icon-name="utility:chevronright"
+                            alternative-text="Next page"
+                            size="small"
+                            onclick={handleNextPage}
+                            disabled={nextDisabled}>
+                        </lightning-button-icon>
+                        <lightning-button-icon
+                            icon-name="utility:jump_to_right"
+                            alternative-text="Last page"
+                            size="small"
+                            onclick={handleLastPage}
+                            disabled={nextDisabled}>
+                        </lightning-button-icon>
+                    </div>
+                    <lightning-combobox
+                        variant="label-hidden"
+                        label="Page size"
+                        value={pageSizeValue}
+                        options={pageSizeOptions}
+                        onchange={handlePageSizeChange}
+                        class="pagination__page-size">
+                    </lightning-combobox>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

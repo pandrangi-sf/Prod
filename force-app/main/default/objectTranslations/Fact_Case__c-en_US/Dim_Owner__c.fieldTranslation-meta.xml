@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Lookup to the dimension record used for denormalized analytics joins. --></help>
+    <label><!-- Dim Owner --></label>
+    <name>Dim_Owner__c</name>
+    <relationshipLabel><!-- Owned Fact Cases --></relationshipLabel>
+</CustomFieldTranslation>

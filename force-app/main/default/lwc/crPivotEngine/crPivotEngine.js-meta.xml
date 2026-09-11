@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>Vital Reports Pivot Engine</masterLabel>
+    <description>Pure utility module. Computes a pivot/cross-tab ({columns, rows} in, {columns, rows} out) from a report result given a rows field, optional columns field, measure field, and aggregation — rendered through c-cr-data-grid.</description>
+</LightningComponentBundle>

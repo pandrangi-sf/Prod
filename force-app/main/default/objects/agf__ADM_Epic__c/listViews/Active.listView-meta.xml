@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active</fullName>
+    <columns>agf__Priority__c</columns>
+    <columns>NAME</columns>
+    <columns>agf__Description__c</columns>
+    <columns>agf__Project__c</columns>
+    <columns>agf__Team__c</columns>
+    <columns>agf__Health__c</columns>
+    <columns>agf__T_Shirt_Size__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>agf__Health__c</field>
+        <operation>notEqual</operation>
+        <value>Completed,Canceled</value>
+    </filters>
+    <label>Active</label>
+</ListView>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Thank you for your subscription.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - OHP - Cardio - Welcome</name>
+    <style>none</style>
+    <subject>Thank you for subscribing!</subject>
+    <textOnly>Orlando Health Physicians
+http://www.orlandohealthphysicians.com/cardio/default.aspx
+
+------------------------------------------------------------------
+
+Call to schedule an appointment 321.841.3724
+
+------------------------------------------------------------------
+
+FIND A PHYSICIAN 
+http://www.orlandohealthphysicians.com/cardio/physicianlist.aspx 
+
+DOWNLOAD A GUIDE 
+http://www.orlandohealthphysicians.com/cardio/Pdfs/OrlandoHealth_HeartDiseasePreventionGuide.pdf
+
+SHARE YOUR STORY 
+http://orlandohealthstories.com
+
+------------------------------------------------------------------
+
+CONNECT TO HEALTH 
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Pinterest
+http://www.pinterest.com/orlandohealth/ 
+
+LinkedIn
+https://www.linkedin.com/company/orlando-health?trk=cws-cpw-coname-0-0 
+
+------------------------------------------------------------------
+
+Welcome
+
+Thank you for subscribing to learn how Orlando Health Physicians can help you stay healthy so you can focus on doing the things you love. Look for more information about how you and your family will benefit from expert, coordinated care and access to the newest treatments offered locally.
+
+------------------------------------------------------------------
+
+Did you find your physician?
+
+Call Orlando Health Physicians at 321.841.3724 today to schedule an appointment. For more information, 
+http://www.orlandohealthphysicians.com/cardio/Pdfs/OrlandoHealth_HeartDiseasePreventionGuide.pdf 
+download your Healthcare Guide.
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806 
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)Thinkstock, (c)iStock, (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

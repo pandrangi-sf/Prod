@@ -1,0 +1,410 @@
+<template>
+    <c-cr-welcome-banner tool-name="Report Builder"></c-cr-welcome-banner>
+    <c-cr-help-panel tool-key="crReportBuilder" tool-label="Report Builder"></c-cr-help-panel>
+    <lightning-card>
+        <div slot="title" class="page-header__title-block">
+            <div class="page-header__icon-wrap page-header__icon-wrap--purple">
+                <lightning-icon icon-name="standard:work_order" size="small" alternative-text="Report Builder"></lightning-icon>
+            </div>
+            <h1 class="page-header__title">Report Builder</h1>
+        </div>
+        <lightning-button-icon
+            slot="actions"
+            icon-name="utility:question"
+            alternative-text="Help"
+            title="Help and tips"
+            variant="border-filled"
+            onclick={openHelpPanel}>
+        </lightning-button-icon>
+        <div class="slds-p-around_medium">
+            <div class="builder-header">
+                <c-cr-report-builder-stepper
+                    current-step={currentStep}
+                    hide-navigation={isOnLauncher}
+                    onstepchange={handleStepChange}>
+                    <template if:true={showBuilderChrome}>
+                        <lightning-button
+                            slot="actions"
+                            label="Clear"
+                            icon-name="utility:refresh"
+                            variant="neutral"
+                            onclick={clearBuilder}>
+                        </lightning-button>
+                    </template>
+                </c-cr-report-builder-stepper>
+            </div>
+
+            <template if:true={showBuilderContent}>
+                <div class="builder-workspace slds-m-top_medium" style={builderLayoutStyle}>
+                    <main class="builder-main">
+                        <template if:true={isStepData}>
+                            <!-- Launcher: 4-card mode picker -->
+                            <template if:true={isSubstepLauncher}>
+                                <div class="launcher">
+                                    <div class="region-toggles">
+                                        <span class="region-toggles__label">Region filter:</span>
+                                        <button
+                                            type="button"
+                                            class={floridaPillClass}
+                                            aria-pressed={regionFlorida}
+                                            onclick={handleFloridaToggle}>
+                                            <lightning-icon icon-name="utility:check" size="xx-small" class="region-pill__check"></lightning-icon>
+                                            <span>Florida</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class={alabamaPillClass}
+                                            aria-pressed={regionAlabama}
+                                            onclick={handleAlabamaToggle}>
+                                            <lightning-icon icon-name="utility:check" size="xx-small" class="region-pill__check"></lightning-icon>
+                                            <span>Alabama</span>
+                                        </button>
+                                    </div>
+                                    <header class="launcher__header">
+                                        <h2 class="slds-text-heading_medium">Choose a starting point</h2>
+                                        <p class="slds-text-body_regular slds-text-color_weak">Pick the path that matches what you want to build. You can switch later.</p>
+                                    </header>
+                                    <div class="launcher__grid">
+                                        <template for:each={launcherCards} for:item="card">
+                                            <button key={card.key}
+                                                type="button"
+                                                class="launcher-card"
+                                                data-key={card.key}
+                                                aria-label={card.title}
+                                                onclick={handleLauncherCardClick}>
+                                                <div class={card.iconWrapClass}>
+                                                    <lightning-icon icon-name={card.icon} size="small"></lightning-icon>
+                                                </div>
+                                                <template if:true={card.badge}>
+                                                    <span class={card.badgeClass}>{card.badge}</span>
+                                                </template>
+                                                <h3 class="launcher-card__title">{card.title}</h3>
+                                                <p class="launcher-card__desc">{card.description}</p>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <!-- Sub-step: Template gallery -->
+                            <template if:true={isSubstepTemplate}>
+                                <div class="substep">
+                                    <div class="substep__header">
+                                        <lightning-button-icon icon-name="utility:back" alternative-text="Back" onclick={handleBackToLauncher} variant="bare"></lightning-button-icon>
+                                        <div>
+                                            <h2 class="slds-text-heading_medium">Pick a template</h2>
+                                            <p class="slds-text-body_small slds-text-color_weak">Each template includes pre-selected fields and filters. You can adjust everything in later steps.</p>
+                                        </div>
+                                    </div>
+                                    <div class="gallery gallery_tiles">
+                                        <template for:each={templateGalleryItems} for:item="item">
+                                            <button key={item.value}
+                                                type="button"
+                                                class={item.cardClass}
+                                                data-value={item.value}
+                                                aria-label={item.title}
+                                                title={item.description}
+                                                onclick={handleTemplateCardClick}>
+                                                <div class="gallery-card__icon">
+                                                    <lightning-icon icon-name={item.icon} size="medium"></lightning-icon>
+                                                </div>
+                                                <div class="gallery-card__body">
+                                                    <div class="gallery-card__title-row">
+                                                        <span class="gallery-card__title">{item.title}</span>
+                                                        <template if:true={item.isRecommended}>
+                                                            <span class="gallery-card__tag">Recommended</span>
+                                                        </template>
+                                                    </div>
+                                                    <p class="gallery-card__desc">{item.description}</p>
+                                                </div>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <!-- Sub-step: Clone an existing report -->
+                            <template if:true={isSubstepClone}>
+                                <div class="substep">
+                                    <div class="substep__header">
+                                        <lightning-button-icon icon-name="utility:back" alternative-text="Back" onclick={handleBackToLauncher} variant="bare"></lightning-button-icon>
+                                        <div>
+                                            <h2 class="slds-text-heading_medium">Clone an existing report</h2>
+                                            <p class="slds-text-body_small slds-text-color_weak">Pick a saved report to copy. The clone is independent — saving it does not modify the source.</p>
+                                        </div>
+                                    </div>
+                                    <lightning-input
+                                        type="search"
+                                        label="Search saved reports"
+                                        variant="label-hidden"
+                                        placeholder="Search by name, folder, or category…"
+                                        value={cloneSearchTerm}
+                                        oninput={handleCloneSearchChange}
+                                        onchange={handleCloneSearchChange}
+                                        class="slds-m-bottom_small">
+                                    </lightning-input>
+                                    <template if:true={hasCloneItems}>
+                                        <div class="gallery gallery_tiles">
+                                            <template for:each={cloneGalleryItems} for:item="item">
+                                                <button key={item.id}
+                                                    type="button"
+                                                    class={item.cardClass}
+                                                    data-id={item.id}
+                                                    title={item.metaLine}
+                                                    onclick={handleCloneCardClick}>
+                                                    <div class="gallery-card__icon">
+                                                        <lightning-icon icon-name="utility:copy" size="medium"></lightning-icon>
+                                                    </div>
+                                                    <div class="gallery-card__body">
+                                                        <span class="gallery-card__title">{item.title}</span>
+                                                        <p class="gallery-card__desc">{item.metaLine}</p>
+                                                    </div>
+                                                </button>
+                                            </template>
+                                        </div>
+                                    </template>
+                                    <template if:false={hasCloneItems}>
+                                        <div class="gallery-empty">
+                                            <p class="slds-text-color_weak">{cloneEmptyLabel}</p>
+                                        </div>
+                                    </template>
+                                </div>
+                            </template>
+
+                            <!-- Sub-step: Import from a Standard Salesforce report -->
+                            <template if:true={isSubstepImport}>
+                                <div class="substep">
+                                    <div class="substep__header">
+                                        <lightning-button-icon icon-name="utility:back" alternative-text="Back" onclick={handleBackToLauncher} variant="bare"></lightning-button-icon>
+                                        <div>
+                                            <h2 class="slds-text-heading_medium">Import from a Standard Report</h2>
+                                            <p class="slds-text-body_small slds-text-color_weak">Pull a native Salesforce report's structure into the builder. You'll review unsupported items in later steps.</p>
+                                        </div>
+                                    </div>
+                                    <c-cr-standard-report-picker onimport={handleStandardReportImport}></c-cr-standard-report-picker>
+                                </div>
+                            </template>
+
+                            <!-- Sub-step: Create a custom (ad-hoc) report from scratch -->
+                            <template if:true={isSubstepBlank}>
+                                <div class="substep">
+                                    <div class="substep__header">
+                                        <lightning-button-icon icon-name="utility:back" alternative-text="Back" onclick={handleBackToLauncher} variant="bare"></lightning-button-icon>
+                                        <div>
+                                            <h2 class="slds-text-heading_medium">Create a custom report</h2>
+                                            <p class="slds-text-body_small slds-text-color_weak">Ad hoc mode — set the basics, then continue to the Columns step to pick your primary object and fields.</p>
+                                        </div>
+                                    </div>
+                                    <div class="builder-grid">
+                                        <lightning-input label="Report Name"
+                                            field-level-help="Display name for the saved custom report definition."
+                                            value={reportName} onchange={handleNameChange}
+                                            required>
+                                        </lightning-input>
+                                        <lightning-input label="Folder"
+                                            field-level-help="Logical folder label used to organize reports."
+                                            value={folder} onchange={handleFolderChange}>
+                                        </lightning-input>
+                                        <lightning-input label="Category"
+                                            field-level-help="Optional category for filtering and organizing reports."
+                                            value={category} onchange={handleCategoryChange}>
+                                        </lightning-input>
+                                        <lightning-textarea label="Description"
+                                            field-level-help="Short description shown in the report list. Up to 1,000 characters."
+                                            value={description} onchange={handleDescriptionChange}
+                                            max-length="1000">
+                                        </lightning-textarea>
+                                        <lightning-input type="checkbox" label="Public"
+                                            field-level-help="Marks this report as public within the framework."
+                                            checked={isPublic} onchange={handlePublicChange}>
+                                        </lightning-input>
+                                        <c-cr-dataset-picker
+                                            locked-source-type="adhoc"
+                                            ondatasetchange={handleDatasetChange}>
+                                        </c-cr-dataset-picker>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <!-- Sub-step: Pick a curated dataset (locked to curated source type) -->
+                            <template if:true={isSubstepCurated}>
+                                <div class="substep">
+                                    <div class="substep__header">
+                                        <lightning-button-icon icon-name="utility:back" alternative-text="Back" onclick={handleBackToLauncher} variant="bare"></lightning-button-icon>
+                                        <div>
+                                            <h2 class="slds-text-heading_medium">Pick a curated dataset</h2>
+                                            <p class="slds-text-body_small slds-text-color_weak">Maintained, pre-modeled datasets like Fact Opportunity. Picking one auto-advances to the Columns step.</p>
+                                        </div>
+                                    </div>
+                                    <div class="builder-grid">
+                                        <lightning-input label="Report Name"
+                                            field-level-help="Display name for the saved custom report definition."
+                                            value={reportName} onchange={handleNameChange}
+                                            required>
+                                        </lightning-input>
+                                        <lightning-input label="Folder"
+                                            field-level-help="Logical folder label used to organize reports."
+                                            value={folder} onchange={handleFolderChange}>
+                                        </lightning-input>
+                                        <lightning-input label="Category"
+                                            field-level-help="Optional category for filtering and organizing reports."
+                                            value={category} onchange={handleCategoryChange}>
+                                        </lightning-input>
+                                        <lightning-textarea label="Description"
+                                            field-level-help="Short description shown in the report list. Up to 1,000 characters."
+                                            value={description} onchange={handleDescriptionChange}
+                                            max-length="1000">
+                                        </lightning-textarea>
+                                        <lightning-input type="checkbox" label="Public"
+                                            field-level-help="Marks this report as public within the framework."
+                                            checked={isPublic} onchange={handlePublicChange}>
+                                        </lightning-input>
+                                        <c-cr-dataset-picker
+                                            locked-source-type="curated"
+                                            ondatasetchange={handleDatasetChange}>
+                                        </c-cr-dataset-picker>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+
+                        <template if:true={isStepColumns}>
+                            <template if:true={importNeedsBaseObject}>
+                                <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning slds-m-bottom_small" role="alert">
+                                    <span class="slds-assistive-text">warning</span>
+                                    <span class="slds-icon_container slds-icon-utility-warning slds-m-right_x-small" title="Warning">
+                                        <lightning-icon icon-name="utility:warning" size="x-small" variant="inverse"></lightning-icon>
+                                    </span>
+                                    <h2>Pick a base object before saving - the imported report uses a Custom Report Type that is not directly queryable.</h2>
+                                </div>
+                            </template>
+                            <c-cr-object-field-selector
+                                primary-object={primaryObjectForChild}
+                                initial-related-relationships={initialRelatedRelationships}
+                                initial-field-paths={initialFieldPaths}
+                                ondatasetchange={handleDatasetChange}>
+                            </c-cr-object-field-selector>
+                        </template>
+
+                        <template if:true={isStepFilters}>
+                            <c-cr-filter-builder
+                                primary-object={primaryObjectForChild}
+                                field-metadata={fieldMetadata}
+                                initial-json={filtersJson}
+                                onfilterschange={handleFiltersChange}>
+                            </c-cr-filter-builder>
+                        </template>
+
+                        <template if:true={isStepGroup}>
+                            <div class="builder-grid">
+                                <template if:true={hasImportReviewItems}>
+                                    <div class="slds-box slds-theme_alert-texture slds-theme_warning import-review">
+                                        <p class="slds-text-title_caps slds-m-bottom_x-small">Imported items needing review</p>
+                                        <template for:each={importReviewRows} for:item="item">
+                                            <div key={item.id} class={item.cssClass}>
+                                                <lightning-badge label={item.badge}></lightning-badge>
+                                                <strong class="slds-m-left_x-small">{item.title}</strong>
+                                                <p class="slds-text-body_small slds-m-top_xx-small">{item.detail}</p>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <c-cr-groupings-builder
+                                    primary-object={primaryObject}
+                                    field-metadata={fieldMetadata}
+                                    initial-json={groupingsJson}
+                                    ongroupingschange={handleGroupingsChange}>
+                                </c-cr-groupings-builder>
+
+                                <c-cr-aggregations-builder
+                                    primary-object={primaryObject}
+                                    field-metadata={fieldMetadata}
+                                    initial-json={aggregationsJson}
+                                    onaggregationschange={handleAggregationsChange}>
+                                </c-cr-aggregations-builder>
+
+                                <c-cr-formula-editor
+                                    primary-object={primaryObject}
+                                    field-metadata={fieldMetadata}
+                                    initial-json={formulasJson}
+                                    onformulaschange={handleFormulasChange}>
+                                </c-cr-formula-editor>
+
+                                <c-cr-buckets-builder
+                                    primary-object={primaryObject}
+                                    field-metadata={fieldMetadata}
+                                    initial-json={bucketsJson}
+                                    onbucketschange={handleBucketsChange}>
+                                </c-cr-buckets-builder>
+                            </div>
+                        </template>
+
+                        <template if:true={isStepVisualize}>
+                            <lightning-combobox label="Chart Type"
+                                field-level-help="Default visualization type used by the report viewer and dashboard components."
+                                value={chartType} options={chartOptions} onchange={handleChartChange}>
+                            </lightning-combobox>
+                        </template>
+
+                        <template if:true={isStepSave}>
+                            <div class="builder-grid">
+                                <div class="slds-box slds-theme_shade">
+                                    <p class="slds-text-title_caps slds-text-color_weak slds-m-bottom_x-small">
+                                        Ready to save
+                                    </p>
+                                    <ul class="slds-list_dotted">
+                                        <template for:each={requirementsList} for:item="req">
+                                            <li key={req.label} class={req.cssClass}>
+                                                {req.icon} {req.label}
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                                <lightning-textarea label="Report Definition JSON"
+                                    field-level-help="Complete generated report blueprint saved to Report_Definition__c.Definition_JSON__c."
+                                    value={definitionJson} readonly>
+                                </lightning-textarea>
+                                <div class="actions">
+                                    <c-cr-save-button
+                                        label="Save Report"
+                                        icon-name="utility:save"
+                                        variant="brand"
+                                        disabled={saveDisabled}
+                                        tooltip={saveTooltip}
+                                        onclick={save}>
+                                    </c-cr-save-button>
+                                </div>
+                            </div>
+                        </template>
+                    </main>
+
+                    <template if:true={showBuilderChrome}>
+                        <div
+                            class="preview-resizer"
+                            role="separator"
+                            aria-label="Resize live preview"
+                            aria-orientation="vertical"
+                            title="Drag to resize preview"
+                            onmousedown={startPreviewResize}
+                            ondblclick={resetPreviewWidth}>
+                        </div>
+
+                        <aside class="preview-pane">
+                            <template if:true={previewMounted}>
+                                <c-cr-report-live-preview definition-json={definitionJson}></c-cr-report-live-preview>
+                            </template>
+                            <template if:false={previewMounted}>
+                                <div class="slds-box slds-text-color_weak">
+                                    <p class="slds-text-title_caps">Live Preview</p>
+                                    <p class="slds-text-body_small">Loading...</p>
+                                </div>
+                            </template>
+                        </aside>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

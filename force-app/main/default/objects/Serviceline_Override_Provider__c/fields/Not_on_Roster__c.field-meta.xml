@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_on_Roster__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Provider not on the OH provider roster</inlineHelpText>
+    <label>Not on Roster</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

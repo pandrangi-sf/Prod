@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ready_to_Import</fullName>
+    <columns>NAME</columns>
+    <columns>NPI__c</columns>
+    <columns>Serviceline_Override__c</columns>
+    <columns>First_Name__c</columns>
+    <columns>Middle_Initial__c</columns>
+    <columns>Last_Name__c</columns>
+    <columns>Gender__c</columns>
+    <columns>Credentials__c</columns>
+    <columns>Provider_Type__c</columns>
+    <columns>Affiliation__c</columns>
+    <columns>Affiliation_Group__c</columns>
+    <columns>Specialty__c</columns>
+    <columns>Clinic_Facility_Name__c</columns>
+    <columns>Practice_Group__c</columns>
+    <columns>Primary_Location__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Ready for Import</value>
+    </filters>
+    <label>Ready to Import</label>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Include = explicit org-level addition on top of the template-derived defaults. Exclude = remove a default-included entry from the effective allowlist. Use Include for org-specific objects; use Exclude to hide a default entry. --></help>
+    <label><!-- Action --></label>
+    <name>Action__c</name>
+    <picklistValues>
+        <masterLabel>Exclude</masterLabel>
+        <translation><!-- Exclude --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Include</masterLabel>
+        <translation><!-- Include --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The Report Folder record this report belongs to. During migration this mirrors the legacy Folder text field; it becomes the sharing boundary in Stage 2. --></help>
+    <label><!-- Folder (Record) --></label>
+    <name>Folder_Ref__c</name>
+    <relationshipLabel><!-- Reports --></relationshipLabel>
+</CustomFieldTranslation>

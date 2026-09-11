@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Zone_4_Locations</fullName>
+    <columns>NAME</columns>
+    <columns>Territory__c</columns>
+    <columns>Location__c</columns>
+    <columns>Zone_Name__c</columns>
+    <columns>LastVisitDate__c</columns>
+    <columns>Last_Visit_Group__c</columns>
+    <columns>Zoned_Location_Address__c</columns>
+    <columns>Zoned_Location_City__c</columns>
+    <columns>Zoned_Location_Zip__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Zone_Name__c</field>
+        <operation>equals</operation>
+        <value>ZONE4</value>
+    </filters>
+    <label>My Zone 4 Locations</label>
+</ListView>

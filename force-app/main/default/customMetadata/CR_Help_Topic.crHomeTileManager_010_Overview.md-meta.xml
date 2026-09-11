@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Manage Home Tiles — Overview</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;This tab controls the tiles on the Vital Reports &lt;strong&gt;Home&lt;/strong&gt; page.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;New Tile&lt;/strong&gt; — add a tile: give it a label, an SLDS icon (e.g. standard:report), a target tab, a color, and a display order.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Audience&lt;/strong&gt; — Both shows the tile to everyone, User to non-admins only, Admin to users with the Vital Reports Admin View permission.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Show / Hide&lt;/strong&gt; — the toggle activates or hides a tile without deleting it; &lt;strong&gt;Delete&lt;/strong&gt; removes it for good.&lt;/li&gt;&lt;li&gt;A tile is automatically hidden from anyone who can&apos;t see its target tab, so it never shows as a broken link.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Changes apply on the next Home page load (a hard refresh clears the cache).&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Managing the Home launchpad</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:layout</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crHomeTileManager</value>
+    </values>
+</CustomMetadata>

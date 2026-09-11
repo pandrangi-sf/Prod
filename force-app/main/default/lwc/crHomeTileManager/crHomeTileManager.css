@@ -1,0 +1,83 @@
+.htm-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.htm-form {
+    background: #fbfcfe;
+    border-radius: 0.5rem;
+}
+.htm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem 1rem;
+    align-items: end;
+}
+
+/* ===== Icon + color pickers ===== */
+.htm-picker {
+    margin-top: 1rem;
+}
+.htm-picker__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.35rem;
+}
+.htm-icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+.htm-icon-choice {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 1px solid #d8dde6;
+    border-radius: 0.4rem;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.htm-icon-choice:hover { border-color: #0070d2; background: #f3f8ff; }
+.htm-icon-choice:focus-visible { outline: none; box-shadow: 0 0 0 2px #1b5cab; }
+.htm-icon-choice_on {
+    border-color: #0070d2;
+    background: #e8f0fc;
+    box-shadow: 0 0 0 1px #0070d2;
+}
+.htm-picker__advanced { max-width: 320px; }
+
+.htm-swatch-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.htm-swatch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.12s ease, transform 0.1s ease;
+}
+.htm-swatch:hover { transform: scale(1.08); }
+.htm-swatch:focus-visible { outline: none; border-color: #1b5cab; }
+.htm-swatch_on { border-color: #16325c; }
+.htm-swatch__dot {
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Dark-mode overrides for this tab are held (not in UAT/main); re-apply with the
+   dark-theme resume. Picker base styles above are theme-independent. */

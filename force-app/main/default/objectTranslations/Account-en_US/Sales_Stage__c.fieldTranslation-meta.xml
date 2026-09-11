@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sales Stage --></label>
+    <name>Sales_Stage__c</name>
+    <picklistValues>
+        <masterLabel>Contacted - Not Interested in Meeting</masterLabel>
+        <translation><!-- Contacted - Not Interested in Meeting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contacted - Not Qualified</masterLabel>
+        <translation><!-- Contacted - Not Qualified --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contacted - Receptive to Meetings</masterLabel>
+        <translation><!-- Contacted - Receptive to Meetings --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Yet Contacted</masterLabel>
+        <translation><!-- Not Yet Contacted --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

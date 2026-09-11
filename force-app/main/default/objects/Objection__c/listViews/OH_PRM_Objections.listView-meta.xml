@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OH_PRM_Objections</fullName>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Active__c</columns>
+    <columns>Network_Objection__c</columns>
+    <columns>OH_PRM_Objection__c</columns>
+    <columns>BH_PRM_Objection__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OH_PRM_Objection__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>OH PRM Objections</label>
+</ListView>

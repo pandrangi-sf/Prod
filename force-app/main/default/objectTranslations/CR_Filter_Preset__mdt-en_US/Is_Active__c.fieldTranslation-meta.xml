@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Uncheck to hide a preset from the dropdown without deleting it. --></help>
+    <label><!-- Is Active --></label>
+    <name>Is_Active__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,21 @@
+.aggregations-builder {
+    padding: 0.5rem 0;
+}
+
+.aggregation-row {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.aggregation-row:last-of-type {
+    border-bottom: none;
+}
+
+.row-index {
+    width: 2rem;
+    text-align: center;
+}
+
+.advanced-json summary {
+    cursor: pointer;
+}

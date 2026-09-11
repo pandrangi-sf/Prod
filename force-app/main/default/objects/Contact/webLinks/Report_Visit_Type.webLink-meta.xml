@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Visit_Type</fullName>
+    <availability>online</availability>
+    <description>Report Visit Type</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Report Visit Type</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/setup/ui/recordtypeselect.jsp?ent=Task&amp;retURL=%2F{!Contact.Id}&amp;save_new_url=%2F00T%2Fe%3Ftitle=Visit%20Report%26who_id={!Contact.Id}%26tsk5=Visit%20Report%26retURL%3D%252F003i0000021b8Vz</url>
+</WebLink>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Reminder to make an appointment</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>FY15 - OHP - Primary Care - Appointment Reminder</name>
+    <style>none</style>
+    <subject>Don’t forget to make your appointment!</subject>
+    <textOnly>Orlando Health Physicians
+http://www.orlandohealthphysicians.com/primarycare/default.aspx
+
+------------------------------------------------------------------
+
+Call to schedule an appointment 321.841.3724
+
+------------------------------------------------------------------
+
+FIND A PHYSICIAN 
+http://www.orlandohealthphysicians.com/primarycare/physicianlist.aspx 
+
+DOWNLOAD A GUIDE 
+http://www.orlandohealthphysicians.com/primarycare/Pdfs/FINAL%2010526%20OHP%20Preventative%20Care%20Guide-3.pdf
+
+SHARE YOUR STORY 
+http://orlandohealthstories.com
+
+------------------------------------------------------------------
+
+CONNECT TO HEALTH 
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Pinterest
+http://www.pinterest.com/orlandohealth/ 
+
+LinkedIn
+https://www.linkedin.com/company/orlando-health?trk=cws-cpw-coname-0-0 
+
+------------------------------------------------------------------
+
+Thank you for requesting an appointment reminder with Orlando Health Physicians. If you would like to schedule an appointment now, please contact our Scheduling Department at 321.841.3724.
+
+Normal business hours
+(Monday - Friday, 8 am - 4:30 pm)
+
+------------------------------------------------------------------
+
+Did you find your physician?
+
+Call Orlando Health Physicians at 321.841.3724 today to schedule an appointment. For more information, 
+http://www.orlandohealthphysicians.com/primarycare/Pdfs/FINAL%2010526%20OHP%20Preventative%20Care%20Guide-3.pdf 
+download your Healthcare Guide.
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806 
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)Thinkstock, (c)iStock, (c)Fotolia. (c)2015 BlueSpire Strategic Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+BlueSpire Strategic Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

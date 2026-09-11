@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The user to impersonate when Run As Mode is &quot;Another person&quot;. Required only when Run As Mode = OtherUser. --></help>
+    <label><!-- Run As User --></label>
+    <name>Run_As_User__c</name>
+    <relationshipLabel><!-- Dashboards (Run As) --></relationshipLabel>
+</CustomFieldTranslation>

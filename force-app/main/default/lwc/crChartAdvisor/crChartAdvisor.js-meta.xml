@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>Vital Reports Chart Advisor</masterLabel>
+    <description>Pure utility module. Scores chart types against a report's data shape (dimension count, measure count, cardinality, date presence) so the picker can highlight which charts fit and warn off ones that don't.</description>
+</LightningComponentBundle>

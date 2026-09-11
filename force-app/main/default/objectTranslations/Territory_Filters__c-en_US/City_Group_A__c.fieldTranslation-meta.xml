@@ -1,0 +1,1561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- All Cities --></label>
+    <name>City_Group_A__c</name>
+    <picklistValues>
+        <masterLabel>Alachua(2)</masterLabel>
+        <translation><!-- Alachua(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Altamonte Spg(7)</masterLabel>
+        <translation><!-- Altamonte Spg(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Altamonte Spring(7)</masterLabel>
+        <translation><!-- Altamonte Spring(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Altamonte Springs(1619)</masterLabel>
+        <translation><!-- Altamonte Springs(1619) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Altamonte(1)</masterLabel>
+        <translation><!-- Altamonte(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Altoona(4)</masterLabel>
+        <translation><!-- Altoona(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ann Arbor(3)</masterLabel>
+        <translation><!-- Ann Arbor(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anthony(7)</masterLabel>
+        <translation><!-- Anthony(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Apollo Beach(117)</masterLabel>
+        <translation><!-- Apollo Beach(117) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Apopka(786)</masterLabel>
+        <translation><!-- Apopka(786) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Arcadia(8)</masterLabel>
+        <translation><!-- Arcadia(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Astatula(4)</masterLabel>
+        <translation><!-- Astatula(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Astor(3)</masterLabel>
+        <translation><!-- Astor(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlantic Beach(1)</masterLabel>
+        <translation><!-- Atlantic Beach(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Atlantis(1)</masterLabel>
+        <translation><!-- Atlantis(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Auburndale(94)</masterLabel>
+        <translation><!-- Auburndale(94) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aventura(5)</masterLabel>
+        <translation><!-- Aventura(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Avon Park(8)</masterLabel>
+        <translation><!-- Avon Park(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Babson Park(13)</masterLabel>
+        <translation><!-- Babson Park(13) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Baker(1)</masterLabel>
+        <translation><!-- Baker(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Barberville(1)</masterLabel>
+        <translation><!-- Barberville(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Barefoot Bay(3)</masterLabel>
+        <translation><!-- Barefoot Bay(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bartow(654)</masterLabel>
+        <translation><!-- Bartow(654) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bay Pines(3)</masterLabel>
+        <translation><!-- Bay Pines(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belle Glade(2)</masterLabel>
+        <translation><!-- Belle Glade(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belle Isle(36)</masterLabel>
+        <translation><!-- Belle Isle(36) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belleair(2)</masterLabel>
+        <translation><!-- Belleair(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belleview(166)</masterLabel>
+        <translation><!-- Belleview(166) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Beverly Hills(4)</masterLabel>
+        <translation><!-- Beverly Hills(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blountstown(1)</masterLabel>
+        <translation><!-- Blountstown(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boca Raton(24)</masterLabel>
+        <translation><!-- Boca Raton(24) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bonifay(5)</masterLabel>
+        <translation><!-- Bonifay(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bonita Springs(10)</masterLabel>
+        <translation><!-- Bonita Springs(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bowling Green(1)</masterLabel>
+        <translation><!-- Bowling Green(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Boynton Beach(24)</masterLabel>
+        <translation><!-- Boynton Beach(24) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bradenton(29)</masterLabel>
+        <translation><!-- Bradenton(29) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brandon(2303)</masterLabel>
+        <translation><!-- Brandon(2303) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Branford(2)</masterLabel>
+        <translation><!-- Branford(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brooksville(15)</masterLabel>
+        <translation><!-- Brooksville(15) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bushnell(63)</masterLabel>
+        <translation><!-- Bushnell(63) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Callahan(2)</masterLabel>
+        <translation><!-- Callahan(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cape Canaveral(38)</masterLabel>
+        <translation><!-- Cape Canaveral(38) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cape Coral(36)</masterLabel>
+        <translation><!-- Cape Coral(36) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Carrollwood(1)</masterLabel>
+        <translation><!-- Carrollwood(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cassadaga(1)</masterLabel>
+        <translation><!-- Cassadaga(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Casselberry(280)</masterLabel>
+        <translation><!-- Casselberry(280) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Celebration(387)</masterLabel>
+        <translation><!-- Celebration(387) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Center Hill(1)</masterLabel>
+        <translation><!-- Center Hill(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Champions Gate(52)</masterLabel>
+        <translation><!-- Champions Gate(52) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chipley(2)</masterLabel>
+        <translation><!-- Chipley(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Christmas(2)</masterLabel>
+        <translation><!-- Christmas(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chuluota(17)</masterLabel>
+        <translation><!-- Chuluota(17) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Citra(31)</masterLabel>
+        <translation><!-- Citra(31) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Citrus Springs(2)</masterLabel>
+        <translation><!-- Citrus Springs(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clarcona(3)</masterLabel>
+        <translation><!-- Clarcona(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clearwater(28)</masterLabel>
+        <translation><!-- Clearwater(28) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clermont(1018)</masterLabel>
+        <translation><!-- Clermont(1018) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cocoa Beach(301)</masterLabel>
+        <translation><!-- Cocoa Beach(301) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cocoa(378)</masterLabel>
+        <translation><!-- Cocoa(378) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coconut Creek(7)</masterLabel>
+        <translation><!-- Coconut Creek(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coleman(1)</masterLabel>
+        <translation><!-- Coleman(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coral Gables(12)</masterLabel>
+        <translation><!-- Coral Gables(12) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coral Springs(23)</masterLabel>
+        <translation><!-- Coral Springs(23) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Crawfordville(2)</masterLabel>
+        <translation><!-- Crawfordville(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Crescent City(4)</masterLabel>
+        <translation><!-- Crescent City(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Crestview(6)</masterLabel>
+        <translation><!-- Crestview(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Crystal River(22)</masterLabel>
+        <translation><!-- Crystal River(22) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cutler Bay(5)</masterLabel>
+        <translation><!-- Cutler Bay(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cypress Gardens(1)</masterLabel>
+        <translation><!-- Cypress Gardens(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dade City(11)</masterLabel>
+        <translation><!-- Dade City(11) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Davenport(342)</masterLabel>
+        <translation><!-- Davenport(342) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Davie(3)</masterLabel>
+        <translation><!-- Davie(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Daytona Beach Shores(9)</masterLabel>
+        <translation><!-- Daytona Beach Shores(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Daytona Beach(2096)</masterLabel>
+        <translation><!-- Daytona Beach(2096) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>De Leon Springs(10)</masterLabel>
+        <translation><!-- De Leon Springs(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Debary(109)</masterLabel>
+        <translation><!-- Debary(109) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deerfield Beach(5)</masterLabel>
+        <translation><!-- Deerfield Beach(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deland(664)</masterLabel>
+        <translation><!-- Deland(664) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delray Beach(13)</masterLabel>
+        <translation><!-- Delray Beach(13) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deltona(341)</masterLabel>
+        <translation><!-- Deltona(341) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Destin(2)</masterLabel>
+        <translation><!-- Destin(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Doral(6)</masterLabel>
+        <translation><!-- Doral(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dover(40)</masterLabel>
+        <translation><!-- Dover(40) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dundee(18)</masterLabel>
+        <translation><!-- Dundee(18) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dunedin(4)</masterLabel>
+        <translation><!-- Dunedin(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dunnellon(88)</masterLabel>
+        <translation><!-- Dunnellon(88) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eagle Lake(5)</masterLabel>
+        <translation><!-- Eagle Lake(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eatonville(3)</masterLabel>
+        <translation><!-- Eatonville(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eau Gallie(1)</masterLabel>
+        <translation><!-- Eau Gallie(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Edgewater(115)</masterLabel>
+        <translation><!-- Edgewater(115) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ellenton(4)</masterLabel>
+        <translation><!-- Ellenton(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Englewood(4)</masterLabel>
+        <translation><!-- Englewood(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Enterprise(19)</masterLabel>
+        <translation><!-- Enterprise(19) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eustis(283)</masterLabel>
+        <translation><!-- Eustis(283) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Evinston(1)</masterLabel>
+        <translation><!-- Evinston(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fairfield(1)</masterLabel>
+        <translation><!-- Fairfield(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fellsmere(9)</masterLabel>
+        <translation><!-- Fellsmere(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fern Park(68)</masterLabel>
+        <translation><!-- Fern Park(68) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fernandina Beach(2)</masterLabel>
+        <translation><!-- Fernandina Beach(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fleming Island(11)</masterLabel>
+        <translation><!-- Fleming Island(11) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Floral City(2)</masterLabel>
+        <translation><!-- Floral City(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Forest City(1)</masterLabel>
+        <translation><!-- Forest City(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Lauderdale(29)</masterLabel>
+        <translation><!-- Fort Lauderdale(29) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Mc Coy(11)</masterLabel>
+        <translation><!-- Fort Mc Coy(11) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Meade(14)</masterLabel>
+        <translation><!-- Fort Meade(14) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Myers(88)</masterLabel>
+        <translation><!-- Fort Myers(88) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Pierce(36)</masterLabel>
+        <translation><!-- Fort Pierce(36) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fort Walton Beach(8)</masterLabel>
+        <translation><!-- Fort Walton Beach(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Freeport(2)</masterLabel>
+        <translation><!-- Freeport(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Frostproof(21)</masterLabel>
+        <translation><!-- Frostproof(21) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fruitland Park(38)</masterLabel>
+        <translation><!-- Fruitland Park(38) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ft Lauderdale(1)</masterLabel>
+        <translation><!-- Ft Lauderdale(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gainesville(230)</masterLabel>
+        <translation><!-- Gainesville(230) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Geneva(10)</masterLabel>
+        <translation><!-- Geneva(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gibsonton(53)</masterLabel>
+        <translation><!-- Gibsonton(53) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Goldenrod(5)</masterLabel>
+        <translation><!-- Goldenrod(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gotha(32)</masterLabel>
+        <translation><!-- Gotha(32) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grand Island(18)</masterLabel>
+        <translation><!-- Grand Island(18) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grandin(1)</masterLabel>
+        <translation><!-- Grandin(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grant Valkaria(1)</masterLabel>
+        <translation><!-- Grant Valkaria(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grant(10)</masterLabel>
+        <translation><!-- Grant(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Green Cove Springs(2)</masterLabel>
+        <translation><!-- Green Cove Springs(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greenacres(1)</masterLabel>
+        <translation><!-- Greenacres(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greenville(2)</masterLabel>
+        <translation><!-- Greenville(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Groveland(45)</masterLabel>
+        <translation><!-- Groveland(45) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gulf Breeze(6)</masterLabel>
+        <translation><!-- Gulf Breeze(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Haines City(138)</masterLabel>
+        <translation><!-- Haines City(138) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hallandale Beach(2)</masterLabel>
+        <translation><!-- Hallandale Beach(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hallandale(3)</masterLabel>
+        <translation><!-- Hallandale(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Harmony(7)</masterLabel>
+        <translation><!-- Harmony(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Havana(1)</masterLabel>
+        <translation><!-- Havana(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Heathrow(219)</masterLabel>
+        <translation><!-- Heathrow(219) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hernando(1)</masterLabel>
+        <translation><!-- Hernando(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hialeah(9)</masterLabel>
+        <translation><!-- Hialeah(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Highland City(1)</masterLabel>
+        <translation><!-- Highland City(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Holiday(2)</masterLabel>
+        <translation><!-- Holiday(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Holly Hill(65)</masterLabel>
+        <translation><!-- Holly Hill(65) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hollywood(21)</masterLabel>
+        <translation><!-- Hollywood(21) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Holmes Beach(1)</masterLabel>
+        <translation><!-- Holmes Beach(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Homestead(3)</masterLabel>
+        <translation><!-- Homestead(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Homosassa(4)</masterLabel>
+        <translation><!-- Homosassa(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Howey In The Hills(26)</masterLabel>
+        <translation><!-- Howey In The Hills(26) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hudson(19)</masterLabel>
+        <translation><!-- Hudson(19) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hunt Valley(3)</masterLabel>
+        <translation><!-- Hunt Valley(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indialantic(174)</masterLabel>
+        <translation><!-- Indialantic(174) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indian Harbour Beach(145)</masterLabel>
+        <translation><!-- Indian Harbour Beach(145) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Intercession City(5)</masterLabel>
+        <translation><!-- Intercession City(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Interlachen(1)</masterLabel>
+        <translation><!-- Interlachen(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inverness(26)</masterLabel>
+        <translation><!-- Inverness(26) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacksonville Beach(11)</masterLabel>
+        <translation><!-- Jacksonville Beach(11) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jacksonville(229)</masterLabel>
+        <translation><!-- Jacksonville(229) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jasper(2)</masterLabel>
+        <translation><!-- Jasper(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jay(4)</masterLabel>
+        <translation><!-- Jay(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jensen Beach(8)</masterLabel>
+        <translation><!-- Jensen Beach(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jonesville(1)</masterLabel>
+        <translation><!-- Jonesville(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Juno Beach(1)</masterLabel>
+        <translation><!-- Juno Beach(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jupiter(20)</masterLabel>
+        <translation><!-- Jupiter(20) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kathleen(1)</masterLabel>
+        <translation><!-- Kathleen(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kenansville(1)</masterLabel>
+        <translation><!-- Kenansville(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kennedy Space Center(9)</masterLabel>
+        <translation><!-- Kennedy Space Center(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Key Largo(3)</masterLabel>
+        <translation><!-- Key Largo(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Key West(5)</masterLabel>
+        <translation><!-- Key West(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Keystone Heights(2)</masterLabel>
+        <translation><!-- Keystone Heights(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Killarney(1)</masterLabel>
+        <translation><!-- Killarney(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kisimmee(4)</masterLabel>
+        <translation><!-- Kisimmee(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kissimmee(2573)</masterLabel>
+        <translation><!-- Kissimmee(2573) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lady Lake(334)</masterLabel>
+        <translation><!-- Lady Lake(334) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Alfred(32)</masterLabel>
+        <translation><!-- Lake Alfred(32) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Buena Vista(40)</masterLabel>
+        <translation><!-- Lake Buena Vista(40) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Butler(1)</masterLabel>
+        <translation><!-- Lake Butler(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake City(10)</masterLabel>
+        <translation><!-- Lake City(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Clarke Shores(1)</masterLabel>
+        <translation><!-- Lake Clarke Shores(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Helen(6)</masterLabel>
+        <translation><!-- Lake Helen(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Mary(1418)</masterLabel>
+        <translation><!-- Lake Mary(1418) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Monroe(2)</masterLabel>
+        <translation><!-- Lake Monroe(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Nona(3)</masterLabel>
+        <translation><!-- Lake Nona(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Panasoffkee(8)</masterLabel>
+        <translation><!-- Lake Panasoffkee(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Park(1)</masterLabel>
+        <translation><!-- Lake Park(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Placid(12)</masterLabel>
+        <translation><!-- Lake Placid(12) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Wales(191)</masterLabel>
+        <translation><!-- Lake Wales(191) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake Worth(15)</masterLabel>
+        <translation><!-- Lake Worth(15) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lakeland(3266)</masterLabel>
+        <translation><!-- Lakeland(3266) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lakewood Ranch(6)</masterLabel>
+        <translation><!-- Lakewood Ranch(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Land O Lakes(2)</masterLabel>
+        <translation><!-- Land O Lakes(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Largo(21)</masterLabel>
+        <translation><!-- Largo(21) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lauderdale Lakes(8)</masterLabel>
+        <translation><!-- Lauderdale Lakes(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lecanto(9)</masterLabel>
+        <translation><!-- Lecanto(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Leesburg(1090)</masterLabel>
+        <translation><!-- Leesburg(1090) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lehigh Acres(15)</masterLabel>
+        <translation><!-- Lehigh Acres(15) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lighthouse Point(1)</masterLabel>
+        <translation><!-- Lighthouse Point(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lithia(139)</masterLabel>
+        <translation><!-- Lithia(139) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Live Oak(1)</masterLabel>
+        <translation><!-- Live Oak(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Longwood(837)</masterLabel>
+        <translation><!-- Longwood(837) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Loughman(3)</masterLabel>
+        <translation><!-- Loughman(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Loxahatchee(10)</masterLabel>
+        <translation><!-- Loxahatchee(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lutz(696)</masterLabel>
+        <translation><!-- Lutz(696) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lynn Haven(3)</masterLabel>
+        <translation><!-- Lynn Haven(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Macclenny(6)</masterLabel>
+        <translation><!-- Macclenny(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Madeira Beach(1)</masterLabel>
+        <translation><!-- Madeira Beach(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Madison(2)</masterLabel>
+        <translation><!-- Madison(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maitland(1758)</masterLabel>
+        <translation><!-- Maitland(1758) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Malabar(65)</masterLabel>
+        <translation><!-- Malabar(65) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Margate(7)</masterLabel>
+        <translation><!-- Margate(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marianna(8)</masterLabel>
+        <translation><!-- Marianna(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mascotte(7)</masterLabel>
+        <translation><!-- Mascotte(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mc Intosh(3)</masterLabel>
+        <translation><!-- Mc Intosh(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Melbourne Bch(7)</masterLabel>
+        <translation><!-- Melbourne Bch(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Melbourne Beach(57)</masterLabel>
+        <translation><!-- Melbourne Beach(57) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Melbourne Village(5)</masterLabel>
+        <translation><!-- Melbourne Village(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Melbourne(3918)</masterLabel>
+        <translation><!-- Melbourne(3918) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Merritt Is(21)</masterLabel>
+        <translation><!-- Merritt Is(21) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Merritt Island(740)</masterLabel>
+        <translation><!-- Merritt Island(740) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami Beach(13)</masterLabel>
+        <translation><!-- Miami Beach(13) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami Lakes(2)</masterLabel>
+        <translation><!-- Miami Lakes(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami Springs(1)</masterLabel>
+        <translation><!-- Miami Springs(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miami(155)</masterLabel>
+        <translation><!-- Miami(155) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Micco(4)</masterLabel>
+        <translation><!-- Micco(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Middleburg(2)</masterLabel>
+        <translation><!-- Middleburg(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mims(27)</masterLabel>
+        <translation><!-- Mims(27) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minneola(68)</masterLabel>
+        <translation><!-- Minneola(68) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miramar(6)</masterLabel>
+        <translation><!-- Miramar(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Montverde(10)</masterLabel>
+        <translation><!-- Montverde(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Moore Haven(1)</masterLabel>
+        <translation><!-- Moore Haven(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mount Dora(398)</masterLabel>
+        <translation><!-- Mount Dora(398) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mulberry(35)</masterLabel>
+        <translation><!-- Mulberry(35) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Naples(34)</masterLabel>
+        <translation><!-- Naples(34) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neptune Beach(6)</masterLabel>
+        <translation><!-- Neptune Beach(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Port Richey(18)</masterLabel>
+        <translation><!-- New Port Richey(18) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Smyrna Beach(383)</masterLabel>
+        <translation><!-- New Smyrna Beach(383) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Smyrna(15)</masterLabel>
+        <translation><!-- New Smyrna(15) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Niceville(2)</masterLabel>
+        <translation><!-- Niceville(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Miami Beach(2)</masterLabel>
+        <translation><!-- North Miami Beach(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Miami(3)</masterLabel>
+        <translation><!-- North Miami(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Palm Beach(2)</masterLabel>
+        <translation><!-- North Palm Beach(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Port(6)</masterLabel>
+        <translation><!-- North Port(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northdale(1)</masterLabel>
+        <translation><!-- Northdale(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oak Hill(6)</masterLabel>
+        <translation><!-- Oak Hill(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oakland Park(4)</masterLabel>
+        <translation><!-- Oakland Park(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oakland(34)</masterLabel>
+        <translation><!-- Oakland(34) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ocala(3637)</masterLabel>
+        <translation><!-- Ocala(3637) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ocklawaha(13)</masterLabel>
+        <translation><!-- Ocklawaha(13) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ocoee(599)</masterLabel>
+        <translation><!-- Ocoee(599) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Odessa(199)</masterLabel>
+        <translation><!-- Odessa(199) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Okeechobee(17)</masterLabel>
+        <translation><!-- Okeechobee(17) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Old Town(1)</masterLabel>
+        <translation><!-- Old Town(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oldsmar(2)</masterLabel>
+        <translation><!-- Oldsmar(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orange City(550)</masterLabel>
+        <translation><!-- Orange City(550) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orange Park(24)</masterLabel>
+        <translation><!-- Orange Park(24) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orlando(19264)</masterLabel>
+        <translation><!-- Orlando(19264) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orlando,(1)</masterLabel>
+        <translation><!-- Orlando,(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ormond Beach(1036)</masterLabel>
+        <translation><!-- Ormond Beach(1036) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Osprey(1)</masterLabel>
+        <translation><!-- Osprey(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Osteen(5)</masterLabel>
+        <translation><!-- Osteen(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oviedo(877)</masterLabel>
+        <translation><!-- Oviedo(877) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oxford(52)</masterLabel>
+        <translation><!-- Oxford(52) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pace(1)</masterLabel>
+        <translation><!-- Pace(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paisley(1)</masterLabel>
+        <translation><!-- Paisley(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palatka(8)</masterLabel>
+        <translation><!-- Palatka(8) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Bay(688)</masterLabel>
+        <translation><!-- Palm Bay(688) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Beach Gardens(18)</masterLabel>
+        <translation><!-- Palm Beach Gardens(18) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm City(5)</masterLabel>
+        <translation><!-- Palm City(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Coast(21)</masterLabel>
+        <translation><!-- Palm Coast(21) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Harbor(17)</masterLabel>
+        <translation><!-- Palm Harbor(17) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Shores(3)</masterLabel>
+        <translation><!-- Palm Shores(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palm Springs(3)</masterLabel>
+        <translation><!-- Palm Springs(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palmetto Bay(1)</masterLabel>
+        <translation><!-- Palmetto Bay(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palmetto(2)</masterLabel>
+        <translation><!-- Palmetto(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Panama City Beach(1)</masterLabel>
+        <translation><!-- Panama City Beach(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Panama City(19)</masterLabel>
+        <translation><!-- Panama City(19) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parkland(2)</masterLabel>
+        <translation><!-- Parkland(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parrish(3)</masterLabel>
+        <translation><!-- Parrish(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Patrick Afb(93)</masterLabel>
+        <translation><!-- Patrick Afb(93) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Patrick Air Force Base(1)</masterLabel>
+        <translation><!-- Patrick Air Force Base(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pembroke Pines(12)</masterLabel>
+        <translation><!-- Pembroke Pines(12) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pensacola(30)</masterLabel>
+        <translation><!-- Pensacola(30) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Perry(1)</masterLabel>
+        <translation><!-- Perry(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Philadelphia(3)</masterLabel>
+        <translation><!-- Philadelphia(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pierson(17)</masterLabel>
+        <translation><!-- Pierson(17) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pinellas Park(7)</masterLabel>
+        <translation><!-- Pinellas Park(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plant City(449)</masterLabel>
+        <translation><!-- Plant City(449) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plantation(19)</masterLabel>
+        <translation><!-- Plantation(19) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plymouth(1)</masterLabel>
+        <translation><!-- Plymouth(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poinciana(28)</masterLabel>
+        <translation><!-- Poinciana(28) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Polk City(15)</masterLabel>
+        <translation><!-- Polk City(15) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pompano Beach(4)</masterLabel>
+        <translation><!-- Pompano Beach(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ponce Inlet(12)</masterLabel>
+        <translation><!-- Ponce Inlet(12) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ponte Vedra Beach(7)</masterLabel>
+        <translation><!-- Ponte Vedra Beach(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port Canaveral(2)</masterLabel>
+        <translation><!-- Port Canaveral(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port Charlotte(38)</masterLabel>
+        <translation><!-- Port Charlotte(38) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port Orange(1086)</masterLabel>
+        <translation><!-- Port Orange(1086) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port Richey(6)</masterLabel>
+        <translation><!-- Port Richey(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port Saint Joe(1)</masterLabel>
+        <translation><!-- Port Saint Joe(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port Saint Lucie(47)</masterLabel>
+        <translation><!-- Port Saint Lucie(47) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port St John(18)</masterLabel>
+        <translation><!-- Port St John(18) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Port St Lucie(24)</masterLabel>
+        <translation><!-- Port St Lucie(24) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pt Orange(6)</masterLabel>
+        <translation><!-- Pt Orange(6) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Punta Gorda(5)</masterLabel>
+        <translation><!-- Punta Gorda(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quincy(1)</masterLabel>
+        <translation><!-- Quincy(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reddick(9)</masterLabel>
+        <translation><!-- Reddick(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reston(16)</masterLabel>
+        <translation><!-- Reston(16) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reunion(3)</masterLabel>
+        <translation><!-- Reunion(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Riverview(633)</masterLabel>
+        <translation><!-- Riverview(633) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Riviera Beach(1)</masterLabel>
+        <translation><!-- Riviera Beach(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rockledge(1158)</masterLabel>
+        <translation><!-- Rockledge(1158) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rocky Point(9)</masterLabel>
+        <translation><!-- Rocky Point(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Royal Palm Beach(2)</masterLabel>
+        <translation><!-- Royal Palm Beach(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ruskin(164)</masterLabel>
+        <translation><!-- Ruskin(164) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>S Daytona(3)</masterLabel>
+        <translation><!-- S Daytona(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Safety Harbor(3)</masterLabel>
+        <translation><!-- Safety Harbor(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Augustine(52)</masterLabel>
+        <translation><!-- Saint Augustine(52) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Cloud(461)</masterLabel>
+        <translation><!-- Saint Cloud(461) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Johns(3)</masterLabel>
+        <translation><!-- Saint Johns(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Petersburg(72)</masterLabel>
+        <translation><!-- Saint Petersburg(72) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salt Springs(1)</masterLabel>
+        <translation><!-- Salt Springs(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanford(788)</masterLabel>
+        <translation><!-- Sanford(788) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Santa Rosa Beach(1)</masterLabel>
+        <translation><!-- Santa Rosa Beach(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sarasota(59)</masterLabel>
+        <translation><!-- Sarasota(59) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Satellite Bch(3)</masterLabel>
+        <translation><!-- Satellite Bch(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Satellite Beach(133)</masterLabel>
+        <translation><!-- Satellite Beach(133) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scottsmoor(1)</masterLabel>
+        <translation><!-- Scottsmoor(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sebastian(34)</masterLabel>
+        <translation><!-- Sebastian(34) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sebring(57)</masterLabel>
+        <translation><!-- Sebring(57) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seffner(111)</masterLabel>
+        <translation><!-- Seffner(111) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seminole(3)</masterLabel>
+        <translation><!-- Seminole(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Silver Springs(26)</masterLabel>
+        <translation><!-- Silver Springs(26) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sorrento(32)</masterLabel>
+        <translation><!-- Sorrento(32) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Daytona(267)</masterLabel>
+        <translation><!-- South Daytona(267) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Miami(10)</masterLabel>
+        <translation><!-- South Miami(10) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Pasadena(3)</masterLabel>
+        <translation><!-- South Pasadena(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sparr(1)</masterLabel>
+        <translation><!-- Sparr(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spring Hill(21)</masterLabel>
+        <translation><!-- Spring Hill(21) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>St Petersburg(12)</masterLabel>
+        <translation><!-- St Petersburg(12) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>St. Cloud(11)</masterLabel>
+        <translation><!-- St. Cloud(11) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>St. Petersburg(7)</masterLabel>
+        <translation><!-- St. Petersburg(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Starke(4)</masterLabel>
+        <translation><!-- Starke(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stuart(30)</masterLabel>
+        <translation><!-- Stuart(30) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Summerfield(145)</masterLabel>
+        <translation><!-- Summerfield(145) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sumterville(51)</masterLabel>
+        <translation><!-- Sumterville(51) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sun City Center(174)</masterLabel>
+        <translation><!-- Sun City Center(174) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sun City Ctr(5)</masterLabel>
+        <translation><!-- Sun City Ctr(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sun City(2)</masterLabel>
+        <translation><!-- Sun City(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sunrise(4)</masterLabel>
+        <translation><!-- Sunrise(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sydney(2)</masterLabel>
+        <translation><!-- Sydney(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tallahassee(56)</masterLabel>
+        <translation><!-- Tallahassee(56) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tamarac(9)</masterLabel>
+        <translation><!-- Tamarac(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tampa(16892)</masterLabel>
+        <translation><!-- Tampa(16892) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tarpon Springs(2)</masterLabel>
+        <translation><!-- Tarpon Springs(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tavares(483)</masterLabel>
+        <translation><!-- Tavares(483) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tavernier(2)</masterLabel>
+        <translation><!-- Tavernier(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Temple Terrace(673)</masterLabel>
+        <translation><!-- Temple Terrace(673) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tequesta(1)</masterLabel>
+        <translation><!-- Tequesta(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>The Villages(795)</masterLabel>
+        <translation><!-- The Villages(795) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Thonotosassa(30)</masterLabel>
+        <translation><!-- Thonotosassa(30) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tioga(1)</masterLabel>
+        <translation><!-- Tioga(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Titusville(706)</masterLabel>
+        <translation><!-- Titusville(706) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trenton(4)</masterLabel>
+        <translation><!-- Trenton(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trinity(1)</masterLabel>
+        <translation><!-- Trinity(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Umatilla(50)</masterLabel>
+        <translation><!-- Umatilla(50) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>University Of Tampa(74)</masterLabel>
+        <translation><!-- University Of Tampa(74) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>University Park(1)</masterLabel>
+        <translation><!-- University Park(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Valrico(345)</masterLabel>
+        <translation><!-- Valrico(345) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Venice(15)</masterLabel>
+        <translation><!-- Venice(15) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vero Beach(107)</masterLabel>
+        <translation><!-- Vero Beach(107) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Viera(217)</masterLabel>
+        <translation><!-- Viera(217) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>W Melbourne(28)</masterLabel>
+        <translation><!-- W Melbourne(28) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wauchula(7)</masterLabel>
+        <translation><!-- Wauchula(7) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Webster(1)</masterLabel>
+        <translation><!-- Webster(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Weeki Wachee(4)</masterLabel>
+        <translation><!-- Weeki Wachee(4) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Weirsdale(9)</masterLabel>
+        <translation><!-- Weirsdale(9) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wellington(14)</masterLabel>
+        <translation><!-- Wellington(14) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wesley Chapel(17)</masterLabel>
+        <translation><!-- Wesley Chapel(17) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West Melbourne(146)</masterLabel>
+        <translation><!-- West Melbourne(146) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>West Palm Beach(49)</masterLabel>
+        <translation><!-- West Palm Beach(49) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Weston(22)</masterLabel>
+        <translation><!-- Weston(22) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wilbur By Sea(5)</masterLabel>
+        <translation><!-- Wilbur By Sea(5) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wildwood(42)</masterLabel>
+        <translation><!-- Wildwood(42) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Williston(1)</masterLabel>
+        <translation><!-- Williston(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wilton Manors(3)</masterLabel>
+        <translation><!-- Wilton Manors(3) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wimauma(30)</masterLabel>
+        <translation><!-- Wimauma(30) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Windermere(258)</masterLabel>
+        <translation><!-- Windermere(258) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Winter Garden(558)</masterLabel>
+        <translation><!-- Winter Garden(558) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Winter Haven(1415)</masterLabel>
+        <translation><!-- Winter Haven(1415) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Winter Park(2648)</masterLabel>
+        <translation><!-- Winter Park(2648) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Winter Spgs(18)</masterLabel>
+        <translation><!-- Winter Spgs(18) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Winter Springs(316)</masterLabel>
+        <translation><!-- Winter Springs(316) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yalaha(2)</masterLabel>
+        <translation><!-- Yalaha(2) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yulee(1)</masterLabel>
+        <translation><!-- Yulee(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zellwood(1)</masterLabel>
+        <translation><!-- Zellwood(1) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zephyrhills(17)</masterLabel>
+        <translation><!-- Zephyrhills(17) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

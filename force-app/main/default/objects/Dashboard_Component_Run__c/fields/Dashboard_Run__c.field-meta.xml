@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dashboard_Run__c</fullName>
+    <inlineHelpText>Parent asynchronous dashboard run.</inlineHelpText>
+    <label>Dashboard Run</label>
+    <referenceTo>Dashboard_Run__c</referenceTo>
+    <relationshipLabel>Dashboard Component Runs</relationshipLabel>
+    <relationshipName>Dashboard_Component_Runs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

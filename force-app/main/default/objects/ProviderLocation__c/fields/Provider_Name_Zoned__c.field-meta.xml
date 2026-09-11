@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Name_Zoned__c</fullName>
+    <description>Displays concatenated provider name, and if targeted by the current user, a star at the end.  Used in the Log a Visit flow to show which additional providers are targeted by the current user.</description>
+    <externalId>false</externalId>
+    <formula>IF( My_Zoned_Provider__c,
+    Provider__r.FirstName &amp; &quot; &quot; &amp; Provider__r.MiddleName &amp; &quot; &quot; &amp; Provider__r.LastName &amp; &quot; &quot; &amp; Provider__r.Suffix &amp; &quot; &quot; &amp; TEXT(Provider__r.Credentials__c) &amp; IMAGE(&quot;https://orlandohealth--c.vf.force.com/resource/1718307189000/GraphicsPackNew/silk/16/silk/star.png&quot;, &quot;STAR&quot;),
+    Provider__r.FirstName &amp; &quot; &quot; &amp; Provider__r.MiddleName &amp; &quot; &quot; &amp; Provider__r.LastName &amp; &quot; &quot; &amp; Provider__r.Suffix &amp; &quot; &quot; &amp; TEXT(Provider__r.Credentials__c)
+			)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Provider Name Zoned</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

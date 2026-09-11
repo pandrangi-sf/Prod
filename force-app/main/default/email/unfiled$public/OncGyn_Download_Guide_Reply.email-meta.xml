@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Email to Lead to Download OncGyn Guide</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - Oncology - Gynecology  Download Guide Reply</name>
+    <style>none</style>
+    <subject>Thank You - Download Your Free Gynecoloic Oncology Guide</subject>
+    <textOnly>Request an Appointment
+
+What is Gynecologic Cancer?
+
+Gynecologic cancer is any form of cancer that exists in a woman’s reproductive organs. The fourth most common type of cancer among women, gynecologic cancer begins in a specific area within a woman’s pelvic region, which is located below the stomach and in between the hipbones.
+
+Maintaining gynecologic health is important at every stage of a woman’s life. While a relatively small percentage of women will ever develop gynecologic cancer, it is important to understand what it is, and what the warning signs are. Early detection can be crucial to successfully treating and defeating cancer. At the Gynecologic Cancer Center, it is our goal to provide you with the knowledge you need to make informed decisions about your gynecologic health.
+
+Your guides to gynecologic cancer.
+
+Inside your free guides, you will find detailed information about gynecological cancer, its causes, symptoms, and treatment options provided by our expert physicians.
+
+Copyright ©2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave. Orlando, FL 32806
+
+Unsubscribe | Privacy Policy
+
+Connect  with Us
+
+Call for more information
+
+321.843.7775</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

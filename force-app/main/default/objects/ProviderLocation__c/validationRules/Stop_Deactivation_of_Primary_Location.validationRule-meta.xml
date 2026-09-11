@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Deactivation_of_Primary_Location</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Active__c = FALSE,  Primary__c = TRUE, Provider__r.Active__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Active__c</errorDisplayField>
+    <errorMessage>I&apos;m sorry but you can&apos;t deactivate a primary location.  First set a different location as primary then you can deactivate this location.</errorMessage>
+</ValidationRule>

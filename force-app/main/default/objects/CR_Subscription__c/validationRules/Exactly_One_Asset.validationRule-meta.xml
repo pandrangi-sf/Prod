@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exactly_One_Asset</fullName>
+    <active>true</active>
+    <description>A subscription must target exactly one asset: a Report Definition or a Dashboard, never both and never neither.</description>
+    <errorConditionFormula>OR(
+  AND(ISBLANK(Report_Definition__c), ISBLANK(Dashboard__c)),
+  AND(NOT(ISBLANK(Report_Definition__c)), NOT(ISBLANK(Dashboard__c)))
+)</errorConditionFormula>
+    <errorMessage>Set either a Report Definition or a Dashboard (exactly one), not both.</errorMessage>
+</ValidationRule>

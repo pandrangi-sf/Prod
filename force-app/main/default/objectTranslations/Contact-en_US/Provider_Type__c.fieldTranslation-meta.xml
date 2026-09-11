@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Provider Type --></label>
+    <name>Provider_Type__c</name>
+    <picklistValues>
+        <masterLabel>Ambulatory Facility</masterLabel>
+        <translation><!-- Ambulatory Facility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ancillary Service</masterLabel>
+        <translation><!-- Ancillary Service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hospital Based</masterLabel>
+        <translation><!-- Hospital Based --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inpatient Hospital</masterLabel>
+        <translation><!-- Inpatient Hospital --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PCP</masterLabel>
+        <translation><!-- PCP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SNF</masterLabel>
+        <translation><!-- SNF --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Specialist</masterLabel>
+        <translation><!-- Specialist --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

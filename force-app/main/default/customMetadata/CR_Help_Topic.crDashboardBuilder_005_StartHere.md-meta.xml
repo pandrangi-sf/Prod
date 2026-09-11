@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dashboard Builder — Start here</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;When you open Dashboard Builder without an existing dashboard, a two-step setup appears before the canvas — same stepper pattern as Report Builder.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Step 1 — Basics:&lt;/strong&gt; Name (required, must be unique — duplicates are caught here, not at save time), Folder (required, pick from existing folders or type a new one), and optional Description.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Step 2 — Appearance:&lt;/strong&gt; Theme (Light or Dark), Grid Size (12 or 9 columns), and Palette (15 named palettes shown as swatches).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Use &lt;strong&gt;Back&lt;/strong&gt; to fix something on a prior step, &lt;strong&gt;Next&lt;/strong&gt; to advance, and &lt;strong&gt;Open Builder&lt;/strong&gt; on Step 2 to dismiss the stepper and reveal the empty canvas. You can change any of these fields later from the gear icon (Properties) on the toolbar.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Editing an existing dashboard?&lt;/strong&gt; The stepper is skipped and you go straight to the canvas.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Starting a new dashboard</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:new</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">5.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crDashboardBuilder</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Vital Reports Home — Running Reports</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ol&gt;&lt;li&gt;Click &lt;strong&gt;Browse Reports&lt;/strong&gt; — pick one from the list.&lt;/li&gt;&lt;li&gt;Results load in the Report Viewer. Use the &lt;strong&gt;column-header filter icons&lt;/strong&gt; to narrow rows; the row count updates as you go.&lt;/li&gt;&lt;li&gt;Click any &lt;strong&gt;Name&lt;/strong&gt; or &lt;strong&gt;Id&lt;/strong&gt; cell to open the related record in a new tab.&lt;/li&gt;&lt;li&gt;Use the &lt;strong&gt;Export&lt;/strong&gt; button to download a CSV or Excel snapshot of the currently-filtered results.&lt;/li&gt;&lt;/ol&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Running and filtering a report</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:filterList</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crVitalReportsHome</value>
+    </values>
+</CustomMetadata>

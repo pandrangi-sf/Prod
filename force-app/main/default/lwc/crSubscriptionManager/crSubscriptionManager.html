@@ -1,0 +1,248 @@
+<template>
+    <c-cr-help-panel tool-key="crSubscriptionManager" tool-label="Subscriptions"></c-cr-help-panel>
+    <div class="sub-shell">
+        <div class="sub-header">
+            <nav class="sub-breadcrumb" aria-label="Breadcrumb">
+                <span class="crumb">Vital Reports</span>
+                <lightning-icon icon-name="utility:chevronright" size="xx-small" class="crumb-sep"></lightning-icon>
+                <span class="crumb crumb_current">Subscriptions</span>
+            </nav>
+            <div class="sub-title-row">
+                <div class="sub-title-lead">
+                    <div class="page-header__icon-wrap page-header__icon-wrap--slate">
+                        <lightning-icon icon-name="standard:email" size="small" alternative-text="Manage Subscriptions"></lightning-icon>
+                    </div>
+                    <div class="sub-title-block">
+                        <p class="sub-eyebrow">Scheduled delivery</p>
+                        <h1 class="sub-title">Report &amp; Dashboard Subscriptions</h1>
+                        <p class="sub-sub">Schedule recurring email delivery of reports and dashboards. Only assets marked Broadcast Safe will actually send.</p>
+                    </div>
+                </div>
+                <div class="sub-actions">
+                    <lightning-button
+                        label="New Subscription"
+                        icon-name="utility:add"
+                        variant="brand"
+                        onclick={handleNew}
+                        disabled={busy}>
+                    </lightning-button>
+                    <lightning-button-icon
+                        icon-name="utility:refresh"
+                        alternative-text="Refresh"
+                        title="Refresh"
+                        variant="border-filled"
+                        onclick={loadAll}
+                        disabled={busy}>
+                    </lightning-button-icon>
+                    <lightning-button-icon
+                        icon-name="utility:question"
+                        alternative-text="Help"
+                        title="Help and tips"
+                        variant="border-filled"
+                        onclick={openHelpPanel}>
+                    </lightning-button-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-body">
+            <template if:true={busy}>
+                <lightning-spinner alternative-text="Working…" size="small"></lightning-spinner>
+            </template>
+
+            <template if:true={loadError}>
+                <div class="slds-box slds-theme_error slds-m-bottom_small" role="alert">{loadError}</div>
+            </template>
+
+            <template if:true={hasSubscriptions}>
+                <lightning-datatable
+                    key-field="id"
+                    data={subscriptions}
+                    columns={columns}
+                    hide-checkbox-column
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+
+            <template if:false={hasSubscriptions}>
+                <template if:false={busy}>
+                    <div class="sub-empty">
+                        <lightning-icon icon-name="utility:email" size="large"></lightning-icon>
+                        <h2>No subscriptions yet</h2>
+                        <p>Create a subscription to email a report or dashboard on a schedule.</p>
+                        <lightning-button label="New Subscription" variant="brand" onclick={handleNew}></lightning-button>
+                    </div>
+                </template>
+            </template>
+
+            <!-- Editor -->
+            <template if:true={showEditor}>
+                <section class="sub-editor slds-box slds-m-top_medium" aria-label="Subscription editor">
+                    <div class="sub-editor__head">
+                        <h2 class="sub-editor__title">{editorTitle}</h2>
+                        <lightning-button-icon
+                            icon-name="utility:close"
+                            alternative-text="Close"
+                            title="Close"
+                            variant="bare"
+                            onclick={handleCloseEditor}>
+                        </lightning-button-icon>
+                    </div>
+
+                    <div class="sub-grid">
+                        <lightning-combobox
+                            data-field="assetId"
+                            label="Report or Dashboard"
+                            placeholder="Choose an asset…"
+                            options={assetOptions}
+                            value={draft.assetId}
+                            onchange={handleDraftChange}
+                            required>
+                        </lightning-combobox>
+
+                        <lightning-combobox
+                            data-field="frequency"
+                            label="Frequency"
+                            options={frequencyOptions}
+                            value={draft.frequency}
+                            onchange={handleDraftChange}>
+                        </lightning-combobox>
+
+                        <template if:true={showDayOfWeek}>
+                            <lightning-combobox
+                                data-field="dayOfWeek"
+                                label="Day of week"
+                                options={dayOfWeekOptions}
+                                value={draft.dayOfWeek}
+                                onchange={handleDraftChange}>
+                            </lightning-combobox>
+                        </template>
+
+                        <template if:true={showDayOfMonth}>
+                            <lightning-input
+                                data-field="dayOfMonth"
+                                type="number"
+                                label="Day of month (1–28)"
+                                min="1"
+                                max="28"
+                                value={draft.dayOfMonth}
+                                onchange={handleDraftChange}>
+                            </lightning-input>
+                        </template>
+
+                        <lightning-input
+                            data-field="hourOfDay"
+                            type="number"
+                            label="Hour of day (0–23)"
+                            min="0"
+                            max="23"
+                            value={draft.hourOfDay}
+                            onchange={handleDraftChange}>
+                        </lightning-input>
+
+                        <lightning-input
+                            data-field="maxInlineRows"
+                            type="number"
+                            label="Max inline rows"
+                            min="1"
+                            value={draft.maxInlineRows}
+                            onchange={handleDraftChange}>
+                        </lightning-input>
+                    </div>
+
+                    <template if:true={selectedAssetWarning}>
+                        <div class="slds-text-color_error slds-text-body_small slds-m-top_x-small">{selectedAssetWarning}</div>
+                    </template>
+
+                    <div class="sub-toggles">
+                        <lightning-input data-field="active" type="toggle" label="Active" checked={draft.active} onchange={handleDraftChange}></lightning-input>
+                        <lightning-input data-field="includeHtmlTable" type="toggle" label="Include HTML table" checked={draft.includeHtmlTable} onchange={handleDraftChange}></lightning-input>
+                        <lightning-input data-field="includeCsvAttachment" type="toggle" label="Attach CSV" checked={draft.includeCsvAttachment} onchange={handleDraftChange}></lightning-input>
+                        <lightning-input data-field="sendIfEmpty" type="toggle" label="Send even if empty" checked={draft.sendIfEmpty} onchange={handleDraftChange}></lightning-input>
+                    </div>
+
+                    <lightning-textarea
+                        data-field="filterOverrideJson"
+                        label="Filter override JSON (optional)"
+                        field-level-help="Advanced: a CR filter JSON applied at send time. Leave blank to use the report's own filters."
+                        value={draft.filterOverrideJson}
+                        onchange={handleDraftChange}>
+                    </lightning-textarea>
+
+                    <div class="sub-editor__actions">
+                        <lightning-button label="Cancel" onclick={handleCloseEditor}></lightning-button>
+                        <lightning-button label="Save Subscription" variant="brand" onclick={handleSaveSubscription} disabled={busy}></lightning-button>
+                    </div>
+
+                    <!-- Recipients -->
+                    <div class="sub-recipients">
+                        <h3 class="sub-recipients__title">Recipients</h3>
+                        <template if:true={recipientsDisabled}>
+                            <p class="slds-text-color_weak slds-text-body_small">Save the subscription first to add recipients.</p>
+                        </template>
+
+                        <template if:false={recipientsDisabled}>
+                            <ul class="sub-recipient-list">
+                                <template for:each={decoratedRecipients} for:item="r">
+                                    <li key={r.id} class="sub-recipient">
+                                        <span class="sub-recipient__type">{r.recipientType}</span>
+                                        <span class="sub-recipient__value">{r.display}</span>
+                                        <lightning-button-icon
+                                            icon-name="utility:delete"
+                                            alternative-text="Remove recipient"
+                                            title="Remove"
+                                            variant="bare"
+                                            data-id={r.id}
+                                            onclick={handleRemoveRecipient}>
+                                        </lightning-button-icon>
+                                    </li>
+                                </template>
+                            </ul>
+
+                            <div class="sub-add-recipient">
+                                <lightning-combobox
+                                    label="Type"
+                                    variant="label-hidden"
+                                    options={recipientTypeOptions}
+                                    value={newRecipient.recipientType}
+                                    onchange={handleRecipientTypeChange}>
+                                </lightning-combobox>
+
+                                <template if:true={isUserRecipient}>
+                                    <lightning-record-picker
+                                        label="User"
+                                        placeholder="Search users…"
+                                        object-api-name="User"
+                                        onchange={handleRecipientUser}>
+                                    </lightning-record-picker>
+                                </template>
+
+                                <template if:true={isGroupRecipient}>
+                                    <lightning-record-picker
+                                        label="Public Group"
+                                        placeholder="Search groups…"
+                                        object-api-name="Group"
+                                        onchange={handleRecipientGroup}>
+                                    </lightning-record-picker>
+                                </template>
+
+                                <template if:true={isEmailRecipient}>
+                                    <lightning-input
+                                        type="email"
+                                        label="Email"
+                                        variant="label-hidden"
+                                        placeholder="name@example.com"
+                                        value={newRecipient.email}
+                                        onchange={handleRecipientEmail}>
+                                    </lightning-input>
+                                </template>
+
+                                <lightning-button label="Add" icon-name="utility:add" onclick={handleAddRecipient} disabled={busy}></lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                </section>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>With_Specialty_Type</fullName>
+    <columns>NAME</columns>
+    <columns>Specialty_Type__c</columns>
+    <columns>Specialization__c</columns>
+    <columns>Classification__c</columns>
+    <columns>TaxonomyCode__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Specialty_Type__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>With Specialty Type</label>
+</ListView>

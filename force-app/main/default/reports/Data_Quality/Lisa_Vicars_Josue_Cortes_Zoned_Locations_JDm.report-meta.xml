@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>ZonedLocation__c.Zoned_Location_Name__c</field>
+    </columns>
+    <columns>
+        <field>ZonedLocation__c.Zoned_Location_Address__c</field>
+    </columns>
+    <columns>
+        <field>ZonedLocation__c.LastVisitDate__c</field>
+    </columns>
+    <description>Report on the Zoned Locations for Josue Cortes for the OHAPH (Lisa Vicars) territory showing last visit dates.</description>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+        <criteriaItems>
+            <column>CUST_NAME</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>OHAPH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ZonedLocation__c.Zoned_Location_Address__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>181 Sabal Palm</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ZonedLocation__c.Zoned_Location_Address__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>1651 N Semoran</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ZonedLocation__c.Zoned_Location_Address__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>501 W SR 434</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Lisa Vicars Josue Cortes Zoned Locations</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Territory__c$ZonedLocation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

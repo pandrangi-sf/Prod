@@ -1,0 +1,52 @@
+<template>
+    <template if:true={isOpen}>
+        <aside class="help-drawer" role="complementary" aria-label="Help">
+            <header class="help-drawer__header">
+                <div class="help-drawer__title-block">
+                    <lightning-icon icon-name="utility:question_mark" size="x-small" class="help-drawer__title-icon"></lightning-icon>
+                    <h2 class="help-drawer__title">Help &amp; tips</h2>
+                </div>
+                <!-- Plain <button> with guaranteed 32×32 hit area. The
+                     prior lightning-button-icon size="medium" rendered an
+                     internal 14×17 glyph regardless of the SLDS sizing
+                     tokens — the outer wrapper sized correctly but the
+                     hit area collapsed to the glyph. A plain button +
+                     CSS gives us the WCAG 2.5.8 target size reliably. -->
+                <button type="button"
+                        class="help-drawer__close"
+                        aria-label="Close help"
+                        title="Close help"
+                        onclick={handleClose}>
+                    <lightning-icon icon-name="utility:close" size="x-small" alternative-text=""></lightning-icon>
+                </button>
+            </header>
+            <div class="help-drawer__body">
+                <template if:true={hasError}>
+                    <p class="help-drawer__error">{loadError}</p>
+                </template>
+                <template if:true={hasSections}>
+                    <template for:each={sections} for:item="s">
+                        <section key={s.key} class="help-section">
+                            <div class="help-section__heading-row">
+                                <lightning-icon
+                                    icon-name={s.iconName}
+                                    size="x-small"
+                                    class="help-section__icon">
+                                </lightning-icon>
+                                <h3 class="help-section__heading">{s.heading}</h3>
+                            </div>
+                            <div class="help-section__body">
+                                <lightning-formatted-rich-text value={s.body}></lightning-formatted-rich-text>
+                            </div>
+                        </section>
+                    </template>
+                </template>
+                <template if:false={hasSections}>
+                    <template if:false={hasError}>
+                        <p class="help-drawer__empty">No help content for this tool yet. Add CR Help Topic records keyed by <code>{toolKey}</code> in Setup.</p>
+                    </template>
+                </template>
+            </div>
+        </aside>
+    </template>
+</template>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Report Folders — Managing Access</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;With the &lt;strong&gt;Manage Report Folders&lt;/strong&gt; permission you&apos;ll see a &lt;strong&gt;Who has access&lt;/strong&gt; panel when you select a folder.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Add a &lt;strong&gt;User&lt;/strong&gt; or &lt;strong&gt;Public Group&lt;/strong&gt; as a member and choose &lt;strong&gt;Read&lt;/strong&gt; or &lt;strong&gt;Edit&lt;/strong&gt;.&lt;/li&gt;&lt;li&gt;Membership automatically shares every report and dashboard in that folder with the member — no per-record sharing needed.&lt;/li&gt;&lt;li&gt;Remove a member to revoke their folder-based access.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; while folders are in &lt;em&gt;Public Read Only&lt;/em&gt; mode, everyone can already view all reports/dashboards, so today these grants mainly control &lt;strong&gt;Edit&lt;/strong&gt;. Once the org is switched to private folder access, Read grants become what lets members see the contents at all.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Managing who can access a folder</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:adduser</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">110.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crFolderManager</value>
+    </values>
+</CustomMetadata>

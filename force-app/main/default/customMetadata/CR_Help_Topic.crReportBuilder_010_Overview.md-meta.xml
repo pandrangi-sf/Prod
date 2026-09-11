@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Report Builder — Overview</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;Report Builder is the place to define a custom report — pick a dataset, choose fields, add filters, group, aggregate, and save. The result is a &lt;strong&gt;Report Definition&lt;/strong&gt; record that Report Viewer and Dashboard Builder can run.&lt;/p&gt;&lt;p&gt;The builder is JSON-backed: every step in the stepper edits a slice of the master &lt;code&gt;Definition_JSON__c&lt;/code&gt; field. Power users can switch to the &lt;strong&gt;Advanced&lt;/strong&gt; tab to edit raw JSON.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">What is Report Builder?</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:builder</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crReportBuilder</value>
+    </values>
+</CustomMetadata>

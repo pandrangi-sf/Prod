@@ -1,0 +1,95 @@
+<template>
+    <div class="dataset-picker">
+        <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+            <h3 class="slds-text-heading_small">Data Source</h3>
+        </div>
+
+        <template if:true={showSourceTypeRadio}>
+            <lightning-radio-group
+                label="Source type"
+                type="button"
+                variant="label-stacked"
+                options={sourceOptions}
+                value={sourceType}
+                onchange={handleSourceTypeChange}>
+            </lightning-radio-group>
+        </template>
+
+        <template if:true={isCurated}>
+            <div class="slds-m-top_small">
+                <template if:true={loadError}>
+                    <div class="slds-text-color_error slds-m-bottom_x-small">{loadError}</div>
+                </template>
+                <lightning-combobox
+                    label="Curated Dataset"
+                    field-level-help="Select a pre-built dataset defined in CR_Dataset__mdt."
+                    options={datasetOptions}
+                    value={selectedDatasetKey}
+                    onchange={handleDatasetChange}>
+                </lightning-combobox>
+
+                <template if:true={selectedDataset}>
+                    <p class="slds-text-body_small slds-text-color_weak slds-m-top_x-small">
+                        {selectedDataset.description}
+                    </p>
+                    <lightning-radio-group
+                        label="Mode"
+                        type="button"
+                        variant="label-stacked"
+                        options={modeOptions}
+                        value={mode}
+                        onchange={handleModeChange}
+                        class="slds-m-top_x-small">
+                    </lightning-radio-group>
+
+                    <template if:true={hasPeek}>
+                        <section class="peek-panel slds-m-top_small" aria-label="Dataset details">
+                            <header class="peek-header">
+                                <span class="peek-title">{_peek.objectLabel}</span>
+                                <span class={peekAccessibilityClass} title={peekAccessibilityLabel}>{peekAccessibilityLabel}</span>
+                            </header>
+                            <dl class="peek-grid">
+                                <div class="peek-cell">
+                                    <dt>API Name</dt>
+                                    <dd><code>{_peek.sobjectApiName}</code></dd>
+                                </div>
+                                <div class="peek-cell">
+                                    <dt>Mode</dt>
+                                    <dd>{_peek.mode}</dd>
+                                </div>
+                                <div class="peek-cell">
+                                    <dt>Row Count</dt>
+                                    <dd>{peekRowCountDisplay}</dd>
+                                </div>
+                                <div class="peek-cell">
+                                    <dt>Last Refresh</dt>
+                                    <dd>
+                                        <template if:true={_peek.lastRefreshAt}>
+                                            <lightning-formatted-date-time value={_peek.lastRefreshAt} year="numeric" month="short" day="2-digit" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                                        </template>
+                                        <template if:false={_peek.lastRefreshAt}>—</template>
+                                    </dd>
+                                </div>
+                            </dl>
+                        </section>
+                    </template>
+                    <template if:true={_peekLoading}>
+                        <p class="slds-text-body_small slds-text-color_weak slds-m-top_x-small">Loading dataset details…</p>
+                    </template>
+                    <template if:true={_peekError}>
+                        <p class="slds-text-color_error slds-text-body_small slds-m-top_x-small">{_peekError}</p>
+                    </template>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={isAdHoc}>
+            <div class="slds-box slds-theme_shade slds-m-top_small">
+                <p class="slds-text-body_regular">
+                    You'll pick the primary object, related objects, and fields on the next step.
+                    Click <strong>Next</strong> to continue.
+                </p>
+            </div>
+        </template>
+    </div>
+</template>

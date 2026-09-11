@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Color_Scheme__c</fullName>
+    <inlineHelpText>Background color for the tile&apos;s icon swatch. Defaults to slate when blank.</inlineHelpText>
+    <label>Color Scheme</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>amber</fullName>
+                <default>false</default>
+                <label>amber</label>
+            </value>
+            <value>
+                <fullName>blue</fullName>
+                <default>false</default>
+                <label>blue</label>
+            </value>
+            <value>
+                <fullName>green</fullName>
+                <default>false</default>
+                <label>green</label>
+            </value>
+            <value>
+                <fullName>purple</fullName>
+                <default>false</default>
+                <label>purple</label>
+            </value>
+            <value>
+                <fullName>red</fullName>
+                <default>false</default>
+                <label>red</label>
+            </value>
+            <value>
+                <fullName>slate</fullName>
+                <default>true</default>
+                <label>slate</label>
+            </value>
+            <value>
+                <fullName>teal</fullName>
+                <default>false</default>
+                <label>teal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

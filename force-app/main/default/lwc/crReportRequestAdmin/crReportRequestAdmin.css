@@ -1,0 +1,5 @@
+.rr-row { cursor: pointer; }
+.rr-row:hover > td { background: #f3f8ff; }
+.rr-row_active > td { background: #e8f0fc; }
+.rr-pre { white-space: pre-wrap; }
+.rr-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }

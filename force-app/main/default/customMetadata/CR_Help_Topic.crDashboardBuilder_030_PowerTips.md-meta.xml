@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dashboard Builder — Power Tips</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Properties (⚙):&lt;/strong&gt; Pick a palette, theme (Light/Dark), grid size (12 or 9 columns), and run-as mode. Switching grid size auto-clamps existing tiles.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Multi-Y series:&lt;/strong&gt; In a chart widget&apos;s config, pick multiple Y-axis fields to render multi-series (each in a different palette color). Pie/donut still uses only the first.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Use chart settings from report:&lt;/strong&gt; Toggle this in the widget config to defer to the report&apos;s defaults — useful when you maintain chart settings centrally on the report.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Filters (+ Filter):&lt;/strong&gt; Apply dashboard-level filters that merge into every component report at runtime. Validation runs on save against each report&apos;s field list.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Undo / Redo:&lt;/strong&gt; The toolbar arrows undo/redo up to 25 steps within the session (cleared on save).&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Power tips</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:advanced_function</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crDashboardBuilder</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>SheetJS (xlsx) 0.18.5 community build (Apache-2.0). Lazy-loaded by c/crExporters on export click for client-side Excel (.xlsx) export. Global: window.XLSX.</description>
+</StaticResource>

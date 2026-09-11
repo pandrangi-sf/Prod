@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Runtime status captured after report execution. --></help>
+    <label><!-- Last Run Status --></label>
+    <name>Last_Run_Status__c</name>
+</CustomFieldTranslation>

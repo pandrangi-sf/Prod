@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>false</isExposed>
+    <masterLabel>Vital Reports Exporters</masterLabel>
+    <description>Client-side export helpers. Lazy-load SheetJS / jsPDF+autotable on call to export a {columns, rows} result to Excel (.xlsx) or PDF. Pure data export, no DOM capture.</description>
+</LightningComponentBundle>

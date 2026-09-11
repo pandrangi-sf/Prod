@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - OHP - Ortho - AR - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank you for requesting an appointment</subject>
+    <textOnly>ORLANDO HEALTH ORTHOPEDIC INSTITUTE
+http://orlando.stage.bluespiremarketing.net/orthopedics/
+
+312.841.3721 | Se habla español
+
+------------------------------------------------------------------
+
+Request a Consultation
+http://www.orlandohealthphysicians.com/neuro/Request-a-Consultation
+
+Find a Physician
+http://www.orlandohealthphysicians.com/neuro/find-a-specialist
+
+------------------------------------------------------------------
+
+Hello!
+
+Thank you for requesting information from Orlando Health Orthopedic Institute! If you&apos;d like to schedule an appointment with an orthopedic specialist, we&apos;ve made it easy through our Request a Consultation website.
+
+http://www.orlandohealthphysicians.com/orthopedics/RequestAConsultation
+
+All you need to do is provide some basic information including your name, birthdate, phone number, address and contact information. Then a representative will contact you within 48 hours to confirm your appointment date and time. It&apos;s that easy!
+
+Once your appointment is confirmed, you&apos;ll want to have a few things ready for your visit:
+
+- You may want a family member or friend to accompany you and help remember the information you discuss with your physician
+- Your insurance information
+- A list of questions you want to ask the physician
+- Request any relevant medical records from your health care provider
+
+If you have questions about finding a physician, you can reach us at 321.841.3724. 
+
+------------------------------------------------------------------
+
+Connect With Us
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/orlandohealth/AboutUs/oh_privacy_practices.aspx?pid=6254 
+
+Orlando Health,1414 Kuhl Avenue Orlando, FL, 32806
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from one or more of these sources: (c)iStock, (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

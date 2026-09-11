@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.X1_Group_Purchasing_Discounts__c</field>
+    </columns>
+    <columns>
+        <field>Account.X2_Care_Management_Services_and_Software__c</field>
+    </columns>
+    <columns>
+        <field>Account.X3_Collaborate__c</field>
+    </columns>
+    <columns>
+        <field>Account.PerfectServe__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Account.Affiliation_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Signed</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>CIN Affiliate Value Opportunities Chosen</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

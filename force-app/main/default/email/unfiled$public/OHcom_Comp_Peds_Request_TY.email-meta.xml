@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>OH.com Comp Peds Appt Request TY</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>OHWEB - OH - COMPLIMENTARY PEDS - Thank You</name>
+    <style>none</style>
+    <subject>Thank you for your request.  We will be in touch with you shortly.</subject>
+    <textOnly>Orlando Health
+
+321.841.3724
+Se habla espanol
+
+————————————————————————————————————————
+
+We&apos;ll be in Touch Shortly
+
+We believe in finding you the right fit for your health and wellness needs. That&apos;s why we&apos;re reviewing the appointment books and checking the schedules—so you have access to the most comprehensive care for your situation. Once we&apos;re done, we&apos;ll give you a call to confirm an appointment.
+
+While you wait, hear from people like you.
+
+Read Patient Stories
+http://orlandohealthstories.com/
+
+————————————————————————————————————————
+
+Orlando Health Blog 
+
+Read the latest on news and stories in healthcare
+http://www.orlandohealth.com/blog
+
+————————————————————————————————————————
+
+Volunteer
+
+Learn how you can contribute 
+http://www.orlandohealth.com/volunteer-services
+
+————————————————————————————————————————
+
+In the News
+
+See how we&apos;re making an impact 
+http://www.orlandohealth.com/news-and-events/news
+————————————————————————————————————————
+
+Privacy Policy
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806
+
+Copyright (C) 2016 Orlando Health</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

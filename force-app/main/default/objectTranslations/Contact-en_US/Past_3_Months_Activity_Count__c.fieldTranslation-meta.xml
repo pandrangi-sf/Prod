@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Past 3 Months Activity Count --></label>
+    <name>Past_3_Months_Activity_Count__c</name>
+</CustomFieldTranslation>

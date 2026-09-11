@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Migration Console — Troubleshooting</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&quot;No matching dataset&quot;:&lt;/strong&gt; The source report&apos;s root object isn&apos;t covered by any CR_Dataset record. Add a dataset for that object first (Setup → Custom Metadata → CR Dataset).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&quot;Field not in dataset&quot; warnings:&lt;/strong&gt; The source report references a field that the matched dataset doesn&apos;t expose. Either add the field path to the dataset, or remove that column from the migrated report.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Migration runs forever:&lt;/strong&gt; Cross-filter or cross-block reports (Salesforce&apos;s Joined Reports) need a different path — use Joined Report Builder instead.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Troubleshooting</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:warning</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">40.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crMigrationConsole</value>
+    </values>
+</CustomMetadata>

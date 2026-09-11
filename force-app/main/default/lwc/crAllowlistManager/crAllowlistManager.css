@@ -1,0 +1,423 @@
+/* ============================================================
+   Reportable Objects (Allowlist Manager) — modernized layout
+   - Sticky header with breadcrumb / title / save
+   - Filter pills with counts (replaces ambiguous filter combo)
+   - Card list with toggle + status pill (replaces dense table)
+   ============================================================ */
+
+:host {
+    display: block;
+    background: #f3f3f3;
+    min-height: calc(100vh - 6rem);
+}
+
+.allowlist-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 6rem);
+}
+
+/* ----- Sticky header ----- */
+.allowlist-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+    padding: 0.75rem 1.25rem 0.85rem;
+}
+
+.allowlist-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: #5c5c5c;
+    margin-bottom: 0.35rem;
+}
+.crumb { letter-spacing: 0.01em; }
+.crumb_current { color: #181818; font-weight: 500; }
+.crumb-sep { --sds-c-icon-color-foreground-default: #b0b0b0; }
+
+/* Page-header swatch — matches the Manage Reportable Objects tile on
+   the Vital Reports Home page (slate + standard:custom). */
+.page-header__icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+.page-header__icon-wrap--slate { background: #e8ecf1; }
+
+.allowlist-title-row {
+    align-items: flex-start;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+.allowlist-title-lead {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    flex: 1;
+    min-width: 0;
+}
+.allowlist-title-block { min-width: 0; flex: 1; max-width: 48rem; }
+.allowlist-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.7rem;
+    color: #747474;
+    margin-bottom: 0.15rem;
+}
+.allowlist-title {
+    color: #161616;
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.35rem;
+}
+.allowlist-sub {
+    color: #5c5c5c;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin: 0;
+}
+.allowlist-actions {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+.allowlist-status-pill {
+    background: #fff8e8;
+    border: 1px solid #fdb515;
+    border-radius: 999px;
+    color: #5c4900;
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+}
+.allowlist-status-pill_dirty { background: #fff8e8; border-color: #fdb515; color: #5c4900; }
+
+/* ----- Body ----- */
+.allowlist-body {
+    padding: 1rem 1.25rem 1.5rem;
+    flex: 1;
+}
+
+/* ----- Toolbar ----- */
+.allowlist-toolbar {
+    align-items: center;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 0.85rem;
+}
+.toolbar-search { max-width: 32rem; }
+.toolbar-bulk { display: flex; gap: 0.5rem; align-items: center; }
+
+/* ----- Filter pills ----- */
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+.filter-pill {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #d8dde2;
+    border-radius: 999px;
+    color: #2a3b56;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 0.82rem;
+    gap: 0.4rem;
+    padding: 0.32rem 0.85rem;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.filter-pill:hover { border-color: #5c7591; }
+.filter-pill_active {
+    background: #1589ee;
+    border-color: #1589ee;
+    color: #ffffff;
+    font-weight: 500;
+}
+.filter-pill__count {
+    background: rgba(0, 0, 0, 0.07);
+    border-radius: 999px;
+    color: inherit;
+    font-size: 0.7rem;
+    padding: 0.05rem 0.45rem;
+    min-width: 1.5rem;
+    text-align: center;
+}
+.filter-pill_active .filter-pill__count { background: rgba(255, 255, 255, 0.25); }
+
+/* ----- Loading / errors ----- */
+.busy-row {
+    align-items: center;
+    color: #5c5c5c;
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+    position: relative;
+}
+.load-error {
+    align-items: center;
+    background: #fdebec;
+    border: 1px solid #ea001e;
+    border-radius: 0.25rem;
+    color: #5c0010;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.6rem 0.85rem;
+    margin-bottom: 0.85rem;
+}
+
+/* ----- Pending changes panel ----- */
+.pending-panel {
+    background: #fff8e8;
+    border: 1px solid #fdb515;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+}
+.pending-panel__header {
+    align-items: center;
+    color: #5c4900;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.pending-panel__title {
+    align-items: center;
+    display: inline-flex;
+    font-size: 0.85rem;
+    gap: 0.4rem;
+}
+.pending-panel__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pending-panel__item {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #fdd676;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    font-size: 0.78rem;
+    gap: 0.35rem;
+    padding: 0.25rem 0.55rem;
+}
+.pending-action {
+    border-radius: 999px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.1rem 0.45rem;
+    text-transform: uppercase;
+}
+.pending-action_add { background: #e6f4ea; color: #194d2c; }
+.pending-action_remove { background: #fdebec; color: #5c0010; }
+.pending-panel__obj-label { color: #181818; font-weight: 500; }
+.pending-panel__obj-api {
+    color: #707070;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.7rem;
+}
+
+/* ----- Object list (cards) ----- */
+.object-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.object-card {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: 4rem minmax(14rem, 1fr) minmax(12rem, 14rem) auto;
+    padding: 0.6rem 0.85rem;
+    transition: box-shadow 0.18s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.object-card:hover { box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07); }
+
+/* Visual differentiation by state — the most important UX win for this screen */
+.object-card_in {
+    background: #f7fbf8;
+    border-left: 3px solid #2e844a;
+}
+.object-card_out { /* default neutral state */ }
+.object-card_pending {
+    background: #fff8e8;
+    border-left: 3px solid #fdb515;
+}
+
+.object-toggle {
+    display: flex;
+    justify-content: center;
+}
+.object-info { min-width: 0; }
+.object-name-row {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.object-label {
+    color: #161616;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.object-badge {
+    background: #f0f0f0;
+    border-radius: 999px;
+    color: #5c5c5c;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.1rem 0.45rem;
+    text-transform: uppercase;
+}
+.object-badge_custom { background: #e8eefe; color: #2a4f9c; }
+.object-api {
+    color: #707070;
+    display: block;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    margin-top: 0.15rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.object-category lightning-combobox { width: 100%; }
+
+.object-status { display: flex; justify-content: flex-end; }
+.status-pill {
+    align-items: center;
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 0.72rem;
+    font-weight: 500;
+    gap: 0.3rem;
+    padding: 0.22rem 0.65rem;
+    white-space: nowrap;
+}
+.status-pill_in {
+    background: #e6f4ea;
+    border: 1px solid #2e844a;
+    color: #194d2c;
+}
+.status-pill_in::before {
+    content: '●';
+    color: #2e844a;
+    font-size: 0.6rem;
+}
+.status-pill_out {
+    background: #f0f0f0;
+    border: 1px solid #d8dde2;
+    color: #5c5c5c;
+}
+.status-pill_out::before {
+    content: '○';
+    color: #b0b0b0;
+    font-size: 0.6rem;
+}
+.status-pill_pending {
+    background: #fff8e8;
+    border: 1px solid #fdb515;
+    color: #5c4900;
+}
+.status-pill_pending::before {
+    content: '●';
+    color: #fdb515;
+    font-size: 0.6rem;
+}
+
+/* ----- Empty state ----- */
+.empty-list {
+    align-items: center;
+    background: #ffffff;
+    border: 1px dashed #cfcfcf;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+}
+.empty-list__icon {
+    align-items: center;
+    background: linear-gradient(135deg, #b0b0b0 0%, #707070 100%);
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    margin-bottom: 0.7rem;
+    width: 3rem;
+}
+.empty-list__title {
+    color: #181818;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem;
+}
+.empty-list__copy { color: #5c5c5c; font-size: 0.82rem; margin: 0; }
+
+/* ----- Pagination ----- */
+.pagination {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr auto auto;
+    margin-top: 1rem;
+    padding: 0.5rem 0.85rem;
+}
+.pagination__label { color: #5c5c5c; font-size: 0.78rem; }
+.pagination__controls { display: flex; gap: 0.15rem; align-items: center; }
+.pagination__page-size { min-width: 9rem; }
+
+@media (max-width: 56em) {
+    .object-card {
+        grid-template-columns: 4rem 1fr auto;
+        grid-template-areas:
+            'toggle info status'
+            'category category category';
+    }
+    .object-toggle { grid-area: toggle; }
+    .object-info { grid-area: info; }
+    .object-status { grid-area: status; }
+    .object-category { grid-area: category; }
+    .allowlist-toolbar { grid-template-columns: 1fr; }
+    .toolbar-bulk { justify-content: flex-end; }
+    .pagination { grid-template-columns: 1fr; gap: 0.5rem; }
+    .pagination__controls { justify-content: center; }
+}

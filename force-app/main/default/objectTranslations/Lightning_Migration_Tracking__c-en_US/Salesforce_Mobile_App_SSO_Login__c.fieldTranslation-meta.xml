@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates if user can log in to the Salesforce Mobile App using SSO. --></help>
+    <label><!-- Salesforce Mobile App SSO Login --></label>
+    <name>Salesforce_Mobile_App_SSO_Login__c</name>
+</CustomFieldTranslation>

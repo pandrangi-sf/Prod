@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Allowlist Manager — Power Tips</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Custom objects:&lt;/strong&gt; Custom objects need to exist in the org before they appear in the candidate list. Newly-created objects show up after a Refresh.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Bulk clear:&lt;/strong&gt; The Clear All Active button deactivates everything but keeps the records (so you can re-activate later without losing custom labels).&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Per-object label:&lt;/strong&gt; Override the displayed label so users see your team&apos;s naming convention (e.g., &quot;Deal&quot; instead of &quot;Opportunity&quot;).&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Power tips</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:advanced_function</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crAllowlistManager</value>
+    </values>
+</CustomMetadata>

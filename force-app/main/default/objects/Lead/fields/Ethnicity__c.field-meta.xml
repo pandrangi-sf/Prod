@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ethnicity__c</fullName>
+    <label>Ethnicity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>African American</fullName>
+                <default>false</default>
+                <label>African American</label>
+            </value>
+            <value>
+                <fullName>Asian</fullName>
+                <default>false</default>
+                <label>Asian</label>
+            </value>
+            <value>
+                <fullName>Caucasian</fullName>
+                <default>false</default>
+                <label>Caucasian</label>
+            </value>
+            <value>
+                <fullName>Hispanic Black</fullName>
+                <default>false</default>
+                <label>Hispanic Black</label>
+            </value>
+            <value>
+                <fullName>Hispanic White</fullName>
+                <default>false</default>
+                <label>Hispanic White</label>
+            </value>
+            <value>
+                <fullName>Middle Eastern</fullName>
+                <default>false</default>
+                <label>Middle Eastern</label>
+            </value>
+            <value>
+                <fullName>Native American</fullName>
+                <default>false</default>
+                <label>Native American</label>
+            </value>
+            <value>
+                <fullName>Native Hawaiian or Other Pacific Islande</fullName>
+                <default>false</default>
+                <label>Native Hawaiian or Other Pacific Islande</label>
+            </value>
+            <value>
+                <fullName>No Description</fullName>
+                <default>false</default>
+                <label>No Description</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+                <label>Unknown</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

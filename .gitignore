@@ -1,0 +1,28 @@
+# Salesforce CLI state — contains auth tokens and org credentials. Never commit.
+.sf/
+.sfdx/
+.localdevserver/
+deploy-options.json
+
+# Retrieve/deploy scratch output
+**/unpackaged/
+*.zip.tmp
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ...but static resource bundles in the org legitimately contain these files.
+# force-app/ is a faithful mirror of prod, so don't let the rules above strip them.
+!force-app/**/.DS_Store
+!force-app/**/Thumbs.db
+!force-app/**/desktop.ini

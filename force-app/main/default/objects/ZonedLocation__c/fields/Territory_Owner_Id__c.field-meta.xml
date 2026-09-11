@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Territory_Owner_Id__c</fullName>
+    <description>The Owner Id for the Territory related to the Zoned Location.  Used in Flows.</description>
+    <externalId>false</externalId>
+    <formula>Territory__r.OwnerId</formula>
+    <label>Territory Owner Id</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

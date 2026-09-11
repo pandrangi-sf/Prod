@@ -1,0 +1,120 @@
+<template>
+    <div class="formula-editor">
+        <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+            <h3 class="slds-text-heading_small">Formulas</h3>
+            <lightning-button
+                label="Add Formula"
+                icon-name="utility:add"
+                variant="neutral"
+                onclick={addFormula}
+                disabled={addDisabled}>
+            </lightning-button>
+        </div>
+
+        <template if:true={loadError}>
+            <div class="slds-text-color_error slds-m-bottom_x-small">{loadError}</div>
+        </template>
+
+        <template if:true={hasFormulas}>
+            <template for:each={formulas} for:item="f">
+                <div key={f.id} class="formula-card slds-box slds-m-bottom_small">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-grow">
+                            <lightning-input
+                                label="Name"
+                                value={f.name}
+                                data-id={f.id}
+                                data-prop="name"
+                                onchange={handleFormulaChange}>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-combobox
+                                label="Type"
+                                options={typeOptions}
+                                value={f.type}
+                                data-id={f.id}
+                                data-prop="type"
+                                onchange={handleFormulaChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-shrink-none slds-align-bottom">
+                            <lightning-button-icon
+                                icon-name="utility:delete"
+                                variant="bare"
+                                alternative-text="Remove formula"
+                                data-id={f.id}
+                                onclick={removeFormula}>
+                            </lightning-button-icon>
+                        </div>
+                    </div>
+
+                    <div class="slds-m-top_small slds-grid slds-gutters">
+                        <div class="slds-col slds-size_2-of-3">
+                            <lightning-textarea
+                                label="Expression"
+                                placeholder="e.g. Amount__c * 2 or IF(Amount__c > 1000, 'Large', 'Small')"
+                                value={f.expression}
+                                data-id={f.id}
+                                data-prop="expression"
+                                onchange={handleFormulaChange}>
+                            </lightning-textarea>
+                            <div class="slds-grid slds-grid_align-spread slds-m-top_x-small">
+                                <lightning-button
+                                    label="Validate"
+                                    icon-name="utility:check"
+                                    variant="neutral"
+                                    data-id={f.id}
+                                    disabled={f.validating}
+                                    onclick={validateOne}>
+                                </lightning-button>
+                                <template if:true={f.validationOk}>
+                                    <span class="slds-text-color_success slds-text-body_small">{f.validationMessage}</span>
+                                </template>
+                                <template if:true={f.validationError}>
+                                    <span class="slds-text-color_error slds-text-body_small">{f.validationMessage}</span>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-3">
+                            <p class="slds-text-title_caps slds-text-color_weak slds-m-bottom_x-small">Insert Field</p>
+                            <div class="field-list">
+                                <template for:each={fieldOptions} for:item="opt">
+                                    <button key={opt.value}
+                                        class="slds-button slds-button_neutral slds-m-bottom_xx-small field-button"
+                                        data-id={f.id}
+                                        data-token={opt.value}
+                                        onclick={insertField}>
+                                        {opt.label}
+                                    </button>
+                                </template>
+                            </div>
+                            <p class="slds-text-title_caps slds-text-color_weak slds-m-top_small">Functions</p>
+                            <button class="slds-button slds-button_neutral slds-m-right_xx-small slds-m-bottom_xx-small"
+                                data-id={f.id} data-token="IF(condition, true, false)" onclick={insertField}>
+                                IF
+                            </button>
+                            <button class="slds-button slds-button_neutral slds-m-right_xx-small slds-m-bottom_xx-small"
+                                data-id={f.id} data-token="CASE(field, val1, result1, default)" onclick={insertField}>
+                                CASE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <template if:false={hasFormulas}>
+            <p class="slds-text-color_weak slds-p-vertical_x-small">
+                No formulas yet. Click <strong>Add Formula</strong> to compute derived values.
+            </p>
+        </template>
+
+        <details class="slds-m-top_small advanced-json">
+            <summary class="slds-text-title_caps slds-text-color_weak">Advanced (JSON)</summary>
+            <lightning-textarea label="Formulas JSON" variant="label-hidden"
+                value={jsonOutput} readonly class="slds-m-top_x-small">
+            </lightning-textarea>
+        </details>
+    </div>
+</template>

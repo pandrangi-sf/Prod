@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Graphics Pack Example</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Graphics Pack Examples</value>
+    </caseValues>
+    <layouts>
+        <layout>Graphics Pack Example Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Out of 3 --></label>
+            <section>Out of 3</section>
+        </sections>
+        <sections>
+            <label><!-- Out of 5 --></label>
+            <section>Out of 5</section>
+        </sections>
+        <sections>
+            <label><!-- Positions --></label>
+            <section>Positions</section>
+        </sections>
+        <sections>
+            <label><!-- Red Amber Green --></label>
+            <section>Red Amber Green</section>
+        </sections>
+        <sections>
+            <label><!-- Up or Down --></label>
+            <section>Up or Down</section>
+        </sections>
+        <sections>
+            <label><!-- Values --></label>
+            <section>Values</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Region_Required</fullName>
+    <active>false</active>
+    <description>Makes the Sub Region field required when the Facility field is NSCENTRAL.</description>
+    <errorConditionFormula>AND(TEXT(Facility__c) = &apos;NSCENTRAL&apos;, ISBLANK(TEXT( Sub_Region__c )))</errorConditionFormula>
+    <errorDisplayField>Sub_Region__c</errorDisplayField>
+    <errorMessage>Sub Region is required for NSCENTRAL</errorMessage>
+</ValidationRule>

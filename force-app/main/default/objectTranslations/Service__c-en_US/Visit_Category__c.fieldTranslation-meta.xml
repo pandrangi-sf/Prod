@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates if there is a specific Visit Category the value can only be used for. --></help>
+    <label><!-- Visit Category --></label>
+    <name>Visit_Category__c</name>
+    <picklistValues>
+        <masterLabel>Contract Overview/ Renewal / Membership Solicitation</masterLabel>
+        <translation><!-- Contract Overview/ Renewal / Membership Solicitation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IT Support</masterLabel>
+        <translation><!-- IT Support --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHN Resource Meeting</masterLabel>
+        <translation><!-- OHN Resource Meeting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHPA Annual Wellness Visit</masterLabel>
+        <translation><!-- OHPA Annual Wellness Visit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Onboarding</masterLabel>
+        <translation><!-- Onboarding --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Provider Intervention Meeting</masterLabel>
+        <translation><!-- Provider Intervention Meeting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Provider Support Meeting</masterLabel>
+        <translation><!-- Provider Support Meeting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quarterly Meeting</masterLabel>
+        <translation><!-- Quarterly Meeting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Site Visit</masterLabel>
+        <translation><!-- Site Visit --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

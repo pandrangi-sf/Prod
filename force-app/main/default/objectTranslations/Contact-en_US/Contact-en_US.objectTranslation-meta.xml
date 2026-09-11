@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Provider</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Providers</value>
+    </caseValues>
+    <layouts>
+        <layout>Admin Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Data Quality --></label>
+            <section>Data Quality</section>
+        </sections>
+        <sections>
+            <label><!-- Descriptions --></label>
+            <section>Descriptions</section>
+        </sections>
+        <sections>
+            <label><!-- Network Status --></label>
+            <section>Network Status</section>
+        </sections>
+        <sections>
+            <label><!-- Opt In/Out --></label>
+            <section>Opt In/Out</section>
+        </sections>
+        <sections>
+            <label><!-- Photo --></label>
+            <section>Photo</section>
+        </sections>
+        <sections>
+            <label><!-- Practice &amp; Group Information --></label>
+            <section>Practice &amp; Group Information</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Information --></label>
+            <section>Provider Information</section>
+        </sections>
+        <sections>
+            <label><!-- Related Record Counts --></label>
+            <section>Related Record Counts</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Corporate Contact Layout</layout>
+        <sections>
+            <label><!-- &quot;NICE TO HAVE&quot; FIELDS --></label>
+            <section>&quot;NICE TO HAVE&quot; FIELDS</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Identification --></label>
+            <section>Identification</section>
+        </sections>
+        <sections>
+            <label><!-- Practice &amp; Group Information --></label>
+            <section>Practice &amp; Group Information</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Dashboard --></label>
+            <section>Provider Dashboard</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Location Activities --></label>
+            <section>Provider Location Activities</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Location Map --></label>
+            <section>Provider Location Map</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Network Provider Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Descriptions --></label>
+            <section>Descriptions</section>
+        </sections>
+        <sections>
+            <label><!-- Network Status --></label>
+            <section>Network Status</section>
+        </sections>
+        <sections>
+            <label><!-- Photo --></label>
+            <section>Photo</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Information --></label>
+            <section>Provider Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Non-Clinical</layout>
+        <sections>
+            <label><!-- &quot;NICE TO HAVE&quot; FIELDS --></label>
+            <section>&quot;NICE TO HAVE&quot; FIELDS</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Identification --></label>
+            <section>Identification</section>
+        </sections>
+        <sections>
+            <label><!-- Practice &amp; Group Information --></label>
+            <section>Practice &amp; Group Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PNC Provider Layout</layout>
+        <sections>
+            <label><!-- &quot;NICE TO HAVE&quot; FIELDS --></label>
+            <section>&quot;NICE TO HAVE&quot; FIELDS</section>
+        </sections>
+        <sections>
+            <label><!-- CIN Development Fields --></label>
+            <section>CIN Development Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- IMPORTANT FIELDS --></label>
+            <section>IMPORTANT FIELDS</section>
+        </sections>
+        <sections>
+            <label><!-- Practice &amp; Group Information --></label>
+            <section>Practice &amp; Group Information</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Dashboard --></label>
+            <section>Provider Dashboard</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Location Activities --></label>
+            <section>Provider Location Activities</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Location Map --></label>
+            <section>Provider Location Map</section>
+        </sections>
+        <sections>
+            <label><!-- READ ONLY FIELDS - UPDATED WITH OH DATA FEEDS --></label>
+            <section>READ ONLY FIELDS - UPDATED WITH OH DATA FEEDS</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PRM Provider Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Descriptions --></label>
+            <section>Descriptions</section>
+        </sections>
+        <sections>
+            <label><!-- Network Status --></label>
+            <section>Network Status</section>
+        </sections>
+        <sections>
+            <label><!-- Photo --></label>
+            <section>Photo</section>
+        </sections>
+        <sections>
+            <label><!-- Provider Information --></label>
+            <section>Provider Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Add Specialty --></label>
+        <name>Add_Specialty</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Demo --></label>
+        <name>Demo</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Visit --></label>
+        <name>Log_a_Visit_BH</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Visit --></label>
+        <name>Log_a_Visit_Flow</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Visit --></label>
+        <name>Log_a_Visit_OH</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Log a Visit TesT --></label>
+        <name>Log_a_Visit_TesT</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Provider --></label>
+        <name>New_Provider</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Remove Target --></label>
+        <name>Remove_Target</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Target Provider --></label>
+        <name>Target_Provider</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Target Owner --></label>
+        <name>Update_Target_Owner</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Record type to be used for business contacts (ex: skilled nursing facility directors, administrators, pharmacy directors, etc.) --></description>
+        <label><!-- Business Contact --></label>
+        <name>BusinessContact</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type to be used for clinical extenders (ex: APRNs, Nurse Practitioners and Physician Assistants).NOTE - Put RNs in Other  Clinical Provider Record Type. --></description>
+        <label><!-- Clinical Extender --></label>
+        <name>ClinicalExtender</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type to be used for office staff contacts (ex: Secretaries, Referral Coordinators, Medical Assistants and Practice Managers). --></description>
+        <label><!-- Office Staff --></label>
+        <name>OfficeStaff</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type to be used for non-Physician and non-Clinical Extender Providers (ex: RNs, LPNs, Oral Surgeons, Dentists, Chiropractors, LCSWs, Nutrition Professionals, Occupational Therapists, Optometrists, Psychologists, etc.) --></description>
+        <label><!-- Other Clinical --></label>
+        <name>OtherClinical</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type to be used for Physician contacts (MDs and DOs). --></description>
+        <label><!-- Physician --></label>
+        <name>Physician</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Affiliation Group is required for new records. --></errorMessage>
+        <name>Affiliation_Group_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Affiliation is required when creating a new provider. --></errorMessage>
+        <name>Affiliation_Required_For_New_Records</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must uncheck the Medical Group option before you can uncheck any of the Network fields. --></errorMessage>
+        <name>BH_Enforce_Network_Checkboxes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Credentials required for new records. --></errorMessage>
+        <name>Credentials_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide Email Type when entering an Email. --></errorMessage>
+        <name>Email_Type_Not_Blank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- First Name is required --></errorMessage>
+        <name>First_Name_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Gender is required for new records. --></errorMessage>
+        <name>Gender_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- NPI must be 10 digits --></errorMessage>
+        <name>NPI_Length</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Professional Suffix required for new records. --></errorMessage>
+        <name>Professional_Suffix_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Provider Type is required for new records. --></errorMessage>
+        <name>Provider_Type_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Care_Journey --></label>
+        <name>Care_Journey</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LogACallPRM --></label>
+        <name>LogACallPRM</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Log_a_Virtual_Visit_Report --></label>
+        <name>Log_a_Virtual_Visit_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Log_a_Visit_Report --></label>
+        <name>Log_a_Visit_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Log_a_Visit_Report_Lightning --></label>
+        <name>Log_a_Visit_Report_Lightning</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- NPI_Registry --></label>
+        <name>NPI_Registry</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Provider --></label>
+        <name>New_Provider</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Report_Visit_Type --></label>
+        <name>Report_Visit_Type</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendGmail --></label>
+        <name>SendGmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooWeather --></label>
+        <name>YahooWeather</name>
+    </webLinks>
+</CustomObjectTranslation>

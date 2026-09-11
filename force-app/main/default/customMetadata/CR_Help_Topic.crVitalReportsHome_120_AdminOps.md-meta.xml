@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Vital Reports Home — Admin Ops</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Health Monitor&lt;/strong&gt; tile — check recent Apex job status, scheduled crons, and run errors. After a sandbox refresh, the Schedule Nightly ETL button re-registers the cron with one click.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Manage Reportable Objects&lt;/strong&gt; tile — curate which objects appear in the Report Builder picker. Hide objects users shouldn&apos;t report on; add custom objects you want available.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Run Migration&lt;/strong&gt; tile — import standard Salesforce reports into Vital Reports format. Useful when consolidating legacy reports.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Granting access&lt;/strong&gt; — assign the &lt;strong&gt;Vital Reports User&lt;/strong&gt; permission set for standard users; add &lt;strong&gt;Vital Reports Admin&lt;/strong&gt; on top for users who need Builder, Health, and Migration access.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Editing this help content&lt;/strong&gt; — Setup → Custom Metadata Types → CR_Help_Topic → Manage Records. Set each topic&apos;s &lt;strong&gt;Audience&lt;/strong&gt; field to All, Admin, or User to control who sees it (Admin = users with the Vital Reports Admin View permission; blank = All).&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Operations: ETL, health, and access</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:settings</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">120.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crVitalReportsHome</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_a_Visit_Report</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Log a Visit Report</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/00T/e?title=Visit%20Report&amp;who_id={!Contact.Id}&amp;tsk5=Visit%20Report&amp;retURL=%2F{!Contact.Id}&amp;RecordType=012i0000001NDwA&amp;ent=Task&amp;tsk10=Visit%20Report&amp;tsk12=Completed&amp;tsk4={!Today}</url>
+</WebLink>

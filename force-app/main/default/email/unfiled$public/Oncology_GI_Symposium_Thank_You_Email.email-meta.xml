@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Automated &quot;Thank You&quot; email for Oncology Gastrointestinal Symposium &quot;Save the Date&quot; form entries.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Oncology - GI Symposium Thank You Email</name>
+    <style>none</style>
+    <subject>Thank You for Your Save the Date Submission!</subject>
+    <textOnly>UFHealth Cancer Center | Orlando Health
+
+321-841-1969
+Se habla espanol
+
+————————————————————————————————————————
+
+Thank You for Your Submission
+
+Thank you for your interest in attending the Gastrointestinal Cancers Symposium: Education and Innovation, on Saturday, March 11, 2017 at Loews Royal Pacific Resort at Universal Orlando Resort. We will be holding a place for you. Please keep checking the Gastrointestinal Symposium page for more updates.
+
+We look forward to seeing you there!
+
+Return to Gastrointestinal Symposium
+http://www.ufhealthcancerorlando.com/centers/gastrointestinal-cancer-center/gi-symposium
+
+————————————————————————————————————————
+
+Cancer Support Community 
+
+http://www.ufhealthcancerorlando.com/our-services/integrative-medicine
+
+————————————————————————————————————————
+
+Volunteer
+
+Learn how you can contribute 
+http://www.orlandohealth.com/volunteer-services/uf-health-cancer-center-orlando-health-volunteer-services
+
+————————————————————————————————————————
+
+In the News
+
+See how we&apos;re making an impact 
+http://www.ufhealthcancerorlando.com/news-and-events
+
+————————————————————————————————————————
+
+Privacy Policy
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806
+
+Copyright (C) 2016 Orlando Health</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

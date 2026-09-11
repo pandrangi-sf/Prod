@@ -1,0 +1,6 @@
+body { text-align:center; }
+#wrapper { text-align:left; }
+#container { width:980px !important; }
+.right { width:340px; float:right !important; position:relative; z-index:999; }
+.guideIMG1 { float:right !important;}
+.wyl-container { width: 245px !important;}

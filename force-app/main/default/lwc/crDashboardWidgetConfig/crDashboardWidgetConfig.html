@@ -1,0 +1,475 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="cr-cfg-h" class="slds-modal slds-fade-in-open slds-modal_large">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={handleCancel} title="Close">
+                    <lightning-icon icon-name="utility:close" size="small" alternative-text="Close" variant="inverse"></lightning-icon>
+                </button>
+                <h2 id="cr-cfg-h" class="slds-text-heading_medium">{headerLabel}</h2>
+            </header>
+            <div class="slds-modal__content cfg-modal-body">
+                <!-- Left: form (chart / text / image) -->
+                <div class="cfg-form">
+                    <template if:true={showTextForm}>
+                        <lightning-input label="Title" value={title} onchange={handleTitleChange}></lightning-input>
+                        <div class="slds-m-top_small"></div>
+                        <lightning-input-rich-text
+                            label="Body"
+                            value={richText}
+                            onchange={handleRichTextChange}>
+                        </lightning-input-rich-text>
+                    </template>
+                    <template if:true={showImageForm}>
+                        <lightning-input label="Title" value={title} onchange={handleTitleChange}></lightning-input>
+                        <div class="slds-m-top_small"></div>
+                        <lightning-input
+                            type="url"
+                            label="Image URL"
+                            required
+                            placeholder="https://..."
+                            value={imageUrl}
+                            onchange={handleImageUrlChange}>
+                        </lightning-input>
+                        <div class="slds-m-top_x-small"></div>
+                        <lightning-input
+                            label="Alt Text"
+                            field-level-help="Describes the image for screen readers."
+                            value={imageAlt}
+                            onchange={handleImageAltChange}>
+                        </lightning-input>
+                        <div class="slds-m-top_x-small"></div>
+                        <lightning-combobox
+                            label="Image Fit"
+                            value={imageFit}
+                            options={imageFitOptions}
+                            onchange={handleImageFitChange}>
+                        </lightning-combobox>
+                    </template>
+                    <template if:true={showLwcForm}>
+                        <lightning-input label="Title" value={title} onchange={handleTitleChange}></lightning-input>
+                        <div class="slds-m-top_small"></div>
+                        <lightning-combobox
+                            label="Lightning Web Component"
+                            field-level-help="Pick from the framework's allowlisted dashboard components. Adding a new entry requires a code change."
+                            value={lwcName}
+                            options={lwcOptions}
+                            onchange={handleLwcNameChange}>
+                        </lightning-combobox>
+                        <p class="slds-text-color_weak slds-text-body_small slds-m-top_xx-small">{lwcDescription}</p>
+                        <div class="slds-m-top_small"></div>
+                        <lightning-textarea
+                            label="Component Properties (JSON)"
+                            field-level-help="JSON object passed to the component as widgetProps. Format errors are surfaced inline."
+                            placeholder={lwcSamplePropsHelp}
+                            value={lwcPropsJson}
+                            message-when-bad-input={lwcPropsError}
+                            onchange={handleLwcPropsChange}>
+                        </lightning-textarea>
+                        <template if:true={lwcPropsError}>
+                            <p class="slds-text-color_destructive slds-text-body_small slds-m-top_xx-small">
+                                JSON error: {lwcPropsError}
+                            </p>
+                        </template>
+                    </template>
+                <template if:true={showChartForm}>
+                    <p class="cfg-section-heading">Inherit from Report</p>
+                    <lightning-input
+                        type="checkbox"
+                        label="Use chart settings from report"
+                        field-level-help="When checked, the widget defers chart axes, sorting, formatting, and legend to the report's defaults. Override fields below are locked while this is on."
+                        checked={useChartFromReport}
+                        onchange={handleUseChartFromReportChange}>
+                    </lightning-input>
+                    <lightning-input
+                        type="checkbox"
+                        label="Use table settings from report"
+                        field-level-help="When checked, the widget defers table column order and visibility to the report's defaults. Currently informational only — the framework's table renderer always uses the report's columns."
+                        checked={useTableFromReport}
+                        onchange={handleUseTableFromReportChange}>
+                    </lightning-input>
+
+                    <p class="cfg-section-heading slds-m-top_medium">Display As</p>
+                    <template if:true={showAiHint}>
+                        <div class="ai-hint" role="status">
+                            <lightning-icon icon-name="utility:einstein" size="x-small" class="ai-hint__icon"></lightning-icon>
+                            <span class="ai-hint__text">{aiHintText}</span>
+                            <span class="ai-hint__badge">Sample</span>
+                        </div>
+                    </template>
+                    <div class="chart-grid" onfocusin={handleChartGridFocus} onmouseenter={handleChartGridFocus}>
+                        <template for:each={chartTypeCards} for:item="t">
+                            <button
+                                key={t.value}
+                                type="button"
+                                class={t.cardClass}
+                                data-value={t.value}
+                                title={t.fitTitle}
+                                disabled={overrideFieldsDisabled}
+                                onclick={handleTypeSelect}>
+                                <template if:true={t.fitIcon}>
+                                    <lightning-icon icon-name={t.fitIcon} size="xx-small" class="chart-card__fit-badge"></lightning-icon>
+                                </template>
+                                <lightning-icon icon-name={t.icon} size="small" class="chart-card__icon"></lightning-icon>
+                                <span class="chart-card__label">{t.label}</span>
+                            </button>
+                        </template>
+                    </div>
+                    <template if:true={hasCurrentChartVerdict}>
+                        <div class={currentVerdictClass} role="status">
+                            <lightning-icon icon-name={currentVerdictIcon} size="xx-small" class="cfg-chart-caption__icon"></lightning-icon>
+                            <span>{currentVerdictText}</span>
+                        </div>
+                    </template>
+
+                    <p class="cfg-section-heading slds-m-top_medium">Axes</p>
+                    <lightning-dual-listbox
+                        label="Y-Axis Fields"
+                        field-level-help="Numeric fields plotted on the Y axis, or 'Count of records' to count rows per X-axis group. Pick multiple to render a multi-series chart (one bar/line per field, each in a different palette color). Pie and donut charts only use the first selection."
+                        source-label="Available"
+                        selected-label="Y-Axis"
+                        size="4"
+                        options={yAxisOptions}
+                        value={yAxisFields}
+                        disabled={overrideFieldsDisabled}
+                        onchange={handleYAxisChange}>
+                    </lightning-dual-listbox>
+                    <template if:true={hasNoNumericFields}>
+                        <p class="cfg-axes-hint slds-m-top_xx-small slds-text-body_small slds-text-color_weak">
+                            <lightning-icon icon-name="utility:info_alt" size="xx-small"></lightning-icon>
+                            This report has no numeric column. Use <strong>Count of records</strong> above, or add a SUM/COUNT aggregation in the Report Builder for richer measures.
+                        </p>
+                    </template>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-combobox
+                        label="X-Axis Field"
+                        field-level-help="Categorical / grouping field plotted on the X axis. Choose '(auto)' to let the chart pick the first non-numeric column."
+                        value={xAxisField}
+                        options={xAxisOptions}
+                        disabled={overrideFieldsDisabled}
+                        onchange={handleXAxisChange}>
+                    </lightning-combobox>
+
+                    <p class="cfg-section-heading slds-m-top_medium">Title &amp; Caption</p>
+                    <lightning-input label="Title" value={title} onchange={handleTitleChange}></lightning-input>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-input label="Subtitle" value={subtitle} onchange={handleSubtitleChange}></lightning-input>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-input label="Footer" value={footer} onchange={handleFooterChange}></lightning-input>
+
+                    <p class="cfg-section-heading slds-m-top_medium">Sort &amp; Limit</p>
+                    <lightning-combobox label="Sort By" value={sortBy} options={sortFieldOptions} disabled={overrideFieldsDisabled} onchange={handleSortByChange}></lightning-combobox>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-combobox label="Sort Direction" value={sortDirection} options={sortDirectionOptions} disabled={overrideFieldsDisabled} onchange={handleSortDirChange}></lightning-combobox>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-input type="number" label="Max Groups Displayed" value={maxGroups} min="1" max="500" disabled={overrideFieldsDisabled} onchange={handleMaxGroupsChange}></lightning-input>
+
+                    <p class="cfg-section-heading slds-m-top_medium">Format</p>
+                    <lightning-combobox label="Display Units" value={displayUnits} options={displayUnitOptions} disabled={overrideFieldsDisabled} onchange={handleDisplayUnitsChange}></lightning-combobox>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-input type="number" label="Decimal Places" value={decimalPlaces} min="0" max="6" placeholder="(auto)" disabled={overrideFieldsDisabled} onchange={handleDecimalChange}></lightning-input>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-combobox label="Legend Position" value={legendPosition} options={legendOptions} disabled={overrideFieldsDisabled} onchange={handleLegendChange}></lightning-combobox>
+                    <div class="slds-m-top_x-small"></div>
+                    <lightning-input type="checkbox" label="Show Values on chart" checked={showValues} disabled={overrideFieldsDisabled} onchange={handleShowValuesChange}></lightning-input>
+
+                    <p class="cfg-section-heading slds-m-top_medium">Tile Theme</p>
+                    <lightning-combobox label="Widget Theme" value={widgetTheme} options={themeOptions} onchange={handleThemeChange}></lightning-combobox>
+
+                    <p class="cfg-section-heading slds-m-top_medium">Link</p>
+                    <lightning-input type="url" label="Custom Link" placeholder="https://..." value={customLink} onchange={handleCustomLinkChange}></lightning-input>
+
+                    <template if:true={showConditionalFormatting}>
+                        <details class="cfg-collapse" open>
+                        <summary class="cfg-collapse__summary cfg-section-heading slds-m-top_medium">Conditional Formatting</summary>
+                        <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_x-small">
+                            Color table cells by value. Rules apply top-down; the first match per cell wins.
+                        </p>
+                        <template for:each={conditionalFormatRows} for:item="rule">
+                            <div key={rule.id} class="cfg-cf-rule slds-box slds-box_xx-small slds-m-bottom_x-small">
+                                <lightning-combobox
+                                    label="Column"
+                                    data-id={rule.id}
+                                    data-field="column"
+                                    value={rule.column}
+                                    options={cfColumnOptions}
+                                    onchange={handleCfFieldChange}>
+                                </lightning-combobox>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-combobox
+                                    label="Operator"
+                                    data-id={rule.id}
+                                    data-field="operator"
+                                    value={rule.operator}
+                                    options={cfOperatorOptions}
+                                    onchange={handleCfFieldChange}>
+                                </lightning-combobox>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-input
+                                    label="Value"
+                                    data-id={rule.id}
+                                    data-field="value"
+                                    value={rule.value}
+                                    onchange={handleCfFieldChange}>
+                                </lightning-input>
+                                <template if:true={rule.showValueTo}>
+                                    <div class="slds-m-top_xx-small"></div>
+                                    <lightning-input
+                                        label="And"
+                                        data-id={rule.id}
+                                        data-field="valueTo"
+                                        value={rule.valueTo}
+                                        onchange={handleCfFieldChange}>
+                                    </lightning-input>
+                                </template>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-input
+                                    type="color"
+                                    label="Background"
+                                    data-id={rule.id}
+                                    data-field="background"
+                                    value={rule.background}
+                                    onchange={handleCfFieldChange}>
+                                </lightning-input>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-input
+                                    type="color"
+                                    label="Text"
+                                    data-id={rule.id}
+                                    data-field="text"
+                                    value={rule.text}
+                                    onchange={handleCfFieldChange}>
+                                </lightning-input>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-button
+                                    label="Remove rule"
+                                    icon-name="utility:delete"
+                                    data-id={rule.id}
+                                    onclick={handleRemoveConditionalFormat}>
+                                </lightning-button>
+                            </div>
+                        </template>
+                        <lightning-button
+                            label="Add rule"
+                            icon-name="utility:add"
+                            onclick={handleAddConditionalFormat}>
+                        </lightning-button>
+                        </details>
+                    </template>
+
+                    <template if:true={showTableTotals}>
+                        <details class="cfg-collapse" open>
+                        <summary class="cfg-collapse__summary cfg-section-heading slds-m-top_medium">Totals Footer</summary>
+                        <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_x-small">
+                            Add a grand-total row at the bottom of the table. Numeric aggregations skip non-numeric values; Count tallies all rows.
+                        </p>
+                        <template for:each={tableTotalRows} for:item="total">
+                            <div key={total.id} class="cfg-cf-rule slds-box slds-box_xx-small slds-m-bottom_x-small">
+                                <lightning-combobox
+                                    label="Column"
+                                    data-id={total.id}
+                                    data-field="column"
+                                    value={total.column}
+                                    options={ttColumnOptions}
+                                    onchange={handleTableTotalChange}>
+                                </lightning-combobox>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-combobox
+                                    label="Aggregation"
+                                    data-id={total.id}
+                                    data-field="agg"
+                                    value={total.agg}
+                                    options={ttAggOptions}
+                                    onchange={handleTableTotalChange}>
+                                </lightning-combobox>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-button
+                                    label="Remove total"
+                                    icon-name="utility:delete"
+                                    data-id={total.id}
+                                    onclick={handleRemoveTableTotal}>
+                                </lightning-button>
+                            </div>
+                        </template>
+                        <lightning-button
+                            label="Add total"
+                            icon-name="utility:add"
+                            onclick={handleAddTableTotal}>
+                        </lightning-button>
+                        </details>
+                    </template>
+
+                    <template if:true={showKpiThresholds}>
+                        <details class="cfg-collapse" open>
+                        <summary class="cfg-collapse__summary cfg-section-heading slds-m-top_medium">KPI Target &amp; Thresholds</summary>
+                        <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_x-small">
+                            Color the value by status band and (optionally) show variance vs a target.
+                            Bands apply ascending; the first band whose <em>Up to</em> is &ge; the value wins.
+                        </p>
+                        <lightning-input
+                            type="number"
+                            label="Target"
+                            placeholder="(none)"
+                            field-level-help="Optional numeric goal. When set, the tile shows the variance (delta and %) vs this target."
+                            value={kpiTarget}
+                            onchange={handleKpiTargetChange}>
+                        </lightning-input>
+                        <div class="slds-m-top_x-small"></div>
+                        <lightning-combobox
+                            label="Good direction"
+                            field-level-help="Whether higher or lower values are better. Drives the variance arrow and color."
+                            value={kpiGoodDirection}
+                            options={kpiDirectionOptions}
+                            onchange={handleKpiDirectionChange}>
+                        </lightning-combobox>
+                        <div class="slds-m-top_x-small"></div>
+                        <p class="slds-text-body_small slds-text-color_weak">Status thresholds</p>
+                        <template for:each={kpiThresholds} for:item="band">
+                            <div key={band.id} class="cfg-cf-rule slds-box slds-box_xx-small slds-m-bottom_x-small">
+                                <lightning-input
+                                    type="number"
+                                    label="Up to (≤)"
+                                    data-id={band.id}
+                                    data-field="upTo"
+                                    value={band.upTo}
+                                    onchange={handleKpiThresholdChange}>
+                                </lightning-input>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-input
+                                    type="color"
+                                    label="Color"
+                                    data-id={band.id}
+                                    data-field="color"
+                                    value={band.color}
+                                    onchange={handleKpiThresholdChange}>
+                                </lightning-input>
+                                <div class="slds-m-top_xx-small"></div>
+                                <lightning-button
+                                    label="Remove band"
+                                    icon-name="utility:delete"
+                                    data-id={band.id}
+                                    onclick={handleRemoveKpiThreshold}>
+                                </lightning-button>
+                            </div>
+                        </template>
+                        <lightning-button
+                            label="Add threshold"
+                            icon-name="utility:add"
+                            onclick={handleAddKpiThreshold}>
+                        </lightning-button>
+                        </details>
+                    </template>
+
+                    <template if:true={showPeriodComparison}>
+                        <details class="cfg-collapse" open>
+                        <summary class="cfg-collapse__summary cfg-section-heading slds-m-top_medium">Period-over-Period Comparison</summary>
+                        <p class="slds-text-color_weak slds-text-body_small slds-m-bottom_x-small">
+                            Show the metric for the current period plus the change vs the prior period.
+                            Uses its own date field and period — independent of the dashboard's date filter.
+                        </p>
+                        <lightning-input
+                            type="checkbox"
+                            label="Enable period comparison"
+                            checked={pcEnabled}
+                            onchange={handlePcEnabledChange}>
+                        </lightning-input>
+                        <div class="slds-m-top_x-small"></div>
+                        <lightning-combobox
+                            label="Date field"
+                            field-level-help="Date column the current / prior period range filters on."
+                            value={pcDateField}
+                            options={pcDateFieldOptions}
+                            onchange={handlePcDateFieldChange}>
+                        </lightning-combobox>
+                        <div class="slds-m-top_x-small"></div>
+                        <lightning-combobox
+                            label="Period"
+                            value={pcPeriod}
+                            options={pcPeriodOptions}
+                            onchange={handlePcPeriodChange}>
+                        </lightning-combobox>
+                        </details>
+                    </template>
+                </template>
+                </div>
+
+                <!-- Right: live preview -->
+                <div class="cfg-preview">
+                    <p class="cfg-preview__heading">Preview</p>
+                    <div class="cfg-preview__title">{title}</div>
+                    <template if:true={showChartForm}>
+                        <template if:true={previewLoading}>
+                            <div class="cfg-preview__loading">
+                                <lightning-spinner alternative-text="Loading preview" size="small"></lightning-spinner>
+                            </div>
+                        </template>
+                        <template if:false={previewLoading}>
+                            <template if:true={hasPreview}>
+                                <div class="cfg-preview__chart">
+                                    <c-cr-chart
+                                        chart-type={previewChartType}
+                                        title={title}
+                                        height="220"
+                                        result={previewResult}
+                                        y-axis-fields={yAxisFields}
+                                        x-axis-field={xAxisField}>
+                                    </c-cr-chart>
+                                </div>
+                            </template>
+                            <template if:false={hasPreview}>
+                                <div class="cfg-preview__empty">
+                                    <p class="slds-text-color_weak slds-text-body_small">
+                                        Preview unavailable. Showing chart-type icon instead.
+                                    </p>
+                                </div>
+                            </template>
+                        </template>
+                        <template if:true={subtitle}>
+                            <p class="cfg-preview__subtitle">{subtitle}</p>
+                        </template>
+                        <template if:true={footer}>
+                            <p class="cfg-preview__footer">{footer}</p>
+                        </template>
+                    </template>
+                    <template if:true={showTextForm}>
+                        <div class="cfg-preview__chart cfg-preview__text">
+                            <lightning-formatted-rich-text value={richText}></lightning-formatted-rich-text>
+                        </div>
+                    </template>
+                    <template if:true={showImageForm}>
+                        <template if:true={imageUrl}>
+                            <div class="cfg-preview__chart cfg-preview__image-wrap">
+                                <img
+                                    src={imageUrl}
+                                    alt={imageAlt}
+                                    class="cfg-preview__image"
+                                    style={imagePreviewStyle}/>
+                            </div>
+                        </template>
+                        <template if:false={imageUrl}>
+                            <div class="cfg-preview__empty">
+                                <p class="slds-text-color_weak slds-text-body_small">
+                                    Enter an image URL to see a preview.
+                                </p>
+                            </div>
+                        </template>
+                    </template>
+                    <template if:true={showLwcForm}>
+                        <div class="cfg-preview__chart cfg-preview__lwc-wrap">
+                            <template if:true={isLwcKpi}>
+                                <c-cr-dashboard-kpi-tile-widget widget-props={previewLwcProps}></c-cr-dashboard-kpi-tile-widget>
+                            </template>
+                            <template if:true={isLwcClock}>
+                                <c-cr-dashboard-clock-widget widget-props={previewLwcProps}></c-cr-dashboard-clock-widget>
+                            </template>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <footer class="slds-modal__footer">
+                <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+                <lightning-button class="slds-m-left_x-small" label={applyButtonLabel} variant="brand" onclick={handleApply}></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

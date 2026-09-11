@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Displays the Service Line Override value from the provider record. --></help>
+    <label><!-- Provider Service Line Override --></label>
+    <name>Provider_Service_Line_Override__c</name>
+</CustomFieldTranslation>

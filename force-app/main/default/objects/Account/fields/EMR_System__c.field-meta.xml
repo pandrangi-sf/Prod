@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMR_System__c</fullName>
+    <label>EMR System</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Abraxas Medical Solutions (Merge Healthcare)</fullName>
+                <default>false</default>
+                <label>Abraxas Medical Solutions (Merge Healthcare)</label>
+            </value>
+            <value>
+                <fullName>ADP AdvancedMD Software</fullName>
+                <default>false</default>
+                <label>ADP AdvancedMD Software</label>
+            </value>
+            <value>
+                <fullName>Advanced Data Systems Corps</fullName>
+                <default>false</default>
+                <label>Advanced Data Systems Corps</label>
+            </value>
+            <value>
+                <fullName>Allscripts</fullName>
+                <default>false</default>
+                <label>Allscripts</label>
+            </value>
+            <value>
+                <fullName>Aprima Medical Software</fullName>
+                <default>false</default>
+                <label>Aprima Medical Software</label>
+            </value>
+            <value>
+                <fullName>athenahealth</fullName>
+                <default>false</default>
+                <label>athenahealth</label>
+            </value>
+            <value>
+                <fullName>Cerner Corporation</fullName>
+                <default>false</default>
+                <label>Cerner Corporation</label>
+            </value>
+            <value>
+                <fullName>CompuGroup</fullName>
+                <default>false</default>
+                <label>CompuGroup</label>
+            </value>
+            <value>
+                <fullName>Computers Programs and Systems Inc. (CPSI)</fullName>
+                <default>false</default>
+                <label>Computers Programs and Systems Inc. (CPSI)</label>
+            </value>
+            <value>
+                <fullName>CureMD</fullName>
+                <default>false</default>
+                <label>CureMD</label>
+            </value>
+            <value>
+                <fullName>eClinicalWorks</fullName>
+                <default>false</default>
+                <label>eClinicalWorks</label>
+            </value>
+            <value>
+                <fullName>Eclipsys (Bought by Allscripts)</fullName>
+                <default>false</default>
+                <label>Eclipsys (Bought by Allscripts)</label>
+            </value>
+            <value>
+                <fullName>E-MDs</fullName>
+                <default>false</default>
+                <label>E-MDs</label>
+            </value>
+            <value>
+                <fullName>Epic Systems Corporation</fullName>
+                <default>false</default>
+                <label>Epic Systems Corporation</label>
+            </value>
+            <value>
+                <fullName>GE Healthcare</fullName>
+                <default>false</default>
+                <label>GE Healthcare</label>
+            </value>
+            <value>
+                <fullName>Greenway Medical Technologies</fullName>
+                <default>false</default>
+                <label>Greenway Medical Technologies</label>
+            </value>
+            <value>
+                <fullName>Healthcare Management Systems</fullName>
+                <default>false</default>
+                <label>Healthcare Management Systems</label>
+            </value>
+            <value>
+                <fullName>Healthland</fullName>
+                <default>false</default>
+                <label>Healthland</label>
+            </value>
+            <value>
+                <fullName>Kareo</fullName>
+                <default>false</default>
+                <label>Kareo</label>
+            </value>
+            <value>
+                <fullName>McKesson</fullName>
+                <default>false</default>
+                <label>McKesson</label>
+            </value>
+            <value>
+                <fullName>Meditab Software, Inc</fullName>
+                <default>false</default>
+                <label>Meditab Software, Inc</label>
+            </value>
+            <value>
+                <fullName>Meditech</fullName>
+                <default>false</default>
+                <label>Meditech</label>
+            </value>
+            <value>
+                <fullName>Nextech</fullName>
+                <default>false</default>
+                <label>Nextech</label>
+            </value>
+            <value>
+                <fullName>NextGen Healthcare Information Systems</fullName>
+                <default>false</default>
+                <label>NextGen Healthcare Information Systems</label>
+            </value>
+            <value>
+                <fullName>Optum (Picis Inc)</fullName>
+                <default>false</default>
+                <label>Optum (Picis Inc)</label>
+            </value>
+            <value>
+                <fullName>Platinum Systems Specialists</fullName>
+                <default>false</default>
+                <label>Platinum Systems Specialists</label>
+            </value>
+            <value>
+                <fullName>Practice Fusion</fullName>
+                <default>false</default>
+                <label>Practice Fusion</label>
+            </value>
+            <value>
+                <fullName>Praxis EMR</fullName>
+                <default>false</default>
+                <label>Praxis EMR</label>
+            </value>
+            <value>
+                <fullName>Siemens Healthcare</fullName>
+                <default>false</default>
+                <label>Siemens Healthcare</label>
+            </value>
+            <value>
+                <fullName>T-System Inc</fullName>
+                <default>false</default>
+                <label>T-System Inc</label>
+            </value>
+            <value>
+                <fullName>Vitera Healthcare Solutions</fullName>
+                <default>false</default>
+                <label>Vitera Healthcare Solutions</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

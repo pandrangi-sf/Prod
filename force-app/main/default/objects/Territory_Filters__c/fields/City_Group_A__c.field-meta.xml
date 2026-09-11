@@ -1,0 +1,1961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>City_Group_A__c</fullName>
+    <label>All Cities</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alachua(2)</fullName>
+                <default>false</default>
+                <label>Alachua(2)</label>
+            </value>
+            <value>
+                <fullName>Altamonte(1)</fullName>
+                <default>false</default>
+                <label>Altamonte(1)</label>
+            </value>
+            <value>
+                <fullName>Altamonte Spg(7)</fullName>
+                <default>false</default>
+                <label>Altamonte Spg(7)</label>
+            </value>
+            <value>
+                <fullName>Altamonte Spring(7)</fullName>
+                <default>false</default>
+                <label>Altamonte Spring(7)</label>
+            </value>
+            <value>
+                <fullName>Altamonte Springs(1619)</fullName>
+                <default>false</default>
+                <label>Altamonte Springs(1619)</label>
+            </value>
+            <value>
+                <fullName>Altoona(4)</fullName>
+                <default>false</default>
+                <label>Altoona(4)</label>
+            </value>
+            <value>
+                <fullName>Ann Arbor(3)</fullName>
+                <default>false</default>
+                <label>Ann Arbor(3)</label>
+            </value>
+            <value>
+                <fullName>Anthony(7)</fullName>
+                <default>false</default>
+                <label>Anthony(7)</label>
+            </value>
+            <value>
+                <fullName>Apollo Beach(117)</fullName>
+                <default>false</default>
+                <label>Apollo Beach(117)</label>
+            </value>
+            <value>
+                <fullName>Apopka(786)</fullName>
+                <default>false</default>
+                <label>Apopka(786)</label>
+            </value>
+            <value>
+                <fullName>Arcadia(8)</fullName>
+                <default>false</default>
+                <label>Arcadia(8)</label>
+            </value>
+            <value>
+                <fullName>Astatula(4)</fullName>
+                <default>false</default>
+                <label>Astatula(4)</label>
+            </value>
+            <value>
+                <fullName>Astor(3)</fullName>
+                <default>false</default>
+                <label>Astor(3)</label>
+            </value>
+            <value>
+                <fullName>Atlantic Beach(1)</fullName>
+                <default>false</default>
+                <label>Atlantic Beach(1)</label>
+            </value>
+            <value>
+                <fullName>Atlantis(1)</fullName>
+                <default>false</default>
+                <label>Atlantis(1)</label>
+            </value>
+            <value>
+                <fullName>Auburndale(94)</fullName>
+                <default>false</default>
+                <label>Auburndale(94)</label>
+            </value>
+            <value>
+                <fullName>Aventura(5)</fullName>
+                <default>false</default>
+                <label>Aventura(5)</label>
+            </value>
+            <value>
+                <fullName>Avon Park(8)</fullName>
+                <default>false</default>
+                <label>Avon Park(8)</label>
+            </value>
+            <value>
+                <fullName>Babson Park(13)</fullName>
+                <default>false</default>
+                <label>Babson Park(13)</label>
+            </value>
+            <value>
+                <fullName>Baker(1)</fullName>
+                <default>false</default>
+                <label>Baker(1)</label>
+            </value>
+            <value>
+                <fullName>Barberville(1)</fullName>
+                <default>false</default>
+                <label>Barberville(1)</label>
+            </value>
+            <value>
+                <fullName>Barefoot Bay(3)</fullName>
+                <default>false</default>
+                <label>Barefoot Bay(3)</label>
+            </value>
+            <value>
+                <fullName>Bartow(654)</fullName>
+                <default>false</default>
+                <label>Bartow(654)</label>
+            </value>
+            <value>
+                <fullName>Bay Pines(3)</fullName>
+                <default>false</default>
+                <label>Bay Pines(3)</label>
+            </value>
+            <value>
+                <fullName>Belle Glade(2)</fullName>
+                <default>false</default>
+                <label>Belle Glade(2)</label>
+            </value>
+            <value>
+                <fullName>Belle Isle(36)</fullName>
+                <default>false</default>
+                <label>Belle Isle(36)</label>
+            </value>
+            <value>
+                <fullName>Belleair(2)</fullName>
+                <default>false</default>
+                <label>Belleair(2)</label>
+            </value>
+            <value>
+                <fullName>Belleview(166)</fullName>
+                <default>false</default>
+                <label>Belleview(166)</label>
+            </value>
+            <value>
+                <fullName>Beverly Hills(4)</fullName>
+                <default>false</default>
+                <label>Beverly Hills(4)</label>
+            </value>
+            <value>
+                <fullName>Blountstown(1)</fullName>
+                <default>false</default>
+                <label>Blountstown(1)</label>
+            </value>
+            <value>
+                <fullName>Boca Raton(24)</fullName>
+                <default>false</default>
+                <label>Boca Raton(24)</label>
+            </value>
+            <value>
+                <fullName>Bonifay(5)</fullName>
+                <default>false</default>
+                <label>Bonifay(5)</label>
+            </value>
+            <value>
+                <fullName>Bonita Springs(10)</fullName>
+                <default>false</default>
+                <label>Bonita Springs(10)</label>
+            </value>
+            <value>
+                <fullName>Bowling Green(1)</fullName>
+                <default>false</default>
+                <label>Bowling Green(1)</label>
+            </value>
+            <value>
+                <fullName>Boynton Beach(24)</fullName>
+                <default>false</default>
+                <label>Boynton Beach(24)</label>
+            </value>
+            <value>
+                <fullName>Bradenton(29)</fullName>
+                <default>false</default>
+                <label>Bradenton(29)</label>
+            </value>
+            <value>
+                <fullName>Brandon(2303)</fullName>
+                <default>false</default>
+                <label>Brandon(2303)</label>
+            </value>
+            <value>
+                <fullName>Branford(2)</fullName>
+                <default>false</default>
+                <label>Branford(2)</label>
+            </value>
+            <value>
+                <fullName>Brooksville(15)</fullName>
+                <default>false</default>
+                <label>Brooksville(15)</label>
+            </value>
+            <value>
+                <fullName>Bushnell(63)</fullName>
+                <default>false</default>
+                <label>Bushnell(63)</label>
+            </value>
+            <value>
+                <fullName>Callahan(2)</fullName>
+                <default>false</default>
+                <label>Callahan(2)</label>
+            </value>
+            <value>
+                <fullName>Cape Canaveral(38)</fullName>
+                <default>false</default>
+                <label>Cape Canaveral(38)</label>
+            </value>
+            <value>
+                <fullName>Cape Coral(36)</fullName>
+                <default>false</default>
+                <label>Cape Coral(36)</label>
+            </value>
+            <value>
+                <fullName>Carrollwood(1)</fullName>
+                <default>false</default>
+                <label>Carrollwood(1)</label>
+            </value>
+            <value>
+                <fullName>Cassadaga(1)</fullName>
+                <default>false</default>
+                <label>Cassadaga(1)</label>
+            </value>
+            <value>
+                <fullName>Casselberry(280)</fullName>
+                <default>false</default>
+                <label>Casselberry(280)</label>
+            </value>
+            <value>
+                <fullName>Celebration(387)</fullName>
+                <default>false</default>
+                <label>Celebration(387)</label>
+            </value>
+            <value>
+                <fullName>Center Hill(1)</fullName>
+                <default>false</default>
+                <label>Center Hill(1)</label>
+            </value>
+            <value>
+                <fullName>Champions Gate(52)</fullName>
+                <default>false</default>
+                <label>Champions Gate(52)</label>
+            </value>
+            <value>
+                <fullName>Chipley(2)</fullName>
+                <default>false</default>
+                <label>Chipley(2)</label>
+            </value>
+            <value>
+                <fullName>Christmas(2)</fullName>
+                <default>false</default>
+                <label>Christmas(2)</label>
+            </value>
+            <value>
+                <fullName>Chuluota(17)</fullName>
+                <default>false</default>
+                <label>Chuluota(17)</label>
+            </value>
+            <value>
+                <fullName>Citra(31)</fullName>
+                <default>false</default>
+                <label>Citra(31)</label>
+            </value>
+            <value>
+                <fullName>Citrus Springs(2)</fullName>
+                <default>false</default>
+                <label>Citrus Springs(2)</label>
+            </value>
+            <value>
+                <fullName>Clarcona(3)</fullName>
+                <default>false</default>
+                <label>Clarcona(3)</label>
+            </value>
+            <value>
+                <fullName>Clearwater(28)</fullName>
+                <default>false</default>
+                <label>Clearwater(28)</label>
+            </value>
+            <value>
+                <fullName>Clermont(1018)</fullName>
+                <default>false</default>
+                <label>Clermont(1018)</label>
+            </value>
+            <value>
+                <fullName>Cocoa(378)</fullName>
+                <default>false</default>
+                <label>Cocoa(378)</label>
+            </value>
+            <value>
+                <fullName>Cocoa Beach(301)</fullName>
+                <default>false</default>
+                <label>Cocoa Beach(301)</label>
+            </value>
+            <value>
+                <fullName>Coconut Creek(7)</fullName>
+                <default>false</default>
+                <label>Coconut Creek(7)</label>
+            </value>
+            <value>
+                <fullName>Coleman(1)</fullName>
+                <default>false</default>
+                <label>Coleman(1)</label>
+            </value>
+            <value>
+                <fullName>Coral Gables(12)</fullName>
+                <default>false</default>
+                <label>Coral Gables(12)</label>
+            </value>
+            <value>
+                <fullName>Coral Springs(23)</fullName>
+                <default>false</default>
+                <label>Coral Springs(23)</label>
+            </value>
+            <value>
+                <fullName>Crawfordville(2)</fullName>
+                <default>false</default>
+                <label>Crawfordville(2)</label>
+            </value>
+            <value>
+                <fullName>Crescent City(4)</fullName>
+                <default>false</default>
+                <label>Crescent City(4)</label>
+            </value>
+            <value>
+                <fullName>Crestview(6)</fullName>
+                <default>false</default>
+                <label>Crestview(6)</label>
+            </value>
+            <value>
+                <fullName>Crystal River(22)</fullName>
+                <default>false</default>
+                <label>Crystal River(22)</label>
+            </value>
+            <value>
+                <fullName>Cutler Bay(5)</fullName>
+                <default>false</default>
+                <label>Cutler Bay(5)</label>
+            </value>
+            <value>
+                <fullName>Cypress Gardens(1)</fullName>
+                <default>false</default>
+                <label>Cypress Gardens(1)</label>
+            </value>
+            <value>
+                <fullName>Dade City(11)</fullName>
+                <default>false</default>
+                <label>Dade City(11)</label>
+            </value>
+            <value>
+                <fullName>Davenport(342)</fullName>
+                <default>false</default>
+                <label>Davenport(342)</label>
+            </value>
+            <value>
+                <fullName>Davie(3)</fullName>
+                <default>false</default>
+                <label>Davie(3)</label>
+            </value>
+            <value>
+                <fullName>Daytona Beach(2096)</fullName>
+                <default>false</default>
+                <label>Daytona Beach(2096)</label>
+            </value>
+            <value>
+                <fullName>Daytona Beach Shores(9)</fullName>
+                <default>false</default>
+                <label>Daytona Beach Shores(9)</label>
+            </value>
+            <value>
+                <fullName>De Leon Springs(10)</fullName>
+                <default>false</default>
+                <label>De Leon Springs(10)</label>
+            </value>
+            <value>
+                <fullName>Debary(109)</fullName>
+                <default>false</default>
+                <label>Debary(109)</label>
+            </value>
+            <value>
+                <fullName>Deerfield Beach(5)</fullName>
+                <default>false</default>
+                <label>Deerfield Beach(5)</label>
+            </value>
+            <value>
+                <fullName>Deland(664)</fullName>
+                <default>false</default>
+                <label>Deland(664)</label>
+            </value>
+            <value>
+                <fullName>Delray Beach(13)</fullName>
+                <default>false</default>
+                <label>Delray Beach(13)</label>
+            </value>
+            <value>
+                <fullName>Deltona(341)</fullName>
+                <default>false</default>
+                <label>Deltona(341)</label>
+            </value>
+            <value>
+                <fullName>Destin(2)</fullName>
+                <default>false</default>
+                <label>Destin(2)</label>
+            </value>
+            <value>
+                <fullName>Doral(6)</fullName>
+                <default>false</default>
+                <label>Doral(6)</label>
+            </value>
+            <value>
+                <fullName>Dover(40)</fullName>
+                <default>false</default>
+                <label>Dover(40)</label>
+            </value>
+            <value>
+                <fullName>Dundee(18)</fullName>
+                <default>false</default>
+                <label>Dundee(18)</label>
+            </value>
+            <value>
+                <fullName>Dunedin(4)</fullName>
+                <default>false</default>
+                <label>Dunedin(4)</label>
+            </value>
+            <value>
+                <fullName>Dunnellon(88)</fullName>
+                <default>false</default>
+                <label>Dunnellon(88)</label>
+            </value>
+            <value>
+                <fullName>Eagle Lake(5)</fullName>
+                <default>false</default>
+                <label>Eagle Lake(5)</label>
+            </value>
+            <value>
+                <fullName>Eatonville(3)</fullName>
+                <default>false</default>
+                <label>Eatonville(3)</label>
+            </value>
+            <value>
+                <fullName>Eau Gallie(1)</fullName>
+                <default>false</default>
+                <label>Eau Gallie(1)</label>
+            </value>
+            <value>
+                <fullName>Edgewater(115)</fullName>
+                <default>false</default>
+                <label>Edgewater(115)</label>
+            </value>
+            <value>
+                <fullName>Ellenton(4)</fullName>
+                <default>false</default>
+                <label>Ellenton(4)</label>
+            </value>
+            <value>
+                <fullName>Englewood(4)</fullName>
+                <default>false</default>
+                <label>Englewood(4)</label>
+            </value>
+            <value>
+                <fullName>Enterprise(19)</fullName>
+                <default>false</default>
+                <label>Enterprise(19)</label>
+            </value>
+            <value>
+                <fullName>Eustis(283)</fullName>
+                <default>false</default>
+                <label>Eustis(283)</label>
+            </value>
+            <value>
+                <fullName>Evinston(1)</fullName>
+                <default>false</default>
+                <label>Evinston(1)</label>
+            </value>
+            <value>
+                <fullName>Fairfield(1)</fullName>
+                <default>false</default>
+                <label>Fairfield(1)</label>
+            </value>
+            <value>
+                <fullName>Fellsmere(9)</fullName>
+                <default>false</default>
+                <label>Fellsmere(9)</label>
+            </value>
+            <value>
+                <fullName>Fern Park(68)</fullName>
+                <default>false</default>
+                <label>Fern Park(68)</label>
+            </value>
+            <value>
+                <fullName>Fernandina Beach(2)</fullName>
+                <default>false</default>
+                <label>Fernandina Beach(2)</label>
+            </value>
+            <value>
+                <fullName>Fleming Island(11)</fullName>
+                <default>false</default>
+                <label>Fleming Island(11)</label>
+            </value>
+            <value>
+                <fullName>Floral City(2)</fullName>
+                <default>false</default>
+                <label>Floral City(2)</label>
+            </value>
+            <value>
+                <fullName>Forest City(1)</fullName>
+                <default>false</default>
+                <label>Forest City(1)</label>
+            </value>
+            <value>
+                <fullName>Fort Lauderdale(29)</fullName>
+                <default>false</default>
+                <label>Fort Lauderdale(29)</label>
+            </value>
+            <value>
+                <fullName>Fort Mc Coy(11)</fullName>
+                <default>false</default>
+                <label>Fort Mc Coy(11)</label>
+            </value>
+            <value>
+                <fullName>Fort Meade(14)</fullName>
+                <default>false</default>
+                <label>Fort Meade(14)</label>
+            </value>
+            <value>
+                <fullName>Fort Myers(88)</fullName>
+                <default>false</default>
+                <label>Fort Myers(88)</label>
+            </value>
+            <value>
+                <fullName>Fort Pierce(36)</fullName>
+                <default>false</default>
+                <label>Fort Pierce(36)</label>
+            </value>
+            <value>
+                <fullName>Fort Walton Beach(8)</fullName>
+                <default>false</default>
+                <label>Fort Walton Beach(8)</label>
+            </value>
+            <value>
+                <fullName>Freeport(2)</fullName>
+                <default>false</default>
+                <label>Freeport(2)</label>
+            </value>
+            <value>
+                <fullName>Frostproof(21)</fullName>
+                <default>false</default>
+                <label>Frostproof(21)</label>
+            </value>
+            <value>
+                <fullName>Fruitland Park(38)</fullName>
+                <default>false</default>
+                <label>Fruitland Park(38)</label>
+            </value>
+            <value>
+                <fullName>Ft Lauderdale(1)</fullName>
+                <default>false</default>
+                <label>Ft Lauderdale(1)</label>
+            </value>
+            <value>
+                <fullName>Gainesville(230)</fullName>
+                <default>false</default>
+                <label>Gainesville(230)</label>
+            </value>
+            <value>
+                <fullName>Geneva(10)</fullName>
+                <default>false</default>
+                <label>Geneva(10)</label>
+            </value>
+            <value>
+                <fullName>Gibsonton(53)</fullName>
+                <default>false</default>
+                <label>Gibsonton(53)</label>
+            </value>
+            <value>
+                <fullName>Goldenrod(5)</fullName>
+                <default>false</default>
+                <label>Goldenrod(5)</label>
+            </value>
+            <value>
+                <fullName>Gotha(32)</fullName>
+                <default>false</default>
+                <label>Gotha(32)</label>
+            </value>
+            <value>
+                <fullName>Grand Island(18)</fullName>
+                <default>false</default>
+                <label>Grand Island(18)</label>
+            </value>
+            <value>
+                <fullName>Grandin(1)</fullName>
+                <default>false</default>
+                <label>Grandin(1)</label>
+            </value>
+            <value>
+                <fullName>Grant(10)</fullName>
+                <default>false</default>
+                <label>Grant(10)</label>
+            </value>
+            <value>
+                <fullName>Grant Valkaria(1)</fullName>
+                <default>false</default>
+                <label>Grant Valkaria(1)</label>
+            </value>
+            <value>
+                <fullName>Green Cove Springs(2)</fullName>
+                <default>false</default>
+                <label>Green Cove Springs(2)</label>
+            </value>
+            <value>
+                <fullName>Greenacres(1)</fullName>
+                <default>false</default>
+                <label>Greenacres(1)</label>
+            </value>
+            <value>
+                <fullName>Greenville(2)</fullName>
+                <default>false</default>
+                <label>Greenville(2)</label>
+            </value>
+            <value>
+                <fullName>Groveland(45)</fullName>
+                <default>false</default>
+                <label>Groveland(45)</label>
+            </value>
+            <value>
+                <fullName>Gulf Breeze(6)</fullName>
+                <default>false</default>
+                <label>Gulf Breeze(6)</label>
+            </value>
+            <value>
+                <fullName>Haines City(138)</fullName>
+                <default>false</default>
+                <label>Haines City(138)</label>
+            </value>
+            <value>
+                <fullName>Hallandale(3)</fullName>
+                <default>false</default>
+                <label>Hallandale(3)</label>
+            </value>
+            <value>
+                <fullName>Hallandale Beach(2)</fullName>
+                <default>false</default>
+                <label>Hallandale Beach(2)</label>
+            </value>
+            <value>
+                <fullName>Harmony(7)</fullName>
+                <default>false</default>
+                <label>Harmony(7)</label>
+            </value>
+            <value>
+                <fullName>Havana(1)</fullName>
+                <default>false</default>
+                <label>Havana(1)</label>
+            </value>
+            <value>
+                <fullName>Heathrow(219)</fullName>
+                <default>false</default>
+                <label>Heathrow(219)</label>
+            </value>
+            <value>
+                <fullName>Hernando(1)</fullName>
+                <default>false</default>
+                <label>Hernando(1)</label>
+            </value>
+            <value>
+                <fullName>Hialeah(9)</fullName>
+                <default>false</default>
+                <label>Hialeah(9)</label>
+            </value>
+            <value>
+                <fullName>Highland City(1)</fullName>
+                <default>false</default>
+                <label>Highland City(1)</label>
+            </value>
+            <value>
+                <fullName>Holiday(2)</fullName>
+                <default>false</default>
+                <label>Holiday(2)</label>
+            </value>
+            <value>
+                <fullName>Holly Hill(65)</fullName>
+                <default>false</default>
+                <label>Holly Hill(65)</label>
+            </value>
+            <value>
+                <fullName>Hollywood(21)</fullName>
+                <default>false</default>
+                <label>Hollywood(21)</label>
+            </value>
+            <value>
+                <fullName>Holmes Beach(1)</fullName>
+                <default>false</default>
+                <label>Holmes Beach(1)</label>
+            </value>
+            <value>
+                <fullName>Homestead(3)</fullName>
+                <default>false</default>
+                <label>Homestead(3)</label>
+            </value>
+            <value>
+                <fullName>Homosassa(4)</fullName>
+                <default>false</default>
+                <label>Homosassa(4)</label>
+            </value>
+            <value>
+                <fullName>Howey In The Hills(26)</fullName>
+                <default>false</default>
+                <label>Howey In The Hills(26)</label>
+            </value>
+            <value>
+                <fullName>Hudson(19)</fullName>
+                <default>false</default>
+                <label>Hudson(19)</label>
+            </value>
+            <value>
+                <fullName>Hunt Valley(3)</fullName>
+                <default>false</default>
+                <label>Hunt Valley(3)</label>
+            </value>
+            <value>
+                <fullName>Indialantic(174)</fullName>
+                <default>false</default>
+                <label>Indialantic(174)</label>
+            </value>
+            <value>
+                <fullName>Indian Harbour Beach(145)</fullName>
+                <default>false</default>
+                <label>Indian Harbour Beach(145)</label>
+            </value>
+            <value>
+                <fullName>Intercession City(5)</fullName>
+                <default>false</default>
+                <label>Intercession City(5)</label>
+            </value>
+            <value>
+                <fullName>Interlachen(1)</fullName>
+                <default>false</default>
+                <label>Interlachen(1)</label>
+            </value>
+            <value>
+                <fullName>Inverness(26)</fullName>
+                <default>false</default>
+                <label>Inverness(26)</label>
+            </value>
+            <value>
+                <fullName>Jacksonville(229)</fullName>
+                <default>false</default>
+                <label>Jacksonville(229)</label>
+            </value>
+            <value>
+                <fullName>Jacksonville Beach(11)</fullName>
+                <default>false</default>
+                <label>Jacksonville Beach(11)</label>
+            </value>
+            <value>
+                <fullName>Jasper(2)</fullName>
+                <default>false</default>
+                <label>Jasper(2)</label>
+            </value>
+            <value>
+                <fullName>Jay(4)</fullName>
+                <default>false</default>
+                <label>Jay(4)</label>
+            </value>
+            <value>
+                <fullName>Jensen Beach(8)</fullName>
+                <default>false</default>
+                <label>Jensen Beach(8)</label>
+            </value>
+            <value>
+                <fullName>Jonesville(1)</fullName>
+                <default>false</default>
+                <label>Jonesville(1)</label>
+            </value>
+            <value>
+                <fullName>Juno Beach(1)</fullName>
+                <default>false</default>
+                <label>Juno Beach(1)</label>
+            </value>
+            <value>
+                <fullName>Jupiter(20)</fullName>
+                <default>false</default>
+                <label>Jupiter(20)</label>
+            </value>
+            <value>
+                <fullName>Kathleen(1)</fullName>
+                <default>false</default>
+                <label>Kathleen(1)</label>
+            </value>
+            <value>
+                <fullName>Kenansville(1)</fullName>
+                <default>false</default>
+                <label>Kenansville(1)</label>
+            </value>
+            <value>
+                <fullName>Kennedy Space Center(9)</fullName>
+                <default>false</default>
+                <label>Kennedy Space Center(9)</label>
+            </value>
+            <value>
+                <fullName>Key Largo(3)</fullName>
+                <default>false</default>
+                <label>Key Largo(3)</label>
+            </value>
+            <value>
+                <fullName>Key West(5)</fullName>
+                <default>false</default>
+                <label>Key West(5)</label>
+            </value>
+            <value>
+                <fullName>Keystone Heights(2)</fullName>
+                <default>false</default>
+                <label>Keystone Heights(2)</label>
+            </value>
+            <value>
+                <fullName>Killarney(1)</fullName>
+                <default>false</default>
+                <label>Killarney(1)</label>
+            </value>
+            <value>
+                <fullName>Kisimmee(4)</fullName>
+                <default>false</default>
+                <label>Kisimmee(4)</label>
+            </value>
+            <value>
+                <fullName>Kissimmee(2573)</fullName>
+                <default>false</default>
+                <label>Kissimmee(2573)</label>
+            </value>
+            <value>
+                <fullName>Lady Lake(334)</fullName>
+                <default>false</default>
+                <label>Lady Lake(334)</label>
+            </value>
+            <value>
+                <fullName>Lake Alfred(32)</fullName>
+                <default>false</default>
+                <label>Lake Alfred(32)</label>
+            </value>
+            <value>
+                <fullName>Lake Buena Vista(40)</fullName>
+                <default>false</default>
+                <label>Lake Buena Vista(40)</label>
+            </value>
+            <value>
+                <fullName>Lake Butler(1)</fullName>
+                <default>false</default>
+                <label>Lake Butler(1)</label>
+            </value>
+            <value>
+                <fullName>Lake City(10)</fullName>
+                <default>false</default>
+                <label>Lake City(10)</label>
+            </value>
+            <value>
+                <fullName>Lake Clarke Shores(1)</fullName>
+                <default>false</default>
+                <label>Lake Clarke Shores(1)</label>
+            </value>
+            <value>
+                <fullName>Lake Helen(6)</fullName>
+                <default>false</default>
+                <label>Lake Helen(6)</label>
+            </value>
+            <value>
+                <fullName>Lake Mary(1418)</fullName>
+                <default>false</default>
+                <label>Lake Mary(1418)</label>
+            </value>
+            <value>
+                <fullName>Lake Monroe(2)</fullName>
+                <default>false</default>
+                <label>Lake Monroe(2)</label>
+            </value>
+            <value>
+                <fullName>Lake Nona(3)</fullName>
+                <default>false</default>
+                <label>Lake Nona(3)</label>
+            </value>
+            <value>
+                <fullName>Lake Panasoffkee(8)</fullName>
+                <default>false</default>
+                <label>Lake Panasoffkee(8)</label>
+            </value>
+            <value>
+                <fullName>Lake Park(1)</fullName>
+                <default>false</default>
+                <label>Lake Park(1)</label>
+            </value>
+            <value>
+                <fullName>Lake Placid(12)</fullName>
+                <default>false</default>
+                <label>Lake Placid(12)</label>
+            </value>
+            <value>
+                <fullName>Lake Wales(191)</fullName>
+                <default>false</default>
+                <label>Lake Wales(191)</label>
+            </value>
+            <value>
+                <fullName>Lake Worth(15)</fullName>
+                <default>false</default>
+                <label>Lake Worth(15)</label>
+            </value>
+            <value>
+                <fullName>Lakeland(3266)</fullName>
+                <default>false</default>
+                <label>Lakeland(3266)</label>
+            </value>
+            <value>
+                <fullName>Lakewood Ranch(6)</fullName>
+                <default>false</default>
+                <label>Lakewood Ranch(6)</label>
+            </value>
+            <value>
+                <fullName>Land O Lakes(2)</fullName>
+                <default>false</default>
+                <label>Land O Lakes(2)</label>
+            </value>
+            <value>
+                <fullName>Largo(21)</fullName>
+                <default>false</default>
+                <label>Largo(21)</label>
+            </value>
+            <value>
+                <fullName>Lauderdale Lakes(8)</fullName>
+                <default>false</default>
+                <label>Lauderdale Lakes(8)</label>
+            </value>
+            <value>
+                <fullName>Lecanto(9)</fullName>
+                <default>false</default>
+                <label>Lecanto(9)</label>
+            </value>
+            <value>
+                <fullName>Leesburg(1090)</fullName>
+                <default>false</default>
+                <label>Leesburg(1090)</label>
+            </value>
+            <value>
+                <fullName>Lehigh Acres(15)</fullName>
+                <default>false</default>
+                <label>Lehigh Acres(15)</label>
+            </value>
+            <value>
+                <fullName>Lighthouse Point(1)</fullName>
+                <default>false</default>
+                <label>Lighthouse Point(1)</label>
+            </value>
+            <value>
+                <fullName>Lithia(139)</fullName>
+                <default>false</default>
+                <label>Lithia(139)</label>
+            </value>
+            <value>
+                <fullName>Live Oak(1)</fullName>
+                <default>false</default>
+                <label>Live Oak(1)</label>
+            </value>
+            <value>
+                <fullName>Longwood(837)</fullName>
+                <default>false</default>
+                <label>Longwood(837)</label>
+            </value>
+            <value>
+                <fullName>Loughman(3)</fullName>
+                <default>false</default>
+                <label>Loughman(3)</label>
+            </value>
+            <value>
+                <fullName>Loxahatchee(10)</fullName>
+                <default>false</default>
+                <label>Loxahatchee(10)</label>
+            </value>
+            <value>
+                <fullName>Lutz(696)</fullName>
+                <default>false</default>
+                <label>Lutz(696)</label>
+            </value>
+            <value>
+                <fullName>Lynn Haven(3)</fullName>
+                <default>false</default>
+                <label>Lynn Haven(3)</label>
+            </value>
+            <value>
+                <fullName>Macclenny(6)</fullName>
+                <default>false</default>
+                <label>Macclenny(6)</label>
+            </value>
+            <value>
+                <fullName>Madeira Beach(1)</fullName>
+                <default>false</default>
+                <label>Madeira Beach(1)</label>
+            </value>
+            <value>
+                <fullName>Madison(2)</fullName>
+                <default>false</default>
+                <label>Madison(2)</label>
+            </value>
+            <value>
+                <fullName>Maitland(1758)</fullName>
+                <default>false</default>
+                <label>Maitland(1758)</label>
+            </value>
+            <value>
+                <fullName>Malabar(65)</fullName>
+                <default>false</default>
+                <label>Malabar(65)</label>
+            </value>
+            <value>
+                <fullName>Margate(7)</fullName>
+                <default>false</default>
+                <label>Margate(7)</label>
+            </value>
+            <value>
+                <fullName>Marianna(8)</fullName>
+                <default>false</default>
+                <label>Marianna(8)</label>
+            </value>
+            <value>
+                <fullName>Mascotte(7)</fullName>
+                <default>false</default>
+                <label>Mascotte(7)</label>
+            </value>
+            <value>
+                <fullName>Mc Intosh(3)</fullName>
+                <default>false</default>
+                <label>Mc Intosh(3)</label>
+            </value>
+            <value>
+                <fullName>Melbourne(3918)</fullName>
+                <default>false</default>
+                <label>Melbourne(3918)</label>
+            </value>
+            <value>
+                <fullName>Melbourne Bch(7)</fullName>
+                <default>false</default>
+                <label>Melbourne Bch(7)</label>
+            </value>
+            <value>
+                <fullName>Melbourne Beach(57)</fullName>
+                <default>false</default>
+                <label>Melbourne Beach(57)</label>
+            </value>
+            <value>
+                <fullName>Melbourne Village(5)</fullName>
+                <default>false</default>
+                <label>Melbourne Village(5)</label>
+            </value>
+            <value>
+                <fullName>Merritt Is(21)</fullName>
+                <default>false</default>
+                <label>Merritt Is(21)</label>
+            </value>
+            <value>
+                <fullName>Merritt Island(740)</fullName>
+                <default>false</default>
+                <label>Merritt Island(740)</label>
+            </value>
+            <value>
+                <fullName>Miami(155)</fullName>
+                <default>false</default>
+                <label>Miami(155)</label>
+            </value>
+            <value>
+                <fullName>Miami Beach(13)</fullName>
+                <default>false</default>
+                <label>Miami Beach(13)</label>
+            </value>
+            <value>
+                <fullName>Miami Lakes(2)</fullName>
+                <default>false</default>
+                <label>Miami Lakes(2)</label>
+            </value>
+            <value>
+                <fullName>Miami Springs(1)</fullName>
+                <default>false</default>
+                <label>Miami Springs(1)</label>
+            </value>
+            <value>
+                <fullName>Micco(4)</fullName>
+                <default>false</default>
+                <label>Micco(4)</label>
+            </value>
+            <value>
+                <fullName>Middleburg(2)</fullName>
+                <default>false</default>
+                <label>Middleburg(2)</label>
+            </value>
+            <value>
+                <fullName>Mims(27)</fullName>
+                <default>false</default>
+                <label>Mims(27)</label>
+            </value>
+            <value>
+                <fullName>Minneola(68)</fullName>
+                <default>false</default>
+                <label>Minneola(68)</label>
+            </value>
+            <value>
+                <fullName>Miramar(6)</fullName>
+                <default>false</default>
+                <label>Miramar(6)</label>
+            </value>
+            <value>
+                <fullName>Montverde(10)</fullName>
+                <default>false</default>
+                <label>Montverde(10)</label>
+            </value>
+            <value>
+                <fullName>Moore Haven(1)</fullName>
+                <default>false</default>
+                <label>Moore Haven(1)</label>
+            </value>
+            <value>
+                <fullName>Mount Dora(398)</fullName>
+                <default>false</default>
+                <label>Mount Dora(398)</label>
+            </value>
+            <value>
+                <fullName>Mulberry(35)</fullName>
+                <default>false</default>
+                <label>Mulberry(35)</label>
+            </value>
+            <value>
+                <fullName>Naples(34)</fullName>
+                <default>false</default>
+                <label>Naples(34)</label>
+            </value>
+            <value>
+                <fullName>Neptune Beach(6)</fullName>
+                <default>false</default>
+                <label>Neptune Beach(6)</label>
+            </value>
+            <value>
+                <fullName>New Port Richey(18)</fullName>
+                <default>false</default>
+                <label>New Port Richey(18)</label>
+            </value>
+            <value>
+                <fullName>New Smyrna(15)</fullName>
+                <default>false</default>
+                <label>New Smyrna(15)</label>
+            </value>
+            <value>
+                <fullName>New Smyrna Beach(383)</fullName>
+                <default>false</default>
+                <label>New Smyrna Beach(383)</label>
+            </value>
+            <value>
+                <fullName>Niceville(2)</fullName>
+                <default>false</default>
+                <label>Niceville(2)</label>
+            </value>
+            <value>
+                <fullName>North Miami(3)</fullName>
+                <default>false</default>
+                <label>North Miami(3)</label>
+            </value>
+            <value>
+                <fullName>North Miami Beach(2)</fullName>
+                <default>false</default>
+                <label>North Miami Beach(2)</label>
+            </value>
+            <value>
+                <fullName>North Palm Beach(2)</fullName>
+                <default>false</default>
+                <label>North Palm Beach(2)</label>
+            </value>
+            <value>
+                <fullName>North Port(6)</fullName>
+                <default>false</default>
+                <label>North Port(6)</label>
+            </value>
+            <value>
+                <fullName>Northdale(1)</fullName>
+                <default>false</default>
+                <label>Northdale(1)</label>
+            </value>
+            <value>
+                <fullName>Oak Hill(6)</fullName>
+                <default>false</default>
+                <label>Oak Hill(6)</label>
+            </value>
+            <value>
+                <fullName>Oakland(34)</fullName>
+                <default>false</default>
+                <label>Oakland(34)</label>
+            </value>
+            <value>
+                <fullName>Oakland Park(4)</fullName>
+                <default>false</default>
+                <label>Oakland Park(4)</label>
+            </value>
+            <value>
+                <fullName>Ocala(3637)</fullName>
+                <default>false</default>
+                <label>Ocala(3637)</label>
+            </value>
+            <value>
+                <fullName>Ocklawaha(13)</fullName>
+                <default>false</default>
+                <label>Ocklawaha(13)</label>
+            </value>
+            <value>
+                <fullName>Ocoee(599)</fullName>
+                <default>false</default>
+                <label>Ocoee(599)</label>
+            </value>
+            <value>
+                <fullName>Odessa(199)</fullName>
+                <default>false</default>
+                <label>Odessa(199)</label>
+            </value>
+            <value>
+                <fullName>Okeechobee(17)</fullName>
+                <default>false</default>
+                <label>Okeechobee(17)</label>
+            </value>
+            <value>
+                <fullName>Old Town(1)</fullName>
+                <default>false</default>
+                <label>Old Town(1)</label>
+            </value>
+            <value>
+                <fullName>Oldsmar(2)</fullName>
+                <default>false</default>
+                <label>Oldsmar(2)</label>
+            </value>
+            <value>
+                <fullName>Orange City(550)</fullName>
+                <default>false</default>
+                <label>Orange City(550)</label>
+            </value>
+            <value>
+                <fullName>Orange Park(24)</fullName>
+                <default>false</default>
+                <label>Orange Park(24)</label>
+            </value>
+            <value>
+                <fullName>Orlando(19264)</fullName>
+                <default>false</default>
+                <label>Orlando(19264)</label>
+            </value>
+            <value>
+                <fullName>Orlando,(1)</fullName>
+                <default>false</default>
+                <label>Orlando,(1)</label>
+            </value>
+            <value>
+                <fullName>Ormond Beach(1036)</fullName>
+                <default>false</default>
+                <label>Ormond Beach(1036)</label>
+            </value>
+            <value>
+                <fullName>Osprey(1)</fullName>
+                <default>false</default>
+                <label>Osprey(1)</label>
+            </value>
+            <value>
+                <fullName>Osteen(5)</fullName>
+                <default>false</default>
+                <label>Osteen(5)</label>
+            </value>
+            <value>
+                <fullName>Oviedo(877)</fullName>
+                <default>false</default>
+                <label>Oviedo(877)</label>
+            </value>
+            <value>
+                <fullName>Oxford(52)</fullName>
+                <default>false</default>
+                <label>Oxford(52)</label>
+            </value>
+            <value>
+                <fullName>Pace(1)</fullName>
+                <default>false</default>
+                <label>Pace(1)</label>
+            </value>
+            <value>
+                <fullName>Paisley(1)</fullName>
+                <default>false</default>
+                <label>Paisley(1)</label>
+            </value>
+            <value>
+                <fullName>Palatka(8)</fullName>
+                <default>false</default>
+                <label>Palatka(8)</label>
+            </value>
+            <value>
+                <fullName>Palm Bay(688)</fullName>
+                <default>false</default>
+                <label>Palm Bay(688)</label>
+            </value>
+            <value>
+                <fullName>Palm Beach Gardens(18)</fullName>
+                <default>false</default>
+                <label>Palm Beach Gardens(18)</label>
+            </value>
+            <value>
+                <fullName>Palm City(5)</fullName>
+                <default>false</default>
+                <label>Palm City(5)</label>
+            </value>
+            <value>
+                <fullName>Palm Coast(21)</fullName>
+                <default>false</default>
+                <label>Palm Coast(21)</label>
+            </value>
+            <value>
+                <fullName>Palm Harbor(17)</fullName>
+                <default>false</default>
+                <label>Palm Harbor(17)</label>
+            </value>
+            <value>
+                <fullName>Palm Shores(3)</fullName>
+                <default>false</default>
+                <label>Palm Shores(3)</label>
+            </value>
+            <value>
+                <fullName>Palm Springs(3)</fullName>
+                <default>false</default>
+                <label>Palm Springs(3)</label>
+            </value>
+            <value>
+                <fullName>Palmetto(2)</fullName>
+                <default>false</default>
+                <label>Palmetto(2)</label>
+            </value>
+            <value>
+                <fullName>Palmetto Bay(1)</fullName>
+                <default>false</default>
+                <label>Palmetto Bay(1)</label>
+            </value>
+            <value>
+                <fullName>Panama City(19)</fullName>
+                <default>false</default>
+                <label>Panama City(19)</label>
+            </value>
+            <value>
+                <fullName>Panama City Beach(1)</fullName>
+                <default>false</default>
+                <label>Panama City Beach(1)</label>
+            </value>
+            <value>
+                <fullName>Parkland(2)</fullName>
+                <default>false</default>
+                <label>Parkland(2)</label>
+            </value>
+            <value>
+                <fullName>Parrish(3)</fullName>
+                <default>false</default>
+                <label>Parrish(3)</label>
+            </value>
+            <value>
+                <fullName>Patrick Afb(93)</fullName>
+                <default>false</default>
+                <label>Patrick Afb(93)</label>
+            </value>
+            <value>
+                <fullName>Patrick Air Force Base(1)</fullName>
+                <default>false</default>
+                <label>Patrick Air Force Base(1)</label>
+            </value>
+            <value>
+                <fullName>Pembroke Pines(12)</fullName>
+                <default>false</default>
+                <label>Pembroke Pines(12)</label>
+            </value>
+            <value>
+                <fullName>Pensacola(30)</fullName>
+                <default>false</default>
+                <label>Pensacola(30)</label>
+            </value>
+            <value>
+                <fullName>Perry(1)</fullName>
+                <default>false</default>
+                <label>Perry(1)</label>
+            </value>
+            <value>
+                <fullName>Philadelphia(3)</fullName>
+                <default>false</default>
+                <label>Philadelphia(3)</label>
+            </value>
+            <value>
+                <fullName>Pierson(17)</fullName>
+                <default>false</default>
+                <label>Pierson(17)</label>
+            </value>
+            <value>
+                <fullName>Pinellas Park(7)</fullName>
+                <default>false</default>
+                <label>Pinellas Park(7)</label>
+            </value>
+            <value>
+                <fullName>Plant City(449)</fullName>
+                <default>false</default>
+                <label>Plant City(449)</label>
+            </value>
+            <value>
+                <fullName>Plantation(19)</fullName>
+                <default>false</default>
+                <label>Plantation(19)</label>
+            </value>
+            <value>
+                <fullName>Plymouth(1)</fullName>
+                <default>false</default>
+                <label>Plymouth(1)</label>
+            </value>
+            <value>
+                <fullName>Poinciana(28)</fullName>
+                <default>false</default>
+                <label>Poinciana(28)</label>
+            </value>
+            <value>
+                <fullName>Polk City(15)</fullName>
+                <default>false</default>
+                <label>Polk City(15)</label>
+            </value>
+            <value>
+                <fullName>Pompano Beach(4)</fullName>
+                <default>false</default>
+                <label>Pompano Beach(4)</label>
+            </value>
+            <value>
+                <fullName>Ponce Inlet(12)</fullName>
+                <default>false</default>
+                <label>Ponce Inlet(12)</label>
+            </value>
+            <value>
+                <fullName>Ponte Vedra Beach(7)</fullName>
+                <default>false</default>
+                <label>Ponte Vedra Beach(7)</label>
+            </value>
+            <value>
+                <fullName>Port Canaveral(2)</fullName>
+                <default>false</default>
+                <label>Port Canaveral(2)</label>
+            </value>
+            <value>
+                <fullName>Port Charlotte(38)</fullName>
+                <default>false</default>
+                <label>Port Charlotte(38)</label>
+            </value>
+            <value>
+                <fullName>Port Orange(1086)</fullName>
+                <default>false</default>
+                <label>Port Orange(1086)</label>
+            </value>
+            <value>
+                <fullName>Port Richey(6)</fullName>
+                <default>false</default>
+                <label>Port Richey(6)</label>
+            </value>
+            <value>
+                <fullName>Port Saint Joe(1)</fullName>
+                <default>false</default>
+                <label>Port Saint Joe(1)</label>
+            </value>
+            <value>
+                <fullName>Port Saint Lucie(47)</fullName>
+                <default>false</default>
+                <label>Port Saint Lucie(47)</label>
+            </value>
+            <value>
+                <fullName>Port St John(18)</fullName>
+                <default>false</default>
+                <label>Port St John(18)</label>
+            </value>
+            <value>
+                <fullName>Port St Lucie(24)</fullName>
+                <default>false</default>
+                <label>Port St Lucie(24)</label>
+            </value>
+            <value>
+                <fullName>Pt Orange(6)</fullName>
+                <default>false</default>
+                <label>Pt Orange(6)</label>
+            </value>
+            <value>
+                <fullName>Punta Gorda(5)</fullName>
+                <default>false</default>
+                <label>Punta Gorda(5)</label>
+            </value>
+            <value>
+                <fullName>Quincy(1)</fullName>
+                <default>false</default>
+                <label>Quincy(1)</label>
+            </value>
+            <value>
+                <fullName>Reddick(9)</fullName>
+                <default>false</default>
+                <label>Reddick(9)</label>
+            </value>
+            <value>
+                <fullName>Reston(16)</fullName>
+                <default>false</default>
+                <label>Reston(16)</label>
+            </value>
+            <value>
+                <fullName>Reunion(3)</fullName>
+                <default>false</default>
+                <label>Reunion(3)</label>
+            </value>
+            <value>
+                <fullName>Riverview(633)</fullName>
+                <default>false</default>
+                <label>Riverview(633)</label>
+            </value>
+            <value>
+                <fullName>Riviera Beach(1)</fullName>
+                <default>false</default>
+                <label>Riviera Beach(1)</label>
+            </value>
+            <value>
+                <fullName>Rockledge(1158)</fullName>
+                <default>false</default>
+                <label>Rockledge(1158)</label>
+            </value>
+            <value>
+                <fullName>Rocky Point(9)</fullName>
+                <default>false</default>
+                <label>Rocky Point(9)</label>
+            </value>
+            <value>
+                <fullName>Royal Palm Beach(2)</fullName>
+                <default>false</default>
+                <label>Royal Palm Beach(2)</label>
+            </value>
+            <value>
+                <fullName>Ruskin(164)</fullName>
+                <default>false</default>
+                <label>Ruskin(164)</label>
+            </value>
+            <value>
+                <fullName>S Daytona(3)</fullName>
+                <default>false</default>
+                <label>S Daytona(3)</label>
+            </value>
+            <value>
+                <fullName>Safety Harbor(3)</fullName>
+                <default>false</default>
+                <label>Safety Harbor(3)</label>
+            </value>
+            <value>
+                <fullName>Saint Augustine(52)</fullName>
+                <default>false</default>
+                <label>Saint Augustine(52)</label>
+            </value>
+            <value>
+                <fullName>Saint Cloud(461)</fullName>
+                <default>false</default>
+                <label>Saint Cloud(461)</label>
+            </value>
+            <value>
+                <fullName>Saint Johns(3)</fullName>
+                <default>false</default>
+                <label>Saint Johns(3)</label>
+            </value>
+            <value>
+                <fullName>Saint Petersburg(72)</fullName>
+                <default>false</default>
+                <label>Saint Petersburg(72)</label>
+            </value>
+            <value>
+                <fullName>Salt Springs(1)</fullName>
+                <default>false</default>
+                <label>Salt Springs(1)</label>
+            </value>
+            <value>
+                <fullName>Sanford(788)</fullName>
+                <default>false</default>
+                <label>Sanford(788)</label>
+            </value>
+            <value>
+                <fullName>Santa Rosa Beach(1)</fullName>
+                <default>false</default>
+                <label>Santa Rosa Beach(1)</label>
+            </value>
+            <value>
+                <fullName>Sarasota(59)</fullName>
+                <default>false</default>
+                <label>Sarasota(59)</label>
+            </value>
+            <value>
+                <fullName>Satellite Bch(3)</fullName>
+                <default>false</default>
+                <label>Satellite Bch(3)</label>
+            </value>
+            <value>
+                <fullName>Satellite Beach(133)</fullName>
+                <default>false</default>
+                <label>Satellite Beach(133)</label>
+            </value>
+            <value>
+                <fullName>Scottsmoor(1)</fullName>
+                <default>false</default>
+                <label>Scottsmoor(1)</label>
+            </value>
+            <value>
+                <fullName>Sebastian(34)</fullName>
+                <default>false</default>
+                <label>Sebastian(34)</label>
+            </value>
+            <value>
+                <fullName>Sebring(57)</fullName>
+                <default>false</default>
+                <label>Sebring(57)</label>
+            </value>
+            <value>
+                <fullName>Seffner(111)</fullName>
+                <default>false</default>
+                <label>Seffner(111)</label>
+            </value>
+            <value>
+                <fullName>Seminole(3)</fullName>
+                <default>false</default>
+                <label>Seminole(3)</label>
+            </value>
+            <value>
+                <fullName>Silver Springs(26)</fullName>
+                <default>false</default>
+                <label>Silver Springs(26)</label>
+            </value>
+            <value>
+                <fullName>Sorrento(32)</fullName>
+                <default>false</default>
+                <label>Sorrento(32)</label>
+            </value>
+            <value>
+                <fullName>South Daytona(267)</fullName>
+                <default>false</default>
+                <label>South Daytona(267)</label>
+            </value>
+            <value>
+                <fullName>South Miami(10)</fullName>
+                <default>false</default>
+                <label>South Miami(10)</label>
+            </value>
+            <value>
+                <fullName>South Pasadena(3)</fullName>
+                <default>false</default>
+                <label>South Pasadena(3)</label>
+            </value>
+            <value>
+                <fullName>Sparr(1)</fullName>
+                <default>false</default>
+                <label>Sparr(1)</label>
+            </value>
+            <value>
+                <fullName>Spring Hill(21)</fullName>
+                <default>false</default>
+                <label>Spring Hill(21)</label>
+            </value>
+            <value>
+                <fullName>St Petersburg(12)</fullName>
+                <default>false</default>
+                <label>St Petersburg(12)</label>
+            </value>
+            <value>
+                <fullName>St. Cloud(11)</fullName>
+                <default>false</default>
+                <label>St. Cloud(11)</label>
+            </value>
+            <value>
+                <fullName>St. Petersburg(7)</fullName>
+                <default>false</default>
+                <label>St. Petersburg(7)</label>
+            </value>
+            <value>
+                <fullName>Starke(4)</fullName>
+                <default>false</default>
+                <label>Starke(4)</label>
+            </value>
+            <value>
+                <fullName>Stuart(30)</fullName>
+                <default>false</default>
+                <label>Stuart(30)</label>
+            </value>
+            <value>
+                <fullName>Summerfield(145)</fullName>
+                <default>false</default>
+                <label>Summerfield(145)</label>
+            </value>
+            <value>
+                <fullName>Sumterville(51)</fullName>
+                <default>false</default>
+                <label>Sumterville(51)</label>
+            </value>
+            <value>
+                <fullName>Sun City(2)</fullName>
+                <default>false</default>
+                <label>Sun City(2)</label>
+            </value>
+            <value>
+                <fullName>Sun City Center(174)</fullName>
+                <default>false</default>
+                <label>Sun City Center(174)</label>
+            </value>
+            <value>
+                <fullName>Sun City Ctr(5)</fullName>
+                <default>false</default>
+                <label>Sun City Ctr(5)</label>
+            </value>
+            <value>
+                <fullName>Sunrise(4)</fullName>
+                <default>false</default>
+                <label>Sunrise(4)</label>
+            </value>
+            <value>
+                <fullName>Sydney(2)</fullName>
+                <default>false</default>
+                <label>Sydney(2)</label>
+            </value>
+            <value>
+                <fullName>Tallahassee(56)</fullName>
+                <default>false</default>
+                <label>Tallahassee(56)</label>
+            </value>
+            <value>
+                <fullName>Tamarac(9)</fullName>
+                <default>false</default>
+                <label>Tamarac(9)</label>
+            </value>
+            <value>
+                <fullName>Tampa(16892)</fullName>
+                <default>false</default>
+                <label>Tampa(16892)</label>
+            </value>
+            <value>
+                <fullName>Tarpon Springs(2)</fullName>
+                <default>false</default>
+                <label>Tarpon Springs(2)</label>
+            </value>
+            <value>
+                <fullName>Tavares(483)</fullName>
+                <default>false</default>
+                <label>Tavares(483)</label>
+            </value>
+            <value>
+                <fullName>Tavernier(2)</fullName>
+                <default>false</default>
+                <label>Tavernier(2)</label>
+            </value>
+            <value>
+                <fullName>Temple Terrace(673)</fullName>
+                <default>false</default>
+                <label>Temple Terrace(673)</label>
+            </value>
+            <value>
+                <fullName>Tequesta(1)</fullName>
+                <default>false</default>
+                <label>Tequesta(1)</label>
+            </value>
+            <value>
+                <fullName>The Villages(795)</fullName>
+                <default>false</default>
+                <label>The Villages(795)</label>
+            </value>
+            <value>
+                <fullName>Thonotosassa(30)</fullName>
+                <default>false</default>
+                <label>Thonotosassa(30)</label>
+            </value>
+            <value>
+                <fullName>Tioga(1)</fullName>
+                <default>false</default>
+                <label>Tioga(1)</label>
+            </value>
+            <value>
+                <fullName>Titusville(706)</fullName>
+                <default>false</default>
+                <label>Titusville(706)</label>
+            </value>
+            <value>
+                <fullName>Trenton(4)</fullName>
+                <default>false</default>
+                <label>Trenton(4)</label>
+            </value>
+            <value>
+                <fullName>Trinity(1)</fullName>
+                <default>false</default>
+                <label>Trinity(1)</label>
+            </value>
+            <value>
+                <fullName>Umatilla(50)</fullName>
+                <default>false</default>
+                <label>Umatilla(50)</label>
+            </value>
+            <value>
+                <fullName>University Of Tampa(74)</fullName>
+                <default>false</default>
+                <label>University Of Tampa(74)</label>
+            </value>
+            <value>
+                <fullName>University Park(1)</fullName>
+                <default>false</default>
+                <label>University Park(1)</label>
+            </value>
+            <value>
+                <fullName>Valrico(345)</fullName>
+                <default>false</default>
+                <label>Valrico(345)</label>
+            </value>
+            <value>
+                <fullName>Venice(15)</fullName>
+                <default>false</default>
+                <label>Venice(15)</label>
+            </value>
+            <value>
+                <fullName>Vero Beach(107)</fullName>
+                <default>false</default>
+                <label>Vero Beach(107)</label>
+            </value>
+            <value>
+                <fullName>Viera(217)</fullName>
+                <default>false</default>
+                <label>Viera(217)</label>
+            </value>
+            <value>
+                <fullName>W Melbourne(28)</fullName>
+                <default>false</default>
+                <label>W Melbourne(28)</label>
+            </value>
+            <value>
+                <fullName>Wauchula(7)</fullName>
+                <default>false</default>
+                <label>Wauchula(7)</label>
+            </value>
+            <value>
+                <fullName>Webster(1)</fullName>
+                <default>false</default>
+                <label>Webster(1)</label>
+            </value>
+            <value>
+                <fullName>Weeki Wachee(4)</fullName>
+                <default>false</default>
+                <label>Weeki Wachee(4)</label>
+            </value>
+            <value>
+                <fullName>Weirsdale(9)</fullName>
+                <default>false</default>
+                <label>Weirsdale(9)</label>
+            </value>
+            <value>
+                <fullName>Wellington(14)</fullName>
+                <default>false</default>
+                <label>Wellington(14)</label>
+            </value>
+            <value>
+                <fullName>Wesley Chapel(17)</fullName>
+                <default>false</default>
+                <label>Wesley Chapel(17)</label>
+            </value>
+            <value>
+                <fullName>West Melbourne(146)</fullName>
+                <default>false</default>
+                <label>West Melbourne(146)</label>
+            </value>
+            <value>
+                <fullName>West Palm Beach(49)</fullName>
+                <default>false</default>
+                <label>West Palm Beach(49)</label>
+            </value>
+            <value>
+                <fullName>Weston(22)</fullName>
+                <default>false</default>
+                <label>Weston(22)</label>
+            </value>
+            <value>
+                <fullName>Wilbur By Sea(5)</fullName>
+                <default>false</default>
+                <label>Wilbur By Sea(5)</label>
+            </value>
+            <value>
+                <fullName>Wildwood(42)</fullName>
+                <default>false</default>
+                <label>Wildwood(42)</label>
+            </value>
+            <value>
+                <fullName>Williston(1)</fullName>
+                <default>false</default>
+                <label>Williston(1)</label>
+            </value>
+            <value>
+                <fullName>Wilton Manors(3)</fullName>
+                <default>false</default>
+                <label>Wilton Manors(3)</label>
+            </value>
+            <value>
+                <fullName>Wimauma(30)</fullName>
+                <default>false</default>
+                <label>Wimauma(30)</label>
+            </value>
+            <value>
+                <fullName>Windermere(258)</fullName>
+                <default>false</default>
+                <label>Windermere(258)</label>
+            </value>
+            <value>
+                <fullName>Winter Garden(558)</fullName>
+                <default>false</default>
+                <label>Winter Garden(558)</label>
+            </value>
+            <value>
+                <fullName>Winter Haven(1415)</fullName>
+                <default>false</default>
+                <label>Winter Haven(1415)</label>
+            </value>
+            <value>
+                <fullName>Winter Park(2648)</fullName>
+                <default>false</default>
+                <label>Winter Park(2648)</label>
+            </value>
+            <value>
+                <fullName>Winter Spgs(18)</fullName>
+                <default>false</default>
+                <label>Winter Spgs(18)</label>
+            </value>
+            <value>
+                <fullName>Winter Springs(316)</fullName>
+                <default>false</default>
+                <label>Winter Springs(316)</label>
+            </value>
+            <value>
+                <fullName>Yalaha(2)</fullName>
+                <default>false</default>
+                <label>Yalaha(2)</label>
+            </value>
+            <value>
+                <fullName>Yulee(1)</fullName>
+                <default>false</default>
+                <label>Yulee(1)</label>
+            </value>
+            <value>
+                <fullName>Zellwood(1)</fullName>
+                <default>false</default>
+                <label>Zellwood(1)</label>
+            </value>
+            <value>
+                <fullName>Zephyrhills(17)</fullName>
+                <default>false</default>
+                <label>Zephyrhills(17)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

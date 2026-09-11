@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomNotificationType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customNotifTypeName>Vital_Reports_Report_Request</customNotifTypeName>
+    <description>Notifies the reporting team of new report requests and notifies requesters when their request is completed or rejected.</description>
+    <desktop>true</desktop>
+    <masterLabel>Vital Reports — Report Request</masterLabel>
+    <mobile>true</mobile>
+    <slack>false</slack>
+</CustomNotificationType>

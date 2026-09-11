@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$PM_Activity_Count__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Past_3_Months_Activity_Count__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Past_6_Months_Activity_Count__c</field>
+    </columns>
+    <columns>
+        <field>Contact$PY_Activity_Count__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Past_24_Months_Activity_Count__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact$PY_Activity_Count__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterThan</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Provider Activity Counts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>All_Providers__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

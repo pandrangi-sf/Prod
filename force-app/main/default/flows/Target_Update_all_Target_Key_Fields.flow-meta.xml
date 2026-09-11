@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Scheduled Flow to update the Target Key field on all Target Records.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>TargetKey</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.OwnerId} + &quot;-&quot; +{!$Record.Target_Provider__c}</expression>
+    </formulas>
+    <interviewLabel>Target: Update all Target Key Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Target: Update all Target Key Fields</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Target_Key</name>
+        <label>Update Target Key</label>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
+        <inputAssignments>
+            <field>Target_Key__c</field>
+            <value>
+                <elementReference>TargetKey</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Target_Key</targetReference>
+        </connector>
+        <object>Target__c</object>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2022-11-27</startDate>
+            <startTime>20:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

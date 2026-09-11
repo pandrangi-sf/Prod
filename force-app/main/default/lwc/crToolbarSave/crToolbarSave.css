@@ -1,0 +1,13 @@
+.cr-toolbar-save {
+    align-items: stretch;
+    display: inline-flex;
+    gap: 0;
+}
+
+.cr-toolbar-save c-cr-save-button {
+    display: inline-flex;
+}
+
+.cr-toolbar-save lightning-button-menu {
+    --slds-c-button-radius-border: 0 0.25rem 0.25rem 0;
+}

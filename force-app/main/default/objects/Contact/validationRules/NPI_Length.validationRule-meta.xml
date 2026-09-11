@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NPI_Length</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF(ISBLANK(NPI__c),TRUE,IF(LEN(NPI__c) = 10,TRUE,FALSE))</errorConditionFormula>
+    <errorDisplayField>NPI__c</errorDisplayField>
+    <errorMessage>NPI must be 10 digits</errorMessage>
+</ValidationRule>

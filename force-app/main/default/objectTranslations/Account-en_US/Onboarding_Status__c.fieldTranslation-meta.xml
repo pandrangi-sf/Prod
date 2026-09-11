@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Onboarding Status --></label>
+    <name>Onboarding_Status__c</name>
+    <picklistValues>
+        <masterLabel>Dues Invoice Sent</masterLabel>
+        <translation><!-- Dues Invoice Sent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dues Payment Received</masterLabel>
+        <translation><!-- Dues Payment Received --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Yet Contacted</masterLabel>
+        <translation><!-- Not Yet Contacted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Onboarding Meeting Held</masterLabel>
+        <translation><!-- Onboarding Meeting Held --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Onboarding Meeting Scheduled</masterLabel>
+        <translation><!-- Onboarding Meeting Scheduled --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

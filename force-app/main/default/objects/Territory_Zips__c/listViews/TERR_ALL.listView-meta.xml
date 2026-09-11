@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TERR_ALL</fullName>
+    <columns>NAME</columns>
+    <columns>County__c</columns>
+    <columns>Region__c</columns>
+    <columns>SubMarket__c</columns>
+    <columns>Territories__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>TERR_ALL</label>
+</ListView>

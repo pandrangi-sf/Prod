@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bugs_Closed</fullName>
+    <columns>NAME</columns>
+    <columns>agf__Subject__c</columns>
+    <columns>agf__Status__c</columns>
+    <columns>agf__Type__c</columns>
+    <columns>agf__Story_Points__c</columns>
+    <columns>agf__Priority__c</columns>
+    <columns>agf__Assignee__c</columns>
+    <columns>agf__Sprint__c</columns>
+    <columns>agf__Release__c</columns>
+    <columns>agf__Scrum_Team__c</columns>
+    <columns>agf__Epic__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>agf__ADM_Work__c.agf__Bug</value>
+    </filters>
+    <filters>
+        <field>agf__Story_Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Bugs (Closed)</label>
+</ListView>

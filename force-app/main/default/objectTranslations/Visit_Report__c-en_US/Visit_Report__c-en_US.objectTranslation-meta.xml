@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Visit Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Visit Reports</value>
+    </caseValues>
+    <layouts>
+        <layout>BH PRM Visit Report Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Network Visit Report Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>OH PRM Visit Report Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Baptist Health PRM Visit --></description>
+        <label><!-- BH Physician Relations Visit --></label>
+        <name>BH_Physician_Relations_Visit</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Network team visit report --></description>
+        <label><!-- Network Visit --></label>
+        <name>Network_Visit</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- OH_PRM team visit --></description>
+        <label><!-- OH Physician Relations Visit --></label>
+        <name>OH_Physician_Relations_Visit</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- PRM team visit --></description>
+        <label><!-- Physician Relations Visit --></label>
+        <name>Physician_Relations_Visit</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

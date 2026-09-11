@@ -1,0 +1,111 @@
+<template>
+    <lightning-card title="Live Preview" icon-name="utility:preview">
+        <div slot="actions">
+            <lightning-button-icon
+                icon-name="utility:sync"
+                alternative-text="Force refresh from Salesforce"
+                title="Force refresh (bypass cache and re-fetch from Salesforce)"
+                variant="border-filled"
+                onclick={forceRefresh}
+                disabled={runDisabled}
+                class="slds-m-right_xx-small">
+            </lightning-button-icon>
+            <lightning-button
+                label="Refresh"
+                icon-name="utility:refresh"
+                variant="neutral"
+                onclick={runPreview}
+                disabled={runDisabled}>
+            </lightning-button>
+        </div>
+
+        <div class="preview-shell slds-p-horizontal_medium slds-p-bottom_medium">
+            <template if:true={loading}>
+                <lightning-spinner alternative-text="Loading preview" size="small"></lightning-spinner>
+            </template>
+
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-m-bottom_x-small">{errorMessage}</div>
+            </template>
+
+            <template if:true={hasRows}>
+                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-m-bottom_x-small">
+                    <p class="slds-text-body_small slds-text-color_weak">Showing {rowCount} sample row(s)</p>
+                    <lightning-radio-group
+                        label="View"
+                        type="button"
+                        variant="label-hidden"
+                        options={viewModeOptions}
+                        value={viewMode}
+                        onchange={handleViewModeChange}>
+                    </lightning-radio-group>
+                </div>
+
+                <template if:true={isChartView}>
+                    <div class="slds-m-bottom_x-small" style="max-width: 12rem;">
+                        <lightning-combobox
+                            label="Chart type"
+                            variant="label-hidden"
+                            options={chartTypeOptions}
+                            value={chartType}
+                            onchange={handleChartTypePick}>
+                        </lightning-combobox>
+                    </div>
+                    <c-cr-chart
+                        chart-type={chartType}
+                        engine={chartEngine}
+                        result={chartResult}
+                        height="320">
+                    </c-cr-chart>
+                </template>
+
+                <template if:true={isTableView}>
+                    <div class="preview-table-shell" tabindex="0">
+                        <table class="preview-table slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr>
+                                    <template for:each={tableColumns} for:item="column">
+                                        <th key={column.fieldName} scope="col">
+                                            <span class="header-label" title={column.label}>{column.label}</span>
+                                        </th>
+                                    </template>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={displayRows} for:item="row">
+                                    <tr key={row.key}>
+                                        <template for:each={row.cells} for:item="cell">
+                                            <td key={cell.key} title={cell.value}>
+                                                <template if:true={cell.isLink}>
+                                                    <a href={cell.linkUrl} target="_blank" rel="noopener" class="record-link">{cell.value}</a>
+                                                </template>
+                                                <template if:false={cell.isLink}>
+                                                    {cell.value}
+                                                </template>
+                                            </td>
+                                        </template>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+
+                <details class="slds-m-top_small">
+                    <summary class="slds-text-title_caps slds-text-color_weak">Executed SOQL</summary>
+                    <pre class="executed-soql">{executedSoql}</pre>
+                </details>
+            </template>
+
+            <template if:false={hasRows}>
+                <template if:false={loading}>
+                    <template if:false={errorMessage}>
+                        <p class="slds-text-color_weak slds-p-vertical_x-small">
+                            Click <strong>Refresh</strong> to preview a sample of this report.
+                        </p>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

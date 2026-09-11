@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demonstrates_Passion_for_Orlando_Health__c</fullName>
+    <description>Demonstrates a strong passion for Orlando Health and responsible facility.</description>
+    <inlineHelpText>Demonstrates a strong passion for Orlando Health and responsible facility.</inlineHelpText>
+    <label>12) Passion for Orlando Health</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Rating</valueSetName>
+    </valueSet>
+</CustomField>

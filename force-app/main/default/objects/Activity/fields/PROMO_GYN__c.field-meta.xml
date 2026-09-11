@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PROMO_GYN__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+
+OR(
+INCLUDES( Services_Promoted__c , &quot;Gynecology - MIS - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Gynecology - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Breast - Adult&quot;)
+)
+
+, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PROMO_GYN</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>application/javascript</contentType>
+    <description>Chart.js v4.4.6 UMD bundle. Loaded by c-cr-chart via lightning/platformResourceLoader. Pinned to v4.4 for reproducibility. Source: cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.js</description>
+</StaticResource>

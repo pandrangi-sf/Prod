@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates if the objection is used by the BH (Alabama) PRM team. --></help>
+    <label><!-- BH PRM Objection --></label>
+    <name>BH_PRM_Objection__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Targets</fullName>
+    <columns>NAME</columns>
+    <columns>Facility__c</columns>
+    <columns>Top_Target__c</columns>
+    <columns>Rank__c</columns>
+    <columns>Target_NPI__c</columns>
+    <columns>Target_Last__c</columns>
+    <columns>Target_Provider__c</columns>
+    <columns>Target_Specialty__c</columns>
+    <columns>Target_Practice__c</columns>
+    <columns>Zone1__c</columns>
+    <columns>Zone2__c</columns>
+    <columns>Zone3__c</columns>
+    <columns>Zone4__c</columns>
+    <columns>Zone5__c</columns>
+    <columns>Zone6__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Targets</label>
+    <sharedTo>
+        <group>Sys_Admin</group>
+    </sharedTo>
+</ListView>

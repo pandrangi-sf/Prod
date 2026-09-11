@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Type_Required</fullName>
+    <active>true</active>
+    <description>Requires Provider Type for new records.</description>
+    <errorConditionFormula>AND(ISNEW(), ISBLANK(TEXT( Provider_Type__c)))</errorConditionFormula>
+    <errorDisplayField>Provider_Type__c</errorDisplayField>
+    <errorMessage>Provider Type is required for new records.</errorMessage>
+</ValidationRule>

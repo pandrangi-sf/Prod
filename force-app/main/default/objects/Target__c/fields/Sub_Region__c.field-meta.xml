@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Region__c</fullName>
+    <description>Tracks the sub region of the NSCENTRAL territory.</description>
+    <label>Sub Region</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OHLMH</fullName>
+                <default>false</default>
+                <label>OHLMH</label>
+            </value>
+            <value>
+                <fullName>OHSLH</fullName>
+                <default>false</default>
+                <label>OHSLH</label>
+            </value>
+            <value>
+                <fullName>North</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>North</label>
+            </value>
+            <value>
+                <fullName>North Region OHSLH/FHV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>North Region OHSLH/FHV</label>
+            </value>
+            <value>
+                <fullName>South</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>South</label>
+            </value>
+            <value>
+                <fullName>South Region OHHCH &amp; OHHWH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>South Region OHHCH &amp; OHHWH</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

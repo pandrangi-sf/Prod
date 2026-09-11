@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>NPI_Registry</links>
+    <links>USPS_Street_Suffix_Abbreviations</links>
+    <links>Salesforce_Libraries</links>
+    <links>PRM_Salesforce_Upgrade_Group</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

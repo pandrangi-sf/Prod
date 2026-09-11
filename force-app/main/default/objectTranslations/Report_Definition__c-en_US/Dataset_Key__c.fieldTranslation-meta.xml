@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Identifies the logical dataset used to resolve fields, Fact/Dim mappings, and query behavior. --></help>
+    <label><!-- Dataset Key --></label>
+    <name>Dataset_Key__c</name>
+</CustomFieldTranslation>

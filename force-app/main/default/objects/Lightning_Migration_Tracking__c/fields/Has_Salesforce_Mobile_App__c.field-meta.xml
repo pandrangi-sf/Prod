@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Salesforce_Mobile_App__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Has the Salesforce Mobile App on iPad</inlineHelpText>
+    <label>Has Salesforce Mobile App</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

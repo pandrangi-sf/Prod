@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Demonstrates thorough knowledge of service lines, instrumentation / techniques / imaging modalities. --></help>
+    <label><!-- 11) Demonstrates Business Knowledge --></label>
+    <name>Demonstrates_Business_Knowledge__c</name>
+</CustomFieldTranslation>

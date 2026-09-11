@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PROMO_ONC__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+
+OR(
+INCLUDES( Services_Promoted__c , &quot;Oncology - Breast - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - General - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - General - Ped&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - GI - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Gynecology - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Head and Neck - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Medical Oncology - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Plastics - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Radiation Oncology - Adult&quot;),
+INCLUDES( Services_Promoted__c , &quot;Oncology - Thoracic - Adult&quot;)
+)
+
+, 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PROMO_ONC</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

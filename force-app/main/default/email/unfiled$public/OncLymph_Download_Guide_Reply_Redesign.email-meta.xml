@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to Lead to Download Onc Lymph Guide</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - Oncology - Lymph Campaign - DG - redesign</name>
+    <style>none</style>
+    <subject>Thank You - Download Your Free Lymphedema Oncology Guide</subject>
+    <textOnly>Download Your Free Guide
+
+To Make An Appointment Call us at 321.843.7771 Se Habla Español
+
+Download Your Guide to Understanding Lymphedema
+
+Thank you for requesting your Guide to Understanding Lymphedema. The guide will provide you with information on the symptoms and types of lymphedema.
+
+Schedule An Appointment With A Physician
+
+Our surgeons are among a handful in the country – and the only in Florida – who use advanced microsurgical techniques to treat lymphedema. If you are experiencing ongoing pain or swelling, request an appointment with a physician today.
+
+Request An Appointment
+
+
+Call for more information
+321.843.7771
+
+
+Unsubscribe | Privacy Policy
+
+Copyright © 2016 UF Health Cancer Center – Orlando Health
+1400 S. Orange Ave., Orlando, FL 32806</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

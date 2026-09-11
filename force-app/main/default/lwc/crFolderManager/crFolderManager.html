@@ -1,0 +1,175 @@
+<template>
+    <c-cr-help-panel tool-key="crFolderManager" tool-label="Report Folders"></c-cr-help-panel>
+    <div class="fm-shell">
+        <div class="fm-header">
+            <nav class="fm-breadcrumb" aria-label="Breadcrumb">
+                <span class="crumb">Vital Reports</span>
+                <lightning-icon icon-name="utility:chevronright" size="xx-small" class="crumb-sep"></lightning-icon>
+                <span class="crumb crumb_current">Folders</span>
+            </nav>
+            <div class="fm-title-row">
+                <div class="fm-title-lead">
+                    <div class="page-header__icon-wrap page-header__icon-wrap--slate">
+                        <lightning-icon icon-name="standard:folder" size="small" alternative-text="Report Folders"></lightning-icon>
+                    </div>
+                    <div>
+                        <p class="fm-eyebrow">Organization</p>
+                        <h1 class="fm-title">Report Folders</h1>
+                        <p class="fm-sub">Browse folders and the reports &amp; dashboards inside them.<template if:true={canManage}> As an admin you can also manage who has access to each folder.</template></p>
+                    </div>
+                </div>
+                <div class="fm-header-actions">
+                    <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" title="Refresh"
+                        variant="border-filled" onclick={init} disabled={busy}></lightning-button-icon>
+                    <lightning-button-icon icon-name="utility:question" alternative-text="Help" title="Help and tips"
+                        variant="border-filled" onclick={openHelpPanel}></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="fm-body">
+            <template if:true={busy}>
+                <lightning-spinner alternative-text="Working…" size="small"></lightning-spinner>
+            </template>
+            <template if:true={loadError}>
+                <div class="slds-box slds-theme_error slds-m-bottom_small" role="alert">{loadError}</div>
+            </template>
+
+            <div class="fm-grid">
+                <!-- Folder list -->
+                <div class="fm-folders">
+                    <template if:true={hasFolders}>
+                        <template for:each={folders} for:item="f">
+                            <button key={f.id} class={f.cssClass} data-id={f.id} onclick={handleSelectFolder}>
+                                <span class="folder-item__name">
+                                    <lightning-icon icon-name="utility:open_folder" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+                                    {f.name}
+                                </span>
+                                <span class="folder-item__meta">{f.countLabel}</span>
+                            </button>
+                        </template>
+                    </template>
+                    <template if:false={hasFolders}>
+                        <template if:false={busy}>
+                            <c-cr-empty-state
+                                headline="No folders yet"
+                                body="Folders are created automatically when you save a report or dashboard into one.">
+                            </c-cr-empty-state>
+                        </template>
+                    </template>
+                </div>
+
+                <!-- Detail -->
+                <div class="fm-detail">
+                    <template if:true={selectedFolderId}>
+                        <h2 class="fm-detail__title">{selectedFolderName}</h2>
+
+                        <div class="fm-section">
+                            <p class="fm-section__head">Reports</p>
+                            <template if:true={hasReports}>
+                                <ul class="fm-list">
+                                    <template for:each={contents.reports} for:item="r">
+                                        <li key={r.id} class="fm-list__item">
+                                            <lightning-icon icon-name="utility:chart" size="x-small" class="slds-m-right_x-small"></lightning-icon>{r.name}
+                                        </li>
+                                    </template>
+                                </ul>
+                            </template>
+                            <template if:false={hasReports}><p class="fm-empty">No reports in this folder.</p></template>
+                        </div>
+
+                        <div class="fm-section">
+                            <p class="fm-section__head">Dashboards</p>
+                            <template if:true={hasDashboards}>
+                                <ul class="fm-list">
+                                    <template for:each={contents.dashboards} for:item="d">
+                                        <li key={d.id} class="fm-list__item">
+                                            <lightning-icon icon-name="utility:dashboard" size="x-small" class="slds-m-right_x-small"></lightning-icon>{d.name}
+                                        </li>
+                                    </template>
+                                </ul>
+                            </template>
+                            <template if:false={hasDashboards}><p class="fm-empty">No dashboards in this folder.</p></template>
+                        </div>
+
+                        <!-- Admin: members -->
+                        <template if:true={showMembers}>
+                            <div class="fm-section fm-members">
+                                <p class="fm-section__head">Who has access</p>
+                                <ul class="fm-list">
+                                    <template for:each={decoratedMembers} for:item="m">
+                                        <li key={m.id} class="fm-member">
+                                            <span class="fm-member__type">{m.memberType}</span>
+                                            <span class="fm-member__name">{m.display}</span>
+                                            <lightning-combobox class="fm-member__access" variant="label-hidden" label="Access"
+                                                value={m.accessLevel} options={accessOptions} data-id={m.id}
+                                                onchange={handleAccessToggle}></lightning-combobox>
+                                            <lightning-button-icon icon-name="utility:delete" alternative-text="Remove member"
+                                                title="Remove" variant="bare" data-id={m.id} onclick={handleRemoveMember}></lightning-button-icon>
+                                        </li>
+                                    </template>
+                                </ul>
+
+                                <div class="fm-add-member">
+                                    <lightning-combobox label="Type" variant="label-hidden" options={memberTypeOptions}
+                                        value={newMember.memberType} onchange={handleMemberTypeChange}></lightning-combobox>
+                                    <div class="fm-principal slds-form-element">
+                                        <label class="slds-form-element__label slds-assistive-text" for="principal-input">{principalLabel}</label>
+                                        <div class="slds-form-element__control">
+                                            <div class={principalComboClass}>
+                                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                                                    <input type="text" id="principal-input" class="slds-input slds-combobox__input"
+                                                        autocomplete="off" role="textbox" placeholder={principalPlaceholder}
+                                                        value={principalTerm} oninput={handlePrincipalInput}
+                                                        onfocus={handlePrincipalFocus} onblur={handlePrincipalBlur} />
+                                                    <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                                                        <lightning-icon icon-name="utility:search" size="xx-small"></lightning-icon>
+                                                    </span>
+                                                </div>
+                                                <div class="slds-dropdown slds-dropdown_length-7 slds-dropdown_fluid" role="listbox">
+                                                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                                        <template if:true={hasPrincipalResults}>
+                                                            <template for:each={principalResults} for:item="p">
+                                                                <li key={p.id} role="presentation" class="slds-listbox__item">
+                                                                    <div class="slds-media slds-listbox__option slds-listbox__option_entity"
+                                                                        role="option" data-id={p.id} data-name={p.name}
+                                                                        onmousedown={handlePrincipalSelect}>
+                                                                        <span class="slds-media__body">
+                                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{p.name}</span>
+                                                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">{p.secondary}</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </li>
+                                                            </template>
+                                                        </template>
+                                                        <template if:false={hasPrincipalResults}>
+                                                            <li role="presentation" class="slds-listbox__item">
+                                                                <div class="slds-media slds-listbox__option" role="option">
+                                                                    <span class="slds-media__body fm-principal__empty">No matches</span>
+                                                                </div>
+                                                            </li>
+                                                        </template>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <lightning-combobox label="Access" variant="label-hidden" options={accessOptions}
+                                        value={newMember.accessLevel} onchange={handleAccessChange}></lightning-combobox>
+                                    <lightning-button label="Add" icon-name="utility:add" onclick={handleAddMember} disabled={busy}></lightning-button>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+
+                    <template if:false={selectedFolderId}>
+                        <div class="fm-placeholder">
+                            <lightning-icon icon-name="utility:open_folder" size="large"></lightning-icon>
+                            <p>Select a folder to see its reports and dashboards.</p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

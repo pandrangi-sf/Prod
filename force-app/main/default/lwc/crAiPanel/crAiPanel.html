@@ -1,0 +1,40 @@
+<template>
+    <template if:true={isOpen}>
+        <aside class="ai-drawer" role="complementary" aria-label="AI summary">
+            <header class="ai-drawer__header">
+                <div class="ai-drawer__title-block">
+                    <lightning-icon icon-name="utility:einstein" size="x-small" class="ai-drawer__title-icon"></lightning-icon>
+                    <h2 class="ai-drawer__title">AI Summary</h2>
+                    <template if:true={isStubBadge}>
+                        <span class="ai-drawer__badge">Sample</span>
+                    </template>
+                </div>
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    alternative-text="Close"
+                    title="Close"
+                    size="small"
+                    variant="bare"
+                    onclick={handleClose}>
+                </lightning-button-icon>
+            </header>
+            <div class="ai-drawer__body">
+                <template if:true={isLoading}>
+                    <div class="ai-drawer__loading">
+                        <lightning-spinner alternative-text="Generating" size="small"></lightning-spinner>
+                        <p class="ai-drawer__loading-text">Generating summary…</p>
+                    </div>
+                </template>
+                <template if:true={hasError}>
+                    <p class="ai-drawer__error">{_error}</p>
+                </template>
+                <template if:true={hasContent}>
+                    <h3 class="ai-drawer__heading">{_heading}</h3>
+                    <div class="ai-drawer__rich">
+                        <lightning-formatted-rich-text value={_body}></lightning-formatted-rich-text>
+                    </div>
+                </template>
+            </div>
+        </aside>
+    </template>
+</template>

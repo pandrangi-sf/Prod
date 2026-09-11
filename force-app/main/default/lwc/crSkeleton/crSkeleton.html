@@ -1,0 +1,7 @@
+<template>
+    <div class="cr-skel" role="status" aria-label="Loading">
+        <template for:each={items} for:item="it">
+            <div key={it.key} class={barClass}></div>
+        </template>
+    </div>
+</template>

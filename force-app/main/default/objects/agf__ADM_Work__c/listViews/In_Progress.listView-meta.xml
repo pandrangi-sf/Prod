@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Progress</fullName>
+    <columns>NAME</columns>
+    <columns>agf__Subject__c</columns>
+    <columns>agf__Type__c</columns>
+    <columns>agf__Story_Points__c</columns>
+    <columns>agf__Age__c</columns>
+    <columns>agf__Status__c</columns>
+    <columns>Kanban_Status__c</columns>
+    <columns>agf__Assignee__c</columns>
+    <columns>agf__Scrum_Team__c</columns>
+    <columns>agf__Epic__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>agf__Status__c</field>
+        <operation>notEqual</operation>
+        <value>New,Closed,Duplicate,Inactive,Not a bug,Rejected,Completed</value>
+    </filters>
+    <filters>
+        <field>agf__Closed__c</field>
+        <operation>notEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>In Progress</label>
+</ListView>

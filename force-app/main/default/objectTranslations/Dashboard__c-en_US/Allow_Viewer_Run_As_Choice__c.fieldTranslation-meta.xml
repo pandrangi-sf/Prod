@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- When checked, viewers can choose whose data context to view this dashboard under at open time. --></help>
+    <label><!-- Allow Viewer Run-As Choice --></label>
+    <name>Allow_Viewer_Run_As_Choice__c</name>
+</CustomFieldTranslation>

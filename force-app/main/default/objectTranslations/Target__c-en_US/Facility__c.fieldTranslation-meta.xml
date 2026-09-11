@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Facility --></label>
+    <name>Facility__c</name>
+    <picklistValues>
+        <masterLabel>BHSP</masterLabel>
+        <translation><!-- BHSP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NE</masterLabel>
+        <translation><!-- NE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NSCENTRAL</masterLabel>
+        <translation><!-- NSCENTRAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHAPH</masterLabel>
+        <translation><!-- OHAPH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHCIN</masterLabel>
+        <translation><!-- OHCIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHCIS</masterLabel>
+        <translation><!-- OHCIS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHDPH</masterLabel>
+        <translation><!-- OHDPH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHHVIN</masterLabel>
+        <translation><!-- OHHVIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHHVIS</masterLabel>
+        <translation><!-- OHHVIS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHICLM</masterLabel>
+        <translation><!-- OHICLM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHICOC</masterLabel>
+        <translation><!-- OHICOC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHICSL</masterLabel>
+        <translation><!-- OHICSL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHICSO</masterLabel>
+        <translation><!-- OHICSO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHICWP</masterLabel>
+        <translation><!-- OHICWP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHJOI</masterLabel>
+        <translation><!-- OHJOI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHNRI</masterLabel>
+        <translation><!-- OHNRI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OHWPH</masterLabel>
+        <translation><!-- OHWPH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ORLND</masterLabel>
+        <translation><!-- ORLND --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ORMC</masterLabel>
+        <translation><!-- ORMC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SE</masterLabel>
+        <translation><!-- SE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TEST</masterLabel>
+        <translation><!-- TEST --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WEST</masterLabel>
+        <translation><!-- WEST --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <businessStatus>DeprecateCandidate</businessStatus>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Provider Intervention Meeting</fullName>
+                <default>false</default>
+                <label>Provider Intervention Meeting</label>
+            </value>
+            <value>
+                <fullName>OHPA Annual Wellness Visit</fullName>
+                <default>false</default>
+                <label>OHPA Annual Wellness Visit</label>
+            </value>
+            <value>
+                <fullName>Provider Support Meeting</fullName>
+                <default>false</default>
+                <label>Provider Support Meeting</label>
+            </value>
+            <value>
+                <fullName>Quarterly Meeting</fullName>
+                <default>false</default>
+                <label>Quarterly Meeting</label>
+            </value>
+            <value>
+                <fullName>OHN Resource Meeting</fullName>
+                <default>false</default>
+                <label>OHN Resource Meeting</label>
+            </value>
+            <value>
+                <fullName>Contract Overview/ Renewal / Membership Solicitation</fullName>
+                <default>false</default>
+                <label>Contract Overview/ Renewal / Membership Solicitation</label>
+            </value>
+            <value>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+                <label>Onboarding</label>
+            </value>
+            <value>
+                <fullName>IT Support</fullName>
+                <default>false</default>
+                <label>IT Support</label>
+            </value>
+            <value>
+                <fullName>Site Visit</fullName>
+                <default>false</default>
+                <label>Site Visit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

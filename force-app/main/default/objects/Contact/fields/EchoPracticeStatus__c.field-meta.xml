@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EchoPracticeStatus__c</fullName>
+    <label>Echo Practice Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Employed</fullName>
+                <default>false</default>
+                <label>Employed</label>
+            </value>
+            <value>
+                <fullName>Hospitalist</fullName>
+                <default>false</default>
+                <label>Hospitalist</label>
+            </value>
+            <value>
+                <fullName>Intensivist</fullName>
+                <default>false</default>
+                <label>Intensivist</label>
+            </value>
+            <value>
+                <fullName>Contracted</fullName>
+                <default>false</default>
+                <label>Contracted</label>
+            </value>
+            <value>
+                <fullName>Private</fullName>
+                <default>false</default>
+                <label>Private</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

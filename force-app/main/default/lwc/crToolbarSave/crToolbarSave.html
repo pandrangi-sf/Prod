@@ -1,0 +1,30 @@
+<template>
+    <div class="cr-toolbar-save">
+        <c-cr-save-button
+            label={label}
+            variant={variant}
+            disabled={disabled}
+            icon-name="utility:save"
+            onclick={handleSave}>
+        </c-cr-save-button>
+        <lightning-button-menu
+            alternative-text="More save options"
+            icon-name="utility:down"
+            menu-alignment="auto-right"
+            variant="border-filled"
+            onselect={handleMenuSelect}>
+            <lightning-menu-item
+                value="saveas"
+                label="Save As"
+                disabled={disabledSaveAs}
+                prefix-icon-name="utility:copy">
+            </lightning-menu-item>
+            <lightning-menu-item
+                value="delete"
+                label="Delete"
+                disabled={disabledDelete}
+                prefix-icon-name="utility:delete">
+            </lightning-menu-item>
+        </lightning-button-menu>
+    </div>
+</template>

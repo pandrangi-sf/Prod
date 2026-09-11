@@ -1,0 +1,306 @@
+:host {
+    display: block;
+    background: #f3f6fb;
+    min-height: 100%;
+}
+
+.home-shell {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 2.5rem;
+}
+
+/* Header */
+.home-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(20, 40, 80, 0.06);
+    margin-bottom: 1.25rem;
+}
+
+.home-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.25rem;
+}
+
+.home-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cr-brand-primary, #1B5CAB);
+    margin: 0;
+    font-weight: 600;
+}
+
+.audience-badge {
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    /* QA-B6: don't break "ADMIN VIEW" / "USER VIEW" onto two lines at
+       narrow viewports — the badge is short enough that wrapping looks
+       broken. */
+    white-space: nowrap;
+}
+
+.audience-badge--user {
+    background: var(--cr-brand-primary-soft, #e8f0fc);
+    color: var(--cr-brand-primary, #1B5CAB);
+}
+
+.audience-badge--admin {
+    background: #fde9d4;
+    color: #9a4d00;
+}
+
+.home-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d3557;
+    margin: 0 0 0.4rem;
+}
+
+.home-sub {
+    font-size: 0.9375rem;
+    color: #4a5b75;
+    margin: 0;
+    max-width: 760px;
+    line-height: 1.45;
+}
+
+.home-actions {
+    flex-shrink: 0;
+}
+
+/* Tile grid */
+.tile-grid {
+    display: grid;
+    /* QA-B3: drop minmax min from 320px to 280px so the tile fits on
+       320px-wide viewports (iPhone 5/SE-1) without 9px right-edge clip. */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.tile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.25rem 1.25rem 1rem;
+    box-shadow: 0 2px 6px rgba(20, 40, 80, 0.06);
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    outline: none;
+}
+
+.tile:hover,
+.tile:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(20, 40, 80, 0.12);
+    border-color: #c8d6e8;
+}
+/* Distinct keyboard-focus indicator (WCAG 2.4.7) — hover alone isn't a focus cue. */
+.tile:focus-visible {
+    outline: 2px solid var(--cr-brand-primary, #1B5CAB);
+    outline-offset: 2px;
+}
+
+.tile__icon-wrap--blue,
+.tile__icon-wrap--green,
+.tile__icon-wrap--purple,
+.tile__icon-wrap--teal,
+.tile__icon-wrap--amber,
+.tile__icon-wrap--red,
+.tile__icon-wrap--slate {
+    flex-shrink: 0;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile__icon-wrap--blue   { background: #e8f0fc; }
+.tile__icon-wrap--green  { background: #eaf6ee; }
+.tile__icon-wrap--purple { background: #efe9fb; }
+.tile__icon-wrap--teal   { background: #def4f3; }
+.tile__icon-wrap--amber  { background: #fdf1d8; }
+.tile__icon-wrap--red    { background: #fde4e2; }
+.tile__icon-wrap--slate  { background: #e8ecf1; }
+
+.tile__text {
+    flex: 1;
+    min-width: 0;
+}
+
+.tile__title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #1d3557;
+    margin: 0 0 0.25rem;
+}
+
+.tile__desc {
+    font-size: 0.875rem;
+    color: #5a6a83;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.tile__chevron {
+    flex-shrink: 0;
+    opacity: 0.45;
+}
+
+.tile:hover .tile__chevron,
+.tile:focus-visible .tile__chevron {
+    opacity: 0.85;
+}
+
+/* Help drawer */
+.help-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    box-shadow: -6px 0 18px rgba(20, 40, 80, 0.15);
+    display: flex;
+    flex-direction: column;
+    z-index: 9000;
+    animation: slide-in 0.18s ease-out;
+}
+
+@keyframes slide-in {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+}
+
+.help-drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.help-drawer__title-block {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.help-drawer__title-icon {
+    --sds-c-icon-color-foreground-default: var(--cr-brand-primary, #1B5CAB);
+}
+
+/* Plain <button> with a guaranteed 32x32 hit area. lightning-button-icon
+   only sized its inner glyph (~14x20), failing WCAG 2.5.8. Mirrors the
+   fixed crHelpPanel close button. */
+.help-drawer__close {
+    background: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    color: #5c7591;
+}
+
+.help-drawer__close:hover {
+    background: rgba(27, 92, 171, 0.08);
+}
+
+.help-drawer__close:focus-visible {
+    outline: 2px solid var(--cr-brand-primary, #1B5CAB);
+    outline-offset: 1px;
+}
+
+.help-drawer__close lightning-icon {
+    --sds-c-icon-color-foreground-default: currentColor;
+}
+
+.help-drawer__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1d3557;
+    margin: 0;
+}
+
+.help-drawer__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 1.25rem 1.5rem;
+}
+
+.help-drawer__group-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cr-brand-primary, #1B5CAB);
+    font-weight: 600;
+    margin: 0.5rem 0 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.375rem;
+}
+
+.help-drawer__group-label--admin {
+    color: #9a4d00;
+    margin-top: 1.25rem;
+}
+
+.help-section {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.help-section:last-of-type {
+    border-bottom: none;
+}
+
+.help-section__heading-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.help-section__icon {
+    --sds-c-icon-color-foreground-default: var(--cr-brand-primary, #1B5CAB);
+}
+
+.help-section__icon--admin {
+    --sds-c-icon-color-foreground-default: #9a4d00;
+}
+
+.help-section__heading {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1d3557;
+    margin: 0;
+}
+
+.help-section__body {
+    font-size: 0.875rem;
+    color: #3a4a63;
+    line-height: 1.55;
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- % of zoned locations seen within 30 days --></label>
+    <name>Pct_Zoned_Locations_Seen_30_Days__c</name>
+</CustomFieldTranslation>

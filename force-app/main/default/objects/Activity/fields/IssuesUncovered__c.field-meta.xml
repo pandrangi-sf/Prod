@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IssuesUncovered__c</fullName>
+    <label>Issues Uncovered</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

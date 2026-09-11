@@ -1,0 +1,10 @@
+Hello, 
+
+A new person has registered for the March 15 Meet and Greet event from the following page:
+
+http://www.orlandohealth.com/shared/practices/orlando-health-physicians-general-surgery-group/surgical-group-meet-and-greet.
+
+First Name: {!Contact.FirstName}
+Last Name: {!Contact.LastName}
+Email: {!Contact.Email}
+Phone: {!Contact.Phone}

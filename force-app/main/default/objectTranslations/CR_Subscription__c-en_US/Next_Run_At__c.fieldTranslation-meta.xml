@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Computed by the dispatcher. Clear it to force a reschedule from the current settings. --></help>
+    <label><!-- Next Run At --></label>
+    <name>Next_Run_At__c</name>
+</CustomFieldTranslation>

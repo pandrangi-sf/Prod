@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merge_Location_Different_P_G__c</fullName>
+    <description>Indicates if the merge location selected is from a different Practice &amp; Group</description>
+    <formula>AND(NOT(ISBLANK(Merge_Location__c)), Practice__r.Id  &lt;&gt;  Merge_Location__r.Practice__r.Id)</formula>
+    <inlineHelpText>Indicates if the Merge Location belongs to a different Practice &amp; Group</inlineHelpText>
+    <label>Merge Location Different P&amp;G</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Status__c</fullName>
+    <label>Onboarding Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Yet Contacted</fullName>
+                <default>false</default>
+                <label>Not Yet Contacted</label>
+            </value>
+            <value>
+                <fullName>Onboarding Meeting Scheduled</fullName>
+                <default>false</default>
+                <label>Onboarding Meeting Scheduled</label>
+            </value>
+            <value>
+                <fullName>Onboarding Meeting Held</fullName>
+                <default>false</default>
+                <label>Onboarding Meeting Held</label>
+            </value>
+            <value>
+                <fullName>Dues Invoice Sent</fullName>
+                <default>false</default>
+                <label>Dues Invoice Sent</label>
+            </value>
+            <value>
+                <fullName>Dues Payment Received</fullName>
+                <default>false</default>
+                <label>Dues Payment Received</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

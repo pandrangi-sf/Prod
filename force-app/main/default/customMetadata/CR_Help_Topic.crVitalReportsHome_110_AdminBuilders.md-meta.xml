@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Vital Reports Home — Admin Builders</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">Admin</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;Use the &lt;strong&gt;Build a Report&lt;/strong&gt; and &lt;strong&gt;Build a Dashboard&lt;/strong&gt; tiles to create new content:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Report Builder&lt;/strong&gt; — pick a primary object, add related objects, choose fields, set filters, then save into a folder. Filter and column changes are previewed live.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Dashboard Builder&lt;/strong&gt; — compose a multi-component layout with KPI tiles, charts, and tables. Each component is bound to a saved report.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Sharing&lt;/strong&gt; — set the report or dashboard to Public to share with anyone who has the Vital Reports User perm set, or use Folder ownership for tighter control.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Standard users on the Vital Reports User perm set can also build reports today — if you want viewer-only access, contact your admin about a slimmer perm-set assignment.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Building reports and dashboards</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:builder</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">110.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crVitalReportsHome</value>
+    </values>
+</CustomMetadata>

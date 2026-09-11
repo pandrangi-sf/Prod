@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Professional_Suffix_Required</fullName>
+    <active>false</active>
+    <description>Requires Professional Suffix for new records.</description>
+    <errorConditionFormula>AND(ISNEW(), ISBLANK(ProfessionalSuffix__c))</errorConditionFormula>
+    <errorDisplayField>ProfessionalSuffix__c</errorDisplayField>
+    <errorMessage>Professional Suffix required for new records.</errorMessage>
+</ValidationRule>

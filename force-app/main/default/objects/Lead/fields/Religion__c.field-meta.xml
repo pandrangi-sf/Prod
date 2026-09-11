@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Religion__c</fullName>
+    <label>Religion</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Baptist</fullName>
+                <default>false</default>
+                <label>Baptist</label>
+            </value>
+            <value>
+                <fullName>Buddhism</fullName>
+                <default>false</default>
+                <label>Buddhism</label>
+            </value>
+            <value>
+                <fullName>Church of Christ</fullName>
+                <default>false</default>
+                <label>Church of Christ</label>
+            </value>
+            <value>
+                <fullName>Eastern Orthodox</fullName>
+                <default>false</default>
+                <label>Eastern Orthodox</label>
+            </value>
+            <value>
+                <fullName>Episcopalian</fullName>
+                <default>false</default>
+                <label>Episcopalian</label>
+            </value>
+            <value>
+                <fullName>Hinduism</fullName>
+                <default>false</default>
+                <label>Hinduism</label>
+            </value>
+            <value>
+                <fullName>Islam</fullName>
+                <default>false</default>
+                <label>Islam</label>
+            </value>
+            <value>
+                <fullName>Judaism</fullName>
+                <default>false</default>
+                <label>Judaism</label>
+            </value>
+            <value>
+                <fullName>Latter-Day-Saints/Mormon</fullName>
+                <default>false</default>
+                <label>Latter-Day-Saints/Mormon</label>
+            </value>
+            <value>
+                <fullName>Lutheran</fullName>
+                <default>false</default>
+                <label>Lutheran</label>
+            </value>
+            <value>
+                <fullName>Methodist</fullName>
+                <default>false</default>
+                <label>Methodist</label>
+            </value>
+            <value>
+                <fullName>Muslim</fullName>
+                <default>false</default>
+                <label>Muslim</label>
+            </value>
+            <value>
+                <fullName>Native Spirituality</fullName>
+                <default>false</default>
+                <label>Native Spirituality</label>
+            </value>
+            <value>
+                <fullName>New Age Spirituality</fullName>
+                <default>false</default>
+                <label>New Age Spirituality</label>
+            </value>
+            <value>
+                <fullName>Non-Christian</fullName>
+                <default>false</default>
+                <label>Non-Christian</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pentecostal</fullName>
+                <default>false</default>
+                <label>Pentecostal</label>
+            </value>
+            <value>
+                <fullName>Presbyterian</fullName>
+                <default>false</default>
+                <label>Presbyterian</label>
+            </value>
+            <value>
+                <fullName>Roman Catholic</fullName>
+                <default>false</default>
+                <label>Roman Catholic</label>
+            </value>
+            <value>
+                <fullName>Scientology</fullName>
+                <default>false</default>
+                <label>Scientology</label>
+            </value>
+            <value>
+                <fullName>Taoism</fullName>
+                <default>false</default>
+                <label>Taoism</label>
+            </value>
+            <value>
+                <fullName>Unitarian-Universalist</fullName>
+                <default>false</default>
+                <label>Unitarian-Universalist</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

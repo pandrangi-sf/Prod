@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>Lead</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Lead$Guarantor__c</field>
+        </columns>
+        <filter>
+            <criteriaItems>
+                <column>Lead$Email</column>
+                <columnToColumn>false</columnToColumn>
+                <isUnlocked>true</isUnlocked>
+                <operator>notEqual</operator>
+                <value></value>
+            </criteriaItems>
+        </filter>
+        <format>Summary</format>
+        <name>Patients &amp; Campaign Tactic Membe block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Patients_Campaign_Tactic_Member__c</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>Lead$ConvertedDate</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>Lead</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Lead$Lead_ID_Old__c</field>
+        </columns>
+        <columns>
+            <field>Lead.Guarantor__r$Name</field>
+        </columns>
+        <columns>
+            <field>Lead$Email</field>
+        </columns>
+        <filter>
+            <criteriaItems>
+                <column>Lead$Email</column>
+                <columnToColumn>false</columnToColumn>
+                <isUnlocked>true</isUnlocked>
+                <operator>notEqual</operator>
+                <value></value>
+            </criteriaItems>
+        </filter>
+        <format>Summary</format>
+        <name>Patients &amp; Gaurantor Dependents block 2</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Patients_Gaurantor_Dependents__c</reportType>
+        <scope>organization</scope>
+        <showGrandTotal>true</showGrandTotal>
+        <showSubTotals>true</showSubTotals>
+        <timeFrameFilter>
+            <dateColumn>Lead$ConvertedDate</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>Lead</joinTable>
+    </blockInfo>
+    <format>MultiBlock</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Lead$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Patients &amp; Tactic Members with Gaurantor</name>
+    <reportType>Patients_Campaign_Tactic_Member__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

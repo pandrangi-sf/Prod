@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assertively_Prospects_New_Clients__c</fullName>
+    <description>Assertively prospects new clients.</description>
+    <inlineHelpText>Assertively prospects new clients.</inlineHelpText>
+    <label>13) Assertively Prospects New Clients</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Rating</valueSetName>
+    </valueSet>
+</CustomField>

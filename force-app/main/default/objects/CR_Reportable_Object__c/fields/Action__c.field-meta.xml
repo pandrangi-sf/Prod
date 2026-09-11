@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action__c</fullName>
+    <inlineHelpText>Include = explicit org-level addition on top of the template-derived defaults. Exclude = remove a default-included entry from the effective allowlist. Use Include for org-specific objects; use Exclude to hide a default entry.</inlineHelpText>
+    <label>Action</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Include</fullName>
+                <default>true</default>
+                <label>Include</label>
+            </value>
+            <value>
+                <fullName>Exclude</fullName>
+                <default>false</default>
+                <label>Exclude</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

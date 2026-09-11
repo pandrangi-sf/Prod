@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY16 - OHP - Cardio - Structural Heart - DG - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank you for downloading!</subject>
+    <textOnly>Orlando Health | Heart Institute
+http://www.orlandohealth.com/
+
+321.841.3724
+Se habla español
+
+------------------------------------------------------------------
+
+You&apos;ve Taken the First Step Toward Understanding Structural Heart Disease
+
+Thanks for taking time to download the Structural Heart/Valve Disease Patient Guide. In it, you&apos;ll learn more about the condition and how you or a loved one can manage it.
+
+From causes to treatments, symptoms to surgery, the guide can provide a foundation to better understand structural heart disease and give you an idea of any next steps you may need to take to ensure your health and wellness.
+
+Still need more information? Your team at Orlando Health Heart Institute is always available to talk &amp;ndash; in person or over the phone &amp;ndash; to help you understand anything that may seem confusing or to answer any questions you have after reading the guide. 
+
+Call us today: 321.841.3724
+
+Request a Consultation Online &gt;
+http://orlandohealthphysicians.com/cardio/Request-A-Consultation.aspx
+
+------------------------------------------------------------------
+
+Find a Physician 
+Learn more about our cardiologists &gt;
+http://orlandohealthphysicians.com/cardio/Find-A-Physician.aspx
+
+Locations Near You
+Find a cardiologist that&apos;s convenient for you &gt;
+http://www.orlandohealth.com/facilities
+
+Map Your Trip
+Get directions to the Orlando Health Heart Institute &gt;
+http://www.orlandohealth.com/facilities/orlando-health-heart-institute/map-and-directions
+
+------------------------------------------------------------------
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices
+
+Orlando Health Heart Institute, 1222 S Orange Avenue, Orlando, FL 32806
+
+Copyright (C) 2016 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

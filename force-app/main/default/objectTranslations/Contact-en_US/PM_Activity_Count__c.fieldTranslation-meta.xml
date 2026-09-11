@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The count of practice wide activities that can be associated with a provider for the previous month. The count if for the whole previous calendar month. --></help>
+    <label><!-- Previous Month Activity Count --></label>
+    <name>PM_Activity_Count__c</name>
+</CustomFieldTranslation>

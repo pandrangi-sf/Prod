@@ -1,0 +1,67 @@
+.type-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+}
+
+.type-card {
+    align-items: flex-start;
+    background: #ffffff;
+    border: 1.5px solid #d8e2ed;
+    border-radius: 0.5rem;
+    color: #161616;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    gap: 0.4rem;
+    padding: 0.85rem 0.85rem 0.7rem;
+    position: relative;
+    text-align: left;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.type-card:hover:not(:disabled) {
+    border-color: #1589ee;
+    box-shadow: 0 2px 6px rgba(21, 137, 238, 0.18);
+}
+.type-card:focus-visible:not(:disabled) {
+    outline: 2px solid #1589ee;
+    outline-offset: 1px;
+}
+.type-card_disabled {
+    background: #f8f9fb;
+    color: #707070;
+    cursor: not-allowed;
+}
+
+.type-card__icon {
+    --sds-c-icon-color-foreground-default: #1589ee;
+    flex-shrink: 0;
+}
+.type-card_disabled .type-card__icon {
+    --sds-c-icon-color-foreground-default: #b0b0b0;
+}
+
+.type-card__label {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.type-card__desc {
+    color: #5c5c5c;
+    font-size: 0.75rem;
+    line-height: 1.35;
+}
+
+.type-card__pill {
+    background: #fff8e8;
+    border: 1px solid #fdb515;
+    border-radius: 999px;
+    color: #5c4900;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.1rem 0.5rem;
+    position: absolute;
+    right: 0.55rem;
+    top: 0.55rem;
+}

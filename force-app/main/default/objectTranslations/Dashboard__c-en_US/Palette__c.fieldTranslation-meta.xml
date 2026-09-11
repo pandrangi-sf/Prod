@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Named color palette applied to dashboard charts. Mirrors the named palettes in the native Lightning Dashboard Builder. Defaults to Aurora when unset. --></help>
+    <label><!-- Palette --></label>
+    <name>Palette__c</name>
+    <picklistValues>
+        <masterLabel>Aurora</masterLabel>
+        <translation><!-- Aurora --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bluegrass</masterLabel>
+        <translation><!-- Bluegrass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Branding</masterLabel>
+        <translation><!-- Branding --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duck</masterLabel>
+        <translation><!-- Duck --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fire</masterLabel>
+        <translation><!-- Fire --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Heat</masterLabel>
+        <translation><!-- Heat --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lake</masterLabel>
+        <translation><!-- Lake --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mineral (Accessible)</masterLabel>
+        <translation><!-- Mineral (Accessible) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nightfall</masterLabel>
+        <translation><!-- Nightfall --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ocean</masterLabel>
+        <translation><!-- Ocean --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pond</masterLabel>
+        <translation><!-- Pond --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sunrise</masterLabel>
+        <translation><!-- Sunrise --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Water</masterLabel>
+        <translation><!-- Water --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Watermelon</masterLabel>
+        <translation><!-- Watermelon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wildflowers</masterLabel>
+        <translation><!-- Wildflowers --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

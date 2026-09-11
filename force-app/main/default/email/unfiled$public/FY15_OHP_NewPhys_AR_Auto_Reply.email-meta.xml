@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - OHP - Neighborhood Campaigns - Lake Nona - AR - Auto Reply</name>
+    <style>none</style>
+    <subject>Thank you for requesting an appointment</subject>
+    <textOnly>Orlando Health Physicians
+
+407.389.5448 | Se habla espanol
+
+------------------------------------------------------------------
+
+Thank you for requesting an appointment. We will be contacting you within 24 hours* to schedule an appointment.
+
+*During normal business hours, Monday - Friday 8:00 a.m. to 4:30 p.m.
+
+------------------------------------------------------------------
+
+Connect With Us
+
+Facebook
+https://www.facebook.com/orlandohealth 
+
+Google Plus
+https://plus.google.com/+orlandohealth/posts 
+
+Twitter
+https://twitter.com/orlandohealth 
+
+YouTube
+https://www.youtube.com/user/orlandohealth 
+
+------------------------------------------------------------------
+
+PRIVACY POLICY
+http://www.orlandohealth.com/about-us/corporate-information/corporate-integrity/privacy-practices 
+
+Orlando Health, 1414 Kuhl Avenue Orlando, FL, 32806
+
+This publication does not constitute professional medical advice. Although it is intended to be accurate, neither the publisher nor any other party assumes liability for loss or damage due to reliance on this material. If you have medical questions, consult your medical professional. Images may be from (c)iStock and/or (c)Fotolia. (c)2015 Bluespire Marketing | bluespiremarketing.com
+
+Copyright (c) 2015 Orlando Health
+
+Powered by
+http://bluespiremarketing.com 
+Bluespire Marketing</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

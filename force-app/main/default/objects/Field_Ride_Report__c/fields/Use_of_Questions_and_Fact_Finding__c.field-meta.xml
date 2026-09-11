@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_of_Questions_and_Fact_Finding__c</fullName>
+    <description>Effective use of questions and fact finding</description>
+    <inlineHelpText>Effective use of questions and fact finding</inlineHelpText>
+    <label>6) Use of Questions and Fact Finding</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Rating</valueSetName>
+    </valueSet>
+</CustomField>

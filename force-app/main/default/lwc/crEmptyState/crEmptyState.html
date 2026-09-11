@@ -1,0 +1,59 @@
+<template>
+    <div class="empty-state" role="status">
+        <div class="empty-state__mascot">
+            <svg
+                class="cloud cloud--idle"
+                viewBox="0 0 140 110"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <defs>
+                    <linearGradient id="empty-cloud-fill" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="100%" stop-color="#e3edf7"/>
+                    </linearGradient>
+                </defs>
+
+                <ellipse cx="70" cy="98" rx="40" ry="3.5" fill="rgba(20, 40, 80, 0.10)"/>
+
+                <g class="cloud__body">
+                    <ellipse cx="42" cy="58" rx="22" ry="20" fill="url(#empty-cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                    <ellipse cx="72" cy="48" rx="28" ry="25" fill="url(#empty-cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                    <ellipse cx="100" cy="58" rx="20" ry="18" fill="url(#empty-cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+                    <ellipse cx="70" cy="68" rx="36" ry="14" fill="url(#empty-cloud-fill)" stroke="#bbd0e6" stroke-width="1.5"/>
+
+                    <!-- Closed/sleepy eyes — short curved lines -->
+                    <path d="M 56 50 Q 60 52 64 50" stroke="#1d3557" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                    <path d="M 76 50 Q 80 52 84 50" stroke="#1d3557" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+                    <!-- Tiny neutral mouth — the cloud is just chilling, not sad -->
+                    <path d="M 65 60 Q 70 63 75 60" stroke="#1d3557" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+                    <!-- Cheeks -->
+                    <circle cx="50" cy="58" r="3.5" fill="rgba(255, 144, 162, 0.45)"/>
+                    <circle cx="90" cy="58" r="3.5" fill="rgba(255, 144, 162, 0.45)"/>
+                </g>
+
+                <!-- Flat line "no data" graph below the cloud, with three little dots -->
+                <g class="cloud__graph">
+                    <line x1="40" y1="92" x2="100" y2="92" stroke="#bbd0e6" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 4"/>
+                    <circle cx="48" cy="92" r="2.5" fill="#1589ee"/>
+                    <circle cx="70" cy="92" r="2.5" fill="#1589ee"/>
+                    <circle cx="92" cy="92" r="2.5" fill="#1589ee"/>
+                </g>
+            </svg>
+        </div>
+
+        <div class="empty-state__copy">
+            <template if:true={headline}>
+                <p class="empty-state__headline">{headline}</p>
+            </template>
+            <template if:true={body}>
+                <p class="empty-state__body">{body}</p>
+            </template>
+            <slot></slot>
+            <div class="empty-state__actions">
+                <slot name="actions"></slot>
+            </div>
+        </div>
+    </div>
+</template>

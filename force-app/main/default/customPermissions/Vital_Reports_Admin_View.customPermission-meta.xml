@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Granted to admins so the Vital Reports Home page renders the admin tile set (Builder, Health, Migration, Manage Objects) and admin help/tips sections. Standard users do not have this permission and see only the user tile set.</description>
+    <isLicensed>false</isLicensed>
+    <label>Vital Reports Admin View</label>
+</CustomPermission>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disposition__c</fullName>
+    <label>Disposition</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Call_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First Attempt</fullName>
+                <default>false</default>
+                <label>First Attempt</label>
+            </value>
+            <value>
+                <fullName>Second Attempt</fullName>
+                <default>false</default>
+                <label>Second Attempt</label>
+            </value>
+            <value>
+                <fullName>Appointment Not Scheduled</fullName>
+                <default>false</default>
+                <label>Appointment Not Scheduled</label>
+            </value>
+            <value>
+                <fullName>Pre-reg completed in person</fullName>
+                <default>false</default>
+                <label>Pre-reg completed in person</label>
+            </value>
+            <value>
+                <fullName>Too soon to preregister</fullName>
+                <default>false</default>
+                <label>Too soon to preregister</label>
+            </value>
+            <value>
+                <fullName>Registered for Event</fullName>
+                <default>false</default>
+                <label>Registered for Event</label>
+            </value>
+            <value>
+                <fullName>Information Only</fullName>
+                <default>false</default>
+                <label>Information Only</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>First Attempt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>Second Attempt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>Appointment Not Scheduled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>Pre-reg completed in person</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>Too soon to preregister</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>Registered for Event</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>Information Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Inbound</controllingFieldValue>
+            <controllingFieldValue>Outbound</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

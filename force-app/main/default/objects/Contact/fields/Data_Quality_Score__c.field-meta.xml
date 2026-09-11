@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Quality_Score__c</fullName>
+    <description>Calculates the Data Quality Score and displays it in color bar.</description>
+    <externalId>false</externalId>
+    <formula>IF(TEXT(Region__c)=&quot;Florida&quot;,
+IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;Complete&quot;, 10,
+					IF(ISBLANK(FirstName) ,0,20)+
+					IF(ISBLANK(TEXT(Gender__c)) ,0,10)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,0,10)+    
+					IF(ISBLANK(TEXT(Credentials__c)) ,0,20)+ 
+					IF(ISBLANK(TEXT(Affiliation__c)) ,0,20)+
+					IF(ISBLANK(TEXT(Affiliation_Group__c)) ,0,20)) &amp;
+
+IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;Incomplete&quot;, 10,
+					IF(ISBLANK(FirstName) ,20,00)+
+					IF(ISBLANK(TEXT(Gender__c)) ,10,0)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,10,0)+    
+					IF(ISBLANK(TEXT(Credentials__c)) ,20,0)+ 
+					IF(ISBLANK(TEXT(Affiliation__c)) ,20,0)+
+					IF(ISBLANK(TEXT(Affiliation_Group__c)) ,20,0)) &amp;
+&quot; &quot; &amp;
+TEXT (
+				 IF(ISBLANK(FirstName) ,0,20)+
+					IF(ISBLANK(TEXT(Gender__c)) ,0,10)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,0,10)+    
+					IF(ISBLANK(TEXT(Credentials__c)) ,0,20)+ 
+					IF(ISBLANK(TEXT(Affiliation__c)) ,0,20)+
+					IF(ISBLANK(TEXT(Affiliation_Group__c)) ,0,20)) &amp; &quot;%&quot;,
+
+IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;Complete&quot;, 10,
+					IF(ISBLANK(FirstName) ,0,25)+
+					IF(ISBLANK(TEXT(Gender__c)) ,0,25)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,0,25)+    
+					IF(ISBLANK(TEXT(Credentials__c)) ,0,25)) &amp;
+
+IMAGE(&quot;/img/samples/color_red.gif&quot;, &quot;Incomplete&quot;, 10,
+					IF(ISBLANK(FirstName) ,25,00)+
+					IF(ISBLANK(TEXT(Gender__c)) ,25,0)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,25,0)+    
+					IF(ISBLANK(TEXT(Credentials__c)) ,25,0)) &amp;
+&quot; &quot; &amp;
+TEXT (
+				 IF(ISBLANK(FirstName) ,0,25)+
+					IF(ISBLANK(TEXT(Gender__c)) ,0,25)+
+					IF(ISBLANK(TEXT(Provider_Type__c)) ,0,25)+
+					IF(ISBLANK(TEXT(Credentials__c)) ,0,25)) &amp; &quot;%&quot;)</formula>
+    <label>Data Quality Score</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

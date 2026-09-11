@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_and_Last_Name_Same__c</fullName>
+    <description>Used to find potential spam submissions</description>
+    <formula>FirstName =  LastName</formula>
+    <inlineHelpText>Indicates if the First Name and Last Name are the same, which may mean this is spam.</inlineHelpText>
+    <label>First and Last Name Same</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

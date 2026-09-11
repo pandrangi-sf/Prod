@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Demonstrates_Sense_of_Urgency__c</fullName>
+    <description>Demonstrates a sense of urgency in aspects of the business.</description>
+    <inlineHelpText>Demonstrates a sense of urgency in aspects of the business.</inlineHelpText>
+    <label>14) Demonstrates Sense of Urgency</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Rating</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Remember to Join Us this Thursday</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - Cardiac - Lecture - Women Reminder</name>
+    <style>none</style>
+    <subject>Remember to Join Us this Thursday</subject>
+    <textOnly>Orlando Health Cardiovascular Events
+
+Remember to Join Us this Thursday
+
+Thank you again for registering for our lecture this Heart Disease and Women: Dispelling Myths. As a reminder the lecture will be held this Thursday, March 5, from 6:00-7:00 pm, at the Renaissance Senior Center (3800 South Econlockhatchee Trail, Orlando, FL 32829). Please look for directional signage to help guide you in. Parking is available at the front of the center.
+
+Please remember to bring a light jacket, as the room may be a bit cold. Lastly, light refreshments will be served.
+
+To view the complete listing of lectures, visit OrlandoHealth.com/heartevents.
+
+© 2015 Orlando Health, Inc.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>FederationId</identityMapping>
+    <issuer>https://sts.windows.net/a1aa81d8-7897-410b-a2b2-1d190024b7f8/</issuer>
+    <loginUrl>https://login.microsoftonline.com/a1aa81d8-7897-410b-a2b2-1d190024b7f8/saml2</loginUrl>
+    <name>Orlando Health</name>
+    <oauthTokenEndpoint>https://orlandohealth.my.salesforce.com/services/oauth2/token?so=00Di0000000JoEF</oauthTokenEndpoint>
+    <redirectBinding>true</redirectBinding>
+    <requestSignatureMethod>1</requestSignatureMethod>
+    <requestSigningCertId>0P1Pm0000000Mer</requestSigningCertId>
+    <salesforceLoginUrl>https://orlandohealth.my.salesforce.com?so=00Di0000000JoEF</salesforceLoginUrl>
+    <samlEntityId>https://orlandohealth.my.salesforce.com</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <useConfigRequestMethod>true</useConfigRequestMethod>
+    <useSameDigestAlgoForSigning>false</useSameDigestAlgoForSigning>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIC8DCCAdigAwIBAgIQZDwUztNZDplAMI6yWwyavTANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yNDA1MjMxODM1NTRaFw0yNzA1MjMxODM1NTNaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwd8LpgsIy8dgk3h2p5HwbN5FzQmYW5KJTeMsyC93gHB607tGL/JE6HOCXL1nIVCwjOAZ0j/wTvS2jj03iKa8xVy3rMJRWuIE58TqFkX5wpBDRQzWiT2axp+qXmuK3h+RzxDQHVPdZ4WhuvCV+tSUXK6oomZzoI9nuw+5fsZxNkDIY5vnEQ+Qj0vujg1OrnTGCcvfQwITIbmShIznUZqZuPPKC6IedR8SaaV2U8JS/WLWlNc671CJxE301Ama0h8Hp59d8KRMLE5r461mBWK9Zh2B3NX9BuqIeczJjFN2n9PcsD+7hFzlMrrX9y0IaDyaDZg0kBuSFtyQ7K+I0snqrQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQB8WzGy4WHwN9vD+4IA9wZyVUWfFqQ9I6iP2ENkY9005REtfcFGSEG0aYAX7LpiARYXg/mkPFg5M+bNg1p4Z4E1LfPQlcczIOkSKphDcPk/1u0FGBAprge+Tv4zPbgirqJQ328f+3sMRezLJf4zFCoS8r8VJeAqM37YgIUBP9n5et42q8HeoHg+xKhPV34hcKnl7N1ZJE9zH4th1ymxhK9gaNsU36SUqVN5feSehkkmC0mIrQWYBps/jDqYS/SSxLA/f953WkuzCWSHlRyHmFYJdQ2/UK7XBiG4FyB0nOElDdEHNVU2oT1Cmg5IbkGFf6Imf+Y86RliOWGjRSIwKOsY</validationCert>
+</SamlSsoConfig>

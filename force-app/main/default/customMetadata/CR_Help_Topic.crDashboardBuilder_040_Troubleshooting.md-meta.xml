@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dashboard Builder — Troubleshooting</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&quot;Save failed&quot; on edit:&lt;/strong&gt; Reload the page (sticky toast says &quot;Conflict — reload required&quot;). Someone else saved changes since you opened the dashboard.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Live preview is empty:&lt;/strong&gt; The report ran but returned 0 rows for the current user&apos;s sharing context. The widget will still save; data appears in Viewer when the underlying data exists.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Filters disabled:&lt;/strong&gt; The + Filter button is disabled until at least one chart widget exists — filters need a report context to validate against.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Tile shows &quot;Auto visual&quot; placeholder:&lt;/strong&gt; The chart hasn&apos;t picked a renderable visualization yet. Edit the widget and pick an explicit chart type from the icon grid.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Troubleshooting</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:warning</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">40.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crDashboardBuilder</value>
+    </values>
+</CustomMetadata>

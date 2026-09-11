@@ -1,0 +1,90 @@
+<template>
+    <div class="groupings-builder">
+        <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+            <h3 class="slds-text-heading_small">Group By</h3>
+            <lightning-button
+                label="Add Grouping"
+                icon-name="utility:add"
+                variant="neutral"
+                onclick={addGrouping}
+                disabled={addDisabled}>
+            </lightning-button>
+        </div>
+
+        <template if:true={loadError}>
+            <div class="slds-text-color_error slds-m-bottom_x-small">{loadError}</div>
+        </template>
+
+        <template if:true={hasGroupings}>
+            <template for:each={groupingRows} for:item="row">
+                <div key={row.id} class="slds-grid slds-gutters_x-small slds-grid_vertical-align-center grouping-row">
+                    <div class="slds-col slds-shrink-none row-index">
+                        <span class="slds-badge">{row.displayIndex}</span>
+                    </div>
+                    <div class="slds-col slds-grow">
+                        <lightning-combobox
+                            variant="label-hidden"
+                            placeholder="Field"
+                            options={fieldOptions}
+                            value={row.field}
+                            data-id={row.id}
+                            onchange={handleFieldChange}>
+                        </lightning-combobox>
+                    </div>
+                    <!-- Date fields bucket by Day/Week/Month/Quarter/Year. Grouping a
+                         date raw yields one category per day, which is unreadable. -->
+                    <template if:true={row.showGranularity}>
+                        <div class="slds-col slds-shrink-none granularity-col">
+                            <lightning-combobox
+                                variant="label-hidden"
+                                placeholder="Bucket"
+                                options={row.granularityOptions}
+                                value={row.granularity}
+                                data-id={row.id}
+                                onchange={handleGranularityChange}>
+                            </lightning-combobox>
+                        </div>
+                    </template>
+                    <div class="slds-col slds-shrink-none">
+                        <lightning-button-icon
+                            icon-name="utility:up"
+                            variant="bare"
+                            alternative-text="Move up"
+                            disabled={row.upDisabled}
+                            data-id={row.id}
+                            onclick={moveUp}>
+                        </lightning-button-icon>
+                        <lightning-button-icon
+                            icon-name="utility:down"
+                            variant="bare"
+                            alternative-text="Move down"
+                            disabled={row.downDisabled}
+                            data-id={row.id}
+                            onclick={moveDown}>
+                        </lightning-button-icon>
+                        <lightning-button-icon
+                            icon-name="utility:delete"
+                            variant="bare"
+                            alternative-text="Remove"
+                            data-id={row.id}
+                            onclick={removeGrouping}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <template if:false={hasGroupings}>
+            <p class="slds-text-color_weak slds-p-vertical_x-small">
+                No groupings yet. Click <strong>Add Grouping</strong> to summarize your data.
+            </p>
+        </template>
+
+        <details class="slds-m-top_small advanced-json">
+            <summary class="slds-text-title_caps slds-text-color_weak">Advanced (JSON)</summary>
+            <lightning-textarea label="Groupings JSON" variant="label-hidden"
+                value={jsonOutput} readonly class="slds-m-top_x-small">
+            </lightning-textarea>
+        </details>
+    </div>
+</template>

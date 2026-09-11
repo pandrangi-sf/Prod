@@ -1,0 +1,164 @@
+<template>
+    <div class="buckets-builder">
+        <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+            <h3 class="slds-text-heading_small">Buckets</h3>
+            <lightning-button
+                label="Add Bucket"
+                icon-name="utility:add"
+                variant="neutral"
+                onclick={addBucket}
+                disabled={addDisabled}>
+            </lightning-button>
+        </div>
+
+        <template if:true={loadError}>
+            <div class="slds-text-color_error slds-m-bottom_x-small">{loadError}</div>
+        </template>
+
+        <template if:true={hasBuckets}>
+            <template for:each={buckets} for:item="bucket">
+                <div key={bucket.id} class="bucket-card slds-box slds-m-bottom_small">
+                    <div class="slds-grid slds-gutters slds-grid_align-spread">
+                        <div class="slds-col">
+                            <lightning-input
+                                label="Bucket Name"
+                                value={bucket.name}
+                                data-id={bucket.id}
+                                data-prop="name"
+                                onchange={handleBucketChange}>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-combobox
+                                label="Source Field"
+                                placeholder="Field"
+                                options={fieldOptions}
+                                value={bucket.sourceField}
+                                data-id={bucket.id}
+                                data-prop="sourceField"
+                                onchange={handleBucketChange}>
+                            </lightning-combobox>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-input
+                                label="Default Label"
+                                value={bucket.defaultValue}
+                                data-id={bucket.id}
+                                data-prop="defaultValue"
+                                onchange={handleBucketChange}>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-shrink-none slds-align-bottom">
+                            <lightning-button-icon
+                                icon-name="utility:delete"
+                                variant="bare"
+                                alternative-text="Remove bucket"
+                                data-id={bucket.id}
+                                onclick={removeBucket}>
+                            </lightning-button-icon>
+                        </div>
+                    </div>
+
+                    <div class="slds-m-top_small">
+                        <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+                            <span class="slds-text-title_caps slds-text-color_weak">Rules</span>
+                            <lightning-button
+                                label="Add Rule"
+                                icon-name="utility:add"
+                                variant="base"
+                                data-id={bucket.id}
+                                onclick={addRule}>
+                            </lightning-button>
+                        </div>
+
+                        <template if:true={bucket.hasRules}>
+                            <template for:each={bucket.rules} for:item="rule">
+                                <div key={rule.id} class="slds-grid slds-gutters_x-small slds-grid_vertical-align-center rule-row">
+                                    <div class="slds-col slds-grow">
+                                        <lightning-combobox
+                                            variant="label-hidden"
+                                            placeholder="Operator"
+                                            options={operatorOptions}
+                                            value={rule.operator}
+                                            data-bucket-id={bucket.id}
+                                            data-rule-id={rule.id}
+                                            data-prop="operator"
+                                            onchange={handleRuleChange}>
+                                        </lightning-combobox>
+                                    </div>
+                                    <div class="slds-col slds-grow">
+                                        <lightning-input
+                                            type="text"
+                                            variant="label-hidden"
+                                            placeholder="Value"
+                                            value={rule.value}
+                                            data-bucket-id={bucket.id}
+                                            data-rule-id={rule.id}
+                                            data-prop="value"
+                                            onchange={handleRuleChange}>
+                                        </lightning-input>
+                                    </div>
+                                    <template if:true={rule.isBetween}>
+                                        <div class="slds-col slds-grow">
+                                            <lightning-input
+                                                type="text"
+                                                variant="label-hidden"
+                                                placeholder="Value To"
+                                                value={rule.valueTo}
+                                                data-bucket-id={bucket.id}
+                                                data-rule-id={rule.id}
+                                                data-prop="valueTo"
+                                                onchange={handleRuleChange}>
+                                            </lightning-input>
+                                        </div>
+                                    </template>
+                                    <div class="slds-col slds-grow">
+                                        <lightning-input
+                                            type="text"
+                                            variant="label-hidden"
+                                            placeholder="Label"
+                                            value={rule.label}
+                                            data-bucket-id={bucket.id}
+                                            data-rule-id={rule.id}
+                                            data-prop="label"
+                                            onchange={handleRuleChange}>
+                                        </lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-shrink-none">
+                                        <lightning-button-icon
+                                            icon-name="utility:delete"
+                                            variant="bare"
+                                            alternative-text="Remove rule"
+                                            data-bucket-id={bucket.id}
+                                            data-rule-id={rule.id}
+                                            onclick={removeRule}>
+                                        </lightning-button-icon>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+
+                        <template if:false={bucket.hasRules}>
+                            <p class="slds-text-color_weak slds-text-body_small">
+                                No rules. The default label "{bucket.defaultValue}" will apply to every row.
+                            </p>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <template if:false={hasBuckets}>
+            <p class="slds-text-color_weak slds-p-vertical_x-small">
+                No buckets yet. Click <strong>Add Bucket</strong> to categorize a field's values.
+            </p>
+        </template>
+
+        <details class="slds-m-top_small advanced-json">
+            <summary class="slds-text-title_caps slds-text-color_weak">Advanced (JSON)</summary>
+            <lightning-textarea label="Buckets JSON" variant="label-hidden"
+                value={jsonOutput} readonly class="slds-m-top_x-small">
+            </lightning-textarea>
+        </details>
+    </div>
+</template>

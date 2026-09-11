@@ -1,0 +1,244 @@
+.cfg-modal-body {
+    display: grid;
+    gap: 0;
+    grid-template-columns: minmax(20rem, 1fr) minmax(18rem, 22rem);
+    max-height: 75vh;
+    padding: 0 !important;
+}
+
+.cfg-form {
+    border-right: 1px solid #e0e5ec;
+    overflow-y: auto;
+    padding: 1rem 1rem 1.25rem;
+}
+
+.cfg-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1rem 1.25rem;
+}
+
+.cfg-section-heading {
+    color: #5c7591;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.4rem;
+    text-transform: uppercase;
+}
+
+.chart-grid {
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+}
+
+/* Phase J1: AI hint above the chart icon grid. Calm tone, easy to ignore. */
+.ai-hint {
+    align-items: center;
+    background: #faf6ff;
+    border: 1px solid #d8c6f0;
+    border-radius: 0.3rem;
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem 0.6rem;
+}
+.ai-hint__icon {
+    --sds-c-icon-color-foreground-default: #7c3aed;
+    flex-shrink: 0;
+}
+.ai-hint__text {
+    color: #4b1e8a;
+    flex: 1;
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+.ai-hint__badge {
+    background: #fff8e8;
+    border: 1px solid #fdb515;
+    border-radius: 999px;
+    color: #5c4900;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.05rem 0.4rem;
+    text-transform: uppercase;
+}
+
+.chart-card {
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #d8e2ed;
+    border-radius: 0.4rem;
+    color: #161616;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    gap: 0.25rem;
+    padding: 0.5rem 0.4rem;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+    position: relative;
+}
+/* Chart-Advisor fit badge — a small icon in the upper-right corner of each
+   card indicating recommended / available / notFitting. */
+.chart-card__fit-badge {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+}
+.chart-card--recommended .chart-card__fit-badge {
+    --sds-c-icon-color-foreground-default: #2e7d32;
+}
+.chart-card--available .chart-card__fit-badge {
+    --sds-c-icon-color-foreground-default: #1B5CAB;
+}
+.chart-card--notFitting {
+    opacity: 0.7;
+}
+.chart-card--notFitting .chart-card__fit-badge {
+    --sds-c-icon-color-foreground-default: #9a4d00;
+}
+/* Caption beneath the chart-type grid — explains why the current pick
+   fits (or doesn't). Color-coded to match the verdict tier. */
+.cfg-chart-caption {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+}
+.cfg-chart-caption--recommended { background: #eaf6ee; color: #2e7d32; }
+.cfg-chart-caption--available   { background: #eef4fb; color: #1B5CAB; }
+.cfg-chart-caption--notFitting  { background: #fdf1d8; color: #9a4d00; }
+.cfg-chart-caption__icon { --sds-c-icon-color-foreground-default: currentColor; }
+.chart-card:hover {
+    border-color: #1589ee;
+    box-shadow: 0 1px 3px rgba(21, 137, 238, 0.18);
+}
+.chart-card_selected {
+    background: rgba(21, 137, 238, 0.08);
+    border-color: #1589ee;
+}
+
+.chart-card__icon {
+    --sds-c-icon-color-foreground-default: #1589ee;
+}
+
+.chart-card__label {
+    color: #2a3b56;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cfg-preview__heading {
+    color: #5c7591;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+}
+.cfg-preview__title {
+    color: #181818;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cfg-preview__chart {
+    border: 1px solid #e0e5ec;
+    border-radius: 0.4rem;
+    min-height: 220px;
+    padding: 0.4rem;
+}
+.cfg-preview__empty,
+.cfg-preview__loading {
+    align-items: center;
+    border: 1px dashed #cfd7e0;
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    min-height: 220px;
+    padding: 1rem;
+    text-align: center;
+}
+.cfg-preview__subtitle {
+    color: #5c5c5c;
+    font-size: 0.78rem;
+    margin: 0.25rem 0 0;
+}
+.cfg-preview__footer {
+    color: #94a4b6;
+    font-size: 0.7rem;
+    margin: 0.25rem 0 0;
+}
+
+@media (max-width: 60em) {
+    .cfg-modal-body {
+        grid-template-columns: 1fr;
+    }
+    .cfg-form { border-right: none; border-bottom: 1px solid #e0e5ec; }
+}
+
+/* ----- Phase 5: keep the live preview in view while the long config form scrolls ----- */
+.cfg-preview {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    max-height: calc(100vh - 14rem);
+    overflow: auto;
+}
+
+/* ----- Phase 5: clearer separation between the many config sections ----- */
+.cfg-section-heading {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 0.85rem;
+    margin-top: 1.1rem;
+    font-weight: 700;
+    color: #16325c;
+    letter-spacing: 0.01em;
+}
+.cfg-section-heading:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+:host(.cr-dark) .cfg-section-heading { border-top-color: #353c45; color: #cfe0f5; }
+
+/* ----- Phase 5: collapsible advanced sections (native <details>) ----- */
+.cfg-collapse__summary {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;            /* hide default triangle; we draw our own */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    outline: none;
+}
+.cfg-collapse__summary::-webkit-details-marker { display: none; }
+.cfg-collapse__summary::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 0;
+    height: 0;
+    border-left: 5px solid currentColor;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.15s ease;
+}
+.cfg-collapse[open] > .cfg-collapse__summary::before { transform: rotate(90deg); }
+.cfg-collapse__summary:hover { color: #0070d2; }
+.cfg-collapse__summary:focus-visible {
+    box-shadow: 0 0 0 2px #1b5cab;
+    border-radius: 3px;
+}
+:host(.cr-dark) .cfg-collapse__summary:hover { color: #7fb6ff; }

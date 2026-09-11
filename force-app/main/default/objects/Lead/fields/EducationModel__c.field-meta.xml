@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EducationModel__c</fullName>
+    <label>Education Model</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HS Diploma</fullName>
+                <default>false</default>
+                <label>HS Diploma</label>
+            </value>
+            <value>
+                <fullName>Some College</fullName>
+                <default>false</default>
+                <label>Some College</label>
+            </value>
+            <value>
+                <fullName>Bach Degree</fullName>
+                <default>false</default>
+                <label>Bach Degree</label>
+            </value>
+            <value>
+                <fullName>Grad Degree</fullName>
+                <default>false</default>
+                <label>Grad Degree</label>
+            </value>
+            <value>
+                <fullName>Less than HS Diploma</fullName>
+                <default>false</default>
+                <label>Less than HS Diploma</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

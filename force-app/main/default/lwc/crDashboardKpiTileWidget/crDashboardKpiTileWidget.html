@@ -1,0 +1,10 @@
+<template>
+    <div class={cardClass}>
+        <lightning-icon icon-name={iconName} size="medium" class="kpi-tile__icon"></lightning-icon>
+        <p class="kpi-tile__headline">{headline}</p>
+        <p class="kpi-tile__value">{value}</p>
+        <template if:true={subtitle}>
+            <p class="kpi-tile__subtitle">{subtitle}</p>
+        </template>
+    </div>
+</template>

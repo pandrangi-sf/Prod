@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Under Review</fullName>
+        <color>#FF0000</color>
+        <default>true</default>
+        <label>Under Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Reviewed</fullName>
+        <color>#FFFF66</color>
+        <default>false</default>
+        <label>Reviewed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Coming Soon</fullName>
+        <color>#FFFF66</color>
+        <default>false</default>
+        <label>Coming Soon</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Now Available</fullName>
+        <color>#009900</color>
+        <default>false</default>
+        <label>Now Available</label>
+    </standardValue>
+</StandardValueSet>

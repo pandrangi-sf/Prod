@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Visit_Collateral__c.Collateral__r.Name - -  the collateral piece distributed. --></help>
+    <label><!-- Collateral --></label>
+    <name>Collateral__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Processing status used by reporting jobs, migration runs, or analytics facts. --></help>
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Failed</masterLabel>
+        <translation><!-- Failed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Migrated</masterLabel>
+        <translation><!-- Migrated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Previewed</masterLabel>
+        <translation><!-- Previewed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unsupported</masterLabel>
+        <translation><!-- Unsupported --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

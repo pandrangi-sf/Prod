@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Target_Zone_to_new_Collection</name>
+        <label>Add Target Zone to new Collection</label>
+        <locationX>264</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>collTargetZoneOwnerUpdates</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Reassign_Target_Zones</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Reassign_Target_Zones</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_New_Owner</name>
+        <label>Assign New Owner</label>
+        <locationX>264</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>Reassign_Target_Zones.OwnerId__NotFound</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.OwnerId__NotFound</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Target_Zone_to_new_Collection</targetReference>
+        </connector>
+    </assignments>
+    <description>When a Target owner is changed, the related Target Zone Owners are updated to match.</description>
+    <environments>Default</environments>
+    <interviewLabel>Target Reassignment Target Zone Assignment Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Target Reassignment Target Zone Assignment Update</label>
+    <loops>
+        <name>Reassign_Target_Zones</name>
+        <label>Reassign Target Zones</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <collectionReference>Find_Related_Target_Zones</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_New_Owner</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Target_Zone_Records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Find the Target Zones associated to this Target</description>
+        <name>Find_Related_Target_Zones</name>
+        <label>Find Related Target Zones</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Reassign_Target_Zones</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Target__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ZonedLocation__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Target_Zone_Records</name>
+        <label>Update Target Zone Records</label>
+        <locationX>176</locationX>
+        <locationY>839</locationY>
+        <connector>
+            <targetReference>Update_Provider_Target_Owner_Field</targetReference>
+        </connector>
+        <inputReference>collTargetZoneOwnerUpdates</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Find_Related_Target_Zones</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OwnerId__NotFound</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Target__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <subflows>
+        <name>Update_Provider_Target_Owner_Field</name>
+        <label>Update Provider Target Owner Field</label>
+        <locationX>176</locationX>
+        <locationY>947</locationY>
+        <flowName>Update_Provider_Target_Owner_Field</flowName>
+        <inputAssignments>
+            <name>txtProviderID</name>
+            <value>
+                <elementReference>$Record.Target_Provider__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <description>Collection with updated Target Zone Owners</description>
+        <name>collTargetZoneOwnerUpdates</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ZonedLocation__c</objectType>
+    </variables>
+</Flow>

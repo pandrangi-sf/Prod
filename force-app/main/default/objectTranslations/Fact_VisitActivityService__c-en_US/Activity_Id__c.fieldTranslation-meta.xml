@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Salesforce Task Id. Use to deep-link the source Activity. --></help>
+    <label><!-- Activity ID --></label>
+    <name>Activity_Id__c</name>
+</CustomFieldTranslation>

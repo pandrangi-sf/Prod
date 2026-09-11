@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Zoned_Location__c</fullName>
+    <description>Checks if the current User ID is in the list of IDs in the Zoned Location Owners field.</description>
+    <formula>IF(FIND($User.Id, Zoned_Location_Owners__c  )&gt;0,TRUE,FALSE)</formula>
+    <inlineHelpText>Indicates that you&apos;ve zoned this location.</inlineHelpText>
+    <label>My Zoned Location</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

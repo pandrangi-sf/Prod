@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_is_PRM_Manager__c</fullName>
+    <description>Calculates if the current user is the PRM Manager.  Used to show specific messages on the page.</description>
+    <formula>$User.Id =  PRM__r.ManagerId</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User is PRM Manager</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

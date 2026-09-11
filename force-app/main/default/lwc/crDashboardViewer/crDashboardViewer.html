@@ -1,0 +1,536 @@
+<template>
+    <c-cr-welcome-banner tool-name="Custom Dashboards"></c-cr-welcome-banner>
+    <c-cr-help-panel tool-key="crDashboardViewer" tool-label="Dashboard Viewer"></c-cr-help-panel>
+    <template if:true={aiEnabled}>
+        <c-cr-ai-panel dashboard-id={selectedDashboardId}></c-cr-ai-panel>
+    </template>
+    <div class={viewerShellClass}>
+        <!-- Sticky hero header: breadcrumb + dashboard name + picker + actions -->
+        <div class="viewer-header">
+            <nav class="viewer-breadcrumb" aria-label="Breadcrumb">
+                <span class="crumb">Vital Reports</span>
+                <lightning-icon icon-name="utility:chevronright" size="xx-small" class="crumb-sep"></lightning-icon>
+                <span class="crumb crumb_current">Dashboards</span>
+            </nav>
+            <div class="viewer-title-row">
+                <div class="viewer-title-lead">
+                    <div class="page-header__icon-wrap page-header__icon-wrap--green">
+                        <lightning-icon icon-name="standard:dashboard" size="small" alternative-text="Dashboard Viewer"></lightning-icon>
+                    </div>
+                    <div class="viewer-title-block">
+                        <p class="viewer-eyebrow">Custom Dashboard</p>
+                        <h1 class="viewer-title">{dashboardTitle}</h1>
+                    <div class="viewer-meta">
+                        <template if:true={showLastRefreshed}>
+                            <span class="viewer-meta__chip">
+                                <lightning-icon icon-name="utility:clock" size="xx-small"></lightning-icon>
+                                <span>Refreshed</span>
+                                <lightning-formatted-date-time
+                                    value={runCompletedAt}
+                                    month="short"
+                                    day="2-digit"
+                                    hour="2-digit"
+                                    minute="2-digit">
+                                </lightning-formatted-date-time>
+                            </span>
+                        </template>
+                        <template if:false={showLastRefreshed}>
+                            <span class="viewer-meta__copy">{dashboardSubtitle}</span>
+                        </template>
+                    </div>
+                    </div>
+                </div>
+                <div class="viewer-header-controls">
+                    <div class="viewer-picker">
+                        <lightning-combobox
+                            variant="label-hidden"
+                            label="Dashboard"
+                            placeholder="Switch dashboard..."
+                            value={selectedDashboardId}
+                            options={dashboardOptions}
+                            onchange={handleDashboardChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="viewer-actions">
+                        <lightning-button label="Refresh" icon-name="utility:refresh" variant="brand" onclick={runDashboard} disabled={runDisabled}></lightning-button>
+                        <template if:true={isRunInFlight}>
+                            <lightning-spinner size="small" alternative-text="Refreshing dashboard"></lightning-spinner>
+                        </template>
+                        <template if:true={canBuild}>
+                            <lightning-button label="Edit" icon-name="utility:edit" onclick={editDashboard} disabled={reloadDisabled}></lightning-button>
+                        </template>
+                        <lightning-button label="Snapshot" icon-name="utility:save" onclick={snapshotDashboard} disabled={runDisabled}></lightning-button>
+                        <lightning-button label={presentLabel} icon-name={presentIcon} onclick={togglePresent} title="Toggle full-screen present mode"></lightning-button>
+                        <template if:true={aiEnabled}>
+                            <lightning-button
+                                label="Explain"
+                                icon-name="utility:einstein"
+                                variant="brand-outline"
+                                onclick={openAiSummary}
+                                disabled={aiExplainDisabled}>
+                            </lightning-button>
+                        </template>
+                        <lightning-button-menu alternative-text="More dashboard actions" menu-alignment="right" onselect={handleDashboardMenuSelect}>
+                            <lightning-menu-item value="refreshAll" label="Refresh all widgets" icon-name="utility:sync" disabled={refreshAllDisabled}></lightning-menu-item>
+                            <lightning-menu-item value="reload" label="Reload layout" icon-name="utility:refresh" disabled={reloadDisabled}></lightning-menu-item>
+                            <lightning-menu-item value="snapshots" label="Snapshot history" icon-name="utility:date_time" disabled={snapshotMenuDisabled}></lightning-menu-item>
+                            <lightning-menu-item value="export" label="Export components" icon-name="utility:download" disabled={exportDisabled}></lightning-menu-item>
+                        </lightning-button-menu>
+                        <lightning-button-icon
+                            icon-name="utility:question"
+                            alternative-text="Help"
+                            title="Help and tips"
+                            variant="border-filled"
+                            onclick={openHelpPanel}>
+                        </lightning-button-icon>
+                    </div>
+                </div>
+            </div>
+            <!-- Phase 2 (BI parity): dashboard-level Quick Filters bar.
+                 Relative date preset cascades to every component by injecting
+                 a date filter clause into the run's effective filters JSON. -->
+            <div class="quick-filters-bar" role="region" aria-label="Quick filters">
+                <span class="quick-filters-bar__label">Quick filters</span>
+                <lightning-combobox
+                    variant="label-hidden"
+                    label="Date range"
+                    options={quickDatePresetOptions}
+                    value={quickDatePreset}
+                    onchange={handleQuickDatePresetChange}
+                    class="quick-filters-bar__preset">
+                </lightning-combobox>
+                <span class="quick-filters-bar__hint slds-text-body_small slds-text-color_weak">
+                    applied to <code>{quickDateField}</code>
+                </span>
+            </div>
+
+            <!-- Filter chip bar -->
+            <template if:true={hasFilterChips}>
+                <div class="filter-chips" role="region" aria-label="Active filters">
+                    <span class="filter-chips__label">Filters</span>
+                    <template for:each={filterChips} for:item="chip">
+                        <span class="filter-chip" key={chip.key}>
+                            <span class="filter-chip__field">{chip.field}</span>
+                            <span class="filter-chip__op">{chip.operator}</span>
+                            <span class="filter-chip__value">{chip.value}</span>
+                            <button
+                                type="button"
+                                class="filter-chip__remove"
+                                data-key={chip.key}
+                                onclick={handleRemoveFilterChip}
+                                title="Remove filter">
+                                <lightning-icon icon-name="utility:close" size="xx-small" alternative-text="Remove"></lightning-icon>
+                            </button>
+                        </span>
+                    </template>
+                </div>
+            </template>
+            <!-- Filter-chip removal undo banner (8s window) -->
+            <template if:true={filterUndoVisible}>
+                <div class="filter-undo" role="status">
+                    <span class="filter-undo__msg">{filterUndoLabel}</span>
+                    <lightning-button label="Undo" icon-name="utility:undo" variant="brand-outline" onclick={handleUndoFilterRemove}></lightning-button>
+                </div>
+            </template>
+            <!-- Snapshot history panel (Phase 1 UAT) -->
+            <template if:true={snapshotPanelOpen}>
+                <div class="snapshot-panel" role="region" aria-label="Saved snapshots">
+                    <div class="snapshot-panel__head">
+                        <strong>Saved snapshots</strong>
+                        <div class="snapshot-panel__head-actions">
+                            <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh snapshots" title="Refresh" size="small" onclick={refreshSnapshots} disabled={snapshotsLoading}></lightning-button-icon>
+                            <lightning-button-icon icon-name="utility:close" alternative-text="Close snapshots panel" title="Close" size="small" onclick={closeSnapshotPanel}></lightning-button-icon>
+                        </div>
+                    </div>
+                    <template if:true={snapshotsLoading}>
+                        <div class="snapshot-panel__loading"><lightning-spinner size="small" alternative-text="Loading snapshots"></lightning-spinner></div>
+                    </template>
+                    <template if:false={snapshotsLoading}>
+                        <template if:true={hasSnapshotRows}>
+                            <ul class="snapshot-list">
+                                <template for:each={snapshotRows} for:item="snap">
+                                    <li key={snap.id} class="snapshot-row">
+                                        <button type="button" class="snapshot-row__open" data-id={snap.id} onclick={handleOpenSnapshot} title="Open this snapshot in the viewer">
+                                            <span class="snapshot-row__name">{snap.name}</span>
+                                            <span class="snapshot-row__meta">
+                                                <lightning-formatted-date-time value={snap.completedAt} month="short" day="2-digit" year="numeric" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                                                <span class="snapshot-row__status">· {snap.status}</span>
+                                            </span>
+                                        </button>
+                                    </li>
+                                </template>
+                            </ul>
+                        </template>
+                        <template if:false={hasSnapshotRows}>
+                            <p class="snapshot-panel__empty">No snapshots yet. Click <strong>Snapshot</strong> to save the current view for later.</p>
+                        </template>
+                    </template>
+                </div>
+            </template>
+            <!-- Run progress strip (shows when a run is in flight) -->
+            <template if:true={isRunInFlight}>
+                <div class="run-progress" role="status" aria-label="Dashboard run in progress">
+                    <div class="run-progress__bar"></div>
+                    <span class="run-progress__label">{runStatus} — {runMessage}</span>
+                </div>
+            </template>
+            <!-- Polling-stopped recovery banner -->
+            <template if:true={runPollLimitReached}>
+                <div class="poll-recovery" role="status">
+                    <span class="poll-recovery__msg">{runMessage}</span>
+                    <lightning-button label="Keep checking" icon-name="utility:refresh" variant="brand" onclick={resumeRunPolling}></lightning-button>
+                </div>
+            </template>
+        </div>
+
+        <!-- Run status panel only when terminal (failed / partial) so users see the message -->
+        <template if:true={showTerminalRunStatus}>
+            <div class={runStatusClass} role="status">
+                <div>
+                    <p class="slds-text-title_caps">{runStatus}</p>
+                    <p>{runMessage}</p>
+                </div>
+                <template if:true={runCompletedAt}>
+                    <lightning-formatted-date-time
+                        value={runCompletedAt}
+                        month="short"
+                        day="2-digit"
+                        hour="2-digit"
+                        minute="2-digit">
+                    </lightning-formatted-date-time>
+                </template>
+            </div>
+        </template>
+
+        <template if:true={hasComponents}>
+            <div class="dashboard-canvas">
+                <template for:each={componentViews} for:item="component">
+                    <section key={component.id} class="dashboard-component" style={component.layoutStyle}>
+                        <div class="component-header">
+                            <div class="component-title">
+                                <h2>{component.name}</h2>
+                                <p class="component-subtitle">{component.visualizationLabel}</p>
+                            </div>
+                            <div class="component-actions">
+                                <lightning-button-icon
+                                    icon-name="utility:refresh"
+                                    alternative-text="Refresh component"
+                                    title="Refresh component"
+                                    size="small"
+                                    variant="bare"
+                                    data-id={component.id}
+                                    onclick={refreshComponent}
+                                    disabled={component.refreshDisabled}>
+                                </lightning-button-icon>
+                                <lightning-button-icon
+                                    icon-name="utility:new_window"
+                                    alternative-text="Open source report"
+                                    title="Open source report"
+                                    size="small"
+                                    variant="bare"
+                                    data-id={component.id}
+                                    onclick={openReport}
+                                    disabled={component.drilldownDisabled}>
+                                </lightning-button-icon>
+                            </div>
+                        </div>
+
+                        <div class="component-body">
+                            <template if:true={component.isTextTile}>
+                                <div class="component-text-body">
+                                    <lightning-formatted-rich-text value={component.richTextHtml}></lightning-formatted-rich-text>
+                                </div>
+                            </template>
+                            <template if:true={component.isImageTile}>
+                                <div class="component-image-body">
+                                    <img src={component.imageUrl} alt={component.imageAlt} class="component-image" style={component.imageStyle}/>
+                                </div>
+                            </template>
+                            <template if:true={component.isLwcTile}>
+                                <div class="component-lwc-body">
+                                    <template if:true={component.isLwcKpi}>
+                                        <c-cr-dashboard-kpi-tile-widget widget-props={component.lwcWidgetProps}></c-cr-dashboard-kpi-tile-widget>
+                                    </template>
+                                    <template if:true={component.isLwcClock}>
+                                        <c-cr-dashboard-clock-widget widget-props={component.lwcWidgetProps}></c-cr-dashboard-clock-widget>
+                                    </template>
+                                </div>
+                            </template>
+                            <template if:true={component.isReportTile}>
+                            <template if:true={component.isRefreshing}>
+                                <div class="cr-skeleton" role="status" aria-label="Refreshing component">
+                                    <div class="cr-skeleton-bar cr-skeleton-bar_title"></div>
+                                    <div class="cr-skeleton-bar cr-skeleton-bar_chart"></div>
+                                    <div class="cr-skeleton-bar" style="width: 70%;"></div>
+                                    <div class="cr-skeleton-bar" style="width: 50%;"></div>
+                                </div>
+                            </template>
+                            <template if:true={component.isLoading}>
+                                <div class="cr-skeleton" role="status" aria-label="Loading component">
+                                    <div class="cr-skeleton-bar cr-skeleton-bar_title"></div>
+                                    <div class="cr-skeleton-bar cr-skeleton-bar_chart"></div>
+                                    <div class="cr-skeleton-bar" style="width: 70%;"></div>
+                                    <div class="cr-skeleton-bar" style="width: 50%;"></div>
+                                </div>
+                            </template>
+                            <template if:false={component.hasReport}>
+                                <div class="empty-panel empty-panel_warning" role="alert">
+                                    <p class="slds-text-title_caps">No report assigned</p>
+                                    <p>This component has no source report. Edit the dashboard and pick one.</p>
+                                </div>
+                            </template>
+                            <template if:true={component.noResult}>
+                                <c-cr-empty-state
+                                    headline="No data yet"
+                                    body="Click Refresh at the top to load this component's data.">
+                                    <lightning-button
+                                        slot="actions"
+                                        variant="brand"
+                                        icon-name="utility:refresh"
+                                        label="Refresh dashboard"
+                                        onclick={runDashboard}
+                                        disabled={runDisabled}>
+                                    </lightning-button>
+                                </c-cr-empty-state>
+                            </template>
+                            <template if:true={component.hasError}>
+                                <div class="empty-panel empty-panel_error" role="alert">
+                                    <p class="slds-text-title_caps">Component error</p>
+                                    <p class="slds-m-bottom_x-small">{component.errorMessage}</p>
+                                    <lightning-button
+                                        variant="brand"
+                                        icon-name="utility:refresh"
+                                        label="Retry"
+                                        data-id={component.id}
+                                        onclick={refreshComponent}
+                                        disabled={component.refreshDisabled}>
+                                    </lightning-button>
+                                </div>
+                            </template>
+
+                            <template if:true={component.showMetric}>
+                                <div class="metric-tile">
+                                    <p class="metric-value" style={component.chart.metricValueStyle}>
+                                        <c-cr-count-up value={component.chart.metricRawValue}></c-cr-count-up>
+                                    </p>
+                                    <template if:true={component.chart.hasKpiVariance}>
+                                        <p class="metric-variance" style={component.chart.kpiVarianceStyle}>
+                                            {component.chart.kpiVarianceArrow} {component.chart.kpiVarianceText}
+                                        </p>
+                                    </template>
+                                    <template if:true={component.chart.showMetricPop}>
+                                        <p class="metric-pop" style={component.chart.popStyle}>
+                                            {component.chart.popArrow} {component.chart.popText}
+                                        </p>
+                                    </template>
+                                    <p class="metric-label">{component.chart.metricLabel}</p>
+                                </div>
+                            </template>
+
+                            <template if:true={component.showGauge}>
+                                <div class="chart-shell gauge-shell">
+                                    <svg class="gauge-chart" viewBox="0 0 220 130" role="img" aria-label={component.name}>
+                                        <path class="gauge-band gauge-band_low" d="M 20 110 A 90 90 0 0 1 82 29"></path>
+                                        <path class="gauge-band gauge-band_mid" d="M 82 29 A 90 90 0 0 1 148 29"></path>
+                                        <path class="gauge-band gauge-band_high" d="M 148 29 A 90 90 0 0 1 200 110"></path>
+                                        <path
+                                            class="gauge-value"
+                                            d="M 20 110 A 90 90 0 0 1 200 110"
+                                            pathLength="100"
+                                            stroke-dasharray={component.chart.gaugeArcDashArray}
+                                            style={component.chart.gaugeValueStyle}>
+                                        </path>
+                                        <line
+                                            class="gauge-needle"
+                                            x1="110"
+                                            y1="110"
+                                            x2="110"
+                                            y2="42"
+                                            style={component.chart.gaugeNeedleStyle}>
+                                        </line>
+                                        <circle class="gauge-pin" cx="110" cy="110" r="5"></circle>
+                                        <text class="gauge-current" x="110" y="92" text-anchor="middle" style={component.chart.gaugeTextStyle}>{component.chart.gaugeValue}</text>
+                                    </svg>
+                                    <template if:true={component.chart.hasKpiVariance}>
+                                        <p class="gauge-variance" style={component.chart.kpiVarianceStyle}>
+                                            {component.chart.kpiVarianceArrow} {component.chart.kpiVarianceText}
+                                        </p>
+                                    </template>
+                                    <template if:true={component.chart.showMetricPop}>
+                                        <p class="metric-pop gauge-pop" style={component.chart.popStyle}>
+                                            {component.chart.popArrow} {component.chart.popText}
+                                        </p>
+                                    </template>
+                                    <p class="chart-caption">{component.chart.metricLabel}</p>
+                                </div>
+                            </template>
+
+                            <template if:true={component.showLibChart}>
+                                <div class="chart-shell">
+                                    <template if:true={component.chartFallbackNotice}>
+                                        <div class="chart-fallback-notice" role="status">
+                                            <lightning-icon icon-name="utility:info" size="x-small" variant="warning"></lightning-icon>
+                                            <span>{component.chartFallbackNotice}</span>
+                                        </div>
+                                    </template>
+                                    <template if:true={canBuild}>
+                                        <template if:false={component.isEChartTile}>
+                                            <div class="tile-chart-picker">
+                                                <lightning-combobox
+                                                    variant="label-hidden"
+                                                    label="Chart type"
+                                                    value={component.chartLibType}
+                                                    options={tileChartTypeOptions}
+                                                    data-id={component.id}
+                                                    onchange={handleTileChartTypeChange}>
+                                                </lightning-combobox>
+                                            </div>
+                                        </template>
+                                    </template>
+                                    <c-cr-chart
+                                        chart-type={component.chartLibType}
+                                        engine={component.chartEngine}
+                                        result={component.chartResult}
+                                        height="240"
+                                        y-axis-fields={component.yAxisFields}
+                                        x-axis-field={component.xAxisField}>
+                                    </c-cr-chart>
+                                    <p class="chart-caption">{component.chart.metricLabel}</p>
+                                </div>
+                            </template>
+
+                            <template if:true={component.chartEmpty}>
+                                <c-cr-empty-state body={component.chartEmptyMessage}></c-cr-empty-state>
+                            </template>
+
+                            <template if:true={component.showTable}>
+                                <template if:true={component.chartFallbackNotice}>
+                                    <div class="chart-fallback-notice" role="status">
+                                        <lightning-icon icon-name="utility:info" size="x-small" variant="warning"></lightning-icon>
+                                        <span>{component.chartFallbackNotice}</span>
+                                    </div>
+                                </template>
+                                <div class="table-shell">
+                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                        <thead>
+                                            <tr>
+                                                <template for:each={component.tableColumns} for:item="column">
+                                                    <th scope="col" key={column.key} aria-sort={column.ariaSort}>
+                                                        <button type="button" class="cr-tile-sort-header"
+                                                            data-id={component.id} data-column={column.key}
+                                                            onclick={handleHeaderSort}>
+                                                            {column.label}{column.sortIndicator}
+                                                        </button>
+                                                    </th>
+                                                </template>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <template for:each={component.rows} for:item="row">
+                                                <tr key={row.key} class={row.rowClass}>
+                                                    <template if:true={row.isHeader}>
+                                                        <td colspan={row.colspan} class="cr-tile-group-header__cell">
+                                                            <span class="cr-tile-group-header__label">{row.groupColLabel}: {row.label}</span>
+                                                            <span class="cr-tile-group-header__count">{row.count}</span>
+                                                        </td>
+                                                    </template>
+                                                    <template if:false={row.isHeader}>
+                                                        <template for:each={row.cells} for:item="cell">
+                                                            <td key={cell.key} style={cell.style}>{cell.value}</td>
+                                                        </template>
+                                                    </template>
+                                                </tr>
+                                            </template>
+                                        </tbody>
+                                        <template if:true={component.hasTotalsRow}>
+                                            <tfoot>
+                                                <tr class="cr-tile-totals-row">
+                                                    <template for:each={component.totalsRow.cells} for:item="cell">
+                                                        <td key={cell.key}>{cell.value}</td>
+                                                    </template>
+                                                </tr>
+                                            </tfoot>
+                                        </template>
+                                    </table>
+                                    <template if:false={component.hasRows}>
+                                        <p class="slds-text-color_weak slds-p-around_small">No rows returned.</p>
+                                    </template>
+                                </div>
+                            </template>
+                            </template>
+                        </div>
+
+                        <footer class="component-footer">
+                            <div class="component-footer-left">
+                                <template if:true={component.hasReport}>
+                                    <button class="report-link" type="button" data-id={component.id} onclick={openReport}>
+                                        View Report
+                                    </button>
+                                </template>
+                                <template if:true={component.chart.chartTruncated}>
+                                    <span>Preview capped for performance.</span>
+                                </template>
+                            </div>
+                            <div class="component-footer-right">
+                                <template if:true={component.refreshedAt}>
+                                    <span>As of</span>
+                                    <lightning-formatted-date-time
+                                        value={component.refreshedAt}
+                                        month="short"
+                                        day="2-digit"
+                                        year="numeric"
+                                        hour="2-digit"
+                                        minute="2-digit">
+                                    </lightning-formatted-date-time>
+                                </template>
+                            </div>
+                        </footer>
+
+                        <template if:true={component.hasWarnings}>
+                            <div class="component-warnings">
+                                <template for:each={component.warningItems} for:item="warning">
+                                    <p key={warning.key}>{warning.message}</p>
+                                </template>
+                                <template if:true={component.runMessage}>
+                                    <p>{component.runMessage}</p>
+                                </template>
+                            </div>
+                        </template>
+                    </section>
+                </template>
+            </div>
+        </template>
+
+        <template if:false={hasComponents}>
+            <template if:true={selectedDashboardId}>
+                <div class="empty-dashboard">
+                    <div class="empty-dashboard__icon">
+                        <lightning-icon icon-name="utility:dashboard_ext" size="large" variant="inverse"></lightning-icon>
+                    </div>
+                    <h2 class="empty-dashboard__title">No components saved on this dashboard</h2>
+                    <template if:true={canBuild}>
+                        <p class="empty-dashboard__copy">Open the Dashboard Builder, drop in a component, and click <strong>Save Dashboard</strong>. Then come back here and refresh.</p>
+                        <lightning-button
+                            variant="brand"
+                            icon-name="utility:edit"
+                            label="Open Dashboard Builder"
+                            onclick={editDashboard}>
+                        </lightning-button>
+                    </template>
+                    <template if:false={canBuild}>
+                        <p class="empty-dashboard__copy">This dashboard has no components yet. Check back once an admin has added some.</p>
+                    </template>
+                </div>
+            </template>
+            <template if:false={selectedDashboardId}>
+                <div class="empty-dashboard">
+                    <div class="empty-dashboard__icon">
+                        <lightning-icon icon-name="utility:dashboard_ext" size="large" variant="inverse"></lightning-icon>
+                    </div>
+                    <h2 class="empty-dashboard__title">Pick a dashboard to start</h2>
+                    <p class="empty-dashboard__copy">Use the dashboard picker in the header to load saved components.</p>
+                </div>
+            </template>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audience__c</fullName>
+    <description>Displays the Audience from the Visit Report; if blank, falls back to the Visit Category on the Activity. Practice Administrator displays as Office Staff.</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+  BLANKVALUE(TEXT(Visit_Report__r.Audience__c), TEXT(Visit_Category__c)),
+  &quot;Practice Administrator&quot;, &quot;Office Staff&quot;,
+  BLANKVALUE(TEXT(Visit_Report__r.Audience__c), TEXT(Visit_Category__c))
+)</formula>
+    <inlineHelpText>Audience value from the Visit Report if there is one, otherwise it&apos;s the value from the Visit Category.</inlineHelpText>
+    <label>Audience</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

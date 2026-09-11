@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Attach the full result set (up to the row cap) as a CSV file. --></help>
+    <label><!-- Include CSV Attachment --></label>
+    <name>Include_CSV_Attachment__c</name>
+</CustomFieldTranslation>

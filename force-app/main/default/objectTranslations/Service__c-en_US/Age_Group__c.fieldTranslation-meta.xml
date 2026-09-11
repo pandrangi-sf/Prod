@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Indicates if the service is related to adults or children. --></help>
+    <label><!-- Age Group --></label>
+    <name>Age_Group__c</name>
+    <picklistValues>
+        <masterLabel>Adult</masterLabel>
+        <translation><!-- Adult --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric</masterLabel>
+        <translation><!-- Pediatric --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

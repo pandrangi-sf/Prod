@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Department_License__c</fullName>
+    <description>Use this field to track departments users are in.  Useful to track how many licenses per department.</description>
+    <inlineHelpText>Track departments users are in.  Correlates to license counts.</inlineHelpText>
+    <label>Department License</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>API_System</fullName>
+                <default>false</default>
+                <label>API/System</label>
+            </value>
+            <value>
+                <fullName>Cancer Center</fullName>
+                <default>false</default>
+                <label>Cancer Center</label>
+            </value>
+            <value>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+                <label>Consultant</label>
+            </value>
+            <value>
+                <fullName>CRM</fullName>
+                <default>false</default>
+                <label>CRM</label>
+            </value>
+            <value>
+                <fullName>Evariant</fullName>
+                <default>false</default>
+                <label>Evariant</label>
+            </value>
+            <value>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+                <label>Inactive</label>
+            </value>
+            <value>
+                <fullName>OH Digital</fullName>
+                <default>false</default>
+                <label>OH Digital</label>
+            </value>
+            <value>
+                <fullName>OH Home Health</fullName>
+                <default>false</default>
+                <label>OH Home Health</label>
+            </value>
+            <value>
+                <fullName>OH Imaging Centers</fullName>
+                <default>false</default>
+                <label>OH Imaging Centers</label>
+            </value>
+            <value>
+                <fullName>OH Marketing SLM</fullName>
+                <default>false</default>
+                <label>OH Marketing SLM</label>
+            </value>
+            <value>
+                <fullName>OH Network</fullName>
+                <default>false</default>
+                <label>OH Network</label>
+            </value>
+            <value>
+                <fullName>OH Physician Associates</fullName>
+                <default>false</default>
+                <label>OH Physician Associates</label>
+            </value>
+            <value>
+                <fullName>PRM</fullName>
+                <default>false</default>
+                <label>PRM</label>
+            </value>
+            <value>
+                <fullName>South Lake</fullName>
+                <default>false</default>
+                <label>South Lake</label>
+            </value>
+            <value>
+                <fullName>WPH Preregistration</fullName>
+                <default>false</default>
+                <label>WPH Preregistration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,127 @@
+<template>
+    <c-cr-help-panel tool-key="crAiProviderManager" tool-label="Manage AI Providers"></c-cr-help-panel>
+    <div class="slds-p-around_medium">
+        <c-cr-page-header
+            icon-name="standard:bot"
+            tone="purple"
+            eyebrow="Vital Reports"
+            title="Manage AI Providers"
+            subtitle="Choose which external LLM powers the in-app AI features.">
+            <div slot="actions" class="aip-actions">
+                <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" title="Refresh"
+                    variant="border-filled" onclick={init} disabled={busy}></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:question" alternative-text="Help" title="Help and tips"
+                    variant="border-filled" onclick={openHelpPanel}></lightning-button-icon>
+                <lightning-button label="New Provider" variant="brand" icon-name="utility:add" onclick={handleNew}
+                    disabled={busy}></lightning-button>
+            </div>
+        </c-cr-page-header>
+
+        <div class="slds-p-bottom_medium">
+            <template if:true={loadError}>
+                <div class="slds-text-color_error slds-p-vertical_small">{loadError}</div>
+            </template>
+
+            <template if:false={canManage}>
+                <div class="slds-p-around_medium">
+                    <p class="slds-text-body_regular">
+                        You need the <strong>Manage AI Providers</strong> permission to manage AI provider configuration.
+                    </p>
+                </div>
+            </template>
+
+            <template if:true={canManage}>
+                <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_small">
+                    The actual API key lives in a Salesforce <strong>Named Credential</strong> — create one in
+                    Setup → Named Credentials first, then paste its name here. The key never appears in this app or in git.
+                </p>
+
+                <template if:true={showForm}>
+                    <div class="aip-form slds-box slds-m-bottom_medium">
+                        <h3 class="slds-text-heading_small slds-m-bottom_small">{formTitle}</h3>
+                        <div class="aip-grid">
+                            <lightning-input label="Name" data-field="label" value={form.label}
+                                onchange={handleField} required></lightning-input>
+                            <lightning-combobox label="Provider" data-field="provider" value={form.provider}
+                                options={providerOptions} onchange={handleField}></lightning-combobox>
+                            <lightning-input label="Model" data-field="model" value={form.model}
+                                field-level-help="e.g. claude-sonnet-4-6, claude-opus-4-7" onchange={handleField}></lightning-input>
+                            <lightning-input label="Named Credential Name" data-field="namedCredential"
+                                value={form.namedCredential} onchange={handleField}
+                                field-level-help="API name of the Named Credential, e.g. Anthropic"></lightning-input>
+                            <lightning-input type="number" label="Max Tokens" data-field="maxTokens"
+                                value={form.maxTokens} onchange={handleField}></lightning-input>
+                            <lightning-input type="checkbox" label="Active" data-field="isActive"
+                                checked={form.isActive} onchange={handleField}></lightning-input>
+                            <lightning-input type="checkbox" label="Default (used for AI features)"
+                                data-field="isDefault" checked={form.isDefault} onchange={handleField}></lightning-input>
+                        </div>
+                        <div class="slds-m-top_small">
+                            <lightning-button label="Save" variant="brand" onclick={handleSave} disabled={busy}
+                                class="slds-m-right_x-small"></lightning-button>
+                            <lightning-button label="Cancel" onclick={handleCancel} disabled={busy}></lightning-button>
+                        </div>
+                    </div>
+                </template>
+
+                <template if:true={busy}>
+                    <template if:false={hasProviders}>
+                        <c-cr-skeleton rows="5"></c-cr-skeleton>
+                    </template>
+                    <template if:true={hasProviders}>
+                        <lightning-spinner alternative-text="Working" size="small"></lightning-spinner>
+                    </template>
+                </template>
+
+                <template if:true={hasProviders}>
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col"><div class="slds-truncate">Name</div></th>
+                                <th scope="col"><div class="slds-truncate">Provider</div></th>
+                                <th scope="col"><div class="slds-truncate">Model</div></th>
+                                <th scope="col"><div class="slds-truncate">Named Credential</div></th>
+                                <th scope="col"><div class="slds-truncate">Status</div></th>
+                                <th scope="col"><div class="slds-truncate">Last Test</div></th>
+                                <th scope="col"><div class="slds-truncate">Actions</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={providers} for:item="p">
+                                <tr key={p.id}>
+                                    <td><div class="slds-truncate" title={p.label}>{p.label}</div></td>
+                                    <td>{p.provider}</td>
+                                    <td><div class="slds-truncate" title={p.model}>{p.model}</div></td>
+                                    <td><div class="slds-truncate" title={p.namedCredential}>{p.namedCredential}</div></td>
+                                    <td><c-cr-status-badge label={p.statusLabel} tone={p.statusTone} dot></c-cr-status-badge></td>
+                                    <td><span class={p.lastTestClass}>{p.lastTestLabel}</span></td>
+                                    <td>
+                                        <lightning-button-icon icon-name="utility:connected_apps"
+                                            alternative-text="Test Connection" title="Test connection"
+                                            data-id={p.id} onclick={handleTest}
+                                            class="slds-m-right_xx-small"></lightning-button-icon>
+                                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit"
+                                            title="Edit" data-id={p.id} onclick={handleEdit}
+                                            class="slds-m-right_xx-small"></lightning-button-icon>
+                                        <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
+                                            title="Delete" variant="border-filled" data-id={p.id}
+                                            onclick={handleDelete}></lightning-button-icon>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+
+                <template if:false={hasProviders}>
+                    <template if:false={busy}>
+                        <c-cr-empty-state
+                            headline="No AI providers configured"
+                            body="Add a provider to enable AI features. You'll need a Salesforce Named Credential pointing at the provider's API first.">
+                        </c-cr-empty-state>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

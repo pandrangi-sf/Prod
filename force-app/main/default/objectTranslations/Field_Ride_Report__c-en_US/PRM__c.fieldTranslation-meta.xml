@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- You can only select from the people that you manage.  If you don&apos;t see someone, this means the manager information in Salesforce needs to be updated. --></help>
+    <label><!-- PRM --></label>
+    <name>PRM__c</name>
+    <relationshipLabel><!-- Field Ride Reports --></relationshipLabel>
+</CustomFieldTranslation>

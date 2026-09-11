@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Marks a run kept as a named snapshot for audit or comparison. --></help>
+    <label><!-- Is Snapshot --></label>
+    <name>Is_Snapshot__c</name>
+</CustomFieldTranslation>

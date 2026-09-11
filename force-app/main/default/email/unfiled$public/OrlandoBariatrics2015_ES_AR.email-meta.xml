@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Orlando Bariatrics 2015 ES - Auto Responder</name>
+    <style>none</style>
+    <subject>Descargue su guía - Orlando Health.</subject>
+    <textOnly>Gracias
+
+Gracias por su interés en nuestro programa de cirugía bariátrica en Orlando Health. Haga clic en el botón de abajo para descargar la guía.
+
+Descargue su guía
+http://ww2.orlandohealth.com/resource/1418240315000/Bariatric_ES/Spanish_Bariatric_Guide.pdf</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

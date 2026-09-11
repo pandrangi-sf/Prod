@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Last_Visit_Date__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field used to modify the Target, which will then kick off the Last Visit Date workflow</description>
+    <label>Update Last Visit Date</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

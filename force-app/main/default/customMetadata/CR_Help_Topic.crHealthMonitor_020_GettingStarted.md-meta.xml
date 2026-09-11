@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Health Monitor — Getting Started</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;ul&gt;&lt;li&gt;&lt;strong&gt;KPI strip:&lt;/strong&gt; three at-a-glance counters. Tiles turn red when there&apos;s something to look at: Apex jobs failed today, nightly ETL cron status, and errors in the last 24 hours.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Apex Jobs panel:&lt;/strong&gt; framework batches that ran (or are running) in the last 24 hours. Failed rows are tinted red. Click the chevron on a row with an ExtendedStatus to read the full stack trace inline.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Scheduled Jobs panel:&lt;/strong&gt; framework crons (Vital Reports Nightly ETL and any &amp;quot;CR_&amp;quot;-prefixed schedules). If the nightly cron is missing, you&apos;ll see an amber alert with a &lt;strong&gt;Schedule Nightly ETL&lt;/strong&gt; button — click once to register it.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Recent Errors panel:&lt;/strong&gt; Dashboard_Run__c and Dashboard_Component_Run__c rows whose Status = Failed in the last 7 days. Click the chevron to expand and see the recorded error message.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Refresh:&lt;/strong&gt; the page does not auto-poll. Click Refresh to re-query all panels at once.&lt;/li&gt;&lt;/ul&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">Reading the page</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:preview</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crHealthMonitor</value>
+    </values>
+</CustomMetadata>

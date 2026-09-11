@@ -1,0 +1,1591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spec_Group_a__c</fullName>
+    <label>Large Specialties</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acupuncturist - Acupuncturist(465)</fullName>
+                <default>false</default>
+                <label>Acupuncturist - Acupuncturist(465)</label>
+            </value>
+            <value>
+                <fullName>Adult Companion - Adult Companion(64)</fullName>
+                <default>false</default>
+                <label>Adult Companion - Adult Companion(64)</label>
+            </value>
+            <value>
+                <fullName>Advanced Practice Midwife - Advanced Practice Midwife(172)</fullName>
+                <default>false</default>
+                <label>Advanced Practice Midwife - Advanced Practice Midwife(172)</label>
+            </value>
+            <value>
+                <fullName>Allergy &amp; Immunology - Allergy(15)</fullName>
+                <default>false</default>
+                <label>Allergy &amp; Immunology - Allergy(15)</label>
+            </value>
+            <value>
+                <fullName>Allergy &amp; Immunology - Allergy &amp; Immunology(96)</fullName>
+                <default>false</default>
+                <label>Allergy &amp; Immunology - Allergy &amp; Immunology(96)</label>
+            </value>
+            <value>
+                <fullName>Anesthesiologist Assistant - Anesthesiologist Assistant(89)</fullName>
+                <default>false</default>
+                <label>Anesthesiologist Assistant - Anesthesiologist Assistant(89)</label>
+            </value>
+            <value>
+                <fullName>Anesthesiology - Addiction Medicine(11)</fullName>
+                <default>false</default>
+                <label>Anesthesiology - Addiction Medicine(11)</label>
+            </value>
+            <value>
+                <fullName>Anesthesiology - Anesthesiology(1297)</fullName>
+                <default>false</default>
+                <label>Anesthesiology - Anesthesiology(1297)</label>
+            </value>
+            <value>
+                <fullName>Anesthesiology - Critical Care Medicine(23)</fullName>
+                <default>false</default>
+                <label>Anesthesiology - Critical Care Medicine(23)</label>
+            </value>
+            <value>
+                <fullName>Anesthesiology - Pain Medicine(237)</fullName>
+                <default>false</default>
+                <label>Anesthesiology - Pain Medicine(237)</label>
+            </value>
+            <value>
+                <fullName>Anesthesiology - Pediatric Anesthesiology(69)</fullName>
+                <default>false</default>
+                <label>Anesthesiology - Pediatric Anesthesiology(69)</label>
+            </value>
+            <value>
+                <fullName>Assistant Behavior Analyst - Assistant Behavior Analyst(115)</fullName>
+                <default>false</default>
+                <label>Assistant Behavior Analyst - Assistant Behavior Analyst(115)</label>
+            </value>
+            <value>
+                <fullName>Assisted Living Facility - Assisted Living Facility(67)</fullName>
+                <default>false</default>
+                <label>Assisted Living Facility - Assisted Living Facility(67)</label>
+            </value>
+            <value>
+                <fullName>Audiologist - Audiologist(283)</fullName>
+                <default>false</default>
+                <label>Audiologist - Audiologist(283)</label>
+            </value>
+            <value>
+                <fullName>Audiologist-Hearing Aid Fitter - Audiologist-Hearing Aid Fitter(24)</fullName>
+                <default>false</default>
+                <label>Audiologist-Hearing Aid Fitter - Audiologist-Hearing Aid Fitter(24)</label>
+            </value>
+            <value>
+                <fullName>Behavior Technician - Behavior Technician(1371)</fullName>
+                <default>false</default>
+                <label>Behavior Technician - Behavior Technician(1371)</label>
+            </value>
+            <value>
+                <fullName>Behavioral Analyst - Behavioral Analyst(1265)</fullName>
+                <default>false</default>
+                <label>Behavioral Analyst - Behavioral Analyst(1265)</label>
+            </value>
+            <value>
+                <fullName>Case Management - Case Management(87)</fullName>
+                <default>false</default>
+                <label>Case Management - Case Management(87)</label>
+            </value>
+            <value>
+                <fullName>Case Manager/Care Coordinator - Case Manager/Care Coordinator(1246)</fullName>
+                <default>false</default>
+                <label>Case Manager/Care Coordinator - Case Manager/Care Coordinator(1246)</label>
+            </value>
+            <value>
+                <fullName>Chiropractor - Chiropractor(1564)</fullName>
+                <default>false</default>
+                <label>Chiropractor - Chiropractor(1564)</label>
+            </value>
+            <value>
+                <fullName>Chiropractor - Neurology(22)</fullName>
+                <default>false</default>
+                <label>Chiropractor - Neurology(22)</label>
+            </value>
+            <value>
+                <fullName>Chiropractor - Nutrition(15)</fullName>
+                <default>false</default>
+                <label>Chiropractor - Nutrition(15)</label>
+            </value>
+            <value>
+                <fullName>Chiropractor - Orthopedic(14)</fullName>
+                <default>false</default>
+                <label>Chiropractor - Orthopedic(14)</label>
+            </value>
+            <value>
+                <fullName>Chiropractor - Rehabilitation(36)</fullName>
+                <default>false</default>
+                <label>Chiropractor - Rehabilitation(36)</label>
+            </value>
+            <value>
+                <fullName>Chiropractor - Sports Physician(12)</fullName>
+                <default>false</default>
+                <label>Chiropractor - Sports Physician(12)</label>
+            </value>
+            <value>
+                <fullName>Chore Provider - Chore Provider(15)</fullName>
+                <default>false</default>
+                <label>Chore Provider - Chore Provider(15)</label>
+            </value>
+            <value>
+                <fullName>Clinic/Center - Developmental Disabilities(34)</fullName>
+                <default>false</default>
+                <label>Clinic/Center - Developmental Disabilities(34)</label>
+            </value>
+            <value>
+                <fullName>Clinic/Center - Physical Therapy(15)</fullName>
+                <default>false</default>
+                <label>Clinic/Center - Physical Therapy(15)</label>
+            </value>
+            <value>
+                <fullName>Clinical Neuropsychologist - Clinical Neuropsychologist(78)</fullName>
+                <default>false</default>
+                <label>Clinical Neuropsychologist - Clinical Neuropsychologist(78)</label>
+            </value>
+            <value>
+                <fullName>Clinical Nurse Specialist - Adult Health(15)</fullName>
+                <default>false</default>
+                <label>Clinical Nurse Specialist - Adult Health(15)</label>
+            </value>
+            <value>
+                <fullName>Clinical Nurse Specialist - Family Health(18)</fullName>
+                <default>false</default>
+                <label>Clinical Nurse Specialist - Family Health(18)</label>
+            </value>
+            <value>
+                <fullName>Clinical Nurse Specialist - Gerontology(11)</fullName>
+                <default>false</default>
+                <label>Clinical Nurse Specialist - Gerontology(11)</label>
+            </value>
+            <value>
+                <fullName>Colon &amp; Rectal Surgery - Colon &amp; Rectal Surgery(78)</fullName>
+                <default>false</default>
+                <label>Colon &amp; Rectal Surgery - Colon &amp; Rectal Surgery(78)</label>
+            </value>
+            <value>
+                <fullName>Community Health Worker - Community Health Worker(284)</fullName>
+                <default>false</default>
+                <label>Community Health Worker - Community Health Worker(284)</label>
+            </value>
+            <value>
+                <fullName>Community/Behavioral Health - Community/Behavioral Health(61)</fullName>
+                <default>false</default>
+                <label>Community/Behavioral Health - Community/Behavioral Health(61)</label>
+            </value>
+            <value>
+                <fullName>Contractor - Contractor(193)</fullName>
+                <default>false</default>
+                <label>Contractor - Contractor(193)</label>
+            </value>
+            <value>
+                <fullName>Contractor - Home Modifications(10)</fullName>
+                <default>false</default>
+                <label>Contractor - Home Modifications(10)</label>
+            </value>
+            <value>
+                <fullName>Counselor - Addiction (Substance Use Disorder)(286)</fullName>
+                <default>false</default>
+                <label>Counselor - Addiction (Substance Use Disorder)(286)</label>
+            </value>
+            <value>
+                <fullName>Counselor - Counselor(921)</fullName>
+                <default>false</default>
+                <label>Counselor - Counselor(921)</label>
+            </value>
+            <value>
+                <fullName>Counselor - Mental Health(4139)</fullName>
+                <default>false</default>
+                <label>Counselor - Mental Health(4139)</label>
+            </value>
+            <value>
+                <fullName>Counselor - Pastoral(52)</fullName>
+                <default>false</default>
+                <label>Counselor - Pastoral(52)</label>
+            </value>
+            <value>
+                <fullName>Counselor - Professional(164)</fullName>
+                <default>false</default>
+                <label>Counselor - Professional(164)</label>
+            </value>
+            <value>
+                <fullName>Counselor - School(31)</fullName>
+                <default>false</default>
+                <label>Counselor - School(31)</label>
+            </value>
+            <value>
+                <fullName>Custodial Care Facility - Adult Care Home(68)</fullName>
+                <default>false</default>
+                <label>Custodial Care Facility - Adult Care Home(68)</label>
+            </value>
+            <value>
+                <fullName>Day Training  Developmentally Disabled Services(28)</fullName>
+                <default>false</default>
+                <label>Day Training  Developmentally Disabled Services(28)</label>
+            </value>
+            <value>
+                <fullName>Dental Hygienist - Dental Hygienist(66)</fullName>
+                <default>false</default>
+                <label>Dental Hygienist - Dental Hygienist(66)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Dental Public Health(25)</fullName>
+                <default>false</default>
+                <label>Dentist - Dental Public Health(25)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Dentist(1237)</fullName>
+                <default>false</default>
+                <label>Dentist - Dentist(1237)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Endodontics(120)</fullName>
+                <default>false</default>
+                <label>Dentist - Endodontics(120)</label>
+            </value>
+            <value>
+                <fullName>Dentist - General Practice(1844)</fullName>
+                <default>false</default>
+                <label>Dentist - General Practice(1844)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Oral and Maxillofacial Pathology(10)</fullName>
+                <default>false</default>
+                <label>Dentist - Oral and Maxillofacial Pathology(10)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Oral and Maxillofacial Surgery(137)</fullName>
+                <default>false</default>
+                <label>Dentist - Oral and Maxillofacial Surgery(137)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Orthodontics and Dentofacial Orthopedics(167)</fullName>
+                <default>false</default>
+                <label>Dentist - Orthodontics and Dentofacial Orthopedics(167)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Pediatric Dentistry(132)</fullName>
+                <default>false</default>
+                <label>Dentist - Pediatric Dentistry(132)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Periodontics(110)</fullName>
+                <default>false</default>
+                <label>Dentist - Periodontics(110)</label>
+            </value>
+            <value>
+                <fullName>Dentist - Prosthodontics(42)</fullName>
+                <default>false</default>
+                <label>Dentist - Prosthodontics(42)</label>
+            </value>
+            <value>
+                <fullName>Dermatology - Dermatology(393)</fullName>
+                <default>false</default>
+                <label>Dermatology - Dermatology(393)</label>
+            </value>
+            <value>
+                <fullName>Dermatology - Dermatopathology(16)</fullName>
+                <default>false</default>
+                <label>Dermatology - Dermatopathology(16)</label>
+            </value>
+            <value>
+                <fullName>Dermatology - MOHS-Micrographic Surgery(36)</fullName>
+                <default>false</default>
+                <label>Dermatology - MOHS-Micrographic Surgery(36)</label>
+            </value>
+            <value>
+                <fullName>Dermatology - Procedural Dermatology(32)</fullName>
+                <default>false</default>
+                <label>Dermatology - Procedural Dermatology(32)</label>
+            </value>
+            <value>
+                <fullName>Developmental Therapist - Developmental Therapist(574)</fullName>
+                <default>false</default>
+                <label>Developmental Therapist - Developmental Therapist(574)</label>
+            </value>
+            <value>
+                <fullName>Dietitian  Registered - Dietitian  Registered(384)</fullName>
+                <default>false</default>
+                <label>Dietitian  Registered - Dietitian  Registered(384)</label>
+            </value>
+            <value>
+                <fullName>Dietitian  Registered - Nutrition  Pediatric(14)</fullName>
+                <default>false</default>
+                <label>Dietitian  Registered - Nutrition  Pediatric(14)</label>
+            </value>
+            <value>
+                <fullName>Doula - Doula(33)</fullName>
+                <default>false</default>
+                <label>Doula - Doula(33)</label>
+            </value>
+            <value>
+                <fullName>Driver - Driver(26)</fullName>
+                <default>false</default>
+                <label>Driver - Driver(26)</label>
+            </value>
+            <value>
+                <fullName>Durable Medical Equipment &amp; Supplies - Durable Medical Equipment &amp; Supplies(31)</fullName>
+                <default>false</default>
+                <label>Durable Medical Equipment &amp; Supplies - Durable Medical Equipment &amp; Supplies(31)</label>
+            </value>
+            <value>
+                <fullName>Early Intervention Provider Agency - Early Intervention Provider Agency(48)</fullName>
+                <default>false</default>
+                <label>Early Intervention Provider Agency - Early Intervention Provider Agency(48)</label>
+            </value>
+            <value>
+                <fullName>Emergency Medicine - Emergency Medical Services(289)</fullName>
+                <default>false</default>
+                <label>Emergency Medicine - Emergency Medical Services(289)</label>
+            </value>
+            <value>
+                <fullName>Emergency Medicine - Emergency Medicine(1386)</fullName>
+                <default>false</default>
+                <label>Emergency Medicine - Emergency Medicine(1386)</label>
+            </value>
+            <value>
+                <fullName>Emergency Medicine - Pediatric Emergency Medicine(56)</fullName>
+                <default>false</default>
+                <label>Emergency Medicine - Pediatric Emergency Medicine(56)</label>
+            </value>
+            <value>
+                <fullName>Family Medicine - Adult Medicine(120)</fullName>
+                <default>false</default>
+                <label>Family Medicine - Adult Medicine(120)</label>
+            </value>
+            <value>
+                <fullName>Family Medicine - Family Medicine(4276)</fullName>
+                <default>false</default>
+                <label>Family Medicine - Family Medicine(4276)</label>
+            </value>
+            <value>
+                <fullName>Family Medicine - Geriatric Medicine(91)</fullName>
+                <default>false</default>
+                <label>Family Medicine - Geriatric Medicine(91)</label>
+            </value>
+            <value>
+                <fullName>Family Medicine - Hospice and Palliative Medicine(17)</fullName>
+                <default>false</default>
+                <label>Family Medicine - Hospice and Palliative Medicine(17)</label>
+            </value>
+            <value>
+                <fullName>Family Medicine - Sports Medicine(63)</fullName>
+                <default>false</default>
+                <label>Family Medicine - Sports Medicine(63)</label>
+            </value>
+            <value>
+                <fullName>Foster Care Agency - Foster Care Agency(34)</fullName>
+                <default>false</default>
+                <label>Foster Care Agency - Foster Care Agency(34)</label>
+            </value>
+            <value>
+                <fullName>General Acute Care Hospital - General Acute Care Hospital(23)</fullName>
+                <default>false</default>
+                <label>General Acute Care Hospital - General Acute Care Hospital(23)</label>
+            </value>
+            <value>
+                <fullName>General Practice - General Practice(721)</fullName>
+                <default>false</default>
+                <label>General Practice - General Practice(721)</label>
+            </value>
+            <value>
+                <fullName>Genetic Counselor  MS - Genetic Counselor  MS(29)</fullName>
+                <default>false</default>
+                <label>Genetic Counselor  MS - Genetic Counselor  MS(29)</label>
+            </value>
+            <value>
+                <fullName>Health Educator - Health Educator(71)</fullName>
+                <default>false</default>
+                <label>Health Educator - Health Educator(71)</label>
+            </value>
+            <value>
+                <fullName>Hearing Instrument Specialist - Hearing Instrument Specialist(206)</fullName>
+                <default>false</default>
+                <label>Hearing Instrument Specialist - Hearing Instrument Specialist(206)</label>
+            </value>
+            <value>
+                <fullName>Home Health - Home Health(82)</fullName>
+                <default>false</default>
+                <label>Home Health - Home Health(82)</label>
+            </value>
+            <value>
+                <fullName>Home Health Aide - Home Health Aide(91)</fullName>
+                <default>false</default>
+                <label>Home Health Aide - Home Health Aide(91)</label>
+            </value>
+            <value>
+                <fullName>Homemaker - Homemaker(54)</fullName>
+                <default>false</default>
+                <label>Homemaker - Homemaker(54)</label>
+            </value>
+            <value>
+                <fullName>Homeopath - Homeopath(12)</fullName>
+                <default>false</default>
+                <label>Homeopath - Homeopath(12)</label>
+            </value>
+            <value>
+                <fullName>Hospitalist - Hospitalist(412)</fullName>
+                <default>false</default>
+                <label>Hospitalist - Hospitalist(412)</label>
+            </value>
+            <value>
+                <fullName>In Home Supportive Care - In Home Supportive Care(49)</fullName>
+                <default>false</default>
+                <label>In Home Supportive Care - In Home Supportive Care(49)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Addiction Medicine(14)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Addiction Medicine(14)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Adolescent Medicine(13)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Adolescent Medicine(13)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Cardiovascular Disease(977)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Cardiovascular Disease(977)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Clinical Cardiac Electrophysiology(87)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Clinical Cardiac Electrophysiology(87)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Critical Care Medicine(198)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Critical Care Medicine(198)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Endocrinology  Diabetes &amp; Metabolism(226)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Endocrinology  Diabetes &amp; Metabolism(226)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Gastroenterology(604)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Gastroenterology(604)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Geriatric Medicine(159)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Geriatric Medicine(159)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Hematology(39)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Hematology(39)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Hematology &amp; Oncology(618)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Hematology &amp; Oncology(618)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Hospice and Palliative Medicine(23)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Hospice and Palliative Medicine(23)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Infectious Disease(281)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Infectious Disease(281)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Internal Medicine(4800)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Internal Medicine(4800)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Interventional Cardiology(234)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Interventional Cardiology(234)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Medical Oncology(174)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Medical Oncology(174)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Nephrology(328)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Nephrology(328)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Pulmonary Disease(415)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Pulmonary Disease(415)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Rheumatology(144)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Rheumatology(144)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Sleep Medicine(19)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Sleep Medicine(19)</label>
+            </value>
+            <value>
+                <fullName>Internal Medicine - Sports Medicine(15)</fullName>
+                <default>false</default>
+                <label>Internal Medicine - Sports Medicine(15)</label>
+            </value>
+            <value>
+                <fullName>Interpreter - Interpreter(23)</fullName>
+                <default>false</default>
+                <label>Interpreter - Interpreter(23)</label>
+            </value>
+            <value>
+                <fullName>Kinesiotherapist - Kinesiotherapist(20)</fullName>
+                <default>false</default>
+                <label>Kinesiotherapist - Kinesiotherapist(20)</label>
+            </value>
+            <value>
+                <fullName>Lactation Consultant  Non-RN - Lactation Consultant  Non-RN(23)</fullName>
+                <default>false</default>
+                <label>Lactation Consultant  Non-RN - Lactation Consultant  Non-RN(23)</label>
+            </value>
+            <value>
+                <fullName>Legal Medicine - Legal Medicine(36)</fullName>
+                <default>false</default>
+                <label>Legal Medicine - Legal Medicine(36)</label>
+            </value>
+            <value>
+                <fullName>Licensed Practical Nurse - Licensed Practical Nurse(351)</fullName>
+                <default>false</default>
+                <label>Licensed Practical Nurse - Licensed Practical Nurse(351)</label>
+            </value>
+            <value>
+                <fullName>Marriage &amp; Family Therapist - Marriage &amp; Family Therapist(381)</fullName>
+                <default>false</default>
+                <label>Marriage &amp; Family Therapist - Marriage &amp; Family Therapist(381)</label>
+            </value>
+            <value>
+                <fullName>Massage Therapist - Massage Therapist(1125)</fullName>
+                <default>false</default>
+                <label>Massage Therapist - Massage Therapist(1125)</label>
+            </value>
+            <value>
+                <fullName>Mechanotherapist - Mechanotherapist(59)</fullName>
+                <default>false</default>
+                <label>Mechanotherapist - Mechanotherapist(59)</label>
+            </value>
+            <value>
+                <fullName>Medical Genetics - Clinical Genetics (M.D.)(12)</fullName>
+                <default>false</default>
+                <label>Medical Genetics - Clinical Genetics (M.D.)(12)</label>
+            </value>
+            <value>
+                <fullName>Midwife - Midwife(60)</fullName>
+                <default>false</default>
+                <label>Midwife - Midwife(60)</label>
+            </value>
+            <value>
+                <fullName>Military Health Care Provider - Independent Duty Corpsman(11)</fullName>
+                <default>false</default>
+                <label>Military Health Care Provider - Independent Duty Corpsman(11)</label>
+            </value>
+            <value>
+                <fullName>Military Health Care Provider - Independent Duty Medical Technicians(15)</fullName>
+                <default>false</default>
+                <label>Military Health Care Provider - Independent Duty Medical Technicians(15)</label>
+            </value>
+            <value>
+                <fullName>Music Therapist - Music Therapist(12)</fullName>
+                <default>false</default>
+                <label>Music Therapist - Music Therapist(12)</label>
+            </value>
+            <value>
+                <fullName>Naturopath - Naturopath(10)</fullName>
+                <default>false</default>
+                <label>Naturopath - Naturopath(10)</label>
+            </value>
+            <value>
+                <fullName>Neurological Surgery - Neurological Surgery(293)</fullName>
+                <default>false</default>
+                <label>Neurological Surgery - Neurological Surgery(293)</label>
+            </value>
+            <value>
+                <fullName>Neuromusculoskeletal Medicine &amp; OMM - Neuromusculoskeletal Medicine &amp; OMM(27)</fullName>
+                <default>false</default>
+                <label>Neuromusculoskeletal Medicine &amp; OMM - Neuromusculoskeletal Medicine &amp; OMM(27)</label>
+            </value>
+            <value>
+                <fullName>Neuromusculoskeletal Medicine  Sports Medicine - Sports Medicine(19)</fullName>
+                <default>false</default>
+                <label>Neuromusculoskeletal Medicine  Sports Medicine - Sports Medicine(19)</label>
+            </value>
+            <value>
+                <fullName>Non-emergency Medical Transport (VAN) - Non-emergency Medical Transport (VAN)(29)</fullName>
+                <default>false</default>
+                <label>Non-emergency Medical Transport (VAN) - Non-emergency Medical Transport (VAN)(29)</label>
+            </value>
+            <value>
+                <fullName>Nuclear Medicine - Nuclear Medicine(26)</fullName>
+                <default>false</default>
+                <label>Nuclear Medicine - Nuclear Medicine(26)</label>
+            </value>
+            <value>
+                <fullName>Nurse Anesthetist  Certified Registered- Nurse Anesthetist  Certified Registered(1646)</fullName>
+                <default>false</default>
+                <label>Nurse Anesthetist  Certified Registered- Nurse Anesthetist  Certified Registered(1646)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Acute Care(157)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Acute Care(157)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Adult Health(796)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Adult Health(796)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Community Health(12)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Community Health(12)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Critical Care Medicine(24)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Critical Care Medicine(24)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Family(2571)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Family(2571)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Gerontology(158)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Gerontology(158)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Neonatal(55)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Neonatal(55)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Neonatal  Critical Care(17)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Neonatal  Critical Care(17)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Nurse Practitioner(1984)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Nurse Practitioner(1984)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Obstetrics &amp; Gynecology(144)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Obstetrics &amp; Gynecology(144)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Pediatrics(397)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Pediatrics(397)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Pediatrics  Critical Care(14)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Pediatrics  Critical Care(14)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Primary Care(143)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Primary Care(143)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Psych/Mental Health(185)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Psych/Mental Health(185)</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner - Women&apos;s Health(108)</fullName>
+                <default>false</default>
+                <label>Nurse Practitioner - Women&apos;s Health(108)</label>
+            </value>
+            <value>
+                <fullName>Nurse&apos;s Aide - Nurse&apos;s Aide(101)</fullName>
+                <default>false</default>
+                <label>Nurse&apos;s Aide - Nurse&apos;s Aide(101)</label>
+            </value>
+            <value>
+                <fullName>Nutritionist - Nutrition  Education(15)</fullName>
+                <default>false</default>
+                <label>Nutritionist - Nutrition  Education(15)</label>
+            </value>
+            <value>
+                <fullName>Nutritionist - Nutritionist(15)</fullName>
+                <default>false</default>
+                <label>Nutritionist - Nutritionist(15)</label>
+            </value>
+            <value>
+                <fullName>Obstetrics &amp; Gynecology - Female Pelvic Medicine and Reconstructive Surgery(20)</fullName>
+                <default>false</default>
+                <label>Obstetrics &amp; Gynecology - Female Pelvic Medicine and Reconstructive Surgery(20)</label>
+            </value>
+            <value>
+                <fullName>Obstetrics &amp; Gynecology - Gynecologic Oncology(63)</fullName>
+                <default>false</default>
+                <label>Obstetrics &amp; Gynecology - Gynecologic Oncology(63)</label>
+            </value>
+            <value>
+                <fullName>Obstetrics &amp; Gynecology - Gynecology(184)</fullName>
+                <default>false</default>
+                <label>Obstetrics &amp; Gynecology - Gynecology(184)</label>
+            </value>
+            <value>
+                <fullName>Obstetrics &amp; Gynecology - Maternal &amp; Fetal Medicine(87)</fullName>
+                <default>false</default>
+                <label>Obstetrics &amp; Gynecology - Maternal &amp; Fetal Medicine(87)</label>
+            </value>
+            <value>
+                <fullName>Obstetrics &amp; Gynecology - Obstetrics(42)</fullName>
+                <default>false</default>
+                <label>Obstetrics &amp; Gynecology - Obstetrics(42)</label>
+            </value>
+            <value>
+                <fullName>Obstetrics &amp; Gynecology - Obstetrics &amp; Gynecology(1451)</fullName>
+                <default>false</default>
+                <label>Obstetrics &amp; Gynecology - Obstetrics &amp; Gynecology(1451)</label>
+            </value>
+            <value>
+                <fullName>Obstetrics &amp; Gynecology - Reproductive Endocrinology(49)</fullName>
+                <default>false</default>
+                <label>Obstetrics &amp; Gynecology - Reproductive Endocrinology(49)</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist - Gerontology(12)</fullName>
+                <default>false</default>
+                <label>Occupational Therapist - Gerontology(12)</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist - Hand(55)</fullName>
+                <default>false</default>
+                <label>Occupational Therapist - Hand(55)</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist - Neurorehabilitation(12)</fullName>
+                <default>false</default>
+                <label>Occupational Therapist - Neurorehabilitation(12)</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist - Occupational Therapist(1391)</fullName>
+                <default>false</default>
+                <label>Occupational Therapist - Occupational Therapist(1391)</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist - Pediatrics(170)</fullName>
+                <default>false</default>
+                <label>Occupational Therapist - Pediatrics(170)</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist - Physical Rehabilitation(17)</fullName>
+                <default>false</default>
+                <label>Occupational Therapist - Physical Rehabilitation(17)</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapy Assistant - Occupational Therapy Assistant(877)</fullName>
+                <default>false</default>
+                <label>Occupational Therapy Assistant - Occupational Therapy Assistant(877)</label>
+            </value>
+            <value>
+                <fullName>Ophthalmology - Ophthalmology(622)</fullName>
+                <default>false</default>
+                <label>Ophthalmology - Ophthalmology(622)</label>
+            </value>
+            <value>
+                <fullName>Optometrist - Corneal and Contact Management(36)</fullName>
+                <default>false</default>
+                <label>Optometrist - Corneal and Contact Management(36)</label>
+            </value>
+            <value>
+                <fullName>Optometrist - Optometrist(737)</fullName>
+                <default>false</default>
+                <label>Optometrist - Optometrist(737)</label>
+            </value>
+            <value>
+                <fullName>Oral &amp; Maxillofacial Surgery - Oral &amp; Maxillofacial Surgery(65)</fullName>
+                <default>false</default>
+                <label>Oral &amp; Maxillofacial Surgery - Oral &amp; Maxillofacial Surgery(65)</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery - Foot and Ankle Surgery(15)</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery - Foot and Ankle Surgery(15)</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery - Hand Surgery(59)</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery - Hand Surgery(59)</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery - Orthopaedic Surgery(745)</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery - Orthopaedic Surgery(745)</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery - Orthopaedic Surgery of the Spine(45)</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery - Orthopaedic Surgery of the Spine(45)</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery - Orthopaedic Trauma(26)</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery - Orthopaedic Trauma(26)</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery - Pediatric Orthopaedic Surgery(58)</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery - Pediatric Orthopaedic Surgery(58)</label>
+            </value>
+            <value>
+                <fullName>Orthopaedic Surgery - Sports Medicine(62)</fullName>
+                <default>false</default>
+                <label>Orthopaedic Surgery - Sports Medicine(62)</label>
+            </value>
+            <value>
+                <fullName>Orthotist - Orthotist(17)</fullName>
+                <default>false</default>
+                <label>Orthotist - Orthotist(17)</label>
+            </value>
+            <value>
+                <fullName>Otolaryngology - Facial Plastic Surgery(15)</fullName>
+                <default>false</default>
+                <label>Otolaryngology - Facial Plastic Surgery(15)</label>
+            </value>
+            <value>
+                <fullName>Otolaryngology - Otolaryngology(297)</fullName>
+                <default>false</default>
+                <label>Otolaryngology - Otolaryngology(297)</label>
+            </value>
+            <value>
+                <fullName>Otolaryngology - Otolaryngology/Facial Plastic Surgery(41)</fullName>
+                <default>false</default>
+                <label>Otolaryngology - Otolaryngology/Facial Plastic Surgery(41)</label>
+            </value>
+            <value>
+                <fullName>Otolaryngology - Pediatric Otolaryngology(33)</fullName>
+                <default>false</default>
+                <label>Otolaryngology - Pediatric Otolaryngology(33)</label>
+            </value>
+            <value>
+                <fullName>Otolaryngology - Plastic Surgery within the Head &amp; Neck(13)</fullName>
+                <default>false</default>
+                <label>Otolaryngology - Plastic Surgery within the Head &amp; Neck(13)</label>
+            </value>
+            <value>
+                <fullName>Pain Medicine - Interventional Pain Medicine(121)</fullName>
+                <default>false</default>
+                <label>Pain Medicine - Interventional Pain Medicine(121)</label>
+            </value>
+            <value>
+                <fullName>Pain Medicine - Pain Medicine(46)</fullName>
+                <default>false</default>
+                <label>Pain Medicine - Pain Medicine(46)</label>
+            </value>
+            <value>
+                <fullName>Pathology - Anatomic Pathology(43)</fullName>
+                <default>false</default>
+                <label>Pathology - Anatomic Pathology(43)</label>
+            </value>
+            <value>
+                <fullName>Pathology - Anatomic Pathology &amp; Clinical Pathology(376)</fullName>
+                <default>false</default>
+                <label>Pathology - Anatomic Pathology &amp; Clinical Pathology(376)</label>
+            </value>
+            <value>
+                <fullName>Pathology - Clinical Pathology/Laboratory Medicine(15)</fullName>
+                <default>false</default>
+                <label>Pathology - Clinical Pathology/Laboratory Medicine(15)</label>
+            </value>
+            <value>
+                <fullName>Pathology - Cytopathology(13)</fullName>
+                <default>false</default>
+                <label>Pathology - Cytopathology(13)</label>
+            </value>
+            <value>
+                <fullName>Pathology - Dermatopathology(34)</fullName>
+                <default>false</default>
+                <label>Pathology - Dermatopathology(34)</label>
+            </value>
+            <value>
+                <fullName>Pathology - Forensic Pathology(21)</fullName>
+                <default>false</default>
+                <label>Pathology - Forensic Pathology(21)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Adolescent Medicine(101)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Adolescent Medicine(101)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Developmental ? Behavioral Pediatrics(12)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Developmental ? Behavioral Pediatrics(12)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Neonatal-Perinatal Medicine(156)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Neonatal-Perinatal Medicine(156)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Allergy/Immunology(11)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Allergy/Immunology(11)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Cardiology(106)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Cardiology(106)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Critical Care Medicine(72)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Critical Care Medicine(72)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Emergency Medicine(14)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Emergency Medicine(14)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Endocrinology(83)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Endocrinology(83)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Gastroenterology(96)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Gastroenterology(96)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Hematology-Oncology(69)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Hematology-Oncology(69)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Infectious Diseases(24)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Infectious Diseases(24)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Nephrology(31)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Nephrology(31)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Pulmonology(53)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Pulmonology(53)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatric Rheumatology(10)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatric Rheumatology(10)</label>
+            </value>
+            <value>
+                <fullName>Pediatrics - Pediatrics(2395)</fullName>
+                <default>false</default>
+                <label>Pediatrics - Pediatrics(2395)</label>
+            </value>
+            <value>
+                <fullName>Personal Emergency Response Attendant - Personal Emergency Response Attendant(14)</fullName>
+                <default>false</default>
+                <label>Personal Emergency Response Attendant - Personal Emergency Response Attendant(14)</label>
+            </value>
+            <value>
+                <fullName>Pharmacist - Geriatric(12)</fullName>
+                <default>false</default>
+                <label>Pharmacist - Geriatric(12)</label>
+            </value>
+            <value>
+                <fullName>Pharmacist - Oncology(24)</fullName>
+                <default>false</default>
+                <label>Pharmacist - Oncology(24)</label>
+            </value>
+            <value>
+                <fullName>Pharmacist - Pharmacist(3549)</fullName>
+                <default>false</default>
+                <label>Pharmacist - Pharmacist(3549)</label>
+            </value>
+            <value>
+                <fullName>Pharmacist - Pharmacist Clinician (PhC)/ Clinical Pharmacy Specialist(123)</fullName>
+                <default>false</default>
+                <label>Pharmacist - Pharmacist Clinician (PhC)/ Clinical Pharmacy Specialist(123)</label>
+            </value>
+            <value>
+                <fullName>Pharmacist - Pharmacotherapy(95)</fullName>
+                <default>false</default>
+                <label>Pharmacist - Pharmacotherapy(95)</label>
+            </value>
+            <value>
+                <fullName>Pharmacist - Psychiatric(11)</fullName>
+                <default>false</default>
+                <label>Pharmacist - Psychiatric(11)</label>
+            </value>
+            <value>
+                <fullName>Pharmacy Technician - Pharmacy Technician(65)</fullName>
+                <default>false</default>
+                <label>Pharmacy Technician - Pharmacy Technician(65)</label>
+            </value>
+            <value>
+                <fullName>Physical Medicine &amp; Rehabilitation - Pain Medicine(51)</fullName>
+                <default>false</default>
+                <label>Physical Medicine &amp; Rehabilitation - Pain Medicine(51)</label>
+            </value>
+            <value>
+                <fullName>Physical Medicine &amp; Rehabilitation - Physical Medicine &amp; Rehabilitation(294)</fullName>
+                <default>false</default>
+                <label>Physical Medicine &amp; Rehabilitation - Physical Medicine &amp; Rehabilitation(294)</label>
+            </value>
+            <value>
+                <fullName>Physical Medicine &amp; Rehabilitation - Sports Medicine(17)</fullName>
+                <default>false</default>
+                <label>Physical Medicine &amp; Rehabilitation - Sports Medicine(17)</label>
+            </value>
+            <value>
+                <fullName>Physical Therapist - Geriatrics(32)</fullName>
+                <default>false</default>
+                <label>Physical Therapist - Geriatrics(32)</label>
+            </value>
+            <value>
+                <fullName>Physical Therapist - Neurology(15)</fullName>
+                <default>false</default>
+                <label>Physical Therapist - Neurology(15)</label>
+            </value>
+            <value>
+                <fullName>Physical Therapist - Orthopedic(154)</fullName>
+                <default>false</default>
+                <label>Physical Therapist - Orthopedic(154)</label>
+            </value>
+            <value>
+                <fullName>Physical Therapist - Pediatrics(64)</fullName>
+                <default>false</default>
+                <label>Physical Therapist - Pediatrics(64)</label>
+            </value>
+            <value>
+                <fullName>Physical Therapist - Physical Therapist(2582)</fullName>
+                <default>false</default>
+                <label>Physical Therapist - Physical Therapist(2582)</label>
+            </value>
+            <value>
+                <fullName>Physical Therapist - Sports(16)</fullName>
+                <default>false</default>
+                <label>Physical Therapist - Sports(16)</label>
+            </value>
+            <value>
+                <fullName>Physical Therapy Assistant - Physical Therapy Assistant(1246)</fullName>
+                <default>false</default>
+                <label>Physical Therapy Assistant - Physical Therapy Assistant(1246)</label>
+            </value>
+            <value>
+                <fullName>Physician Assistant(12)</fullName>
+                <default>false</default>
+                <label>Physician Assistant(12)</label>
+            </value>
+            <value>
+                <fullName>Physician Assistant - Medical(824)</fullName>
+                <default>false</default>
+                <label>Physician Assistant - Medical(824)</label>
+            </value>
+            <value>
+                <fullName>Physician Assistant - Physician Assistant(1843)</fullName>
+                <default>false</default>
+                <label>Physician Assistant - Physician Assistant(1843)</label>
+            </value>
+            <value>
+                <fullName>Physician Assistant - Surgical Technologist(349)</fullName>
+                <default>false</default>
+                <label>Physician Assistant - Surgical Technologist(349)</label>
+            </value>
+            <value>
+                <fullName>Plastic Surgery - Plastic Surgery(181)</fullName>
+                <default>false</default>
+                <label>Plastic Surgery - Plastic Surgery(181)</label>
+            </value>
+            <value>
+                <fullName>Plastic Surgery - Surgery of the Hand(12)</fullName>
+                <default>false</default>
+                <label>Plastic Surgery - Surgery of the Hand(12)</label>
+            </value>
+            <value>
+                <fullName>Podiatrist - Foot &amp; Ankle Surgery(139)</fullName>
+                <default>false</default>
+                <label>Podiatrist - Foot &amp; Ankle Surgery(139)</label>
+            </value>
+            <value>
+                <fullName>Podiatrist - Foot Surgery(39)</fullName>
+                <default>false</default>
+                <label>Podiatrist - Foot Surgery(39)</label>
+            </value>
+            <value>
+                <fullName>Podiatrist - Podiatrist(262)</fullName>
+                <default>false</default>
+                <label>Podiatrist - Podiatrist(262)</label>
+            </value>
+            <value>
+                <fullName>Podiatrist - Primary Podiatric Medicine(18)</fullName>
+                <default>false</default>
+                <label>Podiatrist - Primary Podiatric Medicine(18)</label>
+            </value>
+            <value>
+                <fullName>Preventive Medicine - Aerospace Medicine(10)</fullName>
+                <default>false</default>
+                <label>Preventive Medicine - Aerospace Medicine(10)</label>
+            </value>
+            <value>
+                <fullName>Preventive Medicine - Occupational Medicine(62)</fullName>
+                <default>false</default>
+                <label>Preventive Medicine - Occupational Medicine(62)</label>
+            </value>
+            <value>
+                <fullName>Preventive Medicine - Preventive Medicine/Occupational Environmental Medicine(28)</fullName>
+                <default>false</default>
+                <label>Preventive Medicine - Preventive Medicine/Occupational Environmental Medicine(28)</label>
+            </value>
+            <value>
+                <fullName>Preventive Medicine - Public Health &amp; General Preventive Medicine(28)</fullName>
+                <default>false</default>
+                <label>Preventive Medicine - Public Health &amp; General Preventive Medicine(28)</label>
+            </value>
+            <value>
+                <fullName>Private Vehicle - Private Vehicle(10)</fullName>
+                <default>false</default>
+                <label>Private Vehicle - Private Vehicle(10)</label>
+            </value>
+            <value>
+                <fullName>Prosthetist - Prosthetist(13)</fullName>
+                <default>false</default>
+                <label>Prosthetist - Prosthetist(13)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Addiction Psychiatry(17)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Addiction Psychiatry(17)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Child &amp; Adolescent Psychiatry(123)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Child &amp; Adolescent Psychiatry(123)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Clinical Neurophysiology(14)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Clinical Neurophysiology(14)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Geriatric Psychiatry(26)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Geriatric Psychiatry(26)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Neurology(599)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Neurology(599)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Neurology w Special Qualifications in Child Neurology(63)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Neurology w Special Qualifications in Child Neurology(63)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Psychiatry(849)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Psychiatry(849)</label>
+            </value>
+            <value>
+                <fullName>Psychiatry &amp; Neurology - Vascular Neurology(12)</fullName>
+                <default>false</default>
+                <label>Psychiatry &amp; Neurology - Vascular Neurology(12)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Clinical(484)</fullName>
+                <default>false</default>
+                <label>Psychologist - Clinical(484)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Clinical Child &amp; Adolescent(23)</fullName>
+                <default>false</default>
+                <label>Psychologist - Clinical Child &amp; Adolescent(23)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Cognitive &amp; Behavioral(15)</fullName>
+                <default>false</default>
+                <label>Psychologist - Cognitive &amp; Behavioral(15)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Counseling(63)</fullName>
+                <default>false</default>
+                <label>Psychologist - Counseling(63)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Forensic(11)</fullName>
+                <default>false</default>
+                <label>Psychologist - Forensic(11)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Health Service(14)</fullName>
+                <default>false</default>
+                <label>Psychologist - Health Service(14)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Mental Retardation &amp; Developmental Disabilities(13)</fullName>
+                <default>false</default>
+                <label>Psychologist - Mental Retardation &amp; Developmental Disabilities(13)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Psychologist(345)</fullName>
+                <default>false</default>
+                <label>Psychologist - Psychologist(345)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - Rehabilitation(34)</fullName>
+                <default>false</default>
+                <label>Psychologist - Rehabilitation(34)</label>
+            </value>
+            <value>
+                <fullName>Psychologist - School(67)</fullName>
+                <default>false</default>
+                <label>Psychologist - School(67)</label>
+            </value>
+            <value>
+                <fullName>Radiologic Technologist - Sonography(15)</fullName>
+                <default>false</default>
+                <label>Radiologic Technologist - Sonography(15)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Body Imaging(34)</fullName>
+                <default>false</default>
+                <label>Radiology - Body Imaging(34)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Diagnostic Radiology(1167)</fullName>
+                <default>false</default>
+                <label>Radiology - Diagnostic Radiology(1167)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Neuroradiology(29)</fullName>
+                <default>false</default>
+                <label>Radiology - Neuroradiology(29)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Nuclear Radiology(19)</fullName>
+                <default>false</default>
+                <label>Radiology - Nuclear Radiology(19)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Pediatric Radiology(29)</fullName>
+                <default>false</default>
+                <label>Radiology - Pediatric Radiology(29)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Radiation Oncology(271)</fullName>
+                <default>false</default>
+                <label>Radiology - Radiation Oncology(271)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Therapeutic Radiology(17)</fullName>
+                <default>false</default>
+                <label>Radiology - Therapeutic Radiology(17)</label>
+            </value>
+            <value>
+                <fullName>Radiology - Vascular &amp; Interventional Radiology(95)</fullName>
+                <default>false</default>
+                <label>Radiology - Vascular &amp; Interventional Radiology(95)</label>
+            </value>
+            <value>
+                <fullName>Recreation Therapist - Recreation Therapist(11)</fullName>
+                <default>false</default>
+                <label>Recreation Therapist - Recreation Therapist(11)</label>
+            </value>
+            <value>
+                <fullName>Reflexologist - Reflexologist(21)</fullName>
+                <default>false</default>
+                <label>Reflexologist - Reflexologist(21)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Administrator(15)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Administrator(15)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Ambulatory Care(10)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Ambulatory Care(10)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Case Management(59)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Case Management(59)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Community Health(30)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Community Health(30)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Critical Care Medicine(28)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Critical Care Medicine(28)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Diabetes Educator(18)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Diabetes Educator(18)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Emergency(18)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Emergency(18)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - General Practice(21)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - General Practice(21)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Home Health(36)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Home Health(36)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Lactation Consultant(11)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Lactation Consultant(11)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Medical-Surgical(24)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Medical-Surgical(24)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Pediatrics(31)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Pediatrics(31)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Psych/Mental Health(173)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Psych/Mental Health(173)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Psych/Mental Health  Adult(11)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Psych/Mental Health  Adult(11)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Registered Nurse(645)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Registered Nurse(645)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - Registered Nurse First Assistant(66)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - Registered Nurse First Assistant(66)</label>
+            </value>
+            <value>
+                <fullName>Registered Nurse - School(131)</fullName>
+                <default>false</default>
+                <label>Registered Nurse - School(131)</label>
+            </value>
+            <value>
+                <fullName>Rehabilitation Practitioner - Rehabilitation Practitioner(15)</fullName>
+                <default>false</default>
+                <label>Rehabilitation Practitioner - Rehabilitation Practitioner(15)</label>
+            </value>
+            <value>
+                <fullName>Respiratory Therapist  Certified - Respiratory Therapist  Certified(19)</fullName>
+                <default>false</default>
+                <label>Respiratory Therapist  Certified - Respiratory Therapist  Certified(19)</label>
+            </value>
+            <value>
+                <fullName>Respiratory Therapist  Registered - Respiratory Therapist  Registered(80)</fullName>
+                <default>false</default>
+                <label>Respiratory Therapist  Registered - Respiratory Therapist  Registered(80)</label>
+            </value>
+            <value>
+                <fullName>Respite Care(12)</fullName>
+                <default>false</default>
+                <label>Respite Care(12)</label>
+            </value>
+            <value>
+                <fullName>Skilled Nursing Facility - Skilled Nursing Facility(37)</fullName>
+                <default>false</default>
+                <label>Skilled Nursing Facility - Skilled Nursing Facility(37)</label>
+            </value>
+            <value>
+                <fullName>Social Worker - Clinical(1868)</fullName>
+                <default>false</default>
+                <label>Social Worker - Clinical(1868)</label>
+            </value>
+            <value>
+                <fullName>Social Worker - School(11)</fullName>
+                <default>false</default>
+                <label>Social Worker - School(11)</label>
+            </value>
+            <value>
+                <fullName>Social Worker - Social Worker(1358)</fullName>
+                <default>false</default>
+                <label>Social Worker - Social Worker(1358)</label>
+            </value>
+            <value>
+                <fullName>Specialist - Prosthetics Case Management(28)</fullName>
+                <default>false</default>
+                <label>Specialist - Prosthetics Case Management(28)</label>
+            </value>
+            <value>
+                <fullName>Specialist - Specialist(1005)</fullName>
+                <default>false</default>
+                <label>Specialist - Specialist(1005)</label>
+            </value>
+            <value>
+                <fullName>Specialist/Technologist - Athletic Trainer(545)</fullName>
+                <default>false</default>
+                <label>Specialist/Technologist - Athletic Trainer(545)</label>
+            </value>
+            <value>
+                <fullName>Specialist/Technologist - Specialist/Technologist(10)</fullName>
+                <default>false</default>
+                <label>Specialist/Technologist - Specialist/Technologist(10)</label>
+            </value>
+            <value>
+                <fullName>Specialist/Technologist - Speech-Language Assistant(161)</fullName>
+                <default>false</default>
+                <label>Specialist/Technologist - Speech-Language Assistant(161)</label>
+            </value>
+            <value>
+                <fullName>Specialist/Technologist  Other - Electroneurodiagnostic(14)</fullName>
+                <default>false</default>
+                <label>Specialist/Technologist  Other - Electroneurodiagnostic(14)</label>
+            </value>
+            <value>
+                <fullName>Specialist/Technologist  Other - Specialist/Technologist  Other(22)</fullName>
+                <default>false</default>
+                <label>Specialist/Technologist  Other - Specialist/Technologist  Other(22)</label>
+            </value>
+            <value>
+                <fullName>Specialist/Technologist  Other - Surgical Assistant(51)</fullName>
+                <default>false</default>
+                <label>Specialist/Technologist  Other - Surgical Assistant(51)</label>
+            </value>
+            <value>
+                <fullName>Specialist/Technologist  Other - Surgical Technologist(33)</fullName>
+                <default>false</default>
+                <label>Specialist/Technologist  Other - Surgical Technologist(33)</label>
+            </value>
+            <value>
+                <fullName>Speech-Language Pathologist - Speech-Language Pathologist(2532)</fullName>
+                <default>false</default>
+                <label>Speech-Language Pathologist - Speech-Language Pathologist(2532)</label>
+            </value>
+            <value>
+                <fullName>Student in an Organized Health Care Education/Training Program - n/a(2268)</fullName>
+                <default>false</default>
+                <label>Student in an Organized Health Care Education/Training Program - n/a(2268)</label>
+            </value>
+            <value>
+                <fullName>Surgery - Pediatric Surgery(42)</fullName>
+                <default>false</default>
+                <label>Surgery - Pediatric Surgery(42)</label>
+            </value>
+            <value>
+                <fullName>Surgery - Plastic and Reconstructive Surgery(68)</fullName>
+                <default>false</default>
+                <label>Surgery - Plastic and Reconstructive Surgery(68)</label>
+            </value>
+            <value>
+                <fullName>Surgery - Surgery(843)</fullName>
+                <default>false</default>
+                <label>Surgery - Surgery(843)</label>
+            </value>
+            <value>
+                <fullName>Surgery - Surgical Critical Care(61)</fullName>
+                <default>false</default>
+                <label>Surgery - Surgical Critical Care(61)</label>
+            </value>
+            <value>
+                <fullName>Surgery - Surgical Oncology(55)</fullName>
+                <default>false</default>
+                <label>Surgery - Surgical Oncology(55)</label>
+            </value>
+            <value>
+                <fullName>Surgery - Trauma Surgery(50)</fullName>
+                <default>false</default>
+                <label>Surgery - Trauma Surgery(50)</label>
+            </value>
+            <value>
+                <fullName>Surgery - Vascular Surgery(145)</fullName>
+                <default>false</default>
+                <label>Surgery - Vascular Surgery(145)</label>
+            </value>
+            <value>
+                <fullName>Technician - Personal Care Attendant(59)</fullName>
+                <default>false</default>
+                <label>Technician - Personal Care Attendant(59)</label>
+            </value>
+            <value>
+                <fullName>Technician - Technician(13)</fullName>
+                <default>false</default>
+                <label>Technician - Technician(13)</label>
+            </value>
+            <value>
+                <fullName>Technician  Other - Technician  Other(233)</fullName>
+                <default>false</default>
+                <label>Technician  Other - Technician  Other(233)</label>
+            </value>
+            <value>
+                <fullName>Technician  Pathology - Phlebotomy(22)</fullName>
+                <default>false</default>
+                <label>Technician  Pathology - Phlebotomy(22)</label>
+            </value>
+            <value>
+                <fullName>Technician/Technologist - Optician(43)</fullName>
+                <default>false</default>
+                <label>Technician/Technologist - Optician(43)</label>
+            </value>
+            <value>
+                <fullName>Thoracic Surgery (Cardiothoracic Vascular Surgery) - Thoracic Surgery(208)</fullName>
+                <default>false</default>
+                <label>Thoracic Surgery (Cardiothoracic Vascular Surgery) - Thoracic Surgery(208)</label>
+            </value>
+            <value>
+                <fullName>Transplant Surgery - Transplant Surgery(15)</fullName>
+                <default>false</default>
+                <label>Transplant Surgery - Transplant Surgery(15)</label>
+            </value>
+            <value>
+                <fullName>Urology - Pediatric Urology(21)</fullName>
+                <default>false</default>
+                <label>Urology - Pediatric Urology(21)</label>
+            </value>
+            <value>
+                <fullName>Urology - Urology(546)</fullName>
+                <default>false</default>
+                <label>Urology - Urology(546)</label>
+            </value>
+            <value>
+                <fullName>Veterinarian - Veterinarian(25)</fullName>
+                <default>false</default>
+                <label>Veterinarian - Veterinarian(25)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

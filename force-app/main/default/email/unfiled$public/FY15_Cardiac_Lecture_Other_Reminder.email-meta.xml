@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Join Us this Thursday for Heart Disease and Women: Dispelling Myths</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>FY15 - Cardiac - Lecture - Other Reminder</name>
+    <style>none</style>
+    <subject>Join Us this Thursday for Heart Disease and Women: Dispelling Myths</subject>
+    <textOnly>Orlando Health Cardiovascular Events
+
+Join Us this Thursday for Heart Disease and Women: Dispelling Myths
+
+Thank you for registering for our cardiac lecture series. If you’ve not had an opportunity to join us for one yet, we’d like to invite you to this Thursday’s (March 5) lecture, Heart Disease and Women: Dispelling Myths with Dr. Carolina Demori and Dr. Illena Antonetti. The lecture will be held at the Renaissance Senior Center (3800 South Econlockhatchee Trail, Orlando, FL 32829) from 6:00 – 7:00 pm. Please look for directional signage to help guide you in. Parking is available at the front of the center.
+
+Please remember to bring a light jacket, as the room may be a bit cold. Lastly, light refreshments will be served.
+
+To view the complete listing of lectures, visit OrlandoHealth.com/heartevents.
+
+© 2015 Orlando Health, Inc.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

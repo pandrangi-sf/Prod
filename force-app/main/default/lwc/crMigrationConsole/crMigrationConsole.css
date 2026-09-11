@@ -1,0 +1,94 @@
+/* Page-header swatch — matches the "Run Migration" tile on the Vital
+   Reports Home page (amber + standard:data_streams). */
+.page-header__title-block {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+.page-header__icon-wrap {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.page-header__icon-wrap--amber { background: #fdf1d8; }
+.page-header__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1d3557;
+    margin: 0;
+}
+
+.migration-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+/* In-flight migration progress strip — sits below the actions row while
+   migrateReportXml is running. Vanishes once the promise settles. */
+.migration-progress {
+    align-items: center;
+    background: linear-gradient(135deg, #f4f9ff 0%, #fbfdff 100%);
+    border: 1px dashed #cfdcec;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.6rem 1rem 0.9rem;
+}
+.migration-svg {
+    height: 90px;
+    max-width: 320px;
+    overflow: visible;
+    width: 100%;
+}
+
+/* The traveling glow dot moves left -> right -> left in a continuous loop.
+   `transform-box: fill-box` keeps the transform-origin local to the group so
+   the translation works the same regardless of viewport scaling. */
+.mig-traveler {
+    transform-box: fill-box;
+    animation: cr-mig-travel 1.6s ease-in-out infinite;
+}
+
+.migration-progress__text {
+    color: #486484;
+    font-size: 0.82rem;
+    margin: 0;
+}
+
+@keyframes cr-mig-travel {
+    0% {
+        transform: translateX(-66px);
+        opacity: 0.25;
+    }
+    20% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(66px);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-66px);
+        opacity: 0.25;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mig-traveler {
+        animation: none;
+    }
+}

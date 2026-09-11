@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_Activity__c</fullName>
+    <description>Checks if the Last Activity date is populated.  Used in reports to determine if a provider has activity or not.</description>
+    <formula>NOT(ISBLANK(LastActivityDate))</formula>
+    <label>Has Activity</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

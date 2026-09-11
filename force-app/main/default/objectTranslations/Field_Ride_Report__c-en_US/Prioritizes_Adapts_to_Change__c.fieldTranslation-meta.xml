@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Prioritizes and easily adapts to changes in business. --></help>
+    <label><!-- 15) Prioritizes Adapts to Change --></label>
+    <name>Prioritizes_Adapts_to_Change__c</name>
+</CustomFieldTranslation>

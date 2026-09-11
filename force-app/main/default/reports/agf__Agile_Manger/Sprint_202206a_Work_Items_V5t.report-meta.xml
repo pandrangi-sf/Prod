@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Subject__c</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Details__c</field>
+    </columns>
+    <columns>
+        <field>agf__ADM_Work__c.agf__Status__c</field>
+    </columns>
+    <description>Sprint 2022.06a work items</description>
+    <filter>
+        <criteriaItems>
+            <column>agf__ADM_Work__c.agf__Sprint_Name__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>2022.06a</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Sprint 2022.06a Work Items</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$agf__ADM_Work__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>agf__ADM_Work__c.agf__Assigned_On__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

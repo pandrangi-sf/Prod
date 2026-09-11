@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveAnalyticAssetCollection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <collectionType>static</collectionType>
+    <color>#ea001e</color>
+    <description>Alabama PRM team reports</description>
+    <folder>PRM_Alabama</folder>
+    <items>
+        <asset>Alabama_Providers_and_Targets_7GH</asset>
+        <assetType>Report</assetType>
+        <sortOrder>499</sortOrder>
+    </items>
+    <label>PRM (Alabama)</label>
+    <masterLabel>PRM (Alabama)</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>prm.brendan.murphy@orlandohealth.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+</WaveAnalyticAssetCollection>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Visit_Objection__c.Notes__c - -  free-text notes recorded with the objection. --></help>
+    <label><!-- Objection Notes --></label>
+    <name>Objection_Notes__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Request a new report from the reporting team by picking an object, fields, and filters.</description>
+    <label>Request a Report</label>
+    <lwcComponent>crReportRequest</lwcComponent>
+    <motif>Custom20: Airplane</motif>
+</CustomTab>

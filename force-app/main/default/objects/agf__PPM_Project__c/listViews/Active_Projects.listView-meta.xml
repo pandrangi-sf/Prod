@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Projects</fullName>
+    <columns>NAME</columns>
+    <columns>agf__Project_Summary__c</columns>
+    <columns>agf__Portfolio__c</columns>
+    <columns>agf__Project_Manager__c</columns>
+    <columns>agf__Project_Health__c</columns>
+    <columns>agf__Planned_Start_Date__c</columns>
+    <columns>agf__Planned_End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>agf__Project_Health__c</field>
+        <operation>notEqual</operation>
+        <value>Completed,Duplicate,Canceled - Deferred / Deprioritized,Canceled - Handled as a ticket,Canceled - No Longer Needed,Canceled,Never</value>
+    </filters>
+    <label>Active Projects</label>
+</ListView>

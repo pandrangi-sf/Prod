@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_Record_Sets</fullName>
+    <columns>Name</columns>
+    <columns>LastModifiedDate</columns>
+    <columns>LastModifiedBy</columns>
+    <columns>DuplicateRule</columns>
+    <columns>Parent</columns>
+    <columns>RecordCount</columns>
+    <columns>CreatedDate</columns>
+    <columns>CreatedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RecordCount</field>
+        <operation>lessOrEqual</operation>
+        <value>1</value>
+    </filters>
+    <label>One Record Sets</label>
+</ListView>

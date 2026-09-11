@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Network_Territories</fullName>
+    <columns>NAME</columns>
+    <columns>Owner_Name__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Territory__c.Network_Territory</value>
+    </filters>
+    <label>Network Territories</label>
+    <sharedTo>
+        <group>Network_Team</group>
+        <group>Sys_Admin</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- 1-28. Used when Frequency is Monthly (capped at 28 to avoid short months). --></help>
+    <label><!-- Day Of Month --></label>
+    <name>Day_Of_Month__c</name>
+</CustomFieldTranslation>

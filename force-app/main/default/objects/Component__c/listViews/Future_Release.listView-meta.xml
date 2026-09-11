@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Future_Release</fullName>
+    <columns>NAME</columns>
+    <columns>Component_Name__c</columns>
+    <columns>Component_Type__c</columns>
+    <columns>Notes__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>Release_Date__c</columns>
+    <columns>Work__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Release_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Future Release</label>
+</ListView>

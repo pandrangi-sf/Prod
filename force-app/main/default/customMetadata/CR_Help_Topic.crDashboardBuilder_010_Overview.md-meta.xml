@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Dashboard Builder — Overview</label>
+    <protected>false</protected>
+    <values>
+        <field>Audience__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Body__c</field>
+        <value xsi:type="xsd:string">&lt;p&gt;Dashboard Builder is where you assemble custom dashboards out of saved reports plus standalone widgets (text, image, Lightning component). Drag tiles onto a 12-column canvas, configure how each one renders, and save. Viewers see the same layout in Dashboard Viewer.&lt;/p&gt;&lt;p&gt;Each tile is a &lt;strong&gt;Dashboard Component&lt;/strong&gt; record bound to a single source — a saved Report Definition for charts/tables, or a standalone configuration for text/image/LWC tiles.&lt;/p&gt;</value>
+    </values>
+    <values>
+        <field>Heading__c</field>
+        <value xsi:type="xsd:string">What is Dashboard Builder?</value>
+    </values>
+    <values>
+        <field>Icon_Name__c</field>
+        <value xsi:type="xsd:string">utility:dashboard_ext</value>
+    </values>
+    <values>
+        <field>Section_Order__c</field>
+        <value xsi:type="xsd:double">10.0</value>
+    </values>
+    <values>
+        <field>Tool_Key__c</field>
+        <value xsi:type="xsd:string">crDashboardBuilder</value>
+    </values>
+</CustomMetadata>

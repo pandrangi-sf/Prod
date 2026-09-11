@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- TaskWhoRelation.RelationId. The Contact attached to this row (not necessarily the Task primary). --></help>
+    <label><!-- Provider ID --></label>
+    <name>Provider_Id__c</name>
+</CustomFieldTranslation>

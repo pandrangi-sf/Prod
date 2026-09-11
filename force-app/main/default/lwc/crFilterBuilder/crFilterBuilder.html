@@ -1,0 +1,175 @@
+<template>
+    <div class="filter-builder">
+        <div class="slds-grid slds-grid_align-spread slds-m-bottom_x-small">
+            <h3 class="slds-text-heading_small">Filters</h3>
+        </div>
+
+        <template if:true={loadError}>
+            <div class="slds-text-color_error slds-m-bottom_x-small">{loadError}</div>
+        </template>
+
+        <div class="filter-layout">
+            <aside class="field-palette">
+                <p class="slds-text-title_caps slds-text-color_weak slds-m-bottom_xx-small">Available fields</p>
+                <lightning-input
+                    type="search"
+                    label="Search fields"
+                    variant="label-hidden"
+                    placeholder="Search fields…"
+                    value={fieldSearchTerm}
+                    oninput={handleFieldSearchChange}
+                    onchange={handleFieldSearchChange}>
+                </lightning-input>
+                <p class="slds-text-body_small slds-text-color_weak slds-m-top_xx-small slds-m-bottom_x-small">{fieldCountLabel}</p>
+
+                <div class="field-list">
+                    <template if:true={hasVisibleFieldChoices}>
+                        <ul class="field-choice-list">
+                            <template for:each={visibleFieldChoices} for:item="choice">
+                                <li key={choice.value}>
+                                    <button class={choice.cssClass}
+                                        type="button"
+                                        data-field={choice.value}
+                                        onclick={handleFieldChoiceClick}
+                                        title={choice.primaryLabel}>
+                                        <span class="field-choice__label slds-truncate">{choice.primaryLabel}</span>
+                                        <span class="field-choice__meta slds-truncate">{choice.metaLine}</span>
+                                    </button>
+                                </li>
+                            </template>
+                        </ul>
+                        <template if:true={hasMoreFieldChoices}>
+                            <p class="slds-text-body_small slds-text-color_weak slds-p-around_x-small">{moreFieldChoicesLabel}</p>
+                        </template>
+                    </template>
+                    <template if:false={hasVisibleFieldChoices}>
+                        <p class="slds-text-color_weak slds-text-body_small slds-p-around_small">{fieldChoiceEmptyLabel}</p>
+                    </template>
+                </div>
+            </aside>
+
+            <section class="filter-canvas">
+                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-m-bottom_x-small">
+                    <p class="slds-text-title_caps slds-text-color_weak">Active filters</p>
+                    <lightning-button
+                        label="Add Empty Row"
+                        icon-name="utility:add"
+                        variant="neutral"
+                        onclick={addFilter}
+                        disabled={addDisabled}>
+                    </lightning-button>
+                </div>
+
+                <template if:true={hasFilters}>
+                    <template for:each={filters} for:item="row">
+                        <div key={row.id} class="filter-card">
+                            <div class="filter-card__header">
+                                <span class="filter-card__index">{row.displayIndex}</span>
+                                <lightning-combobox
+                                    class="filter-card__field"
+                                    variant="label-hidden"
+                                    placeholder="Pick a field"
+                                    options={filteredFieldOptions}
+                                    value={row.field}
+                                    data-id={row.id}
+                                    onchange={handleFieldChange}>
+                                </lightning-combobox>
+                                <lightning-button-icon icon-name="utility:delete"
+                                    variant="bare"
+                                    alternative-text="Remove filter"
+                                    data-id={row.id}
+                                    onclick={removeFilter}>
+                                </lightning-button-icon>
+                            </div>
+                            <div class="filter-card__body slds-grid slds-gutters_x-small slds-grid_vertical-align-end">
+                                <div class="slds-col slds-size_5-of-12">
+                                    <lightning-combobox
+                                        label="Operator"
+                                        placeholder="Pick an operator"
+                                        options={row.operatorOptions}
+                                        value={row.operator}
+                                        disabled={row.operatorDisabled}
+                                        data-id={row.id}
+                                        onchange={handleOperatorChange}>
+                                    </lightning-combobox>
+                                </div>
+                                <div class="slds-col slds-size_7-of-12">
+                                    <template if:true={row.showValue}>
+                                        <template if:true={row.isDate}>
+                                            <lightning-input type="date" label="Value"
+                                                value={row.value} data-id={row.id} onchange={handleValueChange}>
+                                            </lightning-input>
+                                        </template>
+                                        <template if:true={row.isDatetime}>
+                                            <lightning-input type="datetime" label="Value"
+                                                value={row.value} data-id={row.id} onchange={handleValueChange}>
+                                            </lightning-input>
+                                        </template>
+                                        <template if:true={row.isNumber}>
+                                            <lightning-input type="number" label="Value"
+                                                value={row.value} data-id={row.id} onchange={handleValueChange}>
+                                            </lightning-input>
+                                        </template>
+                                        <template if:true={row.isPicklist}>
+                                            <lightning-combobox label="Value"
+                                                placeholder="Pick a value"
+                                                options={row.valueOptions} value={row.value}
+                                                data-id={row.id} onchange={handleValueChange}>
+                                            </lightning-combobox>
+                                        </template>
+                                        <template if:true={row.isMultiPicklist}>
+                                            <lightning-input type="text" label="Values (comma-separated)"
+                                                placeholder="value1, value2"
+                                                value={row.value} data-id={row.id} onchange={handleValueChange}>
+                                            </lightning-input>
+                                        </template>
+                                        <template if:true={row.isBoolean}>
+                                            <lightning-combobox label="Value"
+                                                options={booleanOptions} value={row.value}
+                                                data-id={row.id} onchange={handleValueChange}>
+                                            </lightning-combobox>
+                                        </template>
+                                        <template if:true={row.isText}>
+                                            <lightning-input type="text" label="Value"
+                                                placeholder={row.valuePlaceholder}
+                                                value={row.value} data-id={row.id} onchange={handleValueChange}>
+                                            </lightning-input>
+                                        </template>
+                                    </template>
+                                    <template if:false={row.showValue}>
+                                        <p class="slds-text-body_small slds-text-color_weak slds-p-top_x-small">No value needed for this operator.</p>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div class="slds-m-top_small">
+                        <lightning-radio-group
+                            label="Combine rows with"
+                            type="button"
+                            variant="label-inline"
+                            options={logicOptions}
+                            value={filterLogic}
+                            onchange={handleLogicChange}>
+                        </lightning-radio-group>
+                    </div>
+                </template>
+
+                <template if:false={hasFilters}>
+                    <div class="filter-empty">
+                        <p class="slds-text-color_weak">No filters yet.</p>
+                        <p class="slds-text-body_small slds-text-color_weak">Click any field on the left to add it as a filter.</p>
+                    </div>
+                </template>
+            </section>
+        </div>
+
+        <details class="slds-m-top_small advanced-json">
+            <summary class="slds-text-title_caps slds-text-color_weak">Advanced (JSON)</summary>
+            <lightning-textarea label="Filters JSON" variant="label-hidden"
+                value={jsonOutput} readonly class="slds-m-top_x-small">
+            </lightning-textarea>
+        </details>
+    </div>
+</template>

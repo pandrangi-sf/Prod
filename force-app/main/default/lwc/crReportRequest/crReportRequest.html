@@ -1,0 +1,114 @@
+<template>
+    <div class="slds-p-around_medium">
+        <c-cr-page-header
+            icon-name="standard:question_feed"
+            tone="purple"
+            eyebrow="Vital Reports"
+            title="Request a Report"
+            subtitle="Tell the reporting team what you need — pick the data, the fields, and describe any filters. They'll be notified and will build it for you.">
+        </c-cr-page-header>
+
+        <div class="slds-grid slds-gutters slds-wrap">
+            <!-- Request form -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12">
+                <lightning-card title="New request">
+                    <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                        <p class="rr-step-label">1. Pick the object &amp; fields</p>
+                        <p class="slds-text-body_small slds-text-color_weak slds-m-bottom_x-small">
+                            Search any reportable object — standard or custom — and choose the fields you need.
+                            (The list reflects objects an admin has made reportable.)
+                        </p>
+                        <c-cr-object-field-selector
+                            ondatasetchange={handleFieldsChange}>
+                        </c-cr-object-field-selector>
+
+                        <template if:true={objectButNoFields}>
+                            <p class="slds-text-color_weak slds-text-body_small slds-m-top_x-small">
+                                Select at least one field to continue.
+                            </p>
+                        </template>
+
+                        <template if:true={hasFields}>
+                            <p class="rr-step-label slds-m-top_small">2. Details</p>
+                            <lightning-input
+                                label="Proposed report title"
+                                data-field="reportTitle"
+                                value={reportTitle}
+                                onchange={handleField}>
+                            </lightning-input>
+                            <lightning-textarea
+                                label="Filters / criteria you need"
+                                field-level-help="Describe the conditions (e.g. 'only Florida, last 90 days, status = Open'). An admin will translate these into report filters."
+                                data-field="filterNote"
+                                value={filterNote}
+                                onchange={handleField}
+                                class="slds-m-top_x-small">
+                            </lightning-textarea>
+                            <lightning-textarea
+                                label="Description / business justification"
+                                data-field="description"
+                                value={description}
+                                onchange={handleField}
+                                class="slds-m-top_x-small">
+                            </lightning-textarea>
+                            <lightning-combobox
+                                label="Priority"
+                                data-field="priority"
+                                value={priority}
+                                options={priorityOptions}
+                                onchange={handleField}
+                                class="slds-m-top_x-small">
+                            </lightning-combobox>
+
+                            <div class="slds-m-top_medium">
+                                <lightning-button
+                                    label="Submit request"
+                                    variant="brand"
+                                    icon-name="utility:send"
+                                    onclick={handleSubmit}
+                                    disabled={busy}>
+                                </lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-card>
+            </div>
+
+            <!-- My requests -->
+            <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+                <lightning-card title="My requests" icon-name="utility:list">
+                    <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                        <template if:true={hasRequests}>
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th scope="col"><div class="slds-truncate">Request</div></th>
+                                        <th scope="col"><div class="slds-truncate">Object</div></th>
+                                        <th scope="col"><div class="slds-truncate">Status</div></th>
+                                        <th scope="col"><div class="slds-truncate">Report</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={myRequests} for:item="r">
+                                        <tr key={r.id}>
+                                            <td><div class="slds-truncate" title={r.reportTitle}>{r.name}</div></td>
+                                            <td><div class="slds-truncate" title={r.requestedObject}>{r.requestedObject}</div></td>
+                                            <td><c-cr-status-badge label={r.status} tone={r.tone} dot></c-cr-status-badge></td>
+                                            <td><div class="slds-truncate">{r.resultingReportName}</div></td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>
+                        <template if:false={hasRequests}>
+                            <c-cr-empty-state
+                                headline="No requests yet"
+                                body="Submit a request on the left and it'll appear here with its status.">
+                            </c-cr-empty-state>
+                        </template>
+                    </div>
+                </lightning-card>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Agile Accelerator</label>
+    <mutingPermissionSets>Agile_Accelerator_Muted</mutingPermissionSets>
+    <permissionSets>App_PRM_Agile_App</permissionSets>
+    <permissionSets>agf__Agile_Accelerator_User</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

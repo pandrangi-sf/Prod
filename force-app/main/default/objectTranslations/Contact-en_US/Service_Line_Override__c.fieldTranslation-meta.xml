@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Service Line Override --></label>
+    <name>Service_Line_Override__c</name>
+    <picklistValues>
+        <masterLabel>ACHD</masterLabel>
+        <translation><!-- ACHD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bariatrics</masterLabel>
+        <translation><!-- Bariatrics --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blood and Marrow Transplant</masterLabel>
+        <translation><!-- Blood and Marrow Transplant --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bone Marrow Transplant and Cellular Therapy</masterLabel>
+        <translation><!-- Bone Marrow Transplant and Cellular Therapy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burn Surgery</masterLabel>
+        <translation><!-- Burn Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cardiology</masterLabel>
+        <translation><!-- Cardiology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cardiothoracic Surgery</masterLabel>
+        <translation><!-- Cardiothoracic Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colon and Rectal Surgery</masterLabel>
+        <translation><!-- Colon and Rectal Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Developmental and Behavioral Pediatrics</masterLabel>
+        <translation><!-- Developmental and Behavioral Pediatrics --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Emergency Medicine</masterLabel>
+        <translation><!-- Emergency Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Endocrinology</masterLabel>
+        <translation><!-- Endocrinology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Endoscopy</masterLabel>
+        <translation><!-- Endoscopy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Family Medicine</masterLabel>
+        <translation><!-- Family Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gastroenterology</masterLabel>
+        <translation><!-- Gastroenterology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General Surgery</masterLabel>
+        <translation><!-- General Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gynecology</masterLabel>
+        <translation><!-- Gynecology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Infectious Diseases</masterLabel>
+        <translation><!-- Infectious Diseases --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Medicine</masterLabel>
+        <translation><!-- Internal Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maternal and Fetal Medicine</masterLabel>
+        <translation><!-- Maternal and Fetal Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multidisciplinary</masterLabel>
+        <translation><!-- Multidisciplinary --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neurology</masterLabel>
+        <translation><!-- Neurology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Neurosurgery</masterLabel>
+        <translation><!-- Neurosurgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nutrition</masterLabel>
+        <translation><!-- Nutrition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Obstetrics and Gynecology</masterLabel>
+        <translation><!-- Obstetrics and Gynecology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Occupational Therapy</masterLabel>
+        <translation><!-- Occupational Therapy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oncology</masterLabel>
+        <translation><!-- Oncology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orthopaedic Surgery</masterLabel>
+        <translation><!-- Orthopaedic Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Otolaryngology</masterLabel>
+        <translation><!-- Otolaryngology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pain Medicine</masterLabel>
+        <translation><!-- Pain Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palliative Medicine</masterLabel>
+        <translation><!-- Palliative Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Allergy and Immunology</masterLabel>
+        <translation><!-- Pediatric Allergy and Immunology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Anesthesia</masterLabel>
+        <translation><!-- Pediatric Anesthesia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Behavioral Health and Developmental</masterLabel>
+        <translation><!-- Pediatric Behavioral Health and Developmental --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Bone Marrow Transplant and Cellular Therapy</masterLabel>
+        <translation><!-- Pediatric Bone Marrow Transplant and Cellular Therapy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Cardiac and Thoracic Surgery</masterLabel>
+        <translation><!-- Pediatric Cardiac and Thoracic Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Cardiology</masterLabel>
+        <translation><!-- Pediatric Cardiology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Cardiology Interventional</masterLabel>
+        <translation><!-- Pediatric Cardiology Interventional --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Child Protection Team</masterLabel>
+        <translation><!-- Pediatric Child Protection Team --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Complex Care</masterLabel>
+        <translation><!-- Pediatric Complex Care --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Craniomaxillofacial Surgery</masterLabel>
+        <translation><!-- Pediatric Craniomaxillofacial Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Critical Care</masterLabel>
+        <translation><!-- Pediatric Critical Care --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Dermatology</masterLabel>
+        <translation><!-- Pediatric Dermatology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Endocrinology</masterLabel>
+        <translation><!-- Pediatric Endocrinology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Gastroenterology</masterLabel>
+        <translation><!-- Pediatric Gastroenterology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric General Surgery</masterLabel>
+        <translation><!-- Pediatric General Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Genetics</masterLabel>
+        <translation><!-- Pediatric Genetics --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Hematology-Oncology</masterLabel>
+        <translation><!-- Pediatric Hematology-Oncology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Hematology-Oncology (BMT)</masterLabel>
+        <translation><!-- Pediatric Hematology-Oncology (BMT) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Hospitalists</masterLabel>
+        <translation><!-- Pediatric Hospitalists --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Infectious Disease</masterLabel>
+        <translation><!-- Pediatric Infectious Disease --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Nephrology</masterLabel>
+        <translation><!-- Pediatric Nephrology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Neurology</masterLabel>
+        <translation><!-- Pediatric Neurology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Neuropsychology</masterLabel>
+        <translation><!-- Pediatric Neuropsychology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Neurosurgery</masterLabel>
+        <translation><!-- Pediatric Neurosurgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Occupational Health</masterLabel>
+        <translation><!-- Pediatric Occupational Health --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Oncology</masterLabel>
+        <translation><!-- Pediatric Oncology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Ophthalmology</masterLabel>
+        <translation><!-- Pediatric Ophthalmology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Orthopaedic Surgery</masterLabel>
+        <translation><!-- Pediatric Orthopaedic Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Otolaryngology</masterLabel>
+        <translation><!-- Pediatric Otolaryngology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Palliative Medicine</masterLabel>
+        <translation><!-- Pediatric Palliative Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Physiatry</masterLabel>
+        <translation><!-- Pediatric Physiatry --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Physical Medicine and Rehabilitation</masterLabel>
+        <translation><!-- Pediatric Physical Medicine and Rehabilitation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Psychiatry</masterLabel>
+        <translation><!-- Pediatric Psychiatry --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Psychology</masterLabel>
+        <translation><!-- Pediatric Psychology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Pulmonology</masterLabel>
+        <translation><!-- Pediatric Pulmonology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Radiology</masterLabel>
+        <translation><!-- Pediatric Radiology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Residency</masterLabel>
+        <translation><!-- Pediatric Residency --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Rheumatology</masterLabel>
+        <translation><!-- Pediatric Rheumatology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Sports Medicine</masterLabel>
+        <translation><!-- Pediatric Sports Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric Urology</masterLabel>
+        <translation><!-- Pediatric Urology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric and Adolescent Gynecology</masterLabel>
+        <translation><!-- Pediatric and Adolescent Gynecology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatric and Adolescent Medicine</masterLabel>
+        <translation><!-- Pediatric and Adolescent Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pediatrics</masterLabel>
+        <translation><!-- Pediatrics --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Medicine and Rehabilitation</masterLabel>
+        <translation><!-- Physical Medicine and Rehabilitation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Physical Therapy</masterLabel>
+        <translation><!-- Physical Therapy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Plastic Surgery</masterLabel>
+        <translation><!-- Plastic Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Podiatry</masterLabel>
+        <translation><!-- Podiatry --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Post-Trauma Therapy and Support</masterLabel>
+        <translation><!-- Post-Trauma Therapy and Support --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Psychology</masterLabel>
+        <translation><!-- Psychology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pulmonology</masterLabel>
+        <translation><!-- Pulmonology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Radiation Oncology</masterLabel>
+        <translation><!-- Radiation Oncology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Speech Therapy</masterLabel>
+        <translation><!-- Speech Therapy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sports Medicine</masterLabel>
+        <translation><!-- Sports Medicine --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Surgical Oncology</masterLabel>
+        <translation><!-- Surgical Oncology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urogynecology</masterLabel>
+        <translation><!-- Urogynecology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urology</masterLabel>
+        <translation><!-- Urology --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vascular Surgery</masterLabel>
+        <translation><!-- Vascular Surgery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wound Care</masterLabel>
+        <translation><!-- Wound Care --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
