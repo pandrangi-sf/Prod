@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Visit Summary feature - complete component list.
+
+    Deploy with:
+      sf project deploy start --manifest manifest/providerVisitSummary-package.xml --target-org <alias>
+
+    No FlexiPage: the tab is placed in App Builder by hand, so no existing page
+    layout metadata is touched by this feature.
+-->
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ProviderVisitSummaryController</members>
+        <members>ProviderVisitSummaryControllerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>providerVisitSummary</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Provider_Visit_Summary</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>62.0</version>
+</Package>
