@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Objection Summary feature - complete component list.
+
+    Outbound change sets cannot be created through the Metadata API or the sf CLI;
+    they are a Setup-only artefact. Use this manifest either as the checklist when
+    adding components to the change set by hand, or to deploy the feature directly:
+
+      sf project deploy start --manifest manifest/providerObjectionSummary-package.xml --target-org <alias>
+
+    The FlexiPage is deliberately absent: the tab is placed in App Builder by hand,
+    so no existing page layout metadata is touched by this feature.
+-->
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ProviderObjectionSummaryController</members>
+        <members>ProviderObjectionSummaryControllerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>providerObjectionSummary</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Provider_Objection_Summary</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>62.0</version>
+</Package>
