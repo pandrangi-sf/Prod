@@ -1,0 +1,169 @@
+<template>
+    <lightning-card title="Visit Type Month Comparison" icon-name="standard:multi_select_checkbox">
+        <div class="slds-var-p-horizontal_medium slds-var-p-bottom_small">
+            <!-- Month pickers -->
+            <div class="slds-grid slds-wrap slds-gutters_x-small">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-combobox
+                        label="Month A"
+                        placeholder="Select a month"
+                        options={monthOptions}
+                        value={monthA}
+                        onchange={handleMonthAChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-combobox
+                        label="Month B"
+                        placeholder="Select a month"
+                        options={monthOptions}
+                        value={monthB}
+                        onchange={handleMonthBChange}>
+                    </lightning-combobox>
+                </div>
+            </div>
+        </div>
+
+        <template lwc:if={onlyOneMonthExists}>
+            <div class="slds-var-p-horizontal_medium slds-var-p-bottom_small">
+                <div class="slds-box slds-theme_info slds-text-body_small">
+                    Only one upload month exists so far, so there is nothing to compare yet.
+                </div>
+            </div>
+        </template>
+
+        <template lwc:if={sameMonthChosen}>
+            <div class="slds-var-p-horizontal_medium slds-var-p-bottom_small">
+                <div class="slds-box slds-theme_warning slds-text-body_small">
+                    Month A and Month B are the same. Pick two different months to compare.
+                </div>
+            </div>
+        </template>
+
+        <template lwc:if={bothMonthsChosen}>
+            <!-- Summary -->
+            <div class="slds-var-p-horizontal_medium slds-var-p-bottom_small">
+                <div class="slds-box slds-var-p-around_small">
+                    <div class="slds-text-title_caps slds-var-m-bottom_x-small">Summary</div>
+                    <table class="slds-table slds-table_bordered slds-table_fixed-layout">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col"><div class="slds-truncate">Measure</div></th>
+                                <th scope="col"><div class="slds-truncate">{monthA}</div></th>
+                                <th scope="col"><div class="slds-truncate">{monthB}</div></th>
+                                <th scope="col"><div class="slds-truncate">{deltaLabel}</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><div class="slds-truncate">Total visit types</div></th>
+                                <td><div class="slds-truncate">{statsA.total}</div></td>
+                                <td><div class="slds-truncate">{statsB.total}</div></td>
+                                <td><div class="slds-truncate">{deltaTotal}</div></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><div class="slds-truncate">In report (Y)</div></th>
+                                <td><div class="slds-truncate">{statsA.yes}</div></td>
+                                <td><div class="slds-truncate">{statsB.yes}</div></td>
+                                <td><div class="slds-truncate">{deltaYes}</div></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><div class="slds-truncate">Not in report (N)</div></th>
+                                <td><div class="slds-truncate">{statsA.no}</div></td>
+                                <td><div class="slds-truncate">{statsB.no}</div></td>
+                                <td><div class="slds-truncate">{deltaNo}</div></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><div class="slds-truncate">Y rate</div></th>
+                                <td><div class="slds-truncate">{statsA.rate}</div></td>
+                                <td><div class="slds-truncate">{statsB.rate}</div></td>
+                                <td><div class="slds-truncate">-</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="slds-text-body_small slds-text-color_weak slds-var-m-top_x-small">
+                        Each visit type carries one upload month, so the two lists below never
+                        overlap: Month B is the set of visit types that first appeared that month.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Side-by-side lists -->
+            <div class="slds-var-p-horizontal_medium slds-var-p-bottom_medium">
+                <div class="slds-grid slds-wrap slds-gutters_x-small">
+                    <!-- Month A -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <div class="slds-text-title_bold slds-var-m-bottom_xx-small">{monthA}</div>
+                        <div class="slds-text-body_small slds-text-color_weak slds-var-m-bottom_x-small">
+                            {pageLabelA}
+                        </div>
+                        <template lwc:if={showPagerA}>
+                            <lightning-button-group class="slds-var-m-bottom_x-small">
+                                <lightning-button
+                                    label="Previous"
+                                    disabled={isFirstPageA}
+                                    onclick={handlePrevA}>
+                                </lightning-button>
+                                <lightning-button
+                                    label="Next"
+                                    disabled={isLastPageA}
+                                    onclick={handleNextA}>
+                                </lightning-button>
+                            </lightning-button-group>
+                        </template>
+                        <div class="slds-is-relative">
+                            <template lwc:if={loadingA}>
+                                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                            </template>
+                            <template lwc:if={hasRecordsA}>
+                                <lightning-datatable
+                                    key-field="Id"
+                                    data={pagedA}
+                                    columns={columns}
+                                    hide-checkbox-column
+                                    show-row-number-column>
+                                </lightning-datatable>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Month B -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <div class="slds-text-title_bold slds-var-m-bottom_xx-small">{monthB}</div>
+                        <div class="slds-text-body_small slds-text-color_weak slds-var-m-bottom_x-small">
+                            {pageLabelB}
+                        </div>
+                        <template lwc:if={showPagerB}>
+                            <lightning-button-group class="slds-var-m-bottom_x-small">
+                                <lightning-button
+                                    label="Previous"
+                                    disabled={isFirstPageB}
+                                    onclick={handlePrevB}>
+                                </lightning-button>
+                                <lightning-button
+                                    label="Next"
+                                    disabled={isLastPageB}
+                                    onclick={handleNextB}>
+                                </lightning-button>
+                            </lightning-button-group>
+                        </template>
+                        <div class="slds-is-relative">
+                            <template lwc:if={loadingB}>
+                                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                            </template>
+                            <template lwc:if={hasRecordsB}>
+                                <lightning-datatable
+                                    key-field="Id"
+                                    data={pagedB}
+                                    columns={columns}
+                                    hide-checkbox-column
+                                    show-row-number-column>
+                                </lightning-datatable>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>
