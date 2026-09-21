@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Visit Summary</masterLabel>
+    <description>Visit Reports logged against a provider, one row per visit report, with purpose breakdown and filters.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Contact</object>
+            </objects>
+            <property name="monthsBack" type="Integer" default="0"
+                      label="Default date window (months)"
+                      description="Rolling window applied on load. 0 means all time, which is the default because most Florida visit history predates the 2025 Visit Report cutover."/>
+            <property name="rowLimit" type="Integer" default="500"
+                      label="Row limit"
+                      description="Maximum visits to load. Capped at 2000 by the controller."/>
+            <property name="showNotes" type="Boolean" default="true"
+                      label="Show notes column"
+                      description="Uncheck to hide visit notes from the table."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

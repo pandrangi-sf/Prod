@@ -28,6 +28,16 @@ const PIVOT_NUMERIC_TYPES = new Set(['CURRENCY', 'DOUBLE', 'INTEGER', 'LONG', 'P
 const EXPORT_QUEUE_LIMIT = 10;
 const EXPORT_POLL_INTERVAL_MS = 4000;
 const EXPORT_POLL_MAX_ATTEMPTS = 12;
+// Client-side (Excel/PDF) exports page the full filtered result set rather than
+// exporting whatever happens to be on screen. CR_QueryEngine.MAX_PAGE_SIZE is
+// 2000, so ask for that much per round trip; the 500 ceiling in
+// effectivePageSize is a grid-rendering limit and does not apply here.
+const EXPORT_FETCH_PAGE_SIZE = 2000;
+// Ceiling on a client-side export. The xlsx writer builds the whole sheet in
+// memory and blocks the tab while it does, so stop and warn rather than hang.
+const EXPORT_FETCH_MAX_ROWS = 50000;
+// Belt-and-braces against a cursor that never clears.
+const EXPORT_FETCH_MAX_PAGES = 100;
 
 export default class CrReportViewer extends NavigationMixin(LightningElement) {
     @api defaultReportId;
@@ -246,12 +256,96 @@ export default class CrReportViewer extends NavigationMixin(LightningElement) {
     get exportBusy() {
         return this._exporting;
     }
+    // Set by fetchAllRowsForExport when it stops at a cap with rows still
+    // outstanding, so the user is told the file is partial.
+    _exportTruncated = false;
+
+    // Pull the ENTIRE filtered result set for a client-side export.
+    //
+    // visibleResult only ever holds the current page: runWithToken REPLACES
+    // chartResult.rows on every page load rather than accumulating, so
+    // exporting it yielded at most one page (default 100 rows, 500 ceiling)
+    // however many rows the query actually matched.
+    //
+    // Paging here through buildCombinedFiltersJson() — the same payload the
+    // grid queries with — means quick filters (relative/custom date, my
+    // records, active only), interactive column filters and inbound dashboard
+    // filters all apply to the export exactly as they do on screen.
+    //
+    // Nothing on screen is mutated: rows accumulate locally and chartResult,
+    // columns and nextPageToken are left alone, so the grid does not jump to
+    // the last page while the export runs.
+    async fetchAllRowsForExport() {
+        this._exportTruncated = false;
+
+        // A Top N quick filter is an explicit "just the first N rows" request.
+        // Paging past it would contradict what the user asked for, and
+        // effectivePageSize has already applied it to the loaded page.
+        if (this._quickTopN) {
+            return this.visibleResult;
+        }
+
+        const filtersJson = this.buildCombinedFiltersJson();
+        // Match the on-screen ordering when a server-side sort is active.
+        // Aggregate results come back whole and sort client-side.
+        const useSort = this._serverSorted && !!this.resultSortKey && !this._aggregateResult;
+
+        let token = null;
+        let columns = null;
+        let pages = 0;
+        const rows = [];
+
+        do {
+            const page = useSort
+                ? await runReportByIdSorted({
+                      reportDefinitionId: this.selectedReportId,
+                      pageToken: token,
+                      pageSize: EXPORT_FETCH_PAGE_SIZE,
+                      dashboardFiltersJson: filtersJson,
+                      sortField: this.resultSortKey,
+                      sortDir: this.resultSortDir
+                  })
+                : await runReportById({
+                      reportDefinitionId: this.selectedReportId,
+                      pageToken: token,
+                      pageSize: EXPORT_FETCH_PAGE_SIZE,
+                      dashboardFiltersJson: filtersJson
+                  });
+
+            if (!columns) {
+                columns = page.columns || [];
+            }
+            rows.push(...(page.rows || []));
+            token = page.nextPageToken;
+            pages += 1;
+        } while (token && rows.length < EXPORT_FETCH_MAX_ROWS && pages < EXPORT_FETCH_MAX_PAGES);
+
+        // Rows remained but we stopped at a cap — the file is incomplete.
+        this._exportTruncated = !!token;
+
+        // Strip the hidden Id columns exactly as visibleResult does, so the
+        // exported sheet has the same shape as the grid.
+        const hidden = this._hiddenIdKeys;
+        return {
+            columns: (columns || []).filter((c) => !hidden.has(c.key)),
+            rows
+        };
+    }
 
     async handleExportExcel() {
         if (this._exporting) return;
         this._exporting = true;
         try {
-            await exportToExcel(this, this.visibleResult, `${this.exportFileBase}.xlsx`);
+            const fullResult = await this.fetchAllRowsForExport();
+            await exportToExcel(this, fullResult, `${this.exportFileBase}.xlsx`);
+            if (this._exportTruncated) {
+                this.dispatchEvent(new ShowToastEvent({
+                    title: 'Export truncated',
+                    message: `This report matched more than ${EXPORT_FETCH_MAX_ROWS.toLocaleString()} rows. The file holds the first ${fullResult.rows.length.toLocaleString()} — use the Export button above for the complete set.`,
+                    variant: 'warning',
+                    mode: 'sticky'
+                }));
+            }
         } catch (e) {
             this.dispatchEvent(new ShowToastEvent({
                 title: 'Excel export failed',

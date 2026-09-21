@@ -1,13 +1,27 @@
 <template>
     <lightning-card title="Monthly Visit Type Review" icon-name="standard:visit_templates">
         <div class="slds-var-p-horizontal_medium slds-var-p-bottom_small">
-            <lightning-combobox
-                label="Upload Month"
-                placeholder="Select a month"
-                options={monthOptions}
-                value={selectedMonth}
-                onchange={handleMonthChange}>
-            </lightning-combobox>
+            <div class="slds-grid slds-wrap slds-gutters_x-small">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <lightning-combobox
+                        label="Upload Month"
+                        placeholder="Select a month"
+                        options={monthOptions}
+                        value={selectedMonth}
+                        onchange={handleMonthChange}>
+                    </lightning-combobox>
+                </div>
+                <template lwc:if={hasMonth}>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-combobox
+                            label="PRM Report"
+                            options={prmFilterOptions}
+                            value={prmFilter}
+                            onchange={handlePrmFilterChange}>
+                        </lightning-combobox>
+                    </div>
+                </template>
+            </div>
         </div>
 
         <template lwc:if={hasMonth}>
@@ -43,16 +57,45 @@
                     </div>
                 </template>
 
+                <!-- Pager -->
+                <template lwc:if={showPager}>
+                    <div class="slds-grid slds-grid_vertical-align-center slds-wrap slds-var-m-bottom_x-small">
+                        <lightning-button-group class="slds-var-m-right_small">
+                            <lightning-button
+                                label="First"
+                                disabled={isFirstPage}
+                                onclick={handleFirstPage}>
+                            </lightning-button>
+                            <lightning-button
+                                label="Previous"
+                                disabled={isFirstPage}
+                                onclick={handlePreviousPage}>
+                            </lightning-button>
+                            <lightning-button
+                                label="Next"
+                                disabled={isLastPage}
+                                onclick={handleNextPage}>
+                            </lightning-button>
+                            <lightning-button
+                                label="Last"
+                                disabled={isLastPage}
+                                onclick={handleLastPage}>
+                            </lightning-button>
+                        </lightning-button-group>
+                        <span class="slds-text-body_small slds-text-color_weak">{pageLabel}</span>
+                    </div>
+                </template>
+
                 <!-- Table + spinner -->
                 <div class="slds-is-relative">
                     <template lwc:if={isLoading}>
                         <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
                     </template>
 
-                    <template lwc:if={hasRecords}>
+                    <template lwc:if={hasVisibleRecords}>
                         <lightning-datatable
                             key-field="Id"
-                            data={records}
+                            data={pagedRecords}
                             columns={columns}
                             show-row-number-column
                             selected-rows={selectedIds}
@@ -63,11 +106,30 @@
                     <template lwc:if={showEmptyState}>
                         <div class="slds-illustration slds-illustration_small slds-var-p-around_large slds-text-align_center">
                             <p class="slds-text-body_regular slds-text-color_weak">
-                                No New Patient Visit Type records found for {selectedMonth}.
+                                {emptyStateMessage}
                             </p>
                         </div>
                     </template>
                 </div>
+
+                <!-- Bottom pager, so you don't have to scroll back up -->
+                <template lwc:if={showPager}>
+                    <div class="slds-grid slds-grid_vertical-align-center slds-wrap slds-var-m-vertical_small">
+                        <lightning-button-group class="slds-var-m-right_small">
+                            <lightning-button
+                                label="Previous"
+                                disabled={isFirstPage}
+                                onclick={handlePreviousPage}>
+                            </lightning-button>
+                            <lightning-button
+                                label="Next"
+                                disabled={isLastPage}
+                                onclick={handleNextPage}>
+                            </lightning-button>
+                        </lightning-button-group>
+                        <span class="slds-text-body_small slds-text-color_weak">{pageLabel}</span>
+                    </div>
+                </template>
             </div>
         </template>
     </lightning-card>

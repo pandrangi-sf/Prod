@@ -1,0 +1,186 @@
+<template>
+    <lightning-card title="Visit Summary" icon-name="standard:events">
+        <lightning-button
+            slot="actions"
+            label="Refresh"
+            icon-name="utility:refresh"
+            variant="neutral"
+            onclick={handleRefresh}
+            disabled={loading}>
+        </lightning-button>
+
+        <div class="slds-var-p-horizontal_medium slds-is-relative">
+            <template lwc:if={loading}>
+                <lightning-spinner alternative-text="Loading visits" size="small"></lightning-spinner>
+            </template>
+
+            <!-- Inline, not a toast: a toast vanishes before it can be read. -->
+            <template lwc:if={error}>
+                <div class="slds-scoped-notification slds-media slds-media_center slds-theme_error slds-var-m-bottom_small"
+                     role="alert">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="utility:error" variant="inverse" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body"><p>{error}</p></div>
+                </div>
+            </template>
+
+            <template lwc:if={summary}>
+                <!-- Tiles -->
+                <div class="slds-grid slds-wrap slds-gutters_x-small slds-var-m-bottom_small">
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_large">{totalCount}</div>
+                            <div class="slds-text-body_small slds-text-color_weak">Total visits</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_large">{last12Count}</div>
+                            <div class="slds-text-body_small slds-text-color_weak">Last 12 months</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_large">{purposeCount}</div>
+                            <div class="slds-text-body_small slds-text-color_weak">Distinct purposes</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_small">
+                                <lightning-formatted-text value={mostRecentLabel}></lightning-formatted-text>
+                            </div>
+                            <div class="slds-text-body_small slds-text-color_weak">Most recent {mostRecentBy}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Purpose breakdown -->
+                <template lwc:if={hasPurposes}>
+                    <div class="slds-box slds-box_x-small slds-var-m-bottom_small">
+                        <div class="slds-text-title_caps slds-var-m-bottom_x-small">Visits by purpose</div>
+                        <template for:each={purposes} for:item="p">
+                            <div key={p.key} class="slds-var-m-bottom_xx-small">
+                                <div class="slds-grid slds-grid_align-spread slds-text-body_small">
+                                    <span>{p.name}</span>
+                                    <span class="slds-text-color_weak">{p.count} · {p.percent}%</span>
+                                </div>
+                                <div class="share-track">
+                                    <div class="share-bar" style={p.barStyle}></div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Filters -->
+                <div class="slds-grid slds-wrap slds-gutters_x-small slds-var-m-bottom_x-small">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+                        <lightning-combobox label="Date window" options={dateWindowOptions}
+                            value={dateWindowValue} onchange={handleDateWindowChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+                        <lightning-combobox label="Purpose" options={purposeOptions}
+                            value={purposeFilter} onchange={handlePurposeChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+                        <lightning-combobox label="Visit type" options={typeOptions}
+                            value={typeFilter} onchange={handleTypeChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+                        <lightning-combobox label="Source" options={sourceOptions}
+                            value={sourceFilter} onchange={handleSourceChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+                        <lightning-input type="search" label="Search subject and notes"
+                            value={searchTerm} onchange={handleSearch}>
+                        </lightning-input>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-wrap slds-var-m-bottom_x-small">
+                    <span class="slds-text-body_small slds-text-color_weak">{filteredCountLabel}</span>
+                    <template lwc:if={anyNotesTruncated}>
+                        <lightning-button variant="base" label={notesToggleLabel}
+                            onclick={handleToggleNotes}>
+                        </lightning-button>
+                    </template>
+                </div>
+
+                <template lwc:if={hasLegacyRows}>
+                    <div class="slds-scoped-notification slds-media slds-media_center slds-theme_info slds-var-m-bottom_small"
+                         role="status">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="utility:info" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body"><p>{legacyNotice}</p></div>
+                    </div>
+                </template>
+
+                <template lwc:if={isTruncated}>
+                    <div class="slds-scoped-notification slds-media slds-media_center slds-theme_warning slds-var-m-bottom_small"
+                         role="status">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="utility:warning" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body"><p>{truncationMessage}</p></div>
+                    </div>
+                </template>
+
+                <template lwc:if={hasRows}>
+                    <!-- Desktop -->
+                    <template lwc:if={isDesktop}>
+                        <lightning-datatable
+                            key-field="id"
+                            data={rows}
+                            columns={columns}
+                            hide-checkbox-column
+                            onrowaction={handleRowAction}>
+                        </lightning-datatable>
+                    </template>
+
+                    <!-- Phone: stacked cards, datatables are unusable at this width -->
+                    <template lwc:else>
+                        <template for:each={rows} for:item="row">
+                            <div key={row.id} class="slds-box slds-box_x-small slds-var-m-bottom_x-small">
+                                <div class="slds-grid slds-grid_align-spread slds-var-m-bottom_xx-small">
+                                    <strong>{row.subject}</strong>
+                                    <span class="slds-badge">{row.source}</span>
+                                </div>
+                                <div class="slds-text-body_small slds-text-color_weak">
+                                    <lightning-formatted-date-time value={row.visitDate}
+                                        year="numeric" month="short" day="2-digit">
+                                    </lightning-formatted-date-time>
+                                    <template lwc:if={row.purpose}> · {row.purpose}</template>
+                                    <template lwc:if={row.audience}> · {row.audience}</template>
+                                </div>
+                                <template lwc:if={row.notesDisplay}>
+                                    <p class="slds-var-m-top_xx-small slds-text-body_small">{row.notesDisplay}</p>
+                                </template>
+                                <div class="slds-grid slds-grid_align-spread slds-var-m-top_xx-small">
+                                    <lightning-button variant="base" label={row.targetName}
+                                        data-id={row.targetId} onclick={handleCardLinkClick}>
+                                    </lightning-button>
+                                    <span class="slds-text-body_small slds-text-color_weak">{row.loggedBy}</span>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+
+                <template lwc:if={isEmpty}>
+                    <div class="slds-var-p-around_large slds-text-align_center slds-text-color_weak">
+                        <lightning-icon icon-name="utility:info" size="small"
+                                        class="slds-var-m-bottom_x-small"></lightning-icon>
+                        <p class="slds-text-body_regular">{emptyMessage}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

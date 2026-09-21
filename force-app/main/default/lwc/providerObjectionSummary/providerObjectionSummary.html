@@ -1,0 +1,186 @@
+<template>
+    <lightning-card title="Objection Summary" icon-name="standard:case_comment">
+        <lightning-button
+            slot="actions"
+            label="Refresh"
+            icon-name="utility:refresh"
+            variant="neutral"
+            onclick={handleRefresh}
+            disabled={loading}>
+        </lightning-button>
+
+        <div class="slds-var-p-horizontal_medium slds-is-relative">
+            <template lwc:if={loading}>
+                <lightning-spinner alternative-text="Loading objections" size="small"></lightning-spinner>
+            </template>
+
+            <!-- Errors stay inline: a toast disappears before it can be read. -->
+            <template lwc:if={error}>
+                <div class="slds-scoped-notification slds-media slds-media_center slds-theme_error slds-var-m-bottom_small"
+                     role="alert">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="utility:error" variant="inverse" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <p>{error}</p>
+                    </div>
+                </div>
+            </template>
+
+            <template lwc:if={summary}>
+                <!-- Tiles -->
+                <div class="slds-grid slds-wrap slds-gutters_x-small slds-var-m-bottom_small">
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_large">{totalCount}</div>
+                            <div class="slds-text-body_small slds-text-color_weak">Total objections</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_large">{last12Count}</div>
+                            <div class="slds-text-body_small slds-text-color_weak">Last 12 months</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_large">{categoryCount}</div>
+                            <div class="slds-text-body_small slds-text-color_weak">Distinct categories</div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                        <div class="slds-box slds-box_x-small slds-text-align_center">
+                            <div class="slds-text-heading_small">
+                                <lightning-formatted-text value={mostRecentLabel}></lightning-formatted-text>
+                            </div>
+                            <div class="slds-text-body_small slds-text-color_weak">Most recent {mostRecentBy}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category breakdown -->
+                <template lwc:if={hasCategories}>
+                    <div class="slds-box slds-box_x-small slds-var-m-bottom_small">
+                        <div class="slds-text-title_caps slds-var-m-bottom_x-small">Category breakdown</div>
+                        <template for:each={categories} for:item="cat">
+                            <div key={cat.key} class="slds-var-m-bottom_xx-small">
+                                <div class="slds-grid slds-grid_align-spread slds-text-body_small">
+                                    <span>{cat.name}</span>
+                                    <span class="slds-text-color_weak">{cat.count} · {cat.percent}%</span>
+                                </div>
+                                <div class="share-track">
+                                    <div class="share-bar" style={cat.barStyle}></div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <!-- Filters -->
+                <div class="slds-grid slds-wrap slds-gutters_x-small slds-var-m-bottom_x-small">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-combobox
+                            label="Date window"
+                            options={dateWindowOptions}
+                            value={dateWindowValue}
+                            onchange={handleDateWindowChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-combobox
+                            label="Category"
+                            options={categoryOptions}
+                            value={categoryFilter}
+                            onchange={handleCategoryChange}>
+                        </lightning-combobox>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-input
+                            type="search"
+                            label="Search notes"
+                            value={searchTerm}
+                            onchange={handleSearch}>
+                        </lightning-input>
+                    </div>
+                </div>
+
+                <!-- Count + notes toggle -->
+                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-wrap slds-var-m-bottom_x-small">
+                    <span class="slds-text-body_small slds-text-color_weak">{filteredCountLabel}</span>
+                    <template lwc:if={anyNotesTruncated}>
+                        <lightning-button
+                            variant="base"
+                            label={notesToggleLabel}
+                            onclick={handleToggleNotes}>
+                        </lightning-button>
+                    </template>
+                </div>
+
+                <template lwc:if={isTruncated}>
+                    <div class="slds-scoped-notification slds-media slds-media_center slds-theme_warning slds-var-m-bottom_small"
+                         role="status">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="utility:warning" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <p>{truncationMessage}</p>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Desktop: datatable -->
+                <template lwc:if={hasRows}>
+                    <template lwc:if={isDesktop}>
+                        <lightning-datatable
+                            key-field="id"
+                            data={rows}
+                            columns={columns}
+                            hide-checkbox-column
+                            onrowaction={handleRowAction}>
+                        </lightning-datatable>
+                    </template>
+
+                    <!-- Phone: stacked cards, because datatables are unusable at that width -->
+                    <template lwc:else>
+                        <template for:each={rows} for:item="row">
+                            <div key={row.id} class="slds-box slds-box_x-small slds-var-m-bottom_x-small">
+                                <div class="slds-grid slds-grid_align-spread slds-var-m-bottom_xx-small">
+                                    <strong>{row.objection}</strong>
+                                    <span class={row.badgeClass}>{row.source}</span>
+                                </div>
+                                <div class="slds-text-body_small slds-text-color_weak">
+                                    <lightning-formatted-date-time
+                                        value={row.visitDate}
+                                        year="numeric" month="short" day="2-digit">
+                                    </lightning-formatted-date-time>
+                                    <template lwc:if={row.facility}> · {row.facility}</template>
+                                </div>
+                                <template lwc:if={row.notesDisplay}>
+                                    <p class="slds-var-m-top_xx-small slds-text-body_small">{row.notesDisplay}</p>
+                                </template>
+                                <div class="slds-grid slds-grid_align-spread slds-var-m-top_xx-small">
+                                    <lightning-button
+                                        variant="base"
+                                        label={row.visitReportName}
+                                        data-id={row.visitReportId}
+                                        onclick={handleCardLinkClick}>
+                                    </lightning-button>
+                                    <span class="slds-text-body_small slds-text-color_weak">{row.loggedBy}</span>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+
+                <!-- Empty state -->
+                <template lwc:if={isEmpty}>
+                    <div class="slds-var-p-around_large slds-text-align_center slds-text-color_weak">
+                        <lightning-icon icon-name="utility:success" size="small"
+                                        class="slds-var-m-bottom_x-small"></lightning-icon>
+                        <p class="slds-text-body_regular">{emptyMessage}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

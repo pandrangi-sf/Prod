@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Side-by-side comparison of two upload months of New Patient Visit Types.</description>
+    <flexiPage>Visit_Type_Month_Comparison</flexiPage>
+    <label>Visit Type Month Comparison</label>
+    <motif>Custom108: TV Widescreen</motif>
+</CustomTab>

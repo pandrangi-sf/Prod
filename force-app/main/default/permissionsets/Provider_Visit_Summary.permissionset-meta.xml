@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Provider Visit Summary</label>
+    <description>Apex access to ProviderVisitSummaryController for the Visit Summary component. No object or field permissions: the controller runs with sharing.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <classAccesses>
+        <apexClass>ProviderVisitSummaryController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+</PermissionSet>
