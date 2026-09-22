@@ -1,4 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
+import { refreshApex } from '@salesforce/apex';
 import getProviderByNPI from '@salesforce/apex/NPIRegistryController.getProviderByNPI';
 
 export default class NpiRegistryLookup extends LightningElement {
@@ -8,8 +9,15 @@ export default class NpiRegistryLookup extends LightningElement {
     error;
     isLoading = true;
 
+    // The whole wire result is kept so Refresh can invalidate it. An imperative
+    // call to a cacheable method is served from the Lightning client cache, so
+    // the old Refresh re-rendered the cached payload without re-contacting NPPES.
+    wiredResult;
+
     @wire(getProviderByNPI, { recordId: '$recordId' })
-    wiredProvider({ error, data }) {
+    wiredProvider(result) {
+        this.wiredResult = result;
+        const { error, data } = result;
         this.isLoading = false;
         if (data) {
             if (data.success) {
@@ -89,7 +97,7 @@ export default class NpiRegistryLookup extends LightningElement {
         if (!addr) return '';
         const line = [addr.addressLine1, addr.addressLine2].filter(Boolean).join(' ');
         const zip = addr.postalCode ? addr.postalCode.substring(0, 5) : '';
-        const query = ';' + [line, addr.city, addr.state, zip, 'United States'].filter(Boolean).join(', ');
+        const query = [line, addr.city, addr.state, zip, 'United States'].filter(Boolean).join(', ');
         return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
     }
 
@@ -124,31 +132,45 @@ export default class NpiRegistryLookup extends LightningElement {
         }));
     }
 
+    get soleProprietorLabel() {
+        const value = this.providerData?.sole_proprietor;
+        if (value === 'YES') return 'Yes';
+        if (value === 'NO') return 'No';
+        return value || '—';
+    }
+
+    // A Contact with no NPI is an ordinary state, not a failure, so it is shown
+    // as information rather than in red.
+    get errorIsInfo() {
+        return (this.error || '').indexOf('No NPI number') === 0;
+    }
+
+    get errorClass() {
+        return this.errorIsInfo
+            ? 'slds-scoped-notification slds-media slds-media_center slds-theme_info'
+            : 'slds-scoped-notification slds-media slds-media_center slds-theme_error';
+    }
+
+    get errorIcon() {
+        return this.errorIsInfo ? 'utility:info' : 'utility:error';
+    }
+
     get nppesUrl() {
         return `https://npiregistry.cms.hhs.gov/api/?number=${this.providerData?.npiNumber}&version=2.1`;
     }
 
     // ─── Actions ───────────────────────────────────────────────────────
 
-    handleRefresh() {
+    async handleRefresh() {
         this.isLoading = true;
         this.error = undefined;
-        // Re-invoke the wire by importing refreshApex — but since wire is
-        // cacheable, we use an imperative call for refresh.
-        getProviderByNPI({ recordId: this.recordId })
-            .then(data => {
-                this.isLoading = false;
-                if (data.success) {
-                    this.providerData = data;
-                    this.error = undefined;
-                } else {
-                    this.error = data.errorMessage;
-                    this.providerData = undefined;
-                }
-            })
-            .catch(() => {
-                this.isLoading = false;
-                this.error = 'Unable to load NPI data. Please try again.';
-            });
+        try {
+            await refreshApex(this.wiredResult);
+        } catch (e) {
+            this.error = 'Unable to load NPI data. Please try again.';
+            this.providerData = undefined;
+        } finally {
+            this.isLoading = false;
+        }
     }
 }
