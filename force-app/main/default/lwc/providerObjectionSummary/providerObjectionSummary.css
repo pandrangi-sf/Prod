@@ -12,3 +12,13 @@
     background: #0176d3;
     height: 100%;
 }
+
+/* Frame the table the way a standard list view is framed: a light border, square
+   corners clipped, on a white ground. The datatable supplies its own header
+   shading, so only the surrounding chrome is needed here. */
+.list-view-frame {
+    border: 1px solid #c9c9c9;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
