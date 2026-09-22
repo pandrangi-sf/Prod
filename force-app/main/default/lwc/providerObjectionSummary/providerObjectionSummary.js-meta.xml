@@ -2,7 +2,7 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
     <isExposed>true</isExposed>
-    <masterLabel>Objection Summary</masterLabel>
+    <masterLabel>Objections</masterLabel>
     <description>Objections raised against a provider, unioned across the Visit Objection junction and legacy activity capture.</description>
     <targets>
         <target>lightning__RecordPage</target>
@@ -12,9 +12,9 @@
             <objects>
                 <object>Contact</object>
             </objects>
-            <property name="monthsBack" type="Integer" default="24"
-                      label="Default date window (months)"
-                      description="Rolling window applied on load. Set to 0 to default to all time."/>
+            <property name="monthsBack" type="Integer" default="0"
+                      label="Date window (months)"
+                      description="0 means all time, which is the default. There is no date filter on the list, so a rolling window here would hide older objections with no way to reveal them."/>
             <property name="rowLimit" type="Integer" default="500"
                       label="Row limit"
                       description="Maximum objections to load. Capped at 2000 by the controller."/>

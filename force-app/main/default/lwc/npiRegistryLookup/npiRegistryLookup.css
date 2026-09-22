@@ -8,3 +8,49 @@
     --sds-c-badge-color-background: #ba0517;
     --sds-c-badge-text-color: #ffffff;
 }
+
+/* Framed panels, matching the chrome of a standard list view: light border,
+   rounded corners, white ground, shaded header strip. Replaces the SLDS
+   section/section__title pattern, which reads as a collapsible group and
+   invites a click that does nothing here. */
+.npi-panel {
+    border: 1px solid #c9c9c9;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.npi-panel__header {
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #c9c9c9;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+    color: #444444;
+}
+
+/* Label/value pairs. The label is deliberately quiet so the value reads first. */
+.npi-label {
+    font-size: 0.75rem;
+    color: #5c5c5c;
+}
+
+.npi-value {
+    font-size: 0.8125rem;
+    color: #181818;
+}
+
+.npi-th {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #444444;
+}
+
+/* Taxonomy descriptions and issuer names run long; wrap rather than truncate
+   so the text stays readable inside the horizontal scroll container. */
+.npi-wrap {
+    white-space: normal;
+    min-width: 14rem;
+}

@@ -1,205 +1,233 @@
 <template>
-    <lightning-card title="NPI Registry Lookup" icon-name="standard:record_lookup">
+    <lightning-card title="NPI Registry" icon-name="standard:record_lookup">
 
-        <!-- Action: Refresh button -->
         <lightning-button-icon
             slot="actions"
             icon-name="utility:refresh"
-            alternative-text="Refresh"
-            onclick={handleRefresh}
-        ></lightning-button-icon>
+            alternative-text="Refresh from NPPES"
+            title="Refresh from NPPES"
+            disabled={isLoading}
+            onclick={handleRefresh}>
+        </lightning-button-icon>
 
-        <!-- Loading Spinner -->
-        <template lwc:if={isLoading}>
-            <div class="slds-align_absolute-center slds-p-around_large">
-                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
-            </div>
-        </template>
+        <div class="slds-is-relative">
+            <template lwc:if={isLoading}>
+                <div class="slds-var-p-around_x-large">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </template>
 
-        <!-- Error State -->
-        <template lwc:if={error}>
-            <div class="slds-p-around_medium">
-                <div class="slds-illustration slds-illustration_small">
-                    <div class="slds-text-longform">
-                        <p class="slds-text-body_regular slds-text-color_error">
-                            {error}
-                        </p>
+            <!-- A missing NPI is shown as information; a genuine failure in red. -->
+            <template lwc:if={error}>
+                <div class="slds-var-p-horizontal_medium slds-var-p-bottom_medium">
+                    <div class={errorClass} role="status">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name={errorIcon} size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <p>{error}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </template>
+            </template>
 
-        <!-- Provider Data -->
-        <template lwc:if={hasData}>
-            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <template lwc:if={hasData}>
+                <div class="slds-var-p-horizontal_medium slds-var-p-bottom_medium">
 
-                <!-- Header: Name + Status Badge -->
-                <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-m-bottom_small">
-                    <div>
-                        <h2 class="slds-text-heading_medium slds-m-bottom_xx-small">
-                            {providerDisplayName}
-                        </h2>
-                        <p class="slds-text-body_small slds-text-color_weak">
-                            NPI: {providerData.npiNumber} &bull; {providerTypeLabel}
-                        </p>
+                    <!-- Identity header -->
+                    <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-start slds-wrap slds-var-m-bottom_medium">
+                        <div class="slds-col">
+                            <h2 class="slds-text-heading_small slds-var-m-bottom_xx-small">
+                                {providerDisplayName}
+                            </h2>
+                            <p class="slds-text-body_small slds-text-color_weak">
+                                NPI {providerData.npiNumber} &bull; {providerTypeLabel}
+                            </p>
+                        </div>
+                        <lightning-badge label={statusLabel} class={statusVariant}></lightning-badge>
                     </div>
-                    <lightning-badge label={statusLabel} class={statusVariant}></lightning-badge>
-                </div>
 
-                <!-- Basic Details -->
-                <div class="slds-section slds-is-open slds-m-bottom_small">
-                    <h3 class="slds-section__title slds-theme_shade slds-p-around_x-small">
-                        <span class="slds-truncate" title="Provider Details">Provider Details</span>
-                    </h3>
-                    <div class="slds-section__content">
-                        <lightning-layout multiple-rows>
-                            <template lwc:if={isIndividual}>
-                                <lightning-layout-item size="6" padding="around-small">
-                                    <p class="slds-text-body_small slds-text-color_weak">Gender</p>
-                                    <p class="slds-text-body_regular">{genderLabel}</p>
-                                </lightning-layout-item>
-                                <lightning-layout-item size="6" padding="around-small">
-                                    <p class="slds-text-body_small slds-text-color_weak">Sole Proprietor</p>
-                                    <p class="slds-text-body_regular">{providerData.sole_proprietor}</p>
-                                </lightning-layout-item>
+                    <!-- Provider details -->
+                    <div class="npi-panel slds-var-m-bottom_medium">
+                        <div class="npi-panel__header">Provider details</div>
+                        <div class="slds-var-p-around_small">
+                            <div class="slds-grid slds-wrap slds-gutters_x-small">
+                                <template lwc:if={isIndividual}>
+                                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-var-m-bottom_x-small">
+                                        <p class="npi-label">Gender</p>
+                                        <p class="npi-value">{genderLabel}</p>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-var-m-bottom_x-small">
+                                        <p class="npi-label">Sole proprietor</p>
+                                        <p class="npi-value">{soleProprietorLabel}</p>
+                                    </div>
+                                </template>
+                                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-var-m-bottom_x-small">
+                                    <p class="npi-label">Enumeration date</p>
+                                    <p class="npi-value">
+                                        <lightning-formatted-date-time value={providerData.enumerationDate}
+                                            year="numeric" month="short" day="2-digit">
+                                        </lightning-formatted-date-time>
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4 slds-var-m-bottom_x-small">
+                                    <p class="npi-label">Last updated</p>
+                                    <p class="npi-value">
+                                        <lightning-formatted-date-time value={providerData.lastUpdated}
+                                            year="numeric" month="short" day="2-digit">
+                                        </lightning-formatted-date-time>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addresses -->
+                    <template lwc:if={hasAddresses}>
+                        <div class="slds-grid slds-wrap slds-gutters_x-small slds-var-m-bottom_medium">
+                            <template lwc:if={locationAddress}>
+                                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-var-m-bottom_x-small">
+                                    <div class="npi-panel">
+                                        <div class="npi-panel__header">Practice location</div>
+                                        <div class="slds-var-p-around_small">
+                                            <p class="npi-value">{locationAddress.addressLine1}</p>
+                                            <template lwc:if={locationAddress.addressLine2}>
+                                                <p class="npi-value">{locationAddress.addressLine2}</p>
+                                            </template>
+                                            <p class="npi-value">
+                                                {locationAddress.city}, {locationAddress.state} {locationAddress.postalCode}
+                                            </p>
+                                            <template lwc:if={locationAddress.telephoneNumber}>
+                                                <p class="slds-var-m-top_x-small">
+                                                    <span class="npi-label">Phone </span>
+                                                    <lightning-formatted-phone value={locationAddress.telephoneNumber}>
+                                                    </lightning-formatted-phone>
+                                                </p>
+                                            </template>
+                                            <template lwc:if={locationAddress.faxNumber}>
+                                                <p>
+                                                    <span class="npi-label">Fax </span>
+                                                    <lightning-formatted-phone value={locationAddress.faxNumber}>
+                                                    </lightning-formatted-phone>
+                                                </p>
+                                            </template>
+                                            <p class="slds-var-m-top_x-small">
+                                                <a href={locationMapUrl} target="_blank" rel="noopener noreferrer">
+                                                    <lightning-icon icon-name="utility:location" size="xx-small"
+                                                        class="slds-var-m-right_xx-small"></lightning-icon>View map
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </template>
-                            <lightning-layout-item size="6" padding="around-small">
-                                <p class="slds-text-body_small slds-text-color_weak">Enumeration Date</p>
-                                <p class="slds-text-body_regular">{providerData.enumerationDate}</p>
-                            </lightning-layout-item>
-                            <lightning-layout-item size="6" padding="around-small">
-                                <p class="slds-text-body_small slds-text-color_weak">Last Updated</p>
-                                <p class="slds-text-body_regular">{providerData.lastUpdated}</p>
-                            </lightning-layout-item>
-                        </lightning-layout>
-                    </div>
-                </div>
 
-                <!-- Addresses -->
-                <template lwc:if={hasAddresses}>
-                    <div class="slds-section slds-is-open slds-m-bottom_small">
-                        <h3 class="slds-section__title slds-theme_shade slds-p-around_x-small">
-                            <span class="slds-truncate" title="Addresses">Addresses</span>
-                        </h3>
-                        <div class="slds-section__content">
-                            <lightning-layout multiple-rows>
-                                <!-- Practice Location -->
-                                <template lwc:if={locationAddress}>
-                                    <lightning-layout-item size="6" padding="around-small">
-                                        <p class="slds-text-title_bold slds-m-bottom_xx-small">Practice Location</p>
-                                        <p>{locationAddress.addressLine1}</p>
-                                        <template lwc:if={locationAddress.addressLine2}>
-                                            <p>{locationAddress.addressLine2}</p>
-                                        </template>
-                                        <p>{locationAddress.city}, {locationAddress.state} {locationAddress.postalCode}</p>
-                                        <template lwc:if={locationAddress.telephoneNumber}>
-                                            <p class="slds-m-top_xx-small">Phone: {locationAddress.telephoneNumber}</p>
-                                        </template>
-                                        <template lwc:if={locationAddress.faxNumber}>
-                                            <p>Fax: {locationAddress.faxNumber}</p>
-                                        </template>
-                                        <p class="slds-m-top_xx-small">
-                                            <a href={locationMapUrl} target="_blank" rel="noopener noreferrer">View Map</a>
-                                        </p>
-                                    </lightning-layout-item>
-                                </template>
-
-                                <!-- Mailing Address -->
-                                <template lwc:if={mailingAddress}>
-                                    <lightning-layout-item size="6" padding="around-small">
-                                        <p class="slds-text-title_bold slds-m-bottom_xx-small">Mailing Address</p>
-                                        <p>{mailingAddress.addressLine1}</p>
-                                        <template lwc:if={mailingAddress.addressLine2}>
-                                            <p>{mailingAddress.addressLine2}</p>
-                                        </template>
-                                        <p>{mailingAddress.city}, {mailingAddress.state} {mailingAddress.postalCode}</p>
-                                        <template lwc:if={mailingAddress.telephoneNumber}>
-                                            <p class="slds-m-top_xx-small">Phone: {mailingAddress.telephoneNumber}</p>
-                                        </template>
-                                        <template lwc:if={mailingAddress.faxNumber}>
-                                            <p>Fax: {mailingAddress.faxNumber}</p>
-                                        </template>
-                                        <p class="slds-m-top_xx-small">
-                                            <a href={mailingMapUrl} target="_blank" rel="noopener noreferrer">View Map</a>
-                                        </p>
-                                    </lightning-layout-item>
-                                </template>
-                            </lightning-layout>
+                            <template lwc:if={mailingAddress}>
+                                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-var-m-bottom_x-small">
+                                    <div class="npi-panel">
+                                        <div class="npi-panel__header">Mailing address</div>
+                                        <div class="slds-var-p-around_small">
+                                            <p class="npi-value">{mailingAddress.addressLine1}</p>
+                                            <template lwc:if={mailingAddress.addressLine2}>
+                                                <p class="npi-value">{mailingAddress.addressLine2}</p>
+                                            </template>
+                                            <p class="npi-value">
+                                                {mailingAddress.city}, {mailingAddress.state} {mailingAddress.postalCode}
+                                            </p>
+                                            <template lwc:if={mailingAddress.telephoneNumber}>
+                                                <p class="slds-var-m-top_x-small">
+                                                    <span class="npi-label">Phone </span>
+                                                    <lightning-formatted-phone value={mailingAddress.telephoneNumber}>
+                                                    </lightning-formatted-phone>
+                                                </p>
+                                            </template>
+                                            <template lwc:if={mailingAddress.faxNumber}>
+                                                <p>
+                                                    <span class="npi-label">Fax </span>
+                                                    <lightning-formatted-phone value={mailingAddress.faxNumber}>
+                                                    </lightning-formatted-phone>
+                                                </p>
+                                            </template>
+                                            <p class="slds-var-m-top_x-small">
+                                                <a href={mailingMapUrl} target="_blank" rel="noopener noreferrer">
+                                                    <lightning-icon icon-name="utility:location" size="xx-small"
+                                                        class="slds-var-m-right_xx-small"></lightning-icon>View map
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
                         </div>
-                    </div>
-                </template>
+                    </template>
 
-                <!-- Taxonomies -->
-                <template lwc:if={hasTaxonomies}>
-                    <div class="slds-section slds-is-open slds-m-bottom_small">
-                        <h3 class="slds-section__title slds-theme_shade slds-p-around_x-small">
-                            <span class="slds-truncate" title="Taxonomy / Specialties">Taxonomy / Specialties</span>
-                        </h3>
-                        <div class="slds-section__content">
-                            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
-                                <thead>
-                                    <tr class="slds-line-height_reset">
-                                        <th scope="col"><div class="slds-truncate">Code</div></th>
-                                        <th scope="col"><div class="slds-truncate">Description</div></th>
-                                        <th scope="col"><div class="slds-truncate">Primary</div></th>
-                                        <th scope="col"><div class="slds-truncate">State</div></th>
-                                        <th scope="col"><div class="slds-truncate">License #</div></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <template for:each={taxonomies} for:item="tax">
-                                        <tr key={tax.key}>
-                                            <td><div class="slds-truncate">{tax.code}</div></td>
-                                            <td><div class="slds-truncate">{tax.taxonomyDescription}</div></td>
-                                            <td><div class="slds-truncate">{tax.primaryLabel}</div></td>
-                                            <td><div class="slds-truncate">{tax.state}</div></td>
-                                            <td><div class="slds-truncate">{tax.license}</div></td>
+                    <!-- Taxonomies -->
+                    <template lwc:if={hasTaxonomies}>
+                        <div class="npi-panel slds-var-m-bottom_medium">
+                            <div class="npi-panel__header">Taxonomy and specialties</div>
+                            <div class="slds-scrollable_x">
+                                <table class="slds-table slds-table_cell-buffer slds-no-row-hover">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th scope="col" class="npi-th">Code</th>
+                                            <th scope="col" class="npi-th">Description</th>
+                                            <th scope="col" class="npi-th">Primary</th>
+                                            <th scope="col" class="npi-th">State</th>
+                                            <th scope="col" class="npi-th">License #</th>
                                         </tr>
-                                    </template>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={taxonomies} for:item="tax">
+                                            <tr key={tax.key}>
+                                                <td>{tax.code}</td>
+                                                <!-- Descriptions are long; wrapping beats truncation here. -->
+                                                <td class="npi-wrap">{tax.taxonomyDescription}</td>
+                                                <td>{tax.primaryLabel}</td>
+                                                <td>{tax.state}</td>
+                                                <td>{tax.license}</td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </template>
+                    </template>
 
-                <!-- Other Identifiers -->
-                <template lwc:if={hasIdentifiers}>
-                    <div class="slds-section slds-is-open slds-m-bottom_small">
-                        <h3 class="slds-section__title slds-theme_shade slds-p-around_x-small">
-                            <span class="slds-truncate" title="Other Identifiers">Other Identifiers</span>
-                        </h3>
-                        <div class="slds-section__content">
-                            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
-                                <thead>
-                                    <tr class="slds-line-height_reset">
-                                        <th scope="col"><div class="slds-truncate">Identifier</div></th>
-                                        <th scope="col"><div class="slds-truncate">Type</div></th>
-                                        <th scope="col"><div class="slds-truncate">State</div></th>
-                                        <th scope="col"><div class="slds-truncate">Issuer</div></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <template for:each={identifiers} for:item="ident">
-                                        <tr key={ident.key}>
-                                            <td><div class="slds-truncate">{ident.identifier}</div></td>
-                                            <td><div class="slds-truncate">{ident.identifierType}</div></td>
-                                            <td><div class="slds-truncate">{ident.state}</div></td>
-                                            <td><div class="slds-truncate">{ident.issuer}</div></td>
+                    <!-- Other identifiers -->
+                    <template lwc:if={hasIdentifiers}>
+                        <div class="npi-panel slds-var-m-bottom_medium">
+                            <div class="npi-panel__header">Other identifiers</div>
+                            <div class="slds-scrollable_x">
+                                <table class="slds-table slds-table_cell-buffer slds-no-row-hover">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th scope="col" class="npi-th">Identifier</th>
+                                            <th scope="col" class="npi-th">Type</th>
+                                            <th scope="col" class="npi-th">State</th>
+                                            <th scope="col" class="npi-th">Issuer</th>
                                         </tr>
-                                    </template>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={identifiers} for:item="ident">
+                                            <tr key={ident.key}>
+                                                <td>{ident.identifier}</td>
+                                                <td class="npi-wrap">{ident.identifierType}</td>
+                                                <td>{ident.state}</td>
+                                                <td class="npi-wrap">{ident.issuer}</td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </template>
+                    </template>
 
-                <!-- Footer link -->
-                <div class="slds-m-top_small slds-text-body_small slds-text-color_weak">
-                    Data sourced from the <a href="https://npiregistry.cms.hhs.gov" target="_blank" rel="noopener noreferrer">NPPES NPI Registry</a>.
+                    <p class="slds-text-body_small slds-text-color_weak">
+                        Live data from the
+                        <a href="https://npiregistry.cms.hhs.gov" target="_blank" rel="noopener noreferrer">NPPES NPI Registry</a>.
+                    </p>
                 </div>
-
-            </div>
-        </template>
-
+            </template>
+        </div>
     </lightning-card>
 </template>

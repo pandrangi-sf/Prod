@@ -65,7 +65,7 @@ public with sharing class ProviderObjectionSummaryController {
         List<Task> tasks;
         if (cutoff == null) {
             tasks = [
-                SELECT Id, Visit_Report__c, Visit_Report__r.Name, Visit_Date__c, Date_Meeting_Call__c,
+                SELECT Id, CreatedDate, CreatedById, Visit_Report__c, Visit_Report__r.Name, Visit_Date__c, Date_Meeting_Call__c,
                        OwnerId, RecordType.Name, Objections_Raised__c,
                        ObjectionsRaised__c, Objection_Notes__c, Facility_of_Objection__c
                 FROM Task
@@ -73,7 +73,7 @@ public with sharing class ProviderObjectionSummaryController {
             ];
         } else {
             tasks = [
-                SELECT Id, Visit_Report__c, Visit_Report__r.Name, Visit_Date__c, Date_Meeting_Call__c,
+                SELECT Id, CreatedDate, CreatedById, Visit_Report__c, Visit_Report__r.Name, Visit_Date__c, Date_Meeting_Call__c,
                        OwnerId, RecordType.Name, Objections_Raised__c,
                        ObjectionsRaised__c, Objection_Notes__c, Facility_of_Objection__c
                 FROM Task
@@ -97,10 +97,10 @@ public with sharing class ProviderObjectionSummaryController {
         Boolean canReadNotes = Schema.SObjectType.Visit_Objection__c.fields.Notes__c.isAccessible();
         Boolean canReadComments = Schema.SObjectType.Visit_Objection__c.fields.Comments__c.isAccessible();
 
-        // Owner.Name does not resolve on these objects in this org: OwnerId is
-        // populated but the polymorphic Owner relationship comes back null, which
-        // silently blanked "logged by". Resolve the names with one User query
-        // instead. Ids belonging to a queue simply will not match.
+        // Owner is polymorphic (User or Group) and its relationship comes back null
+        // in Apex test context even when OwnerId is set, which silently blanked the
+        // name column. Resolving both owner and creator through one User query is
+        // reliable in every context; queue ids simply will not match.
         Map<Id, String> ownerNames = new Map<Id, String>();
 
         List<ObjectionRow> rows = new List<ObjectionRow>();
@@ -114,7 +114,7 @@ public with sharing class ProviderObjectionSummaryController {
         List<Visit_Objection__c> junctions = new List<Visit_Objection__c>();
         if (canReadJunction && !visitReportIds.isEmpty()) {
             junctions = [
-                SELECT Id, Objection__r.Name, Notes__c, Comments__c, Facility__r.Name,
+                SELECT Id, CreatedDate, CreatedById, Objection__r.Name, Notes__c, Comments__c, Facility__r.Name,
                        OwnerId, Visit_Report__c, Visit_Report__r.Name,
                        Visit_Report__r.Visit_Date__c, Visit_Report__r.Visit_Type__c,
                        Visit_Report__r.RecordType.Name
@@ -132,9 +132,11 @@ public with sharing class ProviderObjectionSummaryController {
         Set<Id> ownerIds = new Set<Id>();
         for (Visit_Objection__c vo : junctions) {
             if (vo.OwnerId != null) { ownerIds.add(vo.OwnerId); }
+            if (vo.CreatedById != null) { ownerIds.add(vo.CreatedById); }
         }
         for (Task t : tasks) {
             if (t.OwnerId != null) { ownerIds.add(t.OwnerId); }
+            if (t.CreatedById != null) { ownerIds.add(t.CreatedById); }
         }
         if (!ownerIds.isEmpty()) {
             for (User u : [SELECT Id, Name FROM User WHERE Id IN :ownerIds]) {
@@ -162,6 +164,8 @@ public with sharing class ProviderObjectionSummaryController {
                 row.visitReportName = vo.Visit_Report__r == null ? null : vo.Visit_Report__r.Name;
                 row.recordType = (vo.Visit_Report__r == null || vo.Visit_Report__r.RecordType == null)
                     ? null : vo.Visit_Report__r.RecordType.Name;
+                row.createdDate = vo.CreatedDate;
+                row.createdByName = ownerNames.get(vo.CreatedById);
                 row.loggedBy = ownerNames.get(vo.OwnerId);
                 row.source = SOURCE_JUNCTION;
 
@@ -192,6 +196,8 @@ public with sharing class ProviderObjectionSummaryController {
                 row.visitReportName = t.Visit_Report__r == null ? null : t.Visit_Report__r.Name;
                 row.visitDate = t.Visit_Date__c != null ? t.Visit_Date__c : t.Date_Meeting_Call__c;
                 row.recordType = t.RecordType == null ? null : t.RecordType.Name;
+                row.createdDate = t.CreatedDate;
+                row.createdByName = ownerNames.get(t.CreatedById);
                 row.loggedBy = ownerNames.get(t.OwnerId);
                 row.source = SOURCE_LEGACY;
 
@@ -337,6 +343,10 @@ public with sharing class ProviderObjectionSummaryController {
     public class ObjectionRow implements Comparable {
         @AuraEnabled public String id;
         @AuraEnabled public Date visitDate;
+        /** When the objection was logged, as opposed to when the visit happened. */
+        @AuraEnabled public Datetime createdDate;
+        /** Who created the record, which can differ from its current owner. */
+        @AuraEnabled public String createdByName;
         @AuraEnabled public String objection;
         @AuraEnabled public String facility;
         @AuraEnabled public String notes;

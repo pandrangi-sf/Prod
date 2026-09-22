@@ -5,27 +5,52 @@ import FORM_FACTOR from '@salesforce/client/formFactor';
 import getObjectionSummary from '@salesforce/apex/ProviderObjectionSummaryController.getObjectionSummary';
 
 const NOTES_TRUNCATE = 120;
-const ALL = '__ALL__';
-const ALL_TIME = 0;
+
+// Column order set by the PRM team: what/when first, then where and what was
+// raised, then the detail, then who recorded it.
+const COLUMNS_BEFORE_NOTES = [
+    // Button rather than a url column: NavigationMixin builds the target at
+    // click time, so no org URL is ever hard-coded.
+    { label: 'Visit Report', type: 'button', initialWidth: 125,
+      typeAttributes: { label: { fieldName: 'visitReportName' }, variant: 'base',
+                        name: 'openVisitReport' } },
+    { label: 'Visit Date', fieldName: 'visitDate', type: 'date-local', initialWidth: 120,
+      sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit' } },
+    { label: 'Facility', fieldName: 'facility', type: 'text', initialWidth: 160, sortable: true },
+    { label: 'Objection', fieldName: 'objection', type: 'text', initialWidth: 160, sortable: true }
+];
+
+const NOTES_COLUMN = { label: 'Notes', fieldName: 'notesDisplay', type: 'text', wrapText: true, sortable: true };
+
+const COLUMNS_AFTER_NOTES = [
+    { label: 'Created By', fieldName: 'createdByName', type: 'text', initialWidth: 150, sortable: true },
+    // Datetime, so the time is shown alongside the date.
+    { label: 'Created Date', fieldName: 'createdDate', type: 'date', initialWidth: 175,
+      sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit',
+                                        hour: '2-digit', minute: '2-digit' } }
+];
 
 export default class ProviderObjectionSummary extends NavigationMixin(LightningElement) {
     @api recordId;
 
-    // Design attributes. These are the configured defaults; the date-window
-    // toggle drives activeMonths instead, because an @api property must not be
-    // reassigned from inside the component.
-    @api monthsBack = 24;
+    // Defaults to all time. There is no date filter on this list any more, so a
+    // rolling window would silently hide older objections with no way to reveal
+    // them. Still configurable per placement in App Builder.
+    @api monthsBack = 0;
     @api rowLimit = 500;
-    // LWC forbids a public Boolean defaulting to true, so this is left
-    // undefined and treated as enabled unless App Builder sets it false.
+    // Kept because the component is already placed on PRMProviderLayout and
+    // Salesforce refuses to drop a design property that is in use. LWC forbids a
+    // public Boolean defaulting to true, so undefined means enabled.
     @api showNotes;
 
-    activeMonths = 24;
+    activeMonths = 0;
     activeRowLimit = 500;
-
-    categoryFilter = ALL;
-    searchTerm = '';
     notesExpanded = false;
+
+    // Apex already returns newest visit first; this mirrors that as the starting
+    // state so the header arrow matches what is on screen.
+    sortedBy = 'visitDate';
+    sortDirection = 'desc';
 
     summary;
     error;
@@ -33,10 +58,10 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
     wiredResult;
 
     connectedCallback() {
-        const configuredMonths = parseInt(this.monthsBack, 10);
-        this.activeMonths = Number.isFinite(configuredMonths) ? configuredMonths : 24;
-        const configuredLimit = parseInt(this.rowLimit, 10);
-        this.activeRowLimit = Number.isFinite(configuredLimit) ? configuredLimit : 500;
+        const months = parseInt(this.monthsBack, 10);
+        this.activeMonths = Number.isFinite(months) ? months : 0;
+        const limit = parseInt(this.rowLimit, 10);
+        this.activeRowLimit = Number.isFinite(limit) ? limit : 500;
     }
 
     @wire(getObjectionSummary, {
@@ -59,7 +84,15 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
         }
     }
 
-    // ---- layout ----------------------------------------------------------
+    get showNotesColumn() {
+        return this.showNotes === undefined || this.showNotes === true || this.showNotes === 'true';
+    }
+
+    get columns() {
+        return this.showNotesColumn
+            ? [...COLUMNS_BEFORE_NOTES, NOTES_COLUMN, ...COLUMNS_AFTER_NOTES]
+            : [...COLUMNS_BEFORE_NOTES, ...COLUMNS_AFTER_NOTES];
+    }
 
     get isPhone() {
         return FORM_FACTOR === 'Small';
@@ -69,109 +102,66 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
         return !this.isPhone;
     }
 
-    get columns() {
-        const cols = [
-            { label: 'Visit Date', fieldName: 'visitDate', type: 'date-local', initialWidth: 120,
-              typeAttributes: { year: 'numeric', month: 'short', day: '2-digit' } },
-            { label: 'Objection', fieldName: 'objection', type: 'text', initialWidth: 170 },
-            { label: 'Facility', fieldName: 'facility', type: 'text', initialWidth: 130 }
-        ];
-        if (this.showNotesColumn) {
-            cols.push({ label: 'Notes', fieldName: 'notesDisplay', type: 'text', wrapText: true });
-        }
-        cols.push(
-            // A button rather than a url column: the target is produced by
-            // NavigationMixin at click time, so no org URL is ever hard-coded.
-            { label: 'Visit Report', type: 'button', initialWidth: 130,
-              typeAttributes: { label: { fieldName: 'visitReportName' }, variant: 'base',
-                                name: 'openVisitReport' } },
-            { label: 'Logged By', fieldName: 'loggedBy', type: 'text', initialWidth: 150 },
-            { label: 'Source', fieldName: 'source', type: 'text', initialWidth: 130 }
-        );
-        return cols;
-    }
-
-    get showNotesColumn() {
-        return this.showNotes === undefined || this.showNotes === true || this.showNotes === 'true';
-    }
-
-    // ---- tiles -----------------------------------------------------------
-
-    get totalCount() {
-        return this.summary ? this.summary.totalCount : 0;
-    }
-
-    get last12Count() {
-        return this.summary ? this.summary.last12Count : 0;
-    }
-
-    get categoryCount() {
-        return this.summary ? this.summary.categoryCount : 0;
-    }
-
-    get mostRecentLabel() {
-        if (!this.summary || !this.summary.mostRecentDate) {
-            return '—';
-        }
-        return this.summary.mostRecentDate;
-    }
-
-    get mostRecentBy() {
-        if (!this.summary || !this.summary.mostRecentBy) {
-            return '';
-        }
-        return `by ${this.summary.mostRecentBy}`;
-    }
-
-    // ---- category breakdown ---------------------------------------------
-
-    get categories() {
-        if (!this.summary || !this.summary.categories) {
-            return [];
-        }
-        return this.summary.categories.map((c) => ({
-            ...c,
-            key: c.name,
-            // Inline width is the only way to size a share bar per row.
-            barStyle: `width: ${c.percent}%`,
-            label: `${c.name} (${c.count})`
-        }));
-    }
-
-    get hasCategories() {
-        return this.categories.length > 0;
-    }
-
-    // ---- rows and client-side filters ------------------------------------
-
     get rows() {
         if (!this.summary || !this.summary.rows) {
             return [];
         }
-        const term = (this.searchTerm || '').trim().toLowerCase();
-        return this.summary.rows
-            .filter((r) => this.categoryFilter === ALL || r.objection === this.categoryFilter)
-            .filter((r) => {
-                if (!term) {
-                    return true;
-                }
-                return (r.notes || '').toLowerCase().includes(term);
-            })
-            .map((r) => {
-                const notes = r.notes || '';
-                const truncated = notes.length > NOTES_TRUNCATE;
-                return {
-                    ...r,
-                    notesDisplay: this.notesExpanded || !truncated
-                        ? notes
-                        : `${notes.substring(0, NOTES_TRUNCATE)}…`,
-                    notesTruncated: truncated,
-                    isLegacy: r.source === 'Legacy activity',
-                    badgeClass: r.source === 'Legacy activity'
-                        ? 'slds-badge slds-theme_warning'
-                        : 'slds-badge slds-theme_success'
-                };
-            });
+        const mapped = this.summary.rows.map((r) => {
+            const notes = r.notes || '';
+            const truncated = notes.length > NOTES_TRUNCATE;
+            return {
+                ...r,
+                notesDisplay: this.notesExpanded || !truncated
+                    ? notes
+                    : `${notes.substring(0, NOTES_TRUNCATE)}…`,
+                notesTruncated: truncated,
+                badgeClass: r.source === 'Legacy activity'
+                    ? 'slds-badge slds-theme_warning'
+                    : 'slds-badge slds-theme_success'
+            };
+        });
+        return this.sortRows(mapped);
+    }
+
+    /**
+     * Client-side sort over the loaded rows. Blanks always sort last regardless
+     * of direction, so an empty Facility or a missing note never pushes real
+     * data off the top of the list.
+     */
+    sortRows(rows) {
+        const field = this.sortedBy;
+        if (!field) {
+            return rows;
+        }
+        const direction = this.sortDirection === 'asc' ? 1 : -1;
+        return [...rows].sort((a, b) => {
+            let left = a[field];
+            let right = b[field];
+            const leftBlank = left === null || left === undefined || left === '';
+            const rightBlank = right === null || right === undefined || right === '';
+            if (leftBlank && rightBlank) {
+                return 0;
+            }
+            if (leftBlank) {
+                return 1;
+            }
+            if (rightBlank) {
+                return -1;
+            }
+            if (typeof left === 'string' && typeof right === 'string') {
+                left = left.toLowerCase();
+                right = right.toLowerCase();
+            }
+            if (left === right) {
+                return 0;
+            }
+            return (left > right ? 1 : -1) * direction;
+        });
+    }
+
+    handleSort(event) {
+        this.sortedBy = event.detail.fieldName;
+        this.sortDirection = event.detail.sortDirection;
     }
 
     get hasRows() {
@@ -182,21 +172,9 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
         return !this.loading && !this.error && this.rows.length === 0;
     }
 
-    get emptyMessage() {
-        // Distinguish "this provider has none" from "your filters hid them all".
-        if (this.summary && this.summary.totalCount > 0) {
-            return 'No objections match the current filters.';
-        }
-        return 'No objections recorded for this provider';
-    }
-
-    get filteredCountLabel() {
-        const shown = this.rows.length;
-        const total = this.totalCount;
-        if (shown === total) {
-            return `${total} objection${total === 1 ? '' : 's'}`;
-        }
-        return `${shown} of ${total} objections`;
+    get countLabel() {
+        const total = this.rows.length;
+        return `${total} objection${total === 1 ? '' : 's'}`;
     }
 
     get isTruncated() {
@@ -204,7 +182,7 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
     }
 
     get truncationMessage() {
-        return `Only the first ${this.activeRowLimit} objections were loaded. Narrow the date window to see a complete set.`;
+        return `Only the first ${this.activeRowLimit} objections were loaded.`;
     }
 
     get anyNotesTruncated() {
@@ -213,41 +191,6 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
 
     get notesToggleLabel() {
         return this.notesExpanded ? 'Collapse notes' : 'Expand notes';
-    }
-
-    // ---- filter options --------------------------------------------------
-
-    get dateWindowOptions() {
-        return [
-            { label: 'Last 24 months', value: String(24) },
-            { label: 'Show all', value: String(ALL_TIME) }
-        ];
-    }
-
-    get dateWindowValue() {
-        return String(this.activeMonths);
-    }
-
-    get categoryOptions() {
-        const options = [{ label: 'All objections', value: ALL }];
-        this.categories.forEach((c) => options.push({ label: c.label, value: c.name }));
-        return options;
-    }
-
-    // ---- handlers --------------------------------------------------------
-
-    handleDateWindowChange(event) {
-        // Server-side parameter: changing it re-provisions the wire.
-        this.loading = true;
-        this.activeMonths = parseInt(event.detail.value, 10);
-    }
-
-    handleCategoryChange(event) {
-        this.categoryFilter = event.detail.value;
-    }
-
-    handleSearch(event) {
-        this.searchTerm = event.target.value;
     }
 
     handleToggleNotes() {
@@ -284,8 +227,6 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
             attributes: { recordId: visitReportId, actionName: 'view' }
         });
     }
-
-    // ---- errors ----------------------------------------------------------
 
     reduceError(error) {
         if (!error) {
