@@ -2,7 +2,7 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>66.0</apiVersion>
     <isExposed>true</isExposed>
-    <masterLabel>Field Visit Assistant</masterLabel>
+    <masterLabel>Field Assistance AI</masterLabel>
     <description>Dictate a provider visit recap and save it as a structured Visit Report.</description>
     <targets>
         <target>lightning__AppPage</target>

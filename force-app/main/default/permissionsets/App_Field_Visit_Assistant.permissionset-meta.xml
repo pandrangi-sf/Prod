@@ -4,13 +4,13 @@
         <apexClass>CR_FieldAssistant</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <description>Access to the dictate-and-save field visit assistant.</description>
+    <description>Access to Field Assistance AI, the dictate-and-save visit assistant.</description>
     <externalCredentialPrincipalAccesses>
         <enabled>true</enabled>
         <externalCredentialPrincipal>Anthropic_API-AnthropicPrincipal</externalCredentialPrincipal>
     </externalCredentialPrincipalAccesses>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>App: Field Visit Assistant</label>
+    <label>App: Field Assistance AI</label>
     <tabSettings>
         <tab>Field_Visit_Assistant</tab>
         <visibility>Visible</visibility>

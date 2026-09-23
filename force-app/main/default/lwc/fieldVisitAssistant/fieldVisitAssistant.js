@@ -9,7 +9,7 @@ const GREETING = 'Just finished a visit? Tell me how it went and I will write up
 
 export default class FieldVisitAssistant extends LightningElement {
     // Set by the utility bar; it titles the docked item with this.
-    @api label = 'Log a Visit';
+    @api label = 'Field Assistance AI';
 
     @track messages = [];
     @track draft;
