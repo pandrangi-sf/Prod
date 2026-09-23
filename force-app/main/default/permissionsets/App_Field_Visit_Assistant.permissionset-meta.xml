@@ -4,11 +4,11 @@
         <apexClass>CR_FieldAssistant</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <description>Access to the dictate-and-save field visit assistant.</description>
     <externalCredentialPrincipalAccesses>
         <enabled>true</enabled>
         <externalCredentialPrincipal>Anthropic_API-AnthropicPrincipal</externalCredentialPrincipal>
     </externalCredentialPrincipalAccesses>
-    <description>Access to the dictate-and-save field visit assistant.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>App: Field Visit Assistant</label>
     <tabSettings>
