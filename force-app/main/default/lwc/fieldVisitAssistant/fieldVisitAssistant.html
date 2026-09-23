@@ -1,0 +1,161 @@
+<template>
+    <div class="shell">
+        <!-- conversation -->
+        <div class="log">
+            <template for:each={messages} for:item="msg">
+                <div key={msg.id} class={msg.cssClass}>{msg.text}</div>
+            </template>
+            <template if:true={busy}>
+                <div class="bubble bubble_bot typing">Writing it up…</div>
+            </template>
+        </div>
+
+        <!-- confirm strip -->
+        <template if:true={confirming}>
+            <div class="panel">
+                <lightning-combobox
+                    label="Provider"
+                    variant="label-stacked"
+                    options={providerOptions}
+                    value={providerId}
+                    onchange={handleProviderSelect}
+                    placeholder="Pick the provider"
+                ></lightning-combobox>
+                <lightning-input
+                    type="search"
+                    label="Search a different provider"
+                    variant="label-stacked"
+                    value={providerTerm}
+                    onchange={handleProviderTerm}
+                ></lightning-input>
+
+                <template if:true={showDetails}>
+                    <div class="details">
+                        <lightning-combobox
+                            label="Record type"
+                            variant="label-stacked"
+                            options={recordTypeOptions}
+                            value={recordTypeId}
+                            onchange={handleRecordType}
+                        ></lightning-combobox>
+                        <lightning-input
+                            label="Subject"
+                            variant="label-stacked"
+                            data-field="subject"
+                            value={draft.subject}
+                            onchange={handleFieldChange}
+                        ></lightning-input>
+                        <lightning-input
+                            type="date"
+                            label="Visit date"
+                            variant="label-stacked"
+                            data-field="visitDate"
+                            value={draft.visitDate}
+                            onchange={handleFieldChange}
+                        ></lightning-input>
+                        <lightning-combobox
+                            label="Visit type"
+                            variant="label-stacked"
+                            data-field="visitType"
+                            options={visitTypeOptions}
+                            value={draft.visitType}
+                            onchange={handleFieldChange}
+                        ></lightning-combobox>
+                        <lightning-combobox
+                            label="Category"
+                            variant="label-stacked"
+                            data-field="category"
+                            options={categoryOptions}
+                            value={draft.category}
+                            onchange={handleFieldChange}
+                        ></lightning-combobox>
+                        <lightning-combobox
+                            label="Purpose"
+                            variant="label-stacked"
+                            data-field="purpose"
+                            options={purposeOptions}
+                            value={draft.purpose}
+                            onchange={handleFieldChange}
+                        ></lightning-combobox>
+                        <lightning-combobox
+                            label="Audience"
+                            variant="label-stacked"
+                            data-field="audience"
+                            options={audienceOptions}
+                            value={draft.audience}
+                            onchange={handleFieldChange}
+                        ></lightning-combobox>
+                        <lightning-combobox
+                            label="Meal with visit"
+                            variant="label-stacked"
+                            data-field="mealWithVisit"
+                            options={mealOptions}
+                            value={draft.mealWithVisit}
+                            onchange={handleFieldChange}
+                        ></lightning-combobox>
+                        <lightning-textarea
+                            label="Notes"
+                            variant="label-stacked"
+                            data-field="notes"
+                            value={draft.notes}
+                            onchange={handleFieldChange}
+                        ></lightning-textarea>
+                    </div>
+                </template>
+
+                <div class="actions">
+                    <lightning-button
+                        variant="brand"
+                        label="Save"
+                        onclick={handleSave}
+                        disabled={busy}
+                    ></lightning-button>
+                    <lightning-button
+                        label={detailsLabel}
+                        onclick={toggleDetails}
+                    ></lightning-button>
+                    <lightning-button
+                        variant="destructive-text"
+                        label="Discard"
+                        onclick={handleDiscard}
+                    ></lightning-button>
+                </div>
+            </div>
+        </template>
+
+        <!-- composer -->
+        <template if:true={showComposer}>
+            <div class="composer">
+                <lightning-textarea
+                    variant="label-hidden"
+                    label="Your recap"
+                    placeholder="Saw Dr. Patel this morning, quarterly meeting. She raised referral turnaround again."
+                    value={transcript}
+                    onchange={handleTranscript}
+                    class="composer__input"
+                ></lightning-textarea>
+                <div class="composer__actions">
+                    <lightning-button
+                        label={micLabel}
+                        icon-name="utility:unmuted"
+                        variant={micVariant}
+                        onclick={toggleMic}
+                        disabled={speechUnsupported}
+                    ></lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Send"
+                        onclick={handleSend}
+                        disabled={sendDisabled}
+                    ></lightning-button>
+                </div>
+                <template if:true={listening}>
+                    <p class="hint hint_live">Listening…</p>
+                </template>
+                <template if:true={speechUnsupported}>
+                    <p class="hint">Dictation unavailable here — type instead.</p>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>

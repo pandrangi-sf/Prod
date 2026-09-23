@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>CR_FieldAssistant</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Access to the dictate-and-save field visit assistant.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>App: Field Visit Assistant</label>
+    <tabSettings>
+        <tab>Field_Visit_Assistant</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>
