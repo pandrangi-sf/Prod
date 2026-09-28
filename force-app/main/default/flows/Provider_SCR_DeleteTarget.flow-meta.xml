@@ -18,40 +18,6 @@
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <actionCalls>
-        <description>Pulls the record Ids out of the rows selected on S03 so they can be re-queried before the delete runs.</description>
-        <name>Extract_Selected_Zoned_Location_Ids</name>
-        <label>Extract Selected Zoned Location Ids</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <actionName>ExtractStringsFromCollection</actionName>
-        <actionType>apex</actionType>
-        <connector>
-            <targetReference>Get_Zoned_Locations_To_Delete</targetReference>
-        </connector>
-        <dataTypeMappings>
-            <typeName>T__inputRecordCollection</typeName>
-            <typeValue>ZonedLocation__c</typeValue>
-        </dataTypeMappings>
-        <faultConnector>
-            <targetReference>S05_Flow_Error</targetReference>
-        </faultConnector>
-        <flowTransactionModel>Automatic</flowTransactionModel>
-        <inputParameters>
-            <name>fieldAPIName</name>
-            <value>
-                <stringValue>Id</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>inputRecordCollection</name>
-            <value>
-                <elementReference>S03_ZonedLocationsMissingTargets.selectedRows</elementReference>
-            </value>
-        </inputParameters>
-        <nameSegment>ExtractStringsFromCollection</nameSegment>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </actionCalls>
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
@@ -68,6 +34,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Search_Zoned_Locations_for_Targets</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Selected_Zoned_Location_Id</name>
+        <label>Add Selected Zoned Location Id</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_SelectedZonedLocationIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Collect_Selected_Zoned_Location_Ids.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Collect_Selected_Zoned_Location_Ids</targetReference>
         </connector>
     </assignments>
     <decisions>
@@ -164,7 +146,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Any_Zoned_Locations_Selected</targetReference>
+                <targetReference>Collect_Selected_Zoned_Location_Ids</targetReference>
             </connector>
             <label>Delete</label>
         </rules>
@@ -221,7 +203,7 @@
         </rules>
     </decisions>
     <decisions>
-        <description>Stops the delete when every checkbox on S03 was cleared and the user clicked Delete instead of Cancel. Deleting an empty collection throws &quot;No records in Salesforce match your delete criteria&quot;.</description>
+        <description>Stops the delete when every checkbox on S03 was cleared and the user clicked Delete instead of Cancel. Tests the collection built by the loop, because an empty record collection is NOT null in Flow and cannot be tested directly.</description>
         <name>Any_Zoned_Locations_Selected</name>
         <label>Any Zoned Locations Selected?</label>
         <locationX>0</locationX>
@@ -234,14 +216,14 @@
             <name>Zoned_Locations_Selected</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>S03_ZonedLocationsMissingTargets.selectedRows</leftValueReference>
+                <leftValueReference>vT_SelectedZonedLocationIds</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Extract_Selected_Zoned_Location_Ids</targetReference>
+                <targetReference>Get_Zoned_Locations_To_Delete</targetReference>
             </connector>
             <label>Zoned Locations Selected</label>
         </rules>
@@ -289,6 +271,21 @@
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Were_Zoned_Locations_without_Targets_Found</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Builds a text collection of the Ids selected on S03. When nothing is selected the loop body never runs, so the collection stays null and the next decision catches it. This is the reliable emptiness test: an empty record collection is not null in Flow.</description>
+        <name>Collect_Selected_Zoned_Location_Ids</name>
+        <label>Collect Selected Zoned Location Ids</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>S03_ZonedLocationsMissingTargets.selectedRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Selected_Zoned_Location_Id</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Any_Zoned_Locations_Selected</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -490,7 +487,7 @@
             <field>Id</field>
             <operator>In</operator>
             <value>
-                <elementReference>Extract_Selected_Zoned_Location_Ids.fieldValueCollection</elementReference>
+                <elementReference>vT_SelectedZonedLocationIds</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -736,7 +733,7 @@
         <label>S03 Delete Zoned Locations</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
@@ -1002,5 +999,13 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>ZonedLocation__c</objectType>
+    </variables>
+    <variables>
+        <description>Ids of the Zoned Locations selected on S03. Stays null when nothing is selected.</description>
+        <name>vT_SelectedZonedLocationIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>
