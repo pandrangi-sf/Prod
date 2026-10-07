@@ -186,6 +186,14 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>BH Credentialed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CIN</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>HCA Hospitals</fullName>
             <default>false</default>
         </values>
