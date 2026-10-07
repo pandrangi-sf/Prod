@@ -287,7 +287,7 @@
             <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Contact.Log_a_Visit_Flow</actionName>
+            <actionName>Contact.Log_a_Visit_OH</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
         </platformActionListItems>
