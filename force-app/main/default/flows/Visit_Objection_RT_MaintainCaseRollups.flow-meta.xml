@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <description>Counts one more report for this issue.</description>
+        <name>Increment_Report_Count</name>
+        <label>Increment Report Count</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vN_ReportCount</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Count_Case_Reports</targetReference>
+        </connector>
+    </assignments>
+    <description>Maintains Report Count, First Reported and Last Reported on a Provider Objection Case whenever a Visit Objection report is grouped into it. Needed because Visit_Objection__c.Case__c is a Lookup, not Master-detail, so a roll-up summary field is not available. Earliest and latest are taken from the report CreatedDate by sorting, which avoids a cross-object hop to Visit_Report__c.Visit_Date__c.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Date the earliest grouped report was captured.</description>
+        <name>fD_FirstReported</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!Get_Earliest_Report.CreatedDate})</expression>
+    </formulas>
+    <formulas>
+        <description>Date the most recent grouped report was captured.</description>
+        <name>fD_LastReported</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!Get_Latest_Report.CreatedDate})</expression>
+    </formulas>
+    <interviewLabel>Visit Objection RT Maintain Case Rollups {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Visit Objection RT Maintain Case Rollups</label>
+    <loops>
+        <description>Counts the reports grouped into this issue.</description>
+        <name>Count_Case_Reports</name>
+        <label>Count Case Reports</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Case_Reports</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Increment_Report_Count</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Earliest_Report</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>All reports currently grouped into this issue.</description>
+        <name>Get_Case_Reports</name>
+        <label>Get Case Reports</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Count_Case_Reports</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Visit_Objection__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Earliest grouped report, by CreatedDate ascending.</description>
+        <name>Get_Earliest_Report</name>
+        <label>Get Earliest Report</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Latest_Report</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Visit_Objection__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Most recent grouped report, by CreatedDate descending.</description>
+        <name>Get_Latest_Report</name>
+        <label>Get Latest Report</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Case_Rollups</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Visit_Objection__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Writes the recalculated roll-ups onto the issue.</description>
+        <name>Update_Case_Rollups</name>
+        <label>Update Case Rollups</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>First_Reported__c</field>
+            <value>
+                <elementReference>fD_FirstReported</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Reported__c</field>
+            <value>
+                <elementReference>fD_LastReported</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Report_Count__c</field>
+            <value>
+                <elementReference>vN_ReportCount</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Case_Reports</targetReference>
+        </connector>
+        <filterFormula>NOT(ISBLANK({!$Record.Case__c}))</filterFormula>
+        <object>Visit_Objection__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Running count of reports grouped into this issue.</description>
+        <name>vN_ReportCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

@@ -458,6 +458,7 @@
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-WaveHomeLightning</tabs>
     <tabs>Visit_Type_Review__c</tabs>
+    <tabs>Visit_Objection__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>PRM_UtilityBar</utilityBar>
 </CustomApplication>

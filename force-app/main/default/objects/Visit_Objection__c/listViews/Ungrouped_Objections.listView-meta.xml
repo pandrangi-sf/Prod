@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ungrouped_Objections</fullName>
+    <columns>NAME</columns>
+    <columns>Objection__c</columns>
+    <columns>Facility__c</columns>
+    <columns>Provider__c</columns>
+    <columns>Practice_Group__c</columns>
+    <columns>Notes__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Case__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Ungrouped Objections</label>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The issue this report has been grouped into. Deliberately blank until a reviewer groups it: many reports to zero-or-one issue. Kept as a Lookup, not Master-detail, so reports are not owned by the Case and are not cascade-deleted with it, and so the link can be reassigned.</description>
+    <inlineHelpText>The issue this report has been grouped into. Blank until a reviewer groups it.</inlineHelpText>
+    <label>Case</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Visit Objections</relationshipLabel>
+    <relationshipName>Visit_Objections</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

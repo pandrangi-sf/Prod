@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Count__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Number of Visit Objection reports grouped into this issue. Maintained by the Case_RT_MaintainObjectionRollups flow, because Visit_Objection__c.Case__c is a lookup and so cannot support a roll-up summary field.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many visit objection reports are grouped into this issue.</inlineHelpText>
+    <label>Report Count</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

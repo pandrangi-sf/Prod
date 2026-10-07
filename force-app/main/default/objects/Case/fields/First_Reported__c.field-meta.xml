@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Reported__c</fullName>
+    <description>Earliest/latest visit date across the Visit Objection reports grouped into this issue. Maintained by the Case_RT_MaintainObjectionRollups flow.</description>
+    <externalId>false</externalId>
+    <label>First Reported</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

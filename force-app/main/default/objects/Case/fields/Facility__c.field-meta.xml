@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Facility__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The Orlando Health or Baptist Health facility this issue is raised against. Mirrors Visit_Objection__c.Facility__c.</description>
+    <inlineHelpText>The facility this issue is about.</inlineHelpText>
+    <label>Facility</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Objection Cases</relationshipLabel>
+    <relationshipName>Objection_Cases</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

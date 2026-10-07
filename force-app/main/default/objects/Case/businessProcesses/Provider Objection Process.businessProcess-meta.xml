@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider Objection Process</fullName>
+    <description>Support process for provider objection issues: New to Triage to In Progress, closing as Resolved or Closed - No Action.</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Triage</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Resolved</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed - No Action</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

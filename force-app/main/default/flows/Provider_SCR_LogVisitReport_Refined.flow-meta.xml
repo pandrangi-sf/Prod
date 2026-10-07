@@ -570,6 +570,20 @@
                 <elementReference>Add_Visit_Report_Id_to_Objections.Notes__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_VisitObjection.Provider__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Provider_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_VisitObjection.Practice_Group__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Provider_Practice_Group.Id</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_Complete_Visit_Objection_to_Collection</targetReference>
         </connector>
@@ -764,6 +778,40 @@
         </assignmentItems>
         <connector>
             <targetReference>Get_Provider_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Loads the BH objection catalog into vC_Objections for the S08 Objections Raised datatable.</description>
+        <name>Set_Objections_Collection_BH</name>
+        <label>Set Objections Collection - BH</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vC_Objections</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_BH_Objections</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S08_Objections_Raised</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Loads the OH objection catalog into vC_Objections for the S08 Objections Raised datatable.</description>
+        <name>Set_Objections_Collection_OH</name>
+        <label>Set Objections Collection - OH</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vC_Objections</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_OH_Objections</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S08_Objections_Raised</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -1132,7 +1180,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Get_Objections</targetReference>
+            <targetReference>Which_Objections_Catalog</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1206,6 +1254,32 @@
                 <targetReference>Get_Names_of_Objections_Selected</targetReference>
             </connector>
             <label>Objections Selected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Routes to the BH or OH objection catalog so each market reads its own flag instead of both markets sharing the BH query. Mirrors Which Services Catalog?.</description>
+        <name>Which_Objections_Catalog</name>
+        <label>Which Objections Catalog?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_OH_Objections</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BH_Objections</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vT_IsBHFacility</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_BH_Objections</targetReference>
+            </connector>
+            <label>BH Objections</label>
         </rules>
     </decisions>
     <decisions>
@@ -1985,14 +2059,49 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <description>Filters on BH_PRM_Objection__c, matching UAT. Do NOT switch this to PRM_Objection__c: that field exists but no PRM permission set has Read on it, so SOQL from a PRM user&apos;s session fails with &quot;No such column&quot;. All three flags (PRM, BH_PRM, OH_PRM) tick the same 7 records today, so BH_PRM is both safe and correct for OH users.</description>
-        <name>Get_Objections</name>
-        <label>Get Objections</label>
+        <description>Get the active OH PRM Objection records. Default route from Which Objections Catalog?. Mirrors Get Services so the OH catalog is no longer served by the BH query.</description>
+        <name>Get_OH_Objections</name>
+        <label>Get OH Objections</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>S08_Objections_Raised</targetReference>
+            <targetReference>Set_Objections_Collection_OH</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>S12_Error_Loading_Data</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Active__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>OH_PRM_Objection__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Objection__c</object>
+        <sortField>Name</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the active BH PRM Objection records. Reached only on the BH route from Which Objections Catalog?. Do NOT switch this to PRM_Objection__c: BH PRM User and BH PRM Manager have no Read on that field, so SOQL from a BH session fails with &quot;No such column&quot;. BH_PRM_Objection__c and OH_PRM_Objection__c are both readable by both markets and are the safe flags to filter on.</description>
+        <name>Get_BH_Objections</name>
+        <label>Get BH Objections</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_Objections_Collection_BH</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -3386,7 +3495,7 @@
                     <inputParameters>
                         <name>tableData</name>
                         <value>
-                            <elementReference>Get_Objections</elementReference>
+                            <elementReference>vC_Objections</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -3725,7 +3834,7 @@
             <targetReference>Determine_BH_or_OH_Route</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>tt_AdditionalProviders</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
@@ -3885,7 +3994,7 @@ N: {!S10_LT04_Next_Steps}</text>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Objections</targetReference>
+            <targetReference>Which_Objections_Catalog</targetReference>
         </connector>
         <dataType>String</dataType>
         <isCollection>true</isCollection>
@@ -3982,6 +4091,15 @@ N: {!S10_LT04_Next_Steps}</text>
         <value>
             <booleanValue>false</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <description>Holds the objection catalog shown on S08 Objections Raised: BH objections for the BH route, OH objections otherwise.</description>
+        <name>vC_Objections</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Objection__c</objectType>
     </variables>
     <variables>
         <description>Holds the service catalog shown on S07 Services Promoted: BH services for the BH route, OH services otherwise.</description>

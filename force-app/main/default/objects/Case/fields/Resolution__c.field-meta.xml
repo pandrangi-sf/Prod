@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resolution__c</fullName>
+    <description>How the issue was resolved. Required by the close path so resolution can be reported on by theme.</description>
+    <inlineHelpText>How this issue was resolved.</inlineHelpText>
+    <label>Resolution</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Resolved - Fixed</fullName>
+                <default>false</default>
+                <label>Resolved - Fixed</label>
+            </value>
+            <value>
+                <fullName>Resolved - Explained to Provider</fullName>
+                <default>false</default>
+                <label>Resolved - Explained to Provider</label>
+            </value>
+            <value>
+                <fullName>Referred to Another Team</fullName>
+                <default>false</default>
+                <label>Referred to Another Team</label>
+            </value>
+            <value>
+                <fullName>No Action Required</fullName>
+                <default>false</default>
+                <label>No Action Required</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

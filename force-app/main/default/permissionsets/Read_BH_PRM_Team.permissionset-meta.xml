@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>PRM_BaptistHealth</application>
@@ -3291,7 +3291,7 @@
         <field>agf__ADM_Work__c.Pre_deployment_Instructions__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <hasActivationRequired>false</hasActivationRequired>
+    <fieldPermissions><editable>false</editable><field>Visit_Objection__c.Provider__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Visit_Objection__c.Practice_Group__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Visit_Objection__c.Case__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Objection__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Facility__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Resolution__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Resolution_Notes__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Report_Count__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.First_Reported__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Last_Reported__c</field><readable>true</readable></fieldPermissions><hasActivationRequired>false</hasActivationRequired>
     <label>Read - BH PRM Team</label>
     <license>Salesforce</license>
     <objectPermissions>
@@ -3534,7 +3534,7 @@
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <pageAccesses>
+    <objectPermissions><allowCreate>false</allowCreate><allowDelete>false</allowDelete><allowEdit>false</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Case</object><viewAllRecords>false</viewAllRecords></objectPermissions><pageAccesses>
         <apexPage>ChangePassword</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
@@ -3562,7 +3562,7 @@
         <recordType>Visit_Report__c.BH_Physician_Relations_Visit</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <tabSettings>
+    <recordTypeVisibilities><recordType>Case.Provider_Objection</recordType><visible>true</visible></recordTypeVisibilities><tabSettings>
         <tab>Collateral__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

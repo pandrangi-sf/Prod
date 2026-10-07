@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Main permission set for the Baptist Health team</description>
     <fieldPermissions>
@@ -1381,7 +1381,7 @@
         <field>Visit_Service__c.Visit_Report__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <hasActivationRequired>false</hasActivationRequired>
+    <fieldPermissions><editable>true</editable><field>Visit_Objection__c.Provider__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Visit_Objection__c.Practice_Group__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Visit_Objection__c.Case__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Service__c.BH_PRM_Service__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Objection__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Facility__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Resolution__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Resolution_Notes__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Account.Top_Level_Parent_Account_Id__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Report_Count__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.First_Reported__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Last_Reported__c</field><readable>true</readable></fieldPermissions><hasActivationRequired>false</hasActivationRequired>
     <label>Persona - BH PRM User</label>
     <license>Salesforce</license>
     <objectPermissions>
@@ -1524,7 +1524,7 @@
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <recordTypeVisibilities>
+    <objectPermissions><allowCreate>true</allowCreate><allowDelete>false</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Case</object><viewAllRecords>false</viewAllRecords></objectPermissions><recordTypeVisibilities>
         <recordType>Contact.BusinessContact</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -1556,7 +1556,7 @@
         <recordType>Visit_Report__c.BH_Physician_Relations_Visit</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <tabSettings>
+    <recordTypeVisibilities><recordType>Case.Provider_Objection</recordType><visible>true</visible></recordTypeVisibilities><tabSettings>
         <tab>Affiliation__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

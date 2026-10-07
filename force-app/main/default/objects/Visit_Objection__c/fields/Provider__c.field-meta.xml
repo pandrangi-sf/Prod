@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The provider the visit was logged against, stamped by the Log a Visit flow at insert. Phase 0 attribution: lets an objection be reported on by provider without joining through Visit Report and Task.</description>
+    <inlineHelpText>The provider this objection was raised about. Set automatically when the visit is logged.</inlineHelpText>
+    <label>Provider</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Visit Objections</relationshipLabel>
+    <relationshipName>Visit_Objections</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

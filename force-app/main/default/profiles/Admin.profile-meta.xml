@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>Awesome_Admin</application>
@@ -892,7 +892,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.Top_Level_Parent_Account_Id__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -5930,9 +5930,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Location__c.Address__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -6790,9 +6790,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Service__c.BH_PRM_Service__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -8460,14 +8460,14 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Visit_Collateral__c.Collateral__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Visit_Collateral__c.Visit_Report__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -8954,7 +8954,7 @@
         <field>agf__ADM_Work__c.Pre_deployment_Instructions__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <flowAccesses>
+    <fieldPermissions><editable>true</editable><field>Visit_Objection__c.Provider__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Visit_Objection__c.Practice_Group__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Visit_Objection__c.Case__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Objection__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Facility__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Resolution__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>true</editable><field>Case.Resolution_Notes__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Report_Count__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.First_Reported__c</field><readable>true</readable></fieldPermissions><fieldPermissions><editable>false</editable><field>Case.Last_Reported__c</field><readable>true</readable></fieldPermissions><flowAccesses>
         <enabled>false</enabled>
         <flow>Add_Provider_As_Target</flow>
     </flowAccesses>
@@ -11440,7 +11440,7 @@
         <recordType>Visit_Report__c.Physician_Relations_Visit</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <tabVisibilities>
+    <recordTypeVisibilities><default>true</default><recordType>Case.Provider_Objection</recordType><visible>true</visible></recordTypeVisibilities><tabVisibilities>
         <tab>Affiliation__c</tab>
         <visibility>DefaultOff</visibility>
     </tabVisibilities>
