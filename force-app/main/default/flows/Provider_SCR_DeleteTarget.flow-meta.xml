@@ -36,6 +36,22 @@
             <targetReference>Search_Zoned_Locations_for_Targets</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Add_Selected_Zoned_Location_Id</name>
+        <label>Add Selected Zoned Location Id</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_SelectedZonedLocationIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Collect_Selected_Zoned_Location_Ids.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Collect_Selected_Zoned_Location_Ids</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Button_Selected</name>
         <label>Button Selected</label>
@@ -130,7 +146,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Delete_Zoned_Locations</targetReference>
+                <targetReference>Collect_Selected_Zoned_Location_Ids</targetReference>
             </connector>
             <label>Delete</label>
         </rules>
@@ -186,6 +202,58 @@
             <label>Zoned Locations without Targets Found</label>
         </rules>
     </decisions>
+    <decisions>
+        <description>Stops the delete when every checkbox on S03 was cleared and the user clicked Delete instead of Cancel. Tests the collection built by the loop, because an empty record collection is NOT null in Flow and cannot be tested directly.</description>
+        <name>Any_Zoned_Locations_Selected</name>
+        <label>Any Zoned Locations Selected?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Reload_Provider_Page</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Nothing Selected</defaultConnectorLabel>
+        <rules>
+            <name>Zoned_Locations_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vT_SelectedZonedLocationIds</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Zoned_Locations_To_Delete</targetReference>
+            </connector>
+            <label>Zoned Locations Selected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Rows already deleted earlier in the interview, for example after using Previous on S04, are dropped by the re-query, which would otherwise throw ENTITY_IS_DELETED.</description>
+        <name>Zoned_Locations_Still_Exist</name>
+        <label>Zoned Locations Still Exist?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Reload_Provider_Page</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Already Deleted</defaultConnectorLabel>
+        <rules>
+            <name>Still_Exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Zoned_Locations_To_Delete</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Zoned_Locations</targetReference>
+            </connector>
+            <label>Still Exist</label>
+        </rules>
+    </decisions>
     <description>Screen flow for deleting a provider as a Target directly from provider detail page.</description>
     <environments>Default</environments>
     <interviewLabel>Provider_SCR_DeleteTarget {!$Flow.CurrentDateTime}</interviewLabel>
@@ -203,6 +271,21 @@
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Were_Zoned_Locations_without_Targets_Found</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Builds a text collection of the Ids selected on S03. When nothing is selected the loop body never runs, so the collection stays null and the next decision catches it. This is the reliable emptiness test: an empty record collection is not null in Flow.</description>
+        <name>Collect_Selected_Zoned_Location_Ids</name>
+        <label>Collect Selected Zoned Location Ids</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>S03_ZonedLocationsMissingTargets.selectedRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Selected_Zoned_Location_Id</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Any_Zoned_Locations_Selected</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -232,6 +315,9 @@
         <connector>
             <targetReference>User_Region</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>S05_Flow_Error</targetReference>
+        </faultConnector>
         <inputReference>Get_Targets_for_User</inputReference>
     </recordDeletes>
     <recordDeletes>
@@ -242,7 +328,10 @@
         <connector>
             <targetReference>S04_Zoned_Locations_Deleted_Confirmation</targetReference>
         </connector>
-        <inputReference>S03_ZonedLocationsMissingTargets.selectedRows</inputReference>
+        <faultConnector>
+            <targetReference>S05_Flow_Error</targetReference>
+        </faultConnector>
+        <inputReference>Get_Zoned_Locations_To_Delete</inputReference>
     </recordDeletes>
     <recordLookups>
         <name>Get_Provider_Info</name>
@@ -378,6 +467,31 @@
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>ProviderLocation__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Re-queries the selected Zoned Locations so rows that no longer exist drop out before the delete.</description>
+        <name>Get_Zoned_Locations_To_Delete</name>
+        <label>Get Zoned Locations To Delete</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Zoned_Locations_Still_Exist</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>S05_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>vT_SelectedZonedLocationIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ZonedLocation__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <screens>
@@ -619,7 +733,7 @@
         <label>S03 Delete Zoned Locations</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
@@ -627,7 +741,7 @@
         </connector>
         <fields>
             <name>S03_DTXT01_DeleteZonesMessage</name>
-            <fieldText>&lt;p&gt;The following Zoned Location(s) no longer have a targeted provider.  Would you like to delete the Zoned Location(s).  If there are muiltiple and you only want to delete certain ones, uncheck the ones you wish to keep. &lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;The following Zoned Location(s) no longer have a targeted provider. Would you like to delete the Zoned Location(s)? If there are multiple and you only want to delete certain ones, uncheck the ones you wish to keep. If you want to keep all of them, click Cancel.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -754,7 +868,7 @@
         <label>S04 Zoned Locations Deleted Confirmation</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
@@ -808,7 +922,7 @@
             <inputParameters>
                 <name>tableData</name>
                 <value>
-                    <elementReference>S03_ZonedLocationsMissingTargets.selectedRows</elementReference>
+                    <elementReference>Get_Zoned_Locations_To_Delete</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -826,6 +940,31 @@
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Fault path for the delete steps, so users get a clear message instead of the generic unhandled fault screen.</description>
+        <name>S05_Flow_Error</name>
+        <label>S05 Flow Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>S05_DTXT01_ErrorMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(194, 57, 52);&quot;&gt;Something went wrong&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This flow could not finish. Anything a previous screen already confirmed was saved. If you saw the &lt;strong&gt;Target Deleted&lt;/strong&gt; message, the provider really was removed as one of your Targets. Only the Zoned Location cleanup did not complete, so a Zoned Location may still be listed without a targeted provider.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Please send this to your Salesforce administrator:&lt;/p&gt;&lt;p&gt;&lt;em&gt;{!$Flow.FaultMessage}&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -860,5 +999,13 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>ZonedLocation__c</objectType>
+    </variables>
+    <variables>
+        <description>Ids of the Zoned Locations selected on S03. Stays null when nothing is selected.</description>
+        <name>vT_SelectedZonedLocationIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>
