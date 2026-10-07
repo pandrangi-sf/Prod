@@ -26,3 +26,6 @@ desktop.ini
 !force-app/**/.DS_Store
 !force-app/**/Thumbs.db
 !force-app/**/desktop.ini
+
+# UI Bundle build output — rebuilt from source with `npm run build` before deploy.
+force-app/main/default/uiBundles/*/dist/
