@@ -545,18 +545,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Medical_Group__c</fieldItem>
-                <identifier>RecordMedical_Group__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.IsInNetwork__c</fieldItem>
-                <identifier>RecordIsInNetwork_cField</identifier>
+                <fieldItem>Record.Affiliation__c</fieldItem>
+                <identifier>RecordAffiliation_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-21f35d46-94f3-4b67-b23b-174c5391781b</name>
@@ -569,18 +559,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Baptist_Health_Network__c</fieldItem>
-                <identifier>RecordBaptist_Health_Network__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.BH_Curaechoice_Network__c</fieldItem>
-                <identifier>RecordBH_Curaechoice_Network__cField</identifier>
+                <fieldItem>Record.Affiliation_Group__c</fieldItem>
+                <identifier>RecordAffiliation_Group_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e822fa97-722c-4f6b-96d6-b0feb1f2c315</name>
@@ -834,7 +814,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Network Status</value>
+                    <value>Affiliation</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection4</identifier>
