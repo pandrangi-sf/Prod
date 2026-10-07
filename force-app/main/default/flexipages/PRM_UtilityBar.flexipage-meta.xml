@@ -16,7 +16,7 @@
                 <componentInstanceProperties>
                     <name>icon</name>
                     <type>decorator</type>
-                    <value>chat</value>
+                    <value>fallback</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -30,7 +30,7 @@
                 <componentInstanceProperties>
                     <name>scrollable</name>
                     <type>decorator</type>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>width</name>
