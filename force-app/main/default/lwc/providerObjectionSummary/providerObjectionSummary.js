@@ -81,20 +81,31 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
         const limit = parseInt(this.rowLimit, 10);
         this.activeRowLimit = Number.isFinite(limit) ? limit : 500;
         // Log a Visit ends with a record page refresh; re-read so its new Cases
-        // appear without the user clicking Refresh.
-        this.refreshHandlerId = registerRefreshHandler(this, this.refreshHandler);
+        // appear without the user clicking Refresh. Passing `this` fails here with
+        // "Invalid contextElement" (the security layer hands the API a proxy), so
+        // the host element is used. The tab must still load if the API refuses
+        // it, so registration failure is swallowed: Refresh and the per-load
+        // fresh read still work without it.
+        try {
+            this.refreshHandlerId = registerRefreshHandler(this.template.host, this.refreshHandler);
+        } catch (e) {
+            this.refreshHandlerId = undefined;
+        }
     }
 
     disconnectedCallback() {
-        unregisterRefreshHandler(this.refreshHandlerId);
+        if (this.refreshHandlerId) {
+            unregisterRefreshHandler(this.refreshHandlerId);
+        }
     }
 
-    refreshHandler() {
+    // Arrow function so `this` is the component whichever way the API calls it.
+    refreshHandler = () => {
         if (!this.wiredResult) {
             return Promise.resolve(true);
         }
         return refreshApex(this.wiredResult).then(() => true);
-    }
+    };
 
     @wire(getObjectionSummary, {
         providerId: '$recordId',
