@@ -1,5 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
+import { registerRefreshHandler, unregisterRefreshHandler } from 'lightning/refresh';
 import { NavigationMixin } from 'lightning/navigation';
 import FORM_FACTOR from '@salesforce/client/formFactor';
 import getObjectionSummary from '@salesforce/apex/ProviderObjectionSummaryController.getObjectionSummary';
@@ -7,7 +8,8 @@ import getObjectionSummary from '@salesforce/apex/ProviderObjectionSummaryContro
 const NOTES_TRUNCATE = 120;
 
 // Column order set by the PRM team: what/when first, then where and what was
-// raised, then the detail, then who recorded it.
+// raised, then the detail, then who recorded it. Case and Status follow the
+// objection for rows logged as Provider Objection Cases; Source closes the row.
 const COLUMNS_BEFORE_NOTES = [
     // Button rather than a url column: NavigationMixin builds the target at
     // click time, so no org URL is ever hard-coded.
@@ -17,7 +19,12 @@ const COLUMNS_BEFORE_NOTES = [
     { label: 'Visit Date', fieldName: 'visitDate', type: 'date-local', initialWidth: 120,
       sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit' } },
     { label: 'Facility', fieldName: 'facility', type: 'text', initialWidth: 160, sortable: true },
-    { label: 'Objection', fieldName: 'objection', type: 'text', initialWidth: 160, sortable: true }
+    { label: 'Objection', fieldName: 'objection', type: 'text', initialWidth: 160, sortable: true },
+    // Blank and disabled on legacy rows, which have no Case.
+    { label: 'Case', type: 'button', initialWidth: 115,
+      typeAttributes: { label: { fieldName: 'caseNumber' }, variant: 'base', name: 'openCase',
+                        disabled: { fieldName: 'noCase' } } },
+    { label: 'Status', fieldName: 'status', type: 'text', initialWidth: 120, sortable: true }
 ];
 
 const NOTES_COLUMN = { label: 'Notes', fieldName: 'notesDisplay', type: 'text', wrapText: true, sortable: true };
@@ -27,8 +34,15 @@ const COLUMNS_AFTER_NOTES = [
     // Datetime, so the time is shown alongside the date.
     { label: 'Created Date', fieldName: 'createdDate', type: 'date', initialWidth: 175,
       sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit',
-                                        hour: '2-digit', minute: '2-digit' } }
+                                        hour: '2-digit', minute: '2-digit' } },
+    { label: 'Source', fieldName: 'source', type: 'text', initialWidth: 130, sortable: true }
 ];
+
+const BADGE_BY_SOURCE = {
+    Case: 'slds-badge slds-theme_info',
+    'Legacy activity': 'slds-badge slds-theme_warning'
+};
+const DEFAULT_BADGE = 'slds-badge slds-theme_success';
 
 export default class ProviderObjectionSummary extends NavigationMixin(LightningElement) {
     @api recordId;
@@ -56,12 +70,30 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
     error;
     loading = true;
     wiredResult;
+    // The wire is cacheable, so its first answer can be from earlier in the
+    // session; one server read per load keeps a just-logged Case from missing.
+    fetchedFresh = false;
+    refreshHandlerId;
 
     connectedCallback() {
         const months = parseInt(this.monthsBack, 10);
         this.activeMonths = Number.isFinite(months) ? months : 0;
         const limit = parseInt(this.rowLimit, 10);
         this.activeRowLimit = Number.isFinite(limit) ? limit : 500;
+        // Log a Visit ends with a record page refresh; re-read so its new Cases
+        // appear without the user clicking Refresh.
+        this.refreshHandlerId = registerRefreshHandler(this, this.refreshHandler);
+    }
+
+    disconnectedCallback() {
+        unregisterRefreshHandler(this.refreshHandlerId);
+    }
+
+    refreshHandler() {
+        if (!this.wiredResult) {
+            return Promise.resolve(true);
+        }
+        return refreshApex(this.wiredResult).then(() => true);
     }
 
     @wire(getObjectionSummary, {
@@ -77,6 +109,10 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
             this.summary = data;
             this.error = undefined;
             this.loading = false;
+            if (!this.fetchedFresh) {
+                this.fetchedFresh = true;
+                refreshApex(this.wiredResult);
+            }
         } else if (error) {
             this.summary = undefined;
             this.error = this.reduceError(error);
@@ -115,9 +151,8 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
                     ? notes
                     : `${notes.substring(0, NOTES_TRUNCATE)}…`,
                 notesTruncated: truncated,
-                badgeClass: r.source === 'Legacy activity'
-                    ? 'slds-badge slds-theme_warning'
-                    : 'slds-badge slds-theme_success'
+                noCase: !r.caseId,
+                badgeClass: BADGE_BY_SOURCE[r.source] || DEFAULT_BADGE
             };
         });
         return this.sortRows(mapped);
@@ -209,22 +244,25 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
     }
 
     handleRowAction(event) {
-        if (event.detail.action.name === 'openVisitReport') {
-            this.navigateToVisitReport(event.detail.row.visitReportId);
+        const { action, row } = event.detail;
+        if (action.name === 'openVisitReport') {
+            this.navigateToRecord(row.visitReportId);
+        } else if (action.name === 'openCase') {
+            this.navigateToRecord(row.caseId);
         }
     }
 
     handleCardLinkClick(event) {
-        this.navigateToVisitReport(event.currentTarget.dataset.id);
+        this.navigateToRecord(event.currentTarget.dataset.id);
     }
 
-    navigateToVisitReport(visitReportId) {
-        if (!visitReportId) {
+    navigateToRecord(recordId) {
+        if (!recordId) {
             return;
         }
         this[NavigationMixin.Navigate]({
             type: 'standard__recordPage',
-            attributes: { recordId: visitReportId, actionName: 'view' }
+            attributes: { recordId, actionName: 'view' }
         });
     }
 

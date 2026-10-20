@@ -84,6 +84,17 @@
                                         year="numeric" month="short" day="2-digit">
                                     </lightning-formatted-date-time>
                                 </div>
+                                <template lwc:if={row.caseId}>
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-var-m-top_xx-small slds-text-body_small">
+                                        <lightning-button
+                                            variant="base"
+                                            label={row.caseNumber}
+                                            data-id={row.caseId}
+                                            onclick={handleCardLinkClick}>
+                                        </lightning-button>
+                                        <span class="slds-text-color_weak slds-var-m-left_x-small">{row.status}</span>
+                                    </div>
+                                </template>
                                 <template lwc:if={row.notesDisplay}>
                                     <p class="slds-var-m-top_xx-small slds-text-body_small">{row.notesDisplay}</p>
                                 </template>

@@ -26,7 +26,8 @@ private class ProviderObjectionSummaryControllerTest {
         // Gender). They are satisfied here rather than bypassed.
         List<Contact> providers = new List<Contact>();
         for (String lastName : new List<String>{
-            'JunctionOnly', 'LegacyOnly', 'BothSources', 'NoObjections', 'BulkRows', 'SharedAttendee'
+            'JunctionOnly', 'LegacyOnly', 'BothSources', 'NoObjections', 'BulkRows', 'SharedAttendee',
+            'CaseProvider', 'CaseAttendee', 'CaseNoTask'
         }) {
             providers.add(newProvider(lastName, practiceGroup.Id));
         }
@@ -59,7 +60,9 @@ private class ProviderObjectionSummaryControllerTest {
             new Visit_Report__c(RecordTypeId = vrRt, Purpose__c = PURPOSE, Visit_Date__c = today.addDays(-30)),  // 3 both: legacy
             new Visit_Report__c(RecordTypeId = vrRt, Purpose__c = PURPOSE, Visit_Date__c = today.addMonths(-30)),// 4 outside 24mo
             new Visit_Report__c(RecordTypeId = vrRt, Purpose__c = PURPOSE, Visit_Date__c = today.addDays(-2)),   // 5 bulk
-            new Visit_Report__c(RecordTypeId = vrRt, Purpose__c = PURPOSE, Visit_Date__c = today.addDays(-1))    // 6 shared attendee
+            new Visit_Report__c(RecordTypeId = vrRt, Purpose__c = PURPOSE, Visit_Date__c = today.addDays(-1)),   // 6 shared attendee
+            new Visit_Report__c(RecordTypeId = vrRt, Purpose__c = PURPOSE, Visit_Date__c = today.addDays(-3)),   // 7 case visit
+            new Visit_Report__c(RecordTypeId = vrRt, Purpose__c = PURPOSE, Visit_Date__c = today.addMonths(-30)) // 8 stale case visit
         };
         insert reports;
 
@@ -101,7 +104,16 @@ private class ProviderObjectionSummaryControllerTest {
                      Visit_Report__c = reports[5].Id, Date_Meeting_Call__c = today.addDays(-2)),
             // Host task for the shared-attendee case; WhoId is a different provider.
             new Task(RecordTypeId = taskRt, Subject = 'Shared visit', WhoId = providerByName.get('JunctionOnly'),
-                     Visit_Report__c = reports[6].Id, Date_Meeting_Call__c = today.addDays(-1))
+                     Visit_Report__c = reports[6].Id, Date_Meeting_Call__c = today.addDays(-1)),
+            // CaseProvider — visit logged as objection Cases. The legacy multi-select
+            // must be suppressed because the visit report has Cases.
+            new Task(RecordTypeId = taskRt, Subject = 'Case visit', WhoId = providerByName.get('CaseProvider'),
+                     Visit_Report__c = reports[7].Id, Date_Meeting_Call__c = today.addDays(-3),
+                     Objections_Raised__c = 'Patient Access'),
+            // CaseAttendee — on the same visit through their own task, so they reach
+            // the Case through its visit report rather than its provider.
+            new Task(RecordTypeId = taskRt, Subject = 'Case visit attendee', WhoId = providerByName.get('CaseAttendee'),
+                     Visit_Report__c = reports[7].Id, Date_Meeting_Call__c = today.addDays(-3))
         };
         insert tasks;
 
@@ -125,7 +137,30 @@ private class ProviderObjectionSummaryControllerTest {
                 Notes__c = 'Bulk note ' + i
             ));
         }
+        // Case visit: Insurance duplicates the Case below and must be dropped;
+        // Communication has no Case and must still show.
+        junctions.add(new Visit_Objection__c(Visit_Report__c = reports[7].Id, Objection__c = catalog[1].Id,
+                                             Notes__c = 'Duplicate of the Case'));
+        junctions.add(new Visit_Objection__c(Visit_Report__c = reports[7].Id, Objection__c = catalog[0].Id,
+                                             Notes__c = 'Junction beside a Case'));
         insert junctions;
+
+        Id caseRt = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName()
+            .get('Provider_Objection').getRecordTypeId();
+        insert new List<Case>{
+            new Case(RecordTypeId = caseRt, Origin = 'Log A Visit', Status = 'New',
+                     Subject = 'Insurance - CaseProvider', ContactId = providerByName.get('CaseProvider'),
+                     AccountId = practiceGroup.Id, Visit_Report__c = reports[7].Id,
+                     Objection_Category__c = 'Insurance', Description = 'Case note'),
+            new Case(RecordTypeId = caseRt, Origin = 'Log A Visit', Status = 'New',
+                     Subject = 'Records - CaseProvider', ContactId = providerByName.get('CaseProvider'),
+                     Visit_Report__c = reports[8].Id, Objection_Category__c = 'Records',
+                     Description = 'Old case note'),
+            // No visit report: logged outside a visit, filtered by its created date.
+            new Case(RecordTypeId = caseRt, Origin = 'Log A Visit', Status = 'New',
+                     Subject = 'Locations - CaseNoTask', ContactId = providerByName.get('CaseNoTask'),
+                     Objection_Category__c = 'Locations', Description = 'No visit')
+        };
 
         // Second attendee on the shared visit. TaskRelation insert fails when Shared
         // Activities is disabled, which must not fail the whole suite.
@@ -405,6 +440,86 @@ private class ProviderObjectionSummaryControllerTest {
         } else {
             System.assertEquals(0, r.totalCount, 'Without Shared Activities there is no relation to follow');
         }
+    }
+
+    @IsTest
+    static void caseRowsCarryCaseFieldsAndWinOverJunction() {
+        Id pid = providerId('CaseProvider');
+
+        Test.startTest();
+        ProviderObjectionSummaryController.ObjectionSummaryResult r =
+            ProviderObjectionSummaryController.getObjectionSummary(pid, 24, 500);
+        Test.stopTest();
+
+        // The Insurance Case, plus the Communication junction row on the same visit.
+        // The duplicate Insurance junction row, the legacy Patient Access value and
+        // the 30 month old Case are all excluded.
+        System.assertEquals(2, r.totalCount, 'Case + non-duplicate junction row');
+        ProviderObjectionSummaryController.ObjectionRow caseRow;
+        for (ProviderObjectionSummaryController.ObjectionRow row : r.rows) {
+            if (row.source == 'Case') {
+                caseRow = row;
+            } else {
+                System.assertEquals('Objection record', row.source, 'Legacy value must be suppressed');
+                System.assertEquals('Communication', row.objection, 'Only the non-duplicate junction row stays');
+            }
+        }
+        System.assertNotEquals(null, caseRow, 'The Case should be listed');
+        System.assertEquals('Insurance', caseRow.objection, 'Objection comes from the category');
+        System.assertEquals('Case note', caseRow.notes, 'Notes come from the description');
+        System.assertEquals('Test Practice & Group', caseRow.facility, 'Facility comes from Practice & Group');
+        System.assertEquals('New', caseRow.status, 'Status is carried');
+        System.assertNotEquals(null, caseRow.caseNumber, 'Case number is carried');
+        System.assertEquals(caseRow.id, caseRow.caseId, 'Case id is carried');
+        System.assertEquals(Date.today().addDays(-3), caseRow.visitDate, 'Visit date comes from the visit report');
+    }
+
+    @IsTest
+    static void caseOutsideWindowIsExcludedButShownAllTime() {
+        Id pid = providerId('CaseProvider');
+
+        Test.startTest();
+        ProviderObjectionSummaryController.ObjectionSummaryResult allTime =
+            ProviderObjectionSummaryController.getObjectionSummary(pid, null, 500);
+        Test.stopTest();
+
+        System.assertEquals(3, allTime.totalCount, 'The 30 month old Records Case returns without a window');
+    }
+
+    @IsTest
+    static void otherProviderOnTheVisitSeesTheCase() {
+        Id pid = providerId('CaseAttendee');
+
+        Test.startTest();
+        ProviderObjectionSummaryController.ObjectionSummaryResult r =
+            ProviderObjectionSummaryController.getObjectionSummary(pid, 24, 500);
+        Test.stopTest();
+
+        Integer caseRows = 0;
+        for (ProviderObjectionSummaryController.ObjectionRow row : r.rows) {
+            if (row.source == 'Case') {
+                caseRows++;
+                System.assertEquals('Insurance', row.objection, 'Only the shared visit Case');
+            }
+        }
+        System.assertEquals(1, caseRows, 'The visit Case is found through its visit report');
+        System.assertEquals(2, r.totalCount, 'Case + junction row from the shared visit');
+    }
+
+    @IsTest
+    static void caseWithoutVisitTaskIsShown() {
+        Id pid = providerId('CaseNoTask');
+
+        Test.startTest();
+        ProviderObjectionSummaryController.ObjectionSummaryResult r =
+            ProviderObjectionSummaryController.getObjectionSummary(pid, 24, 500);
+        Test.stopTest();
+
+        System.assertEquals(1, r.totalCount, 'A provider with a Case but no visit task still has a row');
+        System.assertEquals('Case', r.rows[0].source, 'Row comes from the Case');
+        System.assertEquals('Locations', r.rows[0].objection, 'Category is carried');
+        System.assertEquals(null, r.rows[0].visitDate, 'No visit report, so no visit date');
+        System.assertEquals(1, r.categoryCount, 'Category breakdown includes Cases');
     }
 
     @IsTest

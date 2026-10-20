@@ -7,10 +7,15 @@
  *   Contact <- TaskWhoRelation.RelationId -> Task.Visit_Report__c
  *           -> Visit_Objection__c.Visit_Report__c -> Objection__c
  *
- * Two capture mechanisms are unioned. The current one writes a Visit_Objection__c
- * junction row per objection. The legacy one stored objections directly on the
- * Activity as a multi-select, which is why tasks are re-read for Objections_Raised__c
- * when their visit report produced no junction row.
+ * Three capture mechanisms are unioned, newest first:
+ *   1. Provider Objection Cases (Log a Visit from the Objection Tracking Re-Design).
+ *      Found by Case.ContactId and by Case.Visit_Report__c, so every provider on a
+ *      shared visit still sees the objection, as they did with junction rows.
+ *   2. Visit_Objection__c junction rows (the Network Team still writes these, and
+ *      every PRM objection logged before go-live is one).
+ *   3. The legacy multi-select stored directly on the Activity, re-read only when
+ *      the visit report produced nothing above.
+ * A visit report + objection pair is shown once; the Case wins.
  *
  * Reads live data on purpose: Fact_VisitActivityObjection__c is a nightly batch table
  * and would show a provider's objections up to a day stale.
@@ -19,7 +24,9 @@ public with sharing class ProviderObjectionSummaryController {
 
     private static final Integer DEFAULT_ROW_LIMIT = 500;
     private static final Integer MAX_ROW_LIMIT = 2000;
+    private static final String SOURCE_CASE = 'Case';
     private static final String SOURCE_JUNCTION = 'Objection record';
+    private static final String OBJECTION_CASE_RECORD_TYPE = 'Provider_Objection';
     private static final String SOURCE_LEGACY = 'Legacy activity';
     private static final String MULTISELECT_DELIMITER = ';';
 
@@ -56,14 +63,15 @@ public with sharing class ProviderObjectionSummaryController {
         for (Task t : [SELECT Id FROM Task WHERE WhoId = :providerId]) {
             taskIds.add(t.Id);
         }
-        if (taskIds.isEmpty()) {
-            return result;
-        }
 
         // ---- Step 2: the tasks themselves, inside the date window. ---------------
-        // Two static queries rather than one built by string concatenation.
-        List<Task> tasks;
-        if (cutoff == null) {
+        // Two static queries rather than one built by string concatenation. No early
+        // return when there are none: an objection Case is linked to the provider
+        // directly and must show even without a visit task.
+        List<Task> tasks = new List<Task>();
+        if (taskIds.isEmpty()) {
+            // nothing to read
+        } else if (cutoff == null) {
             tasks = [
                 SELECT Id, CreatedDate, CreatedById, Visit_Report__c, Visit_Report__r.Name, Visit_Date__c, Date_Meeting_Call__c,
                        OwnerId, RecordType.Name, Objections_Raised__c,
@@ -81,10 +89,6 @@ public with sharing class ProviderObjectionSummaryController {
                   AND (Visit_Date__c >= :cutoff OR Date_Meeting_Call__c >= :cutoff)
             ];
         }
-        if (tasks.isEmpty()) {
-            return result;
-        }
-
         Set<Id> visitReportIds = new Set<Id>();
         for (Task t : tasks) {
             if (t.Visit_Report__c != null) {
@@ -92,7 +96,16 @@ public with sharing class ProviderObjectionSummaryController {
             }
         }
 
-        // ---- Step 3: current-mechanism objections via the junction. --------------
+        // ---- Step 2b: objection Cases. -------------------------------------------
+        List<Case> objectionCases = readObjectionCases(providerId, visitReportIds, cutoff, effectiveLimit);
+        if (objectionCases.size() == effectiveLimit) {
+            result.truncated = true;
+        }
+        if (tasks.isEmpty() && objectionCases.isEmpty()) {
+            return result;
+        }
+
+        // ---- Step 3: junction-row objections. ------------------------------------
         Boolean canReadJunction = Schema.SObjectType.Visit_Objection__c.isAccessible();
         Boolean canReadNotes = Schema.SObjectType.Visit_Objection__c.fields.Notes__c.isAccessible();
         Boolean canReadComments = Schema.SObjectType.Visit_Objection__c.fields.Comments__c.isAccessible();
@@ -124,12 +137,16 @@ public with sharing class ProviderObjectionSummaryController {
                 LIMIT :effectiveLimit
             ];
             // Reading exactly the cap almost certainly means more were left behind.
-            result.truncated = (junctions.size() == effectiveLimit);
+            result.truncated = result.truncated || (junctions.size() == effectiveLimit);
         }
 
         // One User query covering owners from BOTH sources, so a legacy-only
         // provider still gets "logged by" populated.
         Set<Id> ownerIds = new Set<Id>();
+        for (Case c : objectionCases) {
+            if (c.OwnerId != null) { ownerIds.add(c.OwnerId); }
+            if (c.CreatedById != null) { ownerIds.add(c.CreatedById); }
+        }
         for (Visit_Objection__c vo : junctions) {
             if (vo.OwnerId != null) { ownerIds.add(vo.OwnerId); }
             if (vo.CreatedById != null) { ownerIds.add(vo.CreatedById); }
@@ -144,9 +161,48 @@ public with sharing class ProviderObjectionSummaryController {
             }
         }
 
+        Boolean canReadCaseNotes = Schema.SObjectType.Case.fields.Description.isAccessible();
+        // Visit report + objection pairs already covered by a Case. Only these
+        // suppress a junction row; junction rows never suppress each other.
+        Set<String> caseKeys = new Set<String>();
+        for (Case c : objectionCases) {
+            if (c.Visit_Report__c != null) {
+                visitReportsWithJunction.add(c.Visit_Report__c);
+            }
+
+            ObjectionRow row = new ObjectionRow();
+            row.id = c.Id;
+            row.caseId = c.Id;
+            row.caseNumber = c.CaseNumber;
+            row.status = c.Status;
+            row.objection = c.Objection_Category__c;
+            // Practice & Group holds the facility the liaison selected.
+            row.facility = c.Account == null ? null : c.Account.Name;
+            if (canReadCaseNotes) {
+                row.notes = c.Description;
+            }
+            row.visitReportId = c.Visit_Report__c;
+            row.visitReportName = c.Visit_Report__r == null ? null : c.Visit_Report__r.Name;
+            row.visitDate = c.Visit_Date__c;
+            row.recordType = (c.Visit_Report__r == null || c.Visit_Report__r.RecordType == null)
+                ? null : c.Visit_Report__r.RecordType.Name;
+            row.createdDate = c.CreatedDate;
+            row.createdByName = ownerNames.get(c.CreatedById);
+            row.loggedBy = ownerNames.get(c.OwnerId);
+            row.source = SOURCE_CASE;
+
+            rows.add(row);
+            caseKeys.add(dedupeKey(row.visitReportId, row.objection));
+        }
+        seenKeys.addAll(caseKeys);
+
         {
             for (Visit_Objection__c vo : junctions) {
                 visitReportsWithJunction.add(vo.Visit_Report__c);
+                String objectionName = vo.Objection__r == null ? null : vo.Objection__r.Name;
+                if (caseKeys.contains(dedupeKey(vo.Visit_Report__c, objectionName))) {
+                    continue;
+                }
 
                 ObjectionRow row = new ObjectionRow();
                 row.id = vo.Id;
@@ -176,7 +232,7 @@ public with sharing class ProviderObjectionSummaryController {
 
         // ---- Legacy union: objections captured on the Activity itself. -----------
         for (Task t : tasks) {
-            // A visit report already represented by junction rows is authoritative.
+            // A visit report already represented by Cases or junction rows is authoritative.
             if (t.Visit_Report__c != null && visitReportsWithJunction.contains(t.Visit_Report__c)) {
                 continue;
             }
@@ -261,6 +317,46 @@ public with sharing class ProviderObjectionSummaryController {
         result.categoryCount = categories.size();
 
         return result;
+    }
+
+    /**
+     * Provider Objection Cases for this provider: logged against them directly, or
+     * logged on a visit they attended. Users without Case access (the Network Team)
+     * get an empty list rather than an error. Cases with no visit report, such as
+     * ones logged outside a visit, fall back to their created date for the window.
+     */
+    private static List<Case> readObjectionCases(Id providerId, Set<Id> visitReportIds, Date cutoff, Integer effectiveLimit) {
+        Schema.RecordTypeInfo rtInfo =
+            Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get(OBJECTION_CASE_RECORD_TYPE);
+        if (rtInfo == null || !Schema.SObjectType.Case.isAccessible()
+                || !Schema.SObjectType.Case.fields.Objection_Category__c.isAccessible()) {
+            return new List<Case>();
+        }
+        Id rtId = rtInfo.getRecordTypeId();
+        if (cutoff == null) {
+            return [
+                SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Account.Name,
+                       Visit_Report__c, Visit_Report__r.Name, Visit_Report__r.RecordType.Name, Visit_Date__c,
+                       CreatedDate, CreatedById, OwnerId
+                FROM Case
+                WHERE RecordTypeId = :rtId
+                  AND (ContactId = :providerId OR Visit_Report__c IN :visitReportIds)
+                ORDER BY Visit_Date__c DESC NULLS LAST
+                LIMIT :effectiveLimit
+            ];
+        }
+        Datetime cutoffStart = Datetime.newInstance(cutoff, Time.newInstance(0, 0, 0, 0));
+        return [
+            SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Account.Name,
+                   Visit_Report__c, Visit_Report__r.Name, Visit_Report__r.RecordType.Name, Visit_Date__c,
+                   CreatedDate, CreatedById, OwnerId
+            FROM Case
+            WHERE RecordTypeId = :rtId
+              AND (ContactId = :providerId OR Visit_Report__c IN :visitReportIds)
+              AND (Visit_Date__c >= :cutoff OR (Visit_Report__c = null AND CreatedDate >= :cutoffStart))
+            ORDER BY Visit_Date__c DESC NULLS LAST
+            LIMIT :effectiveLimit
+        ];
     }
 
     /** Splits both legacy capture fields, tolerating either being blank. */
@@ -355,6 +451,10 @@ public with sharing class ProviderObjectionSummaryController {
         @AuraEnabled public String loggedBy;
         @AuraEnabled public String source;
         @AuraEnabled public String recordType;
+        /** Set for Case rows only. */
+        @AuraEnabled public Id caseId;
+        @AuraEnabled public String caseNumber;
+        @AuraEnabled public String status;
 
         public Integer compareTo(Object other) {
             ObjectionRow that = (ObjectionRow) other;
