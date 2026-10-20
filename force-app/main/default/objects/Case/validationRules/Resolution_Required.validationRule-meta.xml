@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resolution_Required</fullName>
+    <active>true</active>
+    <description>Prevents an objection from being closed without a resolution and resolution note being provided</description>
+    <errorConditionFormula>AND(
+  RecordType.DeveloperName = &quot;Provider_Objection&quot;,
+  OR(ISPICKVAL(Status, &quot;Resolved&quot;), ISPICKVAL(Status, &quot;Closed - No Action&quot;), ISPICKVAL(Status, &quot;Closed&quot;)),
+  NOT($Profile.Name = &quot;System Administrator&quot;),
+  OR(
+    ISPICKVAL(Resolution__c, &quot;&quot;),
+    AND(ISBLANK(Resolution_Notes__c), NOT(ISPICKVAL(Resolution__c, &quot;Logged in Error&quot;)))
+  )
+)</errorConditionFormula>
+    <errorMessage>You must enter a resolution and resolution note in order to mark this objection as closed</errorMessage>
+</ValidationRule>

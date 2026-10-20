@@ -4,6 +4,7 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>BH PRM User</label>
     <permissionSets>Base_All_Users</permissionSets>
+    <permissionSets>PRM_Objection_Case_User</permissionSets>
     <permissionSets>Persona_BH_PRM_User</permissionSets>
     <permissionSets>Read_BH_PRM_Team</permissionSets>
     <status>Updated</status>

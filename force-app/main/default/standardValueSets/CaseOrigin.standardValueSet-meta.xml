@@ -16,4 +16,9 @@
         <default>false</default>
         <label>Web</label>
     </standardValue>
+    <standardValue>
+        <fullName>Log A Visit</fullName>
+        <default>false</default>
+        <label>Log A Visit</label>
+    </standardValue>
 </StandardValueSet>

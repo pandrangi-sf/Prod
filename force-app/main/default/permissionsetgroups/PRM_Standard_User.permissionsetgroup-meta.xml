@@ -3,5 +3,6 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>PRM Standard User</label>
     <permissionSets>Create_and_Edit_Locations</permissionSets>
+    <permissionSets>PRM_Objection_Case_User</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>
