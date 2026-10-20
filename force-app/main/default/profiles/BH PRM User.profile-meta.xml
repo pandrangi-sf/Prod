@@ -1306,11 +1306,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.Facility__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>CR_AI_Provider__c.Is_Active__c</field>
         <readable>false</readable>
     </fieldPermissions>
