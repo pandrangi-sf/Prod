@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Patient Experience</label>
+    <protected>false</protected>
+    <values>
+        <field>Full_Definition__c</field>
+        <value xsi:type="xsd:string">The patient or family was treated poorly, separate from whether the care took place. This covers staff conduct and courtesy, care that felt disjointed across departments, unexpected or inconsistent cost conversations at the point of service, concerns about the quality of the encounter, and the physical experience of getting through the visit. Choose this when the complaint is about how it felt rather than whether it happened.</value>
+    </values>
+    <values>
+        <field>Short_Definition__c</field>
+        <value xsi:type="xsd:string">The patient or family was treated poorly, separate from whether the care took place.</value>
+    </values>
+</CustomMetadata>

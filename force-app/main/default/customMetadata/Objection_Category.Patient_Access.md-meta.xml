@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Patient Access</label>
+    <protected>false</protected>
+    <values>
+        <field>Full_Definition__c</field>
+        <value xsi:type="xsd:string">The care itself was blocked or delayed. This covers anything that stopped a patient being seen, scanned or treated when they needed to be, including no availability, waits beyond what is clinically reasonable, an inability to reach scheduling, urgency that was not honored, referrals that never became a scheduled appointment, and patients turned away at the point of service. Choose this when the problem is that the care did not happen, or happened too late.</value>
+    </values>
+    <values>
+        <field>Short_Definition__c</field>
+        <value xsi:type="xsd:string">The care itself was blocked or delayed.</value>
+    </values>
+</CustomMetadata>

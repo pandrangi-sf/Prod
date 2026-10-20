@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Locations</label>
+    <protected>false</protected>
+    <values>
+        <field>Full_Definition__c</field>
+        <value xsi:type="xsd:string">Where the care is delivered is the problem. This covers distance and travel that patients will not or cannot undertake, services available only at a site further away than the patient needs, the absence of a nearby facility of the right type, and the condition or accessibility of the building itself. Choose this when the issue would be solved by delivering the same care somewhere else.</value>
+    </values>
+    <values>
+        <field>Short_Definition__c</field>
+        <value xsi:type="xsd:string">Where the care is delivered is the problem.</value>
+    </values>
+</CustomMetadata>

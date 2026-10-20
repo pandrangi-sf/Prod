@@ -44,6 +44,305 @@
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <description>Adds a Case number link to the confirmation list.</description>
+        <name>Append_Case_Link</name>
+        <label>Append Case Link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_CaseLinksHTML</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>tt_CaseLink</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_Case_Links</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>A rollback removes the records but leaves their Ids and the built collections in memory. Clearing them lets the liaison go Back and resubmit without "cannot specify Id" errors or duplicates. Screen entries and drafts are kept.</description>
+        <name>Reset_Save_Variables</name>
+        <label>Reset Save Variables</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vR_VisitReport.Id</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_Task.Id</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_VisitServices</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_VisitCollaterals</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_VisitObjections</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_TaskRelationRecords</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_TaskPhysicianToPhyscianRelationRecords</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vC_ObjectionCases</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_ObjectionCaseError</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>S11_Error_Saving_Visit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Record type, origin, status, owner (the liaison), region (from the provider), provider, practice, facility and visit report.</description>
+        <name>Assign_Objection_Case_Visit_Fields</name>
+        <label>Assign Objection Case Visit Fields</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Stamp_Objection_Cases</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Objection_Case_Record_Type.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.Origin</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Log A Visit</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.Region__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Provider_Record.Region__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.ContactId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Provider_Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Provider_Practice_Group.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.Facility__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_CL01_Facility.selectedChoiceValues</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.Visit_Report__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vR_VisitReport.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vC_ObjectionCases</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>vR_ObjectionCaseToSave</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Stamp_Objection_Cases</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds one category and note to the review list.</description>
+        <name>Append_Objection_Review_Item</name>
+        <label>Append Objection Review Item</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_ObjectionReviewHTML</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>tt_ObjectionReviewItem</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_Objection_Review</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Rebuilds the review list from the deduplicated drafts every time the note loop finishes.</description>
+        <name>Clear_Objection_Review</name>
+        <label>Clear Objection Review</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_ObjectionReviewHTML</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Build_Objection_Review</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Keeps the other categories' drafts and adds this one.</description>
+        <name>Add_Objection_Case_Draft</name>
+        <label>Add Objection Case Draft</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vC_ObjectionCaseDrafts</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Remove_Current_Category_Draft</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vC_ObjectionCaseDrafts</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>vR_ObjectionCase</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Objection_Notes</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Builds the draft objection Case for this category: category, the liaison's note and the subject.</description>
+        <name>Assign_Objection_Case_Draft</name>
+        <label>Assign Objection Case Draft</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCase.Objection_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Add_Objection_Notes.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCase.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S09_LT01_ObjectionNotes</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCase.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fT_ObjectionCaseSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remove_Current_Category_Draft</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Starts the note loop from empty, so changing the S08 selection after going Back leaves no stale categories behind.</description>
+        <name>Reset_Objection_Drafts</name>
+        <label>Reset Objection Drafts</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vC_ObjectionCaseDrafts</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_VisitObjectionsNotes</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Names_of_Objections_Selected</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Adds the catalog row, with its one-line definition, to the S08 list.</description>
+        <name>Assign_Objection_Definition</name>
+        <label>Assign Objection Definition</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionWithDefinition</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Objections_Add_Definitions</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionWithDefinition.Description__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Objection_Definition.Short_Definition__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vC_ObjectionsWithDefinitions</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>vR_ObjectionWithDefinition</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Objections_Add_Definitions</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Empties the S08 catalog before rebuilding it, so going Back past S08 and forward again does not list each category twice.</description>
+        <name>Reset_Objection_Catalog</name>
+        <label>Reset Objection Catalog</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vC_ObjectionsWithDefinitions</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Objections_Add_Definitions</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Add_Additional_Providers_to_Visit_Details</name>
         <label>Add Additional Providers to Visit Details</label>
         <locationX>0</locationX>
@@ -588,7 +887,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Add_Objection_Notes</targetReference>
+            <targetReference>Assign_Objection_Case_Draft</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -856,6 +1155,28 @@
             <stringValue>Yes</stringValue>
         </value>
     </choices>
+    <collectionProcessors>
+        <description>Drops any earlier draft for this category (left by Back from S10 into S09) so the latest note wins and no category gets two Cases.</description>
+        <name>Remove_Current_Category_Draft</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Remove Current Category Draft</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNextValueToReference>currentItem_Remove_Current_Category_Draft</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>vC_ObjectionCaseDrafts</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Remove_Current_Category_Draft.Objection_Category__c</leftValueReference>
+            <operator>NotEqualTo</operator>
+            <rightValue>
+                <elementReference>Add_Objection_Notes.Name</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Add_Objection_Case_Draft</targetReference>
+        </connector>
+    </collectionProcessors>
     <constants>
         <description>Value of &quot;Physician to Physician&quot; used to check if a visit is a Physician-to-Physican visit.</description>
         <name>cT_Audience_PhysicianToPhysician</name>
@@ -909,6 +1230,58 @@
         </value>
     </customProperties>
     <decisions>
+        <description>Rolls the whole visit back if the objection Case insert failed.</description>
+        <name>Were_Objection_Cases_Saved</name>
+        <label>Were Objection Cases Saved?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Visit_Task_Record_Type_Id</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Saved</defaultConnectorLabel>
+        <rules>
+            <name>Case_Insert_Failed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vT_ObjectionCaseError</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Roll_Back_Visit</targetReference>
+            </connector>
+            <label>Case Insert Failed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Network Team keeps the legacy Visit Objection records for now (Objection Tracking Re-Design, decision 12) and has no Case access. Everyone else logs objection Cases.</description>
+        <name>Network_or_PRM_Objections</name>
+        <label>Network or PRM Objections?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Objection_Case_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>PRM Objection Cases</defaultConnectorLabel>
+        <rules>
+            <name>Network_Team_Legacy</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Network Team</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Visit_Report_Id_to_Objections</targetReference>
+            </connector>
+            <label>Network Team Legacy</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Additional_Providers_Selected</name>
         <label>Additional Providers Selected?</label>
         <locationX>0</locationX>
@@ -953,7 +1326,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Add_Visit_Report_Id_to_Objections</targetReference>
+                <targetReference>Network_or_PRM_Objections</targetReference>
             </connector>
             <label>Yes Objections Selected</label>
         </rules>
@@ -1055,7 +1428,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>S11_Visit_Report_Created_Confirmation</targetReference>
+            <targetReference>Get_Created_Cases</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1203,7 +1576,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Names_of_Objections_Selected</targetReference>
+                <targetReference>Reset_Objection_Drafts</targetReference>
             </connector>
             <label>Objections Selected</label>
         </rules>
@@ -1259,7 +1632,7 @@
             <label>Phone Call</label>
         </rules>
     </decisions>
-    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers.</description>
+    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation.</description>
     <dynamicChoiceSets>
         <description>Mobile choices for S03. Same Location records as the S03 Data Table, shown as a picklist when vB_IsMobile is true.</description>
         <name>ccs_S03_Locations</name>
@@ -1339,6 +1712,12 @@
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <description>Objection Case subject: Category - Provider - Facility, capped at the 255-character Subject limit.</description>
+        <name>fT_ObjectionCaseSubject</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!Add_Objection_Notes.Name} &amp; &quot; - &quot; &amp; {!Get_Provider_Record.Name} &amp; &quot; - &quot; &amp; {!S08_CL01_Facility.selectedChoiceLabels}, 255)</expression>
+    </formulas>
     <formulas>
         <name>fB_AdditionalProvidersSelected</name>
         <dataType>Boolean</dataType>
@@ -1455,6 +1834,66 @@
     <interviewLabel>Provider_SCR_LogVisitReport {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ProviderSCRLogVisitReportRefined</label>
     <loops>
+        <description>One link per new objection Case.</description>
+        <name>Build_Case_Links</name>
+        <label>Build Case Links</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Created_Cases</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Append_Case_Link</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>S11_Visit_Report_Created_Confirmation</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Adds the visit fields to each draft. Assignments only; the insert happens once, after the loop.</description>
+        <name>Stamp_Objection_Cases</name>
+        <label>Stamp Objection Cases</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>vC_ObjectionCaseDrafts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Objection_Case_Visit_Fields</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Objection_Cases</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Lists each category and its note for the review screen.</description>
+        <name>Build_Objection_Review</name>
+        <label>Build Objection Review</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>vC_ObjectionCaseDrafts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Append_Objection_Review_Item</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>S10_Comments</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Copies each catalog row and puts its one-line definition from Objection_Category__mdt in Description__c for the S08 Definition column.</description>
+        <name>Loop_Objections_Add_Definitions</name>
+        <label>Loop Objections Add Definitions</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Objections</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_Objection_Definition</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>S08_Objections_Raised</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
         <description>Loop through each objection selected so the user can add a note for each one.</description>
         <name>Add_Objection_Notes</name>
         <label>Add Objection Notes</label>
@@ -1463,10 +1902,10 @@
         <collectionReference>S08_DT01_ObjectionsRaised.selectedRows</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>S09_Add_Obection_Notes</targetReference>
+            <targetReference>Get_Full_Category_Definition</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>S10_Comments</targetReference>
+            <targetReference>Clear_Objection_Review</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
@@ -1565,11 +2004,11 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>S11_Visit_Report_Created_Confirmation</targetReference>
+            <targetReference>Get_Created_Cases</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputReference>vR_TaskPhysicianToPhyscianRelationRecords</inputReference>
     </recordCreates>
@@ -1584,7 +2023,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputAssignments>
             <field>ActivityDate</field>
@@ -1641,7 +2080,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputReference>vR_TaskRelationRecords</inputReference>
     </recordCreates>
@@ -1655,7 +2094,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputReference>vR_VisitCollaterals</inputReference>
     </recordCreates>
@@ -1669,7 +2108,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputReference>vR_VisitObjections</inputReference>
     </recordCreates>
@@ -1683,7 +2122,7 @@
             <targetReference>Create_Visit_Services_Collection</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputReference>vR_VisitReport</inputReference>
     </recordCreates>
@@ -1697,7 +2136,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputReference>vR_VisitServices</inputReference>
     </recordCreates>
@@ -1712,10 +2151,130 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S11_Error_Saving_Visit</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <inputReference>vR_Task</inputReference>
     </recordCreates>
+    <recordLookups>
+        <description>The objection Cases just created for this visit, for their Case numbers. Runs after the save has succeeded, so a failure here only skips the list.</description>
+        <name>Get_Created_Cases</name>
+        <label>Get Created Cases</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Build_Case_Links</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>S11_Visit_Report_Created_Confirmation</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Visit_Report__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vR_VisitReport.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Origin</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Log A Visit</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Case</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CaseNumber</queriedFields>
+        <queriedFields>Objection_Category__c</queriedFields>
+        <sortField>CaseNumber</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Provider Objection Case record type, looked up by developer name so no Id is hardcoded.</description>
+        <name>Get_Objection_Case_Record_Type</name>
+        <label>Get Objection Case Record Type</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Stamp_Objection_Cases</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Roll_Back_Visit</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Provider_Objection</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Full agreed definition of the category the liaison is writing a note for, shown on S09.</description>
+        <name>Get_Full_Category_Definition</name>
+        <label>Get Full Category Definition</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>S09_Add_Obection_Notes</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>S12_Error_Loading_Data</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>MasterLabel</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Add_Objection_Notes.Name</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Objection_Category__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>The agreed definition for this catalog row, matched on the category label. Custom metadata, so it does not count against the SOQL limit.</description>
+        <name>Get_Objection_Definition</name>
+        <label>Get Objection Definition</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Objection_Definition</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>S12_Error_Loading_Data</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>MasterLabel</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Loop_Objections_Add_Definitions.Name</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Objection_Category__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Active_Provider_Locations</name>
         <label>Get Active Provider Locations</label>
@@ -1992,7 +2551,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>S08_Objections_Raised</targetReference>
+            <targetReference>Reset_Objection_Catalog</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -2030,7 +2589,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S12_Error_Loading_Data</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2172,7 +2731,7 @@
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
-            <targetReference>S12_Error_Loading_Data</targetReference>
+            <targetReference>Roll_Back_Visit</targetReference>
         </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2194,6 +2753,81 @@
         <queriedFields>Id</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordRollbacks>
+        <description>Undoes everything saved for this visit when any save step fails, so the liaison is never left with a partial visit.</description>
+        <name>Roll_Back_Visit</name>
+        <label>Roll Back Visit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Reset_Save_Variables</targetReference>
+        </connector>
+    </recordRollbacks>
+    <screens>
+        <description>Last check before anything is saved. Liaisons cannot delete objection Cases, so mistakes are caught here.</description>
+        <name>S10b_Review_Visit</name>
+        <label>S10b Review Visit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Assign_Comments_to_Visit_Task</targetReference>
+        </connector>
+        <fields>
+            <name>S10b_DTXT01_ReviewHeader</name>
+            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;REVIEW YOUR VISIT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Check the details below. Use Previous to change anything, then select Create Visit Report.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>S10b_DTXT02_VisitDetails</name>
+            <fieldText>&lt;p&gt;{!vT_VisitDetailsHTML}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>S10b_DTXT03_Objections</name>
+            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;OBJECTION CASES TO CREATE&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Facility:&lt;/b&gt; {!S08_CL01_Facility.selectedChoiceLabels}&lt;/p&gt;{!vT_ObjectionReviewHTML}&lt;p&gt;&lt;b&gt;Owner:&lt;/b&gt; {!$User.FirstName} {!$User.LastName} &amp;nbsp; &lt;b&gt;Status:&lt;/b&gt; New&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>S08_RB01_ObjectionsRaised</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Create Visit Report</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <screens>
         <name>S01_Inactive_Provider</name>
         <label>S01 Inactive Provider</label>
@@ -3386,7 +4020,7 @@
                     <inputParameters>
                         <name>tableData</name>
                         <value>
-                            <elementReference>Get_Objections</elementReference>
+                            <elementReference>vC_ObjectionsWithDefinitions</elementReference>
                         </value>
                     </inputParameters>
                     <inputParameters>
@@ -3404,7 +4038,7 @@
                     <inputParameters>
                         <name>columns</name>
                         <value>
-                            <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-b9fe&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Objection Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-f9df&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Description&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
+                            <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-b9fe&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Objection Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-f9df&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Definition&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                         </value>
                     </inputParameters>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3476,8 +4110,34 @@
             </styleProperties>
         </fields>
         <fields>
+            <name>S09_DTXT02_CategoryDefinition</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;{!Get_Full_Category_Definition.Full_Definition__c}&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>S09_DTXT03_NoPatientInformation</name>
+            <fieldText>&lt;p&gt;&lt;strong style="color: rgb(194, 57, 52);"&gt;Do not include patient information:&lt;/strong&gt; no names, dates of birth or record numbers.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
             <name>S09_LT01_ObjectionNotes</name>
-            <fieldText>Objection Notes</fieldText>
+            <fieldText>What did the provider say?</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
@@ -3502,7 +4162,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Assign_Comments_to_Visit_Task</targetReference>
+            <targetReference>S10b_Review_Visit</targetReference>
         </connector>
         <fields>
             <name>S10_DTXT01_DisplayVisitInfo</name>
@@ -3616,7 +4276,6 @@
                 </width>
             </styleProperties>
         </fields>
-        <nextOrFinishButtonLabel>Create Visit Report</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -3630,7 +4289,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>S11_DTXT01_ErrorMessage</name>
-            <fieldText>&lt;p&gt;This visit could not be saved. Nothing was recorded. Please copy your notes below before closing this screen, then log the visit again.&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;&lt;p&gt;{!vT_VisitDetailsHTML}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;This visit could not be saved. Nothing was saved.&lt;/strong&gt; Your entries are kept: select Previous to return to the review screen and try again. If it fails again, copy your notes below before closing this screen.&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage} {!vT_ObjectionCaseError}&lt;/p&gt;&lt;p&gt;{!vT_VisitDetailsHTML}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -3687,6 +4346,29 @@
                 </width>
             </styleProperties>
         </fields>
+        <fields>
+            <name>S11_DTXT02_ObjectionCases</name>
+            <fieldText>&lt;p style="text-align: center;"&gt;&lt;strong&gt;Objection cases created:&lt;/strong&gt;&lt;/p&gt;&lt;div style="text-align: center;"&gt;{!vT_CaseLinksHTML}&lt;/div&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>vT_CaseLinksHTML</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -3725,7 +4407,38 @@
             <targetReference>Determine_BH_or_OH_Route</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
+    <subflows>
+        <description>Inserts the objection Cases in system context: Region and Origin are read-only for liaisons. One insert for the whole visit. Subflow elements cannot have a fault path, so the subflow catches its own error and returns it in vT_ErrorMessage.</description>
+        <name>Create_Objection_Cases</name>
+        <label>Create Objection Cases</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Were_Objection_Cases_Saved</targetReference>
+        </connector>
+        <flowName>Case_AL_CreateObjectionCases</flowName>
+        <inputAssignments>
+            <name>vC_Cases</name>
+            <value>
+                <elementReference>vC_ObjectionCases</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>vT_ObjectionCaseError</assignToReference>
+            <name>vT_ErrorMessage</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>tt_CaseLink</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;a href=&quot;/{!Build_Case_Links.Id}&quot; target=&quot;_blank&quot;&gt;{!Build_Case_Links.CaseNumber}&lt;/a&gt; - {!Build_Case_Links.Objection_Category__c}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>tt_ObjectionReviewItem</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;b&gt;{!Build_Objection_Review.Objection_Category__c}:&lt;/b&gt; {!Build_Objection_Review.Description}&lt;/p&gt;</text>
+    </textTemplates>
     <textTemplates>
         <name>tt_AdditionalProviders</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
@@ -3964,6 +4677,93 @@ N: {!S10_LT04_Next_Steps}</text>
             </transformValueActions>
         </transformValues>
     </transforms>
+    <variables>
+        <description>Error returned by Case_AL_CreateObjectionCases when the Case insert fails; blank on success.</description>
+        <name>vT_ObjectionCaseError</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Links to the new objection Cases shown on the confirmation screen.</description>
+        <name>vT_CaseLinksHTML</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Category and note list shown on the review screen.</description>
+        <name>vT_ObjectionReviewHTML</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Iterator for Remove Current Category Draft.</description>
+        <name>currentItem_Remove_Current_Category_Draft</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>The objection Cases passed to Case_AL_CreateObjectionCases.</description>
+        <name>vC_ObjectionCases</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>A draft Case with the visit fields stamped on, ready to insert.</description>
+        <name>vR_ObjectionCaseToSave</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>One draft Case per selected category, deduplicated by category so Back navigation never adds one twice.</description>
+        <name>vC_ObjectionCaseDrafts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>Draft objection Case built on S09: category, note and subject.</description>
+        <name>vR_ObjectionCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>One catalog row with its definition, added to vC_ObjectionsWithDefinitions.</description>
+        <name>vR_ObjectionWithDefinition</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Objection__c</objectType>
+    </variables>
+    <variables>
+        <description>The objection catalog shown on S08, each row carrying its one-line definition in Description__c (in memory only, never saved).</description>
+        <name>vC_ObjectionsWithDefinitions</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Objection__c</objectType>
+    </variables>
     <variables>
         <description>Provider Id of the page the flow is launched from.</description>
         <name>recordId</name>

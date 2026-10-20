@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Agreed definition for each PRM objection category. The Label must match the Case Objection Category picklist value and the Objection__c record name. Log a Visit shows the short definition on the category list and the full definition on the note screen, so wording changes need no deploy.</description>
+    <label>Objection Category</label>
+    <pluralLabel>Objection Categories</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

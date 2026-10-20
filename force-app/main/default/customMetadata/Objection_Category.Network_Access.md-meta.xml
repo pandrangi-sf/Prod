@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Network Access</label>
+    <protected>false</protected>
+    <values>
+        <field>Full_Definition__c</field>
+        <value xsi:type="xsd:string">The referring practice cannot connect to us, or what they need does not exist in their market. This covers system access that was never granted or has stopped working, connectivity between their systems and ours, providers and services that cannot be found when someone tries to refer, and gaps where no in network option exists nearby. Choose this when the practice is unable to reach or use Orlando Health at all, rather than having a problem with one specific patient.</value>
+    </values>
+    <values>
+        <field>Short_Definition__c</field>
+        <value xsi:type="xsd:string">The referring practice cannot connect to us, or what they need does not exist in their market.</value>
+    </values>
+</CustomMetadata>

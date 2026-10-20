@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Hands the insert error back to the calling flow.</description>
+        <name>Return_Insert_Error</name>
+        <label>Return Insert Error</label>
+        <locationX>440</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>vT_ErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Inserts the Provider Objection Cases built by Log a Visit (Provider_SCR_LogVisitReport_Refined). Runs in system context with sharing because Region and Case Origin are read-only for liaisons by design (and Origin has no FLS for BH PRM User), so a user-mode insert fails. An insert error is caught and returned in vT_ErrorMessage (subflow elements have no fault path in the caller), and the calling flow then rolls the whole visit back.</description>
+    <environments>Default</environments>
+    <interviewLabel>Case AL Create Objection Cases {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case AL Create Objection Cases</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>One insert for every objection Case on the visit. Ids are written back to vC_Cases for the caller.</description>
+        <name>Create_Objection_Cases</name>
+        <label>Create Objection Cases</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <faultConnector>
+            <targetReference>Return_Insert_Error</targetReference>
+        </faultConnector>
+        <inputReference>vC_Cases</inputReference>
+    </recordCreates>
+    <runInMode>SystemModeWithSharing</runInMode>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Objection_Cases</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>The objection Cases to insert. Returned with their new Ids.</description>
+        <name>vC_Cases</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>The insert error message when the Cases could not be saved; blank on success.</description>
+        <name>vT_ErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

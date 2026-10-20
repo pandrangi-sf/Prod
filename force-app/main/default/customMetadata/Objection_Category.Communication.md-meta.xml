@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Communication</label>
+    <protected>false</protected>
+    <values>
+        <field>Full_Definition__c</field>
+        <value xsi:type="xsd:string">Information did not reach the person who needed it, or reached them wrong. This covers results and updates never passed on, calls and messages that went unanswered, referrals whose outcome the sender was never told, conflicting or incorrect information given to an office or a patient, and orders and instructions that were misunderstood. Choose this when the care may have been fine but someone was left uninformed or misinformed.</value>
+    </values>
+    <values>
+        <field>Short_Definition__c</field>
+        <value xsi:type="xsd:string">Information did not reach the person who needed it, or reached them wrong.</value>
+    </values>
+</CustomMetadata>

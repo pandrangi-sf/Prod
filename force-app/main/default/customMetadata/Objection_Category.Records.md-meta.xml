@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Records</label>
+    <protected>false</protected>
+    <values>
+        <field>Full_Definition__c</field>
+        <value xsi:type="xsd:string">A document, result or record did not arrive, or could not be retrieved when it was needed. This covers clinical documentation that does not flow back to a referring office, transmission failures in either direction, reports that remain unavailable after the service was delivered, and records that arrive incomplete, unreadable, or attached to the wrong patient or provider. Choose this when the problem is the record itself rather than a conversation about it.</value>
+    </values>
+    <values>
+        <field>Short_Definition__c</field>
+        <value xsi:type="xsd:string">A document, result or record did not arrive, or could not be retrieved when it was needed.</value>
+    </values>
+</CustomMetadata>

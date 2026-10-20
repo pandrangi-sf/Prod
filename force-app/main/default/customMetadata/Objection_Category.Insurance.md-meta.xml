@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Insurance</label>
+    <protected>false</protected>
+    <values>
+        <field>Full_Definition__c</field>
+        <value xsi:type="xsd:string">Coverage, benefits or authorization stood in the way. This covers prior authorizations that were delayed, denied or never submitted, plans incorrectly reported as not accepted, plans we genuinely do not contract with, and cost or payment terms that stopped a patient proceeding. Choose this when the obstacle was the plan or the authorization rather than capacity or communication.</value>
+    </values>
+    <values>
+        <field>Short_Definition__c</field>
+        <value xsi:type="xsd:string">Coverage, benefits or authorization stood in the way.</value>
+    </values>
+</CustomMetadata>
