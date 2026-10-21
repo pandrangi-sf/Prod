@@ -176,8 +176,9 @@ public with sharing class ProviderObjectionSummaryController {
             row.caseNumber = c.CaseNumber;
             row.status = c.Status;
             row.objection = c.Objection_Category__c;
-            // Practice & Group holds the facility the liaison selected.
-            row.facility = c.Account == null ? null : c.Account.Name;
+            // The facility the objection was logged against. Practice & Group holds
+            // the provider's practice, not the facility.
+            row.facility = c.Facility__r == null ? null : c.Facility__r.Name;
             if (canReadCaseNotes) {
                 row.notes = c.Description;
             }
@@ -335,7 +336,7 @@ public with sharing class ProviderObjectionSummaryController {
         Id rtId = rtInfo.getRecordTypeId();
         if (cutoff == null) {
             return [
-                SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Account.Name,
+                SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Facility__r.Name,
                        Visit_Report__c, Visit_Report__r.Name, Visit_Report__r.RecordType.Name, Visit_Date__c,
                        CreatedDate, CreatedById, OwnerId
                 FROM Case
@@ -347,7 +348,7 @@ public with sharing class ProviderObjectionSummaryController {
         }
         Datetime cutoffStart = Datetime.newInstance(cutoff, Time.newInstance(0, 0, 0, 0));
         return [
-            SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Account.Name,
+            SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Facility__r.Name,
                    Visit_Report__c, Visit_Report__r.Name, Visit_Report__r.RecordType.Name, Visit_Date__c,
                    CreatedDate, CreatedById, OwnerId
             FROM Case

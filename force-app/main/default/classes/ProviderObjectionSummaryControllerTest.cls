@@ -19,7 +19,8 @@ private class ProviderObjectionSummaryControllerTest {
     @TestSetup
     static void makeData() {
         Account practiceGroup = new Account(Name = 'Test Practice & Group');
-        insert practiceGroup;
+        Account objectionFacility = new Account(Name = 'Test Objection Facility');
+        insert new List<Account>{ practiceGroup, objectionFacility };
 
         // Contact carries six active "required for new records" validation rules
         // (First Name, Affiliation, Affiliation Group, Provider Type, Credentials,
@@ -150,7 +151,7 @@ private class ProviderObjectionSummaryControllerTest {
         insert new List<Case>{
             new Case(RecordTypeId = caseRt, Origin = 'Log A Visit', Status = 'New',
                      Subject = 'Insurance - CaseProvider', ContactId = providerByName.get('CaseProvider'),
-                     AccountId = practiceGroup.Id, Visit_Report__c = reports[7].Id,
+                     AccountId = practiceGroup.Id, Facility__c = objectionFacility.Id, Visit_Report__c = reports[7].Id,
                      Objection_Category__c = 'Insurance', Description = 'Case note'),
             new Case(RecordTypeId = caseRt, Origin = 'Log A Visit', Status = 'New',
                      Subject = 'Records - CaseProvider', ContactId = providerByName.get('CaseProvider'),
@@ -467,7 +468,8 @@ private class ProviderObjectionSummaryControllerTest {
         System.assertNotEquals(null, caseRow, 'The Case should be listed');
         System.assertEquals('Insurance', caseRow.objection, 'Objection comes from the category');
         System.assertEquals('Case note', caseRow.notes, 'Notes come from the description');
-        System.assertEquals('Test Practice & Group', caseRow.facility, 'Facility comes from Practice & Group');
+        System.assertEquals('Test Objection Facility', caseRow.facility,
+            'Facility comes from the Case Facility field, not Practice & Group');
         System.assertEquals('New', caseRow.status, 'Status is carried');
         System.assertNotEquals(null, caseRow.caseNumber, 'Case number is carried');
         System.assertEquals(caseRow.id, caseRow.caseId, 'Case id is carried');
