@@ -107,7 +107,7 @@
         </connector>
     </assignments>
     <assignments>
-        <description>Record type, origin, status, owner (the liaison), region (from the provider), provider, visit report, and the facility the liaison selected in Practice &amp; Group (Account). Facility__c is not used.</description>
+        <description>Record type, origin, status, owner (the liaison), region (from the provider), provider, practice, facility and visit report.</description>
         <name>Assign_Objection_Case_Visit_Fields</name>
         <label>Assign Objection Case Visit Fields</label>
         <locationX>0</locationX>
@@ -163,6 +163,13 @@
         </assignmentItems>
         <assignmentItems>
             <assignToReference>vR_ObjectionCaseToSave.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Provider_Practice_Group.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_ObjectionCaseToSave.Facility__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>S08_CL01_Facility.selectedChoiceValues</elementReference>
