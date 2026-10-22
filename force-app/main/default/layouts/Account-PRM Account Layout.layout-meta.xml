@@ -406,6 +406,28 @@
         <relatedList>Visit_Objection__c.Facility__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>CASES.CASE_NUMBER</fields>
+        <fields>NAME</fields>
+        <fields>Objection_Category__c</fields>
+        <fields>CASES.STATUS</fields>
+        <fields>CASES.CREATED_DATE_DATE_ONLY</fields>
+        <fields>OWNER_NAME</fields>
+        <relatedList>RelatedCaseList</relatedList>
+        <sortField>CASES.CREATED_DATE_DATE_ONLY</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
+        <fields>CASES.CASE_NUMBER</fields>
+        <fields>NAME</fields>
+        <fields>Objection_Category__c</fields>
+        <fields>CASES.STATUS</fields>
+        <fields>CASES.CREATED_DATE_DATE_ONLY</fields>
+        <fields>OWNER_NAME</fields>
+        <relatedList>Case.Facility__c</relatedList>
+        <sortField>CASES.CREATED_DATE_DATE_ONLY</sortField>
+        <sortOrder>Desc</sortOrder>
+    </relatedLists>
+    <relatedLists>
         <relatedList>RelatedContentNoteList</relatedList>
     </relatedLists>
     <relatedLists>

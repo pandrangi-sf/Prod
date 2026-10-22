@@ -44,6 +44,40 @@
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <description>Drops the objection lines from the visit summary before the liaison goes back to the category list; they are added again from the new selection.</description>
+        <name>Restore_Visit_Details_Before_Objections</name>
+        <label>Restore Visit Details Before Objections</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_VisitDetailsHTML</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vT_VisitDetailsBeforeObjections</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S08_Objections_Raised</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Remembers the visit summary before the objection lines are appended.</description>
+        <name>Capture_Visit_Details_Before_Objections</name>
+        <label>Capture Visit Details Before Objections</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_VisitDetailsBeforeObjections</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vT_VisitDetailsHTML</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Were_Objections_Raised</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Adds a Case number link to the confirmation list.</description>
         <name>Append_Case_Link</name>
         <label>Append Case Link</label>
@@ -96,10 +130,6 @@
         </assignmentItems>
         <assignmentItems>
             <assignToReference>vC_ObjectionCases</assignToReference>
-            <operator>Assign</operator>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>vT_ObjectionCaseError</assignToReference>
             <operator>Assign</operator>
         </assignmentItems>
         <connector>
@@ -485,6 +515,10 @@
             <value>
                 <elementReference>tt_CombinedComments</elementReference>
             </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_ObjectionCaseError</assignToReference>
+            <operator>Assign</operator>
         </assignmentItems>
         <connector>
             <targetReference>Create_Visit_Report</targetReference>
@@ -1100,6 +1134,22 @@
         </connector>
     </assignments>
     <choices>
+        <name>ch_ReviewChangeObjections</name>
+        <choiceText>Change my objections</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Change Objections</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ch_ReviewCreateVisit</name>
+        <choiceText>Everything is correct - create the visit report</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Create</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>LeftVoicemail</name>
         <choiceText>Left Voicemail</choiceText>
         <dataType>String</dataType>
@@ -1229,6 +1279,32 @@
             <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
         </value>
     </customProperties>
+    <decisions>
+        <description>Back is off inside the objection step (it could put a note on the wrong category), so this is the safe way to change objections: the step restarts from the category list.</description>
+        <name>Review_Next_Step</name>
+        <label>Review Next Step</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Comments_to_Visit_Task</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Create Visit Report</defaultConnectorLabel>
+        <rules>
+            <name>Change_Objections</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>S10b_RB01_NextStep</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ch_ReviewChangeObjections</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Restore_Visit_Details_Before_Objections</targetReference>
+            </connector>
+            <label>Change Objections</label>
+        </rules>
+    </decisions>
     <decisions>
         <description>Rolls the whole visit back if the objection Case insert failed.</description>
         <name>Were_Objection_Cases_Saved</name>
@@ -1712,6 +1788,12 @@
         <valueField>Id</valueField>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <description>Plain-language reason shown on the error screen when the objection Case insert fails, followed by the technical detail for the admin. Blank when the Cases saved.</description>
+        <name>fT_ObjectionCaseErrorMessage</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!vT_ObjectionCaseError}), &quot;&quot;, IF(CONTAINS({!vT_ObjectionCaseError}, &quot;RESTRICTED_PICKLIST&quot;), &quot;One of the selected objection categories is not set up for objection cases yet. Please contact your Salesforce admin.&quot;, &quot;The objection cases could not be saved.&quot;) &amp; &quot; Details: &quot; &amp; {!vT_ObjectionCaseError})</expression>
+    </formulas>
     <formulas>
         <description>Objection Case subject: Category - Provider - Facility, capped at the 255-character Subject limit.</description>
         <name>fT_ObjectionCaseSubject</name>
@@ -2773,11 +2855,11 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Assign_Comments_to_Visit_Task</targetReference>
+            <targetReference>Review_Next_Step</targetReference>
         </connector>
         <fields>
             <name>S10b_DTXT01_ReviewHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;REVIEW YOUR VISIT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Check the details below. Use Previous to change anything, then select Create Visit Report.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;REVIEW YOUR VISIT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Check the details below. Select Previous to change your comments, or choose Change my objections to redo the objection step.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -2824,7 +2906,26 @@
                 </conditions>
             </visibilityRule>
         </fields>
-        <nextOrFinishButtonLabel>Create Visit Report</nextOrFinishButtonLabel>
+        <fields>
+            <name>S10b_RB01_NextStep</name>
+            <choiceReferences>ch_ReviewCreateVisit</choiceReferences>
+            <choiceReferences>ch_ReviewChangeObjections</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>ch_ReviewCreateVisit</defaultSelectedChoiceReference>
+            <fieldText>What would you like to do?</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <nextOrFinishButtonLabel>Continue</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -3886,7 +3987,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Were_Objections_Raised</targetReference>
+            <targetReference>Capture_Visit_Details_Before_Objections</targetReference>
         </connector>
         <fields>
             <name>S08_DTXT01_DisplayVisitInfo</name>
@@ -4090,7 +4191,7 @@
         <label>S09 Add Obection Notes</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
@@ -4158,7 +4259,7 @@
         <label>S10 Comments</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
@@ -4289,7 +4390,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>S11_DTXT01_ErrorMessage</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;This visit could not be saved. Nothing was saved.&lt;/strong&gt; Your entries are kept: select Previous to return to the review screen and try again. If it fails again, copy your notes below before closing this screen.&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage} {!vT_ObjectionCaseError}&lt;/p&gt;&lt;p&gt;{!vT_VisitDetailsHTML}&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong&gt;This visit could not be saved. Nothing was saved.&lt;/strong&gt; Your entries are kept: select Previous to return to the review screen and try again. If it fails again, copy your notes below before closing this screen.&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage} {!fT_ObjectionCaseErrorMessage}&lt;/p&gt;&lt;p&gt;{!vT_VisitDetailsHTML}&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -4677,6 +4778,14 @@ N: {!S10_LT04_Next_Steps}</text>
             </transformValueActions>
         </transformValues>
     </transforms>
+    <variables>
+        <description>Visit summary as it was before the objection lines were added, restored when the liaison chooses to change their objections so the lines are not repeated.</description>
+        <name>vT_VisitDetailsBeforeObjections</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <description>Error returned by Case_AL_CreateObjectionCases when the Case insert fails; blank on success.</description>
         <name>vT_ObjectionCaseError</name>
