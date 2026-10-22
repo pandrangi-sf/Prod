@@ -9449,6 +9449,13 @@
         <layout>BusinessBrand-Business Brand Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Case-Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Case-Case Layout</layout>
+        <recordType>Case.Provider_Objection</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>CR_AI_Provider__c-AI Provider Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
