@@ -3,6 +3,8 @@ import { refreshApex } from '@salesforce/apex';
 import { registerRefreshHandler, unregisterRefreshHandler } from 'lightning/refresh';
 import { NavigationMixin } from 'lightning/navigation';
 import FORM_FACTOR from '@salesforce/client/formFactor';
+import LOCALE from '@salesforce/i18n/locale';
+import TIME_ZONE from '@salesforce/i18n/timeZone';
 import getObjectionSummary from '@salesforce/apex/ProviderObjectionSummaryController.getObjectionSummary';
 
 const NOTES_TRUNCATE = 120;
@@ -10,36 +12,85 @@ const NOTES_TRUNCATE = 120;
 // Column order set by the PRM team: what/when first, then where and what was
 // raised, then the detail, then who recorded it. Case and Status follow the
 // objection for rows logged as Provider Objection Cases; Source closes the row.
+//
+// Widths are worked out from the space the tab really has (about 820-1180px
+// on a record page), not fixed: fixed widths summed past it and pushed the
+// last columns off-screen. `weight` is a column's share of the space and
+// `minWidth` the narrowest it may get; Notes gets the largest share.
 const COLUMNS_BEFORE_NOTES = [
     // Button rather than a url column: NavigationMixin builds the target at
     // click time, so no org URL is ever hard-coded.
-    { label: 'Visit Report', type: 'button', initialWidth: 110,
+    { label: 'Visit Report', type: 'button', weight: 9, minWidth: 80,
       typeAttributes: { label: { fieldName: 'visitReportName' }, variant: 'base',
                         name: 'openVisitReport' } },
-    { label: 'Visit Date', fieldName: 'visitDate', type: 'date-local', initialWidth: 110,
+    { label: 'Visit Date', fieldName: 'visitDate', type: 'date-local', weight: 9, minWidth: 90,
       sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit' } },
-    { label: 'Facility', fieldName: 'facility', type: 'text', initialWidth: 140, wrapText: true, sortable: true },
-    { label: 'Objection', fieldName: 'objection', type: 'text', initialWidth: 130, wrapText: true, sortable: true },
+    { label: 'Facility', fieldName: 'facility', type: 'text', weight: 13, minWidth: 85,
+      wrapText: true, sortable: true },
+    { label: 'Objection', fieldName: 'objection', type: 'text', weight: 11, minWidth: 85,
+      wrapText: true, sortable: true },
     // Blank and disabled on legacy rows, which have no Case.
-    { label: 'Case', type: 'button', initialWidth: 95,
+    { label: 'Case', type: 'button', weight: 8, minWidth: 75,
       typeAttributes: { label: { fieldName: 'caseNumber' }, variant: 'base', name: 'openCase',
                         disabled: { fieldName: 'noCase' } } },
-    { label: 'Status', fieldName: 'status', type: 'text', initialWidth: 100, sortable: true }
+    { label: 'Status', fieldName: 'status', type: 'text', weight: 7, minWidth: 70,
+      wrapText: true, sortable: true }
 ];
 
-// Fixed width: left to share what the other columns leave, it was squeezed to
-// one word per line on a normal desktop screen.
-const NOTES_COLUMN = { label: 'Notes', fieldName: 'notesDisplay', type: 'text', initialWidth: 300,
+const NOTES_COLUMN = { label: 'Notes', fieldName: 'notesDisplay', type: 'text', weight: 26, minWidth: 140,
                        wrapText: true, sortable: true };
 
 const COLUMNS_AFTER_NOTES = [
-    { label: 'Created By', fieldName: 'createdByName', type: 'text', initialWidth: 125, wrapText: true, sortable: true },
-    // Datetime, so the time is shown alongside the date.
-    { label: 'Created Date', fieldName: 'createdDate', type: 'date', initialWidth: 160,
-      sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit',
-                                        hour: '2-digit', minute: '2-digit' } },
-    { label: 'Source', fieldName: 'source', type: 'text', initialWidth: 110, sortable: true }
+    // Who and when in one column ("Amanda Cooley · Oct 26, 2026, 2:30 PM");
+    // as two columns they did not fit. Sorts by the date.
+    { label: 'Created', fieldName: 'createdSummary', type: 'text', weight: 11, minWidth: 105,
+      wrapText: true, sortable: true },
+    { label: 'Source', fieldName: 'source', type: 'text', weight: 6, minWidth: 70,
+      wrapText: true, sortable: true }
 ];
+
+// Columns that sort by a different field from the one they show.
+const SORT_FIELD = { createdSummary: 'createdDate' };
+
+// Used until the table has been measured.
+const DEFAULT_TABLE_WIDTH = 1000;
+
+const CREATED_FORMAT = new Intl.DateTimeFormat(LOCALE, {
+    year: 'numeric', month: 'short', day: '2-digit', hour: 'numeric', minute: '2-digit',
+    timeZone: TIME_ZONE
+});
+
+/**
+ * Splits `available` pixels across the columns by weight. A column whose share
+ * would be under its minimum gets the minimum, and the rest is shared again
+ * among the others. If even the minimums do not fit, the table scrolls.
+ */
+function sizeColumns(columns, available) {
+    const widths = new Map();
+    let open = columns;
+    let space = available;
+    for (;;) {
+        const totalWeight = open.reduce((sum, c) => sum + c.weight, 0);
+        const tooNarrow = open.filter((c) => (space * c.weight) / totalWeight < c.minWidth);
+        if (tooNarrow.length === 0) {
+            open.forEach((c) => widths.set(c, Math.floor((space * c.weight) / totalWeight)));
+            break;
+        }
+        tooNarrow.forEach((c) => {
+            widths.set(c, c.minWidth);
+            space -= c.minWidth;
+        });
+        open = open.filter((c) => !tooNarrow.includes(c));
+        if (open.length === 0) {
+            break;
+        }
+    }
+    // weight and minWidth are this component's own; the datatable gets the width.
+    return columns.map((c) => {
+        const { weight, minWidth, ...column } = c;
+        return { ...column, initialWidth: widths.get(c) };
+    });
+}
 
 const BADGE_BY_SOURCE = {
     Case: 'slds-badge slds-theme_info',
@@ -77,6 +128,10 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
     // session; one server read per load keeps a just-logged Case from missing.
     fetchedFresh = false;
     refreshHandlerId;
+    // Width of the table frame, measured after render and on resize.
+    tableWidth = DEFAULT_TABLE_WIDTH;
+    resizeObserver;
+    resizeListening = false;
 
     connectedCallback() {
         const months = parseInt(this.monthsBack, 10);
@@ -100,7 +155,40 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
         if (this.refreshHandlerId) {
             unregisterRefreshHandler(this.refreshHandlerId);
         }
+        if (this.resizeObserver) {
+            this.resizeObserver.disconnect();
+            this.resizeObserver = undefined;
+        } else {
+            window.removeEventListener('resize', this.measureTable);
+        }
     }
+
+    renderedCallback() {
+        const frame = this.template.querySelector('.list-view-frame');
+        if (!frame) {
+            return;
+        }
+        if (!this.resizeObserver && typeof ResizeObserver !== 'undefined') {
+            // Also catches the tab being shown and the utility bar or sidebar
+            // changing the page width, which a window resize would miss.
+            this.resizeObserver = new ResizeObserver(this.measureTable);
+            this.resizeObserver.observe(frame);
+        } else if (!this.resizeObserver && !this.resizeListening) {
+            this.resizeListening = true;
+            window.addEventListener('resize', this.measureTable);
+        }
+        this.measureTable();
+    }
+
+    // Arrow function so it can be passed as a callback. Ignores a hidden tab
+    // (width 0) and changes of a few pixels, so it cannot re-render in a loop.
+    measureTable = () => {
+        const frame = this.template.querySelector('.list-view-frame');
+        const width = frame ? frame.clientWidth - 2 : 0;
+        if (width > 0 && Math.abs(width - this.tableWidth) > 4) {
+            this.tableWidth = width;
+        }
+    };
 
     // Arrow function so `this` is the component whichever way the API calls it.
     refreshHandler = () => {
@@ -139,9 +227,10 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
     }
 
     get columns() {
-        return this.showNotesColumn
+        const columns = this.showNotesColumn
             ? [...COLUMNS_BEFORE_NOTES, NOTES_COLUMN, ...COLUMNS_AFTER_NOTES]
             : [...COLUMNS_BEFORE_NOTES, ...COLUMNS_AFTER_NOTES];
+        return sizeColumns(columns, this.tableWidth);
     }
 
     get isPhone() {
@@ -166,10 +255,16 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
                     : `${notes.substring(0, NOTES_TRUNCATE)}…`,
                 notesTruncated: truncated,
                 noCase: !r.caseId,
+                createdSummary: this.createdSummary(r),
                 badgeClass: BADGE_BY_SOURCE[r.source] || DEFAULT_BADGE
             };
         });
         return this.sortRows(mapped);
+    }
+
+    createdSummary(row) {
+        const when = row.createdDate ? CREATED_FORMAT.format(new Date(row.createdDate)) : '';
+        return [row.createdByName, when].filter(Boolean).join(' · ');
     }
 
     /**
@@ -178,7 +273,7 @@ export default class ProviderObjectionSummary extends NavigationMixin(LightningE
      * data off the top of the list.
      */
     sortRows(rows) {
-        const field = this.sortedBy;
+        const field = SORT_FIELD[this.sortedBy] || this.sortedBy;
         if (!field) {
             return rows;
         }
