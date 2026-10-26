@@ -13,29 +13,32 @@ const NOTES_TRUNCATE = 120;
 const COLUMNS_BEFORE_NOTES = [
     // Button rather than a url column: NavigationMixin builds the target at
     // click time, so no org URL is ever hard-coded.
-    { label: 'Visit Report', type: 'button', initialWidth: 125,
+    { label: 'Visit Report', type: 'button', initialWidth: 110,
       typeAttributes: { label: { fieldName: 'visitReportName' }, variant: 'base',
                         name: 'openVisitReport' } },
-    { label: 'Visit Date', fieldName: 'visitDate', type: 'date-local', initialWidth: 120,
+    { label: 'Visit Date', fieldName: 'visitDate', type: 'date-local', initialWidth: 110,
       sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit' } },
-    { label: 'Facility', fieldName: 'facility', type: 'text', initialWidth: 160, sortable: true },
-    { label: 'Objection', fieldName: 'objection', type: 'text', initialWidth: 160, sortable: true },
+    { label: 'Facility', fieldName: 'facility', type: 'text', initialWidth: 140, wrapText: true, sortable: true },
+    { label: 'Objection', fieldName: 'objection', type: 'text', initialWidth: 130, wrapText: true, sortable: true },
     // Blank and disabled on legacy rows, which have no Case.
-    { label: 'Case', type: 'button', initialWidth: 115,
+    { label: 'Case', type: 'button', initialWidth: 95,
       typeAttributes: { label: { fieldName: 'caseNumber' }, variant: 'base', name: 'openCase',
                         disabled: { fieldName: 'noCase' } } },
-    { label: 'Status', fieldName: 'status', type: 'text', initialWidth: 120, sortable: true }
+    { label: 'Status', fieldName: 'status', type: 'text', initialWidth: 100, sortable: true }
 ];
 
-const NOTES_COLUMN = { label: 'Notes', fieldName: 'notesDisplay', type: 'text', wrapText: true, sortable: true };
+// Fixed width: left to share what the other columns leave, it was squeezed to
+// one word per line on a normal desktop screen.
+const NOTES_COLUMN = { label: 'Notes', fieldName: 'notesDisplay', type: 'text', initialWidth: 300,
+                       wrapText: true, sortable: true };
 
 const COLUMNS_AFTER_NOTES = [
-    { label: 'Created By', fieldName: 'createdByName', type: 'text', initialWidth: 150, sortable: true },
+    { label: 'Created By', fieldName: 'createdByName', type: 'text', initialWidth: 125, wrapText: true, sortable: true },
     // Datetime, so the time is shown alongside the date.
-    { label: 'Created Date', fieldName: 'createdDate', type: 'date', initialWidth: 175,
+    { label: 'Created Date', fieldName: 'createdDate', type: 'date', initialWidth: 160,
       sortable: true, typeAttributes: { year: 'numeric', month: 'short', day: '2-digit',
                                         hour: '2-digit', minute: '2-digit' } },
-    { label: 'Source', fieldName: 'source', type: 'text', initialWidth: 130, sortable: true }
+    { label: 'Source', fieldName: 'source', type: 'text', initialWidth: 110, sortable: true }
 ];
 
 const BADGE_BY_SOURCE = {
