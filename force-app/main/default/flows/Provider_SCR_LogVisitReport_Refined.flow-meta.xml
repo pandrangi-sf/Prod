@@ -44,6 +44,37 @@
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <description>Earlier note for this category.</description>
+        <name>Assign_Previous_Note</name>
+        <label>Assign Previous Note</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_PreviousNote</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Previous_Note.Description</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Previous_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Starts each note screen blank unless the category had a note before "Change my objections".</description>
+        <name>Clear_Previous_Note</name>
+        <label>Clear Previous Note</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_PreviousNote</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Find_Previous_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Set_Facility_Selected</name>
         <label>Set Facility (Selected)</label>
         <locationX>0</locationX>
@@ -363,6 +394,13 @@
         <label>Reset Objection Drafts</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vC_PreviousObjectionDrafts</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vC_ObjectionCaseDrafts</elementReference>
+            </value>
+        </assignmentItems>
         <assignmentItems>
             <assignToReference>vC_ObjectionCaseDrafts</assignToReference>
             <operator>Assign</operator>
@@ -1261,6 +1299,28 @@
         </value>
     </choices>
     <collectionProcessors>
+        <description>The earlier draft for this category, if the liaison wrote one before choosing "Change my objections".</description>
+        <name>Find_Previous_Note</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Find Previous Note</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNextValueToReference>currentItem_Find_Previous_Note</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>vC_PreviousObjectionDrafts</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Find_Previous_Note.Objection_Category__c</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>Add_Objection_Notes.Name</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Loop_Previous_Note</targetReference>
+        </connector>
+    </collectionProcessors>
+    <collectionProcessors>
         <description>Drops any earlier draft for this category (left by Back from S10 into S09) so the latest note wins and no category gets two Cases.</description>
         <name>Remove_Current_Category_Draft</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
@@ -2047,6 +2107,21 @@
     <interviewLabel>Provider_SCR_LogVisitReport {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ProviderSCRLogVisitReportRefined</label>
     <loops>
+        <description>At most one earlier draft per category; takes its note.</description>
+        <name>Loop_Previous_Note</name>
+        <label>Loop Previous Note</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Find_Previous_Note</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Previous_Note</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>S09_Add_Obection_Notes</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
         <description>One link per new objection Case.</description>
         <name>Build_Case_Links</name>
         <label>Build Case Links</label>
@@ -2577,7 +2652,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>S09_Add_Obection_Notes</targetReference>
+            <targetReference>Clear_Previous_Note</targetReference>
         </connector>
         <faultConnector>
             <targetReference>S12_Error_Loading_Data</targetReference>
@@ -4640,9 +4715,12 @@
         </fields>
         <fields>
             <name>S09_LT01_ObjectionNotes</name>
+            <defaultValue>
+                <elementReference>vT_PreviousNote</elementReference>
+            </defaultValue>
             <fieldText>What did the provider say?</fieldText>
             <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -5180,6 +5258,32 @@ N: {!S10_LT04_Next_Steps}</text>
             </transformValueActions>
         </transformValues>
     </transforms>
+    <variables>
+        <description>Earlier note for the category on the current note screen; blank if there is none.</description>
+        <name>vT_PreviousNote</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Iterator for Find Previous Note.</description>
+        <name>currentItem_Find_Previous_Note</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>The objection drafts from before the liaison chose "Change my objections", used to pre-fill each category's note.</description>
+        <name>vC_PreviousObjectionDrafts</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
     <variables>
         <description>Id of the facility tied to the objections: picked from the list, matched by name, or created at save.</description>
         <name>vT_ObjectionFacilityId</name>
