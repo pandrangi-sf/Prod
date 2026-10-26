@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Affiliation_Status_Group_Matrix</fullName>
+    <active>false</active>
+    <description>Blocks a Group that doesn't fit the Region and Status (Oct 2026 matrix). Checks new records and changes to Region, Status or Group; blank Group allowed. Keep inactive until the cleanup has no exceptions.</description>
+    <errorConditionFormula>AND(
+    NOT(ISPICKVAL(Affiliation_Group__c, &quot;&quot;)),
+    OR(ISNEW(), ISCHANGED(Affiliation__c), ISCHANGED(Affiliation_Group__c), ISCHANGED(Region__c)),
+    NOT(OR(
+        AND(ISPICKVAL(Region__c, &quot;Alabama&quot;), ISPICKVAL(Affiliation__c, &quot;Owned&quot;), OR(ISPICKVAL(Affiliation_Group__c, &quot;BH Employed&quot;), ISPICKVAL(Affiliation_Group__c, &quot;BH Partnered Practice&quot;))),
+        AND(ISPICKVAL(Region__c, &quot;Alabama&quot;), ISPICKVAL(Affiliation__c, &quot;Affiliated&quot;), OR(ISPICKVAL(Affiliation_Group__c, &quot;BH Network&quot;), ISPICKVAL(Affiliation_Group__c, &quot;BH Credentialed&quot;))),
+        AND(ISPICKVAL(Region__c, &quot;Alabama&quot;), ISPICKVAL(Affiliation__c, &quot;Unaffiliated&quot;), ISPICKVAL(Affiliation_Group__c, &quot;Independent&quot;)),
+        AND(ISPICKVAL(Region__c, &quot;Florida&quot;), ISPICKVAL(Affiliation__c, &quot;Owned&quot;), ISPICKVAL(Affiliation_Group__c, &quot;OH Employed&quot;)),
+        AND(ISPICKVAL(Region__c, &quot;Florida&quot;), ISPICKVAL(Affiliation__c, &quot;Affiliated&quot;), OR(ISPICKVAL(Affiliation_Group__c, &quot;OH Contracted&quot;), ISPICKVAL(Affiliation_Group__c, &quot;OH Partnered Facility&quot;), ISPICKVAL(Affiliation_Group__c, &quot;OH Network&quot;))),
+        AND(ISPICKVAL(Region__c, &quot;Florida&quot;), ISPICKVAL(Affiliation__c, &quot;Unaffiliated&quot;), OR(ISPICKVAL(Affiliation_Group__c, &quot;Advent Health&quot;), ISPICKVAL(Affiliation_Group__c, &quot;BayCare&quot;), ISPICKVAL(Affiliation_Group__c, &quot;HCA Hospitals&quot;), ISPICKVAL(Affiliation_Group__c, &quot;Health First&quot;), ISPICKVAL(Affiliation_Group__c, &quot;Independent&quot;), ISPICKVAL(Affiliation_Group__c, &quot;Lakeland Regional Health&quot;), ISPICKVAL(Affiliation_Group__c, &quot;LH Employed&quot;), ISPICKVAL(Affiliation_Group__c, &quot;Nemours Hospital&quot;), ISPICKVAL(Affiliation_Group__c, &quot;Steward Health Care&quot;), ISPICKVAL(Affiliation_Group__c, &quot;Tampa General&quot;), ISPICKVAL(Affiliation_Group__c, &quot;The Villages Regional&quot;), ISPICKVAL(Affiliation_Group__c, &quot;VA Hospital&quot;)))
+    ))
+)</errorConditionFormula>
+    <errorDisplayField>Affiliation_Group__c</errorDisplayField>
+    <errorMessage>This Affiliation Group doesn&apos;t fit the provider&apos;s Affiliation Status. Choose a group listed for this Status in the provider&apos;s Region.</errorMessage>
+</ValidationRule>

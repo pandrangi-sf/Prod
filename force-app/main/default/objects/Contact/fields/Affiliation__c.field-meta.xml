@@ -14,7 +14,7 @@
             <value>
                 <fullName>Owned</fullName>
                 <default>false</default>
-                <label>Owned</label>
+                <label>Employed</label>
             </value>
             <value>
                 <fullName>Affiliated</fullName>

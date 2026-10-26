@@ -253,6 +253,26 @@
             <fullName>VA Hospital</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>OH Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH Employed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH Partnered Practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BH Credentialed</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Affiliation__c</picklist>
