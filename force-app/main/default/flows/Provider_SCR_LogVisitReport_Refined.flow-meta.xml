@@ -44,6 +44,54 @@
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <name>Set_Facility_Selected</name>
+        <label>Set Facility (Selected)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_ObjectionFacilityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_CL01_Facility.selectedChoiceValues</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Network_or_PRM_Objections</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Facility_New</name>
+        <label>Set Facility (New)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_ObjectionFacilityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Create_New_Facility</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Network_or_PRM_Objections</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Facility_Existing_Match</name>
+        <label>Set Facility (Existing Match)</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_ObjectionFacilityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Existing_Facility.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Network_or_PRM_Objections</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Drops the objection lines from the visit summary before the liaison goes back to the category list; they are added again from the new selection.</description>
         <name>Restore_Visit_Details_Before_Objections</name>
         <label>Restore Visit Details Before Objections</label>
@@ -202,7 +250,7 @@
             <assignToReference>vR_ObjectionCaseToSave.Facility__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>S08_CL01_Facility.selectedChoiceValues</elementReference>
+                <elementReference>vT_ObjectionFacilityId</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -903,6 +951,13 @@
                 <elementReference>Add_Visit_Report_Id_to_Objections.Notes__c</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vR_VisitObjection.Facility__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vT_ObjectionFacilityId</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Add_Complete_Visit_Objection_to_Collection</targetReference>
         </connector>
@@ -1280,6 +1335,64 @@
         </value>
     </customProperties>
     <decisions>
+        <name>Existing_Facility_Found</name>
+        <label>Existing Facility Found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Create_New_Facility</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Found</defaultConnectorLabel>
+        <rules>
+            <name>Facility_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_Facility</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Facility_Existing_Match</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Runs at save (not on S08) so a new facility is covered by the visit rollback. A facility that is not in the list goes to the duplicate check and, if needed, is created under the parent facility the liaison selected.</description>
+        <name>Facility_Source</name>
+        <label>Facility Source?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Set_Facility_Selected</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Facility From List</defaultConnectorLabel>
+        <rules>
+            <name>New_Facility_Entered</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>S08_RB01_ObjectionsRaised</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Yes</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>S08_CB01_FacilityNotListed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Existing_Facility</targetReference>
+            </connector>
+            <label>New Facility Entered</label>
+        </rules>
+    </decisions>
+    <decisions>
         <description>Back is off inside the objection step (it could put a note on the wrong category), so this is the safe way to change objections: the step restarts from the category list.</description>
         <name>Review_Next_Step</name>
         <label>Review Next Step</label>
@@ -1402,7 +1515,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Network_or_PRM_Objections</targetReference>
+                <targetReference>Facility_Source</targetReference>
             </connector>
             <label>Yes Objections Selected</label>
         </rules>
@@ -1708,7 +1821,7 @@
             <label>Phone Call</label>
         </rules>
     </decisions>
-    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation.</description>
+    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation. V9:: Merges Brendan Murphy&apos;s UAT &quot;My facility isn&apos;t listed&quot; option (2026-10-21): same S08 fields and duplicate check, but the facility and its primary Location are created inside the all-or-nothing save, just before the objection Cases, instead of when S08 is submitted, so an abandoned or failed visit cannot leave an orphan facility.</description>
     <dynamicChoiceSets>
         <description>Mobile choices for S03. Same Location records as the S03 Data Table, shown as a picklist when vB_IsMobile is true.</description>
         <name>ccs_S03_Locations</name>
@@ -1789,6 +1902,24 @@
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
+        <description>Marks a facility on the review screen that will be created when the visit is saved.</description>
+        <name>fT_NewFacilityMarker</name>
+        <dataType>String</dataType>
+        <expression>IF({!S08_CB01_FacilityNotListed}, &quot; (new facility, created when you save)&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Facility the objections are logged against, for display before saving: the one picked from the list, or the name typed for a facility that is not listed (created at save).</description>
+        <name>fT_ObjectionFacilityName</name>
+        <dataType>String</dataType>
+        <expression>IF({!S08_CB01_FacilityNotListed}, {!fT_NewFacilityName}, {!S08_CL01_Facility.selectedChoiceLabels})</expression>
+    </formulas>
+    <formulas>
+        <description>New facility name entered on S08, trimmed of leading and trailing spaces.</description>
+        <name>fT_NewFacilityName</name>
+        <dataType>String</dataType>
+        <expression>TRIM({!S08_TXT01_NewFacilityName})</expression>
+    </formulas>
+    <formulas>
         <description>Plain-language reason shown on the error screen when the objection Case insert fails, followed by the technical detail for the admin. Blank when the Cases saved.</description>
         <name>fT_ObjectionCaseErrorMessage</name>
         <dataType>String</dataType>
@@ -1798,7 +1929,7 @@
         <description>Objection Case subject: Category - Provider - Facility, capped at the 255-character Subject limit.</description>
         <name>fT_ObjectionCaseSubject</name>
         <dataType>String</dataType>
-        <expression>LEFT({!Add_Objection_Notes.Name} &amp; &quot; - &quot; &amp; {!Get_Provider_Record.Name} &amp; &quot; - &quot; &amp; {!S08_CL01_Facility.selectedChoiceLabels}, 255)</expression>
+        <expression>LEFT({!Add_Objection_Notes.Name} &amp; &quot; - &quot; &amp; {!Get_Provider_Record.Name} &amp; &quot; - &quot; &amp; {!fT_ObjectionFacilityName}, 255)</expression>
     </formulas>
     <formulas>
         <name>fB_AdditionalProvidersSelected</name>
@@ -2081,6 +2212,96 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
+        <description>Creates the primary Location for a newly created facility, using the address entered on S08. Primary Location Updated then sets the Practice &amp; Group&apos;s Primary Location and mailing address.</description>
+        <name>Create_New_Facility_Location</name>
+        <label>Create New Facility Location</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Facility_New</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Roll_Back_Visit</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Address__City__s</field>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.city</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address__CountryCode__s</field>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.country</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address__PostalCode__s</field>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.postalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address__StateCode__s</field>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.province</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Address__Street__s</field>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.street</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>fT_NewFacilityName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Practice__c</field>
+            <value>
+                <elementReference>Create_New_Facility</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Location__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>Creates the facility (Practice &amp; Group) under the parent facility the user selected (which rolls up to OH or BH), so it appears in the facility list next time.</description>
+        <name>Create_New_Facility</name>
+        <label>Create New Facility</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_New_Facility_Location</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Roll_Back_Visit</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>fT_NewFacilityName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>S08_CL02_ParentFacility.selectedChoiceValues</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
         <name>Create_Physician_to_Physican_Task_Relation_Records</name>
         <label>Create Physician to Physican Task Relation Records</label>
         <locationX>0</locationX>
@@ -2237,6 +2458,47 @@
         </faultConnector>
         <inputReference>vR_Task</inputReference>
     </recordCreates>
+    <recordLookups>
+        <description>Duplicate check: looks for a facility with the same name in the user&apos;s OH or BH hierarchy before creating one.</description>
+        <name>Get_Existing_Facility</name>
+        <label>Get Existing Facility</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Existing_Facility_Found</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Roll_Back_Visit</targetReference>
+        </faultConnector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_NewFacilityName</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Top_Level_Parent_Account_Id__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_FacilityAccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_FacilityAccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <description>The objection Cases just created for this visit, for their Case numbers. Runs after the save has succeeded, so a failure here only skips the list.</description>
         <name>Get_Created_Cases</name>
@@ -2885,7 +3147,7 @@
         </fields>
         <fields>
             <name>S10b_DTXT03_Objections</name>
-            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;OBJECTION CASES TO CREATE&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Facility:&lt;/b&gt; {!S08_CL01_Facility.selectedChoiceLabels}&lt;/p&gt;{!vT_ObjectionReviewHTML}&lt;p&gt;&lt;b&gt;Owner:&lt;/b&gt; {!$User.FirstName} {!$User.LastName} &amp;nbsp; &lt;b&gt;Status:&lt;/b&gt; New&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;OBJECTION CASES TO CREATE&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Facility:&lt;/b&gt; {!fT_ObjectionFacilityName}{!fT_NewFacilityMarker}&lt;/p&gt;{!vT_ObjectionReviewHTML}&lt;p&gt;&lt;b&gt;Owner:&lt;/b&gt; {!$User.FirstName} {!$User.LastName} &amp;nbsp; &lt;b&gt;Status:&lt;/b&gt; New&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -4078,6 +4340,146 @@
                             <stringValue>12</stringValue>
                         </width>
                     </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>S08_CB01_FacilityNotListed</leftValueReference>
+                            <operator>NotEqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S08_CB01_FacilityNotListed</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>My facility isn&apos;t listed</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>S08_TXT01_NewFacilityName</name>
+                    <dataType>String</dataType>
+                    <fieldText>New Facility Name</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Enter the full facility name. If a facility with this exact name already exists, the visit will use it instead of creating a new one.&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;Enter a facility name of 255 characters or fewer.&lt;/p&gt;</errorMessage>
+                        <formulaExpression>AND(LEN(TRIM({!S08_TXT01_NewFacilityName})) &gt; 0, LEN({!S08_TXT01_NewFacilityName}) &lt;= 255)</formulaExpression>
+                    </validationRule>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>S08_CB01_FacilityNotListed</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S08_CL02_ParentFacility</name>
+                    <choiceReferences>rcs_OH_Facilities</choiceReferences>
+                    <extensionName>flowruntime:choiceLookup</extensionName>
+                    <fieldText>Parent Facility</fieldText>
+                    <fieldType>ComponentChoice</fieldType>
+                    <helpText>&lt;p&gt;Select the facility the new one belongs under. If it reports directly to the health system, select Orlando Health or Baptist Health Main.&lt;/p&gt;</helpText>
+                    <inputParameters>
+                        <name>placeholder</name>
+                        <value>
+                            <stringValue>Select the Parent Facility</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>S08_CB01_FacilityNotListed</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S08_ADDR01_NewFacilityAddress</name>
+                    <extensionName>flowruntime:address</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>addressLabel</name>
+                        <value>
+                            <stringValue>New Facility Address (use the 2-letter state, such as FL or AL)</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>country</name>
+                        <value>
+                            <stringValue>US</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;Enter the state as a 2-letter code in capitals, such as FL or AL, and the ZIP as 5 digits.&lt;/p&gt;</errorMessage>
+                        <formulaExpression>AND(LEN({!S08_ADDR01_NewFacilityAddress.province}) = 2, CONTAINS(&quot;:AL:AK:AZ:AR:CA:CO:CT:DE:DC:FL:GA:HI:ID:IL:IN:IA:KS:KY:LA:ME:MD:MA:MI:MN:MS:MO:MT:NE:NV:NH:NJ:NM:NY:NC:ND:OH:OK:OR:PA:RI:SC:SD:TN:TX:UT:VT:VA:WA:WV:WI:WY:&quot;, &quot;:&quot; &amp; {!S08_ADDR01_NewFacilityAddress.province} &amp; &quot;:&quot;), REGEX({!S08_ADDR01_NewFacilityAddress.postalCode}, &quot;[0-9]{5}(-[0-9]{4})?&quot;))</formulaExpression>
+                    </validationRule>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>S08_CB01_FacilityNotListed</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <name>S08_DTXT03_ObjectionInstructions</name>
@@ -4571,7 +4973,7 @@ N: {!S10_LT04_Next_Steps}</text>
     <textTemplates>
         <name>tt_ObjectionFacility</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>&lt;b&gt;Objection Facility:&lt;/b&gt; {!S08_CL01_Facility.selectedChoiceLabels}&lt;br/&gt;</text>
+        <text>&lt;b&gt;Objection Facility:&lt;/b&gt; {!fT_ObjectionFacilityName}&lt;br/&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>tt_Objections</name>
@@ -4778,6 +5180,14 @@ N: {!S10_LT04_Next_Steps}</text>
             </transformValueActions>
         </transformValues>
     </transforms>
+    <variables>
+        <description>Id of the facility tied to the objections: picked from the list, matched by name, or created at save.</description>
+        <name>vT_ObjectionFacilityId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <description>Visit summary as it was before the objection lines were added, restored when the liaison chooses to change their objections so the lines are not repeated.</description>
         <name>vT_VisitDetailsBeforeObjections</name>
