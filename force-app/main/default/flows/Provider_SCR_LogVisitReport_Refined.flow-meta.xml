@@ -44,6 +44,44 @@
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <description>Keeps the G.A.I.N answers so S10 shows them again if the liaison chooses "Change my objections".</description>
+        <name>Remember_Comments</name>
+        <label>Remember Comments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>vT_SavedGoal</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S10_LT01_Goal</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedAction</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S10_LT02_Action</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedIntel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S10_LT03_Intel</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedNextSteps</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S10_LT04_Next_Steps</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>S10b_Review_Visit</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <description>Earlier note for this category.</description>
         <name>Assign_Previous_Note</name>
         <label>Assign Previous Note</label>
@@ -140,7 +178,7 @@
         </connector>
     </assignments>
     <assignments>
-        <description>Remembers the visit summary before the objection lines are appended.</description>
+        <description>Remembers the visit summary before the objection lines are appended, and the S08 answers for &quot;Change my objections&quot;.</description>
         <name>Capture_Visit_Details_Before_Objections</name>
         <label>Capture Visit Details Before Objections</label>
         <locationX>0</locationX>
@@ -152,8 +190,78 @@
                 <elementReference>vT_VisitDetailsHTML</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedObjectionsRaised</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_RB01_ObjectionsRaised</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedFacilityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_CL01_Facility.selectedChoiceValues</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vB_SavedFacilityNotListed</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_CB01_FacilityNotListed</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedNewFacilityName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_TXT01_NewFacilityName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedParentFacilityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_CL02_ParentFacility.selectedChoiceValues</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedFacilityStreet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.street</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedFacilityCity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.city</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedFacilityState</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.province</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_SavedFacilityPostalCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_ADDR01_NewFacilityAddress.postalCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vC_SavedObjections</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>S08_DT01_ObjectionsRaised.selectedRows</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
-            <targetReference>Were_Objections_Raised</targetReference>
+            <targetReference>Preview_Existing_Facility</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -1881,7 +1989,7 @@
             <label>Phone Call</label>
         </rules>
     </decisions>
-    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation. V9:: Merges Brendan Murphy&apos;s UAT &quot;My facility isn&apos;t listed&quot; option (2026-10-21): same S08 fields and duplicate check, but the facility and its primary Location are created inside the all-or-nothing save, just before the objection Cases, instead of when S08 is submitted, so an abandoned or failed visit cannot leave an orphan facility.</description>
+    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation. V9:: Merges Brendan Murphy&apos;s UAT &quot;My facility isn&apos;t listed&quot; option (2026-10-21): same S08 fields and duplicate check, but the facility and its primary Location are created inside the all-or-nothing save, just before the objection Cases, instead of when S08 is submitted, so an abandoned or failed visit cannot leave an orphan facility. V10:: &quot;Change my objections&quot; brings back the facility, categories and G.A.I.N answers; the review screen checks a typed facility name before saving and says when it already exists; the review instructions only mention redoing objections when objections were picked.</description>
     <dynamicChoiceSets>
         <description>Mobile choices for S03. Same Location records as the S03 Data Table, shown as a picklist when vB_IsMobile is true.</description>
         <name>ccs_S03_Locations</name>
@@ -1962,10 +2070,10 @@
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
-        <description>Marks a facility on the review screen that will be created when the visit is saved.</description>
+        <description>Marks a typed facility on the review screen: created when the visit is saved, or already existing and reused.</description>
         <name>fT_NewFacilityMarker</name>
         <dataType>String</dataType>
-        <expression>IF({!S08_CB01_FacilityNotListed}, &quot; (new facility, created when you save)&quot;, &quot;&quot;)</expression>
+        <expression>IF({!S08_CB01_FacilityNotListed}, IF(ISBLANK({!Preview_Existing_Facility.Id}), &quot; (new facility, created when you save)&quot;, &quot; (already exists, so no new facility will be created)&quot;), &quot;&quot;)</expression>
     </formulas>
     <formulas>
         <description>Facility the objections are logged against, for display before saving: the one picked from the list, or the name typed for a facility that is not listed (created at save).</description>
@@ -2533,6 +2641,47 @@
         </faultConnector>
         <inputReference>vR_Task</inputReference>
     </recordCreates>
+    <recordLookups>
+        <description>Read-only preview of the save-time duplicate check, so the review screen can say whether a typed facility already exists. Nothing is created here; Get Existing Facility at save still decides.</description>
+        <name>Preview_Existing_Facility</name>
+        <label>Preview Existing Facility</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Were_Objections_Raised</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Were_Objections_Raised</targetReference>
+        </faultConnector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_NewFacilityName</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Top_Level_Parent_Account_Id__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_FacilityAccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_FacilityAccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <description>Duplicate check: looks for a facility with the same name in the user&apos;s OH or BH hierarchy before creating one.</description>
         <name>Get_Existing_Facility</name>
@@ -3196,7 +3345,7 @@
         </connector>
         <fields>
             <name>S10b_DTXT01_ReviewHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;REVIEW YOUR VISIT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Check the details below. Select Previous to change your comments, or choose Change my objections to redo the objection step.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(207, 75, 8);&quot;&gt;REVIEW YOUR VISIT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Check the details below.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -3206,6 +3355,52 @@
                     <stringValue>12</stringValue>
                 </width>
             </styleProperties>
+        </fields>
+        <fields>
+            <name>S10b_DTXT01a_WithObjections</name>
+            <fieldText>&lt;p&gt;Select Previous to change your comments, or choose Change my objections to redo the objection step.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>S08_RB01_ObjectionsRaised</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>S10b_DTXT01b_NoObjections</name>
+            <fieldText>&lt;p&gt;Select Previous to change your comments, or choose Change my objections if you need to record an objection.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>S08_RB01_ObjectionsRaised</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>S10b_DTXT02_VisitDetails</name>
@@ -4357,12 +4552,15 @@
         </fields>
         <fields>
             <name>S08_RB01_ObjectionsRaised</name>
+            <defaultValue>
+                <elementReference>vT_SavedObjectionsRaised</elementReference>
+            </defaultValue>
             <choiceReferences>Yes</choiceReferences>
             <choiceReferences>No</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Do you need to record any objections?</fieldText>
             <fieldType>RadioButtons</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4394,6 +4592,9 @@
                 </fields>
                 <fields>
                     <name>S08_CL01_Facility</name>
+                    <defaultValue>
+                        <elementReference>vT_SavedFacilityId</elementReference>
+                    </defaultValue>
                     <choiceReferences>rcs_OH_Facilities</choiceReferences>
                     <extensionName>flowruntime:choiceLookup</extensionName>
                     <fieldText>Facility</fieldText>
@@ -4404,7 +4605,7 @@
                             <stringValue>Select the Facility</stringValue>
                         </value>
                     </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                     <styleProperties>
@@ -4428,10 +4629,13 @@
                 </fields>
                 <fields>
                     <name>S08_CB01_FacilityNotListed</name>
+                    <defaultValue>
+                        <elementReference>vB_SavedFacilityNotListed</elementReference>
+                    </defaultValue>
                     <dataType>Boolean</dataType>
                     <fieldText>My facility isn&apos;t listed</fieldText>
                     <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4444,11 +4648,14 @@
                 </fields>
                 <fields>
                     <name>S08_TXT01_NewFacilityName</name>
+                    <defaultValue>
+                        <elementReference>vT_SavedNewFacilityName</elementReference>
+                    </defaultValue>
                     <dataType>String</dataType>
                     <fieldText>New Facility Name</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;Enter the full facility name. If a facility with this exact name already exists, the visit will use it instead of creating a new one.&lt;/p&gt;</helpText>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4475,6 +4682,9 @@
                 </fields>
                 <fields>
                     <name>S08_CL02_ParentFacility</name>
+                    <defaultValue>
+                        <elementReference>vT_SavedParentFacilityId</elementReference>
+                    </defaultValue>
                     <choiceReferences>rcs_OH_Facilities</choiceReferences>
                     <extensionName>flowruntime:choiceLookup</extensionName>
                     <fieldText>Parent Facility</fieldText>
@@ -4486,7 +4696,7 @@
                             <stringValue>Select the Parent Facility</stringValue>
                         </value>
                     </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                     <styleProperties>
@@ -4530,7 +4740,31 @@
                             <booleanValue>true</booleanValue>
                         </value>
                     </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputParameters>
+                        <name>street</name>
+                        <value>
+                            <elementReference>vT_SavedFacilityStreet</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>city</name>
+                        <value>
+                            <elementReference>vT_SavedFacilityCity</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>province</name>
+                        <value>
+                            <elementReference>vT_SavedFacilityState</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>postalCode</name>
+                        <value>
+                            <elementReference>vT_SavedFacilityPostalCode</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                     <styleProperties>
@@ -4619,7 +4853,13 @@
                             <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-b9fe&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Objection Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Description__c&quot;,&quot;guid&quot;:&quot;column-f9df&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Definition&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                         </value>
                     </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <inputParameters>
+                        <name>selectedRows</name>
+                        <value>
+                            <elementReference>vC_SavedObjections</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                     <styleProperties>
@@ -4743,7 +4983,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>S10b_Review_Visit</targetReference>
+            <targetReference>Remember_Comments</targetReference>
         </connector>
         <fields>
             <name>S10_DTXT01_DisplayVisitInfo</name>
@@ -4799,9 +5039,12 @@
         </fields>
         <fields>
             <name>S10_LT01_Goal</name>
+            <defaultValue>
+                <elementReference>vT_SavedGoal</elementReference>
+            </defaultValue>
             <fieldText>Goal</fieldText>
             <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4814,9 +5057,12 @@
         </fields>
         <fields>
             <name>S10_LT02_Action</name>
+            <defaultValue>
+                <elementReference>vT_SavedAction</elementReference>
+            </defaultValue>
             <fieldText>Action</fieldText>
             <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4829,9 +5075,12 @@
         </fields>
         <fields>
             <name>S10_LT03_Intel</name>
+            <defaultValue>
+                <elementReference>vT_SavedIntel</elementReference>
+            </defaultValue>
             <fieldText>Intel</fieldText>
             <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4844,9 +5093,12 @@
         </fields>
         <fields>
             <name>S10_LT04_Next_Steps</name>
+            <defaultValue>
+                <elementReference>vT_SavedNextSteps</elementReference>
+            </defaultValue>
             <fieldText>Next Steps</fieldText>
             <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -5258,6 +5510,119 @@ N: {!S10_LT04_Next_Steps}</text>
             </transformValueActions>
         </transformValues>
     </transforms>
+    <variables>
+        <description>Next Steps from the last pass through S10, so it is shown again after "Change my objections".</description>
+        <name>vT_SavedNextSteps</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Intel from the last pass through S10, so it is shown again after "Change my objections".</description>
+        <name>vT_SavedIntel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Action from the last pass through S10, so it is shown again after "Change my objections".</description>
+        <name>vT_SavedAction</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Goal from the last pass through S10, so it is shown again after "Change my objections".</description>
+        <name>vT_SavedGoal</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 ticked categories from the last pass, so "Change my objections" shows it again.</description>
+        <name>vC_SavedObjections</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Objection__c</objectType>
+    </variables>
+    <variables>
+        <description>S08 new facility ZIP from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedFacilityPostalCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 new facility state from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedFacilityState</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 new facility city from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedFacilityCity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 new facility street from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedFacilityStreet</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 parent facility from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedParentFacilityId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 new facility name from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedNewFacilityName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 "My facility isn't listed" box from the last pass, so "Change my objections" shows it again.</description>
+        <name>vB_SavedFacilityNotListed</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 facility picked from the list from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedFacilityId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>S08 Yes/No answer from the last pass, so "Change my objections" shows it again.</description>
+        <name>vT_SavedObjectionsRaised</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <description>Earlier note for the category on the current note screen; blank if there is none.</description>
         <name>vT_PreviousNote</name>
