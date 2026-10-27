@@ -1989,7 +1989,7 @@
             <label>Phone Call</label>
         </rules>
     </decisions>
-    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation. V9:: Merges Brendan Murphy&apos;s UAT &quot;My facility isn&apos;t listed&quot; option (2026-10-21): same S08 fields and duplicate check, but the facility and its primary Location are created inside the all-or-nothing save, just before the objection Cases, instead of when S08 is submitted, so an abandoned or failed visit cannot leave an orphan facility. V10:: &quot;Change my objections&quot; brings back the facility, categories and G.A.I.N answers; the review screen checks a typed facility name before saving and says when it already exists; the review instructions only mention redoing objections when objections were picked.</description>
+    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation. V9:: Merges Brendan Murphy&apos;s UAT &quot;My facility isn&apos;t listed&quot; option (2026-10-21): same S08 fields and duplicate check, but the facility and its primary Location are created inside the all-or-nothing save, just before the objection Cases, instead of when S08 is submitted, so an abandoned or failed visit cannot leave an orphan facility. V10:: &quot;Change my objections&quot; brings back the facility, categories and G.A.I.N answers; the review screen checks a typed facility name before saving and says when it already exists; the review instructions only mention redoing objections when objections were picked. V11:: A typed facility name that matches an existing facility now shows and saves as that facility&apos;s own name (for example its capitalisation), as in the UAT version.</description>
     <dynamicChoiceSets>
         <description>Mobile choices for S03. Same Location records as the S03 Data Table, shown as a picklist when vB_IsMobile is true.</description>
         <name>ccs_S03_Locations</name>
@@ -2076,10 +2076,10 @@
         <expression>IF({!S08_CB01_FacilityNotListed}, IF(ISBLANK({!Preview_Existing_Facility.Id}), &quot; (new facility, created when you save)&quot;, &quot; (already exists, so no new facility will be created)&quot;), &quot;&quot;)</expression>
     </formulas>
     <formulas>
-        <description>Facility the objections are logged against, for display before saving: the one picked from the list, or the name typed for a facility that is not listed (created at save).</description>
+        <description>Facility the objections are logged against: the one picked from the list; for a facility that is not listed, the existing facility&apos;s own name when the typed name matches one (save-time check first, then the review preview), otherwise the typed name (created at save).</description>
         <name>fT_ObjectionFacilityName</name>
         <dataType>String</dataType>
-        <expression>IF({!S08_CB01_FacilityNotListed}, {!fT_NewFacilityName}, {!S08_CL01_Facility.selectedChoiceLabels})</expression>
+        <expression>IF({!S08_CB01_FacilityNotListed}, IF(NOT(ISBLANK({!Get_Existing_Facility.Id})), {!Get_Existing_Facility.Name}, IF(NOT(ISBLANK({!Preview_Existing_Facility.Id})), {!Preview_Existing_Facility.Name}, {!fT_NewFacilityName})), {!S08_CL01_Facility.selectedChoiceLabels})</expression>
     </formulas>
     <formulas>
         <description>New facility name entered on S08, trimmed of leading and trailing spaces.</description>
@@ -2647,7 +2647,7 @@
         <label>Preview Existing Facility</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Were_Objections_Raised</targetReference>
         </connector>
