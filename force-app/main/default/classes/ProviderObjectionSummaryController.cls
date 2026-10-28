@@ -175,7 +175,9 @@ public with sharing class ProviderObjectionSummaryController {
             row.caseId = c.Id;
             row.caseNumber = c.CaseNumber;
             row.status = c.Status;
-            row.objection = c.Objection_Category__c;
+            // The Objection Category lookup; Cases saved before it existed only have
+            // the old picklist (Objection Category OLD).
+            row.objection = c.Objection__r != null ? c.Objection__r.Name : c.Objection_Category__c;
             // The facility the objection was logged against. Practice & Group holds
             // the provider's practice, not the facility.
             row.facility = c.Facility__r == null ? null : c.Facility__r.Name;
@@ -330,13 +332,14 @@ public with sharing class ProviderObjectionSummaryController {
         Schema.RecordTypeInfo rtInfo =
             Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get(OBJECTION_CASE_RECORD_TYPE);
         if (rtInfo == null || !Schema.SObjectType.Case.isAccessible()
-                || !Schema.SObjectType.Case.fields.Objection_Category__c.isAccessible()) {
+                || !(Schema.SObjectType.Case.fields.Objection__c.isAccessible()
+                     || Schema.SObjectType.Case.fields.Objection_Category__c.isAccessible())) {
             return new List<Case>();
         }
         Id rtId = rtInfo.getRecordTypeId();
         if (cutoff == null) {
             return [
-                SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Facility__r.Name,
+                SELECT Id, CaseNumber, Status, Objection__r.Name, Objection_Category__c, Description, Facility__r.Name,
                        Visit_Report__c, Visit_Report__r.Name, Visit_Report__r.RecordType.Name, Visit_Date__c,
                        CreatedDate, CreatedById, OwnerId
                 FROM Case
@@ -348,7 +351,7 @@ public with sharing class ProviderObjectionSummaryController {
         }
         Datetime cutoffStart = Datetime.newInstance(cutoff, Time.newInstance(0, 0, 0, 0));
         return [
-            SELECT Id, CaseNumber, Status, Objection_Category__c, Description, Facility__r.Name,
+            SELECT Id, CaseNumber, Status, Objection__r.Name, Objection_Category__c, Description, Facility__r.Name,
                    Visit_Report__c, Visit_Report__r.Name, Visit_Report__r.RecordType.Name, Visit_Date__c,
                    CreatedDate, CreatedById, OwnerId
             FROM Case

@@ -152,7 +152,8 @@ private class ProviderObjectionSummaryControllerTest {
             new Case(RecordTypeId = caseRt, Origin = 'Log A Visit', Status = 'New',
                      Subject = 'Insurance - CaseProvider', ContactId = providerByName.get('CaseProvider'),
                      AccountId = practiceGroup.Id, Facility__c = objectionFacility.Id, Visit_Report__c = reports[7].Id,
-                     Objection_Category__c = 'Insurance', Description = 'Case note'),
+                     Objection__c = catalog[1].Id, Description = 'Case note'),
+            // Saved before the Objection Category lookup: only the old picklist is set.
             new Case(RecordTypeId = caseRt, Origin = 'Log A Visit', Status = 'New',
                      Subject = 'Records - CaseProvider', ContactId = providerByName.get('CaseProvider'),
                      Visit_Report__c = reports[8].Id, Objection_Category__c = 'Records',
@@ -466,7 +467,7 @@ private class ProviderObjectionSummaryControllerTest {
             }
         }
         System.assertNotEquals(null, caseRow, 'The Case should be listed');
-        System.assertEquals('Insurance', caseRow.objection, 'Objection comes from the category');
+        System.assertEquals('Insurance', caseRow.objection, 'Objection comes from the Objection Category lookup');
         System.assertEquals('Case note', caseRow.notes, 'Notes come from the description');
         System.assertEquals('Test Objection Facility', caseRow.facility,
             'Facility comes from the Case Facility field, not Practice & Group');
@@ -519,7 +520,7 @@ private class ProviderObjectionSummaryControllerTest {
 
         System.assertEquals(1, r.totalCount, 'A provider with a Case but no visit task still has a row');
         System.assertEquals('Case', r.rows[0].source, 'Row comes from the Case');
-        System.assertEquals('Locations', r.rows[0].objection, 'Category is carried');
+        System.assertEquals('Locations', r.rows[0].objection, 'Cases with only the old picklist still show their category');
         System.assertEquals(null, r.rows[0].visitDate, 'No visit report, so no visit date');
         System.assertEquals(1, r.categoryCount, 'Category breakdown includes Cases');
     }
