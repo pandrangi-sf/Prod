@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Objection_Category__c</fullName>
     <description>List of potential objection category values that can be used to determine what the provider has provided an objection to during a visit.</description>
-    <label>Objection Category</label>
+    <label>Objection Category OLD</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>

@@ -44,34 +44,37 @@
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <description>Earlier note for this category.</description>
-        <name>Assign_Previous_Note</name>
-        <label>Assign Previous Note</label>
+        <description>Category name for the confirmation link.</description>
+        <name>Assign_Link_Category_Name</name>
+        <label>Assign Link Category Name</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>vT_PreviousNote</assignToReference>
+            <assignToReference>vT_CategoryName</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Loop_Previous_Note.Description</elementReference>
+                <elementReference>Loop_Link_Category.Name</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_Previous_Note</targetReference>
+            <targetReference>Loop_Link_Category</targetReference>
         </connector>
     </assignments>
     <assignments>
-        <description>Starts each note screen blank unless the category had a note before "Change my objections".</description>
-        <name>Clear_Previous_Note</name>
-        <label>Clear Previous Note</label>
+        <description>Category name for the review line.</description>
+        <name>Assign_Review_Category_Name</name>
+        <label>Assign Review Category Name</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>vT_PreviousNote</assignToReference>
+            <assignToReference>vT_CategoryName</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Review_Category.Name</elementReference>
+            </value>
         </assignmentItems>
         <connector>
-            <targetReference>Find_Previous_Note</targetReference>
+            <targetReference>Loop_Review_Category</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -123,40 +126,6 @@
         </connector>
     </assignments>
     <assignments>
-        <description>Drops the objection lines from the visit summary before the liaison goes back to the category list; they are added again from the new selection.</description>
-        <name>Restore_Visit_Details_Before_Objections</name>
-        <label>Restore Visit Details Before Objections</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>vT_VisitDetailsHTML</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>vT_VisitDetailsBeforeObjections</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>S08_Objections_Raised</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <description>Remembers the visit summary before the objection lines are appended.</description>
-        <name>Capture_Visit_Details_Before_Objections</name>
-        <label>Capture Visit Details Before Objections</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>vT_VisitDetailsBeforeObjections</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>vT_VisitDetailsHTML</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Were_Objections_Raised</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <description>Adds a Case number link to the confirmation list.</description>
         <name>Append_Case_Link</name>
         <label>Append Case Link</label>
@@ -168,6 +137,10 @@
             <value>
                 <elementReference>tt_CaseLink</elementReference>
             </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_CategoryName</assignToReference>
+            <operator>Assign</operator>
         </assignmentItems>
         <connector>
             <targetReference>Build_Case_Links</targetReference>
@@ -315,6 +288,10 @@
                 <elementReference>tt_ObjectionReviewItem</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>vT_CategoryName</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
         <connector>
             <targetReference>Build_Objection_Review</targetReference>
         </connector>
@@ -358,16 +335,16 @@
         </connector>
     </assignments>
     <assignments>
-        <description>Builds the draft objection Case for this category: category, the liaison's note and the subject.</description>
+        <description>Builds the draft objection Case for this category: the Objection Category lookup (Objection__c), the liaison&apos;s note and the subject. The old Objection_Category__c picklist (&quot;Objection Category OLD&quot;) is no longer set.</description>
         <name>Assign_Objection_Case_Draft</name>
         <label>Assign Objection Case Draft</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>vR_ObjectionCase.Objection_Category__c</assignToReference>
+            <assignToReference>vR_ObjectionCase.Objection__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Add_Objection_Notes.Name</elementReference>
+                <elementReference>Add_Objection_Notes.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -394,13 +371,6 @@
         <label>Reset Objection Drafts</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>vC_PreviousObjectionDrafts</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>vC_ObjectionCaseDrafts</elementReference>
-            </value>
-        </assignmentItems>
         <assignmentItems>
             <assignToReference>vC_ObjectionCaseDrafts</assignToReference>
             <operator>Assign</operator>
@@ -1227,22 +1197,6 @@
         </connector>
     </assignments>
     <choices>
-        <name>ch_ReviewChangeObjections</name>
-        <choiceText>Change my objections</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Change Objections</stringValue>
-        </value>
-    </choices>
-    <choices>
-        <name>ch_ReviewCreateVisit</name>
-        <choiceText>Everything is correct - create the visit report</choiceText>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Create</stringValue>
-        </value>
-    </choices>
-    <choices>
         <name>LeftVoicemail</name>
         <choiceText>Left Voicemail</choiceText>
         <dataType>String</dataType>
@@ -1299,25 +1253,47 @@
         </value>
     </choices>
     <collectionProcessors>
-        <description>The earlier draft for this category, if the liaison wrote one before choosing "Change my objections".</description>
-        <name>Find_Previous_Note</name>
+        <description>The ticked Objection record for this confirmation link, for its name (the Case stores only the Objection lookup).</description>
+        <name>Find_Link_Category</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
-        <label>Find Previous Note</label>
+        <label>Find Link Category</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <assignNextValueToReference>currentItem_Find_Previous_Note</assignNextValueToReference>
+        <assignNextValueToReference>currentItem_Find_Link_Category</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
-        <collectionReference>vC_PreviousObjectionDrafts</collectionReference>
+        <collectionReference>S08_DT01_ObjectionsRaised.selectedRows</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Find_Previous_Note.Objection_Category__c</leftValueReference>
+            <leftValueReference>currentItem_Find_Link_Category.Id</leftValueReference>
             <operator>EqualTo</operator>
             <rightValue>
-                <elementReference>Add_Objection_Notes.Name</elementReference>
+                <elementReference>Build_Case_Links.Objection__c</elementReference>
             </rightValue>
         </conditions>
         <connector>
-            <targetReference>Loop_Previous_Note</targetReference>
+            <targetReference>Loop_Link_Category</targetReference>
+        </connector>
+    </collectionProcessors>
+    <collectionProcessors>
+        <description>The ticked Objection record for this review line, for its name (the Case stores only the Objection lookup).</description>
+        <name>Find_Review_Category</name>
+        <elementSubtype>FilterCollectionProcessor</elementSubtype>
+        <label>Find Review Category</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNextValueToReference>currentItem_Find_Review_Category</assignNextValueToReference>
+        <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
+        <collectionReference>S08_DT01_ObjectionsRaised.selectedRows</collectionReference>
+        <conditionLogic>and</conditionLogic>
+        <conditions>
+            <leftValueReference>currentItem_Find_Review_Category.Id</leftValueReference>
+            <operator>EqualTo</operator>
+            <rightValue>
+                <elementReference>Build_Objection_Review.Objection__c</elementReference>
+            </rightValue>
+        </conditions>
+        <connector>
+            <targetReference>Loop_Review_Category</targetReference>
         </connector>
     </collectionProcessors>
     <collectionProcessors>
@@ -1332,10 +1308,10 @@
         <collectionReference>vC_ObjectionCaseDrafts</collectionReference>
         <conditionLogic>and</conditionLogic>
         <conditions>
-            <leftValueReference>currentItem_Remove_Current_Category_Draft.Objection_Category__c</leftValueReference>
+            <leftValueReference>currentItem_Remove_Current_Category_Draft.Objection__c</leftValueReference>
             <operator>NotEqualTo</operator>
             <rightValue>
-                <elementReference>Add_Objection_Notes.Name</elementReference>
+                <elementReference>Add_Objection_Notes.Id</elementReference>
             </rightValue>
         </conditions>
         <connector>
@@ -1450,32 +1426,6 @@
                 <targetReference>Get_Existing_Facility</targetReference>
             </connector>
             <label>New Facility Entered</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <description>Back is off inside the objection step (it could put a note on the wrong category), so this is the safe way to change objections: the step restarts from the category list.</description>
-        <name>Review_Next_Step</name>
-        <label>Review Next Step</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>Assign_Comments_to_Visit_Task</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Create Visit Report</defaultConnectorLabel>
-        <rules>
-            <name>Change_Objections</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>S10b_RB01_NextStep</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>ch_ReviewChangeObjections</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Restore_Visit_Details_Before_Objections</targetReference>
-            </connector>
-            <label>Change Objections</label>
         </rules>
     </decisions>
     <decisions>
@@ -1881,7 +1831,7 @@
             <label>Phone Call</label>
         </rules>
     </decisions>
-    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation. V9:: Merges Brendan Murphy&apos;s UAT &quot;My facility isn&apos;t listed&quot; option (2026-10-21): same S08 fields and duplicate check, but the facility and its primary Location are created inside the all-or-nothing save, just before the objection Cases, instead of when S08 is submitted, so an abandoned or failed visit cannot leave an orphan facility.</description>
+    <description>V7:: Dual form-factor version. Salesforce&apos;s Data Table screen component is not supported in the mobile app (its inner scroll region traps the touch gesture, so screens cannot scroll and visits cannot be submitted). This version keeps the Data Tables for desktop and adds a picklist (S03) and checkbox groups (S04, S06, S07 Services, S07 Collateral) for mobile. A new input variable vB_IsMobile drives component visibility and per-screen normalization; a wrapper flow launched by the mobile quick action sets it to true. Also re-applies the production V7 fix allowing blank Affiliation in Get Physician-to-Physician Providers. V8:: Objections are logged as Provider Objection Cases (one per category, owned by the liaison, Status New, Region from the provider) through the Case_AL_CreateObjectionCases subflow; Network Team users keep the legacy Visit Objection records. Category definitions come from Objection_Category__mdt. Adds a review screen before save, rolls the whole visit back on any save error, and lists the new Case numbers on the confirmation. V9:: Merges Brendan Murphy&apos;s UAT &quot;My facility isn&apos;t listed&quot; option (2026-10-21): same S08 fields and duplicate check, but the facility and its primary Location are created inside the all-or-nothing save, just before the objection Cases, instead of when S08 is submitted, so an abandoned or failed visit cannot leave an orphan facility. V10:: &quot;Change my objections&quot; brings back the facility, categories and G.A.I.N answers; the review screen checks a typed facility name before saving and says when it already exists; the review instructions only mention redoing objections when objections were picked. V11:: A typed facility name that matches an existing facility now shows and saves as that facility&apos;s own name (for example its capitalisation), as in the UAT version. V12:: Back is on again in the objection step: UAT tests (VR-32634 to VR-32645) showed Back keeps each note with its category. &quot;Change my objections&quot; and the answer pre-fill built around it are removed; the review screen uses Previous and Create Visit Report. V13:: Objection Cases store the category in the Objection Category lookup (Objection__c) instead of the Objection_Category__c picklist, now labelled &quot;Objection Category OLD&quot; (Eyad, 2026-10-28). The review and confirmation screens take the category name from the ticked Objection records.</description>
     <dynamicChoiceSets>
         <description>Mobile choices for S03. Same Location records as the S03 Data Table, shown as a picklist when vB_IsMobile is true.</description>
         <name>ccs_S03_Locations</name>
@@ -1962,16 +1912,16 @@
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
-        <description>Marks a facility on the review screen that will be created when the visit is saved.</description>
+        <description>Marks a typed facility on the review screen: created when the visit is saved, or already existing and reused.</description>
         <name>fT_NewFacilityMarker</name>
         <dataType>String</dataType>
-        <expression>IF({!S08_CB01_FacilityNotListed}, &quot; (new facility, created when you save)&quot;, &quot;&quot;)</expression>
+        <expression>IF({!S08_CB01_FacilityNotListed}, IF(ISBLANK({!Preview_Existing_Facility.Id}), &quot; (new facility, created when you save)&quot;, &quot; (already exists, so no new facility will be created)&quot;), &quot;&quot;)</expression>
     </formulas>
     <formulas>
-        <description>Facility the objections are logged against, for display before saving: the one picked from the list, or the name typed for a facility that is not listed (created at save).</description>
+        <description>Facility the objections are logged against: the one picked from the list; for a facility that is not listed, the existing facility&apos;s own name when the typed name matches one (save-time check first, then the review preview), otherwise the typed name (created at save).</description>
         <name>fT_ObjectionFacilityName</name>
         <dataType>String</dataType>
-        <expression>IF({!S08_CB01_FacilityNotListed}, {!fT_NewFacilityName}, {!S08_CL01_Facility.selectedChoiceLabels})</expression>
+        <expression>IF({!S08_CB01_FacilityNotListed}, IF(NOT(ISBLANK({!Get_Existing_Facility.Id})), {!Get_Existing_Facility.Name}, IF(NOT(ISBLANK({!Preview_Existing_Facility.Id})), {!Preview_Existing_Facility.Name}, {!fT_NewFacilityName})), {!S08_CL01_Facility.selectedChoiceLabels})</expression>
     </formulas>
     <formulas>
         <description>New facility name entered on S08, trimmed of leading and trailing spaces.</description>
@@ -2107,18 +2057,33 @@
     <interviewLabel>Provider_SCR_LogVisitReport {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ProviderSCRLogVisitReportRefined</label>
     <loops>
-        <description>At most one earlier draft per category; takes its note.</description>
-        <name>Loop_Previous_Note</name>
-        <label>Loop Previous Note</label>
+        <description>One match per Case; takes the category name.</description>
+        <name>Loop_Link_Category</name>
+        <label>Loop Link Category</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <collectionReference>Find_Previous_Note</collectionReference>
+        <collectionReference>Find_Link_Category</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Assign_Previous_Note</targetReference>
+            <targetReference>Assign_Link_Category_Name</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>S09_Add_Obection_Notes</targetReference>
+            <targetReference>Append_Case_Link</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>One match per Case; takes the category name.</description>
+        <name>Loop_Review_Category</name>
+        <label>Loop Review Category</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Find_Review_Category</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Review_Category_Name</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Append_Objection_Review_Item</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
@@ -2130,7 +2095,7 @@
         <collectionReference>Get_Created_Cases</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Append_Case_Link</targetReference>
+            <targetReference>Find_Link_Category</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>S11_Visit_Report_Created_Confirmation</targetReference>
@@ -2160,7 +2125,7 @@
         <collectionReference>vC_ObjectionCaseDrafts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Append_Objection_Review_Item</targetReference>
+            <targetReference>Find_Review_Category</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>S10_Comments</targetReference>
@@ -2534,6 +2499,47 @@
         <inputReference>vR_Task</inputReference>
     </recordCreates>
     <recordLookups>
+        <description>Read-only preview of the save-time duplicate check, so the review screen can say whether a typed facility already exists. Nothing is created here; Get Existing Facility at save still decides.</description>
+        <name>Preview_Existing_Facility</name>
+        <label>Preview Existing Facility</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Were_Objections_Raised</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Were_Objections_Raised</targetReference>
+        </faultConnector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_NewFacilityName</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Top_Level_Parent_Account_Id__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_FacilityAccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>fT_FacilityAccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <description>Duplicate check: looks for a facility with the same name in the user&apos;s OH or BH hierarchy before creating one.</description>
         <name>Get_Existing_Facility</name>
         <label>Get Existing Facility</label>
@@ -2606,7 +2612,7 @@
         <object>Case</object>
         <queriedFields>Id</queriedFields>
         <queriedFields>CaseNumber</queriedFields>
-        <queriedFields>Objection_Category__c</queriedFields>
+        <queriedFields>Objection__c</queriedFields>
         <sortField>CaseNumber</sortField>
         <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -2652,7 +2658,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Clear_Previous_Note</targetReference>
+            <targetReference>S09_Add_Obection_Notes</targetReference>
         </connector>
         <faultConnector>
             <targetReference>S12_Error_Loading_Data</targetReference>
@@ -3192,11 +3198,11 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Review_Next_Step</targetReference>
+            <targetReference>Assign_Comments_to_Visit_Task</targetReference>
         </connector>
         <fields>
             <name>S10b_DTXT01_ReviewHeader</name>
-            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;REVIEW YOUR VISIT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Check the details below. Select Previous to change your comments, or choose Change my objections to redo the objection step.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style="font-size: 14px; color: rgb(207, 75, 8);"&gt;REVIEW YOUR VISIT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Check the details below. Use Previous to change anything, then select Create Visit Report.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -3243,26 +3249,7 @@
                 </conditions>
             </visibilityRule>
         </fields>
-        <fields>
-            <name>S10b_RB01_NextStep</name>
-            <choiceReferences>ch_ReviewCreateVisit</choiceReferences>
-            <choiceReferences>ch_ReviewChangeObjections</choiceReferences>
-            <dataType>String</dataType>
-            <defaultSelectedChoiceReference>ch_ReviewCreateVisit</defaultSelectedChoiceReference>
-            <fieldText>What would you like to do?</fieldText>
-            <fieldType>RadioButtons</fieldType>
-            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <nextOrFinishButtonLabel>Continue</nextOrFinishButtonLabel>
+        <nextOrFinishButtonLabel>Create Visit Report</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -4324,7 +4311,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Capture_Visit_Details_Before_Objections</targetReference>
+            <targetReference>Preview_Existing_Facility</targetReference>
         </connector>
         <fields>
             <name>S08_DTXT01_DisplayVisitInfo</name>
@@ -4668,7 +4655,7 @@
         <label>S09 Add Obection Notes</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <allowBack>false</allowBack>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
@@ -4715,12 +4702,9 @@
         </fields>
         <fields>
             <name>S09_LT01_ObjectionNotes</name>
-            <defaultValue>
-                <elementReference>vT_PreviousNote</elementReference>
-            </defaultValue>
             <fieldText>What did the provider say?</fieldText>
             <fieldType>LargeTextArea</fieldType>
-            <inputsOnNextNavToAssocScrn>ResetValues</inputsOnNextNavToAssocScrn>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4739,7 +4723,7 @@
         <label>S10 Comments</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <allowBack>false</allowBack>
+        <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
@@ -5013,12 +4997,12 @@
     <textTemplates>
         <name>tt_CaseLink</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;a href=&quot;/{!Build_Case_Links.Id}&quot; target=&quot;_blank&quot;&gt;{!Build_Case_Links.CaseNumber}&lt;/a&gt; - {!Build_Case_Links.Objection_Category__c}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;a href=&quot;/{!Build_Case_Links.Id}&quot; target=&quot;_blank&quot;&gt;{!Build_Case_Links.CaseNumber}&lt;/a&gt; - {!vT_CategoryName}&lt;/p&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>tt_ObjectionReviewItem</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>&lt;p&gt;&lt;b&gt;{!Build_Objection_Review.Objection_Category__c}:&lt;/b&gt; {!Build_Objection_Review.Description}&lt;/p&gt;</text>
+        <text>&lt;p&gt;&lt;b&gt;{!vT_CategoryName}:&lt;/b&gt; {!Build_Objection_Review.Description}&lt;/p&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>tt_AdditionalProviders</name>
@@ -5259,42 +5243,34 @@ N: {!S10_LT04_Next_Steps}</text>
         </transformValues>
     </transforms>
     <variables>
-        <description>Earlier note for the category on the current note screen; blank if there is none.</description>
-        <name>vT_PreviousNote</name>
+        <description>Name of the objection category being listed on the review or confirmation screen.</description>
+        <name>vT_CategoryName</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <description>Iterator for Find Previous Note.</description>
-        <name>currentItem_Find_Previous_Note</name>
+        <description>Iterator for Find Link Category.</description>
+        <name>currentItem_Find_Link_Category</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Case</objectType>
+        <objectType>Objection__c</objectType>
     </variables>
     <variables>
-        <description>The objection drafts from before the liaison chose "Change my objections", used to pre-fill each category's note.</description>
-        <name>vC_PreviousObjectionDrafts</name>
+        <description>Iterator for Find Review Category.</description>
+        <name>currentItem_Find_Review_Category</name>
         <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Case</objectType>
+        <objectType>Objection__c</objectType>
     </variables>
     <variables>
         <description>Id of the facility tied to the objections: picked from the list, matched by name, or created at save.</description>
         <name>vT_ObjectionFacilityId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <description>Visit summary as it was before the objection lines were added, restored when the liaison chooses to change their objections so the lines are not repeated.</description>
-        <name>vT_VisitDetailsBeforeObjections</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
