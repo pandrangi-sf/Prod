@@ -408,7 +408,7 @@
     <relatedLists>
         <fields>CASES.CASE_NUMBER</fields>
         <fields>NAME</fields>
-        <fields>Objection_Category__c</fields>
+        <fields>Objection__c</fields>
         <fields>CASES.STATUS</fields>
         <fields>CASES.CREATED_DATE_DATE_ONLY</fields>
         <fields>OWNER_NAME</fields>
@@ -419,7 +419,7 @@
     <relatedLists>
         <fields>CASES.CASE_NUMBER</fields>
         <fields>NAME</fields>
-        <fields>Objection_Category__c</fields>
+        <fields>Objection__c</fields>
         <fields>CASES.STATUS</fields>
         <fields>CASES.CREATED_DATE_DATE_ONLY</fields>
         <fields>OWNER_NAME</fields>
