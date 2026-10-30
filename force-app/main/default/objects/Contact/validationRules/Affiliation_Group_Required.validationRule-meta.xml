@@ -3,7 +3,7 @@
     <fullName>Affiliation_Group_Required</fullName>
     <active>true</active>
     <description>Requires the Affiliation Group when creating new records in the Florida region</description>
-    <errorConditionFormula>AND(ISNEW(), TEXT(Region__c)=&quot;Florida&quot;, ISBLANK(TEXT( Affiliation_Group__c )))</errorConditionFormula>
+    <errorConditionFormula>AND(ISNEW(), OR(ISPICKVAL(Region__c, &quot;Florida&quot;), ISPICKVAL(Region__c, &quot;Alabama&quot;)), ISBLANK(TEXT( Affiliation_Group__c )))</errorConditionFormula>
     <errorDisplayField>Affiliation_Group__c</errorDisplayField>
     <errorMessage>Affiliation Group is required for new records.</errorMessage>
 </ValidationRule>

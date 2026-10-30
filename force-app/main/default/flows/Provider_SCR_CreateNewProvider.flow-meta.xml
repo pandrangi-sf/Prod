@@ -51,64 +51,6 @@
     <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Assign_AL_Provider_Details</name>
-        <label>Assign AL Provider Details</label>
-        <locationX>666</locationX>
-        <locationY>2030</locationY>
-        <assignmentItems>
-            <assignToReference>vR_Provider.Credentials__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>S05a_PL01_Credentials</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>vR_Provider.Gender__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>S05a_RB01_Gender</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>vR_Provider.Provider_Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>S05a_PL02_ProviderType</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>vR_Provider.Medical_Group__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>fB_MedicalGroup</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>vR_Provider.IsInNetwork__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>fB_InNetwork</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>vR_Provider.Baptist_Health_Network__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>fB_BaptistHealthNetwork</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>vR_Provider.BH_Curaechoice_Network__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>fB_CurachoiceNetwork</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Record_Type</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_Clinical_Extender_Record_Type</name>
         <label>Assign Clinical Extender Record Type</label>
         <locationX>1062</locationX>
@@ -147,7 +89,7 @@
             <assignToReference>vR_Provider.Affiliation_Group__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>S05b_PL03_Affiliation_Group</elementReference>
+                <elementReference>fT_AffiliationGroup</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -338,6 +280,166 @@
             <targetReference>Create_Provider_Location</targetReference>
         </connector>
     </assignments>
+    <choices>
+        <name>choice_AffGroup_BH_Employed</name>
+        <choiceText>BH Employed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>BH Employed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_BH_Partnered_Practice</name>
+        <choiceText>BH Partnered Practice</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>BH Partnered Practice</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_BH_Network</name>
+        <choiceText>BH Network</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>BH Network</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_BH_Credentialed</name>
+        <choiceText>BH Credentialed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>BH Credentialed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_Independent</name>
+        <choiceText>Independent</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Independent</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_OH_Employed</name>
+        <choiceText>OH Employed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>OH Employed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_OH_Contracted</name>
+        <choiceText>OH Contracted</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>OH Contracted</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_OH_Partnered_Facility</name>
+        <choiceText>OH Partnered Facility</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>OH Partnered Facility</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_OH_Network</name>
+        <choiceText>OH Network</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>OH Network</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_Advent_Health</name>
+        <choiceText>Advent Health</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Advent Health</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_BayCare</name>
+        <choiceText>BayCare</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>BayCare</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_HCA_Hospitals</name>
+        <choiceText>HCA Hospitals</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>HCA Hospitals</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_Health_First</name>
+        <choiceText>Health First</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Health First</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_Lakeland_Regional_Health</name>
+        <choiceText>Lakeland Regional Health</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Lakeland Regional Health</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_LH_Employed</name>
+        <choiceText>LH Employed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>LH Employed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_Nemours_Hospital</name>
+        <choiceText>Nemours Hospital</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Nemours Hospital</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_Steward_Health_Care</name>
+        <choiceText>Steward Health Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Steward Health Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_Tampa_General</name>
+        <choiceText>Tampa General</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Tampa General</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_The_Villages_Regional</name>
+        <choiceText>The Villages Regional</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>The Villages Regional</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>choice_AffGroup_VA_Hospital</name>
+        <choiceText>VA Hospital</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>VA Hospital</stringValue>
+        </value>
+    </choices>
     <choices>
         <name>choice_Credential_APRN</name>
         <choiceText>APRN</choiceText>
@@ -589,7 +691,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>S05a_Enter_AL_Provider_Details</targetReference>
+                <targetReference>S05b_Enter_FL_Provider_Details</targetReference>
             </connector>
             <label>Alabama</label>
         </rules>
@@ -751,25 +853,10 @@
     </dynamicChoiceSets>
     <environments>Default</environments>
     <formulas>
-        <name>fB_BaptistHealthNetwork</name>
-        <dataType>Boolean</dataType>
-        <expression>IF({!S05a1_RB01_Is_provider_part_of_the_Medical_Group}={!choice_Yes},true,IF({!S05a1_CB02_Baptist_Health_Network}=true,true,false))</expression>
-    </formulas>
-    <formulas>
-        <name>fB_CurachoiceNetwork</name>
-        <dataType>Boolean</dataType>
-        <expression>IF({!S05a1_RB01_Is_provider_part_of_the_Medical_Group}={!choice_Yes},true,IF({!S05a1_CB03_Curachoice_Network}=true,true,false))</expression>
-    </formulas>
-    <formulas>
-        <name>fB_InNetwork</name>
-        <dataType>Boolean</dataType>
-        <expression>IF({!S05a1_RB01_Is_provider_part_of_the_Medical_Group}={!choice_Yes},true,IF({!S05a1_CB01_In_Network}=true,true,false))</expression>
-    </formulas>
-    <formulas>
-        <description>Calculates the value for the Medical Group field</description>
-        <name>fB_MedicalGroup</name>
-        <dataType>Boolean</dataType>
-        <expression>IF({!S05a1_RB01_Is_provider_part_of_the_Medical_Group}={!choice_Yes},true,false)</expression>
+        <description>Affiliation Group chosen on S05b. Each Region/Status pair has its own dropdown listing only the groups the affiliation matrix allows; this returns the one that applies.</description>
+        <name>fT_AffiliationGroup</name>
+        <dataType>String</dataType>
+        <expression>CASE({!fT_Region} &amp; &quot;|&quot; &amp; {!S05b_PL02_Affiliation}, &quot;Alabama|Owned&quot;, {!S05b_PL03_Affiliation_Group_AL_Employed}, &quot;Alabama|Affiliated&quot;, {!S05b_PL03_Affiliation_Group_AL_Affiliated}, &quot;Alabama|Unaffiliated&quot;, {!S05b_PL03_Affiliation_Group_AL_Unaffiliated}, &quot;Florida|Owned&quot;, {!S05b_PL03_Affiliation_Group_FL_Employed}, &quot;Florida|Affiliated&quot;, {!S05b_PL03_Affiliation_Group_FL_Affiliated}, &quot;Florida|Unaffiliated&quot;, {!S05b_PL03_Affiliation_Group_FL_Unaffiliated}, &quot;&quot;)</expression>
     </formulas>
     <formulas>
         <description>Calculates the Primary Location Id depending on if one was provided to the flow, or if it was created as part of the flow.</description>
@@ -1451,365 +1538,8 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>S05a1_Enter_AL_Provider_Network_Details</name>
-        <label>S05a1 Enter AL Provider Network Details</label>
-        <locationX>666</locationX>
-        <locationY>1922</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>Assign_AL_Provider_Details</targetReference>
-        </connector>
-        <fields>
-            <name>S05a1_Enter_AL_Provider_Network_Details_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>S05a1_Enter_AL_Provider_Network_Details_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>S05a1_Enter_AL_Provider_Network_Details_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>S05a1_DT01_BaptisthHealthMedicalGroup</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Baptist Health Medical Group&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <fields>
-                    <name>S05a1_RB01_Is_provider_part_of_the_Medical_Group</name>
-                    <choiceReferences>choice_Yes</choiceReferences>
-                    <choiceReferences>choice_No</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>Is provider part of the Medical Group?</fieldText>
-                    <fieldType>RadioButtons</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>S05a1_Enter_AL_Provider_Network_Details_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>S05a1_Enter_AL_Provider_Network_Details_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>S05a1_Enter_AL_Provider_Network_Details_Section2_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>S05a1_Enter_AL_Provider_Network_Details_Section2_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>S05a1_DT02_ProviderNetworkDetails</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;Provider Networks&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Indicate if the provider is part of any of these networks&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <fields>
-                    <name>S05a1_CB01_In_Network</name>
-                    <dataType>Boolean</dataType>
-                    <defaultValue>
-                        <booleanValue>false</booleanValue>
-                    </defaultValue>
-                    <fieldText>In Network</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <fields>
-                    <name>S05a1_CB02_Baptist_Health_Network</name>
-                    <dataType>Boolean</dataType>
-                    <defaultValue>
-                        <booleanValue>false</booleanValue>
-                    </defaultValue>
-                    <fieldText>Baptist Health Network</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <fields>
-                    <name>S05a1_CB03_Curachoice_Network</name>
-                    <dataType>Boolean</dataType>
-                    <defaultValue>
-                        <booleanValue>false</booleanValue>
-                    </defaultValue>
-                    <fieldText>Curachoice Network</fieldText>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>5</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>S05a1_Enter_AL_Provider_Network_Details_Section2_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>S05a1_RB01_Is_provider_part_of_the_Medical_Group</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>choice_No</elementReference>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>S05a_Enter_AL_Provider_Details</name>
-        <label>S05a Enter AL Provider Details</label>
-        <locationX>666</locationX>
-        <locationY>1814</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>S05a1_Enter_AL_Provider_Network_Details</targetReference>
-        </connector>
-        <fields>
-            <name>S05a_Enter_AL_Provider_Details_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>S05a_Enter_AL_Provider_Details_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>S05a_Enter_AL_Provider_Details_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>S05a_DT01_EnterProviderDetails</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Provider Details&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Please enter the provider details.&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <fields>
-                    <name>S05a_PL01_Credentials</name>
-                    <choiceReferences>choice_Credential_APRN</choiceReferences>
-                    <choiceReferences>choice_Credential_ARNP</choiceReferences>
-                    <choiceReferences>choice_Credential_CNM</choiceReferences>
-                    <choiceReferences>choice_Credential_CRNP</choiceReferences>
-                    <choiceReferences>choice_Credential_DC</choiceReferences>
-                    <choiceReferences>choice_Credential_DDS</choiceReferences>
-                    <choiceReferences>choice_Credential_DMD</choiceReferences>
-                    <choiceReferences>choice_Credential_DO</choiceReferences>
-                    <choiceReferences>choice_Credential_DPM</choiceReferences>
-                    <choiceReferences>choice_Credential_FNP</choiceReferences>
-                    <choiceReferences>choice_Credential_MD</choiceReferences>
-                    <choiceReferences>choice_Credential_NP</choiceReferences>
-                    <choiceReferences>choice_Credential_OD</choiceReferences>
-                    <choiceReferences>choice_Credential_PA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>Credentials</fieldText>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <fields>
-                    <name>S05a_PL02_ProviderType</name>
-                    <choiceReferences>pcs_ProviderType</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>ProviderType</fieldText>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <fields>
-                    <name>S05a_RB01_Gender</name>
-                    <choiceReferences>pcs_Gender</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldText>Gender</fieldText>
-                    <fieldType>RadioButtons</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <styleProperties>
-                        <verticalAlignment>
-                            <stringValue>top</stringValue>
-                        </verticalAlignment>
-                        <width>
-                            <stringValue>12</stringValue>
-                        </width>
-                    </styleProperties>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>S05a_Enter_AL_Provider_Details_Section1_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
         <name>S05b_Enter_FL_Provider_Details</name>
-        <label>S05b Enter FL Provider Details</label>
+        <label>S05b Enter Provider Details</label>
         <locationX>930</locationX>
         <locationY>1814</locationY>
         <allowBack>true</allowBack>
@@ -1893,8 +1623,9 @@
                     </styleProperties>
                 </fields>
                 <fields>
-                    <name>S05b_PL03_Affiliation_Group</name>
-                    <choiceReferences>pcs_AffiliationGroup</choiceReferences>
+                    <name>S05b_PL03_Affiliation_Group_AL_Employed</name>
+                    <choiceReferences>choice_AffGroup_BH_Employed</choiceReferences>
+                    <choiceReferences>choice_AffGroup_BH_Partnered_Practice</choiceReferences>
                     <dataType>String</dataType>
                     <fieldText>Affiliation Group</fieldText>
                     <fieldType>DropdownBox</fieldType>
@@ -1908,6 +1639,207 @@
                             <stringValue>12</stringValue>
                         </width>
                     </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>vR_Provider.Region__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Alabama</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S05b_PL02_Affiliation</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Owned</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S05b_PL03_Affiliation_Group_AL_Affiliated</name>
+                    <choiceReferences>choice_AffGroup_BH_Network</choiceReferences>
+                    <choiceReferences>choice_AffGroup_BH_Credentialed</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Affiliation Group</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>vR_Provider.Region__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Alabama</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S05b_PL02_Affiliation</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Affiliated</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S05b_PL03_Affiliation_Group_AL_Unaffiliated</name>
+                    <choiceReferences>choice_AffGroup_Independent</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Affiliation Group</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>vR_Provider.Region__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Alabama</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S05b_PL02_Affiliation</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Unaffiliated</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S05b_PL03_Affiliation_Group_FL_Employed</name>
+                    <choiceReferences>choice_AffGroup_OH_Employed</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Affiliation Group</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>vR_Provider.Region__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Florida</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S05b_PL02_Affiliation</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Owned</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S05b_PL03_Affiliation_Group_FL_Affiliated</name>
+                    <choiceReferences>choice_AffGroup_OH_Contracted</choiceReferences>
+                    <choiceReferences>choice_AffGroup_OH_Partnered_Facility</choiceReferences>
+                    <choiceReferences>choice_AffGroup_OH_Network</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Affiliation Group</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>vR_Provider.Region__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Florida</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S05b_PL02_Affiliation</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Affiliated</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>S05b_PL03_Affiliation_Group_FL_Unaffiliated</name>
+                    <choiceReferences>choice_AffGroup_Advent_Health</choiceReferences>
+                    <choiceReferences>choice_AffGroup_BayCare</choiceReferences>
+                    <choiceReferences>choice_AffGroup_HCA_Hospitals</choiceReferences>
+                    <choiceReferences>choice_AffGroup_Health_First</choiceReferences>
+                    <choiceReferences>choice_AffGroup_Independent</choiceReferences>
+                    <choiceReferences>choice_AffGroup_Lakeland_Regional_Health</choiceReferences>
+                    <choiceReferences>choice_AffGroup_LH_Employed</choiceReferences>
+                    <choiceReferences>choice_AffGroup_Nemours_Hospital</choiceReferences>
+                    <choiceReferences>choice_AffGroup_Steward_Health_Care</choiceReferences>
+                    <choiceReferences>choice_AffGroup_Tampa_General</choiceReferences>
+                    <choiceReferences>choice_AffGroup_The_Villages_Regional</choiceReferences>
+                    <choiceReferences>choice_AffGroup_VA_Hospital</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Affiliation Group</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>vR_Provider.Region__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Florida</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>S05b_PL02_Affiliation</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Unaffiliated</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <fields>
                     <name>S05b_PL04_ProviderType</name>
